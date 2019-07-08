@@ -11,7 +11,6 @@ hints:
   - class: DockerRequirement
     dockerPull: duplexa/picard-2.20.2:v1
 
-# baseCommand: [picard, -Xmx160G, -Xms160G, MarkDuplicates]
 baseCommand: [picard, MarkDuplicates]
 
 arguments: ["O=", $(inputs.input.nameroot + ".rm.bam"), "M=", $(inputs.input.nameroot + "_duplicate_metrics.txt"), "TMP_DIR=", "/tmp"]
@@ -23,17 +22,27 @@ inputs:
       position: 1
       prefix: I=
 
+  - id: xmx
+    type: string
+    inputBinding:
+      position: 2
+
+  - id: xms
+    type: string
+    inputBinding:
+      position: 3
+
   - id: max_records_in_ram
     type: int
     inputBinding:
-      position: 2
+      position: 4
       prefix: MAX_RECORDS_IN_RAM=
     doc: max number of records stored in RAM before spilling to disk
 
   - id: duplicate_pixel_distance
     type: int
     inputBinding:
-      position: 3
+      position: 5
       prefix: OPTICAL_DUPLICATE_PIXEL_DISTANCE=
     doc: max offset between two duplicate clusters in order to consider them optical duplicates
 
