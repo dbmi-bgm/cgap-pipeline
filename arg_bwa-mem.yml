@@ -1,0 +1,8 @@
+threads: 72
+reference:
+  class: File
+  path: index.bwt #.bwt File
+reads: [
+  {class: File, path: }, #reads file
+  {class: File, path: } #mate reads file
+]

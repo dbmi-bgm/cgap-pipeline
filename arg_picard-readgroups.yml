@@ -1,0 +1,8 @@
+input:
+  class: File
+  path:
+rgid: 4
+rglb: lib1
+rgpl: illumina
+rgpu: unit1
+rgsm: 20

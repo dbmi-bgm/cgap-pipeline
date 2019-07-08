@@ -1,0 +1,5 @@
+input:
+  class: File
+  path:
+max_records_in_ram: 2000000
+duplicate_pixel_distance: 2500
