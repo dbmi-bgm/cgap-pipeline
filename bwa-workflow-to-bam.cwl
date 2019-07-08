@@ -33,7 +33,7 @@ outputs:
     outputSource: sam-to-bam_from_stdout/output
 
 steps:
-  gunzip-reds:
+  gunzip-reads:
     run: gunzip.cwl
     in:
       input:
@@ -57,7 +57,7 @@ steps:
         source: reference
 
       reads:
-        source: [gunzip-reds/output, gunzip-mates/output]
+        source: [gunzip-reads/output, gunzip-mates/output]
     out: [output]
 
   sam-to-bam_from_stdout:
