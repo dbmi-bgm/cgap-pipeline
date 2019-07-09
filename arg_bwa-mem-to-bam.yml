@@ -1,0 +1,12 @@
+threads: 4
+reference:
+  class: File
+  path: index.bwt #.bwt File
+reads_zipped:
+  class: File
+  path: 
+mates_zipped:
+  class: File
+  path: 
+outdir: .
+prefix: raw
