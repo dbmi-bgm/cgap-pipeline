@@ -1,0 +1,32 @@
+{
+  "args": {
+    "app_name": "index-sorted-bam",
+    "app_version": "v2",
+    "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+    "cwl_main_filename": "index-sorted-bam.cwl",
+    "cwl_child_filenames": [],
+    "cwl_version": "v1",
+    "input_files": {
+      "input": {
+        "bucket_name": "",
+        "object_key": ""
+      }
+    },
+    "secondary_files": {},
+    "input_parameters": {},
+    "output_S3_bucket": "",
+    "output_target": {
+      "output": ".bam.bai"
+    },
+    "secondary_output_target": {}
+  },
+  "config": {
+    "instance_type": "t3.small",
+    "ebs_size": "1.2x",
+    "EBS_optimized": true,
+    "spot_instance": true,
+    "log_bucket": "",
+    "run_name": "run_index-sorted-bam",
+    "behavior_on_capacity_limit": "wait_and_retry"
+  }
+}
