@@ -22,11 +22,8 @@ RUN apt-get update -y && apt-get install -y \
 
 WORKDIR /usr/local/bin
 
-# gatk4
-RUN conda install -y gatk4==4.1.2.0
-
-# picard
-RUN conda install -c bioconda picard==2.20.2
+# gatk4 & picard
+RUN conda install -c bioconda -y gatk4==4.1.2.0 picard==2.20.2
 
 # samtools
 RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2 && \
@@ -51,6 +48,7 @@ RUN chmod +x bwa-mem-to-bam.sh
 
 # paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
+ENV PATH=/usr/local/bin/bwa/:$PATH
 
 # supporting UTF-8
 RUN locale-gen "en_US.UTF-8" && update-locale LC_ALL="en_US.UTF-8"
