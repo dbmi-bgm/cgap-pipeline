@@ -1,0 +1,37 @@
+{
+  "args": {
+    "app_name": "picard-markduplicates",
+    "app_version": "v2",
+    "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+    "cwl_main_filename": "picard-markduplicates.cwl",
+    "cwl_child_filenames": [],
+    "cwl_version": "v1",
+    "input_files": {
+      "input": {
+        "bucket_name": "",
+        "object_key": ""
+      }
+    },
+    "secondary_files": {},
+    "input_parameters": {
+      "xmx": "-Xmx160G",
+      "xms": "-Xms160G",
+      "max_records_in_ram": 2000000,
+      "duplicate_pixel_distance": 2500
+    },
+    "output_S3_bucket": "",
+    "output_target": {
+      "output": ".rm.bam"
+    },
+    "secondary_output_target": {}
+  },
+  "config": {
+    "instance_type": "c5n.18xlarge",
+    "ebs_size": "2.5x",
+    "EBS_optimized": true,
+    "spot_instance": true,
+    "log_bucket": "",
+    "run_name": "run_picard-markduplicates",
+    "behavior_on_capacity_limit": "wait_and_retry"
+  }
+}
