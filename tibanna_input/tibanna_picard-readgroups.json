@@ -14,10 +14,10 @@
     },
     "secondary_files": {},
     "input_parameters": {
-      "rgid": 4
-      "rglb": "lib1"
-      "rgpl": "illumina"
-      "rgpu": "unit1"
+      "rgid": 4,
+      "rglb": "lib1",
+      "rgpl": "illumina",
+      "rgpu": "unit1",
       "rgsm": 20
     },
     "output_S3_bucket": "",
