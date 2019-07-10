@@ -42,7 +42,7 @@
     "ebs_size": "6.25x",
     "EBS_optimized": true,
     "spot_instance": true,
-    "log_bucket": "soos-4dn-bucket",
+    "log_bucket": "",
     "run_name": "run_bwa-mem-to-bam",
     "behavior_on_capacity_limit": "wait_and_retry"
   }
