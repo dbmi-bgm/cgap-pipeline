@@ -1,5 +1,0 @@
-max_memory: '3G'
-num_threads: 8
-input:
-  class: File
-  path:

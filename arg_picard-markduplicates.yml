@@ -1,7 +1,0 @@
-input:
-  class: File
-  path:
-xmx: '-Xmx160G' #-XmxnumG
-xms: '-Xms160G' #-XmsnumG
-max_records_in_ram: 2000000
-duplicate_pixel_distance: 2500
