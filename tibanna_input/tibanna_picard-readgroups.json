@@ -1,9 +1,9 @@
 {
   "args": {
-    "app_name": "sort-bam",
+    "app_name": "picard-readgroups",
     "app_version": "v2",
     "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
-    "cwl_main_filename": "sort-bam.cwl",
+    "cwl_main_filename": "picard-readgroups.cwl",
     "cwl_child_filenames": [],
     "cwl_version": "v1",
     "input_files": {
@@ -14,22 +14,25 @@
     },
     "secondary_files": {},
     "input_parameters": {
-      "max_memory": "3G",
-      "num_threads": 8
+      "rgid": 4
+      "rglb": "lib1"
+      "rgpl": "illumina"
+      "rgpu": "unit1"
+      "rgsm": 20
     },
     "output_S3_bucket": "",
     "output_target": {
-      "output": "sorted.bam"
+      "output": ".rg.bam"
     },
     "secondary_output_target": {}
   },
   "config": {
-    "instance_type": "m5a.2xlarge",
+    "instance_type": "t3.small",
     "ebs_size": "3x",
     "EBS_optimized": true,
     "spot_instance": true,
     "log_bucket": "",
-    "run_name": "run_sort-to-bam",
+    "run_name": "run_picard-readgroups",
     "behavior_on_capacity_limit": "wait_and_retry"
   }
 }
