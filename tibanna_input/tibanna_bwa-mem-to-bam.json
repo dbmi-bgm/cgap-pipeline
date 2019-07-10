@@ -8,21 +8,21 @@
     "cwl_version": "v1",
     "input_files": {
       "reads_zipped": {
-        "bucket_name": "maestro-resources",
+        "bucket_name": "",
         "object_key": ""
       },
       "mates_zipped": {
-        "bucket_name": "maestro-resources",
+        "bucket_name": "",
         "object_key": ""
       },
       "reference": {
-        "bucket_name": "maestro-resources",
+        "bucket_name": "",
         "object_key": ".bwt"
       }
     },
     "secondary_files": {
       "reference": {
-        "bucket_name": "maestro-resources",
+        "bucket_name": "",
         "object_key": [".ann", ".amb", ".pac", ".sa"]
       }
     },
@@ -31,9 +31,9 @@
       "outdir": ".",
       "prefix": "raw"
     },
-    "output_S3_bucket": "soos-4dn-bucket",
+    "output_S3_bucket": "",
     "output_target": {
-      "output": "prova_workflow/.bam"
+      "output": "raw.bam"
     },
     "secondary_output_target": {}
   },

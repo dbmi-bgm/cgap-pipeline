@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: duplexa/picard-2.20.2:v1
+    dockerPull: cgap/cgap:v1
 
 baseCommand: [picard, MarkDuplicates]
 

@@ -11,7 +11,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: duplexa/samtools-1.9:v1
+    dockerPull: cgap/cgap:v1
 
 baseCommand: [samtools, index]
 

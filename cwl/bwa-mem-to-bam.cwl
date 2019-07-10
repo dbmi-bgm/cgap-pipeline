@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: b3rse/bwa-mem-to-bam:v1
+    dockerPull: cgap/cgap:v1
 
 baseCommand: [bwa-mem-to-bam.sh]
 
