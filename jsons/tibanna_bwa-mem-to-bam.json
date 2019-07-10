@@ -1,0 +1,49 @@
+{
+  "args": {
+    "app_name": "bwa-mem-to-bam",
+    "app_version": "v2",
+    "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+    "cwl_main_filename": "bwa-mem-to-bam.cwl",
+    "cwl_child_filenames": [],
+    "cwl_version": "v1",
+    "input_files": {
+      "reads_zipped": {
+        "bucket_name": "maestro-resources",
+        "object_key": ""
+      },
+      "mates_zipped": {
+        "bucket_name": "maestro-resources",
+        "object_key": ""
+      },
+      "reference": {
+        "bucket_name": "maestro-resources",
+        "object_key": ".bwt"
+      }
+    },
+    "secondary_files": {
+      "reference": {
+        "bucket_name": "maestro-resources",
+        "object_key": [".ann", ".amb", ".pac", ".sa"]
+      }
+    },
+    "input_parameters": {
+      "threads": 72,
+      "outdir": ".",
+      "prefix": "raw"
+    },
+    "output_S3_bucket": "soos-4dn-bucket",
+    "output_target": {
+      "output": "prova_workflow/.bam"
+    },
+    "secondary_output_target": {}
+  },
+  "config": {
+    "instance_type": "c5n.18xlarge",
+    "ebs_size": "6.25x",
+    "EBS_optimized": true,
+    "spot_instance": true,
+    "log_bucket": "soos-4dn-bucket",
+    "run_name": "run_bwa-mem-to-bam",
+    "behavior_on_capacity_limit": "wait_and_retry"
+  }
+}
