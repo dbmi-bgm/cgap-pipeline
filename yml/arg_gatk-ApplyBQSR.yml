@@ -1,0 +1,12 @@
+input:
+  class: File
+  path: .rg.bam #expect input file .rg.bam
+reference:
+  class: File
+  path: .fa #expect reference file .fa
+bqsr:
+  class: File
+  path: recalibration_report #expect recalibration_report
+static-quantized-quals_1: 10
+static-quantized-quals_2: 20
+static-quantized-quals_3: 30
