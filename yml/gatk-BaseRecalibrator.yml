@@ -1,0 +1,12 @@
+input:
+  class: File
+  path: .rg.bam #expect input file .rg.bam
+reference:
+  class: File
+  path: .fa #expect reference file .fa
+known-sites-snp:
+  class: File
+  path: .vcf.gz #expect dbsnp file .vcf.gz
+known-sites-indels:
+  class: File
+  path: .vcf #expect indel file .vcf
