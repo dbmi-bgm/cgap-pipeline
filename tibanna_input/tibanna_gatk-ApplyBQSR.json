@@ -20,7 +20,12 @@
         "object_key": "recalibration_report"
       }
     },
-    "secondary_files": {},
+    "secondary_files": {
+      "reference": {
+        "bucket_name": "",
+        "object_key": [".dict", ".fa.fai"]
+      }
+    },
     "input_parameters": {
       "static-quantized-quals_1": 10,
       "static-quantized-quals_2": 20,
