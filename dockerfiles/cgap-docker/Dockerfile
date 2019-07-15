@@ -50,6 +50,10 @@ RUN chmod +x bwa-mem-to-bam.sh
 COPY integrity-check.sh .
 RUN chmod +x integrity-check.sh
 
+# hc parallel script
+COPY hc-parallel.sh .
+RUN chmod +x hc-parallel.sh
+
 # paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
 ENV PATH=/usr/local/bin/bwa/:$PATH
