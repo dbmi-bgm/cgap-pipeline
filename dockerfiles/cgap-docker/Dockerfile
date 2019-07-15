@@ -1,5 +1,5 @@
 FROM 4dndcic/ubuntu16.04-miniconda-python36:v1
-MAINTAINER Soo Lee (duplexa@gmail.com), Michele Berselli (berselli.michele@gmail.com )
+MAINTAINER Soo Lee (duplexa@gmail.com), Michele Berselli (berselli.michele@gmail.com)
 
 # 1. general updates & installing necessary Linux components
 RUN apt-get update -y && apt-get install -y \
@@ -45,6 +45,10 @@ RUN wget https://github.com/lh3/bwa/archive/v0.7.17.tar.gz && \
 # bwa-mem script
 COPY bwa-mem-to-bam.sh .
 RUN chmod +x bwa-mem-to-bam.sh
+
+# integrity check script
+COPY integrity-check.sh .
+RUN chmod +x integrity-check.sh
 
 # paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
