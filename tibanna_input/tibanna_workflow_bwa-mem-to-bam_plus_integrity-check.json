@@ -1,6 +1,6 @@
 {
   "args": {
-    "app_name": "workflow_bwa-mem-to-bam_plus_integrity-check",
+    "app_name": "workflow_bwa-mem-check",
     "app_version": "v2",
     "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
     "cwl_main_filename": "workflow_bwa-mem-to-bam_plus_integrity-check.cwl",
@@ -44,7 +44,7 @@
     "EBS_optimized": true,
     "spot_instance": true,
     "log_bucket": "",
-    "run_name": "run_workflow_bwa-mem-to-bam_plus_integrity-check",
+    "run_name": "run_workflow_bwa-mem-check",
     "behavior_on_capacity_limit": "wait_and_retry"
   }
 }
