@@ -13,7 +13,7 @@ hints:
 
 baseCommand: [picard, MarkDuplicates]
 
-arguments: ["O=", $(inputs.input.nameroot + "_rm.bam"), "M=", "duplicate_metrics.txt", "TMP_DIR=", "/tmp"]
+arguments: ["O=", $(inputs.input.nameroot + "_rm.bam"), "M=", "duplicate_metrics.txt", "TMP_DIR=", "/data1/shell/tmp", "ASSUME_SORT_ORDER=", "queryname"]
 
 inputs:
   - id: input
