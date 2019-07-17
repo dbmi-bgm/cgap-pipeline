@@ -13,7 +13,7 @@ hints:
 
 baseCommand: [picard, AddOrReplaceReadGroups]
 
-arguments: ["O=", $(inputs.input.nameroot + ".rg.bam")]
+arguments: ["O=", $(inputs.input.nameroot + ".bam")]
 
 inputs:
   - id: input
@@ -61,7 +61,7 @@ outputs:
   - id: output
     type: File
     outputBinding:
-      glob: $(inputs.input.nameroot + ".rg.bam")
+      glob: $(inputs.input.nameroot + ".bam")
 
 doc: |
-  run picard AddOrReplaceReadGroups to mark and assign reads from a .bam input file to a new read group into a output .rg.bam file
+  run picard AddOrReplaceReadGroups to mark and assign reads from a .bam input file to a new read group into a output .bam file
