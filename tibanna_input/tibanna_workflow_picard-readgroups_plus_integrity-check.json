@@ -22,7 +22,7 @@
     },
     "output_S3_bucket": "",
     "output_target": {
-      "output": ".rg.bam",
+      "output": "_rg.bam",
       "output-check": "integrity_check"
     },
     "secondary_output_target": {}

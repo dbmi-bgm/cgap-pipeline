@@ -21,7 +21,7 @@
     },
     "output_S3_bucket": "",
     "output_target": {
-      "output": ".rm.bam",
+      "output": "_rm.bam",
       "out_metrics": "duplicate_metrics",
       "output-check": "integrity_check"
     },
