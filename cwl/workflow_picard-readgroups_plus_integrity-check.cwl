@@ -64,5 +64,5 @@ steps:
     out: [output]
 
 doc: |
-  run picard AddOrReplaceReadGroups to mark and assign reads from a .bam input file to a new read group into a output .bam file |
-  run an integrity check on the output .bam to confirm an EOF is present and if successful count the number of reads
+  run picard AddOrReplaceReadGroups to mark and assign reads from a .bam input file to a new read group into a output _rg.bam file |
+  run an integrity check on the output _rg.bam to confirm an EOF is present and if successful count the number of reads

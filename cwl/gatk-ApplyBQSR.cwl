@@ -13,7 +13,7 @@ hints:
 
 baseCommand: [gatk, ApplyBQSR]
 
-arguments: ["-O", $(inputs.input.nameroot + "_recalibrated.full.bam"), "--use-original-qualities"]
+arguments: ["-O", $(inputs.input.nameroot + "_recalibrated_full.bam"), "--use-original-qualities"]
 
 inputs:
   - id: input
@@ -65,7 +65,7 @@ outputs:
   - id: output
     type: File
     outputBinding:
-      glob: $(inputs.input.nameroot + "_recalibrated.full.bam")
+      glob: $(inputs.input.nameroot + "_recalibrated_full.bam")
 
 doc: |
   run gatk ApplyBQSR

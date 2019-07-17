@@ -13,7 +13,7 @@ hints:
 
 baseCommand: [picard, MarkDuplicates]
 
-arguments: ["O=", $(inputs.input.nameroot + ".bam"), "M=", "duplicate_metrics.txt", "TMP_DIR=", "/tmp"]
+arguments: ["O=", $(inputs.input.nameroot + "_rm.bam"), "M=", "duplicate_metrics.txt", "TMP_DIR=", "/tmp"]
 
 inputs:
   - id: input
@@ -50,7 +50,7 @@ outputs:
   - id: output
     type: File
     outputBinding:
-      glob: $(inputs.input.nameroot + ".bam")
+      glob: $(inputs.input.nameroot + "_rm.bam")
 
   - id: out_metrics
     type: File
@@ -58,5 +58,5 @@ outputs:
       glob: duplicate_metrics.txt
 
 doc: |
-  run picard MarkDuplicates to mark the duplicates in the input .bam file into a new .bam output file |
+  run picard MarkDuplicates to mark the duplicates in the input .bam file into a new _rm.bam output file |
   generate a duplicate_metrics.txt file with metrics about duplicates identified
