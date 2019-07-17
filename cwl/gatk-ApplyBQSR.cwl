@@ -21,7 +21,7 @@ inputs:
     inputBinding:
       position: 1
       prefix: -I
-    doc: input file .rg.bam
+    doc: input file .bam
 
   - id: reference
     type: File
