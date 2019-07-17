@@ -52,7 +52,7 @@ outputs:
     outputBinding:
       glob: $(inputs.input.nameroot + ".rm.bam")
 
-  - id: out_matrix
+  - id: out_metrics
     type: File
     outputBinding:
       glob: $(inputs.input.nameroot + "_duplicate_metrics.txt")
