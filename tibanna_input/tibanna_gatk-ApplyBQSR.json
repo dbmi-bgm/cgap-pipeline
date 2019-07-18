@@ -33,7 +33,7 @@
     },
     "output_S3_bucket": "",
     "output_target": {
-      "output": "_recalibrated.full.bam"
+      "output": "_recalibrated_full.bam"
     },
     "secondary_output_target": {}
   },
