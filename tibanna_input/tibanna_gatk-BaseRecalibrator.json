@@ -9,7 +9,7 @@
     "input_files": {
       "input": {
         "bucket_name": "",
-        "object_key": ".rg.bam"
+        "object_key": ".bam"
       },
       "reference": {
         "bucket_name": "",
