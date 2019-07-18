@@ -1,0 +1,58 @@
+{
+  "args": {
+    "app_name": "workflow_gatk-BaseRecalibrator-check",
+    "app_version": "v2",
+    "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+    "cwl_main_filename": "workflow_gatk-BaseRecalibrator_plus_integrity-check.cwl",
+    "cwl_child_filenames": ["gatk-BaseRecalibrator.cwl", "integrity-check.cwl"],
+    "cwl_version": "v1",
+    "input_files": {
+      "input": {
+        "bucket_name": "",
+        "object_key": ".bam"
+      },
+      "reference": {
+        "bucket_name": "",
+        "object_key": ".fa"
+      },
+      "known-sites-snp": {
+        "bucket_name": "",
+        "object_key": ".vcf.gz"
+      },
+      "known-sites-indels": {
+        "bucket_name": "",
+        "object_key": ".vcf"
+      }
+    },
+    "secondary_files": {
+      "reference": {
+        "bucket_name": "",
+        "object_key": [".dict", ".fa.fai"]
+      },
+      "known-sites-snp": {
+        "bucket_name": "",
+        "object_key": ".tbi"
+      },
+      "known-sites-indels": {
+        "bucket_name": "",
+        "object_key": ".idx"
+      }
+    },
+    "input_parameters": {},
+    "output_S3_bucket": "",
+    "output_target": {
+      "output": "_recalibration_report",
+      "output-check": "integrity_check"
+    },
+    "secondary_output_target": {}
+  },
+  "config": {
+    "instance_type": "t3.small",
+    "ebs_size": "2x",
+    "EBS_optimized": true,
+    "spot_instance": true,
+    "log_bucket": "",
+    "run_name": "run_workflow_gatk-BaseRecalibrator-check",
+    "behavior_on_capacity_limit": "wait_and_retry"
+  }
+}
