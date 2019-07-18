@@ -39,7 +39,7 @@
   },
   "config": {
     "instance_type": "c5n.18xlarge",
-    "ebs_size": "6.25x",
+    "ebs_size": "4x",
     "EBS_optimized": true,
     "spot_instance": true,
     "log_bucket": "",
