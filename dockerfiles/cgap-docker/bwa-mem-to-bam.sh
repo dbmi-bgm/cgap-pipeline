@@ -15,27 +15,27 @@ fi
 # unzip fastq files
 if [[ $fastq1 =~ \.gz$ ]]
 then
-  cp $fastq1 fastq1.gz
+  mv $fastq1 fastq1.gz
   gunzip fastq1.gz
 elif [[ $fastq1 =~ \.bz2$ ]]
 then
-  cp $fastq1 fastq1.bz2
+  mv $fastq1 fastq1.bz2
   bzip2 -d fastq1.bz2
 else
-  cp $fastq1 fastq1
+  mv $fastq1 fastq1
 fi
   fastq1=fastq1
 
 if [[ $fastq2 =~ \.gz$ ]]
 then
-  cp $fastq2 fastq2.gz
+  mv $fastq2 fastq2.gz
   gunzip fastq2.gz
 elif [[ $fastq2 =~ \.bz2$ ]]
 then
-  cp $fastq2 fastq2.bz2
+  mv $fastq2 fastq2.bz2
   bzip2 -d fastq2.bz2
 else
-  cp $fastq2 fastq2
+  mv $fastq2 fastq2
 fi
   fastq2=fastq2
 
