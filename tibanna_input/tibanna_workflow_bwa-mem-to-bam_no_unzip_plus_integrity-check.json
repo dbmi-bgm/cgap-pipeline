@@ -1,0 +1,50 @@
+{
+  "args": {
+    "app_name": "workflow_bwa-mem_no_unzip-check",
+    "app_version": "v2",
+    "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+    "cwl_main_filename": "workflow_bwa-mem-to-bam_no_unzip_plus_integrity-check.cwl",
+    "cwl_child_filenames": ["bwa-mem-to-bam_no_unzip.cwl", "integrity-check.cwl"],
+    "cwl_version": "v1",
+    "input_files": {
+      "reads_unzipped": {
+        "bucket_name": "",
+        "object_key": ""
+      },
+      "mates_unzipped": {
+        "bucket_name": "",
+        "object_key": ""
+      },
+      "reference": {
+        "bucket_name": "",
+        "object_key": ".bwt"
+      }
+    },
+    "secondary_files": {
+      "reference": {
+        "bucket_name": "",
+        "object_key": [".ann", ".amb", ".pac", ".sa"]
+      }
+    },
+    "input_parameters": {
+      "threads": 72,
+      "outdir": ".",
+      "prefix": "raw"
+    },
+    "output_S3_bucket": "",
+    "output_target": {
+      "output": "raw.bam",
+      "output-check": "integrity_check"
+    },
+    "secondary_output_target": {}
+  },
+  "config": {
+    "instance_type": "c5n.18xlarge",
+    "ebs_size": "4x",
+    "EBS_optimized": true,
+    "spot_instance": true,
+    "log_bucket": "",
+    "run_name": "run_workflow_bwa-mem_no_unzip-check",
+    "behavior_on_capacity_limit": "wait_and_retry"
+  }
+}

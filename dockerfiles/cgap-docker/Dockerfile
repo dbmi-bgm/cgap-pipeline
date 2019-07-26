@@ -46,6 +46,9 @@ RUN wget https://github.com/lh3/bwa/archive/v0.7.17.tar.gz && \
 COPY bwa-mem-to-bam.sh .
 RUN chmod +x bwa-mem-to-bam.sh
 
+COPY bwa-mem-to-bam_no_unzip.sh .
+RUN chmod +x bwa-mem-to-bam_no_unzip.sh
+
 # integrity check script
 COPY integrity-check.sh .
 RUN chmod +x integrity-check.sh
