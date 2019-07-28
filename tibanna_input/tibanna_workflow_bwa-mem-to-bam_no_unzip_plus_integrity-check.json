@@ -9,11 +9,13 @@
     "input_files": {
       "reads_unzipped": {
         "bucket_name": "",
-        "object_key": ""
+        "object_key": "",
+        "unzip": ""
       },
       "mates_unzipped": {
         "bucket_name": "",
-        "object_key": ""
+        "object_key": "",
+        "unzip": ""
       },
       "reference": {
         "bucket_name": "",
