@@ -42,7 +42,7 @@
     {
         "file_format": "bwt",
         "standard_file_extension": "bwt",
-        "description": "This format is used for something to do with paired mapped read locations",
+        "description": "BWA genome index, untarred, uncompressed",
         "uuid": "813b0001-5f3f-4e28-9203-4cdf261e19c4",
         "extrafile_formats": [
              "106199e5-5a85-4817-9a55-7b31698e1fda",
