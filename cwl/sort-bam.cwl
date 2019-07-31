@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v6
+    dockerPull: cgap/cgap:v7
 
 baseCommand: [samtools, sort]
 
