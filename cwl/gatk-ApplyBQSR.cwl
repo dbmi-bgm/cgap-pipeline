@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v5
+    dockerPull: cgap/cgap:v6
 
 baseCommand: [gatk, ApplyBQSR]
 
