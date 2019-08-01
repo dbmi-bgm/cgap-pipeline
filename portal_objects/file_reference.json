@@ -10,21 +10,21 @@
     "extra_files": [
         {
             "file_format": "ann",
-            "status": "uploading"
+            "status": "uploaded"
         },
         {
             "file_format": "amb",
-            "status": "uploading"
+            "status": "uploaded"
         },
         {
             "file_format": "sa",
-            "status": "uploading"
+            "status": "uploaded"
         },
         {
             "file_format": "pac",
-            "status": "uploading"
+            "status": "uploaded"
         }
     ],
-    "status": "uploading"
+    "status": "uploaded"
   }
 ]
