@@ -6,7 +6,7 @@
         "uuid": "106199e5-5a85-4817-9a55-7b31698e1fda",
         "lab": "4dn-dcic-lab",
         "award": "1U01CA200059-01",
-        "status": "uploaded",
+        "status": "in review by lab",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -16,7 +16,7 @@
         "uuid": "8db70ed6-0121-4fe1-a72e-d91dc5aa6cd3",
         "lab": "4dn-dcic-lab",
         "award": "1U01CA200059-01",
-        "status": "uploaded",
+        "status": "in review by lab",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -26,7 +26,7 @@
         "uuid": "7373ca48-0b3e-467b-967a-80870846f89b",
         "lab": "4dn-dcic-lab",
         "award": "1U01CA200059-01",
-        "status": "uploaded",
+        "status": "in review by lab",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -36,7 +36,7 @@
         "uuid": "11f2fc36-9a65-4d60-9365-d8ff241df4f7",
         "lab": "4dn-dcic-lab",
         "award": "1U01CA200059-01",
-        "status": "uploaded",
+        "status": "in review by lab",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -52,7 +52,7 @@
         ],
         "lab": "4dn-dcic-lab",
         "award": "1U01CA200059-01",
-        "status": "uploaded",
+        "status": "in review by lab",
         "valid_item_types": ["FileReference"]
     }
 ]
