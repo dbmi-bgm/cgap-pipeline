@@ -35,6 +35,9 @@ inputs:
     type: int
     doc: number of threads to be used
 
+  - id: count
+    type: string
+
 outputs:
   output:
     type: File
@@ -67,6 +70,8 @@ steps:
     in:
       input:
         source: bwa-mem-to-bam_no_unzip/output
+      count:
+        source: count
     out: [output]
 
 doc: |

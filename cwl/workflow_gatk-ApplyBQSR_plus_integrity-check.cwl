@@ -30,6 +30,9 @@ inputs:
   - id: static-quantized-quals_3
     type: int
 
+  - id: count
+    type: string
+
 outputs:
   output:
     type: File
@@ -62,6 +65,8 @@ steps:
     in:
       input:
         source: gatk-ApplyBQSR/output
+      count:
+        source: count
     out: [output]
 
 doc: |

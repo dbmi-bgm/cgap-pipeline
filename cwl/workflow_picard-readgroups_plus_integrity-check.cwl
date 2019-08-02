@@ -29,6 +29,9 @@ inputs:
     type: int
     doc: read group sample name
 
+  - id: count
+    type: string
+
 outputs:
   output:
     type: File
@@ -61,6 +64,8 @@ steps:
     in:
       input:
         source: picard-readgroups/output
+      count:
+        source: count
     out: [output]
 
 doc: |

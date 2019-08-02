@@ -18,7 +18,8 @@
       "rglb": "lib1",
       "rgpl": "illumina",
       "rgpu": "unit1",
-      "rgsm": 20
+      "rgsm": 20,
+      "count": false
     },
     "output_S3_bucket": "",
     "output_target": {

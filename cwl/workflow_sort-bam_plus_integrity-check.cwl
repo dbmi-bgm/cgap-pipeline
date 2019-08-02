@@ -17,6 +17,9 @@ inputs:
   - id: input
     type: File
 
+  - id: count
+    type: string
+
 outputs:
   output:
     type: File
@@ -43,6 +46,8 @@ steps:
     in:
       input:
         source: sort-bam/output
+      count:
+        source: count
     out: [output]
 
 doc: |

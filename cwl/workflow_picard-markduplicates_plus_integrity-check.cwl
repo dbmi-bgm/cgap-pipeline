@@ -23,6 +23,9 @@ inputs:
     type: int
     doc: max offset between two duplicate clusters in order to consider them optical duplicates
 
+  - id: count
+    type: string
+
 outputs:
   output:
     type: File
@@ -57,6 +60,8 @@ steps:
     in:
       input:
         source: picard-markduplicates/output
+      count:
+        source: count
     out: [output]
 
 doc: |

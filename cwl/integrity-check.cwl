@@ -19,6 +19,11 @@ inputs:
     inputBinding:
       position: 1
 
+  - id: count
+    type: string
+    inputBinding:
+      position: 2
+
 outputs:
   - id: output
     type: File

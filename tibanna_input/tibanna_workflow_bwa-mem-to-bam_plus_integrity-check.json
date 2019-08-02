@@ -29,7 +29,8 @@
     "input_parameters": {
       "threads": 72,
       "outdir": ".",
-      "prefix": "raw"
+      "prefix": "raw",
+      "count": false
     },
     "output_S3_bucket": "",
     "output_target": {
