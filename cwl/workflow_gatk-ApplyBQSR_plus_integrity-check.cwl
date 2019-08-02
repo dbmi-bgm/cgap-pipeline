@@ -31,7 +31,8 @@ inputs:
     type: int
 
   - id: count
-    type: string
+    type: int
+    doc: 1 count the number of alignments if EOF if present, 0 only check EOF
 
 outputs:
   output:
@@ -71,4 +72,4 @@ steps:
 
 doc: |
   run gatk ApplyBQSR |
-  run an integrity check on the output to confirm an EOF is present and if successful count the number of reads
+  run an integrity check on the output to confirm an EOF is present and if successful count the number of alignments

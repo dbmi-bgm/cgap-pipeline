@@ -30,7 +30,8 @@ inputs:
     doc: read group sample name
 
   - id: count
-    type: string
+    type: int
+    doc: 1 count the number of alignments if EOF if present, 0 only check EOF
 
 outputs:
   output:
@@ -70,4 +71,4 @@ steps:
 
 doc: |
   run picard AddOrReplaceReadGroups to mark and assign reads from a .bam input file to a new read group into a output _rg.bam file |
-  run an integrity check on the output _rg.bam to confirm an EOF is present and if successful count the number of reads
+  run an integrity check on the output _rg.bam to confirm an EOF is present and if successful count the number of alignments

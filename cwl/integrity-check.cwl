@@ -20,9 +20,10 @@ inputs:
       position: 1
 
   - id: count
-    type: string
+    type: int
     inputBinding:
       position: 2
+    doc: 1 count the number of alignments if EOF if present, 0 only check EOF
 
 outputs:
   - id: output
@@ -32,4 +33,4 @@ outputs:
 
 doc: |
   run a quick integrity check on the input .bam to confirm an EOF exist |
-  if successful count the number of reads
+  if successful count the number of alignments
