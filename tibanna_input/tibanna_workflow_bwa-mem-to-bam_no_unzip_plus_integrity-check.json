@@ -32,7 +32,7 @@
       "threads": 72,
       "outdir": ".",
       "prefix": "raw",
-      "count": false
+      "count": "false"
     },
     "output_S3_bucket": "",
     "output_target": {

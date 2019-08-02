@@ -18,7 +18,7 @@
       "xms": "-Xms160G",
       "max_records_in_ram": 2000000,
       "duplicate_pixel_distance": 2500,
-      "count": false
+      "count": "false"
     },
     "output_S3_bucket": "",
     "output_target": {

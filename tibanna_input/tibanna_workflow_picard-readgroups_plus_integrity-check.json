@@ -19,7 +19,7 @@
       "rgpl": "illumina",
       "rgpu": "unit1",
       "rgsm": 20,
-      "count": false
+      "count": "false"
     },
     "output_S3_bucket": "",
     "output_target": {

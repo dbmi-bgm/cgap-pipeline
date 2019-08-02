@@ -16,7 +16,7 @@
     "input_parameters": {
       "max_memory": "3G",
       "num_threads": 8,
-      "count": false
+      "count": "false"
     },
     "output_S3_bucket": "",
     "output_target": {
