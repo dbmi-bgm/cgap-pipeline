@@ -23,6 +23,10 @@ inputs:
     type: int
     doc: max offset between two duplicate clusters in order to consider them optical duplicates
 
+  - id: count
+    type: int
+    doc: 1 count the number of alignments if EOF if present, 0 only check EOF
+
 outputs:
   output:
     type: File
@@ -57,9 +61,11 @@ steps:
     in:
       input:
         source: picard-markduplicates/output
+      count:
+        source: count
     out: [output]
 
 doc: |
   run picard MarkDuplicates to mark the duplicates in the input .bam file into a new _rm.bam output file |
   generate a duplicate_metrics.txt file with metrics about duplicates identified |
-  run an integrity check on the output _rm.bam to confirm an EOF is present and if successful count the number of reads
+  run an integrity check on the output _rm.bam to confirm an EOF is present and if successful count the number of alignments

@@ -35,6 +35,10 @@ inputs:
     type: int
     doc: number of threads to be used
 
+  - id: count
+    type: int
+    doc: 1 count the number of alignments if EOF if present, 0 only check EOF
+
 outputs:
   output:
     type: File
@@ -67,9 +71,11 @@ steps:
     in:
       input:
         source: bwa-mem-to-bam/output
+      count:
+        source: count
     out: [output]
 
 doc: |
   run bwa mem allowing to specify the number of threads to be used and pipe the output in a .bam output file |
   unzip the initial FASTQ files |
-  run an integrity check on the output .bam to confirm an EOF is present and if successful count the number of reads
+  run an integrity check on the output .bam to confirm an EOF is present and if successful count the number of alignments

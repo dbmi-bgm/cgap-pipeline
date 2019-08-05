@@ -29,7 +29,8 @@
     "input_parameters": {
       "static-quantized-quals_1": 10,
       "static-quantized-quals_2": 20,
-      "static-quantized-quals_3": 30
+      "static-quantized-quals_3": 30,
+      "count": 0
     },
     "output_S3_bucket": "",
     "output_target": {

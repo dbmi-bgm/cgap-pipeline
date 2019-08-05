@@ -17,7 +17,8 @@
       "xmx": "-Xmx160G",
       "xms": "-Xms160G",
       "max_records_in_ram": 2000000,
-      "duplicate_pixel_distance": 2500
+      "duplicate_pixel_distance": 2500,
+      "count": 0
     },
     "output_S3_bucket": "",
     "output_target": {

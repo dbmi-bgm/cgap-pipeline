@@ -30,6 +30,10 @@ inputs:
   - id: static-quantized-quals_3
     type: int
 
+  - id: count
+    type: int
+    doc: 1 count the number of alignments if EOF if present, 0 only check EOF
+
 outputs:
   output:
     type: File
@@ -62,8 +66,10 @@ steps:
     in:
       input:
         source: gatk-ApplyBQSR/output
+      count:
+        source: count
     out: [output]
 
 doc: |
   run gatk ApplyBQSR |
-  run an integrity check on the output to confirm an EOF is present and if successful count the number of reads
+  run an integrity check on the output to confirm an EOF is present and if successful count the number of alignments
