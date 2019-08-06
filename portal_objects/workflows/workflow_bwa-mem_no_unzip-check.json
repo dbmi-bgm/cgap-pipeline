@@ -106,6 +106,19 @@
                           "name": "reference"
                       }
                   ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "threads",
+                  "source": [
+                      {
+                          "name": "threads"
+                      }
+                  ]
               }
           ],
           "meta": {
@@ -149,6 +162,19 @@
                       {
                           "name": "output",
                           "step": "bwa-mem-to-bam_no_unzip"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "count",
+                  "source": [
+                      {
+                          "name": "count"
                       }
                   ]
               }
