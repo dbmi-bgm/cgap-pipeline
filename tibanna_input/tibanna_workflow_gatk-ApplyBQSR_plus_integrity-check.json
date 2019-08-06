@@ -1,7 +1,7 @@
 {
   "args": {
     "app_name": "workflow_gatk-ApplyBQSR-check",
-    "app_version": "v2",
+    "app_version": "v1.0",
     "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
     "cwl_main_filename": "workflow_gatk-ApplyBQSR_plus_integrity-check.cwl",
     "cwl_child_filenames": ["gatk-ApplyBQSR.cwl", "integrity-check.cwl"],

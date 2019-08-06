@@ -1,7 +1,7 @@
 {
   "args": {
     "app_name": "workflow_bwa-mem_no_unzip-check",
-    "app_version": "v2",
+    "app_version": "v1.0",
     "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
     "cwl_main_filename": "workflow_bwa-mem-to-bam_no_unzip_plus_integrity-check.cwl",
     "cwl_child_filenames": ["bwa-mem-to-bam_no_unzip.cwl", "integrity-check.cwl"],

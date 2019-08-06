@@ -1,7 +1,7 @@
 {
   "args": {
     "app_name": "picard-readgroups",
-    "app_version": "v2",
+    "app_version": "v1.0",
     "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
     "cwl_main_filename": "picard-readgroups.cwl",
     "cwl_child_filenames": [],
