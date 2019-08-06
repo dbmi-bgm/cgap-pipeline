@@ -6,11 +6,11 @@ requirements:
   MultipleInputFeatureRequirement: {}
 
 inputs:
-  - id: reads_unzipped
+  - id: fastq_R1
     type: File
     doc: reads file
 
-  - id: mates_unzipped
+  - id: fastq_R2
     type: File
     doc: mate-reads file
 
@@ -56,10 +56,10 @@ steps:
   bwa-mem-to-bam_no_unzip:
     run: bwa-mem-to-bam_no_unzip.cwl
     in:
-      reads_unzipped:
-        source: reads_unzipped
-      mates_unzipped:
-        source: mates_unzipped
+      fastq_R1:
+        source: fastq_R1
+      fastq_R2:
+        source: fastq_R2
       reference:
         source: reference
       outdir:

@@ -6,12 +6,12 @@
       {
           "argument_format": "fastq",
           "argument_type": "Input file",
-          "workflow_argument_name": "reads_unzipped"
+          "workflow_argument_name": "fastq_R1"
       },
       {
           "argument_format": "fastq",
           "argument_type": "Input file",
-          "workflow_argument_name": "mates_unzipped"
+          "workflow_argument_name": "fastq_R2"
       },
       {
           "argument_format": "bwt",
@@ -75,7 +75,7 @@
                   "name": "reads_unzipped",
                   "source": [
                       {
-                          "name": "reads_unzipped"
+                          "name": "fastq_R1"
                       }
                   ]
               },
@@ -89,7 +89,7 @@
                   "name": "mates_unzipped",
                   "source": [
                       {
-                          "name": "mates_unzipped"
+                          "name": "fastq_R2"
                       }
                   ]
               },
@@ -98,7 +98,7 @@
                       "cardinality": "single",
                       "file_format": "bwt",
                       "global": true,
-                      "type": "data file"
+                      "type": "reference file"
                   },
                   "name": "reference",
                   "source": [
@@ -179,6 +179,6 @@
           ]
       }
   ],
-  "title": "Paired-end reads alignment to reference plus output integrity-check v8",
+  "title": "Paired-end reads alignment to reference plus output integrity-check",
   "uuid": "9e094699-561b-4396-8d6a-ffc45f98c5e1"
 }

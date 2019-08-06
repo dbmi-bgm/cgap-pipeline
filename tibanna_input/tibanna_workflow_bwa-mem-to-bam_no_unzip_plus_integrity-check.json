@@ -7,12 +7,12 @@
     "cwl_child_filenames": ["bwa-mem-to-bam_no_unzip.cwl", "integrity-check.cwl"],
     "cwl_version": "v1",
     "input_files": {
-      "reads_unzipped": {
+      "fastq_R1": {
         "bucket_name": "",
         "object_key": "",
         "unzip": ""
       },
-      "mates_unzipped": {
+      "fastq_R2": {
         "bucket_name": "",
         "object_key": "",
         "unzip": ""

@@ -14,13 +14,13 @@ hints:
 baseCommand: [bwa-mem-to-bam_no_unzip.sh]
 
 inputs:
-  - id: reads_unzipped
+  - id: fastq_R1
     type: File
     inputBinding:
       position: 1
     doc: reads file
 
-  - id: mates_unzipped
+  - id: fastq_R2
     type: File
     inputBinding:
       position: 2
