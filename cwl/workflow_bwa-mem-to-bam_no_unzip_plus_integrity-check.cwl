@@ -25,18 +25,22 @@ inputs:
 
   - id: outdir
     type: string
+    default: '.'
     doc: output directory
 
   - id: prefix
     type: string
+    default: 'raw'
     doc: prefix of the output file
 
   - id: threads
     type: int
+    default: 72
     doc: number of threads to be used
 
   - id: count
     type: int
+    default: 0
     doc: 1 count the number of alignments if EOF if present, 0 only check EOF
 
 outputs:
