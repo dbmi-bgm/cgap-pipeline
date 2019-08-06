@@ -1,0 +1,39 @@
+{
+    "parameters": {},
+    "workflow_uuid": "9e094699-561b-4396-8d6a-ffc45f98c5e1",
+    "input_files" : [
+       {
+           "object_key": "4DNFIF2Z7ITH.fastq.gz",
+           "workflow_argument_name": "fastq_R1",
+           "uuid": "7aa65ed7-9a07-4cc7-b58f-86895cab1b2c",
+           "bucket_name": "elasticbeanstalk-fourfront-webdev-files"
+       },
+       {
+           "object_key": "4DNFIR73A1NT.fastq.gz",
+           "workflow_argument_name": "fastq_R2",
+           "uuid": "f9f55bef-dac7-4cf3-b861-6d3938c5720e",
+           "bucket_name": "elasticbeanstalk-fourfront-webdev-files"
+       },
+       {
+           "object_key": "4DNFIYU3FC57.bwt",
+           "workflow_argument_name": "reference",
+           "uuid": "b24ed5ed-a037-48a0-a938-3fecfb90d0cf",
+           "bucket_name": "elasticbeanstalk-fourfront-webdev-files"
+       }
+    ],
+    "config": {
+      "instance_type": "c5n.18xlarge",
+      "ebs_size": "6.3x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_workflow_bwa-mem_no_unzip-check",
+      "behavior_on_capacity_limit": "wait_and_retry"
+    },
+    "_tibanna": {
+      "run_type": "workflow_bwa-mem_no_unzip-check",
+      "env": "fourfront-webdev"
+    },
+    "app_name": "workflow_bwa-mem_no_unzip-check",
+    "output_bucket": "elasticbeanstalk-fourfront-webdev-wfoutput"
+}
