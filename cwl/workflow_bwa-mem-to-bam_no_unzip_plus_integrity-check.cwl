@@ -25,12 +25,12 @@ inputs:
 
   - id: outdir
     type: string
-    default: '.'
+    default: "."
     doc: output directory
 
   - id: prefix
     type: string
-    default: 'raw'
+    default: "raw"
     doc: prefix of the output file
 
   - id: threads
