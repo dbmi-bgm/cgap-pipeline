@@ -1,0 +1,177 @@
+{
+  "accession": "4DNWFAO6TH4V",
+  "app_name": "workflow_bwa-mem_no_unzip-check",
+  "app_version": "v1.0",
+  "arguments": [
+      {
+          "argument_format": "fastq",
+          "argument_type": "Input file",
+          "workflow_argument_name": "reads_unzipped"
+      },
+      {
+          "argument_format": "fastq",
+          "argument_type": "Input file",
+          "workflow_argument_name": "mates_unzipped"
+      },
+      {
+          "argument_format": "bwt",
+          "argument_type": "Input file",
+          "workflow_argument_name": "reference"
+      },
+      {
+          "argument_format": "bam",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "output"
+      },
+      {
+          "argument_format": "tsv",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "output-check"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "threads"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "outdir"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "prefix"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "count"
+      }
+  ],
+  "award": "",
+  "category": ["processing"],
+  "cwl_child_filenames": ["bwa-mem-to-bam_no_unzip.cwl", "integrity-check.cwl"],
+  "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+  "cwl_main_filename": "workflow_bwa-mem-to-bam_no_unzip_plus_integrity-check.cwl",
+  "cwl_pointer": "",
+  "description": "Alignment of paired-end reads to reference genome. Processing from fastq input files to bam output file. An integrity check is performed on the output file",
+  "docker_image_name": "cgap/cgap",
+  "docker_registry_url": "https://hub.docker.com/",
+  "lab": "<LAB>",
+  "name": "<NAME>",
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "fastq",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "reads_unzipped",
+                  "source": [
+                      {
+                          "name": "reads_unzipped"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "fastq",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "mates_unzipped",
+                  "source": [
+                      {
+                          "name": "mates_unzipped"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "bwt",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "reference",
+                  "source": [
+                      {
+                          "name": "reference"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Alignment of paired-end reads to reference genome"
+              ],
+              "software_used": [
+                 "bwa_0.7.17"
+              ]
+          },
+          "name": "bwa-mem-to-bam_no_unzip",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "bam",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "output",
+                  "target": [
+                      {
+                          "name": "output"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "bam",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "output",
+                  "source": [
+                      {
+                          "name": "output"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Check integrity of output file"
+              ],
+              "software_used": [
+                 "samtools_1.9"
+              ]
+          },
+          "name": "integrity-check",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "tsv",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "output-check",
+                  "target": [
+                      {
+                          "name": "output-check"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "<TITLE>",
+  "uuid": ""
+}
