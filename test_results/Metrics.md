@@ -1,4 +1,4 @@
-#### bwa mem ####
+### bwa mem ###
 Job ID: 4KxysTYKBTxw
 
 Instance ID: 085fbae4be0d8c54a
@@ -31,7 +31,7 @@ Time: 12:09:28 - 18:45:21
 
 Price:
 
-#### AddReadgroups ####
+### AddReadgroups ###
 Job ID: FqnXb0tLyUM7
 
 Instance ID: 0ba509c0d3221799f
@@ -60,7 +60,7 @@ Time: 19:16:18 - 23:01:52
 
 Price:
 
-#### MarkDuplicates ####
+### MarkDuplicates ###
 Job ID: 989zvqgQTGYM
 
 Instance ID: 00503402aee6478fc
@@ -84,7 +84,7 @@ Parameters:
   - duplicate_pixel_distance [2500]
   - count [0]
 
-CPU usage:
+CPU and Memory usage:
 ![](dedup_cpu_memory.png)
 
 Maximum Disk Usage: 208 GiB
@@ -94,7 +94,7 @@ Time: 23:56:46 - 05:52:32
 
 Price:
 
-#### sort ####
+### sort ###
 Job ID: 5aA4SOpqpJyo
 
 Instance ID: 0fdc4992b10e1220d
@@ -115,7 +115,7 @@ Parameters:
   - num_threads [8]
   - count [0]
 
-CPU usage:
+CPU and Memory usage:
 ![](sort_cpu_memory.png)
 
 Maximum Disk Usage: 273 GiB
