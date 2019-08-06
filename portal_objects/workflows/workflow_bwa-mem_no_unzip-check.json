@@ -72,7 +72,7 @@
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "reads_unzipped",
+                  "name": "fastq_R1",
                   "source": [
                       {
                           "name": "fastq_R1"
@@ -86,7 +86,7 @@
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "mates_unzipped",
+                  "name": "fastq_R2",
                   "source": [
                       {
                           "name": "fastq_R2"
