@@ -124,3 +124,28 @@ Maximum Disk Usage: 273 GiB
 Time: 10:40:06 - 12:45:29
 
 Price:
+
+## BaseRecalibrator ##
+Job ID: vtequ2GITUuK
+
+Instance ID: 0d06f614eecef2f70
+
+Input files:
+  - soos-4dn-bucket/pipeline_cwl_TEST/PSC-01-003_sorted_rg_rm.bam (67.3 GiB)
+
+Output files:
+  - soos-4dn-bucket/pipeline_cwl_TEST/PSC-01-003_sorted_rg_rm.bam_recalibration_report (247.8 KiB)
+
+Instance type: t3.small
+
+Ebs size: 144 GiB (2x)
+
+CPU and Memory usage:
+![](bqsr_cpu_memory.png)
+
+Maximum Disk Usage: 72 GiB
+![](bqsr_disk.png)
+
+Time: 04:44:09 - 09:14:47
+
+Price:
