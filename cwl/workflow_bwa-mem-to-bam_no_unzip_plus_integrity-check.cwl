@@ -33,7 +33,7 @@ inputs:
     default: "raw"
     doc: prefix of the output file
 
-  - id: threads
+  - id: nthreads
     type: int
     default: 72
     doc: number of threads to be used
@@ -44,11 +44,11 @@ inputs:
     doc: 1 count the number of alignments if EOF if present, 0 only check EOF
 
 outputs:
-  output:
+  raw_bam:
     type: File
     outputSource: bwa-mem-to-bam_no_unzip/output
 
-  output-check:
+  raw_bam-check:
     type: File
     outputSource: integrity-check/output
 
@@ -66,8 +66,8 @@ steps:
         source: outdir
       prefix:
         source: prefix
-      threads:
-        source: threads
+      nthreads:
+        source: nthreads
     out: [output]
 
   integrity-check:

@@ -21,12 +21,12 @@
       {
           "argument_format": "bam",
           "argument_type": "Output processed file",
-          "workflow_argument_name": "output"
+          "workflow_argument_name": "raw_bam"
       },
       {
           "argument_type": "Output QC file",
-          "workflow_argument_name": "output-check",
-          "argument_to_be_attached_to": "output",
+          "workflow_argument_name": "raw_bam-check",
+          "argument_to_be_attached_to": "raw_bam",
           "qc_zipped": false,
           "qc_html": false,
           "qc_json": false,
@@ -35,7 +35,7 @@
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": "threads"
+          "workflow_argument_name": "nthreads"
       },
       {
           "argument_type": "parameter",
@@ -113,10 +113,10 @@
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "threads",
+                  "name": "nthreads",
                   "source": [
                       {
-                          "name": "threads"
+                          "name": "nthreads"
                       }
                   ]
               }
@@ -138,10 +138,10 @@
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "output",
+                  "name": "raw_bam",
                   "target": [
                       {
-                          "name": "output",
+                          "name": "raw_bam",
                           "step": "integrity-check"
                       }
                   ]
@@ -157,10 +157,10 @@
                       "global": false,
                       "type": "data file"
                   },
-                  "name": "output",
+                  "name": "raw_bam",
                   "source": [
                       {
-                          "name": "output",
+                          "name": "raw_bam",
                           "step": "bwa-mem-to-bam_no_unzip"
                       }
                   ]
@@ -195,10 +195,10 @@
                       "global": true,
                       "type": "report"
                   },
-                  "name": "output-check",
+                  "name": "raw_bam-check",
                   "target": [
                       {
-                          "name": "output-check"
+                          "name": "raw_bam-check"
                       }
                   ]
               }

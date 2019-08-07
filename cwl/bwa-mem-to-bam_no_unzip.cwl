@@ -50,7 +50,7 @@ inputs:
       position: 5
     doc: prefix of the output file
 
-  - id: threads
+  - id: nthreads
     type: int
     inputBinding:
       position: 6
