@@ -31,6 +31,7 @@ inputs:
 
   - id: count
     type: int
+    default: 0
     doc: 1 count the number of alignments if EOF if present, 0 only check EOF
 
 outputs:
