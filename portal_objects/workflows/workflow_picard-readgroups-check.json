@@ -1,22 +1,12 @@
 {
-  "accession": "4DNWFAO6TH4V",
-  "app_name": "workflow_bwa-mem_no_unzip-check",
+  "accession": "4DNWFLF4Y77F",
+  "app_name": "workflow_picard-readgroups-check",
   "app_version": "v8",
   "arguments": [
       {
-          "argument_format": "fastq",
+          "argument_format": "bam",
           "argument_type": "Input file",
-          "workflow_argument_name": "fastq_R1"
-      },
-      {
-          "argument_format": "fastq",
-          "argument_type": "Input file",
-          "workflow_argument_name": "fastq_R2"
-      },
-      {
-          "argument_format": "bwt",
-          "argument_type": "Input file",
-          "workflow_argument_name": "reference"
+          "workflow_argument_name": "input"
       },
       {
           "argument_format": "bam",
@@ -35,15 +25,23 @@
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": "threads"
+          "workflow_argument_name": "rgid"
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": "outdir"
+          "workflow_argument_name": "rglb"
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": "prefix"
+          "workflow_argument_name": "rgpl"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "rgpu"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "rgsm"
       },
       {
           "argument_type": "parameter",
@@ -52,58 +50,30 @@
   ],
   "award": "1U01CA200059-01",
   "category": ["processing"],
-  "cwl_child_filenames": ["bwa-mem-to-bam_no_unzip.cwl", "integrity-check.cwl"],
+  "cwl_child_filenames": ["picard-readgroups.cwl", "integrity-check.cwl"],
   "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
-  "cwl_main_filename": "workflow_bwa-mem-to-bam_no_unzip_plus_integrity-check.cwl",
+  "cwl_main_filename": "workflow_picard-readgroups_plus_integrity-check.cwl",
   "cwl_pointer": "",
-  "description": "Align paired-end reads to reference genome. Processing from fastq input files to bam output file. An integrity check is performed on the output file",
+  "description": "Add read groups to bam input file. An integrity check is performed on the output file",
   "docker_image_name": "cgap/cgap",
   "docker_registry_url": "https://hub.docker.com/",
   "lab": "4dn-dcic-lab",
-  "name": "workflow_bwa-mem_no_unzip-check_v8",
-  "aliases": ["4dn-dcic-lab:workflow_bwa-mem_no_unzip-check_v8"],
+  "name": "workflow_picard-readgroups-check_v8",
+  "aliases": ["4dn-dcic-lab:workflow_picard-readgroups-check_v8"],
   "steps": [
       {
           "inputs": [
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "fastq",
+                      "file_format": "bam",
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "fastq_R1",
+                  "name": "input",
                   "source": [
                       {
-                          "name": "fastq_R1"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "file_format": "fastq",
-                      "global": true,
-                      "type": "data file"
-                  },
-                  "name": "fastq_R2",
-                  "source": [
-                      {
-                          "name": "fastq_R2"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "file_format": "bwt",
-                      "global": true,
-                      "type": "reference file"
-                  },
-                  "name": "reference",
-                  "source": [
-                      {
-                          "name": "reference"
+                          "name": "input"
                       }
                   ]
               },
@@ -113,23 +83,75 @@
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "threads",
+                  "name": "rgid",
                   "source": [
                       {
-                          "name": "threads"
+                          "name": "rgid"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "rglb",
+                  "source": [
+                      {
+                          "name": "rglb"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "rgpl",
+                  "source": [
+                      {
+                          "name": "rgpl"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "rgpu",
+                  "source": [
+                      {
+                          "name": "rgpu"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "rgsm",
+                  "source": [
+                      {
+                          "name": "rgsm"
                       }
                   ]
               }
           ],
           "meta": {
               "analysis_step_types": [
-                  "Align paired-end reads to reference genome"
+                  "Add read groups to bam input file"
               ],
               "software_used": [
-                 "/softwares/42adeb1b-c46c-4ba8-b191-56036ddcd544"
+                 "/softwares/586cef39-6505-4bf6-920a-4b26a500d210"
               ]
           },
-          "name": "bwa-mem-to-bam_no_unzip",
+          "name": "picard-readgroups",
           "outputs": [
               {
                   "meta": {
@@ -161,7 +183,7 @@
                   "source": [
                       {
                           "name": "output",
-                          "step": "bwa-mem-to-bam_no_unzip"
+                          "step": "picard-readgroups"
                       }
                   ]
               },
@@ -205,6 +227,6 @@
           ]
       }
   ],
-  "title": "Paired-end reads alignment to reference plus output integrity-check",
-  "uuid": "9e094699-561b-4396-8d6a-ffc45f98c5e1"
+  "title": "Add read groups plus output integrity-check",
+  "uuid": "4af7dc3b-fa31-497e-a7fa-19722660cc47"
 }
