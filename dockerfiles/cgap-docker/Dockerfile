@@ -53,6 +53,10 @@ RUN chmod +x bwa-mem-to-bam_no_unzip.sh
 COPY integrity-check.sh .
 RUN chmod +x integrity-check.sh
 
+# picard-readgroups script
+COPY picard-readgroups.sh .
+RUN chmod +x picard-readgroups.sh
+
 # hc parallel script
 COPY hc-parallel.sh .
 RUN chmod +x hc-parallel.sh

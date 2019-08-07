@@ -9,44 +9,52 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:exp
+    dockerPull: cgap/cgap:v8
 
-baseCommand: [picard-readgroups.sh]
+baseCommand: [picard, AddOrReplaceReadGroups]
+
+arguments: ["O=", $(inputs.input.nameroot + "_rg.bam")]
 
 inputs:
   - id: input
     type: File
     inputBinding:
       position: 1
+      prefix: I=
 
   - id: rgid
     type: int
     inputBinding:
       position: 2
+      prefix: RGID=
     doc: read group ID
 
   - id: rglb
     type: string
     inputBinding:
       position: 3
+      prefix: RGLB=
     doc: read group library
 
   - id: rgpl
     type: string
     inputBinding:
       position: 4
+      prefix: RGPL=
     doc: read group platform
 
   - id: rgpu
     type: string
     inputBinding:
       position: 5
+      prefix: RGPU=
     doc: read group platform unit
 
   - id: rgsm
     type: int
     inputBinding:
       position: 6
+      prefix: RGSM=
     doc: read group sample name
 
 outputs:
