@@ -3,15 +3,15 @@
     "workflow_uuid": "9e094699-561b-4396-8d6a-ffc45f98c5e1",
     "input_files" : [
        {
-           "object_key": "4DNFIF2Z7ITH.fastq.gz",
+           "object_key": ".fastq.gz",
            "workflow_argument_name": "fastq_R1",
-           "uuid": "7aa65ed7-9a07-4cc7-b58f-86895cab1b2c",
+           "uuid": "",
            "bucket_name": "elasticbeanstalk-fourfront-webdev-files"
        },
        {
-           "object_key": "4DNFIR73A1NT.fastq.gz",
+           "object_key": ".fastq.gz",
            "workflow_argument_name": "fastq_R2",
-           "uuid": "f9f55bef-dac7-4cf3-b861-6d3938c5720e",
+           "uuid": "",
            "bucket_name": "elasticbeanstalk-fourfront-webdev-files"
        },
        {
