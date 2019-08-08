@@ -149,3 +149,36 @@ Maximum Disk Usage: 72 GiB
 Time: 04:44:09 - 09:14:47
 
 Price:
+
+## ApplyBQSR ##
+Job ID: XtHCdBTSnWMH
+
+Instance ID: 0e29b90e20aa1b5ec
+
+Input files:
+  - soos-4dn-bucket/pipeline_cwl_TEST/PSC-01-003_sorted_rg_rm.bam (67.3 GiB)
+  - soos-4dn-bucket/pipeline_cwl_TEST/PSC-01-003_sorted_rg_rm.bam_recalibration_report (247.8 KiB)
+
+Output files:
+  - soos-4dn-bucket/pipeline_cwl_TEST/PSC-01-003_sorted_rg_rm_recalibrated_full.bam
+  - soos-4dn-bucket/pipeline_cwl_TEST/PSC-01-003_sorted_rg_rm_recalibrated_full.bam_integrity_check
+
+Instance type: t3.micro
+
+Ebs size: 176 GiB (2.5x)
+
+Parameters:
+  - static-quantized-quals_1 [10]
+  - static-quantized-quals_2 [20]
+  - static-quantized-quals_3 [30]
+  - count [0]
+
+CPU and Memory usage:
+![](applybqsr_cpu_memory.png)
+
+Maximum Disk Usage: 142 GiB
+![](applybqsr_disk.png)
+
+Time: 12:53:36 - 19:59:28
+
+Price:

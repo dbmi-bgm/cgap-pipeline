@@ -42,7 +42,7 @@ RUN wget https://github.com/lh3/bwa/archive/v0.7.17.tar.gz && \
     cd .. && \
     ln -s bwa-0.7.17 bwa
 
-# bwa-mem script
+# bwa mem script
 COPY bwa-mem-to-bam.sh .
 RUN chmod +x bwa-mem-to-bam.sh
 
@@ -52,6 +52,10 @@ RUN chmod +x bwa-mem-to-bam_no_unzip.sh
 # integrity check script
 COPY integrity-check.sh .
 RUN chmod +x integrity-check.sh
+
+# add read groups script
+COPY AddReadGroups.py .
+RUN chmod +x AddReadGroups.py
 
 # hc parallel script
 COPY hc-parallel.sh .
