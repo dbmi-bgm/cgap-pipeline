@@ -160,7 +160,7 @@ Input files:
   - soos-4dn-bucket/pipeline_cwl_TEST/PSC-01-003_sorted_rg_rm.bam_recalibration_report (247.8 KiB)
 
 Output files:
-  - soos-4dn-bucket/pipeline_cwl_TEST/PSC-01-003_sorted_rg_rm_recalibrated_full.bam
+  - soos-4dn-bucket/pipeline_cwl_TEST/PSC-01-003_sorted_rg_rm_recalibrated_full.bam (71.3 GiB)
   - soos-4dn-bucket/pipeline_cwl_TEST/PSC-01-003_sorted_rg_rm_recalibrated_full.bam_integrity_check
 
 Instance type: t3.micro
