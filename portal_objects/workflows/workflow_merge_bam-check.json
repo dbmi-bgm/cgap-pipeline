@@ -1,0 +1,143 @@
+{
+  "accession": "4DNWF3HBYC89",
+  "app_name": "workflow_merge_bam-check",
+  "app_version": "v8",
+  "arguments": [
+      {
+          "argument_format": "bam",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_bams"
+      },
+      {
+          "argument_format": "bam",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "merged_bam"
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "merged_bam-check",
+          "argument_to_be_attached_to": "merged_bam",
+          "qc_zipped": false,
+          "qc_html": false,
+          "qc_json": false,
+          "qc_table": true,
+          "qc_type": "quality_metric_bamcheck"
+      }
+  ],
+  "award": "1U01CA200059-01",
+  "category": ["processing"],
+  "cwl_child_filenames": ["merge_bam.cwl", "integrity-check.cwl"],
+  "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+  "cwl_main_filename": "workflow_merge_bam_plus_integrity-check.cwl",
+  "cwl_pointer": "",
+  "description": "Merge bam input files. An integrity check is performed on the output file",
+  "docker_image_name": "cgap/cgap:v8",
+  "docker_registry_url": "https://hub.docker.com/",
+  "lab": "4dn-dcic-lab",
+  "name": "workflow_merge_bam-check_v8",
+  "aliases": ["4dn-dcic-lab:workflow_merge_bam-check_v8"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "array",
+                      "file_format": "bam",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_bams",
+                  "source": [
+                      {
+                          "name": "input_bams"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Merge bam input files"
+              ],
+              "software_used": [
+                 "/softwares/3f2d3b0e-0365-4212-9468-c16ad9531c4d"
+              ]
+          },
+          "name": "merge_bam",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "bam",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "merged_bam",
+                  "target": [
+                      {
+                          "name": "output",
+                          "step": "integrity-check"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "bam",
+                      "global": false,
+                      "type": "data file"
+                  },
+                  "name": "merged_bam",
+                  "source": [
+                      {
+                          "name": "merged_bam",
+                          "step": "merge_bam"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "count",
+                  "source": [
+                      {
+                          "name": "count"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Check integrity of output file"
+              ],
+              "software_used": [
+                 "/softwares/3f2d3b0e-0365-4212-9468-c16ad9531c4d"
+              ]
+          },
+          "name": "integrity-check",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "output-check",
+                  "target": [
+                      {
+                          "name": "output-check"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Merge bam files plus output integrity-check",
+  "uuid": "30802d8c-20c3-4eea-82dd-dd34621569c6"
+}

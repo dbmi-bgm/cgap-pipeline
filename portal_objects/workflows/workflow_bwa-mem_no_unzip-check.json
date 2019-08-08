@@ -193,7 +193,7 @@
                   "meta": {
                       "cardinality": "single",
                       "global": true,
-                      "type": "report"
+                      "type": "QC"
                   },
                   "name": "raw_bam-check",
                   "target": [

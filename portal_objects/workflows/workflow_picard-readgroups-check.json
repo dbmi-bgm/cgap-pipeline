@@ -215,7 +215,7 @@
                   "meta": {
                       "cardinality": "single",
                       "global": true,
-                      "type": "report"
+                      "type": "QC"
                   },
                   "name": "output-check",
                   "target": [
