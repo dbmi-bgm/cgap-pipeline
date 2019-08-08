@@ -15,6 +15,7 @@ inputs:
 
   - id: nthreads
     type: int
+    default: 8
     doc: number of threads
 
   - id: count
