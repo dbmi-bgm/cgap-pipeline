@@ -43,9 +43,7 @@ inputs:
         items: "File"
         type: "array"
     inputBinding:
-      itemSeparator: " "
       position: 4
-      separate: true
     doc: input bam files
 
 outputs:
