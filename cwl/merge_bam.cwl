@@ -38,11 +38,15 @@ inputs:
     doc: output file name
 
   - id: input_bams
-    type: array
-    items:
-      type: File
+    type: 
+      - 
+        items: "File"
+        type: "array"
     inputBinding:
+      itemSeparator: " "
       position: 4
+      separate: true
+    doc: input bam files
 
 outputs:
   - id: merged_bam
