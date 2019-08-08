@@ -96,9 +96,7 @@
               "analysis_step_types": [
                   "Add read groups to bam input file"
               ],
-              "software_used": [
-                 "/softwares/586cef39-6505-4bf6-920a-4b26a500d210"
-              ]
+              "software_used": []
           },
           "name": "readgroups",
           "outputs": [
