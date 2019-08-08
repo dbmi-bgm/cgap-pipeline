@@ -29,7 +29,6 @@ inputs:
 
   - id: nthreads
     type: int
-    default: 8
     inputBinding:
       position: 3
       prefix: -t
