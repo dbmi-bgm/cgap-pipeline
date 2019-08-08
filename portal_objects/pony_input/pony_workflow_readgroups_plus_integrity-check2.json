@@ -1,5 +1,5 @@
 {
-    "parameters": {},
+    "parameters": {"sample_name": "mysample"},
     "workflow_uuid": "548e63a4-1936-4f68-8e8d-8e4658767911",
     "input_files" : [
        {
