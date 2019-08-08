@@ -6,7 +6,7 @@ requirements:
   MultipleInputFeatureRequirement: {}
 
 inputs:
-  - id: input
+  - id: input_bam
     type: File
 
   - id: sample_name
@@ -35,8 +35,8 @@ steps:
   readgroups:
     run: readgroups.cwl
     in:
-      input:
-        source: input
+      input_bam:
+        source: input_bam
       sample_name:
         source: sample_name
       nthreads:
