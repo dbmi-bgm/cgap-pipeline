@@ -27,7 +27,7 @@
   "award": "1U01CA200059-01",
   "category": ["processing"],
   "cwl_child_filenames": ["merge_bam.cwl", "integrity-check.cwl"],
-  "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
   "cwl_main_filename": "workflow_merge_bam_plus_integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Merge bam input files. An integrity check is performed on the output file",

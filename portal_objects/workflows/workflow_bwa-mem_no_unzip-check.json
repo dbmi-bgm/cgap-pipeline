@@ -53,7 +53,7 @@
   "award": "1U01CA200059-01",
   "category": ["processing"],
   "cwl_child_filenames": ["bwa-mem-to-bam_no_unzip.cwl", "integrity-check.cwl"],
-  "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
   "cwl_main_filename": "workflow_bwa-mem-to-bam_no_unzip_plus_integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Align paired-end reads to reference genome. Processing from fastq input files to bam output file. An integrity check is performed on the output file",

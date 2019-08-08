@@ -1,6 +1,6 @@
 {
     "parameters": {},
-    "workflow_uuid": "4dn-dcic-lab:workflow_readgroups-check_v9",
+    "workflow_uuid": "548e63a4-1936-4f68-8e8d-8e4658767911",
     "input_files" : [
        {
            "object_key": "4DNFIEY12JWK.bam",
