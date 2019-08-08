@@ -3,7 +3,7 @@
     "workflow_uuid": "4dn-dcic-lab:workflow_merge_bam-check_v8",
     "input_files" : [
        {
-           "object_key": ["4DNFIEY12JWK.bam", "4DNFI2XG8CNX"],
+           "object_key": ["4DNFIEY12JWK.bam", "4DNFI2XG8CNX.bam"],
            "workflow_argument_name": "input_bams",
            "uuid": ["77fb96b5-904b-4609-bf58-e43defbb943f", "1117a106-03bf-43c1-892d-e85f211e1d94"],
            "bucket_name": "elasticbeanstalk-fourfront-webdev-wfoutput"
