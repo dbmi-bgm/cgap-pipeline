@@ -1,0 +1,32 @@
+{
+  "args": {
+    "app_name": "merge_bam",
+    "app_version": "v1.0",
+    "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+    "cwl_main_filename": "merge_bam.cwl",
+    "cwl_child_filenames": [],
+    "cwl_version": "v1",
+    "input_files": {
+      "input_bams": {
+        "bucket_name": "soos-4dn-bucket",
+        "object_key": ["cgaptest/test9/raw_down03x_1.bam", "cgaptest/test9/raw_down03x_2.bam"]
+      }
+    },
+    "secondary_files": {},
+    "input_parameters": {},
+    "output_S3_bucket": "soos-4dn-bucket",
+    "output_target": {
+      "merged_bam": "cgaptest/test9-cwl/raw_down06x_merged.bam"
+    },
+    "secondary_output_target": {}
+  },
+  "config": {
+    "instance_type": "t3.micro",
+    "ebs_size": "2.2x",
+    "EBS_optimized": true,
+    "spot_instance": true,
+    "log_bucket": "tibanna-output",
+    "run_name": "run_merge-bam",
+    "behavior_on_capacity_limit": "wait_and_retry"
+  }
+}
