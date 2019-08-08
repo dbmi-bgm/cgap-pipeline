@@ -4,7 +4,7 @@
     "app_version": "v1.0",
     "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
     "cwl_main_filename": "workflow_merge_bam_plus_integrity-check.cwl",
-    "cwl_child_filenames": [],
+    "cwl_child_filenames": ["merge_bam.cwl", "integrity-check.cwl"],
     "cwl_version": "v1",
     "input_files": {
       "input_bams": {
