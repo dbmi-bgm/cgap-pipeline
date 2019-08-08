@@ -26,9 +26,9 @@ inputs:
 outputs:
   bam_w_readgroups:
     type: File
-    outputSource: readgroups/bam_w_readgroups
+    outputSource: readgroups/output
 
-  output-check:
+  bam_w_readgroups-check:
     type: File
     outputSource: integrity-check/output
 
@@ -42,7 +42,7 @@ steps:
         source: sample_name
       nthreads:
         source: nthreads
-    out: [bam_w_readgroups]
+    out: [output]
 
   integrity-check:
     run: integrity-check.cwl

@@ -1,22 +1,27 @@
 {
-  "accession": "4DNWF3GB8UI2",
-  "app_name": "workflow_readgroups-check",
-  "app_version": "v9",
+  "accession": "4DNWFR5HG6J1",
+  "app_name": "workflow_picard-markduplicates-check",
+  "app_version": "v8",
   "arguments": [
       {
           "argument_format": "bam",
           "argument_type": "Input file",
-          "workflow_argument_name": "input_bam"
+          "workflow_argument_name": "input"
       },
       {
           "argument_format": "bam",
           "argument_type": "Output processed file",
-          "workflow_argument_name": "bam_w_readgroups"
+          "workflow_argument_name": "output"
+      },
+      {
+          "argument_format": "",
+          "argument_type": "",
+          "workflow_argument_name": "out_metrics"
       },
       {
           "argument_type": "Output QC file",
-          "workflow_argument_name": "bam_w_readgroups-check",
-          "argument_to_be_attached_to": "bam_w_readgroups",
+          "workflow_argument_name": "output-check",
+          "argument_to_be_attached_to": "output",
           "qc_zipped": false,
           "qc_html": false,
           "qc_json": false,
@@ -25,11 +30,19 @@
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": "sample_name"
+          "workflow_argument_name": "xmx"
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": "nthreads"
+          "workflow_argument_name": "xms"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "max_records_in_ram"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "duplicate_pixel_distance"
       },
       {
           "argument_type": "parameter",
@@ -38,16 +51,16 @@
   ],
   "award": "1U01CA200059-01",
   "category": ["processing"],
-  "cwl_child_filenames": ["readgroups.cwl", "integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
-  "cwl_main_filename": "workflow_readgroups_plus_integrity-check.cwl",
+  "cwl_child_filenames": ["picard-markduplicates.cwl", "integrity-check.cwl"],
+  "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+  "cwl_main_filename": "workflow_picard-markduplicates_plus_integrity-check.cwl",
   "cwl_pointer": "",
-  "description": "Add read groups to bam input file. An integrity check is performed on the output file",
+  "description": "Mark duplicates in bam input file. An integrity check is performed on the output file",
   "docker_image_name": "cgap/cgap",
   "docker_registry_url": "https://hub.docker.com/",
   "lab": "4dn-dcic-lab",
-  "name": "workflow_readgroups-check_v8",
-  "aliases": ["4dn-dcic-lab:workflow_readgroups-check_v8"],
+  "name": "workflow_picard-markduplicates-check_v8",
+  "aliases": ["4dn-dcic-lab:workflow_picard-markduplicates-check_v8"],
   "steps": [
       {
           "inputs": [
@@ -58,10 +71,10 @@
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "input_bam",
+                  "name": "input",
                   "source": [
                       {
-                          "name": "input_bam"
+                          "name": "input"
                       }
                   ]
               },
@@ -71,10 +84,10 @@
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "sample_name",
+                  "name": "rgid",
                   "source": [
                       {
-                          "name": "sample_name"
+                          "name": "rgid"
                       }
                   ]
               },
@@ -84,21 +97,62 @@
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "nthreads",
+                  "name": "rglb",
                   "source": [
                       {
-                          "name": "nthreads"
+                          "name": "rglb"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "rgpl",
+                  "source": [
+                      {
+                          "name": "rgpl"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "rgpu",
+                  "source": [
+                      {
+                          "name": "rgpu"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "rgsm",
+                  "source": [
+                      {
+                          "name": "rgsm"
                       }
                   ]
               }
           ],
           "meta": {
               "analysis_step_types": [
-                  "Add read groups to bam input file"
+                  "Mark duplicates in bam input file"
               ],
-              "software_used": []
+              "software_used": [
+                 "/softwares/586cef39-6505-4bf6-920a-4b26a500d210"
+              ]
           },
-          "name": "readgroups",
+          "name": "picard-readgroups",
           "outputs": [
               {
                   "meta": {
@@ -107,10 +161,10 @@
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "bam_w_readgroups",
+                  "name": "output",
                   "target": [
                       {
-                          "name": "bam_w_readgroups",
+                          "name": "output",
                           "step": "integrity-check"
                       }
                   ]
@@ -126,11 +180,11 @@
                       "global": false,
                       "type": "data file"
                   },
-                  "name": "bam_w_readgroups",
+                  "name": "output",
                   "source": [
                       {
-                          "name": "bam_w_readgroups",
-                          "step": "readgroups"
+                          "name": "output",
+                          "step": "picard-readgroups"
                       }
                   ]
               },
@@ -162,12 +216,12 @@
                   "meta": {
                       "cardinality": "single",
                       "global": true,
-                      "type": "QC"
+                      "type": "report"
                   },
-                  "name": "bam_w_readgroups-check",
+                  "name": "output-check",
                   "target": [
                       {
-                          "name": "bam_w_readgroups-check"
+                          "name": "output-check"
                       }
                   ]
               }
@@ -175,5 +229,5 @@
       }
   ],
   "title": "Add read groups plus output integrity-check",
-  "uuid": "548e63a4-1936-4f68-8e8d-8e4658767911"
+  "uuid": "4af7dc3b-fa31-497e-a7fa-19722660cc47"
 }

@@ -35,7 +35,7 @@ inputs:
     doc: number of threads
 
 outputs:
-  - id: bam_w_readgroups
+  - id: output
     type: File
     outputBinding:
       glob: $(inputs.input_bam.nameroot + "_rg.bam")
