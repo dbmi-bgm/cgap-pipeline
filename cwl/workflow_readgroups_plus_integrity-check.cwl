@@ -48,7 +48,7 @@ steps:
     run: integrity-check.cwl
     in:
       input:
-        source: readgroups/bam_w_readgroups
+        source: readgroups/output
       count:
         source: count
     out: [output]
