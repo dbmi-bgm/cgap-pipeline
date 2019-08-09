@@ -1,0 +1,6 @@
+{
+  "input_bam": {"class": "File", "path": "../files/raw_down0003x_1.bam"},
+  "xmx": "2G",
+  "xms": "2G"
+}
+

@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v8
+    dockerPull: cgap/cgap:v9
 
 baseCommand: [picard, MarkDuplicates]
 
@@ -26,11 +26,13 @@ inputs:
     type: string
     inputBinding:
       position: 2
+      prefix: -Xmx
 
   - id: xms
     type: string
     inputBinding:
       position: 3
+      prefix: -Xms
 
   - id: max_records_in_ram
     type: int
