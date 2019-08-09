@@ -13,24 +13,52 @@ hints:
 
 baseCommand: [picard, MarkDuplicates]
 
-arguments: ["O=", $(inputs.input.nameroot + "_rm.bam"), "M=", "duplicate_metrics.txt", "TMP_DIR=", "/tmp", "ASSUME_SORT_ORDER=", "queryname"]
-
 inputs:
   - id: input
     type: File
     inputBinding:
-      position: 1
+      position: 3
       prefix: I=
 
   - id: xmx
     type: string
     inputBinding:
-      position: 2
+      separate: false
+      prefix: -Xmx
 
   - id: xms
     type: string
     inputBinding:
-      position: 3
+      separate: false
+      prefix: -Xms
+
+  - id: dupmarked_bam_name
+    type: string
+    default: "./dupmarked.bam"
+    inputBinding:
+      position: 6
+      prefix: O=
+  
+  - id: metrics_file_name
+    type: string
+    default: duplicate_metrics.txt
+    inputBinding:
+      position: 7
+      prefix: M=
+
+  - id: tmpdir
+    type: string
+    default: /tmp
+    inputBinding:
+      position: 8
+      prefix: TMP_DIR=
+
+  - id: sort_order
+    type: string
+    default: queryname
+    inputBinding:
+      position: 9
+      prefix: ASSUME_SORT_ORDER=
 
   - id: max_records_in_ram
     type: int
