@@ -1,6 +1,6 @@
 {
     "parameters": {},
-    "workflow_uuid": "",
+    "workflow_uuid": "560f5194-cd3a-4799-9b1a-6a2d2c371c89",
     "input_files" : [
        {
            "object_key": "4DNFIEY12JWK.bam",
