@@ -26,7 +26,7 @@ outputs:
   - id: bam_index
     type: File
     outputBinding:
-      glob: $(inputs.input.basename + ".bai")
+      glob: $(inputs.bam.basename + ".bai")
 
 doc: |
   run samtools index to create a index .bai file from input .bam file
