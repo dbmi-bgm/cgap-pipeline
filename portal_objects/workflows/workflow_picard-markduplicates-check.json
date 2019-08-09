@@ -1,27 +1,27 @@
 {
   "accession": "4DNWFR5HG6J1",
   "app_name": "workflow_picard-markduplicates-check",
-  "app_version": "v8",
+  "app_version": "v9",
   "arguments": [
       {
           "argument_format": "bam",
           "argument_type": "Input file",
-          "workflow_argument_name": "input"
+          "workflow_argument_name": "input_bam"
       },
       {
           "argument_format": "bam",
           "argument_type": "Output processed file",
-          "workflow_argument_name": "output"
+          "workflow_argument_name": "dupmarked_bam"
       },
       {
-          "argument_format": "",
-          "argument_type": "",
-          "workflow_argument_name": "out_metrics"
+          "argument_format": "txt",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "duplicate_metrics"
       },
       {
           "argument_type": "Output QC file",
-          "workflow_argument_name": "output-check",
-          "argument_to_be_attached_to": "output",
+          "workflow_argument_name": "dupmarked_bam-check",
+          "argument_to_be_attached_to": "dupmarked_bam",
           "qc_zipped": false,
           "qc_html": false,
           "qc_json": false,
@@ -59,8 +59,8 @@
   "docker_image_name": "cgap/cgap",
   "docker_registry_url": "https://hub.docker.com/",
   "lab": "4dn-dcic-lab",
-  "name": "workflow_picard-markduplicates-check_v8",
-  "aliases": ["4dn-dcic-lab:workflow_picard-markduplicates-check_v8"],
+  "name": "workflow_picard-markduplicates-check_v9",
+  "aliases": ["4dn-dcic-lab:workflow_picard-markduplicates-check_v9"],
   "steps": [
       {
           "inputs": [
@@ -84,10 +84,10 @@
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "rgid",
+                  "name": "xmx",
                   "source": [
                       {
-                          "name": "rgid"
+                          "name": "xmx"
                       }
                   ]
               },
@@ -97,10 +97,10 @@
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "rglb",
+                  "name": "xms",
                   "source": [
                       {
-                          "name": "rglb"
+                          "name": "xms"
                       }
                   ]
               },
@@ -110,10 +110,10 @@
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "rgpl",
+                  "name": "max_records_in_ram",
                   "source": [
                       {
-                          "name": "rgpl"
+                          "name": "max_records_in_ram"
                       }
                   ]
               },
@@ -123,23 +123,10 @@
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "rgpu",
+                  "name": "duplicate_pixel_distance",
                   "source": [
                       {
-                          "name": "rgpu"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "parameter"
-                  },
-                  "name": "rgsm",
-                  "source": [
-                      {
-                          "name": "rgsm"
+                          "name": "duplicate_pixel_distance"
                       }
                   ]
               }
@@ -152,7 +139,7 @@
                  "/softwares/586cef39-6505-4bf6-920a-4b26a500d210"
               ]
           },
-          "name": "picard-readgroups",
+          "name": "picard-markduplicates",
           "outputs": [
               {
                   "meta": {
@@ -161,11 +148,25 @@
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "output",
+                  "name": "dupmarked_bam",
                   "target": [
                       {
                           "name": "output",
                           "step": "integrity-check"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "txt",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "duplicate_metrics",
+                  "target": [
+                      {
+                          "name": "duplicate_metrics"
                       }
                   ]
               }
@@ -183,8 +184,8 @@
                   "name": "output",
                   "source": [
                       {
-                          "name": "output",
-                          "step": "picard-readgroups"
+                          "name": "dupmarked_bam",
+                          "step": "picard-markduplicats"
                       }
                   ]
               },
@@ -218,16 +219,16 @@
                       "global": true,
                       "type": "report"
                   },
-                  "name": "output-check",
+                  "name": "dupmarked_bam-check",
                   "target": [
                       {
-                          "name": "output-check"
+                          "name": "dupmarked_bam-check"
                       }
                   ]
               }
           ]
       }
   ],
-  "title": "Add read groups plus output integrity-check",
-  "uuid": "4af7dc3b-fa31-497e-a7fa-19722660cc47"
+  "title": "Mark duplicates plus output integrity-check",
+  "uuid": "beb2b340-94ee-4afe-b4e3-66caaf063397"
 }
