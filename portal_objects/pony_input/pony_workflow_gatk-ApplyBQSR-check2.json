@@ -1,0 +1,43 @@
+{
+    "parameters": {
+      "static-quantized-quals_1": 10,
+      "static-quantized-quals_2": 20,
+      "static-quantized-quals_3": 30
+    },
+    "workflow_uuid": "6c9c6f49-f954-4e76-8dfb-d385cddcebd6",
+    "input_files" : [
+       {
+           "object_key": "4DNFICWHCAIP.bam",
+           "workflow_argument_name": "input_bam",
+           "uuid": "c48742ae-1ff8-4e2f-987e-a1d8f41c257d",
+           "bucket_name": "elasticbeanstalk-fourfront-webdev-wfoutput"
+       },
+       {
+           "object_key": "4DNFIBH13WES.fa",
+           "workflow_argument_name": "reference",
+           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
+           "bucket_name": "elasticbeanstalk-fourfront-webdev-files"
+       },
+       {
+           "object_key": "4DNFIJLF25D1.txt",
+           "workflow_argument_name": "recalibration_report",
+           "uuid": "7a696b81-f486-4bc7-8b6d-11fca4ca5193",
+           "bucket_name": "elasticbeanstalk-fourfront-webdev-wfoutput"
+       }
+    ],
+    "config": {
+      "instance_type": "t3.micro",
+      "ebs_size": "2.5x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_workflow_gatk-ApplyBQSR-check",
+      "behavior_on_capacity_limit": "wait_and_retry"
+    },
+    "_tibanna": {
+      "run_type": "workflow_gatk-ApplyBQSR-check",
+      "env": "fourfront-webdev"
+    },
+    "app_name": "workflow_gatk-ApplyBQSR-check",
+    "output_bucket": "elasticbeanstalk-fourfront-webdev-wfoutput"
+}
