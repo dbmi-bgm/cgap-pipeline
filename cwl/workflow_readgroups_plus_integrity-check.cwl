@@ -36,7 +36,7 @@ steps:
   readgroups:
     run: readgroups.cwl
     in:
-      input_bam:
+      input:
         source: input_bam
       sample_name:
         source: sample_name
