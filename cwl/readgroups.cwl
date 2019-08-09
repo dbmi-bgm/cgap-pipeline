@@ -38,7 +38,7 @@ outputs:
   - id: output
     type: File
     outputBinding:
-      glob: $(inputs.input_bam.nameroot + "_rg.bam")
+      glob: $(inputs.input.nameroot + "_rg.bam")
 
 doc: |
   run python3 AddReadGroups.py -i input -s sample_name -t nthreads to mark and assign reads from a .bam input file to a new read group into a output _rg.bam file
