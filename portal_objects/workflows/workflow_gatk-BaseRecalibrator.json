@@ -9,22 +9,22 @@
           "workflow_argument_name": "input_bam"
       },
       {
-          "argument_format": "",
+          "argument_format": "fa",
           "argument_type": "Input file",
           "workflow_argument_name": "reference"
       },
       {
-          "argument_format": "",
+          "argument_format": "vcf_gz",
           "argument_type": "Input file",
           "workflow_argument_name": "known-sites-snp"
       },
       {
-          "argument_format": "",
+          "argument_format": "vcf",
           "argument_type": "Input file",
           "workflow_argument_name": "known-sites-indels"
       },
       {
-          "argument_format": "",
+          "argument_format": "txt",
           "argument_type": "Output processed file",
           "workflow_argument_name": "recalibration_report"
       }
@@ -61,7 +61,7 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "",
+                      "file_format": "fa",
                       "global": true,
                       "type": "data file"
                   },
@@ -75,7 +75,7 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "",
+                      "file_format": "vcf_gz",
                       "global": true,
                       "type": "data file"
                   },
@@ -89,7 +89,7 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "",
+                      "file_format": "vcf",
                       "global": true,
                       "type": "data file"
                   },
@@ -114,7 +114,7 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "",
+                      "file_format": "txt",
                       "global": true,
                       "type": "data file"
                   },
