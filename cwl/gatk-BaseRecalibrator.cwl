@@ -9,14 +9,14 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v8
+    dockerPull: cgap/cgap:v9
 
 baseCommand: [gatk, BaseRecalibrator]
 
 arguments: ["-O", $(inputs.input.nameroot + "_recalibration_report"), "--use-original-qualities"]
 
 inputs:
-  - id: input
+  - id: input_bam
     type: File
     inputBinding:
       position: 1
@@ -52,7 +52,7 @@ inputs:
     doc: expect the path to the indel .vcf file
 
 outputs:
-  - id: output
+  - id: recalibration_report
     type: File
     outputBinding:
       glob: $(inputs.input.nameroot + "_recalibration_report")
