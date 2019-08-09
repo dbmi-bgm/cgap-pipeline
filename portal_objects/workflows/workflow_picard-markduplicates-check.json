@@ -52,7 +52,7 @@
   "award": "1U01CA200059-01",
   "category": ["processing"],
   "cwl_child_filenames": ["picard-markduplicates.cwl", "integrity-check.cwl"],
-  "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
   "cwl_main_filename": "workflow_picard-markduplicates_plus_integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Mark duplicates in bam input file. An integrity check is performed on the output file",
