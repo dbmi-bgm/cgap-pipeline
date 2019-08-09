@@ -13,6 +13,8 @@ hints:
 
 baseCommand: [picard, MarkDuplicates]
 
+arguments: ["O=", $(inputs.input.nameroot + "_rm.bam")]
+
 inputs:
   - id: input
     type: File
@@ -32,13 +34,6 @@ inputs:
       separate: false
       prefix: -Xms
 
-  - id: dupmarked_bam_name
-    type: string
-    default: "./dupmarked.bam"
-    inputBinding:
-      position: 6
-      prefix: O=
-  
   - id: metrics_file_name
     type: string
     default: duplicate_metrics.txt
