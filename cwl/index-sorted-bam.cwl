@@ -7,23 +7,23 @@ class: CommandLineTool
 requirements:
   - class: InlineJavascriptRequirement
   - class: InitialWorkDirRequirement
-    listing: [$(inputs.input)]
+    listing: [$(inputs.bam)]
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v8
+    dockerPull: cgap/cgap:v9
 
 baseCommand: [samtools, index]
 
 inputs:
-  - id: input
+  - id: bam
     type: File
     inputBinding:
       position: 1
       valueFrom: $(self.basename)
 
 outputs:
-  - id: output
+  - id: bam_index
     type: File
     outputBinding:
       glob: $(inputs.input.basename + ".bai")
