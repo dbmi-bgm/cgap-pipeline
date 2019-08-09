@@ -1,0 +1,236 @@
+{
+  "accession": "4DNWFX9IPD4A",
+  "app_name": "workflow_gatk-ApplyBQSR-check",
+  "app_version": "v9",
+  "arguments": [
+      {
+          "argument_format": "bam",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_bam"
+      },
+      {
+          "argument_format": "fa",
+          "argument_type": "Input file",
+          "workflow_argument_name": "reference"
+      },
+      {
+          "argument_format": "txt",
+          "argument_type": "Input file",
+          "workflow_argument_name": "recalibration_report"
+      },
+      {
+          "argument_format": "bam",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "recalibrated_bam"
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "recalibrated_bam-check",
+          "argument_to_be_attached_to": "recalibrated_bam",
+          "qc_zipped": false,
+          "qc_html": false,
+          "qc_json": false,
+          "qc_table": true,
+          "qc_type": "quality_metric_bamcheck"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "static-quantized-quals_1"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "static-quantized-quals_2"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "static-quantized-quals_3"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "count"
+      }
+  ],
+  "award": "1U01CA200059-01",
+  "category": ["processing"],
+  "cwl_child_filenames": ["gatk-ApplyBQSR.cwl", "integrity-check.cwl"],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+  "cwl_main_filename": "workflow_gatk-ApplyBQSR_plus_integrity-check.cwl",
+  "cwl_pointer": "",
+  "description": "Run gatk ApplyBQSR on bam input file. Produce a recalibrated bam file. An integrity check is performed on the output file",
+  "docker_image_name": "cgap/cgap",
+  "docker_registry_url": "https://hub.docker.com/",
+  "lab": "4dn-dcic-lab",
+  "name": "workflow_gatk-ApplyBQSR-check_v9",
+  "aliases": ["4dn-dcic-lab:workflow_gatk-ApplyBQSR-check_v9"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "bam",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_bam",
+                  "source": [
+                      {
+                          "name": "input_bam"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "txt",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "recalibration_report",
+                  "source": [
+                      {
+                          "name": "recalibration_report"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "fa",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "reference",
+                  "source": [
+                      {
+                          "name": "reference"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "static-quantized-quals_1",
+                  "source": [
+                      {
+                          "name": "static-quantized-quals_1"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "static-quantized-quals_2",
+                  "source": [
+                      {
+                          "name": "static-quantized-quals_2"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "static-quantized-quals_3",
+                  "source": [
+                      {
+                          "name": "static-quantized-quals_3"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Run gatk ApplyBQSR"
+              ],
+              "software_used": [
+                 "/softwares/4ae88fb4-23f2-4939-8852-4644069d14d9"
+              ]
+          },
+          "name": "ApplyBQSR",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "bam",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "recalibrated_bam",
+                  "target": [
+                      {
+                          "name": "recalibrated_bam",
+                          "step": "integrity-check"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "bam",
+                      "global": false,
+                      "type": "data file"
+                  },
+                  "name": "recalibrated_bam",
+                  "source": [
+                      {
+                          "name": "recalibrated_bam",
+                          "step": "ApplyBQSR"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "count",
+                  "source": [
+                      {
+                          "name": "count"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Check integrity of output file"
+              ],
+              "software_used": [
+                 "/softwares/3f2d3b0e-0365-4212-9468-c16ad9531c4d"
+              ]
+          },
+          "name": "integrity-check",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "recalibrated_bam-check",
+                  "target": [
+                      {
+                          "name": "recalibrated_bam-check"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Run gatk ApplyBQSR plus output integrity-check",
+  "uuid": "6c9c6f49-f954-4e76-8dfb-d385cddcebd6"
+}

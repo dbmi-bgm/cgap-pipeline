@@ -6,7 +6,7 @@ requirements:
   MultipleInputFeatureRequirement: {}
 
 inputs:
-  - id: input
+  - id: input_bam
     type: File
     doc: input file .bam
 
@@ -17,29 +17,33 @@ inputs:
       - .fai
     doc: expect the path to the .fa file
 
-  - id: bqsr
+  - id: recalibration_report
     type: File
     doc: expect the path to the recalibration_report
 
   - id: static-quantized-quals_1
     type: int
+    default: 10
 
   - id: static-quantized-quals_2
     type: int
+    default: 20
 
   - id: static-quantized-quals_3
     type: int
+    default: 30
 
   - id: count
     type: int
+    default: 0
     doc: 1 count the number of alignments if EOF if present, 0 only check EOF
 
 outputs:
-  output:
+  recalibrated_bam:
     type: File
     outputSource: gatk-ApplyBQSR/output
 
-  output-check:
+  recalibrated_bam-check:
     type: File
     outputSource: integrity-check/output
 
@@ -48,11 +52,11 @@ steps:
     run: gatk-ApplyBQSR.cwl
     in:
       input:
-        source: input
+        source: input_bam
       reference:
         source: reference
       bqsr:
-        source: bqsr
+        source: recalibration_report
       static-quantized-quals_1:
         source: static-quantized-quals_1
       static-quantized-quals_2:

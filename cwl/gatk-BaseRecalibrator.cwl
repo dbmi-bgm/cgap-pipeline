@@ -13,7 +13,7 @@ hints:
 
 baseCommand: [gatk, BaseRecalibrator]
 
-arguments: ["-O", $(inputs.input.nameroot + "_recalibration_report"), "--use-original-qualities"]
+arguments: ["-O", $(inputs.input_bam.nameroot + "_recalibration_report"), "--use-original-qualities"]
 
 inputs:
   - id: input_bam
@@ -55,7 +55,7 @@ outputs:
   - id: recalibration_report
     type: File
     outputBinding:
-      glob: $(inputs.input.nameroot + "_recalibration_report")
+      glob: $(inputs.input_bam.nameroot + "_recalibration_report")
 
 doc: |
   run gatk BaseRecalibrator
