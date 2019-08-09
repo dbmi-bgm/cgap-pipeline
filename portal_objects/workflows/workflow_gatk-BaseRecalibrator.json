@@ -63,7 +63,7 @@
                       "cardinality": "single",
                       "file_format": "fa",
                       "global": true,
-                      "type": "data file"
+                      "type": "reference file"
                   },
                   "name": "reference",
                   "source": [
@@ -77,7 +77,7 @@
                       "cardinality": "single",
                       "file_format": "vcf_gz",
                       "global": true,
-                      "type": "data file"
+                      "type": "reference file"
                   },
                   "name": "known-sites-snp",
                   "source": [
@@ -91,7 +91,7 @@
                       "cardinality": "single",
                       "file_format": "vcf",
                       "global": true,
-                      "type": "data file"
+                      "type": "reference file"
                   },
                   "name": "known-sites-indels",
                   "source": [
