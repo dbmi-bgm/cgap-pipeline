@@ -26,13 +26,11 @@ inputs:
     type: string
     inputBinding:
       position: 2
-      prefix: -Xmx
 
   - id: xms
     type: string
     inputBinding:
       position: 3
-      prefix: -Xms
 
   - id: max_records_in_ram
     type: int
