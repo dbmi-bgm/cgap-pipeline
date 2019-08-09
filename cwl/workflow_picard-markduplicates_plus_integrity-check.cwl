@@ -6,7 +6,7 @@ requirements:
   MultipleInputFeatureRequirement: {}
 
 inputs:
-  - id: input
+  - id: input_bam
     type: File
 
   - id: xmx
@@ -28,15 +28,15 @@ inputs:
     doc: 1 count the number of alignments if EOF if present, 0 only check EOF
 
 outputs:
-  output:
+  dupmarked_bam:
     type: File
     outputSource: picard-markduplicates/output
 
-  out_metrics:
+  duplicate_metrics:
     type: File
     outputSource: picard-markduplicates/out_metrics
 
-  output-check:
+  dupmarked_bam-check:
     type: File
     outputSource: integrity-check/output
 
@@ -45,7 +45,7 @@ steps:
     run: picard-markduplicates.cwl
     in:
       input:
-        source: input
+        source: input_bam
       xmx:
         source: xmx
       xms:
