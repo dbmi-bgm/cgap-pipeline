@@ -11,7 +11,8 @@
       {
           "argument_format": "bai",
           "argument_type": "Output to-be-extra-input file",
-          "workflow_argument_name": "bam_index"
+          "workflow_argument_name": "bam_index",
+          "argument_to_be_attached_to": "bam"
       }
   ],
   "award": "1U01CA200059-01",
