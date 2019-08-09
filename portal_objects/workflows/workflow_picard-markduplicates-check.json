@@ -71,10 +71,10 @@
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "input",
+                  "name": "input_bam",
                   "source": [
                       {
-                          "name": "input"
+                          "name": "input_bam"
                       }
                   ]
               },
@@ -151,7 +151,7 @@
                   "name": "dupmarked_bam",
                   "target": [
                       {
-                          "name": "output",
+                          "name": "dupmarked_bam",
                           "step": "integrity-check"
                       }
                   ]
@@ -181,7 +181,7 @@
                       "global": false,
                       "type": "data file"
                   },
-                  "name": "output",
+                  "name": "dupmarked_bam",
                   "source": [
                       {
                           "name": "dupmarked_bam",
