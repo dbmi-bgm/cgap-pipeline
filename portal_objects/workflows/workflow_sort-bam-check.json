@@ -97,7 +97,7 @@
                   "Sort bam input file"
               ],
               "software_used": [
-                 "/softwares/586cef39-6505-4bf6-920a-4b26a500d210"
+                 "/softwares/3f2d3b0e-0365-4212-9468-c16ad9531c4d"
               ]
           },
           "name": "sort-bam",
@@ -132,7 +132,7 @@
                   "source": [
                       {
                           "name": "sorted_bam",
-                          "step": "readgroups"
+                          "step": "sort-bam"
                       }
                   ]
               },
@@ -177,5 +177,5 @@
       }
   ],
   "title": "Sort bam file plus output integrity-check",
-  "uuid": ""
+  "uuid": "560f5194-cd3a-4799-9b1a-6a2d2c371c89"
 }
