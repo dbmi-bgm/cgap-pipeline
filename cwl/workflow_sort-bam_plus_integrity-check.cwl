@@ -8,25 +8,28 @@ requirements:
 inputs:
   - id: max_memory
     type: string
+    default: '3G'
     doc: maximum required memory per thread
 
-  - id: num_threads
+  - id: nthreads
     type: int
+    default: 8
     doc: number of sorting and compression threads
 
-  - id: input
+  - id: input_bam
     type: File
 
   - id: count
     type: int
+    default: 0
     doc: 1 count the number of alignments if EOF if present, 0 only check EOF
 
 outputs:
-  output:
+  sorted_bam:
     type: File
     outputSource: sort-bam/output
 
-  output-check:
+  sorted_bam-check:
     type: File
     outputSource: integrity-check/output
 
@@ -36,10 +39,10 @@ steps:
     in:
       max_memory:
         source: max_memory
-      num_threads:
-        source: num_threads
+      nthreads:
+        source: nthreads
       input:
-        source: input
+        source: input_bam
     out: [output]
 
   integrity-check:

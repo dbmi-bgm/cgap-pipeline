@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v8
+    dockerPull: cgap/cgap:v9
 
 baseCommand: [samtools, sort]
 
@@ -21,7 +21,7 @@ inputs:
       prefix: -m
     doc: maximum required memory per thread
 
-  - id: num_threads
+  - id: nthreads
     type: int
     inputBinding:
       position: 2

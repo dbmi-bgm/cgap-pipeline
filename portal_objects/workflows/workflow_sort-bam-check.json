@@ -1,0 +1,181 @@
+{
+  "accession": "4DNWFKW3RD8Q",
+  "app_name": "workflow_sort-bam-check",
+  "app_version": "v9",
+  "arguments": [
+      {
+          "argument_format": "bam",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_bam"
+      },
+      {
+          "argument_format": "bam",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "sorted_bam"
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "sorted_bam-check",
+          "argument_to_be_attached_to": "sorted_bam",
+          "qc_zipped": false,
+          "qc_html": false,
+          "qc_json": false,
+          "qc_table": true,
+          "qc_type": "quality_metric_bamcheck"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "max_memory"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "nthreads"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "count"
+      }
+  ],
+  "award": "1U01CA200059-01",
+  "category": ["processing"],
+  "cwl_child_filenames": ["sort-bam.cwl", "integrity-check.cwl"],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+  "cwl_main_filename": "workflow_sort-bam_plus_integrity-check.cwl",
+  "cwl_pointer": "",
+  "description": "Sort bam input file. An integrity check is performed on the output file",
+  "docker_image_name": "cgap/cgap",
+  "docker_registry_url": "https://hub.docker.com/",
+  "lab": "4dn-dcic-lab",
+  "name": "workflow_sort-bam-check_v9",
+  "aliases": ["4dn-dcic-lab:workflow_sort-bam-check_v9"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "bam",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_bam",
+                  "source": [
+                      {
+                          "name": "input_bam"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "max_memory",
+                  "source": [
+                      {
+                          "name": "max_memory"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "nthreads",
+                  "source": [
+                      {
+                          "name": "nthreads"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Sort bam input file"
+              ],
+              "software_used": [
+                 "/softwares/586cef39-6505-4bf6-920a-4b26a500d210"
+              ]
+          },
+          "name": "sort-bam",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "bam",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "sorted_bam",
+                  "target": [
+                      {
+                          "name": "sorted_bam",
+                          "step": "integrity-check"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "bam",
+                      "global": false,
+                      "type": "data file"
+                  },
+                  "name": "sorted_bam",
+                  "source": [
+                      {
+                          "name": "sorted_bam",
+                          "step": "readgroups"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "count",
+                  "source": [
+                      {
+                          "name": "count"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Check integrity of output file"
+              ],
+              "software_used": [
+                 "/softwares/3f2d3b0e-0365-4212-9468-c16ad9531c4d"
+              ]
+          },
+          "name": "integrity-check",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "sorted_bam-check",
+                  "target": [
+                      {
+                          "name": "sorted_bam-check"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Sort bam file plus output integrity-check",
+  "uuid": ""
+}
