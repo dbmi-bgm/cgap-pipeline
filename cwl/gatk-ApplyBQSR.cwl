@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v8
+    dockerPull: cgap/cgap:v9
 
 baseCommand: [gatk, ApplyBQSR]
 
@@ -21,7 +21,7 @@ inputs:
     inputBinding:
       position: 1
       prefix: -I
-    doc: input file .bam
+    doc: input file
 
   - id: reference
     type: File
@@ -31,7 +31,7 @@ inputs:
     secondaryFiles:
       - ^.dict
       - .fai
-    doc: expect the path to the .fa file
+    doc: expect the path to the fa file
 
   - id: bqsr
     type: File

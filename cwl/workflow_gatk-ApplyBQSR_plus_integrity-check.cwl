@@ -8,14 +8,14 @@ requirements:
 inputs:
   - id: input_bam
     type: File
-    doc: input file .bam
+    doc: input file
 
   - id: reference
     type: File
     secondaryFiles:
       - ^.dict
       - .fai
-    doc: expect the path to the .fa file
+    doc: expect the path to the fa file
 
   - id: recalibration_report
     type: File
