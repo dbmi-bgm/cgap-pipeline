@@ -35,19 +35,19 @@ inputs:
 outputs:
   dupmarked_bam:
     type: File
-    outputSource: picard-markduplicates/output
+    outputSource: picard-MarkDuplicates/output
 
   duplicate_metrics:
     type: File
-    outputSource: picard-markduplicates/out_metrics
+    outputSource: picard-MarkDuplicates/out_metrics
 
   dupmarked_bam-check:
     type: File
     outputSource: integrity-check/output
 
 steps:
-  picard-markduplicates:
-    run: picard-markduplicates.cwl
+  picard-MarkDuplicates:
+    run: picard-MarkDuplicates.cwl
     in:
       input:
         source: input_bam
@@ -65,7 +65,7 @@ steps:
     run: integrity-check.cwl
     in:
       input:
-        source: picard-markduplicates/output
+        source: picard-MarkDuplicates/output
       count:
         source: count
     out: [output]

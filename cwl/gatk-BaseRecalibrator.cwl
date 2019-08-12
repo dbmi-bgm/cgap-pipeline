@@ -21,7 +21,6 @@ inputs:
     inputBinding:
       position: 1
       prefix: -I
-    doc: input file .bam
 
   - id: reference
     type: File
@@ -31,7 +30,7 @@ inputs:
     secondaryFiles:
       - ^.dict
       - .fai
-    doc: expect the path to the .fa file
+    doc: expect the path to the fa file
 
   - id: known-sites-snp
     type: File
@@ -40,7 +39,7 @@ inputs:
       prefix: --known-sites
     secondaryFiles:
       - .tbi
-    doc: expect the path to the dbsnp .vcf.gz file
+    doc: expect the path to the dbsnp vcf gz file
 
   - id: known-sites-indels
     type: File
@@ -49,7 +48,7 @@ inputs:
       prefix: --known-sites
     secondaryFiles:
       - .idx
-    doc: expect the path to the indel .vcf file
+    doc: expect the path to the indel vcf file
 
 outputs:
   - id: recalibration_report
