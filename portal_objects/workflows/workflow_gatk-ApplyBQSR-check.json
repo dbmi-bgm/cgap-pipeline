@@ -21,7 +21,8 @@
       {
           "argument_format": "bam",
           "argument_type": "Output processed file",
-          "workflow_argument_name": "recalibrated_bam"
+          "workflow_argument_name": "recalibrated_bam",
+          "secondary_file_formats": ["bai"]
       },
       {
           "argument_type": "Output QC file",
