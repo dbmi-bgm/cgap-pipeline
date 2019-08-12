@@ -1,6 +1,6 @@
 {
     "parameters": {},
-    "workflow_uuid": "4dn-dcic-lab:workflow_merge_bam-check_v8",
+    "workflow_uuid": "30802d8c-20c3-4eea-82dd-dd34621569c68",
     "input_files" : [
        {
            "object_key": ["4DNFIEY12JWK.bam", "4DNFI2XG8CNX.bam"],
