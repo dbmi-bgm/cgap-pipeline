@@ -139,7 +139,7 @@
                  "/softwares/586cef39-6505-4bf6-920a-4b26a500d210"
               ]
           },
-          "name": "picard-markduplicates",
+          "name": "markduplicates",
           "outputs": [
               {
                   "meta": {
@@ -185,7 +185,7 @@
                   "source": [
                       {
                           "name": "dupmarked_bam",
-                          "step": "picard-markduplicats"
+                          "step": "markduplicates"
                       }
                   ]
               },

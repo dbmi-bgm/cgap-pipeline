@@ -81,5 +81,5 @@ outputs:
       glob: duplicate_metrics.txt
 
 doc: |
-  run picard MarkDuplicates to mark the duplicates in the input .bam file into a new _rm.bam output file |
+  run picard MarkDuplicates to mark the duplicates in the input bam file |
   generate a duplicate_metrics.txt file with metrics about duplicates identified
