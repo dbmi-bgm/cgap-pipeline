@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v8
+    dockerPull: cgap/cgap:v9
 
 baseCommand: [integrity-check.sh]
 
@@ -32,5 +32,5 @@ outputs:
       glob: integrity_check
 
 doc: |
-  run a quick integrity check on the input .bam to confirm an EOF exist |
+  run a quick integrity check on the input bam to confirm an EOF exist |
   if successful count the number of alignments

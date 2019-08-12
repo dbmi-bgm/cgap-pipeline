@@ -21,7 +21,7 @@ inputs:
       - ^.amb
       - ^.pac
       - ^.sa
-    doc: expect the path to the .bwt file
+    doc: expect the path to the bwt file
 
   - id: outdir
     type: string
@@ -80,6 +80,6 @@ steps:
     out: [output]
 
 doc: |
-  run bwa mem allowing to specify the number of threads to be used and pipe the output in a .bam output file |
+  run bwa mem allowing to specify the number of threads to be used and pipe the output in a bam output file |
   expect the fastq files already unzipped |
-  run an integrity check on the output .bam to confirm an EOF is present and if successful count the number of alignments
+  run an integrity check on the output bam to confirm an EOF is present and if successful count the number of alignments
