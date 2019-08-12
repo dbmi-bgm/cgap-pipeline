@@ -1,0 +1,27 @@
+{
+    "parameters": {},
+    "workflow_uuid": "560f5194-cd3a-4799-9b1a-6a2d2c371c89",
+    "input_files" : [
+       {
+           "object_key": ".bam",
+           "workflow_argument_name": "input_bam",
+           "uuid": "",
+           "bucket_name": "elasticbeanstalk-fourfront-webdev-wfoutput"
+       }
+    ],
+    "config": {
+      "instance_type": "m5a.2xlarge",
+      "ebs_size": "3x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_workflow_sort-bam-check",
+      "behavior_on_capacity_limit": "wait_and_retry"
+    },
+    "_tibanna": {
+      "run_type": "workflow_sort-bam-check",
+      "env": "fourfront-webdev"
+    },
+    "app_name": "workflow_sort-bam-check",
+    "output_bucket": "elasticbeanstalk-fourfront-webdev-wfoutput"
+}

@@ -1,0 +1,27 @@
+{
+    "parameters": {"xmx": "2G", "xms": "2G", "max_records_in_ram": 10000},
+    "workflow_uuid": "beb2b340-94ee-4afe-b4e3-66caaf063397",
+    "input_files" : [
+       {
+           "object_key": ".bam",
+           "workflow_argument_name": "input_bam",
+           "uuid": "",
+           "bucket_name": "elasticbeanstalk-fourfront-webdev-wfoutput"
+       }
+    ],
+    "config": {
+      "instance_type": "t3.large",
+      "ebs_size": "3x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_workflow_picard-MarkDuplicates-check",
+      "behavior_on_capacity_limit": "wait_and_retry"
+    },
+    "_tibanna": {
+      "run_type": "workflow_picard-MarkDuplicates-check",
+      "env": "fourfront-webdev"
+    },
+    "app_name": "workflow_picard-MarkDuplicates-check",
+    "output_bucket": "elasticbeanstalk-fourfront-webdev-wfoutput"
+}
