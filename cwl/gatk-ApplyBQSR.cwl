@@ -68,5 +68,6 @@ outputs:
       glob: $(inputs.input.nameroot + "_recalibrated_full.bam")
     secondaryFiles: 
         - ".bai"
+
 doc: |
   run gatk ApplyBQSR
