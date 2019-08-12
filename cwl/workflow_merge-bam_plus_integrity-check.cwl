@@ -26,31 +26,31 @@ inputs:
 outputs:
   merged_bam:
     type: File
-    outputSource: merge_bam/merged_bam
+    outputSource: merge-bam/output
 
   merged_bam-check:
     type: File
     outputSource: integrity-check/output
 
 steps:
-  merge_bam:
-    run: merge_bam.cwl
+  merge-bam:
+    run: merge-bam.cwl
     in:
       input_bams:
         source: input_bams
       reads_grouped_by_name:
         source: reads_grouped_by_name
-    out: [merged_bam]
+    out: [output]
 
   integrity-check:
     run: integrity-check.cwl
     in:
       input:
-        source: merge_bam/merged_bam
+        source: merge-bam/output
       count:
         source: count
     out: [output]
 
 doc: |
   run samtools merge -c -p merged.bam in1.bam in2.bam ... |
-  run an integrity check on the output merged_bam to confirm an EOF is present and if successful count the number of alignments
+  run an integrity check on the output bam to confirm an EOF is present and if successful count the number of alignments

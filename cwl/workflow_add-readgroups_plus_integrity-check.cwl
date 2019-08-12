@@ -26,15 +26,15 @@ inputs:
 outputs:
   bam_w_readgroups:
     type: File
-    outputSource: readgroups/output
+    outputSource: add-readgroups/output
 
   bam_w_readgroups-check:
     type: File
     outputSource: integrity-check/output
 
 steps:
-  readgroups:
-    run: readgroups.cwl
+  add-readgroups:
+    run: add-readgroups.cwl
     in:
       input:
         source: input_bam
@@ -48,7 +48,7 @@ steps:
     run: integrity-check.cwl
     in:
       input:
-        source: readgroups/output
+        source: add-readgroups/output
       count:
         source: count
     out: [output]

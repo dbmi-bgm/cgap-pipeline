@@ -1,7 +1,7 @@
 {
   "accession": "4DNWF3HBYC89",
-  "app_name": "workflow_merge_bam-check",
-  "app_version": "v8",
+  "app_name": "workflow_merge-bam-check",
+  "app_version": "v9",
   "arguments": [
       {
           "argument_format": "bam",
@@ -26,16 +26,16 @@
   ],
   "award": "1U01CA200059-01",
   "category": ["processing"],
-  "cwl_child_filenames": ["merge_bam.cwl", "integrity-check.cwl"],
+  "cwl_child_filenames": ["merge-bam.cwl", "integrity-check.cwl"],
   "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
-  "cwl_main_filename": "workflow_merge_bam_plus_integrity-check.cwl",
+  "cwl_main_filename": "workflow_merge-bam_plus_integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Merge bam input files. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v8",
+  "docker_image_name": "cgap/cgap",
   "docker_registry_url": "https://hub.docker.com/",
   "lab": "4dn-dcic-lab",
-  "name": "workflow_merge_bam-check_v8",
-  "aliases": ["4dn-dcic-lab:workflow_merge_bam-check_v8"],
+  "name": "workflow_merge-bam-check_v9",
+  "aliases": ["4dn-dcic-lab:workflow_merge-bam-check_v9"],
   "steps": [
       {
           "inputs": [
@@ -62,7 +62,7 @@
                  "/softwares/3f2d3b0e-0365-4212-9468-c16ad9531c4d"
               ]
           },
-          "name": "merge_bam",
+          "name": "merge",
           "outputs": [
               {
                   "meta": {
@@ -74,7 +74,7 @@
                   "name": "merged_bam",
                   "target": [
                       {
-                          "name": "output",
+                          "name": "merged_bam",
                           "step": "integrity-check"
                       }
                   ]
@@ -94,7 +94,7 @@
                   "source": [
                       {
                           "name": "merged_bam",
-                          "step": "merge_bam"
+                          "step": "merge"
                       }
                   ]
               },
@@ -128,10 +128,10 @@
                       "global": true,
                       "type": "QC"
                   },
-                  "name": "output-check",
+                  "name": "merged_bam-check",
                   "target": [
                       {
-                          "name": "output-check"
+                          "name": "merged_bam-check"
                       }
                   ]
               }

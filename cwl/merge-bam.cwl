@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v8
+    dockerPull: cgap/cgap:v9
 
 baseCommand: [samtools, merge]
 
@@ -38,8 +38,8 @@ inputs:
     doc: output file name
 
   - id: input_bams
-    type: 
-      - 
+    type:
+      -
         items: "File"
         type: "array"
     inputBinding:
@@ -47,7 +47,7 @@ inputs:
     doc: input bam files
 
 outputs:
-  - id: merged_bam
+  - id: output
     type: File
     outputBinding:
       glob: $(inputs.outbamname)
