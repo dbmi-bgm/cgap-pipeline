@@ -42,4 +42,4 @@ outputs:
 stdout: $(inputs.input.path.match(/\/([^/]+)\.[^/.]+$/)[1] + "_sorted.bam")
 
 doc: |
-  run samtools sort to sort input .bam file into _sorted.bam output file
+  run samtools sort to sort input bam file

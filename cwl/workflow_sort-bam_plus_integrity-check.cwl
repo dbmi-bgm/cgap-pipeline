@@ -55,5 +55,5 @@ steps:
     out: [output]
 
 doc: |
-  run samtools sort to sort input .bam file into _sorted.bam output file |
-  run an integrity check on the output _sorted.bam to confirm an EOF is present and if successful count the number of alignments
+  run samtools sort to sort input bam file |
+  run an integrity check on the output bam to confirm an EOF is present and if successful count the number of alignments

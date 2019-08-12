@@ -100,7 +100,7 @@
                  "/softwares/3f2d3b0e-0365-4212-9468-c16ad9531c4d"
               ]
           },
-          "name": "sort-bam",
+          "name": "sort",
           "outputs": [
               {
                   "meta": {
@@ -132,7 +132,7 @@
                   "source": [
                       {
                           "name": "sorted_bam",
-                          "step": "sort-bam"
+                          "step": "sort"
                       }
                   ]
               },
