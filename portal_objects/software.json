@@ -45,7 +45,17 @@
         "title": "picard_2.20.2",
         "uuid": "586cef39-6505-4bf6-920a-4b26a500d210",
         "version": "2.20.2"
+    },
+    {
+        "award": "1U01CA200059-01",
+        "lab": "4dn-dcic-lab",
+        "name": "add-readgroups",
+        "software_type": [
+            "annotator"
+        ],
+        "source_url": "https://github.com/dbmi-bgm/cgap-pipeline/blob/master/dockerfiles/cgap-docker/AddReadGroups.py",
+        "title": "add-readgroups_81ca652",
+        "uuid": "d7ac4c75-e133-4a8e-a19e-b7e87873cc16",
+        "commit": "81ca652"
     }
 ]
-
-

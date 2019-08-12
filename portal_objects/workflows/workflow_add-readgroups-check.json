@@ -1,6 +1,6 @@
 {
   "accession": "4DNWF3GB8UI2",
-  "app_name": "workflow_readgroups-check",
+  "app_name": "workflow_add-readgroups-check",
   "app_version": "v9",
   "arguments": [
       {
@@ -38,16 +38,16 @@
   ],
   "award": "1U01CA200059-01",
   "category": ["processing"],
-  "cwl_child_filenames": ["readgroups.cwl", "integrity-check.cwl"],
+  "cwl_child_filenames": ["add-readgroups.cwl", "integrity-check.cwl"],
   "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
-  "cwl_main_filename": "workflow_readgroups_plus_integrity-check.cwl",
+  "cwl_main_filename": "workflow_add-readgroups_plus_integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Add read groups to bam input file. An integrity check is performed on the output file",
   "docker_image_name": "cgap/cgap",
   "docker_registry_url": "https://hub.docker.com/",
   "lab": "4dn-dcic-lab",
-  "name": "workflow_readgroups-check_v8",
-  "aliases": ["4dn-dcic-lab:workflow_readgroups-check_v8"],
+  "name": "workflow_add-readgroups-check_v9",
+  "aliases": ["4dn-dcic-lab:workflow_add-readgroups-check_v9"],
   "steps": [
       {
           "inputs": [
@@ -96,9 +96,11 @@
               "analysis_step_types": [
                   "Add read groups to bam input file"
               ],
-              "software_used": []
+              "software_used": [
+                "/softwares/d7ac4c75-e133-4a8e-a19e-b7e87873cc16"
+              ]
           },
-          "name": "readgroups",
+          "name": "add-readgroups",
           "outputs": [
               {
                   "meta": {
@@ -130,7 +132,7 @@
                   "source": [
                       {
                           "name": "bam_w_readgroups",
-                          "step": "readgroups"
+                          "step": "add-readgroups"
                       }
                   ]
               },

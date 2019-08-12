@@ -54,5 +54,5 @@ steps:
     out: [output]
 
 doc: |
-  run AddReadGroups.py to mark and assign reads from a .bam input file to a new read group into a output _rg.bam file |
-  run an integrity check on the output _rg.bam to confirm an EOF is present and if successful count the number of alignments
+  run AddReadGroups.py to mark and assign reads from a bam input file to new read groups |
+  run an integrity check on the output bam to confirm an EOF is present and if successful count the number of alignments
