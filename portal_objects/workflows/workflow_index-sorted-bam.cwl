@@ -21,7 +21,7 @@
   "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
   "cwl_main_filename": "index-sorted-bam.cwl",
   "cwl_pointer": "",
-  "description": "Index sorted bam input file.",
+  "description": "Index sorted bam input file",
   "docker_image_name": "cgap/cgap",
   "docker_registry_url": "https://hub.docker.com/",
   "lab": "4dn-dcic-lab",

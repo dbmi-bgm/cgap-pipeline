@@ -29,4 +29,4 @@ outputs:
       glob: $(inputs.bam.basename + ".bai")
 
 doc: |
-  run samtools index to create a index .bai file from input .bam file
+  run samtools index to create a index bai file from input bam file
