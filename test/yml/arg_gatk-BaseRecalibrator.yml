@@ -1,4 +1,4 @@
-input:
+input_bam:
   class: File
   path: .rg.bam #expect input file .rg.bam
 reference:

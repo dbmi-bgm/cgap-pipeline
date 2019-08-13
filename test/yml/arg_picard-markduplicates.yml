@@ -1,7 +1,8 @@
-input:
+input_bam:
   class: File
   path:
-xmx: '-Xmx160G' #-XmxnumG
-xms: '-Xms160G' #-XmsnumG
+xmx: '160G' #numG
+xms: '160G' #numG
 max_records_in_ram: 2000000
 duplicate_pixel_distance: 2500
+count: 0

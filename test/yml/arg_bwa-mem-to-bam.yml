@@ -1,12 +1,13 @@
-threads: 4
 reference:
   class: File
-  path: index.bwt #.bwt File
-reads_zipped:
+  path:  #.bwt File
+fastq_R1:
   class: File
-  path: 
-mates_zipped:
+  path:
+fastq_R2:
   class: File
-  path: 
+  path:
+nthreads: 1
 outdir: .
 prefix: raw
+count: 0

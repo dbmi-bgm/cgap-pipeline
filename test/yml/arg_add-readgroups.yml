@@ -1,6 +1,6 @@
-max_memory: '3G'
-nthreads: 1
 input_bam:
   class: File
   path:
+sample_name: TESTNAME
+nthreads: 1
 count: 0

@@ -1,3 +1,4 @@
 input:
   class: File
   path:
+count: 0
