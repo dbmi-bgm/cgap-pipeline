@@ -129,7 +129,7 @@
                  "/softwares/42adeb1b-c46c-4ba8-b191-56036ddcd544"
               ]
           },
-          "name": "mem",
+          "name": "bwa-mem",
           "outputs": [
               {
                   "meta": {
@@ -161,7 +161,7 @@
                   "source": [
                       {
                           "name": "raw_bam",
-                          "step": "mem"
+                          "step": "bwa-mem"
                       }
                   ]
               },
