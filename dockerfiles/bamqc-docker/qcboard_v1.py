@@ -229,7 +229,7 @@ class QCBoard():
                 else:
                     chromcovtab_html += '<tr><td>'+'</td><td>'.join(arr)+'</td></tr>'
                     chromcovtab += ','.join(arr) + '|'
-                if arr[0] == "MT":
+                if arr[0] == "MT" or arr[0] == "M":
                     flag = ""
             
             if flag=="" and "=ALL CHROM=" in line:
