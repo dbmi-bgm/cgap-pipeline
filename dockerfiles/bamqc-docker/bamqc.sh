@@ -18,3 +18,10 @@ picard -Xms${MEMORY} -Xmx${MEMORY} CollectMultipleMetrics VALIDATION_STRINGENCY=
 echo
 echo "RUN QCBOARD"
 qcboard_v1.py -bam $INPUT_BAM -out OUTPUT -temp /usr/local/bin/qcboard_bamqc.html
+
+echo
+echo "ZIPPING RESULTS"
+mkdir OUTPUT_ALL
+cp OUTPUT.html OUTPUT_ALL
+cp OUTPUT.tsv OUTPUT_ALL
+zip -r OUTPUT.zip OUTPUT_ALL
