@@ -1,0 +1,40 @@
+{
+  "args": {
+    "app_name": "qcboard-bam",
+    "app_version": "v1.0",
+    "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+    "cwl_main_filename": "qcboard-bam.cwl",
+    "cwl_child_filenames": [],
+    "cwl_version": "v1",
+    "input_files": {
+      "input_bam": {
+        "bucket_name": "",
+        "object_key": ""
+      }
+    },
+    "secondary_files": {
+      "input_bam": {
+        "bucket_name": "",
+        "object_key": [".bai"]
+      }
+    },
+    "input_parameters": {
+      "xmx": "6G",
+      "xms": "6G"
+    },
+    "output_S3_bucket": "",
+    "output_target": {
+      "report_zip": "_qcboard_bam.zip"
+    },
+    "secondary_output_target": {}
+  },
+  "config": {
+    "instance_type": "t3.large",
+    "ebs_size": "2x",
+    "EBS_optimized": true,
+    "spot_instance": true,
+    "log_bucket": "",
+    "run_name": "run_qcboard-bam",
+    "behavior_on_capacity_limit": "wait_and_retry"
+  }
+}
