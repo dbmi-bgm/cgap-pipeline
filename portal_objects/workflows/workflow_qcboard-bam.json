@@ -1,0 +1,117 @@
+{
+  "accession": "4DNWFA26SHIT",
+  "app_name": "workflow_qcboard-bam",
+  "app_version": "v2",
+  "arguments": [
+      {
+          "argument_format": "bam",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_bam"
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "report_zip",
+          "argument_to_be_attached_to": "input_bam",
+          "qc_zipped": true,
+          "qc_html": true,
+          "qc_json": true,
+          "qc_table": false,
+          "qc_zipped_html": "qcboard_bam.html",
+          "qc_zipped_json": "qcboard_bam.json",
+          "qc_type": "quality_metric_wgs_bamqc"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "xmx"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "xms"
+      }
+  ],
+  "award": "1U01CA200059-01",
+  "category": ["QC"],
+  "cwl_child_filenames": [],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+  "cwl_main_filename": "qcboard-bam.cwl",
+  "cwl_pointer": "",
+  "description": "Quality control for a bam file. Calculate quality metrics and create html and json reports",
+  "docker_image_name": "cgap/bamqc",
+  "docker_registry_url": "https://hub.docker.com/",
+  "lab": "4dn-dcic-lab",
+  "name": "workflow_qcboard-bam_v2",
+  "aliases": ["4dn-dcic-lab:workflow_qcboard-bam_v2"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "bam",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_bam",
+                  "source": [
+                      {
+                          "name": "input_bam"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "xmx",
+                  "source": [
+                      {
+                          "name": "xmx"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "xms",
+                  "source": [
+                      {
+                          "name": "xms"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Calculate quality metrics and create html and json reports"
+              ],
+              "software_used": [
+                  "/softwares/3f2d3b0e-0365-4212-9468-c16ad9531c4d",
+                  "/softwares/586cef39-6505-4bf6-920a-4b26a500d210"
+              ]
+          },
+          "name": "BamQC",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "report_zip",
+                  "target": [
+                      {
+                          "name": "report_zip"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Quality metrics for a bam file",
+  "uuid": "ad8716a3-b6e8-4021-bbc6-b0cefc9c4dd8"
+}
