@@ -1,7 +1,8 @@
 #!/bin/bash
 
 INPUT_BAM=$1
-MEMORY=$2 # example '5G'
+XMX=$2 # example '5G'
+XMS=$3 # example '5G'
 
 echo
 echo "RUN BAMSTAT"
@@ -9,7 +10,7 @@ bamstat.py $INPUT_BAM > ${INPUT_BAM}.stat
 
 echo
 echo "RUN PICARD"
-picard -Xms${MEMORY} -Xmx${MEMORY} CollectMultipleMetrics VALIDATION_STRINGENCY=LENIENT INPUT=$INPUT_BAM OUTPUT=${INPUT_BAM}.cmm
+picard -Xms${XMS} -Xmx${XMX} CollectMultipleMetrics VALIDATION_STRINGENCY=LENIENT INPUT=$INPUT_BAM OUTPUT=${INPUT_BAM}.cmm
 
 # echo
 # echo "RUN BEDTOOLS"
@@ -17,11 +18,11 @@ picard -Xms${MEMORY} -Xmx${MEMORY} CollectMultipleMetrics VALIDATION_STRINGENCY=
 
 echo
 echo "RUN QCBOARD"
-qcboard_v1.py -bam $INPUT_BAM -out OUTPUT -temp /usr/local/bin/qcboard_bamqc.html
+qcboard_v1.py -bam $INPUT_BAM -out qcboard_bam -temp /usr/local/bin/qcboard_bamqc.html
 
 echo
 echo "ZIPPING RESULTS"
-mkdir OUTPUT_ALL
-cp OUTPUT.html OUTPUT_ALL
-cp OUTPUT.tsv OUTPUT_ALL
-zip -r OUTPUT.zip OUTPUT_ALL
+mkdir qcboard_bam
+cp qcboard_bam.html qcboard_bam
+cp qcboard_bam.tsv qcboard_bam
+zip -r qcboard_bam.zip qcboard_bam
