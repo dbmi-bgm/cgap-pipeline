@@ -185,6 +185,16 @@ class QCBoard():
         fileSave(self.out_html, cont, 'w')
         print ('Saved '+self.out_html)
 
+    def str_num(self, x):
+        subst_x = str(x).replace(',', '').replace('%', '')
+        try:
+            return int(subst_x)
+        except:
+            try:
+                return float(subst_x)
+            except:
+                return subst_x
+
     def save_json(self):
         d = {}
         for key in self.qcstat:
@@ -197,9 +207,9 @@ class QCBoard():
                         d.setdefault('per_chromosome_coverage', [])
                         for chr_str in v.split('|')[1:-1]:
                             chr, len, map, unmap, tot, map_ratio, coverage = chr_str.split(':')
-                            d_chr = {'chromosome': chr, 'length': len, 'no_mapped': map,
-                                     'no_unmapped': unmap, 'total': tot,
-                                     'mapped_ratio': map_ratio, 'coverage': coverage
+                            d_chr = {'chromosome': self.str_num(chr), 'length': self.str_num(len), 'no_mapped': self.str_num(map),
+                                     'no_unmapped': self.str_num(unmap), 'total': self.str_num(tot),
+                                     'mapped_ratio': self.str_num(map_ratio), 'coverage': self.str_num(coverage)
                                     }
                             d['per_chromosome_coverage'].append(d_chr)
                     else:
@@ -209,10 +219,10 @@ class QCBoard():
                             k = 'COVERAGE_ALL_CHROMOSOMES'
                         elif k == 'COVERAGE_MAIN_CHROM':
                             k = 'COVERAGE_MAIN_CHROMOSOMES'
-                        d.setdefault(k.lower(), v)
+                        d.setdefault(k.lower(), self.str_num(v))
             elif key == 'PICARD.CMM':
                 for k, v in self.qcstat['PICARD.CMM'].items():
-                    d.setdefault(k.lower(), v)
+                    d.setdefault(k.lower(), self.str_num(v))
 
         # writing json
         with open(self.out_json, 'w') as outfile:
