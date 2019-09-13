@@ -25,7 +25,7 @@
     "output_S3_bucket": "",
     "output_target": {
       "report_json": "_qcboard_bam.json",
-      "report_html": "_qcboard_bam.html",
+      "report_html": "_qcboard_bam.html"
     },
     "secondary_output_target": {}
   },
