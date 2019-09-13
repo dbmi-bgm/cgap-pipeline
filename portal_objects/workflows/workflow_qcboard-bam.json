@@ -1,5 +1,5 @@
 {
-  "accession": "4DNWFA26SHIT",
+  "accession": "GAPWFA26SHIT",
   "app_name": "workflow_qcboard-bam",
   "app_version": "v2",
   "arguments": [
@@ -10,14 +10,22 @@
       },
       {
           "argument_type": "Output QC file",
-          "workflow_argument_name": "report_zip",
+          "workflow_argument_name": "report_json",
           "argument_to_be_attached_to": "input_bam",
-          "qc_zipped": true,
-          "qc_html": true,
+          "qc_zipped": false,
+          "qc_html": false,
           "qc_json": true,
           "qc_table": false,
-          "qc_zipped_html": "qcboard_bam.html",
-          "qc_zipped_json": "qcboard_bam.json",
+          "qc_type": "quality_metric_wgs_bamqc"
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "report_html",
+          "argument_to_be_attached_to": "input_bam",
+          "qc_zipped": false,
+          "qc_html": true,
+          "qc_json": false,
+          "qc_table": false,
           "qc_type": "quality_metric_wgs_bamqc"
       },
       {
@@ -29,7 +37,7 @@
           "workflow_argument_name": "xms"
       }
   ],
-  "award": "1U01CA200059-01",
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["QC"],
   "cwl_child_filenames": [],
   "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
@@ -38,9 +46,9 @@
   "description": "Quality control for a bam file. Calculate quality metrics and create html and json reports",
   "docker_image_name": "cgap/bamqc",
   "docker_registry_url": "https://hub.docker.com/",
-  "lab": "4dn-dcic-lab",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_qcboard-bam_v2",
-  "aliases": ["4dn-dcic-lab:workflow_qcboard-bam_v2"],
+  "aliases": ["cgap:workflow_qcboard-bam_v2"],
   "steps": [
       {
           "inputs": [
@@ -102,10 +110,23 @@
                       "global": true,
                       "type": "QC"
                   },
-                  "name": "report_zip",
+                  "name": "report_html",
                   "target": [
                       {
-                          "name": "report_zip"
+                          "name": "report_html"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "report_json",
+                  "target": [
+                      {
+                          "name": "report_json"
                       }
                   ]
               }

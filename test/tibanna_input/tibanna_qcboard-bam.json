@@ -24,12 +24,13 @@
     },
     "output_S3_bucket": "",
     "output_target": {
-      "report_zip": "_qcboard_bam.zip"
+      "report_json": "_qcboard_bam.json",
+      "report_html": "_qcboard_bam.html",
     },
     "secondary_output_target": {}
   },
   "config": {
-    "instance_type": "t3.large",
+    "instance_type": "t3.medium",
     "ebs_size": "2x",
     "EBS_optimized": true,
     "spot_instance": true,

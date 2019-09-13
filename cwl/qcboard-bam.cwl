@@ -34,10 +34,15 @@ inputs:
       position: 3
 
 outputs:
-  - id: report_zip
+  - id: report_json
     type: File
     outputBinding:
-      glob: qcboard_bam.zip
+      glob: qcboard_bam.json
+
+  - id: report_html
+    type: File
+    outputBinding:
+      glob: qcboard_bam.html
 
 doc: |
-  create quality control report for a bam file
+  create quality control reports for a bam file
