@@ -18,11 +18,11 @@ picard -Xms${XMS} -Xmx${XMX} CollectMultipleMetrics VALIDATION_STRINGENCY=LENIEN
 
 echo
 echo "RUN QCBOARD"
-qcboard_v1.py -bam $INPUT_BAM -out qcboard_bam -temp /usr/local/bin/qcboard_bamqc.html
+qcboard.py -bam $INPUT_BAM -out qcboard_bam -temp /usr/local/bin/qcboard_bamqc.html
 
 echo
 echo "ZIPPING RESULTS"
 mkdir qcboard_bam
 cp qcboard_bam.html qcboard_bam
-cp qcboard_bam.tsv qcboard_bam
+cp qcboard_bam.json qcboard_bam
 zip -r qcboard_bam.zip qcboard_bam

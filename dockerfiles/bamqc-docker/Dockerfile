@@ -65,8 +65,8 @@ RUN wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.5
 COPY bamstat.py .
 RUN chmod +x bamstat.py
 
-COPY qcboard_v1.py .
-RUN chmod +x qcboard_v1.py
+COPY qcboard.py .
+RUN chmod +x qcboard.py
 
 COPY bamqc.sh .
 RUN chmod +x bamqc.sh

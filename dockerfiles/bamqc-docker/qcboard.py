@@ -7,6 +7,7 @@
 import sys
 import os
 import argparse
+import json
 
 VERSION = "0.1.2"
 VERSION_DATE = "19.09.10"
@@ -29,7 +30,7 @@ FIELDLIST_BAMQC['FASTQC'] = ['GC_PER','DUPLICATION_PER']
 # FIELDLIST_BAMQC['FASTQC'].append('Kmer_Content')
 
 FIELDLIST_BAMQC['SAMTOOLS'] = ['SEQUENCE_LENGTH','NO_MAPPED_READS','NO_UNMAPPED_READS','MAPPED_RATIO','XY_RATIO','EST_GENDER','CHROM_COVERAGE_TAB','COVERAGE_ALL_CHROM','COVERAGE_MAIN_CHROM']
-CHROMCOVTAB_HEADERMAP = {'CHROM':'Chromosome','LEN':'Length','MAAPED':'# Mapped','UNMAPPED':'# Unmapped','TOTAL':'Total','MAPPED_RATIO':'Mapped Ratio','COVERAGE':'Coverage'}
+CHROMCOVTAB_HEADERMAP = {'CHROM':'Chromosome','LEN':'Length','MAAPED':'No. Mapped','UNMAPPED':'No. Unmapped','TOTAL':'Total','MAPPED_RATIO':'Mapped Ratio','COVERAGE':'Coverage'}
 
 
 def run_cmd(scmd, flag=False):
@@ -41,7 +42,7 @@ def run_cmd(scmd, flag=False):
 
 def fileOpen(path):
     f = open(path, "r")
-    return f.read() 
+    return f.read()
 
 def fileSave (path, cont, opt, gzip_flag = "n"):
     if gzip_flag == "gz":
@@ -69,7 +70,7 @@ def gzopen(fname):
 def get_options():
     parser = argparse.ArgumentParser(usage='%(prog)s <sub-command> [options]', description='%(prog)s ver' + VERSION + " (" + VERSION_DATE + ")" + ': convert bam to image')
     parser.add_argument('-v', '--version', action='version', version="%(prog)s ver" + VERSION + " (" + VERSION_DATE + ")")
-    
+
     parser.add_argument('-bam', dest='bam', default='', help='bam file')
     parser.add_argument('-out', dest='out', default='', help='title of output file')
     parser.add_argument('--per_gc', dest='per_gc', default='', help='percentage of GC metric from FASTQC')
@@ -106,7 +107,7 @@ class QCBoard():
         self.qcstat['FASTQC'] = {}
         self.qcstat['FASTQC']['GC_PER'] = self.opt['per_gc']
         self.qcstat['FASTQC']['DUPLICATION_PER'] = self.opt['per_dup']
-        
+
     def set_infilenames(self):
         self.infile = {}
         # self.infile['samtools.idxstats'] = self.opt['bam'] + '.idxstats'
@@ -147,7 +148,7 @@ class QCBoard():
         for gpos in range(spos, epos):
             self.refseq[gpos] = seq[i]
             i += 1
-    
+
     def get_refseq(self, ref, chrom, spos,epos):
         f = Fasta(ref)
         fastachrommap = {}
@@ -159,7 +160,7 @@ class QCBoard():
         refseq = f[fastachrommap[chrom]][spos:epos+1]
         return refseq
 
-    
+
     def save_html(self):
         cont = fileOpen(self.opt['temp'])
         cont = cont.replace('##BAMFILE##',self.opt['bam'])
@@ -178,25 +179,45 @@ class QCBoard():
                         v1 = v1.replace('PASS','<span class="badge badge-success">PASS</span>')
                         v1 = v1.replace('WARN','<span class="badge badge-warning">WARN</span>')
                         v1 = v1.replace('FAIL','<span class="badge badge-danger">FAIL</span>')
-                        
+
                     cont = cont.replace('##'+k1+'.'+k2+'##', v1)
 
         fileSave(self.out_html, cont, 'w')
         print ('Saved '+self.out_html)
 
-    def save_tsv(self):
-        cont = ""
-        for k1 in FIELDLIST_BAMQC.keys():
-            if len(self.qcstat[k1].keys()) > 0:
-                for k2 in FIELDLIST_BAMQC[k1]:
-                    if type(self.qcstat[k1][k2]) == type(1) or type(self.qcstat[k1][k2]) == type(1.1):
-                        v1 = comma(self.qcstat[k1][k2])
+    def save_json(self):
+        d = {}
+        for key in self.qcstat:
+            if key == 'SAMTOOLS':
+                # parsing samtools info
+                for k, v in self.qcstat['SAMTOOLS'].items():
+                    if k == 'CHROM_COVERAGE_TAB_HTML':
+                        pass
+                    elif k == 'CHROM_COVERAGE_TAB':
+                        d.setdefault('per_chromosome_coverage', [])
+                        for chr_str in v.split('|')[1:-1]:
+                            chr, len, map, unmap, tot, map_ratio, coverage = chr_str.split(':')
+                            d_chr = {'chromosome': chr, 'length': len, 'no_mapped': map,
+                                     'no_unmapped': unmap, 'total': tot,
+                                     'mapped_ratio': map_ratio, 'coverage': coverage
+                                    }
+                            d['per_chromosome_coverage'].append(d_chr)
                     else:
-                        v1 = self.qcstat[k1][k2]
-                    cont += k1+'.'+k2+'\t' +  v1 + '\n'
-        fileSave(self.out_tsv, cont, 'w')
-        print ('Saved '+self.out_tsv)
+                        if k == 'EST_GENDER':
+                            k = 'ESTIMATED_GENDER'
+                        elif k == 'COVERAGE_ALL_CHROM':
+                            k = 'COVERAGE_ALL_CHROMOSOMES'
+                        elif k == 'COVERAGE_MAIN_CHROM':
+                            k = 'COVERAGE_MAIN_CHROMOSOMES'
+                        d.setdefault(k.lower(), v)
+            elif key == 'PICARD.CMM':
+                for k, v in self.qcstat['PICARD.CMM'].items():
+                    d.setdefault(k.lower(), v)
 
+        # writing json
+        with open(self.out_json, 'w') as outfile:
+            json.dump(d, outfile)
+        print ('Saved '+self.out_json)
 
     def mk_run_script(self):
         pass
@@ -222,16 +243,16 @@ class QCBoard():
                     for a1 in arr:
                         chromcovtab_html += '<th>'+CHROMCOVTAB_HEADERMAP[a1]+'</th>'
                         if a1 != 'CHROM':
-                            chromcovtab += ','
+                            chromcovtab += ':'
                         chromcovtab += CHROMCOVTAB_HEADERMAP[a1]
                     chromcovtab_html += '</tr>'
                     chromcovtab += '|'
                 else:
                     chromcovtab_html += '<tr><td>'+'</td><td>'.join(arr)+'</td></tr>'
-                    chromcovtab += ','.join(arr) + '|'
+                    chromcovtab += ':'.join(arr) + '|'
                 if arr[0] == "MT" or arr[0] == "M":
                     flag = ""
-            
+
             if flag=="" and "=ALL CHROM=" in line:
                 flag = "ALL"
             if flag=="ALL" and "=ONLY MAIN CHROM" in line:
@@ -263,7 +284,7 @@ class QCBoard():
         self.qcstat['SAMTOOLS']['CHROM_COVERAGE_TAB'] = chromcovtab
         self.qcstat['SAMTOOLS']['MAPPED_RATIO'] = round(100*int(self.qcstat['SAMTOOLS']['NO_MAPPED_READS'].replace(',','')) / (int(self.qcstat['SAMTOOLS']['NO_MAPPED_READS'].replace(',','')) + int(self.qcstat['SAMTOOLS']['NO_UNMAPPED_READS'].replace(',',''))), 3)
 
-    
+
     def get_picard_cmm(self):
         for line in open(self.infile['picard.cmm.alignment_summary_metrics']):
             if line[0] != '#':
@@ -293,13 +314,13 @@ class QCBoard():
             line = line.strip()
             arr = line.split('\t')
             self.qcstat['FASTQC'][arr[1].strip().replace(' ','_')] = arr[0].strip()
-            
+
     def run(self):
         self.get_samtools_idxstats()
         self.get_picard_cmm()
         # self.get_fastqc()
         self.save_html()
-        self.save_tsv()
+        self.save_json()
 
 
 if __name__ == "__main__":
