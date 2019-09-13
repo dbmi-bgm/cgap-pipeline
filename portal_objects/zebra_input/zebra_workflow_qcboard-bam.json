@@ -1,8 +1,5 @@
 {
-    "parameters": {
-      "xmx": "3G",
-      "xms": "3G"
-    },
+    "parameters": {},
     "workflow_uuid": "ad8716a3-b6e8-4021-bbc6-b0cefc9c4dd8",
     "input_files" : [
        {

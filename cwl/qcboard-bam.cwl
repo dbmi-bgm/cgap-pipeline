@@ -23,13 +23,13 @@ inputs:
 
   - id: xmx
     type: string
-    default: 5G
+    default: 3G
     inputBinding:
       position: 2
 
   - id: xms
     type: string
-    default: 5G
+    default: 3G
     inputBinding:
       position: 3
 
