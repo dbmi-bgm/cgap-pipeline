@@ -66,5 +66,5 @@ steps:
     out: [output]
 
 doc: |
-  run samtools merge -c -p merged.bam in1.bam in2.bam ... |
+  run samtools merge -m max_memory -@ nthreads -c -p merged.bam in1.bam in2.bam ... |
   run an integrity check on the output bam to confirm an EOF is present and if successful count the number of alignments
