@@ -2,7 +2,7 @@
   "args": {
     "app_name": "merge_bam",
     "app_version": "v1.0",
-    "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v10/cwl",
+    "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v9/cwl",
     "cwl_main_filename": "merge_bam.cwl",
     "cwl_child_filenames": [],
     "cwl_version": "v1",
@@ -21,7 +21,7 @@
     "secondary_output_target": {}
   },
   "config": {
-    "instance_type": "m5a.2xlarge",
+    "instance_type": "t3.micro",
     "ebs_size": "2.2x",
     "EBS_optimized": true,
     "spot_instance": true,
