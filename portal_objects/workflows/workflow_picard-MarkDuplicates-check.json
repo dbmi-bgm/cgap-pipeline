@@ -1,5 +1,5 @@
 {
-  "accession": "4DNWFR5HG6J1",
+  "accession": "GAPWFLNQ7XTG",
   "app_name": "workflow_picard-MarkDuplicates-check",
   "app_version": "v9",
   "arguments": [
@@ -49,18 +49,18 @@
           "workflow_argument_name": "count"
       }
   ],
-  "award": "1U01CA200059-01",
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["picard-MarkDuplicates.cwl", "integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v9/cwl",
   "cwl_main_filename": "workflow_picard-MarkDuplicates_plus_integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Mark duplicates in bam input file. An integrity check is performed on the output file",
   "docker_image_name": "cgap/cgap",
   "docker_registry_url": "https://hub.docker.com/",
-  "lab": "4dn-dcic-lab",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_picard-MarkDuplicates-check_v9",
-  "aliases": ["4dn-dcic-lab:workflow_picard-MarkDuplicates-check_v9"],
+  "aliases": ["cgap:workflow_picard-MarkDuplicates-check_v9"],
   "steps": [
       {
           "inputs": [

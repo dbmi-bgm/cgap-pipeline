@@ -3,28 +3,28 @@
     "workflow_uuid": "455b3056-64ca-4a9b-b546-294b01c9ca92",
     "input_files" : [
        {
-           "object_key": "4DNFICWHCAIP.bam",
+           "object_key": ".bam",
            "workflow_argument_name": "input_bam",
-           "uuid": "c48742ae-1ff8-4e2f-987e-a1d8f41c257d",
-           "bucket_name": "elasticbeanstalk-fourfront-webdev-wfoutput"
+           "uuid": "",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
        },
        {
-           "object_key": "4DNFIBH13WES.fa",
+           "object_key": ".fa",
            "workflow_argument_name": "reference",
            "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
-           "bucket_name": "elasticbeanstalk-fourfront-webdev-files"
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
        },
        {
-           "object_key": "4DNFIBN3576F.vcf",
+           "object_key": ".vcf",
            "workflow_argument_name": "known-sites-indels",
            "uuid": "55ac5044-f927-4df7-afa2-bf713764ee57",
-           "bucket_name": "elasticbeanstalk-fourfront-webdev-files"
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
        },
        {
-           "object_key": "4DNFI2RDOLUQ.vcf.gz",
+           "object_key": ".vcf.gz",
            "workflow_argument_name": "known-sites-snp",
            "uuid": "8ed35691-0af4-467a-adbc-81eb088549f0",
-           "bucket_name": "elasticbeanstalk-fourfront-webdev-files"
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
        }
     ],
     "config": {
@@ -33,13 +33,13 @@
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",
-      "run_name": "run_workflow_gatk-BaseRecalibrator-check",
+      "run_name": "run_workflow_gatk-BaseRecalibrator",
       "behavior_on_capacity_limit": "wait_and_retry"
     },
     "_tibanna": {
-      "run_type": "workflow_gatk-BaseRecalibrator-check",
-      "env": "fourfront-webdev"
+      "run_type": "workflow_gatk-BaseRecalibrator",
+      "env": "fourfront-cgap"
     },
-    "app_name": "workflow_gatk-BaseRecalibrator-check",
-    "output_bucket": "elasticbeanstalk-fourfront-webdev-wfoutput"
+    "app_name": "workflow_gatk-BaseRecalibrator",
+    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
 }

@@ -6,7 +6,7 @@
            "object_key": ".bam",
            "workflow_argument_name": "input_bam",
            "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-webdev-wfoutput"
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
        }
     ],
     "config": {
@@ -20,8 +20,8 @@
     },
     "_tibanna": {
       "run_type": "workflow_picard-MarkDuplicates-check",
-      "env": "fourfront-webdev"
+      "env": "fourfront-cgap"
     },
     "app_name": "workflow_picard-MarkDuplicates-check",
-    "output_bucket": "elasticbeanstalk-fourfront-webdev-wfoutput"
+    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
 }

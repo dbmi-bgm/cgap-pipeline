@@ -3,10 +3,10 @@
     "workflow_uuid": "502e4846-a4ab-4da1-a5a3-d835442004a3",
     "input_files" : [
        {
-           "object_key": "4DNFI5FD8L3D.bam",
+           "object_key": ".bam",
            "workflow_argument_name": "bam",
-           "uuid": "dae65bf5-f73b-473d-9036-eb3d5a551743",
-           "bucket_name": "elasticbeanstalk-fourfront-webdev-wfoutput"
+           "uuid": "",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
        }
     ],
     "config": {
@@ -21,8 +21,8 @@
     },
     "_tibanna": {
       "run_type": "workflow_index-sorted-bam",
-      "env": "fourfront-webdev"
+      "env": "fourfront-cgap"
     },
     "app_name": "workflow_index-sorted-bam",
-    "output_bucket": "elasticbeanstalk-fourfront-webdev-wfoutput"
+    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
 }

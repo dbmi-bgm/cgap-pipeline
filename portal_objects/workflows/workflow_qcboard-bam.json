@@ -40,7 +40,7 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["QC"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v9/cwl",
   "cwl_main_filename": "qcboard-bam.cwl",
   "cwl_pointer": "",
   "description": "Quality control for a bam file. Calculate quality metrics and create html and json reports",

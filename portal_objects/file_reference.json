@@ -1,9 +1,8 @@
 [
   {
     "uuid": "b24ed5ed-a037-48a0-a938-3fecfb90d0cf",
-    "accession": "4DNFIYU3FC57",
-    "award": "b0b9c607-f8b4-4f02-93f4-9895b461334b",
-    "lab": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
     "file_format": "bwt",
     "description": "hg38 bwa genome index for CGAP, untarred, uncompressed",
     "aliases": ["cgap:hg38-bwt"],
@@ -29,9 +28,8 @@
   },
   {
     "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
-    "accession": "4DNFIBH13WES",
-    "award": "b0b9c607-f8b4-4f02-93f4-9895b461334b",
-    "lab": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
     "file_format": "fa",
     "description": "hg38 full reference fasta plus decoy for CGAP",
     "aliases": ["cgap:hg38-plus-decoy-fasta"],
@@ -49,9 +47,8 @@
   },
   {
     "uuid": "55ac5044-f927-4df7-afa2-bf713764ee57",
-    "accession": "4DNFIBN3576F",
-    "award": "b0b9c607-f8b4-4f02-93f4-9895b461334b",
-    "lab": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
     "file_format": "vcf",
     "description": "hg38 Mills_and_1000G_gold_standard_indels",
     "aliases": ["cgap:hg38-Mills-and-1000G-gold-standard-indels"],
@@ -65,9 +62,8 @@
   },
   {
     "uuid": "8ed35691-0af4-467a-adbc-81eb088549f0",
-    "accession": "4DNFI2RDOLUQ",
-    "award": "b0b9c607-f8b4-4f02-93f4-9895b461334b",
-    "lab": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
     "file_format": "vcf_gz",
     "description": "hg38 dbsnp_b151",
     "aliases": ["cgap:hg38-dbsnp-b151"],

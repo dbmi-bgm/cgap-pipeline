@@ -4,8 +4,8 @@
         "standard_file_extension": "ann",
         "description": "An extra file of a bwt file",
         "uuid": "106199e5-5a85-4817-9a55-7b31698e1fda",
-        "lab": "4dn-dcic-lab",
-        "award": "1U01CA200059-01",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "in review by lab",
         "valid_item_types": ["FileReference"]
     },
@@ -14,8 +14,8 @@
         "standard_file_extension": "amb",
         "description": "An extra file of a bwt file",
         "uuid": "8db70ed6-0121-4fe1-a72e-d91dc5aa6cd3",
-        "lab": "4dn-dcic-lab",
-        "award": "1U01CA200059-01",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "in review by lab",
         "valid_item_types": ["FileReference"]
     },
@@ -24,8 +24,8 @@
         "standard_file_extension": "pac",
         "description": "An extra file of a bwt file",
         "uuid": "7373ca48-0b3e-467b-967a-80870846f89b",
-        "lab": "4dn-dcic-lab",
-        "award": "1U01CA200059-01",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "in review by lab",
         "valid_item_types": ["FileReference"]
     },
@@ -34,8 +34,8 @@
         "standard_file_extension": "sa",
         "description": "An extra file of a bwt file",
         "uuid": "11f2fc36-9a65-4d60-9365-d8ff241df4f7",
-        "lab": "4dn-dcic-lab",
-        "award": "1U01CA200059-01",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "in review by lab",
         "valid_item_types": ["FileReference"]
     },
@@ -50,8 +50,8 @@
              "7373ca48-0b3e-467b-967a-80870846f89b",
              "11f2fc36-9a65-4d60-9365-d8ff241df4f7"
         ],
-        "lab": "4dn-dcic-lab",
-        "award": "1U01CA200059-01",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "in review by lab",
         "valid_item_types": ["FileReference"]
     },
@@ -64,8 +64,8 @@
             "4ed9f7e0-2b2f-4aca-9533-a0a652b43442",
             "fb728bb4-bc56-46d5-8df5-a05562826b9a"
         ],
-        "lab": "4dn-dcic-lab",
-        "award": "1U01CA200059-01",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "in review by lab",
         "valid_item_types": ["FileReference"]
     },
@@ -74,8 +74,8 @@
         "standard_file_extension": "dict",
         "description": "extra file of genome reference fasta",
         "uuid": "4ed9f7e0-2b2f-4aca-9533-a0a652b43442",
-        "lab": "4dn-dcic-lab",
-        "award": "1U01CA200059-01",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "in review by lab",
         "valid_item_types": ["FileReference"]
     },
@@ -84,8 +84,8 @@
         "standard_file_extension": "fa.fai",
         "description": "extra file of genome reference fasta",
         "uuid": "fb728bb4-bc56-46d5-8df5-a05562826b9a",
-        "lab": "4dn-dcic-lab",
-        "award": "1U01CA200059-01",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "in review by lab",
         "valid_item_types": ["FileReference"]
     },
@@ -97,8 +97,8 @@
         "extrafile_formats": [
             "ec96f95a-cf13-4633-ab0d-c4a5138bbe0b"
         ],
-        "lab": "4dn-dcic-lab",
-        "award": "1U01CA200059-01",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "in review by lab",
         "valid_item_types": ["FileReference"]
     },
@@ -107,8 +107,8 @@
         "standard_file_extension": "vcf.idx",
         "description": "GATK/IGV-index of vcf, uncompressed",
         "uuid": "ec96f95a-cf13-4633-ab0d-c4a5138bbe0b",
-        "lab": "4dn-dcic-lab",
-        "award": "1U01CA200059-01",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "in review by lab",
         "valid_item_types": ["FileReference"]
     },
@@ -120,8 +120,8 @@
         "extrafile_formats": [
             "f84f1922-7f4e-4afc-922f-bec620969bf1"
         ],
-        "lab": "4dn-dcic-lab",
-        "award": "1U01CA200059-01",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "in review by lab",
         "valid_item_types": ["FileReference"]
     },
@@ -130,8 +130,8 @@
         "standard_file_extension": "vcf.gz.tbi",
         "description": "Tabix index file of vcf, compressed",
         "uuid": "f84f1922-7f4e-4afc-922f-bec620969bf1",
-        "lab": "4dn-dcic-lab",
-        "award": "1U01CA200059-01",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "in review by lab",
         "valid_item_types": ["FileReference"]
     }

@@ -1,7 +1,7 @@
 [
     {
-        "award": "1U01CA200059-01",
-        "lab": "4dn-dcic-lab",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "name": "bwa",
         "software_type": [
             "aligner"
@@ -11,8 +11,8 @@
         "version": "0.7.17"
     },
     {
-        "award": "1U01CA200059-01",
-        "lab": "4dn-dcic-lab",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "name": "samtools",
         "software_type": [
             "file format converter"
@@ -23,8 +23,8 @@
         "version": "1.9"
     },
     {
-        "award": "1U01CA200059-01",
-        "lab": "4dn-dcic-lab",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "name": "gatk",
         "software_type": [
             "variant caller"
@@ -35,8 +35,8 @@
         "version": "4.1.2.0"
     },
     {
-        "award": "1U01CA200059-01",
-        "lab": "4dn-dcic-lab",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "name": "picard",
         "software_type": [
             "filter"
@@ -47,8 +47,8 @@
         "version": "2.20.2"
     },
     {
-        "award": "1U01CA200059-01",
-        "lab": "4dn-dcic-lab",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "name": "add-readgroups",
         "software_type": [
             "annotator"

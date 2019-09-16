@@ -1,5 +1,5 @@
 {
-  "accession": "4DNWFAO6TH4V",
+  "accession": "GAPWF9HYUJB9",
   "app_name": "workflow_bwa-mem_no_unzip-check",
   "app_version": "v9",
   "arguments": [
@@ -50,18 +50,18 @@
           "workflow_argument_name": "count"
       }
   ],
-  "award": "1U01CA200059-01",
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["bwa-mem-to-bam_no_unzip.cwl", "integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v9/cwl",
   "cwl_main_filename": "workflow_bwa-mem-to-bam_no_unzip_plus_integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Align paired-end reads to reference genome. Processing from fastq input files to bam output file. An integrity check is performed on the output file",
   "docker_image_name": "cgap/cgap",
   "docker_registry_url": "https://hub.docker.com/",
-  "lab": "4dn-dcic-lab",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_bwa-mem_no_unzip-check_v9",
-  "aliases": ["4dn-dcic-lab:workflow_bwa-mem_no_unzip-check_v9"],
+  "aliases": ["cgap:workflow_bwa-mem_no_unzip-check_v9"],
   "steps": [
       {
           "inputs": [

@@ -6,19 +6,19 @@
            "object_key": ".fastq.gz",
            "workflow_argument_name": "fastq_R1",
            "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-webdev-files"
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
        },
        {
            "object_key": ".fastq.gz",
            "workflow_argument_name": "fastq_R2",
            "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-webdev-files"
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
        },
        {
-           "object_key": "4DNFIYU3FC57.bwt",
+           "object_key": ".bwt",
            "workflow_argument_name": "reference",
            "uuid": "b24ed5ed-a037-48a0-a938-3fecfb90d0cf",
-           "bucket_name": "elasticbeanstalk-fourfront-webdev-files"
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
        }
     ],
     "config": {
@@ -32,8 +32,8 @@
     },
     "_tibanna": {
       "run_type": "workflow_bwa-mem_no_unzip-check",
-      "env": "fourfront-webdev"
+      "env": "fourfront-cgap"
     },
     "app_name": "workflow_bwa-mem_no_unzip-check",
-    "output_bucket": "elasticbeanstalk-fourfront-webdev-wfoutput"
+    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
 }
