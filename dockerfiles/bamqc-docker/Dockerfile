@@ -23,7 +23,7 @@ RUN apt-get update -y && apt-get install -y \
 
 WORKDIR /usr/local/bin
 
-# R 
+# R
 RUN apt-get install -y apt-transport-https software-properties-common  # to add add-apt-repository and to avoid method driver could not be found error
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && \
     add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial-cran35/' && \
@@ -59,20 +59,24 @@ RUN wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.5
     cd FastQC && \
     chmod +x fastqc && \
     cd .. && \
-    ln -s FastQC fastqc    
+    ln -s FastQC fastqc
 
 # scripts
-COPY bamstat.py .
-RUN chmod +x bamstat.py
+RUN git clone https://github.com/dbmi-bgm/qcboard.git && \
+    cd qcboard && \
+    git checkout a56ce6e && \
+    cd .. && \
+    cp qcboard/bin/bamstat.py . && \
+    cp qcboard/qcboard.py . && \
+    cp qcboard/qcboard_bamqc.html .
 
-COPY qcboard.py .
+# makes script executable
+RUN chmod +x bamstat.py
 RUN chmod +x qcboard.py
 
+# import bash script
 COPY bamqc.sh .
 RUN chmod +x bamqc.sh
-
-# template html
-COPY qcboard_bamqc.html .
 
 # paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
