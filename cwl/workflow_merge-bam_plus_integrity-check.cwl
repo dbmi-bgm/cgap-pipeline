@@ -23,6 +23,16 @@ inputs:
     default: 0
     doc: whether read count is checked at the end
 
+  - id: max_memory
+    type: string
+    default: '3G'
+    doc: maximum required memory per thread
+
+  - id: nthreads
+    type: int
+    default: 8
+    doc: number of sorting and compression threads
+
 outputs:
   merged_bam:
     type: File
@@ -40,6 +50,10 @@ steps:
         source: input_bams
       reads_grouped_by_name:
         source: reads_grouped_by_name
+      max_memory:
+        source: max_memory
+      nthreads:
+        source: nthreads
     out: [output]
 
   integrity-check:
