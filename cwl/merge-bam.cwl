@@ -30,15 +30,9 @@ inputs:
       prefix: -p
     doc: redundant RG headers are merged
 
-  - id: max_memory
-    type: string
-    inputBinding:
-      position: 3
-      prefix: -m
-    doc: maximum required memory per thread
-
   - id: nthreads
     type: int
+    default: 8
     inputBinding:
       position: 4
       prefix: -@
@@ -67,4 +61,4 @@ outputs:
       glob: $(inputs.outbamname)
 
 doc: |
-  run samtools merge -m mem_per_thread -@ nthreads -c -p out.bam in1.bam in2.bam ...
+  run samtools merge -@ nthreads -c -p out.bam in1.bam in2.bam ...
