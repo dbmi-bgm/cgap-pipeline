@@ -54,8 +54,11 @@ COPY integrity-check.sh .
 RUN chmod +x integrity-check.sh
 
 # add read groups script
-COPY AddReadGroups.py .
-RUN chmod +x AddReadGroups.py
+RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
+    cd cgap-scripts && \
+    git checkout bfff9b8 && \
+    chmod +x AddReadGroups.py && \
+    cd ..
 
 # hc parallel script
 COPY hc-parallel.sh .
@@ -64,6 +67,7 @@ RUN chmod +x hc-parallel.sh
 # paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
 ENV PATH=/usr/local/bin/bwa/:$PATH
+ENV PATH=/usr/local/bin/cgap-scripts/:$PATH
 
 # supporting UTF-8
 RUN locale-gen "en_US.UTF-8" && update-locale LC_ALL="en_US.UTF-8"
