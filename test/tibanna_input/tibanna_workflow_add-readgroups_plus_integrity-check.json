@@ -7,19 +7,20 @@
     "cwl_child_filenames": ["add-readgroups.cwl", "integrity-check.cwl"],
     "cwl_version": "v1",
     "input_files": {
-      "input": {
+      "input_bam": {
         "bucket_name": "soos-4dn-bucket",
-        "object_key": "test2/raw_down3x.bam"
+        "object_key": "cgaptest/test2/raw_down3x.bam"
       }
     },
     "secondary_files": {},
     "input_parameters": {
+      "sample_name": "test_3x",
       "nthreads": 8
     },
     "output_S3_bucket": "soos-4dn-bucket",
     "output_target": {
-      "output": "test2/raw_down3x_rg.bam",
-      "output-check": "integrity_check"
+      "output": "cgaptest/test2/raw_down3x_rg.bam",
+      "output-check": "cgaptest/test2/integrity_check"
     },
     "secondary_output_target": {}
   },
