@@ -53,18 +53,18 @@ RUN wget https://github.com/arq5x/bedtools2/releases/download/v2.29.0/bedtools-2
     cd .. && \
     ln -s bedtools2 bedtools
 
-# fastqc
-RUN wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.5.zip && \
-    unzip fastqc_v0.11.5.zip && \
-    cd FastQC && \
-    chmod +x fastqc && \
-    cd .. && \
-    ln -s FastQC fastqc
+## fastqc
+#RUN wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.5.zip && \
+#    unzip fastqc_v0.11.5.zip && \
+#    cd FastQC && \
+#    chmod +x fastqc && \
+#    cd .. && \
+#    ln -s FastQC fastqc
 
 # scripts
 RUN git clone https://github.com/dbmi-bgm/qcboard.git && \
     cd qcboard && \
-    git checkout a56ce6e && \
+    git checkout a105361 && \
     cd .. && \
     cp qcboard/bin/bamstat.py . && \
     cp qcboard/qcboard.py . && \
@@ -81,7 +81,7 @@ RUN chmod +x bamqc.sh
 # paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
 ENV PATH=/usr/local/bin/bedtools/bin/:$PATH
-ENV PATH=/usr/local/bin/fastqc/:$PATH
+#ENV PATH=/usr/local/bin/fastqc/:$PATH
 
 # supporting UTF-8
 RUN locale-gen "en_US.UTF-8" && update-locale LC_ALL="en_US.UTF-8"

@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/bamqc:v2
+    dockerPull: cgap/bamqc:v3
 
 baseCommand: [bamqc.sh]
 
