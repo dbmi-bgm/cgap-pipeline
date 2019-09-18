@@ -56,7 +56,7 @@ RUN chmod +x integrity-check.sh
 # add read groups script
 RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
     cd cgap-scripts && \
-    git checkout bfff9b8 && \
+    git checkout 2390ef6 && \
     chmod +x AddReadGroups.py && \
     cd ..
 
