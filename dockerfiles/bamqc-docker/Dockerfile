@@ -64,7 +64,7 @@ RUN wget https://github.com/arq5x/bedtools2/releases/download/v2.29.0/bedtools-2
 # scripts
 RUN git clone https://github.com/dbmi-bgm/qcboard.git && \
     cd qcboard && \
-    git checkout fe2babb && \
+    git checkout 4fd2ec3 && \
     cd .. && \
     cp qcboard/bin/bamstat.py . && \
     cp qcboard/qcboard.py . && \
