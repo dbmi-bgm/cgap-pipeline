@@ -9,7 +9,7 @@
     "input_files": {
       "input_bam": {
         "bucket_name": "soos-4dn-bucket",
-        "object_key": "test7/recalibrated.bam"
+        "object_key": "cgaptest/test7/recalibrated.bam"
       },
       "reference": {
         "bucket_name": "maestro-resources",
@@ -19,7 +19,7 @@
     "secondary_files": {
       "input_bam": {
         "bucket_name": "soos-4dn-bucket",
-        "object_key": ["test7/recalibrated.bam.bai"]
+        "object_key": ["cgaptest/test7/recalibrated.bam.bai"]
       },
       "reference": {
         "bucket_name": "maestro-resources",
@@ -29,7 +29,7 @@
     "input_parameters": {},
     "output_S3_bucket": "soos-4dn-bucket",
     "output_target": {
-      "gvcf": "test8/out.gvcf"
+      "gvcf": "cgaptest/test8/out.gvcf"
     },
     "secondary_output_target": {}
   },
