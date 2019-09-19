@@ -13,8 +13,6 @@ hints:
 
 baseCommand: [gatk, --java-options, \"-Xmx4g\", GenotypeGVCFs, -O, $(inputs.prefix + ".vcf.gz")]
 
-gatk --java-options \"-Xmx4g\" GenotypeGVCFs -V combined2.gvcf.gz  -R ref.fa --dbsnp dbsnp.vcf -verbosity INFO -O test_output.all.vcf.gz",
-
 inputs:
   - id: input_gvcf
     type: File
