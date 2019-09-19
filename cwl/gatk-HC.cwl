@@ -13,7 +13,7 @@ hints:
 
 baseCommand: [gatk, HaplotypeCaller]
 
-arguments: ["--java-options", "'-Xms8g'", "-O", $(inputs.input_bam.nameroot + ".gvcf"), "--max-alternate-alleles", "3", "--read-filter", "OverclippedReadFilter"]
+arguments: ["--java-options", '-Xms8g', "-O", $(inputs.input_bam.nameroot + ".gvcf"), "--max-alternate-alleles", "3", "--read-filter", "OverclippedReadFilter"]
 
 inputs:
   - id: input_bam
