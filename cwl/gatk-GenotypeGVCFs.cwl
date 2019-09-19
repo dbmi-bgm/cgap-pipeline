@@ -11,9 +11,9 @@ hints:
   - class: DockerRequirement
     dockerPull: cgap/cgap:v10
 
-baseCommand: [gatk, --java-options, \"-Xmx4g\", GenotypeGVCFs]
+baseCommand: [gatk, GenotypeGVCFs]
 
-arguments: ["-O", $(inputs.prefix + ".vcf.gz")]
+arguments: ["--java-options", '-Xmx4g', "-O", $(inputs.prefix + ".vcf.gz")]
 
 inputs:
   - id: input_gvcf
