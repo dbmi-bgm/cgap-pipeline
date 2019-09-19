@@ -11,9 +11,9 @@ hints:
   - class: DockerRequirement
     dockerPull: cgap/cgap:v10
 
-baseCommand: [gatk, --java-options, \"-Xmx4g\", GenotypeGVCFs, -O, $(inputs.prefix + ".vcf.gz")]
+baseCommand: [gatk, GenotypeGVCFs]
 
-gatk --java-options \"-Xmx4g\" GenotypeGVCFs -V combined2.gvcf.gz  -R ref.fa --dbsnp dbsnp.vcf -verbosity INFO -O test_output.all.vcf.gz",
+arguments: ["--java-options", '-Xmx4g', "-O", $(inputs.prefix + ".vcf.gz")]
 
 inputs:
   - id: input_gvcf
@@ -23,7 +23,7 @@ inputs:
       prefix: -V
     secondaryFiles:
       - .tbi
-    doc: format input.gvcf.gz
+    doc: expect the path to the gvcf gz file
 
   - id: reference
     type: File
@@ -33,16 +33,16 @@ inputs:
     secondaryFiles:
       - .fai
       - ^.dict
-    doc: format reference.fa
+    doc: expect the path to the fa file
 
-  - id: dbsnp
+  - id: known-sites-snp
     type: File
     inputBinding:
       position: 3
       prefix: --dbsnp
     secondaryFiles:
       - .idx
-    doc: format dbsnp.vcf
+    doc: expect the path to the dbsnp vcf file
 
   - id: verbosity
     type: string
