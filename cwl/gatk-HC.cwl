@@ -22,7 +22,7 @@ inputs:
       position: 1
       prefix: -I
     secondaryFiles:
-      - ^.bai
+      - .bai
 
   - id: reference
     type: File
