@@ -2,8 +2,8 @@
 
 inputbam=$1
 reffa=$2
-Xms=$3  # '8g'
-ERC=$4  #'GVCF'
+ERC=$3  #'GVCF' | 'BP_RESOLUTION'
+Xms=$4  # '8g'
 outdir=$5  # '.'
 
 mkdir -p $outdir
