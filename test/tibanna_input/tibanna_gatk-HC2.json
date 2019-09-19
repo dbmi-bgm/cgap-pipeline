@@ -8,28 +8,28 @@
     "cwl_version": "v1",
     "input_files": {
       "input_bam": {
-        "bucket_name": "",
-        "object_key": ".bam"
+        "bucket_name": "soos-4dn-bucket",
+        "object_key": "test7/recalibrated.bam"
       },
       "reference": {
-        "bucket_name": "",
-        "object_key": ".fa"
+        "bucket_name": "maestro-resources",
+        "object_key": "GRCh38_full_analysis_set_plus_decoy_hla.fa"
       }
     },
     "secondary_files": {
       "input_bam": {
-        "bucket_name": "",
-        "object_key": [".bam.bai"]
+        "bucket_name": "soos-4dn-bucket",
+        "object_key": ["test7/recalibrated.bam.bai"]
       },
       "reference": {
-        "bucket_name": "",
-        "object_key": [".dict", ".fa.fai"]
+        "bucket_name": "maestro-resources",
+        "object_key": ["GRCh38_full_analysis_set_plus_decoy_hla.dict", "GRCh38_full_analysis_set_plus_decoy_hla.fa.fai"]
       }
     },
     "input_parameters": {},
-    "output_S3_bucket": "",
+    "output_S3_bucket": "soos-4dn-bucket",
     "output_target": {
-      "output": ".gvcf"
+      "gvcf": "test8/out.gvcf"
     },
     "secondary_output_target": {}
   },
@@ -38,7 +38,7 @@
     "ebs_size": "2x",
     "EBS_optimized": true,
     "spot_instance": true,
-    "log_bucket": "",
+    "log_bucket": "tibanna-output",
     "run_name": "run_gatk-HC",
     "behavior_on_capacity_limit": "wait_and_retry"
   }
