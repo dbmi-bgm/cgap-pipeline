@@ -35,7 +35,7 @@ inputs:
     doc: expect the path to the fa file
 
   - id: ERC
-    type: String
+    type: string
     default: GVCF
     inputBinding:
       position: 3
