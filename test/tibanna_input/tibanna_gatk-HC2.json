@@ -8,8 +8,8 @@
     "cwl_version": "v1",
     "input_files": {
       "input_bam": {
-        "bucket_name": "soos-4dn-bucket",
-        "object_key": "cgaptest/test2/sorted_down3x.bam"
+        "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput",
+        "object_key": "490174ae-bd67-4544-8541-3cbd41e19498/GAPFIOABSR8I.bam"
       },
       "reference": {
         "bucket_name": "maestro-resources",
@@ -18,8 +18,8 @@
     },
     "secondary_files": {
       "input_bam": {
-        "bucket_name": "soos-4dn-bucket",
-        "object_key": ["cgaptest/test2/sorted_down3x.bam.bai"]
+        "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput",
+        "object_key": ["490174ae-bd67-4544-8541-3cbd41e19498/GAPFIOABSR8I.bam.bai"]
       },
       "reference": {
         "bucket_name": "maestro-resources",
