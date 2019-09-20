@@ -27,7 +27,7 @@
       },
       "reference": {
         "bucket_name": "",
-        "object_key": [".fa.fai, .dict"]
+        "object_key": [".fa.fai", ".dict"]
       },
       "known-sites-snp": {
         "bucket_name": "",
