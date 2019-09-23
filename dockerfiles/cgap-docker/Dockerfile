@@ -1,10 +1,11 @@
 FROM 4dndcic/ubuntu16.04-miniconda-python36:v1
 MAINTAINER Soo Lee (duplexa@gmail.com), Michele Berselli (berselli.michele@gmail.com)
 
-# 1. general updates & installing necessary Linux components
+# general updates & installing necessary Linux components
 RUN apt-get update -y && apt-get install -y \
     bzip2 \
     gcc \
+    g++ \
     git \
     less \
     libncurses-dev \
@@ -18,7 +19,10 @@ RUN apt-get update -y && apt-get install -y \
     libbz2-dev \
     liblzma-dev \
     locales \
-    parallel
+    parallel \
+    autoconf \
+    autogen \
+    pkg-config
 
 WORKDIR /usr/local/bin
 
@@ -42,6 +46,17 @@ RUN wget https://github.com/lh3/bwa/archive/v0.7.17.tar.gz && \
     cd .. && \
     ln -s bwa-0.7.17 bwa
 
+# vcf tools
+RUN git clone https://github.com/vcftools/vcftools.git && \
+    mv vcftools vcftools_tmp && \
+    cd vcftools_tmp && \
+    git checkout 954e607 && \
+    ./autogen.sh && \
+    ./configure && \
+    make && \
+    make install && \
+    cd ..
+
 # bwa mem script
 COPY bwa-mem-to-bam.sh .
 RUN chmod +x bwa-mem-to-bam.sh
@@ -49,9 +64,13 @@ RUN chmod +x bwa-mem-to-bam.sh
 COPY bwa-mem-to-bam_no_unzip.sh .
 RUN chmod +x bwa-mem-to-bam_no_unzip.sh
 
-# integrity check script
+# BAM integrity check script
 COPY integrity-check.sh .
 RUN chmod +x integrity-check.sh
+
+# VCF integrity check script
+COPY vcf-integrity-check.sh .
+RUN chmod +x vcf-integrity-check.sh
 
 # add read groups script
 RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
@@ -60,9 +79,9 @@ RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
     chmod +x AddReadGroups.py && \
     cd ..
 
-# hc parallel script
-COPY hc-parallel.sh .
-RUN chmod +x hc-parallel.sh
+# # hc parallel script
+# COPY hc-parallel.sh .
+# RUN chmod +x hc-parallel.sh
 
 # paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
