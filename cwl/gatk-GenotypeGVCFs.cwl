@@ -9,14 +9,14 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v10
+    dockerPull: cgap/cgap:v10-b
 
 baseCommand: [gatk, GenotypeGVCFs]
 
-arguments: ["--java-options", '-Xmx4g', "-O", $(inputs.prefix + ".vcf.gz")]
+arguments: ["--java-options", '-Xmx4g', "-O", $(inputs.input.prefix + ".vcf.gz")]
 
 inputs:
-  - id: input_gvcf
+  - id: input
     type: File
     inputBinding:
       position: 1
@@ -55,7 +55,7 @@ outputs:
   - id: output
     type: File
     outputBinding:
-      glob: $(inputs.prefix + ".vcf.gz")
+      glob: $(inputs.input.prefix + ".vcf.gz")
 
 doc: |
   run gatk GenotypeGVCFs
