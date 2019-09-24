@@ -37,8 +37,8 @@
     "input_parameters": {},
     "output_S3_bucket": "",
     "output_target": {
-      "vcf_file": ".vcf.gz",
-      "vcf_file-check": "integrity_check"
+      "vcf": ".vcf.gz",
+      "vcf-check": "integrity_check"
     },
     "secondary_output_target": {}
   },

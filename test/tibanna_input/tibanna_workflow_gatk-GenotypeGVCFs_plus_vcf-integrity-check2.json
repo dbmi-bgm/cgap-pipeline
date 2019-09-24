@@ -37,8 +37,8 @@
     "input_parameters": {},
     "output_S3_bucket": "soos-4dn-bucket",
     "output_target": {
-      "vcf_file": "cgaptest/test3/OUTPUT_PROVA_GVCF_WORK_tibanna.vcf.gz",
-      "vcf_file-check": "cgaptest/test3/OUTPUT_PROVA_GVCF_WORK_integrity_check"
+      "vcf": "cgaptest/test3/OUTPUT_PROVA_GVCF_WORK_tibanna.vcf.gz",
+      "vcf-check": "cgaptest/test3/OUTPUT_PROVA_GVCF_WORK_integrity_check"
     },
     "secondary_output_target": {}
   },

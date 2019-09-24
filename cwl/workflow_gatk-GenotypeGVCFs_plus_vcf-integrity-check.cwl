@@ -30,11 +30,11 @@ inputs:
     default: INFO
 
 outputs:
-  vcf_file:
+  vcf:
     type: File
     outputSource: gatk-GenotypeGVCFs/output
 
-  vcf_file-check:
+  vcf-check:
     type: File
     outputSource: integrity-check/output
 

@@ -9,14 +9,14 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v10
+    dockerPull: cgap/cgap:v10-b
 
 baseCommand: [gatk, HaplotypeCaller]
 
-arguments: ["--java-options", '-Xms8g', "-O", $(inputs.input_bam.nameroot + ".gvcf.gz"), "--max-alternate-alleles", "3", "--read-filter", "OverclippedReadFilter"]
+arguments: ["--java-options", '-Xms8g', "-O", $(inputs.input.nameroot + ".gvcf.gz"), "--max-alternate-alleles", "3", "--read-filter", "OverclippedReadFilter"]
 
 inputs:
-  - id: input_bam
+  - id: input
     type: File
     inputBinding:
       position: 1
@@ -43,10 +43,10 @@ inputs:
     doc: either 'GVCF' or 'BP_RESOLUTION'
 
 outputs:
-  - id: gvcf
+  - id: output
     type: File
     outputBinding:
-      glob: $(inputs.input_bam.nameroot + ".gvcf.gz")
+      glob: $(inputs.input.nameroot + ".gvcf.gz")
     secondaryFiles:
       - .tbi
 

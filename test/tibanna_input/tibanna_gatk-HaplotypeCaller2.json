@@ -3,11 +3,11 @@
     "app_name": "gatk-HC",
     "app_version": "v1.0",
     "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v10/cwl",
-    "cwl_main_filename": "gatk-HC.cwl",
+    "cwl_main_filename": "gatk-HaplotypeCaller.cwl",
     "cwl_child_filenames": [],
     "cwl_version": "v1",
     "input_files": {
-      "input_bam": {
+      "input": {
         "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput",
         "object_key": "490174ae-bd67-4544-8541-3cbd41e19498/GAPFIOABSR8I.bam"
       },
@@ -29,7 +29,7 @@
     "input_parameters": {},
     "output_S3_bucket": "soos-4dn-bucket",
     "output_target": {
-      "gvcf": "cgaptest/test8/out.gvcf"
+      "output": "cgaptest/test8/out.gvcf"
     },
     "secondary_output_target": {}
   },
