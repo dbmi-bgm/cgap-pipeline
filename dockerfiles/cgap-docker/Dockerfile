@@ -79,9 +79,9 @@ RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
     chmod +x AddReadGroups.py && \
     cd ..
 
-# # hc parallel script
-# COPY hc-parallel.sh .
-# RUN chmod +x hc-parallel.sh
+# HaplotypeCaller parallel script
+COPY HaplotypeCaller-parallel.sh .
+RUN chmod +x HaplotypeCaller-parallel.sh
 
 # paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
