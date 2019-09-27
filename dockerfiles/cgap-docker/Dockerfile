@@ -22,7 +22,8 @@ RUN apt-get update -y && apt-get install -y \
     parallel \
     autoconf \
     autogen \
-    pkg-config
+    pkg-config \
+    tabix
 
 WORKDIR /usr/local/bin
 
