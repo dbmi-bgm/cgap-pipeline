@@ -30,9 +30,11 @@ for filename in ${sorted[@]};
       chr_M=$filename
     else
       grep -v "^##" $filename >> combined.gvcf
+      rm -f $filename ${filename}.idx
     fi
   done
 
 if [[ -v  chr_M  ]]; then
   grep -v "^##" $chr_M >> combined.gvcf
+  rm -f $chr_M ${chr_M}.idx
 fi
