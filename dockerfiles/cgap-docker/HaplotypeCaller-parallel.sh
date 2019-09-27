@@ -6,6 +6,7 @@ reference=$2
 regionfile=$3
 threshold=$4
 ERC=$5
+nthreads=$6
 
 # self variables
 directory=GVCFS/
@@ -38,3 +39,7 @@ if [[ -v  chr_M  ]]; then
   grep -v "^##" $chr_M >> combined.gvcf
   rm -f $chr_M ${chr_M}.idx
 fi
+
+# compress and index combined gvcf
+bgzip -@ $nthreads combined.gvcf
+tabix -p vcf combined.gvcf.gz
