@@ -41,8 +41,8 @@ inputs:
       position: 3
       prefix: --dbsnp
     secondaryFiles:
-      - .idx
-    doc: expect the path to the dbsnp vcf file
+      - .tbi
+    doc: expect the path to the dbsnp vcf gz file
 
   - id: verbosity
     type: string

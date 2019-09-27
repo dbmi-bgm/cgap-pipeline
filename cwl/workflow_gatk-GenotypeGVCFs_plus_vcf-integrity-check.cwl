@@ -22,8 +22,8 @@ inputs:
   - id: known-sites-snp
     type: File
     secondaryFiles:
-      - .idx
-    doc: expect the path to the dbsnp vcf file
+      - .tbi
+    doc: expect the path to the dbsnp vcf gz file
 
   - id: verbosity
     type: string
