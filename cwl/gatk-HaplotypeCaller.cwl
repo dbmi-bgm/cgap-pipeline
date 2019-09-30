@@ -56,7 +56,7 @@ inputs:
     default: 24
     inputBinding:
       position: 6
-    doc: number of threads used to run parallel and to compress output gvcf file
+    doc: number of threads used to run parallel
 
 outputs:
   - id: gvcf

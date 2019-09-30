@@ -41,5 +41,5 @@ if [[ -v  chr_M  ]]; then
 fi
 
 # compress and index combined gvcf
-bgzip -@ $nthreads combined.gvcf
+bgzip combined.gvcf
 tabix -p vcf combined.gvcf.gz
