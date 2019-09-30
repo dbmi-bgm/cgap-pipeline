@@ -1,19 +1,23 @@
 {
   "args": {
-    "app_name": "gatk-HC",
+    "app_name": "gatk-HaplotypeCaller",
     "app_version": "v1.0",
     "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v10/cwl",
     "cwl_main_filename": "gatk-HaplotypeCaller.cwl",
     "cwl_child_filenames": [],
     "cwl_version": "v1",
     "input_files": {
-      "input": {
+      "input_bam": {
         "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput",
         "object_key": "490174ae-bd67-4544-8541-3cbd41e19498/GAPFIOABSR8I.bam"
       },
       "reference": {
         "bucket_name": "maestro-resources",
         "object_key": "GRCh38_full_analysis_set_plus_decoy_hla.fa"
+      },
+      "regions": {
+        "bucket_name": "soos-4dn-bucket",
+        "object_key": "cgaptest/test8/regionfile-10M-allregions"
       }
     },
     "secondary_files": {
@@ -29,17 +33,19 @@
     "input_parameters": {},
     "output_S3_bucket": "soos-4dn-bucket",
     "output_target": {
-      "output": "cgaptest/test8/out.gvcf"
+      "gvcf": "cgaptest/test8/out_TEST_MERGE.gvcf"
     },
-    "secondary_output_target": {}
+    "secondary_output_target": {
+      "gvcf": "cgaptest/test8/out_TEST_MERGE.gvcf.tbi"
+    }
   },
   "config": {
-    "instance_type": "t3.2xlarge",
-    "ebs_size": "2x",
+    "instance_type": "c5n.18xlarge",
+    "ebs_size": "1.6x",
     "EBS_optimized": true,
     "spot_instance": true,
     "log_bucket": "tibanna-output",
-    "run_name": "run_gatk-HC",
+    "run_name": "run_gatk-HaplotypeCaller",
     "behavior_on_capacity_limit": "wait_and_retry"
   }
 }

@@ -46,10 +46,10 @@ inputs:
 
   - id: ERC
     type: string
-    default: GVCF
+    default: "GVCF"
     inputBinding:
       position: 5
-    doc: either 'GVCF' or 'BP_RESOLUTION'
+    doc: either "GVCF" or "BP_RESOLUTION"
 
   - id: nthreads
     type: int
