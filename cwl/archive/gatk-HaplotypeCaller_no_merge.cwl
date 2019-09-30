@@ -11,56 +11,42 @@ hints:
   - class: DockerRequirement
     dockerPull: cgap/cgap:v10-b
 
-baseCommand: [HaplotypeCaller-parallel.sh]
+baseCommand: [gatk, HaplotypeCaller]
+
+arguments: ["--java-options", '-Xms8g', "-O", $(inputs.input.nameroot + ".gvcf.gz"), "--max-alternate-alleles", "3", "--read-filter", "OverclippedReadFilter"]
 
 inputs:
-  - id: input_bam
+  - id: input
     type: File
     inputBinding:
       position: 1
-    doc: input bam file
+      prefix: -I
+    secondaryFiles:
+      - .bai
 
   - id: reference
     type: File
     inputBinding:
       position: 2
+      prefix: -R
     secondaryFiles:
       - ^.dict
       - .fai
     doc: expect the path to the fa file
 
-  - id: regions
-    type: File
-    inputBinding:
-      position: 3
-    doc: expect the path to the file defining regions
-
-  - id: threshold
-    type: int
-    default: 0
-    inputBinding:
-      position: 4
-    doc: -stand-call-conf threshold
-
   - id: ERC
     type: string
     default: GVCF
     inputBinding:
-      position: 5
+      position: 3
+      prefix: -ERC
     doc: either 'GVCF' or 'BP_RESOLUTION'
 
-  - id: nthreads
-    type: int
-    default: 24
-    inputBinding:
-      position: 6
-    doc: number of threads used to run parallel and to compress output gvcf file
-
 outputs:
-  - id: gvcf
+  - id: output
     type: File
     outputBinding:
-      glob: combined.gvcf.gz
+      glob: $(inputs.input.nameroot + ".gvcf.gz")
     secondaryFiles:
       - .tbi
 

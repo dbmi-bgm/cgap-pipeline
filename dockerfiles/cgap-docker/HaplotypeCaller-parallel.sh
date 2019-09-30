@@ -15,7 +15,7 @@ directory=GVCFS/
 mkdir -p $directory
 
 # runnning HaplotypeCaller in parallel
-cat $regionfile | parallel --jobs 24 "gatk PrintReads --java-options '-Xms2g' -I $inputbam --interval-padding 500 -L {} -O {}.sharded.bam; if [[ -e {}.sharded.bam ]]; then gatk HaplotypeCaller --java-options '-Xms8g' -R $reference -O ${directory}out.{}.g.vcf -I {}.sharded.bam -L {} -ERC $ERC --max-alternate-alleles 3 --read-filter OverclippedReadFilter -stand-call-conf $threshold; fi; rm {}.sharded.ba*"
+cat $regionfile | parallel --jobs $nthreads "gatk PrintReads --java-options '-Xms2g' -I $inputbam --interval-padding 500 -L {} -O {}.sharded.bam; if [[ -e {}.sharded.bam ]]; then gatk HaplotypeCaller --java-options '-Xms8g' -R $reference -O ${directory}out.{}.g.vcf -I {}.sharded.bam -L {} -ERC $ERC --max-alternate-alleles 3 --read-filter OverclippedReadFilter -stand-call-conf $threshold; fi; rm {}.sharded.ba*"
 
 # merging the results
 array=(${directory}*g.vcf)
