@@ -31,7 +31,7 @@
       },
       "known-sites-snp": {
         "bucket_name": "",
-        "object_key": ["vcf.gz.tbi"]
+        "object_key": [".vcf.gz.tbi"]
       }
     },
     "input_parameters": {},
