@@ -1,12 +1,12 @@
 {
-  "accession": "GAPG8T94T3X9",
-  "app_name": "workflow_gatk-HaplotypeCaller",
+  "accession": "GAPK956LO3H2",
+  "app_name": "workflow_gatk-GenotypeGVCFs-check",
   "app_version": "v10",
   "arguments": [
       {
-          "argument_format": "bam",
+          "argument_format": "gvcf_gz",
           "argument_type": "Input file",
-          "workflow_argument_name": "input_bam"
+          "workflow_argument_name": "input_gvcf"
       },
       {
           "argument_format": "fa",
@@ -14,55 +14,57 @@
           "workflow_argument_name": "reference"
       },
       {
-          "argument_format": "txt",
+          "argument_format": "vcf_gz",
           "argument_type": "Input file",
-          "workflow_argument_name": "regions"
+          "workflow_argument_name": "known-sites-snp"
       },
       {
-          "argument_format": "gvcf_gz",
+          "argument_format": "vcf_gz",
           "argument_type": "Output processed file",
-          "workflow_argument_name": "gvcf",
+          "workflow_argument_name": "vcf",
           "secondary_file_formats": ["tbi"]
       },
       {
-          "argument_type": "parameter",
-          "workflow_argument_name": "threshold"
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "vcf-check",
+          "argument_to_be_attached_to": "vcf",
+          "qc_zipped": false,
+          "qc_html": false,
+          "qc_json": false,
+          "qc_table": true,
+          "qc_type": ""
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": "ERC"
-      },
-      {
-          "argument_type": "parameter",
-          "workflow_argument_name": "nthreads"
+          "workflow_argument_name": "verbosity"
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
-  "cwl_child_filenames": [],
+  "cwl_child_filenames": ["gatk-GenotypeGVCFs.cwl", "vcf-integrity-check.cwl"],
   "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v10/cwl",
-  "cwl_main_filename": "gatk-HaplotypeCaller.cwl",
+  "cwl_main_filename": "workflow_gatk-GenotypeGVCFs_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
-  "description": "Run gatk HaplotypeCaller on bam input file. Produce a g.vcf file",
+  "description": "Run gatk GenotypeGVCFs on g.vcf input file. Produce a vcf file. An integrity check is performed on the output file",
   "docker_image_name": "cgap/cgap",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_gatk-HaplotypeCaller_v10",
-  "aliases": ["cgap:workflow_gatk-HaplotypeCaller_v10"],
+  "name": "workflow_gatk-GenotypeGVCFs-check_v10",
+  "aliases": ["cgap:workflow_gatk-GenotypeGVCFs-check_v10"],
   "steps": [
       {
           "inputs": [
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "bam",
+                      "file_format": "gvcf_gz",
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "input_bam",
+                  "name": "input_gvcf",
                   "source": [
                       {
-                          "name": "input_bam"
+                          "name": "input_gvcf"
                       }
                   ]
               },
@@ -83,14 +85,14 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "txt",
+                      "file_format": "vcf_gz",
                       "global": true,
                       "type": "reference file"
                   },
-                  "name": "regions",
+                  "name": "known-sites-snp",
                   "source": [
                       {
-                          "name": "regions"
+                          "name": "known-sites-snp"
                       }
                   ]
               },
@@ -100,67 +102,85 @@
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "threshold",
+                  "name": "verbosity",
                   "source": [
                       {
-                          "name": "threshold"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "parameter"
-                  },
-                  "name": "ERC",
-                  "source": [
-                      {
-                          "name": "ERC"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "parameter"
-                  },
-                  "name": "nthreads",
-                  "source": [
-                      {
-                          "name": "nthreads"
+                          "name": "verbosity"
                       }
                   ]
               }
           ],
           "meta": {
               "analysis_step_types": [
-                  "Run gatk HaplotypeCaller"
+                  "Run gatk GenotypeGVCFs"
               ],
               "software_used": [
                  "/softwares/4ae88fb4-23f2-4939-8852-4644069d14d9"
               ]
           },
-          "name": "HaplotypeCaller",
+          "name": "GenotypeGVCFs",
           "outputs": [
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "gvcf_gz",
+                      "file_format": "vcf_gz",
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "gvcf",
+                  "name": "vcf",
                   "target": [
                       {
-                          "name": "gvcf"
+                          "name": "vcf",
+                          "step": "vcf-integrity-check"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": false,
+                      "type": "data file"
+                  },
+                  "name": "vcf",
+                  "source": [
+                      {
+                          "name": "vcf",
+                          "step": "GenotypeGVCFs"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Check integrity of vcf output file"
+              ],
+              "software_used": [
+                 "/softwares/"
+              ]
+          },
+          "name": "vcf-integrity-check",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "vcf-check",
+                  "target": [
+                      {
+                          "name": "vcf-check"
                       }
                   ]
               }
           ]
       }
   ],
-  "title": "Run gatk HaplotypeCaller",
-  "uuid": "d6465b5f-1768-4c94-b025-edc96e101ac5"
+  "title": "Run gatk GenotypeGVCFs plus output integrity-check",
+  "uuid": ""
 }
