@@ -56,6 +56,8 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.input.prefix + ".vcf.gz")
+    secondaryFiles:
+      - .tbi
 
 doc: |
   run gatk GenotypeGVCFs
