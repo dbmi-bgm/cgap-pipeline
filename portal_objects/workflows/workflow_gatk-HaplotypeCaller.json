@@ -1,0 +1,160 @@
+{
+  "accession": "GAPG8T94T3X9",
+  "app_name": "workflow_gatk-HaplotypeCaller",
+  "app_version": "v10",
+  "arguments": [
+      {
+          "argument_format": "bam",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_bam"
+      },
+      {
+          "argument_format": "fa",
+          "argument_type": "Input file",
+          "workflow_argument_name": "reference"
+      },
+      {
+          "argument_format": "",
+          "argument_type": "Input file",
+          "workflow_argument_name": "regions"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "threshold"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "ERC"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "nthreads"
+      }
+  ],
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+  "category": ["processing"],
+  "cwl_child_filenames": [],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v10/cwl",
+  "cwl_main_filename": "gatk-HaplotypeCaller.cwl",
+  "cwl_pointer": "",
+  "description": "Run gatk HaplotypeCaller on bam input file. Produce a g.vcf file",
+  "docker_image_name": "cgap/cgap",
+  "docker_registry_url": "https://hub.docker.com/",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "name": "workflow_gatk-HaplotypeCaller_v10",
+  "aliases": ["cgap:workflow_gatk-HaplotypeCaller_v10"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "bam",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_bam",
+                  "source": [
+                      {
+                          "name": "input_bam"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "fa",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "reference",
+                  "source": [
+                      {
+                          "name": "reference"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "",
+                      "global": true,
+                      "type": ""
+                  },
+                  "name": "regions",
+                  "source": [
+                      {
+                          "name": "regions"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "threshold",
+                  "source": [
+                      {
+                          "name": "threshold"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "ERC",
+                  "source": [
+                      {
+                          "name": "ERC"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "nthreads",
+                  "source": [
+                      {
+                          "name": "nthreads"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Run gatk HaplotypeCaller"
+              ],
+              "software_used": [
+                 "/softwares/4ae88fb4-23f2-4939-8852-4644069d14d9"
+              ]
+          },
+          "name": "HaplotypeCaller",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "gvcf",
+                  "target": [
+                      {
+                          "name": "gvcf"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Run gatk HaplotypeCaller",
+  "uuid": "d6465b5f-1768-4c94-b025-edc96e101ac5"
+}
