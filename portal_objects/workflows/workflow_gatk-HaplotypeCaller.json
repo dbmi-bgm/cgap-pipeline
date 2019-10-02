@@ -14,7 +14,7 @@
           "workflow_argument_name": "reference"
       },
       {
-          "argument_format": "",
+          "argument_format": "txt",
           "argument_type": "Input file",
           "workflow_argument_name": "regions"
       },
@@ -77,9 +77,9 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "",
+                      "file_format": "txt",
                       "global": true,
-                      "type": ""
+                      "type": "reference file"
                   },
                   "name": "regions",
                   "source": [
@@ -141,7 +141,7 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "",
+                      "file_format": "gvcf_gz",
                       "global": true,
                       "type": "data file"
                   },
