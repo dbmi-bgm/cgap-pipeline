@@ -1,0 +1,39 @@
+{
+    "parameters": {},
+    "workflow_uuid": "be5b7395-ddf1-4d60-85ea-650d5d9210ea",
+    "input_files" : [
+       {
+           "object_key": "GAPFIAFOROO7.gvcf.gz",
+           "workflow_argument_name": "input_gvcf",
+           "uuid": "7d34a64c-a08d-40b6-970c-4493c6cce36f",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+       },
+       {
+           "object_key": "GAPFIXRDPDK5.fa",
+           "workflow_argument_name": "reference",
+           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+       },
+       {
+           "object_key": "GAPFI4LJRN98.vcf.gz",
+           "workflow_argument_name": "known-sites-snp",
+           "uuid": "8ed35691-0af4-467a-adbc-81eb088549f0",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+       }
+    ],
+    "config": {
+      "instance_type": "t3.medium",
+      "ebs_size": "2.5x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_workflow_gatk-GenotypeGVCFs-check",
+      "behavior_on_capacity_limit": "wait_and_retry"
+    },
+    "_tibanna": {
+      "run_type": "workflow_gatk-GenotypeGVCFs-check",
+      "env": "fourfront-cgap"
+    },
+    "app_name": "workflow_gatk-GenotypeGVCFs-check",
+    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+}
