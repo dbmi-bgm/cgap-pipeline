@@ -1,5 +1,5 @@
 {
-  "accession": "GAPK956LO3H2",
+  "accession": "GAPK956PO3H2",
   "app_name": "workflow_gatk-GenotypeGVCFs-check",
   "app_version": "v10",
   "arguments": [
@@ -32,7 +32,7 @@
           "qc_html": false,
           "qc_json": false,
           "qc_table": true,
-          "qc_type": ""
+          "qc_type": "quality_metric_vcfcheck"
       },
       {
           "argument_type": "parameter",
@@ -182,5 +182,5 @@
       }
   ],
   "title": "Run gatk GenotypeGVCFs plus output integrity-check",
-  "uuid": ""
+  "uuid": "be5b7395-ddf1-4d60-85ea-650d5d9210ea"
 }

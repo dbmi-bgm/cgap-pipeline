@@ -57,5 +57,17 @@
         "title": "add-readgroups_81ca652",
         "uuid": "d7ac4c75-e133-4a8e-a19e-b7e87873cc16",
         "commit": "81ca652"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "vcf-tools",
+        "software_type": [
+            "quality metric generator"
+        ],
+        "source_url": "https://github.com/vcftools/vcftools",
+        "title": "vcf-tools_954e607",
+        "uuid": "f7ac2c5f-9203-49fa-b918-cede02bf46f7",
+        "commit": "954e607"
     }
 ]
