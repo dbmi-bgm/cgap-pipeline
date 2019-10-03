@@ -25,7 +25,7 @@ This step adds read group information to the input bam file according to lane an
 
 A quick bam integrity check step is added to ensure the final bam file has a header and is not truncated.
 
-  * CWL: workflow_add-readgroups_plus_integrity-check.cwl
+* CWL: workflow_add-readgroups_plus_integrity-check.cwl
 
 
 Merge bams
