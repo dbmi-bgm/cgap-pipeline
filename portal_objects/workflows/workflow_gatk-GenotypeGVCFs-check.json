@@ -1,5 +1,5 @@
 {
-  "accession": "GAPK956PO3H2",
+  "accession": "GAPK956PO1H2",
   "app_name": "workflow_gatk-GenotypeGVCFs-check",
   "app_version": "v10",
   "arguments": [
@@ -160,7 +160,7 @@
                   "Check integrity of vcf output file"
               ],
               "software_used": [
-                 "/softwares/"
+                 "/softwares/f7ac2c5f-9203-49fa-b918-cede02bf46f7"
               ]
           },
           "name": "vcf-integrity-check",
