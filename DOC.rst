@@ -4,7 +4,7 @@ CGAP upstream pipeline
 Docker image
 ############
 
-* Currently docker image `cgap/cgap:v10`
+* Currently docker image ``cgap/cgap:v10``
 
 The image contains but (is not limited to) the following software packages:
 
