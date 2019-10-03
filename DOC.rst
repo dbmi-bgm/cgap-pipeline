@@ -83,3 +83,12 @@ HaplotypeCaller
 This step creates a GVCF file from the final bam file, using `GATK HaplotypeCaller`.
 
 * CWL: gatk-HaplotypeCaller.cwl
+
+
+GenotypeGVCF
+++++++++++++
+
+This step creates a vcf file from a gvcf file, using `GATK GenotypeGVCF`.
+
+* CWL: gatk-GenotypeGVCFs.cwl
+
