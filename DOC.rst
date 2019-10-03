@@ -1,6 +1,9 @@
 CGAP upstream pipeline
 ======================
 
+The CGAP Upstream pipeline processes Whole Genome Sequencing data (optimized for 30x), starting from a set of fastq files and producing ``bam``, ``gvcf`` and ``vcf`` files. The pipeline is mostly based on ``bwa`` and ``gatk4``. This pipeline does *not* perform joint-sample variant calling, and is meant for a single sample data.
+
+
 Docker image
 ############
 
