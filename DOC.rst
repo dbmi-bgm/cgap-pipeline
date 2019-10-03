@@ -6,6 +6,13 @@ Docker image
 
 * Currently docker image `cgap/cgap:v10`
 
+The image contains but (is not limited to) the following software packages:
+
+- gatk4 4.1.2.0
+- picard 2.20.2
+- bwa 0.7.17
+- samtools 1.9
+- parallel
 
 Pipeline Steps
 ##############
