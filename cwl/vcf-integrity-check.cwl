@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v10-b
+    dockerPull: cgap/cgap:v10
 
 baseCommand: [vcf-integrity-check.sh]
 
