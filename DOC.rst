@@ -1,26 +1,50 @@
-# CGAP upstream pipeline
+CGAP upstream pipeline
+======================
 
-* Currently docker image `cgap/cgap:v9`
+Docker image
+############
 
+* Currently docker image `cgap/cgap:v10`
 
-## alignment
+Pipeline Steps
+##############
+
+alignment
++++++++++
+
   * CWL: workflow_bwa-mem-to-bam_no_unzip_plus_integrity-check.cwl
 
-## add readgroups
+add readgroups
+++++++++++++++
+
   * CWL: workflow_add-readgroups_plus_integrity-check.cwl
 
-## merge bams
+merge bams
+++++++++++
+
   * CWL: workflow_merge-bam_plus_integrity-check.cwl
 
-## mark duplicates
+mark duplicates
++++++++++++++++
+
   * CWL: workflow_picard-MarkDuplicates_plus_integrity-check.cwl
 
-## sort
+sort
+++++
+
   * CWL: workflow_sort-bam_plus_integrity-check.cwl
 
-## BQSR report
+BQSR report
++++++++++++
+
   * CWL: gatk-BaseRecalibrator.cwl
 
-## applyBQSR & indexing
+applyBQSR & indexing
+++++++++++++++++++++
+
   * CWL: workflow_gatk-ApplyBQSR_plus_integrity-check.cwl
 
+HaplotypeCaller
++++++++++++++++
+
+  * CWL: gatk-HaplotypeCaller.cwl
