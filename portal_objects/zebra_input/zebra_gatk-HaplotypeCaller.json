@@ -23,7 +23,7 @@
     ],
     "config": {
       "instance_type": "c5n.18xlarge",
-      "ebs_size": "2x",
+      "ebs_size": "1.6x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",
