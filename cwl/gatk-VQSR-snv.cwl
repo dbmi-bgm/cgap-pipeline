@@ -33,7 +33,7 @@ inputs:
 
   - id: prefix
     type: string
-    default: "indels"
+    default: "out"
     inputBinding:
       position: 3
 
@@ -53,13 +53,13 @@ inputs:
       - .idx
     doc: expect the path to the omni vcf file
 
-  - id: phase1
+  - id: phase
     type: File
     inputBinding:
       position: 6
     secondaryFiles:
       - .idx
-    doc: expect the path to the phase1 vcf file
+    doc: expect the path to the phase vcf file
 
   - id: known-sites-snp
     type: File
@@ -74,6 +74,8 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.prefix + ".mnv.vqsr.vcf.gz")
+    secondaryFiles:
+      - .tbi
 
 doc: |
   run gatk VQSR pipeline |

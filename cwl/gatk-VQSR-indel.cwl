@@ -33,7 +33,7 @@ inputs:
 
   - id: prefix
     type: string
-    default: "indels"
+    default: "out"
     inputBinding:
       position: 3
 
@@ -61,4 +61,4 @@ outputs:
 
 doc: |
   run gatk VQSR pipeline |
-  evaluate indels
+  evaluate indel
