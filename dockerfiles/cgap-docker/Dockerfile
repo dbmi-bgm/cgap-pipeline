@@ -84,6 +84,13 @@ RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
 COPY HaplotypeCaller-parallel.sh .
 RUN chmod +x HaplotypeCaller-parallel.sh
 
+# VQSR
+COPY vqsr-indel.sh .
+RUN chmod +x vqsr-indel.sh
+
+COPY vqsr-snv.sh .
+RUN chmod +x vqsr-snv.sh
+
 # paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
 ENV PATH=/usr/local/bin/bwa/:$PATH
