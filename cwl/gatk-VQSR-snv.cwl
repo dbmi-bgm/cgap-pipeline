@@ -76,6 +76,7 @@ outputs:
       glob: $(inputs.prefix + ".mnv.vqsr.vcf.gz")
     secondaryFiles:
       - .tbi
+      - ^^^.tranche
 
 doc: |
   run gatk VQSR pipeline |

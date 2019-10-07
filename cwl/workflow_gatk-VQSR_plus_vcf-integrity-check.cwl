@@ -62,6 +62,14 @@ inputs:
     default: 4G
 
 outputs:
+  vqsr_vcf_indel:
+    type: File
+    outputSource: gatk-VQSR-indel/output
+
+  vqsr_vcf_snv:
+    type: File
+    outputSource: gatk-VQSR-snv/output
+
   vqsr_vcf:
     type: File
     outputSource: picard-SortVcf/output
