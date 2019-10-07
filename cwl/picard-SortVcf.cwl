@@ -28,6 +28,7 @@ inputs:
     type: File
     inputBinding:
       position: 2
+      separate: false
       prefix: I=
     secondaryFiles:
       - .tbi
@@ -37,6 +38,7 @@ inputs:
     type: File
     inputBinding:
       position: 3
+      separate: false
       prefix: I=
     secondaryFiles:
       - .tbi
