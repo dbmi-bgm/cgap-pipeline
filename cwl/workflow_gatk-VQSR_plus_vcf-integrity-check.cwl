@@ -64,7 +64,7 @@ inputs:
 outputs:
   vqsr_vcf:
     type: File
-    outputSource: gatk-GenotypeGVCFs/output
+    outputSource: picard-SortVcf/output
 
   vqsr_vcf-check:
     type: File
@@ -103,8 +103,6 @@ steps:
         source: phase
       known-sites-snp:
         source: known-sites-snp
-      verbosity:
-        source: verbosity
     out: [output]
 
   picard-SortVcf:
