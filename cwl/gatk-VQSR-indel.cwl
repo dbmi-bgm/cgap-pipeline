@@ -59,10 +59,10 @@ outputs:
     secondaryFiles:
       - .tbi
 
-  - id: output-tranche
+  - id: output-tranches
     type: File
     outputBinding:
-      glob: $(inputs.prefix + ".indelmixed.tranche")
+      glob: $(inputs.prefix + ".indelmixed.tranches")
 
 doc: |
   run gatk VQSR pipeline |
