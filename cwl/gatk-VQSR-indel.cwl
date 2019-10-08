@@ -58,7 +58,11 @@ outputs:
       glob: $(inputs.prefix + ".indelmixed.vqsr.vcf.gz")
     secondaryFiles:
       - .tbi
-      - ^^^.tranche
+
+  - id: output-tranche
+    type: File
+    outputBinding:
+      glob: $(inputs.prefix + ".indelmixed.tranche")
 
 doc: |
   run gatk VQSR pipeline |

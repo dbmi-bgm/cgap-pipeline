@@ -62,13 +62,13 @@ inputs:
     default: 4G
 
 outputs:
-  vqsr_vcf_indel:
+  vqsr_indel_tranche:
     type: File
-    outputSource: gatk-VQSR-indel/output
+    outputSource: gatk-VQSR-indel/output-tranche
 
-  vqsr_vcf_snv:
+  vqsr_snv_tranche:
     type: File
-    outputSource: gatk-VQSR-snv/output
+    outputSource: gatk-VQSR-snv/output-tranche
 
   vqsr_vcf:
     type: File
@@ -92,7 +92,7 @@ steps:
         source: known-sites-indels
       max_gaussians:
         source: max_gaussians
-    out: [output]
+    out: [output, output-tranche]
 
   gatk-VQSR-snv:
     run: gatk-VQSR-snv.cwl
@@ -111,7 +111,7 @@ steps:
         source: phase
       known-sites-snp:
         source: known-sites-snp
-    out: [output]
+    out: [output, output-tranche]
 
   picard-SortVcf:
     run: picard-SortVcf.cwl
