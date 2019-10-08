@@ -20,7 +20,7 @@ gatk VariantRecalibrator \
 -mode INDEL \
 -O $outprefix.indelmixed.recal \
 --max-gaussians $max_gaussians \
---tranches-file $outprefix.indelmixed.tranche \
+--tranches-file $outprefix.indelmixed.tranches \
 --rscript-file $outprefix.indelmixed.recal.plots.R ;
 
 gatk ApplyVQSR \
@@ -28,6 +28,6 @@ gatk ApplyVQSR \
 -V $outprefix.indelmixed.vcf.gz \
 --ts-filter-level 99.0 \
 -mode INDEL \
---tranches-file $outprefix.indelmixed.tranche \
+--tranches-file $outprefix.indelmixed.tranches \
 --recal-file $outprefix.indelmixed.recal \
 -O $outprefix.indelmixed.vqsr.vcf.gz ;
