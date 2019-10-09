@@ -235,7 +235,8 @@
                   "Run gatk VQSR pipeline"
               ],
               "software_used": [
-                 ["/softwares/4ae88fb4-23f2-4939-8852-4644069d14d9", "/softwares/586cef39-6505-4bf6-920a-4b26a500d210"]
+                 "/softwares/4ae88fb4-23f2-4939-8852-4644069d14d9",
+                 "/softwares/586cef39-6505-4bf6-920a-4b26a500d210"
               ]
           },
           "name": "VQSR",
