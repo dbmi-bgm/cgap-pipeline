@@ -298,7 +298,7 @@
                   "source": [
                       {
                           "name": "vqsr_vcf",
-                          "step": ""
+                          "step": "VQSR"
                       }
                   ]
               }
