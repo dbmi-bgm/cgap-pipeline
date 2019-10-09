@@ -1,0 +1,334 @@
+{
+  "accession": "GAPJ45GT92N8",
+  "app_name": "workflow_gatk-VQSR-check",
+  "app_version": "v10",
+  "arguments": [
+      {
+          "argument_format": "vcf_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_vcf"
+      },
+      {
+          "argument_format": "fa",
+          "argument_type": "Input file",
+          "workflow_argument_name": "reference"
+      },
+      {
+          "argument_format": "vcf_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "known-sites-snp"
+      },
+      {
+          "argument_format": "vcf",
+          "argument_type": "Input file",
+          "workflow_argument_name": "known-sites-indels"
+      },
+      {
+          "argument_format": "vcf",
+          "argument_type": "Input file",
+          "workflow_argument_name": "hapmap"
+      },
+      {
+          "argument_format": "vcf",
+          "argument_type": "Input file",
+          "workflow_argument_name": "omni"
+      },
+      {
+          "argument_format": "vcf",
+          "argument_type": "Input file",
+          "workflow_argument_name": "phase"
+      },
+      {
+          "argument_format": "txt",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "vqsr_indel_tranches"
+      },
+      {
+          "argument_format": "txt",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "vqsr_snv_tranches"
+      },
+      {
+          "argument_format": "vcf_gz",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "vqsr_vcf",
+          "secondary_file_formats": ["vcf_gz_tbi"]
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "vqsr_vcf-check",
+          "argument_to_be_attached_to": "vqsr_vcf",
+          "qc_zipped": false,
+          "qc_html": false,
+          "qc_json": false,
+          "qc_table": true,
+          "qc_type": "quality_metric_vcfcheck"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "prefix"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "max_gaussians"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "xmx"
+      }
+  ],
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+  "category": ["processing"],
+  "cwl_child_filenames": ["gatk-VQSR-indel.cwl", "gatk-VQSR-snv.cwl", "picard-SortVcf.cwl", "vcf-integrity-check.cwl"],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v10/cwl",
+  "cwl_main_filename": "workflow_gatk-VQSR_plus_vcf-integrity-check.cwl",
+  "cwl_pointer": "",
+  "description": "Run gatk VQSR pipeline on vcf input file. Produce a recalibrated vcf file. An integrity check is performed on the output file",
+  "docker_image_name": "cgap/cgap",
+  "docker_registry_url": "https://hub.docker.com/",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "name": "workflow_gatk-VQSR-check_v10",
+  "aliases": ["cgap:workflow_gatk-VQSR-check_v10"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_vcf",
+                  "source": [
+                      {
+                          "name": "input_vcf"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "fa",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "reference",
+                  "source": [
+                      {
+                          "name": "reference"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "known-sites-snp",
+                  "source": [
+                      {
+                          "name": "known-sites-snp"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "known-sites-indels",
+                  "source": [
+                      {
+                          "name": "known-sites-indels"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "hapmap",
+                  "source": [
+                      {
+                          "name": "hapmap"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "omni",
+                  "source": [
+                      {
+                          "name": "omni"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "phase",
+                  "source": [
+                      {
+                          "name": "phase"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "max_gaussians",
+                  "source": [
+                      {
+                          "name": "max_gaussians"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "prefix",
+                  "source": [
+                      {
+                          "name": "prefix"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "xmx",
+                  "source": [
+                      {
+                          "name": "xmx"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Run gatk VQSR pipeline"
+              ],
+              "software_used": [
+                 ["/softwares/4ae88fb4-23f2-4939-8852-4644069d14d9", "/softwares/586cef39-6505-4bf6-920a-4b26a500d210"]
+              ]
+          },
+          "name": "VQSR",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "vqsr_vcf",
+                  "target": [
+                      {
+                          "name": "vqsr_vcf",
+                          "step": "vcf-integrity-check"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "txt",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "vqsr_indel_tranches",
+                  "target": [
+                      {
+                          "name": "vqsr_indel_tranches"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "txt",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "vqsr_snv_tranches",
+                  "target": [
+                      {
+                          "name": "vqsr_snv_tranches"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": false,
+                      "type": "data file"
+                  },
+                  "name": "vqsr_vcf",
+                  "source": [
+                      {
+                          "name": "vqsr_vcf",
+                          "step": ""
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Check integrity of vcf output file"
+              ],
+              "software_used": [
+                 "/softwares/f7ac2c5f-9203-49fa-b918-cede02bf46f7"
+              ]
+          },
+          "name": "vcf-integrity-check",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "vqsr_vcf-check",
+                  "target": [
+                      {
+                          "name": "vqsr_vcf-check"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Run gatk VQSR plus output integrity-check",
+  "uuid": "5b00c6da-7181-4955-a581-dda4549ba018"
+}
