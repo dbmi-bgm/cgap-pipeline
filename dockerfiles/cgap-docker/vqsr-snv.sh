@@ -10,7 +10,7 @@ dbsnp_vcf=$7
 xmx=$8
 
 gatk SelectVariants \
---java-options '-Xmx${xmx}' \
+--java-options -Xmx${xmx} \
 -R $ref_fa \
 -V $input_vcf \
 -O $outprefix.mnv.vcf.gz \
@@ -18,7 +18,7 @@ gatk SelectVariants \
 --select-type-to-include MNP;
 
 gatk VariantRecalibrator \
---java-options '-Xmx${xmx}' \
+--java-options -Xmx${xmx} \
 -R $ref_fa \
 --resource:hapmap,known=false,training=true,truth=true,prior=15.0 $hapmap_vcf \
 --resource:omni,known=false,training=true,truth=true,prior=12.0 $omni_vcf \
@@ -32,7 +32,7 @@ gatk VariantRecalibrator \
 --rscript-file $outprefix.mnv.recal.plots.R;
 
 gatk ApplyVQSR \
---java-options '-Xmx${xmx}' \
+--java-options -Xmx${xmx} \
 -R $ref_fa \
 -V $outprefix.mnv.vcf.gz \
 --ts-filter-level 99.0 \
