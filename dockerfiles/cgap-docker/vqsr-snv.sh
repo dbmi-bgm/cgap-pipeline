@@ -9,14 +9,16 @@ phase1_vcf=$6
 dbsnp_vcf=$7
 xmx=$8
 
-gatk SelectVariants -Xmx${xmx} \
+gatk SelectVariants \
+--java-options '-Xmx${xmx}' \
 -R $ref_fa \
 -V $input_vcf \
 -O $outprefix.mnv.vcf.gz \
 --select-type-to-include SNP \
 --select-type-to-include MNP;
 
-gatk VariantRecalibrator -Xmx${xmx} \
+gatk VariantRecalibrator \
+--java-options '-Xmx${xmx}' \
 -R $ref_fa \
 --resource:hapmap,known=false,training=true,truth=true,prior=15.0 $hapmap_vcf \
 --resource:omni,known=false,training=true,truth=true,prior=12.0 $omni_vcf \
@@ -29,7 +31,8 @@ gatk VariantRecalibrator -Xmx${xmx} \
 --tranches-file $outprefix.mnv.tranches \
 --rscript-file $outprefix.mnv.recal.plots.R;
 
-gatk ApplyVQSR -Xmx${xmx} \
+gatk ApplyVQSR \
+--java-options '-Xmx${xmx}' \
 -R $ref_fa \
 -V $outprefix.mnv.vcf.gz \
 --ts-filter-level 99.0 \
