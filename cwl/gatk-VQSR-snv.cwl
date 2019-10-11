@@ -69,6 +69,12 @@ inputs:
       - .tbi
     doc: expect the path to the dbsnp vcf gz file
 
+  - id: xmx
+    type: string
+    default: 4G
+    inputBinding:
+      position: 8
+
 outputs:
   - id: output
     type: File

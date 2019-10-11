@@ -5,14 +5,15 @@ ref_fa=$2
 outprefix=$3
 indel_vcf=$4
 max_gaussians=$5 # default 8
+xmx=$6
 
-gatk SelectVariants -R $ref_fa \
+gatk SelectVariants -Xmx${xmx} -R $ref_fa \
 -V $input_vcf \
 -O $outprefix.indelmixed.vcf.gz \
 --select-type-to-include INDEL \
 --select-type-to-include MIXED ;
 
-gatk VariantRecalibrator \
+gatk VariantRecalibrator -Xmx${xmx} \
 -R $ref_fa \
 -V $outprefix.indelmixed.vcf.gz \
 --resource:mills,known=true,training=true,truth=true,prior=12.0 $indel_vcf \
@@ -23,7 +24,7 @@ gatk VariantRecalibrator \
 --tranches-file $outprefix.indelmixed.tranches \
 --rscript-file $outprefix.indelmixed.recal.plots.R ;
 
-gatk ApplyVQSR \
+gatk ApplyVQSR -Xmx${xmx} \
 -R $ref_fa \
 -V $outprefix.indelmixed.vcf.gz \
 --ts-filter-level 99.0 \

@@ -92,6 +92,8 @@ steps:
         source: known-sites-indels
       max_gaussians:
         source: max_gaussians
+      xmx:
+        source: xmx
     out: [output, output-tranches]
 
   gatk-VQSR-snv:
@@ -111,11 +113,15 @@ steps:
         source: phase
       known-sites-snp:
         source: known-sites-snp
+      xmx:
+        source: xmx
     out: [output, output-tranches]
 
   picard-SortVcf:
     run: picard-SortVcf.cwl
     in:
+      xmx:
+        source: xmx
       input_indel:
         source: gatk-VQSR-indel/output
       input_snv:

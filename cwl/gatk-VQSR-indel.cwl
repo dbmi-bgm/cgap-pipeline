@@ -51,6 +51,12 @@ inputs:
     inputBinding:
       position: 5
 
+  - id: xmx
+    type: string
+    default: 4G
+    inputBinding:
+      position: 6
+
 outputs:
   - id: output
     type: File
