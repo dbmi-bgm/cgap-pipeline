@@ -13,7 +13,7 @@ hints:
 
 baseCommand: [gatk, CombineGVCFs]
 
-arguments: ["-o", "family.gvcf.gz"]
+arguments: ["-O", "family.gvcf.gz"]
 
 inputs:
   - id: input_gvcfs
