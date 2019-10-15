@@ -23,6 +23,8 @@ inputs:
         type: array
         inputBinding:
           prefix: -V
+        secondaryFiles:
+          - .tbi
     inputBinding:
       position: 1
     doc: input gvcf files
