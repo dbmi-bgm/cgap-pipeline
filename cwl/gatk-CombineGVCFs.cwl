@@ -19,11 +19,12 @@ inputs:
   - id: input_gvcfs
     type:
       -
-        items: "File"
-        type: "array"
+        items: File
+        type: array
+        inputBinding:
+          prefix: -V
     inputBinding:
       position: 1
-      prefix: -V
     doc: input gvcf files
 
   - id: reference
