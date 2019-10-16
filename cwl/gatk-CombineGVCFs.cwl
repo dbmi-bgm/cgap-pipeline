@@ -13,7 +13,7 @@ hints:
 
 baseCommand: [gatk, CombineGVCFs]
 
-arguments: ["-O", "family.gvcf.gz"]
+arguments: ["-O", "combined.gvcf.gz"]
 
 inputs:
   - id: input_gvcfs
@@ -40,10 +40,10 @@ inputs:
     doc: expect the path to the fa file
 
 outputs:
-  - id: family_gvcf
+  - id: combined_gvcf
     type: File
     outputBinding:
-      glob: family.gvcf.gz
+      glob: combined.gvcf.gz
     secondaryFiles:
       - .tbi
 
