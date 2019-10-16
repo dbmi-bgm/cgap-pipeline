@@ -83,7 +83,7 @@
                   "name": "combined_gvcf",
                   "target": [
                       {
-                          "name": "combined_gvcf",
+                          "name": "combined_gvcf"
                       }
                   ]
               }
