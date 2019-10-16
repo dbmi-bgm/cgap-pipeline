@@ -16,7 +16,8 @@
       {
           "argument_format": "gvcf_gz",
           "argument_type": "Output processed file",
-          "workflow_argument_name": "combined_gvcf"
+          "workflow_argument_name": "combined_gvcf",
+          "secondary_file_formats": ["gvcf_gz_tbi"]
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
