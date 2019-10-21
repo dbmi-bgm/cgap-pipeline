@@ -11,7 +11,9 @@ hints:
   - class: DockerRequirement
     dockerPull: cgap/cgap:v10
 
-baseCommand: [CombineGVCFs-parallel.sh]
+baseCommand: [gatk, CombineGVCFs]
+
+arguments: ["-O", "combined.gvcf.gz"]
 
 inputs:
   - id: input_gvcfs
@@ -19,8 +21,10 @@ inputs:
       -
         items: File
         type: array
+        inputBinding:
+          prefix: -V
     inputBinding:
-      position: 4
+      position: 1
     secondaryFiles:
       - .tbi
     doc: input gvcf files
@@ -28,24 +32,12 @@ inputs:
   - id: reference
     type: File
     inputBinding:
-      position: 1
+      position: 2
+      prefix: -R
     secondaryFiles:
       - ^.dict
       - .fai
     doc: expect the path to the fa file
-
-  - id: chromosomes
-    type: File
-    inputBinding:
-      position: 2
-    doc: expect the path to the file defining chromosomes
-
-  - id: nthreads
-    type: int
-    default: 8
-    inputBinding:
-      position: 3
-    doc: number of threads used to run parallel
 
 outputs:
   - id: combined_gvcf
