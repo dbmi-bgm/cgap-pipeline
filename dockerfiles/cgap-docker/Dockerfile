@@ -84,6 +84,10 @@ RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
 COPY HaplotypeCaller-parallel.sh .
 RUN chmod +x HaplotypeCaller-parallel.sh
 
+# CombineGVCFs parallel script
+COPY CombineGVCFs-parallel.sh .
+RUN chmod +x CombineGVCFs-parallel.sh
+
 # VQSR
 COPY vqsr-indel.sh .
 RUN chmod +x vqsr-indel.sh
