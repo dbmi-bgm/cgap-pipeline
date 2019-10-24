@@ -14,10 +14,19 @@
           "workflow_argument_name": "reference"
       },
       {
+          "argument_format": "txt",
+          "argument_type": "Input file",
+          "workflow_argument_name": "chromosomes"
+      },
+      {
           "argument_format": "gvcf_gz",
           "argument_type": "Output processed file",
           "workflow_argument_name": "combined_gvcf",
           "secondary_file_formats": ["gvcf_gz_tbi"]
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "nthreads"
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
@@ -60,6 +69,33 @@
                   "source": [
                       {
                           "name": "reference"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "txt",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "chromosomes",
+                  "source": [
+                      {
+                          "name": "chromosomes"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "nthreads",
+                  "source": [
+                      {
+                          "name": "nthreads"
                       }
                   ]
               }

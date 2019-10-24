@@ -22,7 +22,7 @@ for arg in $@;
   done
 
 # running command
-cat $chromosomefile | parallel --jobs $nthreads $command
+cat $chromosomefile | parallel --halt 2 --jobs $nthreads $command || exit 1
 
 # merging the results
 array=(${directory}*g.vcf)
@@ -30,20 +30,20 @@ array=(${directory}*g.vcf)
 IFS=$'\n' sorted=($(sort -V <<<"${array[*]}"))
 unset IFS
 
-grep "^##" ${sorted[0]} > combined.gvcf
+grep "^#" ${sorted[0]} > combined.gvcf
 
 for filename in ${sorted[@]};
   do
     if [[ $filename =~ "M" ]]; then
       chr_M=$filename
     else
-      grep -v "^##" $filename >> combined.gvcf
+      grep -v "^#" $filename >> combined.gvcf
       rm -f $filename ${filename}.idx
     fi
   done
 
 if [[ -v  chr_M  ]]; then
-  grep -v "^##" $chr_M >> combined.gvcf
+  grep -v "^#" $chr_M >> combined.gvcf
   rm -f $chr_M ${chr_M}.idx
 fi
 
