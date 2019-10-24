@@ -15,7 +15,7 @@
            "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
        },
        {
-           "object_key": """,
+           "object_key": "",
            "workflow_argument_name": "chromosomes",
            "uuid": "",
            "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
