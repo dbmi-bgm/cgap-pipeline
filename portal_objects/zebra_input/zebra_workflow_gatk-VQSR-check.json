@@ -1,0 +1,63 @@
+{
+    "parameters": {},
+    "workflow_uuid": "5b00c6da-7181-4955-a581-dda4549ba018",
+    "input_files" : [
+       {
+           "object_key": "GAPFIBW4JN58.vcf.gz",
+           "workflow_argument_name": "input_vcf",
+           "uuid": "3543ca44-c0e9-4e74-b805-6a2d657382c1",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+       },
+       {
+           "object_key": "GAPFIXRDPDK5.fa",
+           "workflow_argument_name": "reference",
+           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+       },
+       {
+           "object_key": "GAPFIAX2PPYB.vcf",
+           "workflow_argument_name": "known-sites-indels",
+           "uuid": "55ac5044-f927-4df7-afa2-bf713764ee57",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+       },
+       {
+           "object_key": "GAPFI4LJRN98.vcf.gz",
+           "workflow_argument_name": "known-sites-snp",
+           "uuid": "8ed35691-0af4-467a-adbc-81eb088549f0",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+       },
+       {
+           "object_key": "GAPFILGA4UIX.vcf",
+           "workflow_argument_name": "hapmap",
+           "uuid": "f0684716-6c8c-4197-b9c4-a1e287d834a5",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+       },
+       {
+           "object_key": "GAPFINDZ7H7H.vcf",
+           "workflow_argument_name": "omni",
+           "uuid": "3f7161f3-1698-4665-a59b-20c3009a3998",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+       },
+       {
+           "object_key": "GAPFIEA3YJ6S.vcf",
+           "workflow_argument_name": "phase",
+           "uuid": "5ca55bd5-4050-440e-b060-9441da57060e",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+       }
+    ],
+    "config": {
+      "instance_type": "t3.large",
+      "ebs_size": "1.5x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_workflow_gatk-VQSR-check",
+      "behavior_on_capacity_limit": "wait_and_retry"
+    },
+    "_tibanna": {
+      "run_type": "workflow_gatk-VQSR-check",
+      "env": "fourfront-cgap"
+    },
+    "app_name": "workflow_gatk-VQSR-check",
+    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+}

@@ -1,0 +1,39 @@
+{
+    "parameters": {},
+    "workflow_uuid": "d6465b5f-1768-4c94-b025-edc96e101ac5",
+    "input_files" : [
+       {
+           "object_key": "GAPFIVBLLZTK.bam",
+           "workflow_argument_name": "input_bam",
+           "uuid": "49039ece-7274-4bce-8630-bcb7d71d243e",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+       },
+       {
+           "object_key": "GAPFIXRDPDK5.fa",
+           "workflow_argument_name": "reference",
+           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+       },
+       {
+           "object_key": "4DNFIBGEOI72.txt",
+           "workflow_argument_name": "regions",
+           "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+       }
+    ],
+    "config": {
+      "instance_type": "c5n.18xlarge",
+      "ebs_size": "1.6x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_workflow_gatk-HaplotypeCaller",
+      "behavior_on_capacity_limit": "wait_and_retry"
+    },
+    "_tibanna": {
+      "run_type": "workflow_gatk-HaplotypeCaller",
+      "env": "fourfront-cgap"
+    },
+    "app_name": "workflow_gatk-HaplotypeCaller",
+    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+}

@@ -11,50 +11,65 @@ hints:
   - class: DockerRequirement
     dockerPull: cgap/cgap:v10
 
-baseCommand: [gatk, BaseRecalibrator]
-
-arguments: ["-O", $(inputs.input_bam.nameroot + "_recalibration_report"), "--use-original-qualities"]
+baseCommand: [vqsr-indel.sh]
 
 inputs:
-  - id: input_bam
+  - id: input
     type: File
     inputBinding:
       position: 1
-      prefix: -I
+    secondaryFiles:
+      - .tbi
+    doc: expect the path to the vcf gz file
 
   - id: reference
     type: File
     inputBinding:
       position: 2
-      prefix: -R
     secondaryFiles:
       - ^.dict
       - .fai
     doc: expect the path to the fa file
 
-  - id: known-sites-snp
-    type: File
+  - id: prefix
+    type: string
+    default: "out"
     inputBinding:
       position: 3
-      prefix: --known-sites
-    secondaryFiles:
-      - .tbi
-    doc: expect the path to the dbsnp vcf gz file
 
   - id: known-sites-indels
     type: File
     inputBinding:
       position: 4
-      prefix: --known-sites
     secondaryFiles:
       - .idx
     doc: expect the path to the indel vcf file
 
+  - id: max_gaussians
+    type: int
+    default: 8
+    inputBinding:
+      position: 5
+
+  - id: xmx
+    type: string
+    default: 4G
+    inputBinding:
+      position: 6
+
 outputs:
-  - id: recalibration_report
+  - id: output
     type: File
     outputBinding:
-      glob: $(inputs.input_bam.nameroot + "_recalibration_report")
+      glob: $(inputs.prefix + ".indelmixed.vqsr.vcf.gz")
+    secondaryFiles:
+      - .tbi
+
+  - id: output-tranches
+    type: File
+    outputBinding:
+      glob: $(inputs.prefix + ".indelmixed.tranches")
 
 doc: |
-  run gatk BaseRecalibrator
+  run gatk VQSR pipeline |
+  evaluate indel

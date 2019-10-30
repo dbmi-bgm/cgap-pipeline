@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v9
+    dockerPull: cgap/cgap:v10
 
 baseCommand: [samtools, merge]
 
@@ -30,11 +30,19 @@ inputs:
       prefix: -p
     doc: redundant RG headers are merged
 
+  - id: nthreads
+    type: int
+    default: 8
+    inputBinding:
+      position: 4
+      prefix: -@
+    doc: number of sorting and compression threads
+
   - id: outbamname
     default: './merged.bam'
     type: string
     inputBinding:
-      position: 3
+      position: 5
     doc: output file name
 
   - id: input_bams
@@ -43,7 +51,7 @@ inputs:
         items: "File"
         type: "array"
     inputBinding:
-      position: 4
+      position: 6
     doc: input bam files
 
 outputs:
@@ -53,4 +61,4 @@ outputs:
       glob: $(inputs.outbamname)
 
 doc: |
-  run samtools merge -c -p out.bam in1.bam in2.bam ...
+  run samtools merge -@ nthreads -c -p out.bam in1.bam in2.bam ...

@@ -9,15 +9,15 @@
     "input_files": {
       "input_bams": {
         "bucket_name": "soos-4dn-bucket",
-        "object_key": ["cgaptest/test9/raw_down03x_1.bam", "cgaptest/test9/raw_down03x_2.bam"]
+        "object_key": ["cgaptest/test9/bgm/1.bam", "cgaptest/test9/bgm/2.bam", "cgaptest/test9/bgm/3.bam", "cgaptest/test9/bgm/4.bam"]
       }
     },
     "secondary_files": {},
     "input_parameters": {},
     "output_S3_bucket": "soos-4dn-bucket",
     "output_target": {
-      "merged_bam": "cgaptest/test9-cwl/raw_down06x_merged.bam",
-      "merged_bam-check": "cgaptest/test9-cwl/check"
+      "merged_bam": "cgaptest/test9/bgm/merged1.bam",
+      "merged_bam-check": "cgaptest/test9/bgm/check1"
     },
     "secondary_output_target": {}
   },

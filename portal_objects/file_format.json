@@ -6,7 +6,7 @@
         "uuid": "106199e5-5a85-4817-9a55-7b31698e1fda",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "in review by lab",
+        "status": "released",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -16,7 +16,7 @@
         "uuid": "8db70ed6-0121-4fe1-a72e-d91dc5aa6cd3",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "in review by lab",
+        "status": "released",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -26,7 +26,7 @@
         "uuid": "7373ca48-0b3e-467b-967a-80870846f89b",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "in review by lab",
+        "status": "released",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -36,7 +36,7 @@
         "uuid": "11f2fc36-9a65-4d60-9365-d8ff241df4f7",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "in review by lab",
+        "status": "released",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -52,7 +52,7 @@
         ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "in review by lab",
+        "status": "released",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -66,7 +66,7 @@
         ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "in review by lab",
+        "status": "released",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -76,7 +76,7 @@
         "uuid": "4ed9f7e0-2b2f-4aca-9533-a0a652b43442",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "in review by lab",
+        "status": "released",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -86,7 +86,7 @@
         "uuid": "fb728bb4-bc56-46d5-8df5-a05562826b9a",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "in review by lab",
+        "status": "released",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -99,7 +99,7 @@
         ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "in review by lab",
+        "status": "released",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -109,7 +109,7 @@
         "uuid": "ec96f95a-cf13-4633-ab0d-c4a5138bbe0b",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "in review by lab",
+        "status": "released",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -122,8 +122,8 @@
         ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "in review by lab",
-        "valid_item_types": ["FileReference"]
+        "status": "released",
+        "valid_item_types": ["FileReference", "FileProcessed"]
     },
     {
         "file_format": "vcf_gz_tbi",
@@ -132,7 +132,30 @@
         "uuid": "f84f1922-7f4e-4afc-922f-bec620969bf1",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "in review by lab",
-        "valid_item_types": ["FileReference"]
+        "status": "released",
+        "valid_item_types": ["FileReference", "FileProcessed"]
+    },
+    {
+        "file_format": "gvcf_gz",
+        "standard_file_extension": "gvcf.gz",
+        "description": "gvcf, compressed",
+        "uuid": "ad47d469-4561-4234-bce2-820f08f58e7c",
+        "extrafile_formats": [
+            "b01ee86e-b2c7-4725-81d7-798718674485"
+        ],
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "released",
+        "valid_item_types": ["FileProcessed"]
+    },
+    {
+        "file_format": "gvcf_gz_tbi",
+        "standard_file_extension": "gvcf.gz.tbi",
+        "description": "Tabix index file of gvcf, compressed",
+        "uuid": "b01ee86e-b2c7-4725-81d7-798718674485",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "released",
+        "valid_item_types": ["FileProcessed"]
     }
 ]

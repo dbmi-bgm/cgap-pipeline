@@ -1,22 +1,23 @@
 {
   "args": {
-    "app_name": "merge_bam",
+    "app_name": "merge-bam_plus_integrity-check",
     "app_version": "v1.0",
     "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v10/cwl",
-    "cwl_main_filename": "merge_bam.cwl",
-    "cwl_child_filenames": [],
+    "cwl_main_filename": "workflow_merge-bam_plus_integrity-check.cwl",
+    "cwl_child_filenames": ["merge-bam.cwl", "integrity-check.cwl"],
     "cwl_version": "v1",
     "input_files": {
       "input_bams": {
         "bucket_name": "soos-4dn-bucket",
-        "object_key": ["cgaptest/test9/raw_down03x_1.bam", "cgaptest/test9/raw_down03x_2.bam"]
+        "object_key": ["cgaptest/test9/bgm/1.bam", "cgaptest/test9/bgm/2.bam", "cgaptest/test9/bgm/3.bam", "cgaptest/test9/bgm/4.bam"]
       }
     },
     "secondary_files": {},
     "input_parameters": {},
     "output_S3_bucket": "soos-4dn-bucket",
     "output_target": {
-      "merged_bam": "cgaptest/test9-cwl/raw_down06x_merged.bam"
+      "merged_bam": "cgaptest/test9/bgm/merged2.bam",
+      "merged_bam-check": "cgaptest/test9/bgm/check2"
     },
     "secondary_output_target": {}
   },

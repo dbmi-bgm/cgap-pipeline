@@ -1,6 +1,6 @@
 {
-  "accession": "GAPWFBN35DT2",
-  "app_name": "workflow_add-readgroups-check",
+  "accession": "GAPG8T94T3X9",
+  "app_name": "workflow_gatk-HaplotypeCaller",
   "app_version": "v10",
   "arguments": [
       {
@@ -9,45 +9,46 @@
           "workflow_argument_name": "input_bam"
       },
       {
-          "argument_format": "bam",
-          "argument_type": "Output processed file",
-          "workflow_argument_name": "bam_w_readgroups"
+          "argument_format": "fa",
+          "argument_type": "Input file",
+          "workflow_argument_name": "reference"
       },
       {
-          "argument_type": "Output QC file",
-          "workflow_argument_name": "bam_w_readgroups-check",
-          "argument_to_be_attached_to": "bam_w_readgroups",
-          "qc_zipped": false,
-          "qc_html": false,
-          "qc_json": false,
-          "qc_table": true,
-          "qc_type": "quality_metric_bamcheck"
+          "argument_format": "txt",
+          "argument_type": "Input file",
+          "workflow_argument_name": "regions"
+      },
+      {
+          "argument_format": "gvcf_gz",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "gvcf",
+          "secondary_file_formats": ["gvcf_gz_tbi"]
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": "sample_name"
+          "workflow_argument_name": "threshold"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "ERC"
       },
       {
           "argument_type": "parameter",
           "workflow_argument_name": "nthreads"
-      },
-      {
-          "argument_type": "parameter",
-          "workflow_argument_name": "count"
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
-  "cwl_child_filenames": ["add-readgroups.cwl", "integrity-check.cwl"],
+  "cwl_child_filenames": [],
   "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v10/cwl",
-  "cwl_main_filename": "workflow_add-readgroups_plus_integrity-check.cwl",
+  "cwl_main_filename": "gatk-HaplotypeCaller.cwl",
   "cwl_pointer": "",
-  "description": "Add read groups to bam input file. An integrity check is performed on the output file",
+  "description": "Run gatk HaplotypeCaller on bam input file. Produce a g.vcf file",
   "docker_image_name": "cgap/cgap",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_add-readgroups-check_v10",
-  "aliases": ["cgap:workflow_add-readgroups-check_v10"],
+  "name": "workflow_gatk-HaplotypeCaller_v10",
+  "aliases": ["cgap:workflow_gatk-HaplotypeCaller_v10"],
   "steps": [
       {
           "inputs": [
@@ -68,13 +69,54 @@
               {
                   "meta": {
                       "cardinality": "single",
+                      "file_format": "fa",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "reference",
+                  "source": [
+                      {
+                          "name": "reference"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "txt",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "regions",
+                  "source": [
+                      {
+                          "name": "regions"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "sample_name",
+                  "name": "threshold",
                   "source": [
                       {
-                          "name": "sample_name"
+                          "name": "threshold"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "ERC",
+                  "source": [
+                      {
+                          "name": "ERC"
                       }
                   ]
               },
@@ -94,90 +136,31 @@
           ],
           "meta": {
               "analysis_step_types": [
-                  "Add read groups to bam input file"
+                  "Run gatk HaplotypeCaller"
               ],
               "software_used": [
-                "/softwares/d7ac4c75-e133-4a8e-a19e-b7e87873cc16"
+                 "/softwares/4ae88fb4-23f2-4939-8852-4644069d14d9"
               ]
           },
-          "name": "add-readgroups",
+          "name": "HaplotypeCaller",
           "outputs": [
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "bam",
+                      "file_format": "gvcf_gz",
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "bam_w_readgroups",
+                  "name": "gvcf",
                   "target": [
                       {
-                          "name": "bam_w_readgroups",
-                          "step": "integrity-check"
-                      }
-                  ]
-              }
-          ]
-      },
-      {
-          "inputs": [
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "file_format": "bam",
-                      "global": false,
-                      "type": "data file"
-                  },
-                  "name": "bam_w_readgroups",
-                  "source": [
-                      {
-                          "name": "bam_w_readgroups",
-                          "step": "add-readgroups"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "parameter"
-                  },
-                  "name": "count",
-                  "source": [
-                      {
-                          "name": "count"
-                      }
-                  ]
-              }
-          ],
-          "meta": {
-              "analysis_step_types": [
-                  "Check integrity of output file"
-              ],
-              "software_used": [
-                 "/softwares/3f2d3b0e-0365-4212-9468-c16ad9531c4d"
-              ]
-          },
-          "name": "integrity-check",
-          "outputs": [
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "QC"
-                  },
-                  "name": "bam_w_readgroups-check",
-                  "target": [
-                      {
-                          "name": "bam_w_readgroups-check"
+                          "name": "gvcf"
                       }
                   ]
               }
           ]
       }
   ],
-  "title": "Add read groups plus output integrity-check",
-  "previous_version": ["548e63a4-1936-4f68-8e8d-8e4658767911"],
-  "uuid": "1ebf697c-949d-46b2-b9a4-8b1a7699ef1f",
-  "version_upgrade_log": "multithreading"
+  "title": "Run gatk HaplotypeCaller",
+  "uuid": "d6465b5f-1768-4c94-b025-edc96e101ac5"
 }

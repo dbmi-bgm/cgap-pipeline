@@ -1,0 +1,53 @@
+{
+  "args": {
+    "app_name": "gatk-GenotypeGVCFs",
+    "app_version": "v1.0",
+    "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v10/cwl",
+    "cwl_main_filename": "gatk-GenotypeGVCFs.cwl",
+    "cwl_child_filenames": [],
+    "cwl_version": "v1",
+    "input_files": {
+      "input_gvcf": {
+        "bucket_name": "",
+        "object_key": ".gvcf.gz"
+      },
+      "reference": {
+        "bucket_name": "",
+        "object_key": ".fa"
+      },
+      "known-sites-snp": {
+        "bucket_name": "",
+        "object_key": ".vcf.gz"
+      }
+    },
+    "secondary_files": {
+      "input_gvcf": {
+        "bucket_name": "",
+        "object_key": [".gvcf.gz.tbi"]
+      },
+      "reference": {
+        "bucket_name": "",
+        "object_key": [".fa.fai", ".dict"]
+      },
+      "known-sites-snp": {
+        "bucket_name": "",
+        "object_key": [".vcf.gz.tbi"]
+      }
+    },
+    "input_parameters": {},
+    "output_S3_bucket": "",
+    "output_target": {
+      "output": ".vcf.gz"
+    },
+    "secondary_output_target": {}
+  },
+  "config": {
+    "instance_type": "t3.medium",
+    "ebs_size": "2.5x",
+    "EBS_optimized": true,
+    "spot_instance": true,
+    "log_bucket": "",
+    "run_name": "run_gatk-GenotypeGVCFs",
+    "behavior_on_capacity_limit": "wait_and_retry"
+  }
+}

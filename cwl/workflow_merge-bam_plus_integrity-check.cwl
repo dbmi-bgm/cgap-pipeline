@@ -23,6 +23,11 @@ inputs:
     default: 0
     doc: whether read count is checked at the end
 
+  - id: nthreads
+    type: int
+    default: 8
+    doc: number of sorting and compression threads
+
 outputs:
   merged_bam:
     type: File
@@ -40,6 +45,8 @@ steps:
         source: input_bams
       reads_grouped_by_name:
         source: reads_grouped_by_name
+      nthreads:
+        source: nthreads
     out: [output]
 
   integrity-check:
@@ -52,5 +59,5 @@ steps:
     out: [output]
 
 doc: |
-  run samtools merge -c -p merged.bam in1.bam in2.bam ... |
+  run samtools merge -@ nthreads -c -p merged.bam in1.bam in2.bam ... |
   run an integrity check on the output bam to confirm an EOF is present and if successful count the number of alignments

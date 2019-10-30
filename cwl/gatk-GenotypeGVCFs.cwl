@@ -11,16 +11,19 @@ hints:
   - class: DockerRequirement
     dockerPull: cgap/cgap:v10
 
-baseCommand: [gatk, BaseRecalibrator]
+baseCommand: [gatk, GenotypeGVCFs]
 
-arguments: ["-O", $(inputs.input_bam.nameroot + "_recalibration_report"), "--use-original-qualities"]
+arguments: ["--java-options", '-Xmx4g', "-O", $(inputs.input.prefix + ".vcf.gz")]
 
 inputs:
-  - id: input_bam
+  - id: input
     type: File
     inputBinding:
       position: 1
-      prefix: -I
+      prefix: -V
+    secondaryFiles:
+      - .tbi
+    doc: expect the path to the gvcf gz file
 
   - id: reference
     type: File
@@ -28,33 +31,33 @@ inputs:
       position: 2
       prefix: -R
     secondaryFiles:
-      - ^.dict
       - .fai
+      - ^.dict
     doc: expect the path to the fa file
 
   - id: known-sites-snp
     type: File
     inputBinding:
       position: 3
-      prefix: --known-sites
+      prefix: --dbsnp
     secondaryFiles:
       - .tbi
     doc: expect the path to the dbsnp vcf gz file
 
-  - id: known-sites-indels
-    type: File
+  - id: verbosity
+    type: string
     inputBinding:
       position: 4
-      prefix: --known-sites
-    secondaryFiles:
-      - .idx
-    doc: expect the path to the indel vcf file
+      prefix: -verbosity
+    default: INFO
 
 outputs:
-  - id: recalibration_report
+  - id: output
     type: File
     outputBinding:
-      glob: $(inputs.input_bam.nameroot + "_recalibration_report")
+      glob: $(inputs.input.prefix + ".vcf.gz")
+    secondaryFiles:
+      - .tbi
 
 doc: |
-  run gatk BaseRecalibrator
+  run gatk GenotypeGVCFs

@@ -74,5 +74,60 @@
         }
     ],
     "status": "uploaded"
+  },
+  {
+    "uuid": "3f7161f3-1698-4665-a59b-20c3009a3998",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "vcf",
+    "description": "hg38 1000G_omni2.5",
+    "aliases": ["cgap:hg38-1000G_omni2.5"],
+    "extra_files": [
+        {
+            "file_format": "vcf_idx",
+            "status": "uploaded"
+        }
+    ],
+    "status": "uploaded"
+  },
+  {
+    "uuid": "5ca55bd5-4050-440e-b060-9441da57060e",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "vcf",
+    "description": "hg38 1000G_phase1.snps.high_confidence",
+    "aliases": ["cgap:hg38-1000G_phase1.snps.high_confidence"],
+    "extra_files": [
+        {
+            "file_format": "vcf_idx",
+            "status": "uploaded"
+        }
+    ],
+    "status": "uploaded"
+  },
+  {
+    "uuid": "f0684716-6c8c-4197-b9c4-a1e287d834a5",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "vcf",
+    "description": "hg38 hapmap_3.3",
+    "aliases": ["cgap:hg38-hapmap_3.3"],
+    "extra_files": [
+        {
+            "file_format": "vcf_idx",
+            "status": "uploaded"
+        }
+    ],
+    "status": "uploaded"
+  },
+  {
+    "uuid": "a1d504ee-a313-4064-b6ae-65fed9738980",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "txt",
+    "description": "hg38 chromosomes Yfirst",
+    "aliases": ["cgap:hg38-chromosomes-Yfirst"],
+    "extra_files": [],
+    "status": "uploaded"
   }
 ]

@@ -11,19 +11,14 @@ hints:
   - class: DockerRequirement
     dockerPull: cgap/cgap:v10
 
-baseCommand: [integrity-check.sh]
+baseCommand: [vcf-integrity-check.sh]
 
 inputs:
   - id: input
     type: File
     inputBinding:
       position: 1
-
-  - id: count
-    type: int
-    inputBinding:
-      position: 2
-    doc: 1 count the number of alignments if EOF if present, 0 only check EOF
+    doc: expect the path to the vcf gz file
 
 outputs:
   - id: output
@@ -32,5 +27,4 @@ outputs:
       glob: integrity_check
 
 doc: |
-  run a quick integrity check on the input bam to confirm an EOF exist |
-  if successful count the number of alignments
+  run a quick integrity check on the input vcf file
