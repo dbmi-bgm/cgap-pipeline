@@ -95,10 +95,26 @@ This step creates a GVCF file from the final bam file, using ``GATK HaplotypeCal
 * CWL: gatk-HaplotypeCaller.cwl
 
 
+CombineGVCFs
+++++++++++++
+
+This step merges multiple GVCF files to jointly call variants using ``GATK CombineGVCFs``.
+
+* CWL: gatk-CombineGVCFs.cwl
+
+
 GenotypeGVCF
 ++++++++++++
 
 This step creates a vcf file from a gvcf file, using ``GATK GenotypeGVCF``.
 
-* CWL: gatk-GenotypeGVCFs.cwl
+* CWL: workflow_gatk-GenotypeGVCFs_plus_vcf-integrity-check.cwl
+
+
+VariantRecalibrator (VQSR)
+++++++++++++++++++++++++++
+
+This step recalibrates the quality score for the called variants using ``GATK VariantRecalibrator``.
+
+* workflow_gatk-VQSR_plus_vcf-integrity-check.cwl
 
