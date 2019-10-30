@@ -116,5 +116,5 @@ VariantRecalibrator (VQSR)
 
 This step recalibrates the quality score for the called variants using ``GATK VariantRecalibrator``.
 
-* workflow_gatk-VQSR_plus_vcf-integrity-check.cwl
+* CWL: workflow_gatk-VQSR_plus_vcf-integrity-check.cwl
 
