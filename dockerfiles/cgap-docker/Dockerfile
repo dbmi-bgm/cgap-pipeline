@@ -88,6 +88,10 @@ RUN chmod +x HaplotypeCaller-parallel.sh
 COPY CombineGVCFs-parallel.sh .
 RUN chmod +x CombineGVCFs-parallel.sh
 
+# GenotypeGVCFs parallel script
+COPY GenotypeGVCFs-parallel.sh .
+RUN chmod +x GenotypeGVCFs-parallel.sh
+
 # VQSR
 COPY vqsr-indel.sh .
 RUN chmod +x vqsr-indel.sh
