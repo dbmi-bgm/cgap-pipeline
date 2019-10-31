@@ -18,7 +18,6 @@ inputs:
     type: File
     inputBinding:
       position: 1
-      prefix: -V
     secondaryFiles:
       - .tbi
     doc: expect the path to the gvcf gz file
@@ -27,7 +26,6 @@ inputs:
     type: File
     inputBinding:
       position: 2
-      prefix: -R
     secondaryFiles:
       - .fai
       - ^.dict
@@ -37,7 +35,6 @@ inputs:
     type: File
     inputBinding:
       position: 3
-      prefix: --dbsnp
     secondaryFiles:
       - .tbi
     doc: expect the path to the dbsnp vcf gz file
