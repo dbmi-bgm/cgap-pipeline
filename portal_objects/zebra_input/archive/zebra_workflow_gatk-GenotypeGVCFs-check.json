@@ -1,6 +1,6 @@
 {
     "parameters": {},
-    "workflow_uuid": "4fbad226-859d-40d4-8192-10c305e819da",
+    "workflow_uuid": "be5b7395-ddf1-4d60-85ea-650d5d9210ea",
     "input_files" : [
        {
            "object_key": "GAPFIAFOROO7.gvcf.gz",
@@ -18,12 +18,6 @@
            "object_key": "GAPFI4LJRN98.vcf.gz",
            "workflow_argument_name": "known-sites-snp",
            "uuid": "8ed35691-0af4-467a-adbc-81eb088549f0",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
-       },
-       {
-           "object_key": "",
-           "workflow_argument_name": "chromosomes",
-           "uuid": "",
            "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
        }
     ],

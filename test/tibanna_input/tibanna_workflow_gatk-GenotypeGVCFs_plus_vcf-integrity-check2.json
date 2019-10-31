@@ -18,6 +18,10 @@
       "known-sites-snp": {
         "bucket_name": "maestro-resources",
         "object_key": "dbsnp_138.b37.vcf"
+      },
+      "chromosomes": {
+        "bucket_name": "maestro-resources",
+        "object_key": ["chromosomes_GRCh38_Yfirst"]
       }
     },
     "secondary_files": {

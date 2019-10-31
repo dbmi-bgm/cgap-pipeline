@@ -19,6 +19,11 @@
           "workflow_argument_name": "known-sites-snp"
       },
       {
+          "argument_format": "txt",
+          "argument_type": "Input file",
+          "workflow_argument_name": "chromosomes"
+      },
+      {
           "argument_format": "vcf_gz",
           "argument_type": "Output processed file",
           "workflow_argument_name": "vcf",
@@ -36,7 +41,7 @@
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": "verbosity"
+          "workflow_argument_name": "nthreads"
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
@@ -99,13 +104,27 @@
               {
                   "meta": {
                       "cardinality": "single",
+                      "file_format": "txt",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "chromosomes",
+                  "source": [
+                      {
+                          "name": "chromosomes"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "verbosity",
+                  "name": "nthreads",
                   "source": [
                       {
-                          "name": "verbosity"
+                          "name": "nthreads"
                       }
                   ]
               }
@@ -182,5 +201,5 @@
       }
   ],
   "title": "Run gatk GenotypeGVCFs plus output integrity-check",
-  "uuid": "be5b7395-ddf1-4d60-85ea-650d5d9210ea"
+  "uuid": "4fbad226-859d-40d4-8192-10c305e819da"
 }

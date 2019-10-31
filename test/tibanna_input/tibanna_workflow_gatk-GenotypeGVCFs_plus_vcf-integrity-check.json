@@ -18,6 +18,10 @@
       "known-sites-snp": {
         "bucket_name": "",
         "object_key": ".vcf.gz"
+      },
+      "chromosomes": {
+        "bucket_name": "",
+        "object_key": [".txt"]
       }
     },
     "secondary_files": {

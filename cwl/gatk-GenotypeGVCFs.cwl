@@ -11,9 +11,7 @@ hints:
   - class: DockerRequirement
     dockerPull: cgap/cgap:v11
 
-baseCommand: [gatk, GenotypeGVCFs]
-
-arguments: ["--java-options", '-Xmx4g', "-O", $(inputs.input.prefix + ".vcf.gz")]
+baseCommand: [GenotypeGVCFs-parallel.sh]
 
 inputs:
   - id: input
@@ -44,18 +42,24 @@ inputs:
       - .tbi
     doc: expect the path to the dbsnp vcf gz file
 
-  - id: verbosity
-    type: string
+  - id: chromosomes
+    type: File
     inputBinding:
       position: 4
-      prefix: -verbosity
-    default: INFO
+    doc: expect the path to the file defining chromosomes
+
+  - id: nthreads
+    type: int
+    default: 14
+    inputBinding:
+      position: 5
+    doc: number of threads used to run parallel
 
 outputs:
   - id: output
     type: File
     outputBinding:
-      glob: $(inputs.input.prefix + ".vcf.gz")
+      glob: combined.vcf.gz
     secondaryFiles:
       - .tbi
 

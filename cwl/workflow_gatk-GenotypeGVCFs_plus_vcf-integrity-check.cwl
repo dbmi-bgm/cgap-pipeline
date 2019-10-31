@@ -25,9 +25,13 @@ inputs:
       - .tbi
     doc: expect the path to the dbsnp vcf gz file
 
-  - id: verbosity
-    type: string
-    default: INFO
+  - id: chromosomes
+    type: File
+    doc: expect the path to the file defining chromosomes
+
+  - id: nthreads
+    type: int
+    doc: number of threads used to run parallel
 
 outputs:
   vcf:
