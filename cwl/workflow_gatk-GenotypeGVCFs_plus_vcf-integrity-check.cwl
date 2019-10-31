@@ -31,6 +31,7 @@ inputs:
 
   - id: nthreads
     type: int
+    default: 14
     doc: number of threads used to run parallel
 
 outputs:
