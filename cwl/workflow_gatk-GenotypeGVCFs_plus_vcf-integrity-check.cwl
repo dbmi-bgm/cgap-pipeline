@@ -52,8 +52,10 @@ steps:
         source: reference
       known-sites-snp:
         source: known-sites-snp
-      verbosity:
-        source: verbosity
+      chromosomes:
+        source: chromosomes
+      nthreads:
+        source: nthreads
     out: [output]
 
   integrity-check:
