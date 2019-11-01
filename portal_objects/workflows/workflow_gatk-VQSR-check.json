@@ -88,7 +88,7 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_gatk-VQSR-check_v11",
-  "aliases": ["cgap:workflow_gatk-VQSR-check_v11"],
+  "aliases": ["cgap:workflow_gatk-VQSR-check_v11", "cgap:workflow_gatk-VQSR-check_v10", "cgap:workflow_gatk-VQSR-check_v9"],
   "steps": [
       {
           "inputs": [
