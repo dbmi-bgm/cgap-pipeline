@@ -36,7 +36,7 @@
   "cwl_main_filename": "gatk-CombineGVCFs.cwl",
   "cwl_pointer": "",
   "description": "Run gatk CombineGVCFs on input g.vcf files",
-  "docker_image_name": "cgap/cgap",
+  "docker_image_name": "cgap/cgap:v11",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_gatk-CombineGVCFs_v11",
