@@ -3,9 +3,9 @@
     "workflow_uuid": "4fbad226-859d-40d4-8192-10c305e819da",
     "input_files" : [
        {
-           "object_key": "GAPFIAFOROO7.gvcf.gz",
+           "object_key": "GAPFIR8649UM.gvcf.gz",
            "workflow_argument_name": "input_gvcf",
-           "uuid": "7d34a64c-a08d-40b6-970c-4493c6cce36f",
+           "uuid": "f4ffd9f1-2429-4649-85ce-0ca597c92890",
            "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
        },
        {
@@ -21,15 +21,15 @@
            "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
        },
        {
-           "object_key": "",
+           "object_key": "GAPFIGJVJDUY.txt",
            "workflow_argument_name": "chromosomes",
-           "uuid": "",
+           "uuid": "a1d504ee-a313-4064-b6ae-65fed9738980",
            "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
        }
     ],
     "config": {
-      "instance_type": "t3.medium",
-      "ebs_size": "4.5x",
+      "instance_type": "c5.4xlarge",
+      "ebs_size": "2x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",
