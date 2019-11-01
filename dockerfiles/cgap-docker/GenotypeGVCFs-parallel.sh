@@ -14,7 +14,7 @@ directory=VCFS/
 mkdir -p $directory
 
 # creating basic command
-command="gatk --java-options \"-Xmx4g\" GenotypeGVCFs -V $input_gvcf -R $reference --dbsnp $dbsnp -verbosity INFO --interval-padding 500 -L {} -O ${directory}out.{}.vcf"
+command="gatk --java-options \"-Xmx4g\" GenotypeGVCFs -V $input_gvcf -R $reference --dbsnp $dbsnp -verbosity INFO -L {} -O ${directory}out.{}.vcf --annotationsToExclude ExcessHet"
 
 # running command
 cat $chromosomefile | parallel --halt 2 --jobs $nthreads $command || exit 1
