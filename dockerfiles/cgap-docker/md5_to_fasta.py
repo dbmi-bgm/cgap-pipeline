@@ -8,6 +8,13 @@ registry_url_base = 'https://www.ebi.ac.uk/ena/cram/md5'
 
 
 def add_to_fasta(line, fout):
+    """Given a line in the md5 list returned from cramtools getref,
+    download the corresponding sequence from the reference sequence registry,
+    and add the content to the output file object.
+    
+    The line looks like below:
+    >chr1 4a972df76bd3ee2857b87bd5be5e4a0a
+    """
     (chrom, md5) = line.split(' ')
     md5 = md5.rstrip()
     url = "%s/%s" % (registry_url_base, md5)
@@ -36,6 +43,13 @@ def add_to_fasta(line, fout):
 
 
 def md5list_to_fasta(md5list, fasta):
+    """Given the md5 list (file) returned from cramtools getref,
+    download the corresponding sequences from the reference sequence registry,
+    and write them to the output file.
+    
+    md5list: input reference md5 list file
+    fasta: output reference genome fasta file (not gzipped)
+    """
     with open(fasta, 'w') as fout:
         with open(md5list, 'r') as f:
             for line in f:
