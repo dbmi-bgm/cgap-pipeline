@@ -49,7 +49,7 @@ java -jar $CRAMTOOLS_JAR getref -I $input_cram -F $reflist || { echo "cannot get
 if [[ ! -z $input_md5 && ! -z $input_fasta ]]; then
     if [[ -z $(diff $input_md5 $reflist) ]]; then
         # the md5 values match the provided reference/md5, no need to download reference
-        ref_fasta=input_fasta
+        ref_fasta=$input_fasta
     fi
 fi
 if [[ -z $ref_fasta ]]; then
