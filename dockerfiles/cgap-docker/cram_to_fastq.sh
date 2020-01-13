@@ -2,7 +2,7 @@
 shopt -s extglob
 out_prefix="out"
 nthreads=1
-
+reflist=tmp_md5list
 
 printHelpAndExit() {
     echo "Usage: ${0##*/} [-p nthreads] -i input_cram -o out_prefix [-f input_fasta] [-m input_md5]"
@@ -28,17 +28,17 @@ done
 
 if [[ -z $input_cram ]]; then
     echo "input cram file is a required argument."
-    printHelpAndExit 1;;
+    printHelpAndExit 1
 fi
 
 if [[ -z $input_md5 && ! -z $input_fasta ]]; then
     echo "To use input md5, provide a matching reference fasta file as well."
-    printHelpAndExit 1;;
+    printHelpAndExit 1
 fi
 
 if [[ ! -z $input_md5 && -z $input_fasta ]]; then
     echo "To use reference fasta, provide a matching md5 file as well."
-    printHelpAndExit 1;;
+    printHelpAndExit 1
 fi
 
 
