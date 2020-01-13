@@ -3,6 +3,7 @@ shopt -s extglob
 out_prefix="out"
 nthreads=1
 reflist=tmp_md5list
+bam=tmp.bam
 
 printHelpAndExit() {
     echo "Usage: ${0##*/} [-p nthreads] -i input_cram -o out_prefix [-f input_fasta] [-m input_md5]"
