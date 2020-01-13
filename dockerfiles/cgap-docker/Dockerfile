@@ -105,8 +105,8 @@ RUN git clone https://github.com/enasequence/cramtools && \
     cd cramtools && \
     git checkout 0b5c9ec && \
     cd ..
-COPY md5_to_fasta.py
-COPY cram_to_fastq.sh
+COPY md5_to_fasta.py .
+COPY cram_to_fastq.sh .
 
 # paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
