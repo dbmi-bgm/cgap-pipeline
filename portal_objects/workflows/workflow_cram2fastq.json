@@ -9,7 +9,7 @@
           "workflow_argument_name": "cram"
       },
       {
-          "argument_format": "fasta",
+          "argument_format": "fa",
           "argument_type": "Input file",
           "workflow_argument_name": "reference_fasta"
       },
@@ -65,7 +65,7 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "fasta",
+                      "file_format": "fa",
                       "global": true,
                       "type": "reference file"
                   },
