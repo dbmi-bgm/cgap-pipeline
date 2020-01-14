@@ -3,6 +3,7 @@
     "workflow_uuid": "3258380c-608b-4fb6-89ef-249d1692f492",
     "input_files" : [
        {
+           "workflow_argument_name": "cram",
            "uuid": "a1196e8b-2e22-43e7-ae9f-c6aa971b1d00",
            "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-files"
        }
