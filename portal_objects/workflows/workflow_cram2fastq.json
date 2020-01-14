@@ -37,7 +37,7 @@
   "category": ["processing"],
   "cwl_child_filenames": [],
   "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v12/cwl",
-  "cwl_main_filename": "workflow_cram2fastq.cwl",
+  "cwl_main_filename": "cram2fastq.cwl",
   "cwl_pointer": "",
   "description": "Convert cram to fastq files",
   "docker_image_name": "cgap/cgap:v12",
