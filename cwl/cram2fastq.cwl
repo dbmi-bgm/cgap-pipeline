@@ -14,7 +14,7 @@ hints:
 baseCommand: [cram_to_fastq.sh]
 
 inputs:
-  - id: input_cram
+  - id: cram
     type: string
     inputBinding:
       position: 1
@@ -28,14 +28,14 @@ inputs:
       prefix: -p
     doc: number of compression threads
 
-  - id: input_fasta
+  - id: reference_fasta
     type: File
     inputBinding:
       position: 3
       prefix: -f
     doc: input reference fasta file (optional, if not provided, the reference will be downloaded and combined on the fly)
   
-  - id: input_md5_list
+  - id: reference_md5_list
     type: File
     inputBinding:
       position: 4
@@ -51,15 +51,15 @@ inputs:
     doc: prefix of the output files (<out_prefix>.1.fastq.gz and <out_prefix>.2.fastq.gz)
       
 outputs:
-  - id: output_fastq1
+  - id: fastq1
     type: File
     outputBinding:
       glob: $(inputs.out_prefix + ".1.fastq.gz")
 
-  - id: output_fastq2
+  - id: fastq2
     type: File
     outputBinding:
       glob: $(inputs.out_prefix + ".3.fastq.gz")
 
 doc: |
-  run cram_to_fastq.sh -i input_cram -p nthreads -f input_fasta -m input_md5_list -o out_prefix
+  run cram_to_fastq.sh -i cram -p nthreads -f reference_fasta -m reference_md5_list -o out_prefix
