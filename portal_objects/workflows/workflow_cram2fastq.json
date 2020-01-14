@@ -79,7 +79,7 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "fasta",
+                      "file_format": "md5_list",
                       "global": true,
                       "type": "reference file"
                   },
