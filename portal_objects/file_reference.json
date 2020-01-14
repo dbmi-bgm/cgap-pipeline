@@ -129,5 +129,15 @@
     "aliases": ["cgap:hg38-chromosomes-Yfirst"],
     "extra_files": [],
     "status": "uploaded"
+  },
+  {
+    "uuid": "db00cc5a-d7bc-424c-8560-e53827a52db9",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "md5_list",
+    "description": "md5 list of hg38",
+    "aliases": ["cgap:hg38-md5-list"],
+    "extra_files": [],
+    "status": "uploaded"
   }
 ]
