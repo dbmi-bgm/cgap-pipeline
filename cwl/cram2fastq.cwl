@@ -30,14 +30,18 @@ inputs:
     doc: number of compression threads
 
   - id: reference_fasta
-    type: File
+    type: 
+      - File
+      - "null"
     inputBinding:
       position: 3
       prefix: -f
     doc: input reference fasta file (optional, if not provided, the reference will be downloaded and combined on the fly)
   
   - id: reference_md5_list
-    type: File
+    type: 
+      - File
+      - "null"
     inputBinding:
       position: 4
       prefix: -m
