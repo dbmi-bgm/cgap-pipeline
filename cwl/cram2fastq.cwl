@@ -64,7 +64,7 @@ outputs:
   - id: fastq2
     type: File
     outputBinding:
-      glob: $(inputs.out_prefix + ".3.fastq.gz")
+      glob: $(inputs.out_prefix + ".2.fastq.gz")
 
 doc: |
   run cram_to_fastq.sh -i cram -p nthreads -f reference_fasta -m reference_md5_list -o out_prefix
