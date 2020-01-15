@@ -26,6 +26,7 @@ inputs:
     inputBinding:
       position: 2
       prefix: -p
+    default: 1
     doc: number of compression threads
 
   - id: reference_fasta
