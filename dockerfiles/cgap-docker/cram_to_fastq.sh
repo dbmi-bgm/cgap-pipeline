@@ -55,6 +55,7 @@ if [[ ! -z $input_md5 && ! -z $input_fasta ]]; then
 fi
 if [[ -z $ref_fasta ]]; then
     # download and combine reference sequences
+    ref_fasta=ref.fa
     python /usr/local/bin/md5_to_fasta.py -i $reflist -o $ref_fasta || { echo "cannot download references"; exit 1; }
 fi
 if [[ ! -e $ref_fasta.fai ]]; then
