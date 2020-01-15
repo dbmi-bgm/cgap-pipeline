@@ -1,5 +1,5 @@
 {
-    "parameters": {},
+    "parameters": { "nthreads": 8 },
     "workflow_uuid": "3258380c-608b-4fb6-89ef-249d1692f492",
     "input_files" : [
        {
