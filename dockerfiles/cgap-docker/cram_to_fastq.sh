@@ -70,6 +70,6 @@ samtools view -hb -T $ref_fasta $input_cram > $bam || { echo "cannot convert cra
 # bam to fastq
 mkfifo 1.fastq
 mkfifo 2.fastq
-{ samtools collate -O $bam | samtools fastq -1 1.fastq -2 2.fastq -@$nthreads - } || { echo "cannot convert bam to fastq."; exit 1; }
+{ samtools collate -@$nthreads -O $bam | samtools fastq -1 1.fastq -2 2.fastq -@$nthreads - } || { echo "cannot convert bam to fastq."; exit 1; }
 gzip -c 1.fastq > $out_prefix.1.fastq.gz
 gzip -c 2.fastq > $out_prefix.2.fastq.gz
