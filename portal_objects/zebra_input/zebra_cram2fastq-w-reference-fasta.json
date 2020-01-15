@@ -25,7 +25,9 @@
       "spot_instance": true,
       "log_bucket": "tibanna-output",
       "run_name": "run_workflow_cram2fastq",
-      "behavior_on_capacity_limit": "wait_and_retry"
+      "behavior_on_capacity_limit": "wait_and_retry",
+      "shutdown_min": 120,
+      "password": "dragonfly"
     },
     "_tibanna": {
       "run_type": "workflow_cram2fastq",
