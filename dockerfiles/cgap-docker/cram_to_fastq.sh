@@ -65,7 +65,7 @@ fi
 
 
 # cram to bam
-samtools view -hb -T $ref_fasta $input_cram > $bam || { echo "cannot convert cram to bam."; exit 1; }
+samtools view -@$nthreads -hb -T $ref_fasta $input_cram > $bam || { echo "cannot convert cram to bam."; exit 1; }
 
 # bam to fastq
 mkfifo 1.fastq
