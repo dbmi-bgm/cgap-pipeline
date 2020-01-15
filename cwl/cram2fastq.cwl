@@ -15,7 +15,7 @@ baseCommand: [cram_to_fastq.sh]
 
 inputs:
   - id: cram
-    type: string
+    type: File
     inputBinding:
       position: 1
       prefix: -i
@@ -48,7 +48,7 @@ inputs:
     doc: md5 list of the input reference fasta file (optional, if not provided, the reference will be downloaded and combined on the fly)
 
   - id: out_prefix
-    type: File
+    type: string
     inputBinding:
       position: 5
       prefix: -o
