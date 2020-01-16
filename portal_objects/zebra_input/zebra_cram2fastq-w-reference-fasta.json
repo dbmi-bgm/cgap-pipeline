@@ -19,18 +19,15 @@
        }
     ],
     "config": {
-      "instance_type": "m5a.2xlarge",
-      "ebs_size": "10x",
+      "instance_type": "c5.2xlarge",
+      "ebs_size": "30x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",
-      "run_name": "run_workflow_cram2fastq",
-      "behavior_on_capacity_limit": "wait_and_retry",
-      "shutdown_min": 120,
-      "password": "dragonfly"
+      "behavior_on_capacity_limit": "wait_and_retry"
     },
     "_tibanna": {
-      "run_type": "workflow_cram2fastq",
+      "run_type": "workflow_cram2fastq_w_ref",
       "env": "fourfront-cgapwolf"
     },
     "app_name": "workflow_cram2fastq"
