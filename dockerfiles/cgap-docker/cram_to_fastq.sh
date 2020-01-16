@@ -76,6 +76,7 @@ fi
 
 # bam to fastq
 samtools collate -@$nthreads -O $bam | samtools fastq -1 $out_prefix.1.fastq -2 $out_prefix.2.fastq -@$nthreads - || { echo "cannot convert bam to fastq."; exit 1; }
+rm -rf $bam  # save space
 gzip $out_prefix.1.fastq || { echo "Cannot compress $out_prefix.1.fastq"; exit 1; }
 gzip $out_prefix.2.fastq || { echo "Cannot compress $out_prefix.2.fastq"; exit 1; }
 
