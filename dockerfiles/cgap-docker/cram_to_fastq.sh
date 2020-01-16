@@ -67,6 +67,13 @@ fi
 # cram to bam
 samtools view -@$nthreads -hb -T $ref_fasta $input_cram > $bam || { echo "cannot convert cram to bam."; exit 1; }
 
+# bam integrity check
+./integrity-check.sh $bam 0
+if [[ $(cat integrity_check |cut -f2) != "OK" ]]; then
+    echo "Bam integrity check failed."
+    exit 1;
+fi
+
 # bam to fastq
 samtools collate -@$nthreads -O $bam | samtools fastq -1 $out_prefix.1.fastq -2 $out_prefix.2.fastq -@$nthreads - || { echo "cannot convert bam to fastq."; exit 1; }
 gzip $out_prefix.1.fastq || { echo "Cannot compress $out_prefix.1.fastq"; exit 1; }
