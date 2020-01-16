@@ -68,7 +68,7 @@ fi
 samtools view -@$nthreads -hb -T $ref_fasta $input_cram > $bam || { echo "cannot convert cram to bam."; exit 1; }
 
 # bam to fastq
-{ samtools collate -@$nthreads -O $bam | samtools fastq -1 1.fastq -2 2.fastq -@$nthreads - } || { echo "cannot convert bam to fastq."; exit 1; }
-gzip -c 1.fastq > $out_prefix.1.fastq.gz || { echo "Cannot compress 1.fastq"; exit 1; }
-gzip -c 2.fastq > $out_prefix.2.fastq.gz || { echo "Cannot compress 2.fastq"; exit 1; }
+samtools collate -@$nthreads -O $bam | samtools fastq -1 $out_prefix.1.fastq -2 $out_prefix.2.fastq -@$nthreads - || { echo "cannot convert bam to fastq."; exit 1; }
+gzip $out_prefix.1.fastq || { echo "Cannot compress $out_prefix.1.fastq"; exit 1; }
+gzip $out_prefix.2.fastq || { echo "Cannot compress $out_prefix.2.fastq"; exit 1; }
 
