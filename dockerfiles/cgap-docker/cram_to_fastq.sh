@@ -68,7 +68,7 @@ fi
 samtools view -@$nthreads -hb -T $ref_fasta $input_cram > $bam || { echo "cannot convert cram to bam."; exit 1; }
 
 # bam integrity check
-./integrity-check.sh $bam 0
+integrity-check.sh $bam 0
 if [[ $(cat integrity_check |cut -f2) != "OK" ]]; then
     echo "Bam integrity check failed."
     exit 1;
