@@ -76,7 +76,7 @@ RUN chmod +x vcf-integrity-check.sh
 # add read groups script
 RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
     cd cgap-scripts && \
-    git checkout b432a4c && \
+    git checkout 1ca4b0a && \
     chmod +x AddReadGroups.py && \
     cd ..
 
