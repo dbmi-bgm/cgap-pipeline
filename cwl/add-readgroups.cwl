@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v11
+    dockerPull: cgap/cgap:v12-tmp
 
 baseCommand: [python3, /usr/local/bin/cgap-scripts/AddReadGroups.py]
 

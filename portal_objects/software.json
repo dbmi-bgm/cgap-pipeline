@@ -65,10 +65,10 @@
         "software_type": [
             "annotator"
         ],
-        "source_url": "https://github.com/dbmi-bgm/cgap-pipeline/blob/master/dockerfiles/cgap-docker/AddReadGroups.py",
-        "title": "add-readgroups_1ca4b0a",
+        "source_url": "https://github.com/dbmi-bgm/cgap-scripts",
+        "title": "add-readgroups_1140e78",
         "uuid": "f455f9fe-6f4b-4cfe-8fce-f8c3c2b0b661",
-        "commit": "1ca4b0a"
+        "commit": "1140e78"
     },   
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
