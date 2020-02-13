@@ -109,10 +109,18 @@ COPY md5_to_fasta.py .
 COPY cram_to_fastq.sh .
 RUN chmod +x cram_to_fastq.sh
 
+# pigz
+RUN wget https://zlib.net/pigz/pigz-2.4.tar.gz && \
+    tar -xzf pigz-2.4.tar.gz && \
+    cd pigz-2.4 && \
+    make && \
+    cd ..
+
 # paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
 ENV PATH=/usr/local/bin/bwa/:$PATH
 ENV PATH=/usr/local/bin/cgap-scripts/:$PATH
+ENV PATH=/usr/local/bin/pigz-2.4/:$PATH
 
 # supporting UTF-8
 RUN locale-gen "en_US.UTF-8" && update-locale LC_ALL="en_US.UTF-8"
