@@ -159,6 +159,16 @@
         "valid_item_types": ["FileProcessed"]
     },
     {
+        "file_format": "CRAM",
+        "standard_file_extension": "cram",
+        "description": "cram alignment format",
+        "uuid": "d363c5f9-7159-45b1-b516-e5ec433f9b86",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "released",
+        "valid_item_types": ["FileProcessed"]
+    },
+    {
         "file_format": "md5_list",
         "standard_file_extension": "md5_list",
         "description": "List of md5 in the format of cramtools getref output",
