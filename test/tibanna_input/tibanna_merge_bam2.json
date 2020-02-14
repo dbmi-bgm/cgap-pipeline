@@ -2,7 +2,7 @@
   "args": {
     "app_name": "merge_bam",
     "app_version": "v1.0",
-    "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v12/cwl",
+    "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v13/cwl",
     "cwl_main_filename": "merge_bam.cwl",
     "cwl_child_filenames": [],
     "cwl_version": "v1",

@@ -1,76 +1,37 @@
-cwlVersion: v1.0
-
-class: Workflow
-
-requirements:
-  MultipleInputFeatureRequirement: {}
-
-inputs:
-  - id: input_bam
-    type: File
-
-  - id: xmx
-    default: '160G'
-    type: string
-
-  - id: xms
-    default: '160G'
-    type: string
-
-  - id: max_records_in_ram
-    type: int
-    default: 2000000
-    doc: max number of records stored in RAM before spilling to disk
-
-  - id: duplicate_pixel_distance
-    type: int
-    default: 2500
-    doc: max offset between two duplicate clusters in order to consider them optical duplicates
-
-  - id: count
-    type: int
-    default: 0
-    doc: 1 count the number of alignments if EOF if present, 0 only check EOF
-
-outputs:
-  dupmarked_bam:
-    type: File
-    outputSource: picard-MarkDuplicates/output
-
-  duplicate_metrics:
-    type: File
-    outputSource: picard-MarkDuplicates/out_metrics
-
-  dupmarked_bam-check:
-    type: File
-    outputSource: integrity-check/output
-
-steps:
-  picard-MarkDuplicates:
-    run: picard-MarkDuplicates.cwl
-    in:
-      input:
-        source: input_bam
-      xmx:
-        source: xmx
-      xms:
-        source: xms
-      max_records_in_ram:
-        source: max_records_in_ram
-      duplicate_pixel_distance:
-        source: duplicate_pixel_distance
-    out: [output, out_metrics]
-
-  integrity-check:
-    run: integrity-check.cwl
-    in:
-      input:
-        source: picard-MarkDuplicates/output
-      count:
-        source: count
-    out: [output]
-
-doc: |
-  run picard MarkDuplicates to mark the duplicates in the input bam file |
-  generate a duplicate_metrics.txt file with metrics about duplicates identified |
-  run an integrity check on the output bam to confirm an EOF is present and if successful count the number of alignments
+{
+  "args": {
+    "app_name": "workflow_sort-bam-check",
+    "app_version": "v1.0",
+    "cwl_directory_url": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/master/cwl",
+    "cwl_main_filename": "workflow_sort-bam_plus_integrity-check.cwl",
+    "cwl_child_filenames": ["sort-bam.cwl", "integrity-check.cwl"],
+    "cwl_version": "v1",
+    "input_files": {
+      "input": {
+        "bucket_name": "",
+        "object_key": ""
+      }
+    },
+    "secondary_files": {},
+    "input_parameters": {
+      "max_memory": "3G",
+      "num_threads": 8,
+      "count": 0
+    },
+    "output_S3_bucket": "",
+    "output_target": {
+      "output": "sorted.bam",
+      "output-check": "integrity_check"
+    },
+    "secondary_output_target": {}
+  },
+  "config": {
+    "instance_type": "m5a.2xlarge",
+    "ebs_size": "3x",
+    "EBS_optimized": true,
+    "spot_instance": true,
+    "log_bucket": "",
+    "run_name": "run_workflow_sort-bam-check",
+    "behavior_on_capacity_limit": "wait_and_retry"
+  }
+}
