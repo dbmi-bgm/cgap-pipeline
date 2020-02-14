@@ -7,7 +7,7 @@ The CGAP Upstream pipeline processes Whole Genome Sequencing data (optimized for
 Docker image
 ############
 
-* Currently docker image ``cgap/cgap:v11``
+* Currently docker image ``cgap/cgap:v12``
 
 The image contains but (is not limited to) the following software packages:
 
