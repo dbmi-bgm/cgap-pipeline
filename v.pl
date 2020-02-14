@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+# apply this script to individual files in portal/workflow/ to update versions
+
 $old='v12';
 $new='v13';
 
