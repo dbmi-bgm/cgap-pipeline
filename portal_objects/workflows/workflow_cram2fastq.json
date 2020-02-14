@@ -1,27 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@SooLee 
-Learn Git and GitHub without any code!
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-
-
-dbmi-bgm
-/
-cgap-pipeline
-4
-00
- Code Issues 0 Pull requests 0 Actions Projects 0 Wiki Security Insights Settings
-cgap-pipeline/portal_objects/workflows/workflow_cram2fastq.json
-@SooLee SooLee v13 cram2fastq
-1d5e236 2 hours ago
-154 lines (154 sloc)  4.71 KB
-  
 {
   "accession": "GAPWFBH24DOI",
   "app_name": "workflow_cram2fastq",
