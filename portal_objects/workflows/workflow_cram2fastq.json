@@ -1,7 +1,7 @@
 {
-  "accession": "GAPWF3T2UGB8",
+  "accession": "GAPWFBH24DOI",
   "app_name": "workflow_cram2fastq",
-  "app_version": "v12",
+  "app_version": "v13",
   "arguments": [
       {
           "argument_format": "CRAM",
@@ -36,15 +36,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v12/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v13/cwl",
   "cwl_main_filename": "cram2fastq.cwl",
   "cwl_pointer": "",
   "description": "Convert cram to fastq files",
-  "docker_image_name": "cgap/cgap:v12",
+  "docker_image_name": "cgap/cgap:v13",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_cram2fastq_v12",
-  "aliases": ["cgap:workflow_cram2fastq_v12"],
+  "name": "workflow_cram2fastq_v13",
+  "aliases": ["cgap:workflow_cram2fastq_v13"],
   "steps": [
       {
           "inputs": [
@@ -110,7 +110,8 @@
               ],
               "software_used": [
                  "/softwares/3f2d3b0e-0365-4212-9468-c16ad9531c4d",
-                 "/softwares/72b0ca58-0cca-4344-8dd5-974a49c5a931"
+                 "/softwares/72b0ca58-0cca-4344-8dd5-974a49c5a931",
+                 "/softwares/c4722fd7-633d-46aa-ac40-8eb5e00ac74d"
               ]
           },
           "name": "cram2fastq",
@@ -146,6 +147,8 @@
           ]
       }
   ],
+  "previous_versions": ["3258380c-608b-4fb6-89ef-249d1692f492"],
+  "version_log": "faster fastq compression using pigz",
   "title": "Cram to Fastq",
-  "uuid": "3258380c-608b-4fb6-89ef-249d1692f492"
+  "uuid": "7bbf3487-a1fc-4073-952a-d5771973e875"
 }

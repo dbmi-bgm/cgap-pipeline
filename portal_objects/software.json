@@ -93,5 +93,17 @@
         "title": "cramtools_0b5c9ec",
         "uuid": "72b0ca58-0cca-4344-8dd5-974a49c5a931",
         "commit": "0b5c9ec"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "pigz",
+        "software_type": [
+            "compressor"
+        ],
+        "source_url": ""https://zlib.net/pigz/,
+        "title": "pigz_pigz-2.4",
+        "uuid": "c4722fd7-633d-46aa-ac40-8eb5e00ac74d",
+        "version": "2.4"
     }
 ]

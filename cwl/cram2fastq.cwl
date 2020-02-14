@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v12-tmp2
+    dockerPull: cgap/cgap:v13
 
 baseCommand: [cram_to_fastq.sh]
 
