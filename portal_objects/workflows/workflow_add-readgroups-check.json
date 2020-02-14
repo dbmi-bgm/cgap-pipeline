@@ -177,7 +177,7 @@
       }
   ],
   "title": "Add read groups plus output integrity-check",
-  "previous_version": ["548e63a4-1936-4f68-8e8d-8e4658767911", "1ebf697c-949d-46b2-b9a4-8b1a7699ef1f"],
+  "previous_version": ["1ebf697c-949d-46b2-b9a4-8b1a7699ef1f"],
   "uuid": "6ea6bf43-76c2-4616-8dd6-dd60d72a2bf2",
   "version_upgrade_log": "Some files not having EOF fixed. Added compatibility to older format for read ID."
 }

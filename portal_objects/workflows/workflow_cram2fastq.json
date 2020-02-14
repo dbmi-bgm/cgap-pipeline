@@ -147,8 +147,8 @@
           ]
       }
   ],
-  "previous_versions": ["3258380c-608b-4fb6-89ef-249d1692f492"],
-  "version_log": "faster fastq compression using pigz",
+  "previous_version": ["3258380c-608b-4fb6-89ef-249d1692f492"],
+  "version_upgrade_log": "faster fastq compression using pigz",
   "title": "Cram to Fastq",
   "uuid": "7bbf3487-a1fc-4073-952a-d5771973e875"
 }
