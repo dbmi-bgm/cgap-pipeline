@@ -1,7 +1,7 @@
 {
   "accession": "GAPG8T65T3X9",
   "app_name": "workflow_gatk-HaplotypeCaller",
-  "app_version": "v11",
+  "app_version": "v12",
   "arguments": [
       {
           "argument_format": "bam",
@@ -40,15 +40,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v11/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v12/cwl",
   "cwl_main_filename": "gatk-HaplotypeCaller.cwl",
   "cwl_pointer": "",
   "description": "Run gatk HaplotypeCaller on bam input file. Produce a g.vcf file",
-  "docker_image_name": "cgap/cgap:v11",
+  "docker_image_name": "cgap/cgap:v12",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_gatk-HaplotypeCaller_v11",
-  "aliases": ["cgap:workflow_gatk-HaplotypeCaller_v11"],
+  "name": "workflow_gatk-HaplotypeCaller_v12",
+  "aliases": ["cgap:workflow_gatk-HaplotypeCaller_v12", "cgap:workflow_gatk-HaplotypeCaller_v11"],
   "steps": [
       {
           "inputs": [

@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v11
+    dockerPull: cgap/cgap:v13
 
 baseCommand: [vqsr-indel.sh]
 

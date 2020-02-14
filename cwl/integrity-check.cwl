@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v12-tmp
+    dockerPull: cgap/cgap:v13
 
 baseCommand: [integrity-check.sh]
 
