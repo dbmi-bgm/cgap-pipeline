@@ -101,7 +101,7 @@
         "software_type": [
             "compressor"
         ],
-        "source_url": ""https://zlib.net/pigz/,
+        "source_url": "https://zlib.net/pigz/",
         "title": "pigz_pigz-2.4",
         "uuid": "c4722fd7-633d-46aa-ac40-8eb5e00ac74d",
         "version": "2.4"
