@@ -27,8 +27,8 @@ RUN apt-get update -y && apt-get install -y \
 
 WORKDIR /usr/local/bin
 
-# gatk4 & picard
-RUN conda install -c bioconda -y gatk4==4.1.2.0 picard==2.20.2 pysam
+# gatk4 & picard & python libraries
+RUN conda install -c bioconda -y gatk4==4.1.2.0 picard==2.20.2 pysam bitarray pytabix h5py numpy pyfaidx
 
 # samtools
 RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2 && \
@@ -92,6 +92,24 @@ RUN chmod +x CombineGVCFs-parallel.sh
 COPY GenotypeGVCFs-parallel.sh .
 RUN chmod +x GenotypeGVCFs-parallel.sh
 
+# granite
+RUN git clone https://github.com/dbmi-bgm/granite.git && \
+    cd granite && \
+    git checkout d52c363 && \
+    python setup.py install && \
+    cd ..
+
+# mutanno
+RUN git clone https://github.com/dbmi-bgm/mutanno.git && \
+    cd mutanno && \
+    git checkout 890fd03 && \
+    chmod +x mutanno.py && \
+    cd ..
+
+# annot parallel script
+COPY annot-parallel.sh .
+RUN chmod +x annot-parallel.sh
+
 # VQSR
 COPY vqsr-indel.sh .
 RUN chmod +x vqsr-indel.sh
@@ -121,6 +139,8 @@ ENV PATH=/usr/local/bin/samtools/:$PATH
 ENV PATH=/usr/local/bin/bwa/:$PATH
 ENV PATH=/usr/local/bin/cgap-scripts/:$PATH
 ENV PATH=/usr/local/bin/pigz-2.4/:$PATH
+ENV PATH=/usr/local/bin/granite/:$PATH
+ENV PATH=/usr/local/bin/mutanno/:$PATH
 
 # supporting UTF-8
 RUN locale-gen "en_US.UTF-8" && update-locale LC_ALL="en_US.UTF-8"

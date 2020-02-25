@@ -1,0 +1,72 @@
+cwlVersion: v1.0
+
+class: Workflow
+
+requirements:
+  MultipleInputFeatureRequirement: {}
+
+inputs:
+  - id: input_vcf
+    type: File
+    secondaryFiles:
+      - .tbi
+    doc: expect the path to the vcf gz file
+
+  - id: resources
+    type: File
+    doc: expect the path to the tar gz archive with resources for annotation
+
+  - id: regions
+    type: File
+    doc: expect the path to the file defining regions
+
+  - id: datasource
+    type: File
+    doc: expect the path to the json file that specify resources to use
+
+  - id: blocksize
+    type: int
+    default: 1000
+
+  - id: nthreads
+    type: int
+    default: 24
+    doc: number of threads used to run parallel
+
+outputs:
+  annotated_vcf:
+    type: File
+    outputSource: mutanno-annot/output
+
+  annotated_vcf-check:
+    type: File
+    outputSource: integrity-check/output
+
+steps:
+  mutanno-annot:
+    run: mutanno-annot.cwl
+    in:
+      input:
+        source: input_vcf
+      resources:
+        source: resources
+      regions:
+        source: regions
+      datasource:
+        source: datasource
+      blocksize:
+        source: blocksize
+      nthreads:
+        source: nthreads
+    out: [output]
+
+  integrity-check:
+    run: vcf-integrity-check.cwl
+    in:
+      input:
+        source: mutanno-annot/output
+    out: [output]
+
+doc: |
+  run mutanno annot |
+  run an integrity check on the output vcf
