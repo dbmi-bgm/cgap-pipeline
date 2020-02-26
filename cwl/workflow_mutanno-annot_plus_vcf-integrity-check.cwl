@@ -12,17 +12,15 @@ inputs:
       - .tbi
     doc: expect the path to the vcf gz file
 
-  - id: resources
+  - id: mti
     type: File
-    doc: expect the path to the tar gz archive with resources for annotation
+    secondaryFiles:
+      - ^.json
+    doc: expect the path to the mutanno index files tar archive
 
   - id: regions
     type: File
     doc: expect the path to the file defining regions
-
-  - id: datasource
-    type: File
-    doc: expect the path to the json file that specify resources to use
 
   - id: blocksize
     type: int
@@ -48,12 +46,10 @@ steps:
     in:
       input:
         source: input_vcf
-      resources:
-        source: resources
+      mti:
+        source: mti
       regions:
         source: regions
-      datasource:
-        source: datasource
       blocksize:
         source: blocksize
       nthreads:

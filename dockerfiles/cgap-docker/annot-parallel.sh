@@ -4,9 +4,12 @@
 input_vcf=$1
 resources_tar=$2
 regionfile=$3
-datasource_json=$4
-blocksize=$5
-nthreads=$6
+blocksize=$4
+nthreads=$5
+
+# get resources tar name
+suffix=${resources_tar##*/}
+resources_json=${suffix%.*}.json
 
 # untar resources
 tar -xf $resources_tar
@@ -18,7 +21,7 @@ directory=VCFS/
 mkdir -p $directory
 
 # command
-command="tabix -h $input_vcf {} > {}.sharded.vcf; if [[ -e {}.sharded.vcf ]]; then mutanno.py annot -vcf {}.sharded.vcf -out ${directory}{}.ann.vcf -ds $datasource_json -blocksize $blocksize; fi; rm {}.sharded.vcf"
+command="tabix -h $input_vcf {} > {}.sharded.vcf; if [[ -e {}.sharded.vcf ]]; then mutanno.py annot -vcf {}.sharded.vcf -out ${directory}{}.ann.vcf -ds $resources_json -blocksize $blocksize; fi; rm {}.sharded.vcf"
 
 # runnning annot in parallel
 cat $regionfile | parallel --halt 2 --jobs $nthreads $command || exit 1

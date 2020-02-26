@@ -95,14 +95,14 @@ RUN chmod +x GenotypeGVCFs-parallel.sh
 # granite
 RUN git clone https://github.com/dbmi-bgm/granite.git && \
     cd granite && \
-    git checkout d52c363 && \
+    git checkout 31841b1 && \
     python setup.py install && \
     cd ..
 
 # mutanno
 RUN git clone https://github.com/dbmi-bgm/mutanno.git && \
     cd mutanno && \
-    git checkout 890fd03 && \
+    git checkout 0983a3f && \
     chmod +x mutanno.py && \
     cd ..
 

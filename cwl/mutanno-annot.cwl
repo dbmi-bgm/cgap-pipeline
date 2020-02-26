@@ -22,11 +22,13 @@ inputs:
       - .tbi
     doc: expect the path to the vcf gz file
 
-  - id: resources
+  - id: mti
     type: File
     inputBinding:
       position: 2
-    doc: expect the path to the tar gz archive with resources for annotation
+    secondaryFiles:
+      - ^.json
+    doc: expect the path to the mutanno index files tar archive
 
   - id: regions
     type: File
@@ -34,21 +36,15 @@ inputs:
       position: 3
     doc: expect the path to the file defining regions
 
-  - id: datasource
-    type: File
-    inputBinding:
-      position: 4
-    doc: expect the path to the json file that specify resources to use
-
   - id: blocksize
     type: int
     inputBinding:
-      position: 5
+      position: 4
 
   - id: nthreads
     type: int
     inputBinding:
-      position: 6
+      position: 5
     doc: number of threads used to run parallel
 
 outputs:

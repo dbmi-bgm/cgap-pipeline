@@ -144,10 +144,16 @@
     "uuid": "c4d5c51e-eb33-43e1-894a-e076b45afc7c",
     "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
     "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "mutannoIndex",
-    "description": "mutanno index files",
-    "aliases": ["cgap:mutannoIndex"],
+    "file_format": "mti_tar",
+    "description": "mutanno index microannotation v0.2",
+    "aliases": ["cgap:mutanno-index-microannotation-v0.2"],
+    "extra_files": [
+        {
+            "file_format": "mti_json",
+            "status": "uploading"
+        }
+    ],
     "extra_files": [],
-    "status": "uploaded"
+    "status": "uploading"
   }
 ]
