@@ -139,5 +139,15 @@
     "aliases": ["cgap:hg38-md5-list"],
     "extra_files": [],
     "status": "uploaded"
+  },
+  {
+    "uuid": "c4d5c51e-eb33-43e1-894a-e076b45afc7c",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "mutannoIndex",
+    "description": "mutanno index files",
+    "aliases": ["cgap:mutannoIndex"],
+    "extra_files": [],
+    "status": "uploaded"
   }
 ]
