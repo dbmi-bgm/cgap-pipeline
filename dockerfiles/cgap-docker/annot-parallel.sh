@@ -8,8 +8,7 @@ blocksize=$4
 nthreads=$5
 
 # get resources tar name
-suffix=${resources_tar##*/}
-resources_json=${suffix%.*}.json
+resources_json=${resources_tar%.*}.json
 
 # untar resources
 tar -xf $resources_tar
