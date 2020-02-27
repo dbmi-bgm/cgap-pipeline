@@ -34,6 +34,7 @@ RUN conda install -c bioconda -y gatk4==4.1.2.0 picard==2.20.2 \
 # samtools
 RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2 && \
     tar -xjf samtools-1.9.tar.bz2 && \
+    rm -rf samtools-1.9.tar.bz2 && \
     cd samtools-1.9 && \
     ./configure && \
     make && \
@@ -43,6 +44,7 @@ RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9
 # bwa
 RUN wget https://github.com/lh3/bwa/archive/v0.7.17.tar.gz && \
     tar -xzf v0.7.17.tar.gz && \
+    rm -rf v0.7.17.tar.gz && \
     cd bwa-0.7.17 && \
     make && \
     cd .. && \
@@ -132,6 +134,7 @@ RUN chmod +x cram_to_fastq.sh
 # pigz
 RUN wget https://zlib.net/pigz/pigz-2.4.tar.gz && \
     tar -xzf pigz-2.4.tar.gz && \
+    rm -rf pigz-2.4.tar.gz && \
     cd pigz-2.4 && \
     make && \
     cd ..
