@@ -28,7 +28,8 @@ RUN apt-get update -y && apt-get install -y \
 WORKDIR /usr/local/bin
 
 # gatk4 & picard & python libraries
-RUN conda install -c bioconda -y gatk4==4.1.2.0 picard==2.20.2 pysam bitarray pytabix h5py numpy pyfaidx
+RUN conda install -c bioconda -y gatk4==4.1.2.0 picard==2.20.2 \
+    pysam==0.15.3 bitarray==1.2.1 pytabix==0.0.2 h5py==2.10.0 numpy==1.18.1 pyfaidx==0.5.8
 
 # samtools
 RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2 && \
@@ -96,13 +97,14 @@ RUN chmod +x GenotypeGVCFs-parallel.sh
 RUN git clone https://github.com/dbmi-bgm/granite.git && \
     cd granite && \
     git checkout 31841b1 && \
+    rm -rf tests && \
     python setup.py install && \
     cd ..
 
 # mutanno
 RUN git clone https://github.com/dbmi-bgm/mutanno.git && \
     cd mutanno && \
-    git checkout 0983a3f && \
+    git checkout b5ea78d && \
     chmod +x mutanno.py && \
     cd ..
 
