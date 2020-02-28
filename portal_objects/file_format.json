@@ -169,9 +169,9 @@
         "valid_item_types": ["FileReference"]
     },
     {
-        "file_format": "bgi",
-        "standard_file_extension": "bgi",
-        "description": "binary genome index",
+        "file_format": "big",
+        "standard_file_extension": "big",
+        "description": "binary index genome",
         "uuid": "f66af4df-c107-44f0-bc94-227f1b4ccf72",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
