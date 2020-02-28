@@ -150,10 +150,9 @@
     "extra_files": [
         {
             "file_format": "mti_json",
-            "status": "uploading"
+            "status": "uploaded"
         }
     ],
-    "extra_files": [],
-    "status": "uploading"
+    "status": "uploaded"
   }
 ]
