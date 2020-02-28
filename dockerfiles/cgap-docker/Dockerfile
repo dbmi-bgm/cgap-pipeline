@@ -102,8 +102,11 @@ RUN git clone https://github.com/dbmi-bgm/granite.git && \
     git checkout f533015 && \
     rm -rf tests && \
     python setup.py install && \
-    chmod +x docker/mpileupCounts-parallel.sh && \
     cd ..
+
+# mpileupCounts parallel script
+RUN mv granite/docker/mpileupCounts-parallel.sh . && \
+    chmod +x mpileupCounts-parallel.sh
 
 # mutanno
 RUN git clone https://github.com/dbmi-bgm/mutanno.git && \
