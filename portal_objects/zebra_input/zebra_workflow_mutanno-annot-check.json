@@ -1,0 +1,43 @@
+{
+    "parameters": {
+        "nthreads": 70,
+        "blocksize": 1000000
+       },
+    "workflow_uuid": "04caaa82-6a32-46d3-b52c-c1017cc0490a",
+    "input_files" : [
+       {
+           "object_key": "GAPFIS8ZSPEO.vcf.gz",
+           "workflow_argument_name": "input_vcf",
+           "uuid": "340c57ac-0c62-43ee-8758-c7c6e78eaeda",
+           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
+       },
+       {
+           "object_key": "GAPFIYZQHM8R.mti.tar",
+           "workflow_argument_name": "mti",
+           "uuid": "c4d5c51e-eb33-43e1-894a-e076b45afc7c",
+           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-files"
+       },
+       {
+           "object_key": "GAPFIBGEOI72.txt",
+           "workflow_argument_name": "regions",
+           "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28",
+           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-files"
+       }
+    ],
+    "config": {
+      "instance_type": "c5n.18xlarge",
+      "ebs_size": "5x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_workflow_mutanno-annot-check",
+      "behavior_on_capacity_limit": "wait_and_retry",
+      "password": "lalala"
+    },
+    "_tibanna": {
+      "run_type": "workflow_mutanno-annot-check",
+      "env": "fourfront-cgapwolf"
+    },
+    "app_name": "workflow_mutanno-annot-check",
+    "output_bucket": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
+}
