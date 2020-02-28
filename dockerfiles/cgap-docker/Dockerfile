@@ -99,9 +99,10 @@ RUN chmod +x GenotypeGVCFs-parallel.sh
 # granite
 RUN git clone https://github.com/dbmi-bgm/granite.git && \
     cd granite && \
-    git checkout 6ab53f1 && \
+    git checkout f533015 && \
     rm -rf tests && \
     python setup.py install && \
+    chmod +x docker/mpileupCounts-parallel.sh && \
     cd ..
 
 # mutanno
