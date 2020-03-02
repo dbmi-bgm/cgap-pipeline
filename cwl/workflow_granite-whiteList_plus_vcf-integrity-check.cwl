@@ -33,16 +33,12 @@ inputs:
          upstream_gene_variant, regulatory_region_variant
 
   - id: VEPrescue
-    type:
-      type: array
-      items: string
+    type: string[]
     default: ["splice_region_variant"]
     doc: terms to overrule removed flags and/or to rescue and whitelist variants
 
   - id: VEPremove
-    type:
-      type: array
-      items: string
+    type: string[]
     default: null
     doc: additional terms to be removed
 
