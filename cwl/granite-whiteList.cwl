@@ -54,7 +54,6 @@ inputs:
     type: string[]
     default: null
     inputBinding:
-      itemSeparator: " "
       prefix: --VEPrescue
     doc: terms to overrule removed flags and/or to rescue and whitelist variants
 
@@ -62,7 +61,6 @@ inputs:
     type: string[]
     default: null
     inputBinding:
-      itemSeparator: " "
       prefix: --VEPremove
     doc: additional terms to be removed
 
