@@ -51,9 +51,7 @@ inputs:
          upstream_gene_variant, regulatory_region_variant
 
   - id: VEPrescue
-    type:
-      type: array
-      items: string
+    type: string[]
     default: null
     inputBinding:
       itemSeparator: " "
@@ -61,9 +59,7 @@ inputs:
     doc: terms to overrule removed flags and/or to rescue and whitelist variants
 
   - id: VEPremove
-    type:
-      type: array
-      items: string
+    type: string[]
     default: null
     inputBinding:
       itemSeparator: " "
