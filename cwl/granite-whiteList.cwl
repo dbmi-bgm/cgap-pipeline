@@ -11,7 +11,7 @@ hints:
   - class: DockerRequirement
     dockerPull: cgap/cgap:v13
 
-baseCommand: [granite whiteList]
+baseCommand: [granite, whiteList]
 
 inputs:
   - id: input
@@ -67,7 +67,7 @@ inputs:
     default: null
     inputBinding:
       itemSeparator: " "
-      prefix: --VEPrescue
+      prefix: --VEPremove
     doc: additional terms to be removed
 
   - id: BEDfile
