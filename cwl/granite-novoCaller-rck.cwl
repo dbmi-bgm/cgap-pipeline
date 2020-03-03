@@ -11,55 +11,57 @@ hints:
   - class: DockerRequirement
     dockerPull: cgap/cgap:v13
 
-baseCommand: [granite, novoCaller]
+baseCommand: [tar-novoCaller.sh]
 
 inputs:
   - id: input
     type: File
     inputBinding:
-      prefix: -i
+      position: 1
     doc: expect the path to the vcf file
 
   - id: outputfile
     type: string
     default: "output.vcf"
     inputBinding:
-      prefix: -o
+      position: 2
     doc: name of the output file
 
-  - id: unrelated_index
+  - id: unrelated
     type: File
     inputBinding:
-      prefix: -u
-    doc: TSV file containing ID<TAB>Path/to/file for unrelated |
-         files used to train the model (rck gz)
+      position: 3
+    secondaryFiles:
+      - .index
+    doc: expect the rck tar archive with unrelated files used by the model
 
-  - id: trio_index
+  - id: trio
     type: File
     inputBinding:
-      prefix: -t
-    doc: TSV file containing ID<TAB>Path/to/file for family |
-         files, the PROBAND must be listed as LAST (rck gz)
+      position: 4
+    secondaryFiles:
+      - .index
+    doc: expect the rck tar archive with trio files used by the model
 
   - id: ppthr
     type: float
-    default: null
+    default: 0
     inputBinding:
-      prefix: --ppthr
+      position: 5
     doc: threshold to filter by posterior probability for de novo calls
 
   - id: aftag
     type: string
-    default: null
+    default: ''
     inputBinding:
-      prefix: --aftag
+      position: 6
     doc: TAG (TAG=<float>) to be used to filter by population allele frequency
 
   - id: afthr
     type: float
-    default: null
+    default: 0
     inputBinding:
-      prefix: --afthr
+      position: 7
     doc: threshold to filter by population allele frequency
 
 outputs:

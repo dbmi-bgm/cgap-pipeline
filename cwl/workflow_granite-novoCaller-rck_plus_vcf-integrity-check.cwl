@@ -15,29 +15,31 @@ inputs:
     default: "output.vcf"
     doc: name of the output file
 
-  - id: unrelated_index
+  - id: unrelated
     type: File
-    doc: TSV file containing ID<TAB>Path/to/file for unrelated |
-         files used to train the model (rck gz)
+    secondaryFiles:
+      - .index
+    doc: expect the rck tar archive with unrelated files used by the model
 
-  - id: trio_index
+  - id: trio
     type: File
-    doc: TSV file containing ID<TAB>Path/to/file for family |
-         files, the PROBAND must be listed as LAST (rck gz)
+    secondaryFiles:
+      - .index
+    doc: expect the rck tar archive with trio files used by the model
 
   - id: ppthr
     type: float
-    default: null
+    default: 0
     doc: threshold to filter by posterior probability for de novo calls
 
   - id: aftag
     type: string
-    default: null
+    default: ''
     doc: TAG (TAG=<float>) to be used to filter by population allele frequency
 
   - id: afthr
     type: float
-    default: null
+    default: 0
     doc: threshold to filter by population allele frequency
 
 outputs:
@@ -57,10 +59,10 @@ steps:
         source: input_vcf
       outputfile:
         source: outputfile
-      unrelated_index:
-        source: unrelated_index
-      trio_index:
-        source: trio_index
+      unrelated:
+        source: unrelated
+      trio:
+        source: trio
       ppthr:
         source: ppthr
       aftag:
