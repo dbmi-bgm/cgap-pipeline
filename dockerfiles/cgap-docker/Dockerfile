@@ -119,6 +119,10 @@ RUN git clone https://github.com/dbmi-bgm/mutanno.git && \
 COPY annot-parallel.sh .
 RUN chmod +x annot-parallel.sh
 
+# tar rck script
+COPY tar-rck.py
+RUN chmod +x tar-rck.py
+
 # VQSR
 COPY vqsr-indel.sh .
 RUN chmod +x vqsr-indel.sh
