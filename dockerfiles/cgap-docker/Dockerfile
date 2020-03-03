@@ -120,7 +120,7 @@ COPY annot-parallel.sh .
 RUN chmod +x annot-parallel.sh
 
 # tar rck script
-COPY tar-rck.py
+COPY tar-rck.py .
 RUN chmod +x tar-rck.py
 
 # VQSR
