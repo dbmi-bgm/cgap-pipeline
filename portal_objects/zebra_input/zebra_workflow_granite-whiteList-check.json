@@ -1,0 +1,28 @@
+{
+    "parameters": {},
+    "workflow_uuid": "ce7f9e0b-a0d1-4119-bd66-373ccfcabac7",
+    "input_files" : [
+       {
+           "object_key": "GAPFILWLI83L.vcf.gz",
+           "workflow_argument_name": "input_vcf",
+           "uuid": "d95b447b-8981-41ea-b7f6-e329667a744b",
+           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-wfoutput",
+           "unzip": true
+       }
+    ],
+    "config": {
+      "instance_type": "m5.4xlarge",
+      "ebs_size": "2x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_workflow_granite-whiteList-check",
+      "behavior_on_capacity_limit": "wait_and_retry"
+    },
+    "_tibanna": {
+      "run_type": "workflow_granite-whiteList-check",
+      "env": "fourfront-cgapwolf"
+    },
+    "app_name": "workflow_granite-whiteList-check",
+    "output_bucket": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
+}
