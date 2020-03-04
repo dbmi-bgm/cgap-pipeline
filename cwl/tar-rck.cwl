@@ -14,14 +14,14 @@ hints:
 baseCommand: [tar-rck.py]
 
 inputs:
-  - id: input
+  - id: input_rcks
     type: string[]
     inputBinding:
       prefix: --files
     doc: list of files to be archived
 
 outputs:
-  - id: output
+  - id: rck_tar
     type: File
     outputBinding:
       glob: files.rck.tar

@@ -100,7 +100,7 @@
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "released",
-        "valid_item_types": ["FileReference"]
+        "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
         "file_format": "vcf_idx",
@@ -110,7 +110,7 @@
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "released",
-        "valid_item_types": ["FileReference"]
+        "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
         "file_format": "vcf_gz",
@@ -252,6 +252,16 @@
         "standard_file_extension": "rck.tar.index",
         "description": "index file for rck archive",
         "uuid": "1c7dc723-811c-4fcf-b8e5-d5e17a2013f7",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "released",
+        "valid_item_types": ["FileProcessed", "FileReference"]
+    },
+    {
+        "file_format": "bed",
+        "standard_file_extension": "bed",
+        "description": "bed, uncompressed",
+        "uuid": "4c04f6de-89a7-4477-8dc4-811b50c67401",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "released",
