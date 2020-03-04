@@ -233,5 +233,28 @@
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "released",
         "valid_item_types": ["FileReference"]
+    },
+    {
+        "file_format": "rck_tar",
+        "standard_file_extension": "rck.tar",
+        "description": "rck files archive, compressed",
+        "uuid": "39f836d8-bbb1-46c7-80d4-e321d4a44204",
+        "extrafile_formats": [
+            "1c7dc723-811c-4fcf-b8e5-d5e17a2013f7"
+        ],
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "released",
+        "valid_item_types": ["FileProcessed", "FileReference"]
+    },
+    {
+        "file_format": "rck_tar_index",
+        "standard_file_extension": "rck.tar.index",
+        "description": "index file for rck archive",
+        "uuid": "1c7dc723-811c-4fcf-b8e5-d5e17a2013f7",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "released",
+        "valid_item_types": ["FileProcessed", "FileReference"]
     }
 ]
