@@ -1,0 +1,36 @@
+{
+    "parameters": {
+      "aftag": "",
+      "afthr": "0.1"
+    },
+    "workflow_uuid": "c258d1ec-397d-4b0a-a0be-7c8211d65e6a",
+    "input_files" : [
+       {
+           "object_key": ".vcf",
+           "workflow_argument_name": "input_vcf",
+           "uuid": "",
+           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
+       },
+       {
+           "object_key": ".big",
+           "workflow_argument_name": "bigfile",
+           "uuid": "",
+           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-"
+       }
+    ],
+    "config": {
+      "instance_type": "m5.4xlarge",
+      "ebs_size": "2x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_workflow_granite-blackList-check",
+      "behavior_on_capacity_limit": "wait_and_retry"
+    },
+    "_tibanna": {
+      "run_type": "workflow_granite-blackList-check",
+      "env": "fourfront-cgapwolf"
+    },
+    "app_name": "workflow_granite-blackList-check",
+    "output_bucket": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
+}

@@ -4,7 +4,7 @@
   "app_version": "v13",
   "arguments": [
       {
-          "argument_format": "vcf_gz",
+          "argument_format": "vcf",
           "argument_type": "Input file",
           "workflow_argument_name": "input_vcf"
       },
@@ -55,7 +55,7 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "vcf_gz",
+                      "file_format": "vcf",
                       "global": true,
                       "type": "data file"
                   },
