@@ -123,6 +123,10 @@ RUN chmod +x annot-parallel.sh
 COPY tar-rck.py .
 RUN chmod +x tar-rck.py
 
+# tar novoCaller script
+COPY tar-novoCaller.sh .
+RUN chmod +x tar-novoCaller.sh
+
 # VQSR
 COPY vqsr-indel.sh .
 RUN chmod +x vqsr-indel.sh
