@@ -1,25 +1,25 @@
 {
     "parameters": {
-      "aftag": "",
-      "afthr": "0.1"
+      "aftag": "tag",
+      "afthr": 0.01
     },
     "workflow_uuid": "c258d1ec-397d-4b0a-a0be-7c8211d65e6a",
     "input_files" : [
        {
-           "object_key": ".vcf",
+           "object_key": "GAPFIKTWKTRI.vcf",
            "workflow_argument_name": "input_vcf",
-           "uuid": "",
+           "uuid": "96f06f73-c2a9-468d-b41d-b1da9905f40e",
            "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
        },
        {
-           "object_key": ".big",
+           "object_key": "GAPFIUB13XHK.big",
            "workflow_argument_name": "bigfile",
-           "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-"
+           "uuid": "745a3b78-31db-414b-bc8e-4f53065d8718",
+           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
        }
     ],
     "config": {
-      "instance_type": "m5.4xlarge",
+      "instance_type": "c5.large",
       "ebs_size": "2x",
       "EBS_optimized": true,
       "spot_instance": true,
