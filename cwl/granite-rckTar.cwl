@@ -38,5 +38,4 @@ outputs:
       - .index
 
 doc: |
-  create tar archive and associate index file to be used |
-  by novoCaller from bgzip and tabix indexed rck files
+  create tar archive and associate index file from bgzip and tabix indexed rck files

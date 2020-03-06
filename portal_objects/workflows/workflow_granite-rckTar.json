@@ -1,6 +1,6 @@
 {
   "accession": "GAPW9IH7L38P",
-  "app_name": "workflow_tar-rck",
+  "app_name": "workflow_granite-rckTar",
   "app_version": "v13",
   "arguments": [
       {
@@ -19,14 +19,14 @@
   "category": ["processing"],
   "cwl_child_filenames": [],
   "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v13/cwl",
-  "cwl_main_filename": "tar-rck.cwl",
+  "cwl_main_filename": "granite-rckTar.cwl",
   "cwl_pointer": "",
-  "description": "Create a tar archive of rck files. Create an index file for the archive to be used by granite novoCaller",
+  "description": "Create a tar archive of rck files. Create an index file for the archive",
   "docker_image_name": "cgap/cgap:v13",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_tar-rck_v13",
-  "aliases": ["cgap:workflow_tar-rck_v13"],
+  "name": "workflow_granite-rckTar_v13",
+  "aliases": ["cgap:workflow_granite-rckTar_v13"],
   "steps": [
       {
           "inputs": [
@@ -65,13 +65,13 @@
                   "name": "rck_tar",
                   "target": [
                       {
-                          "name": "rck_tar",
+                          "name": "rck_tar"
                       }
                   ]
               }
           ]
       }
   ],
-  "title": "Create a tar archive of rck files and an associate index file to be used by novoCaller",
+  "title": "Create a tar archive of rck files and an associate index file",
   "uuid": "778149e7-98d7-4362-83a4-9e80af1da101"
 }
