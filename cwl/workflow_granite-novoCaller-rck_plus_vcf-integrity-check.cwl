@@ -42,6 +42,11 @@ inputs:
     default: 0
     doc: threshold to filter by population allele frequency
 
+  - id: afthr_unrelated
+    type: float
+    default: 0
+    doc: threshold to filter by allele frequency calculated among unrelated
+
 outputs:
   novoCaller_vcf:
     type: File
@@ -69,6 +74,8 @@ steps:
         source: aftag
       afthr:
         source: afthr
+      afthr_unrelated:
+        source: afthr_unrelated
     out: [output]
 
   integrity-check:

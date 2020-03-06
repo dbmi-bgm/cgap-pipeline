@@ -64,6 +64,13 @@ inputs:
       position: 7
     doc: threshold to filter by population allele frequency
 
+  - id: afthr_unrelated
+    type: float
+    default: 0
+    inputBinding:
+      position: 8
+    doc: threshold to filter by allele frequency calculated among unrelated
+
 outputs:
   - id: output
     type: File

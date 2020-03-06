@@ -114,9 +114,9 @@
             "annotator"
         ],
         "source_url": "https://github.com/dbmi-bgm/mutanno",
-        "title": "mutanno_b5ea78d",
+        "title": "mutanno_4d732c7",
         "uuid": "76479248-09d2-48e5-9ab3-94c167e51cc6",
-        "commit": "b5ea78d"
+        "commit": "4d732c7"
     },
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
@@ -126,8 +126,8 @@
             "filter"
         ],
         "source_url": "https://github.com/dbmi-bgm/granite",
-        "title": "granite_f533015",
+        "title": "granite_e1f8aa3",
         "uuid": "8d4ca59b-750b-4c22-8a34-c5d4e795b8ad",
-        "commit": "f533015"
+        "commit": "e1f8aa3"
     }
 ]

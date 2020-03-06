@@ -99,7 +99,7 @@ RUN chmod +x GenotypeGVCFs-parallel.sh
 # granite
 RUN git clone https://github.com/dbmi-bgm/granite.git && \
     cd granite && \
-    git checkout f533015 && \
+    git checkout e1f8aa3 && \
     rm -rf tests && \
     python setup.py install && \
     cd ..
@@ -111,17 +111,13 @@ RUN mv granite/docker/mpileupCounts-parallel.sh . && \
 # mutanno
 RUN git clone https://github.com/dbmi-bgm/mutanno.git && \
     cd mutanno && \
-    git checkout b5ea78d && \
+    git checkout 4d732c7 && \
     chmod +x mutanno.py && \
     cd ..
 
 # annot parallel script
 COPY annot-parallel.sh .
 RUN chmod +x annot-parallel.sh
-
-# tar rck script
-COPY tar-rck.py .
-RUN chmod +x tar-rck.py
 
 # tar novoCaller script
 COPY tar-novoCaller.sh .

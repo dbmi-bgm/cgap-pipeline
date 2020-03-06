@@ -8,6 +8,7 @@ trio_tar=$4
 ppthr=$5
 aftag=$6
 afthr=$7
+afthr_unrelated=$8
 
 # untar files
 tar -xf $unrelated_tar
@@ -29,6 +30,11 @@ fi
 if [ ! $afthr == 0 ];
   then
     command+=" --afthr $afthr"
+fi
+
+if [ ! $afthr_unrelated == 0 ];
+  then
+    command+=" --afthr_unrelated $afthr_unrelated"
 fi
 
 # run command

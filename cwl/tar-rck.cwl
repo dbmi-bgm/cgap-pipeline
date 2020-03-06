@@ -11,20 +11,29 @@ hints:
   - class: DockerRequirement
     dockerPull: cgap/cgap:v13
 
-baseCommand: [tar-rck.py]
+baseCommand: [granite, rckTar]
 
 inputs:
   - id: input_rcks
-    type: string[]
+    type:
+      type: array
+      items: File
+      inputBinding:
+        prefix: --file
+    doc: list of rck gz files to be archived
+
+  - id: outputfile
+    type: string
+    default: "files.rck.tar"
     inputBinding:
-      prefix: --files
-    doc: list of files to be archived
+      prefix: -t
+    doc: name of the output file
 
 outputs:
   - id: rck_tar
     type: File
     outputBinding:
-      glob: files.rck.tar
+      glob: $(inputs.outputfile)
     secondaryFiles:
       - .index
 
