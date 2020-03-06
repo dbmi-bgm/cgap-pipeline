@@ -20,6 +20,8 @@ inputs:
       items: File
       inputBinding:
         prefix: --file
+    secondaryFiles:
+      - .tbi
     doc: list of rck gz files to be archived
 
   - id: outputfile

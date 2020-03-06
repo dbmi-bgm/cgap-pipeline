@@ -154,5 +154,20 @@
         }
     ],
     "status": "uploaded"
+  },
+  {
+    "uuid": "cdf22f3a-fded-4fdb-aa24-d348c2fb9426",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "mti_tar",
+    "description": "mutanno index microannotation v0.3",
+    "aliases": ["cgap:mutanno-index-microannotation-v0.3"],
+    "extra_files": [
+        {
+            "file_format": "mti_json",
+            "status": "uploaded"
+        }
+    ],
+    "status": "uploaded"
   }
 ]
