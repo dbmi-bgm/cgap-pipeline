@@ -1,14 +1,14 @@
 {
     "parameters": {
-      "aftag": "tag",
+      "aftag": "gnomADgenome",
       "afthr": 0.01
     },
     "workflow_uuid": "c258d1ec-397d-4b0a-a0be-7c8211d65e6a",
     "input_files" : [
        {
-           "object_key": "GAPFIKTWKTRI.vcf",
+           "object_key": "GAPFIRZ35FLM.vcf",
            "workflow_argument_name": "input_vcf",
-           "uuid": "96f06f73-c2a9-468d-b41d-b1da9905f40e",
+           "uuid": "8d62ea43-a89d-420b-aa17-38ecebe6082d",
            "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
        },
        {
