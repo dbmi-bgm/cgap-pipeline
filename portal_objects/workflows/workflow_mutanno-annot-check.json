@@ -41,10 +41,6 @@
       {
           "argument_type": "parameter",
           "workflow_argument_name": "nthreads"
-      },
-      {
-          "argument_type": "parameter",
-          "workflow_argument_name": "micro_annotation"
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
@@ -127,19 +123,6 @@
                   "source": [
                       {
                           "name": "nthreads"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "parameter"
-                  },
-                  "name": "micro_annotation",
-                  "source": [
-                      {
-                          "name": "micro_annotation"
                       }
                   ]
               }
