@@ -3,9 +3,9 @@
     "workflow_uuid": "35daf195-4fc5-4e2a-ada3-7a0cce08a7e4",
     "input_files" : [
        {
-           "object_key": "GAPFIA5HHL84.vcf",
+           "object_key": ".vcf.gz",
            "workflow_argument_name": "input_vcf",
-           "uuid": "35775b15-0489-44c2-aa8d-f8a19f675fc0",
+           "uuid": "",
            "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
        },
        {

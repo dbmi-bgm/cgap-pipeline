@@ -12,9 +12,9 @@
            "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
        },
        {
-           "object_key": ".mti.tar",
+           "object_key": "GAPFI8IXTFH8.mti.tar",
            "workflow_argument_name": "mti",
-           "uuid": "",
+           "uuid": "28b44818-16c4-4c4e-931c-5f089308b8b3",
            "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-files",
            "mount": true
        },

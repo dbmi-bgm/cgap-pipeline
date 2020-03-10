@@ -31,14 +31,14 @@
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",
-      "run_name": "run_workflow_mutanno-annot-check",
+      "run_name": "run_workflow_mutanno-micro-annot-check",
       "behavior_on_capacity_limit": "wait_and_retry",
       "password": "lalala"
     },
     "_tibanna": {
-      "run_type": "workflow_mutanno-annot-check",
+      "run_type": "workflow_mutanno-micro-annot-check",
       "env": "fourfront-cgapwolf"
     },
-    "app_name": "workflow_mutanno-annot-check",
+    "app_name": "workflow_mutanno-micro-annot-check",
     "output_bucket": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
 }

@@ -49,7 +49,7 @@
   "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v13/cwl",
   "cwl_main_filename": "workflow_mutanno-annot_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
-  "description": "Run mutanno annot on vcf input file. Produce a micro-annotated vcf file. An integrity check is performed on the output file",
+  "description": "Run mutanno annot on vcf input file. Produce a fully-annotated vcf file. An integrity check is performed on the output file",
   "docker_image_name": "cgap/cgap:v13",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
