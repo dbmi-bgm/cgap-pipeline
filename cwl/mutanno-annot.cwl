@@ -47,6 +47,13 @@ inputs:
       position: 5
     doc: number of threads used to run parallel
 
+  - id: micro_annotation
+    type: string
+    default: 1
+    inputBinding:
+      position: 6
+    doc: whether this is micro-annotation (1) or full annotation (0)
+
 outputs:
   - id: output
     type: File
