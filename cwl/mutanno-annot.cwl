@@ -47,6 +47,22 @@ inputs:
       position: 5
     doc: number of threads used to run parallel
 
+  - id: add_genoinfo
+    type: bool
+    default: true
+    inputBinding:
+      position: 6
+      prefix: -add_genoinfo
+    doc: add additional sample genotype info
+    
+  - id: split_multi_allelic_variant
+    type: bool
+    default: true
+    inputBinding:
+      position: 7
+      prefix: -split_multi_allelic_variant
+    doc: split multi allelic variants to multiple lines
+
 outputs:
   - id: output
     type: File
