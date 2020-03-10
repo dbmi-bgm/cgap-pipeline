@@ -33,7 +33,7 @@ inputs:
 
   - id: micro_annotation
     type: string
-    default: 1
+    default: "1"
     doc: whether this is micro-annotation (1) or full annotation (0)
 
 outputs:
