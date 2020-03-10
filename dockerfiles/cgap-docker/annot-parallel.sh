@@ -6,6 +6,7 @@ resources_tar=$2
 regionfile=$3
 blocksize=$4
 nthreads=$5
+micro_annotation=$6  # 1 or 0
 
 # get resources tar name
 resources_json=${resources_tar%.*}.json
@@ -20,7 +21,13 @@ directory=VCFS/
 mkdir -p $directory
 
 # command
-command="tabix -h $input_vcf {} > {}.sharded.vcf; if [[ -e {}.sharded.vcf ]]; then mutanno.py annot -vcf {}.sharded.vcf -out ${directory}{}.ann.vcf -ds $resources_json -blocksize $blocksize; fi; rm {}.sharded.vcf"
+if [[ $micro_annotation == "1" ]]; then
+    $additional_options = '-add_genoinfo -split_multi_allelic_variant'
+else
+    $additional_options = '-clean_tag MUTANNO VEP gnomADgenome CLINVAR SpliceAI'
+fi
+
+command="tabix -h $input_vcf {} > {}.sharded.vcf; if [[ -e {}.sharded.vcf ]]; then mutanno.py annot -vcf {}.sharded.vcf -out ${directory}{}.ann.vcf -ds $resources_json -blocksize $blocksize $additional_options; fi; rm {}.sharded.vcf"
 
 # runnning annot in parallel
 cat $regionfile | parallel --halt 2 --jobs $nthreads $command || exit 1
