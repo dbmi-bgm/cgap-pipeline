@@ -3,18 +3,18 @@
         "nthreads": 70,
         "blocksize": 1000000
        },
-    "workflow_uuid": "883b7846-8c62-4f5a-a691-c84706420b93",
+    "workflow_uuid": "04caaa82-6a32-46d3-b52c-c1017cc0490a",
     "input_files" : [
        {
-           "object_key": ".vcf.gz",
+           "object_key": "GAPFIS8ZSPEO.vcf.gz",
            "workflow_argument_name": "input_vcf",
-           "uuid": "",
+           "uuid": "340c57ac-0c62-43ee-8758-c7c6e78eaeda",
            "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
        },
        {
-           "object_key": ".mti.tar",
+           "object_key": "GAPFI6UISC1V.mti.tar",
            "workflow_argument_name": "mti",
-           "uuid": "",
+           "uuid": "cdf22f3a-fded-4fdb-aa24-d348c2fb9426",
            "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-files",
            "mount": true
        },

@@ -1,0 +1,203 @@
+{
+  "accession": "GAPL4C15KV2Y",
+  "app_name": "workflow_mutanno-annot-check",
+  "app_version": "v13",
+  "arguments": [
+      {
+          "argument_format": "vcf_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_vcf"
+      },
+      {
+          "argument_format": "mti_tar",
+          "argument_type": "Input file",
+          "workflow_argument_name": "mti"
+      },
+      {
+          "argument_format": "txt",
+          "argument_type": "Input file",
+          "workflow_argument_name": "regions"
+      },
+      {
+          "argument_format": "vcf_gz",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "annotated_vcf",
+          "secondary_file_formats": ["vcf_gz_tbi"]
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "annotated_vcf-check",
+          "argument_to_be_attached_to": "annotated_vcf",
+          "qc_zipped": false,
+          "qc_html": false,
+          "qc_json": false,
+          "qc_table": true,
+          "qc_type": "quality_metric_vcfcheck"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "blocksize"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "nthreads"
+      }
+  ],
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+  "category": ["processing"],
+  "cwl_child_filenames": ["mutanno-annot.cwl", "vcf-integrity-check.cwl"],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v13/cwl",
+  "cwl_main_filename": "workflow_mutanno-annot_plus_vcf-integrity-check.cwl",
+  "cwl_pointer": "",
+  "description": "Run mutanno annot on vcf input file. Produce a micro-annotated vcf file. An integrity check is performed on the output file",
+  "docker_image_name": "cgap/cgap:v13",
+  "docker_registry_url": "https://hub.docker.com/",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "name": "workflow_mutanno-annot-check_v13",
+  "aliases": ["cgap:workflow_mutanno-annot-check_v13"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_vcf",
+                  "source": [
+                      {
+                          "name": "input_vcf"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "mti_tar",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "mti",
+                  "source": [
+                      {
+                          "name": "mti"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "txt",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "regions",
+                  "source": [
+                      {
+                          "name": "regions"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "blocksize",
+                  "source": [
+                      {
+                          "name": "blocksize"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "nthreads",
+                  "source": [
+                      {
+                          "name": "nthreads"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Run mutanno annot"
+              ],
+              "software_used": [
+                 "/softwares/76479248-09d2-48e5-9ab3-94c167e51cc6"
+              ]
+          },
+          "name": "annot",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "annotated_vcf",
+                  "target": [
+                      {
+                          "name": "annotated_vcf",
+                          "step": "vcf-integrity-check"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": false,
+                      "type": "data file"
+                  },
+                  "name": "annotated_vcf",
+                  "source": [
+                      {
+                          "name": "annotated_vcf",
+                          "step": "annot"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Check integrity of vcf output file"
+              ],
+              "software_used": [
+                 "/softwares/f7ac2c5f-9203-49fa-b918-cede02bf46f7"
+              ]
+          },
+          "name": "vcf-integrity-check",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "annotated_vcf-check",
+                  "target": [
+                      {
+                          "name": "annotated_vcf-check"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Run mutanno annot plus output integrity-check",
+  "uuid": "883b7846-8c62-4f5a-a691-c84706420b93"
+}

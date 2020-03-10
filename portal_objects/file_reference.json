@@ -169,5 +169,20 @@
         }
     ],
     "status": "uploaded"
+  },
+  {
+    "uuid": "28b44818-16c4-4c4e-931c-5f089308b8b3",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "mti_tar",
+    "description": "mutanno index full annotation v0.3",
+    "aliases": ["cgap:mutanno-index-annotation-v0.3"],
+    "extra_files": [
+        {
+            "file_format": "mti_json",
+            "status": "uploading"
+        }
+    ],
+    "status": "uploading"
   }
 ]
