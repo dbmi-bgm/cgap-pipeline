@@ -67,3 +67,5 @@ fi
 # cram to bam
 samtools view -@$nthreads -hb -T $ref_fasta $input_cram > $bam || { echo "cannot convert cram to bam."; exit 1; }
 
+# index bam
+samtools index $bam
