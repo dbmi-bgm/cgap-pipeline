@@ -39,3 +39,7 @@ fi
 
 # run command
 eval $command
+
+# compress and index output vcf
+bgzip $outputfile
+tabix -p vcf $outputfile.gz

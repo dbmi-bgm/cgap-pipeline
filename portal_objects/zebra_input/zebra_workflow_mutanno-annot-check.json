@@ -15,7 +15,8 @@
            "object_key": "GAPFI6UISC1V.mti.tar",
            "workflow_argument_name": "mti",
            "uuid": "cdf22f3a-fded-4fdb-aa24-d348c2fb9426",
-           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-files"
+           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-files",
+           "mount": true
        },
        {
            "object_key": "GAPFIBGEOI72.txt",
