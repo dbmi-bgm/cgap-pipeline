@@ -31,6 +31,11 @@ inputs:
     default: 24
     doc: number of threads used to run parallel
 
+  - id: micro_annotation
+    type: string
+    default: 1
+    doc: whether this is micro-annotation (1) or full annotation (0)
+
 outputs:
   annotated_vcf:
     type: File
@@ -54,6 +59,8 @@ steps:
         source: blocksize
       nthreads:
         source: nthreads
+      micro_annotation:
+        source: micro_annotation
     out: [output]
 
   integrity-check:
