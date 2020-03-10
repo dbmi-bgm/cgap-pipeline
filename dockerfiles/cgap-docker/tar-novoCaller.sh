@@ -40,6 +40,10 @@ fi
 # run command
 eval $command
 
+# sorting output vcf
+grep "^#" $outputfile > sorted.vcf
+grep -v '^#' $outputfile | sort -V -k1,1 -k2,2n >> sorted.vcf
+
 # compress and index output vcf
-bgzip $outputfile
-tabix -p vcf $outputfile.gz
+bgzip sorted.vcf
+tabix -p vcf sorted.vcf.gz

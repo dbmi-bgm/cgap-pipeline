@@ -75,7 +75,7 @@ outputs:
   - id: output
     type: File
     outputBinding:
-      glob: $(inputs.outputfile + ".gz")
+      glob: sorted.vcf.gz
     secondaryFiles:
       - .tbi
 

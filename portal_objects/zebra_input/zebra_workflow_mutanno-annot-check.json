@@ -1,14 +1,14 @@
 {
     "parameters": {
-        "nthreads": 70,
-        "blocksize": 1000000
+        "nthreads": 1,
+        "blocksize": 10000
        },
     "workflow_uuid": "883b7846-8c62-4f5a-a691-c84706420b93",
     "input_files" : [
        {
-           "object_key": ".vcf.gz",
+           "object_key": "GAPFI4Y7GMLL.vcf.gz",
            "workflow_argument_name": "input_vcf",
-           "uuid": "",
+           "uuid": "dba81510-c21f-4933-9e87-d4173505b214",
            "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
        },
        {
@@ -26,8 +26,8 @@
        }
     ],
     "config": {
-      "instance_type": "c5n.18xlarge",
-      "ebs_size": "5x",
+      "instance_type": "t3.small",
+      "ebs_size": "3.5x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",
