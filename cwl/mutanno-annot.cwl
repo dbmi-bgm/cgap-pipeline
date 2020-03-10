@@ -49,7 +49,6 @@ inputs:
 
   - id: micro_annotation
     type: string
-    default: 1
     inputBinding:
       position: 6
     doc: whether this is micro-annotation (1) or full annotation (0)
