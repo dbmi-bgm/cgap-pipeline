@@ -1,5 +1,9 @@
 {
-    "parameters": {"xmx": "2G", "xms": "2G", "max_records_in_ram": 10000},
+    "parameters": {
+      "xmx": "2G",
+      "xms": "2G",
+      "max_records_in_ram": 10000
+    },
     "workflow_uuid": "beb2b340-94ee-4afe-b4e3-66caaf063397",
     "input_files" : [
        {
@@ -11,7 +15,7 @@
     ],
     "config": {
       "instance_type": "c5n.18xlarge",
-      "ebs_size": "3x",
+      "ebs_size": "2.5x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",

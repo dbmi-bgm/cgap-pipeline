@@ -35,7 +35,10 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_merge-bam-check_v13",
-  "aliases": ["cgap:workflow_merge-bam-check_v13", "cgap:workflow_merge-bam-check_v13", "cgap:workflow_merge-bam-check_v13", "cgap:workflow_merge-bam-check_v12", "cgap:workflow_merge-bam-check_v11","cgap:workflow_merge-bam-check_v10"],
+  "aliases": ["cgap:workflow_merge-bam-check_v13",
+              "cgap:workflow_merge-bam-check_v12",
+              "cgap:workflow_merge-bam-check_v11",
+              "cgap:workflow_merge-bam-check_v10"],
   "steps": [
       {
           "inputs": [
@@ -141,5 +144,5 @@
   "title": "Merge bam files plus output integrity-check",
   "uuid": "4853a03a-8c0c-4624-a45d-c5206a72907b",
   "previous_version": ["30802d8c-20c3-4eea-82dd-dd34621569c6"],
-  "version_upgrade_log": "multithreading"
+  "version_upgrade_log": "Multithreading"
 }

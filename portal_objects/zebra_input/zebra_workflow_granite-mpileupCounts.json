@@ -5,22 +5,22 @@
     "workflow_uuid": "e5c178cf-4b5c-488b-b4cc-08273d11697d",
     "input_files" : [
        {
-           "object_key": "GAPFIEL2PMO2.bam",
+           "object_key": ".bam",
            "workflow_argument_name": "input_bam",
-           "uuid": "f573cbeb-036c-4348-bed7-27a108126d09",
-           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
+           "uuid": "",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
        },
        {
-           "object_key": "GAPFIXRDPDK5.fa",
+           "object_key": ".fa",
            "workflow_argument_name": "reference",
            "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
-           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-files"
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
        },
        {
-           "object_key": "GAPFIBGEOI72.txt",
+           "object_key": ".txt",
            "workflow_argument_name": "regions",
            "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28",
-           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-files"
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
        }
     ],
     "config": {
@@ -34,8 +34,8 @@
     },
     "_tibanna": {
       "run_type": "workflow_granite-mpileupCounts",
-      "env": "fourfront-cgapwolf"
+      "env": "fourfront-cgap"
     },
     "app_name": "workflow_granite-mpileupCounts",
-    "output_bucket": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
+    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
 }

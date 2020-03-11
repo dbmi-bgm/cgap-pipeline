@@ -3,11 +3,11 @@
     "workflow_uuid": "778149e7-98d7-4362-83a4-9e80af1da101",
     "input_files" : [
        {
-           "object_key": ["GAPFIX7I38C2.rck.gz", "GAPFI5J3B9K8.rck.gz", "GAPFIQTYZA9K.rck.gz"],
+           "object_key": [".rck.gz", ".rck.gz", ".rck.gz"],
            "workflow_argument_name": "input_rcks",
-           "uuid": ["9fb21c46-6dd7-46cf-a485-c71103a9713c", "d780c65b-6d5d-42ac-9c75-f765ce72945a", "baabd2ab-c263-49b2-94f6-6f461ee9b430"],
-           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-wfoutput",
-           "rename": ["NA12878_sample.rck.gz", "NA12877_sample.rck.gz", "NA12879_sample.rck.gz"]
+           "uuid": ["", "", ""],
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput",
+           "rename": [".rck.gz", ".rck.gz", ".rck.gz"]
        }
     ],
     "config": {
@@ -21,8 +21,8 @@
     },
     "_tibanna": {
       "run_type": "workflow_granite-rckTar",
-      "env": "fourfront-cgapwolf"
+      "env": "fourfront-cgap"
     },
     "app_name": "workflow_granite-rckTar",
-    "output_bucket": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
+    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
 }

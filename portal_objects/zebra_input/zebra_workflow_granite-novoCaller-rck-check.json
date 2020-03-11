@@ -6,24 +6,26 @@
            "object_key": ".vcf.gz",
            "workflow_argument_name": "input_vcf",
            "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
        },
        {
-           "object_key": "GAPFIWGVVTSP.rck.tar",
+           "object_key": ".rck.tar",
            "workflow_argument_name": "unrelated",
-           "uuid": "591f9ee6-cfd6-4df6-9418-905ce09c6e95",
-           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
+           "uuid": "",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput",
+           "mount": true
        },
        {
-           "object_key": "GAPFIGZ6QAQO.rck.tar",
+           "object_key": ".rck.tar",
            "workflow_argument_name": "trio",
-           "uuid": "209a3c60-1876-4243-ad32-e9f59aef61fe",
-           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
+           "uuid": "",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput",
+           "mount": true
        }
     ],
     "config": {
-      "instance_type": "m5.4xlarge",
-      "ebs_size": "3x",
+      "instance_type": "c5.xlarge",
+      "ebs_size": "2.5x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",
@@ -33,8 +35,8 @@
     },
     "_tibanna": {
       "run_type": "workflow_granite-novoCaller-rck-check",
-      "env": "fourfront-cgapwolf"
+      "env": "fourfront-cgap"
     },
     "app_name": "workflow_granite-novoCaller-rck-check",
-    "output_bucket": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
+    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
 }

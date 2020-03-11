@@ -55,7 +55,9 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_gatk-GenotypeGVCFs-check_v13",
-  "aliases": ["cgap:workflow_gatk-GenotypeGVCFs-check_v13", "cgap:workflow_gatk-GenotypeGVCFs-check_v12", "cgap:workflow_gatk-GenotypeGVCFs-check_v11"],
+  "aliases": ["cgap:workflow_gatk-GenotypeGVCFs-check_v13",
+              "cgap:workflow_gatk-GenotypeGVCFs-check_v12",
+              "cgap:workflow_gatk-GenotypeGVCFs-check_v11"],
   "steps": [
       {
           "inputs": [
@@ -203,5 +205,5 @@
   "title": "Run gatk GenotypeGVCFs plus output integrity-check",
   "uuid": "4fbad226-859d-40d4-8192-10c305e819da",
   "previous_version": ["be5b7395-ddf1-4d60-85ea-650d5d9210ea"],
-  "version_upgrade_log": "internal parallelization"
+  "version_upgrade_log": "Internal parallelization"
 }

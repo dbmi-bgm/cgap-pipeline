@@ -3,19 +3,19 @@
     "workflow_uuid": "7fd67e19-3425-45f8-8149-c7cac4278fdb",
     "input_files" : [
        {
-           "object_key": "GAPFIVBLLZTK.bam",
+           "object_key": ".bam",
            "workflow_argument_name": "input_bam",
-           "uuid": "49039ece-7274-4bce-8630-bcb7d71d243e",
+           "uuid": "",
            "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
        },
        {
-           "object_key": "GAPFIXRDPDK5.fa",
+           "object_key": ".fa",
            "workflow_argument_name": "reference",
            "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
            "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
        },
        {
-           "object_key": "4DNFIBGEOI72.txt",
+           "object_key": ".txt",
            "workflow_argument_name": "regions",
            "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28",
            "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
@@ -23,7 +23,7 @@
     ],
     "config": {
       "instance_type": "c5n.18xlarge",
-      "ebs_size": "1.6x",
+      "ebs_size": "3x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",

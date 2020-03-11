@@ -69,11 +69,11 @@ RUN chmod +x bwa-mem-to-bam.sh
 COPY bwa-mem-to-bam_no_unzip.sh .
 RUN chmod +x bwa-mem-to-bam_no_unzip.sh
 
-# BAM integrity check script
+# bam integrity check script
 COPY integrity-check.sh .
 RUN chmod +x integrity-check.sh
 
-# VCF integrity check script
+# vcf integrity check script
 COPY vcf-integrity-check.sh .
 RUN chmod +x vcf-integrity-check.sh
 
@@ -130,8 +130,7 @@ RUN chmod +x vqsr-indel.sh
 COPY vqsr-snv.sh .
 RUN chmod +x vqsr-snv.sh
 
-# CRAM
-# Cramtools
+# cramtools
 RUN git clone https://github.com/enasequence/cramtools && \
     cd cramtools && \
     git checkout 0b5c9ec && \
@@ -150,7 +149,7 @@ RUN wget https://zlib.net/pigz/pigz-2.4.tar.gz && \
     make && \
     cd ..
 
-# paths
+# env paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
 ENV PATH=/usr/local/bin/bwa/:$PATH
 ENV PATH=/usr/local/bin/cgap-scripts/:$PATH

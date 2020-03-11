@@ -3,15 +3,15 @@
     "workflow_uuid": "ce7f9e0b-a0d1-4119-bd66-373ccfcabac7",
     "input_files" : [
        {
-           "object_key": "GAPFIIRDB7MM.vcf.gz",
+           "object_key": ".vcf.gz",
            "workflow_argument_name": "input_vcf",
-           "uuid": "264820ec-0533-4fc2-a4db-d2274c548882",
-           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-wfoutput",
+           "uuid": "",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput",
            "unzip": "gz"
        }
     ],
     "config": {
-      "instance_type": "m5.4xlarge",
+      "instance_type": "c5.large",
       "ebs_size": "2x",
       "EBS_optimized": true,
       "spot_instance": true,
@@ -21,8 +21,8 @@
     },
     "_tibanna": {
       "run_type": "workflow_granite-whiteList-check",
-      "env": "fourfront-cgapwolf"
+      "env": "fourfront-cgap"
     },
     "app_name": "workflow_granite-whiteList-check",
-    "output_bucket": "elasticbeanstalk-fourfront-cgapwolf-wfoutput"
+    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
 }
