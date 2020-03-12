@@ -9,6 +9,13 @@
 #### v13
 * cram2fastq
   * faster fastq compression using pigz
+* new workflows
+  * microannotation
+  * whitelist
+  * blacklist
+  * novocaller
+  * full annotation
+  * cram2bam
 
 #### v12
 * cram2fastq added
