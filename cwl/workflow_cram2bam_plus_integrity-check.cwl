@@ -52,7 +52,7 @@ steps:
         source: cram
       reference_fasta:
         source: reference_fasta
-      reference_md5_list
+      reference_md5_list:
         source: reference_md5_list
       out_prefix:
         source: out_prefix
