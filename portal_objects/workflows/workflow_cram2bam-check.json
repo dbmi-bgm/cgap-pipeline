@@ -1,6 +1,6 @@
 {
   "accession": "GAPWFBJ37Y62",
-  "app_name": "workflow_cram2bam",
+  "app_name": "workflow_cram2bam-check",
   "app_version": "v13",
   "arguments": [
       {
