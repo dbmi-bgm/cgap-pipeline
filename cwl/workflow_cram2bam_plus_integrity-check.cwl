@@ -58,7 +58,7 @@ steps:
         source: out_prefix
       nthreads:
         source: nthreads
-    out: [output]
+    out: [converted_bam]
 
   integrity-check:
     run: integrity-check.cwl
