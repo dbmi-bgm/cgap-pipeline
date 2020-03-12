@@ -19,7 +19,9 @@ inputs:
     doc: reference fasta file
 
   - id: reference_md5_list
-    type: File
+    type:
+      - File
+      - "null"
     doc: file containing the list of md5 for the reference chromosomes
 
   - id: out_prefix
