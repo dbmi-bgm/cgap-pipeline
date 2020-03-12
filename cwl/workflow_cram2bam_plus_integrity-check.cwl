@@ -11,7 +11,9 @@ inputs:
     doc: input cram file
 
   - id: reference_fasta
-    type: File
+    type:
+      - File
+      - "null"
     secondaryFiles:
       - .fai
     doc: reference fasta file
@@ -27,7 +29,7 @@ inputs:
 
   - id: nthreads
     type: int
-    default: 72
+    default: 8
     doc: number of threads to be used
 
   - id: count
