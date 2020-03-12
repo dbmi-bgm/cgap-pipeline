@@ -24,11 +24,11 @@ inputs:
 
   - id: blocksize
     type: int
-    default: 1000
+    default: 10000
 
   - id: nthreads
     type: int
-    default: 24
+    default: 1
     doc: number of threads used to run parallel
 
   - id: micro_annotation
