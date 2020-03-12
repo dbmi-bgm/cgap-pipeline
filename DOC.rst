@@ -1,8 +1,9 @@
-CGAP upstream pipeline
+CGAP WGS pipeline
 ======================
 
-The CGAP Upstream pipeline processes Whole Genome Sequencing data (optimized for 30x), starting from a set of fastq files and producing ``bam``, ``gvcf`` and ``vcf`` files. The pipeline is mostly based on ``bwa`` and ``gatk4``. This pipeline does *not* perform joint-sample variant calling, and is meant for a single sample data.
+The CGAP WGS pipeline processes Whole Genome Sequencing data (optimized for 30x, tested for up to 80-90x), starting from a set of fastq files and producing ``bam``, ``gvcf`` and ``vcf`` files. It is designed for a trio with proband diagnosed with a likely monogenic disease.
 
+The pipeline is mostly based on ``bwa``, ``gatk4`` and Granite (https://github.com/dbmi-bgm/granite). This pipeline does *not* perform joint-sample variant calling except within a family.
 
 Docker image
 ############
