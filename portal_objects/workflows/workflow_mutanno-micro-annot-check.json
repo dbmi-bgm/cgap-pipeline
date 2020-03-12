@@ -198,6 +198,6 @@
           ]
       }
   ],
-  "title": "Run mutanno annot plus output integrity-check",
+  "title": "Run mutanno micro-annot plus output integrity-check",
   "uuid": "04caaa82-6a32-46d3-b52c-c1017cc0490a"
 }
