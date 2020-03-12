@@ -11,13 +11,17 @@ inputs:
     doc: input cram file
 
   - id: reference_fasta
-    type: File
+    type:
+      - File
+      - "null"
     secondaryFiles:
       - .fai
     doc: reference fasta file
 
   - id: reference_md5_list
-    type: File
+    type:
+      - File
+      - "null"
     doc: file containing the list of md5 for the reference chromosomes
 
   - id: out_prefix
@@ -27,7 +31,7 @@ inputs:
 
   - id: nthreads
     type: int
-    default: 72
+    default: 8
     doc: number of threads to be used
 
   - id: count
