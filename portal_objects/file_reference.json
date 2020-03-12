@@ -145,30 +145,36 @@
     "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
     "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
     "file_format": "mti_tar",
-    "description": "mutanno index microannotation v0.2",
-    "aliases": ["cgap:mutanno-index-microannotation-v0.2"],
+    "description": "mutanno index micro-annotation v0.2",
+    "aliases": ["cgap:mutanno-index-micro-annotation-v0.2"],
     "extra_files": [
         {
             "file_format": "mti_json",
             "status": "uploaded"
         }
     ],
-    "status": "uploaded"
+    "status": "uploaded",
+    "file_version": "0.2",
+    "file_version_date": "2020-02-11",
+    "file_type": "micro-annotation source"
   },
   {
     "uuid": "cdf22f3a-fded-4fdb-aa24-d348c2fb9426",
     "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
     "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
     "file_format": "mti_tar",
-    "description": "mutanno index microannotation v0.3",
-    "aliases": ["cgap:mutanno-index-microannotation-v0.3"],
+    "description": "mutanno index micro-annotation v0.3",
+    "aliases": ["cgap:mutanno-index-micro-annotation-v0.3"],
     "extra_files": [
         {
             "file_format": "mti_json",
             "status": "uploaded"
         }
     ],
-    "status": "uploaded"
+    "status": "uploaded",
+    "file_version": "0.3",
+    "file_version_date": "2020-03-05",
+    "file_type": "micro-annotation source"
   },
   {
     "uuid": "28b44818-16c4-4c4e-931c-5f089308b8b3",
@@ -183,6 +189,9 @@
             "status": "uploaded"
         }
     ],
-    "status": "uploaded"
+    "status": "uploaded",
+    "file_version": "0.3",
+    "file_version_date": "2020-03-09",
+    "file_type": "annotation source"
   }
 ]
