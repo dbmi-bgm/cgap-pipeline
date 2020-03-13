@@ -5,7 +5,7 @@ CGAP WGS pipeline allows to process Whole Genome Sequencing data starting from f
 
 The pipeline is designed for trio analysis with proband diagnosed with a likely monogenic disease. It is optimized for data with 30x coverage and has been tested with data up to 80-90x coverage.
 
-The pipeline is mostly based on ``bwa``, ``gatk4`` and ``granite`` (https://github.com/dbmi-bgm/granite). The pipeline only perform joint-sample variant calling within a family.
+The pipeline is mostly based on ``bwa``, ``gatk4``, ``granite`` (https://github.com/dbmi-bgm/granite) and ``mutanno`` (https://github.com/dbmi-bgm/mutanno). The pipeline only perform joint-sample variant calling within a family.
 
 
 Docker Image
@@ -117,7 +117,7 @@ This step uses ``GATK VariantRecalibrator`` to recalibrate the quality score for
 Micro Annotation
 ++++++++++++++++
 
-This step uses ``mutanno annot`` to minimally annotate the input vcf with VEP, CLINVAR and SpliceAI information.
+This step uses ``mutanno annot`` to minimally annotate the input vcf with gnomAD, VEP, CLINVAR and SpliceAI information.
 The output vcf file is checked for integrity to ensure the format is correct and the file is not truncated.
 
 * CWL: workflow_mutanno-micro-annot-check.cwl
@@ -133,7 +133,7 @@ The output vcf file is checked for integrity to ensure the format is correct and
 Black List
 ++++++++++
 
-This step uses ``granite blackList`` to filter-out common and shared variant based on population allele frequency and positions shared within unrelated samples.
+This step uses ``granite blackList`` to filter-out common and shared variant based on gnomAD population allele frequency and positions shared within unrelated samples.
 The output vcf file is checked for integrity to ensure the format is correct and the file is not truncated.
 
 * CWL: workflow_granite-blackList-check.cwl
