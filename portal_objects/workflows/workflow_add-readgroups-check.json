@@ -1,7 +1,7 @@
 {
-  "accession": "GAPWFBN35DT2",
+  "accession": "GAPWFVYEH57F",
   "app_name": "workflow_add-readgroups-check",
-  "app_version": "v10",
+  "app_version": "v13",
   "arguments": [
       {
           "argument_format": "bam",
@@ -39,15 +39,16 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["add-readgroups.cwl", "integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v10/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v13/cwl",
   "cwl_main_filename": "workflow_add-readgroups_plus_integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Add read groups to bam input file. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap",
+  "docker_image_name": "cgap/cgap:v13",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_add-readgroups-check_v10",
-  "aliases": ["cgap:workflow_add-readgroups-check_v10"],
+  "name": "workflow_add-readgroups-check_v13",
+  "aliases": ["cgap:workflow_add-readgroups-check_v13",
+              "cgap:workflow_add-readgroups-check_v12"],
   "steps": [
       {
           "inputs": [
@@ -97,7 +98,7 @@
                   "Add read groups to bam input file"
               ],
               "software_used": [
-                "/softwares/d7ac4c75-e133-4a8e-a19e-b7e87873cc16"
+                "/softwares/f455f9fe-6f4b-4cfe-8fce-f8c3c2b0b661"
               ]
           },
           "name": "add-readgroups",
@@ -177,7 +178,7 @@
       }
   ],
   "title": "Add read groups plus output integrity-check",
-  "previous_version": ["548e63a4-1936-4f68-8e8d-8e4658767911"],
-  "uuid": "1ebf697c-949d-46b2-b9a4-8b1a7699ef1f",
-  "version_upgrade_log": "multithreading"
+  "previous_version": ["1ebf697c-949d-46b2-b9a4-8b1a7699ef1f"],
+  "uuid": "6ea6bf43-76c2-4616-8dd6-dd60d72a2bf2",
+  "version_upgrade_log": "Some files not having EOF fixed. Added compatibility to older format for read ID."
 }

@@ -1,0 +1,28 @@
+{
+    "parameters": {},
+    "workflow_uuid": "778149e7-98d7-4362-83a4-9e80af1da101",
+    "input_files" : [
+       {
+           "object_key": [".rck.gz", ".rck.gz", ".rck.gz"],
+           "workflow_argument_name": "input_rcks",
+           "uuid": ["", "", ""],
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput",
+           "rename": [".rck.gz", ".rck.gz", ".rck.gz"]
+       }
+    ],
+    "config": {
+      "instance_type": "c5.xlarge",
+      "ebs_size": "2.5x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_workflow_granite-rckTar",
+      "behavior_on_capacity_limit": "wait_and_retry"
+    },
+    "_tibanna": {
+      "run_type": "workflow_granite-rckTar",
+      "env": "fourfront-cgap"
+    },
+    "app_name": "workflow_granite-rckTar",
+    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+}

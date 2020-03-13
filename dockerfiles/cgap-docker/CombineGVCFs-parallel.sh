@@ -13,7 +13,7 @@ directory=GVCFS/
 mkdir -p $directory
 
 # creating basic command
-command="gatk CombineGVCFs --interval-padding 500 -L {} -O ${directory}out.{}.g.vcf -R $reference"
+command="gatk CombineGVCFs -L {} -O ${directory}out.{}.g.vcf -R $reference"
 
 # adding files to combine
 for arg in $@;

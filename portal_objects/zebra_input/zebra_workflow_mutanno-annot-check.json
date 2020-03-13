@@ -1,0 +1,44 @@
+{
+    "parameters": {
+        "nthreads": 1,
+        "blocksize": 10000
+       },
+    "workflow_uuid": "883b7846-8c62-4f5a-a691-c84706420b93",
+    "input_files" : [
+       {
+           "object_key": ".vcf.gz",
+           "workflow_argument_name": "input_vcf",
+           "uuid": "",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+       },
+       {
+           "object_key": ".mti.tar",
+           "workflow_argument_name": "mti",
+           "uuid": "28b44818-16c4-4c4e-931c-5f089308b8b3",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files",
+           "mount": true
+       },
+       {
+           "object_key": ".txt",
+           "workflow_argument_name": "regions",
+           "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+       }
+    ],
+    "config": {
+      "instance_type": "c5.large",
+      "ebs_size": "1.2x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_workflow_mutanno-annot-check",
+      "behavior_on_capacity_limit": "wait_and_retry",
+      "password": "lalala"
+    },
+    "_tibanna": {
+      "run_type": "workflow_mutanno-annot-check",
+      "env": "fourfront-cgap"
+    },
+    "app_name": "workflow_mutanno-annot-check",
+    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+}

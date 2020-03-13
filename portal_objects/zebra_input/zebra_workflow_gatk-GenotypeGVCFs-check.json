@@ -1,29 +1,35 @@
 {
     "parameters": {},
-    "workflow_uuid": "be5b7395-ddf1-4d60-85ea-650d5d9210ea",
+    "workflow_uuid": "4fbad226-859d-40d4-8192-10c305e819da",
     "input_files" : [
        {
-           "object_key": "GAPFIAFOROO7.gvcf.gz",
+           "object_key": ".gvcf.gz",
            "workflow_argument_name": "input_gvcf",
-           "uuid": "7d34a64c-a08d-40b6-970c-4493c6cce36f",
+           "uuid": "",
            "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
        },
        {
-           "object_key": "GAPFIXRDPDK5.fa",
+           "object_key": ".fa",
            "workflow_argument_name": "reference",
            "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
            "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
        },
        {
-           "object_key": "GAPFI4LJRN98.vcf.gz",
+           "object_key": ".vcf.gz",
            "workflow_argument_name": "known-sites-snp",
            "uuid": "8ed35691-0af4-467a-adbc-81eb088549f0",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+       },
+       {
+           "object_key": ".txt",
+           "workflow_argument_name": "chromosomes",
+           "uuid": "a1d504ee-a313-4064-b6ae-65fed9738980",
            "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
        }
     ],
     "config": {
-      "instance_type": "t3.medium",
-      "ebs_size": "4.5x",
+      "instance_type": "c5n.4xlarge",
+      "ebs_size": "1.5x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",

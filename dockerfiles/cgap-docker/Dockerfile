@@ -27,12 +27,15 @@ RUN apt-get update -y && apt-get install -y \
 
 WORKDIR /usr/local/bin
 
-# gatk4 & picard
-RUN conda install -c bioconda -y gatk4==4.1.2.0 picard==2.20.2 pysam
+# gatk4 & picard & python libraries
+RUN conda install -c bioconda -y gatk4==4.1.2.0 picard==2.20.2 \
+    pysam==0.15.3 bitarray==1.2.1 pytabix==0.0.2 h5py==2.10.0 numpy==1.18.1 pyfaidx==0.5.8 python=3.6.8 && \
+    conda clean -a -y -f
 
 # samtools
 RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2 && \
     tar -xjf samtools-1.9.tar.bz2 && \
+    rm -rf samtools-1.9.tar.bz2 && \
     cd samtools-1.9 && \
     ./configure && \
     make && \
@@ -42,6 +45,7 @@ RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9
 # bwa
 RUN wget https://github.com/lh3/bwa/archive/v0.7.17.tar.gz && \
     tar -xzf v0.7.17.tar.gz && \
+    rm -rf v0.7.17.tar.gz && \
     cd bwa-0.7.17 && \
     make && \
     cd .. && \
@@ -65,18 +69,18 @@ RUN chmod +x bwa-mem-to-bam.sh
 COPY bwa-mem-to-bam_no_unzip.sh .
 RUN chmod +x bwa-mem-to-bam_no_unzip.sh
 
-# BAM integrity check script
+# bam integrity check script
 COPY integrity-check.sh .
 RUN chmod +x integrity-check.sh
 
-# VCF integrity check script
+# vcf integrity check script
 COPY vcf-integrity-check.sh .
 RUN chmod +x vcf-integrity-check.sh
 
 # add read groups script
 RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
     cd cgap-scripts && \
-    git checkout b432a4c && \
+    git checkout 1140e78 && \
     chmod +x AddReadGroups.py && \
     cd ..
 
@@ -88,6 +92,37 @@ RUN chmod +x HaplotypeCaller-parallel.sh
 COPY CombineGVCFs-parallel.sh .
 RUN chmod +x CombineGVCFs-parallel.sh
 
+# GenotypeGVCFs parallel script
+COPY GenotypeGVCFs-parallel.sh .
+RUN chmod +x GenotypeGVCFs-parallel.sh
+
+# granite
+RUN git clone https://github.com/dbmi-bgm/granite.git && \
+    cd granite && \
+    git checkout e1f8aa3 && \
+    rm -rf tests && \
+    python setup.py install && \
+    cd ..
+
+# mpileupCounts parallel script
+RUN mv granite/docker/mpileupCounts-parallel.sh . && \
+    chmod +x mpileupCounts-parallel.sh
+
+# mutanno
+RUN git clone https://github.com/dbmi-bgm/mutanno.git && \
+    cd mutanno && \
+    git checkout 8a780bd && \
+    chmod +x mutanno.py && \
+    cd ..
+
+# annot parallel script
+COPY annot-parallel.sh .
+RUN chmod +x annot-parallel.sh
+
+# tar novoCaller script
+COPY tar-novoCaller.sh .
+RUN chmod +x tar-novoCaller.sh
+
 # VQSR
 COPY vqsr-indel.sh .
 RUN chmod +x vqsr-indel.sh
@@ -95,10 +130,32 @@ RUN chmod +x vqsr-indel.sh
 COPY vqsr-snv.sh .
 RUN chmod +x vqsr-snv.sh
 
-# paths
+# cramtools
+RUN git clone https://github.com/enasequence/cramtools && \
+    cd cramtools && \
+    git checkout 0b5c9ec && \
+    cd ..
+COPY md5_to_fasta.py .
+COPY cram_to_fastq.sh .
+COPY cram_to_bam.sh .
+RUN chmod +x cram_to_fastq.sh
+RUN chmod +x cram_to_bam.sh
+
+# pigz
+RUN wget https://zlib.net/pigz/pigz-2.4.tar.gz && \
+    tar -xzf pigz-2.4.tar.gz && \
+    rm -rf pigz-2.4.tar.gz && \
+    cd pigz-2.4 && \
+    make && \
+    cd ..
+
+# env paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
 ENV PATH=/usr/local/bin/bwa/:$PATH
 ENV PATH=/usr/local/bin/cgap-scripts/:$PATH
+ENV PATH=/usr/local/bin/pigz-2.4/:$PATH
+ENV PATH=/usr/local/bin/granite/:$PATH
+ENV PATH=/usr/local/bin/mutanno/:$PATH
 
 # supporting UTF-8
 RUN locale-gen "en_US.UTF-8" && update-locale LC_ALL="en_US.UTF-8"

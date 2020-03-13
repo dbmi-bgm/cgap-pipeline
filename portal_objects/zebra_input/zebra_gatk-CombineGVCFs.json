@@ -9,7 +9,7 @@
            "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
        },
        {
-           "object_key": "GAPFIXRDPDK5.fa",
+           "object_key": ".fa",
            "workflow_argument_name": "reference",
            "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
            "bucket_name": "elasticbeanstalk-fourfront-cgap-files"

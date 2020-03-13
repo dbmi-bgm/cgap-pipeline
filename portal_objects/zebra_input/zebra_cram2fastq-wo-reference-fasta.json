@@ -1,0 +1,24 @@
+{
+    "parameters": { "nthreads": 8 },
+    "workflow_uuid": "3258380c-608b-4fb6-89ef-249d1692f492",
+    "input_files" : [
+       {
+           "workflow_argument_name": "cram",
+           "uuid": "a1196e8b-2e22-43e7-ae9f-c6aa971b1d00",
+           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-files"
+       }
+    ],
+    "config": {
+      "instance_type": "c5.2xlarge",
+      "ebs_size": "40x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "behavior_on_capacity_limit": "wait_and_retry"
+    },
+    "_tibanna": {
+      "run_type": "workflow_cram2fastq_wo_ref",
+      "env": "fourfront-cgapwolf"
+    },
+    "app_name": "workflow_cram2fastq"
+}

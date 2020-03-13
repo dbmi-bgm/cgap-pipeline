@@ -129,5 +129,69 @@
     "aliases": ["cgap:hg38-chromosomes-Yfirst"],
     "extra_files": [],
     "status": "uploaded"
+  },
+  {
+    "uuid": "db00cc5a-d7bc-424c-8560-e53827a52db9",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "md5_list",
+    "description": "md5 list of hg38",
+    "aliases": ["cgap:hg38-md5-list"],
+    "extra_files": [],
+    "status": "uploaded"
+  },
+  {
+    "uuid": "c4d5c51e-eb33-43e1-894a-e076b45afc7c",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "mti_tar",
+    "description": "mutanno index micro-annotation v0.2",
+    "aliases": ["cgap:mutanno-index-micro-annotation-v0.2"],
+    "extra_files": [
+        {
+            "file_format": "mti_json",
+            "status": "uploaded"
+        }
+    ],
+    "status": "uploaded",
+    "file_version": "0.2",
+    "file_version_date": "2020-02-11",
+    "file_type": "micro-annotation source"
+  },
+  {
+    "uuid": "cdf22f3a-fded-4fdb-aa24-d348c2fb9426",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "mti_tar",
+    "description": "mutanno index micro-annotation v0.3",
+    "aliases": ["cgap:mutanno-index-micro-annotation-v0.3"],
+    "extra_files": [
+        {
+            "file_format": "mti_json",
+            "status": "uploaded"
+        }
+    ],
+    "status": "uploaded",
+    "file_version": "0.3",
+    "file_version_date": "2020-03-05",
+    "file_type": "micro-annotation source"
+  },
+  {
+    "uuid": "28b44818-16c4-4c4e-931c-5f089308b8b3",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "mti_tar",
+    "description": "mutanno index full annotation v0.3",
+    "aliases": ["cgap:mutanno-index-annotation-v0.3"],
+    "extra_files": [
+        {
+            "file_format": "mti_json",
+            "status": "uploaded"
+        }
+    ],
+    "status": "uploaded",
+    "file_version": "0.3",
+    "file_version_date": "2020-03-09",
+    "file_type": "annotation source"
   }
 ]

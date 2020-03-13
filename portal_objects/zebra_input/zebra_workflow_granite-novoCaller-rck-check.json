@@ -1,0 +1,42 @@
+{
+    "parameters": {},
+    "workflow_uuid": "35daf195-4fc5-4e2a-ada3-7a0cce08a7e4",
+    "input_files" : [
+       {
+           "object_key": ".vcf.gz",
+           "workflow_argument_name": "input_vcf",
+           "uuid": "",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+       },
+       {
+           "object_key": ".rck.tar",
+           "workflow_argument_name": "unrelated",
+           "uuid": "",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput",
+           "mount": true
+       },
+       {
+           "object_key": ".rck.tar",
+           "workflow_argument_name": "trio",
+           "uuid": "",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput",
+           "mount": true
+       }
+    ],
+    "config": {
+      "instance_type": "c5.xlarge",
+      "ebs_size": "1.5x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_workflow_granite-novoCaller-rck-check",
+      "behavior_on_capacity_limit": "wait_and_retry",
+      "password": "lalala"
+    },
+    "_tibanna": {
+      "run_type": "workflow_granite-novoCaller-rck-check",
+      "env": "fourfront-cgap"
+    },
+    "app_name": "workflow_granite-novoCaller-rck-check",
+    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+}

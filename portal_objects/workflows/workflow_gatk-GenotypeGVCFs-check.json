@@ -1,7 +1,7 @@
 {
-  "accession": "GAPK956PO1H2",
+  "accession": "GAPK956PL2H2",
   "app_name": "workflow_gatk-GenotypeGVCFs-check",
-  "app_version": "v10",
+  "app_version": "v13",
   "arguments": [
       {
           "argument_format": "gvcf_gz",
@@ -17,6 +17,11 @@
           "argument_format": "vcf_gz",
           "argument_type": "Input file",
           "workflow_argument_name": "known-sites-snp"
+      },
+      {
+          "argument_format": "txt",
+          "argument_type": "Input file",
+          "workflow_argument_name": "chromosomes"
       },
       {
           "argument_format": "vcf_gz",
@@ -36,21 +41,23 @@
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": "verbosity"
+          "workflow_argument_name": "nthreads"
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["gatk-GenotypeGVCFs.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v10/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v13/cwl",
   "cwl_main_filename": "workflow_gatk-GenotypeGVCFs_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run gatk GenotypeGVCFs on g.vcf input file. Produce a vcf file. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap",
+  "docker_image_name": "cgap/cgap:v13",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_gatk-GenotypeGVCFs-check_v10",
-  "aliases": ["cgap:workflow_gatk-GenotypeGVCFs-check_v10"],
+  "name": "workflow_gatk-GenotypeGVCFs-check_v13",
+  "aliases": ["cgap:workflow_gatk-GenotypeGVCFs-check_v13",
+              "cgap:workflow_gatk-GenotypeGVCFs-check_v12",
+              "cgap:workflow_gatk-GenotypeGVCFs-check_v11"],
   "steps": [
       {
           "inputs": [
@@ -99,13 +106,27 @@
               {
                   "meta": {
                       "cardinality": "single",
+                      "file_format": "txt",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "chromosomes",
+                  "source": [
+                      {
+                          "name": "chromosomes"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "verbosity",
+                  "name": "nthreads",
                   "source": [
                       {
-                          "name": "verbosity"
+                          "name": "nthreads"
                       }
                   ]
               }
@@ -182,5 +203,7 @@
       }
   ],
   "title": "Run gatk GenotypeGVCFs plus output integrity-check",
-  "uuid": "be5b7395-ddf1-4d60-85ea-650d5d9210ea"
+  "uuid": "4fbad226-859d-40d4-8192-10c305e819da",
+  "previous_version": ["be5b7395-ddf1-4d60-85ea-650d5d9210ea"],
+  "version_upgrade_log": "Internal parallelization"
 }

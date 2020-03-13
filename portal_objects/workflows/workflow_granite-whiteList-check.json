@@ -1,0 +1,200 @@
+{
+  "accession": "GAPP8B84K11K",
+  "app_name": "workflow_granite-whiteList-check",
+  "app_version": "v13",
+  "arguments": [
+      {
+          "argument_format": "vcf_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_vcf"
+      },
+      {
+          "argument_format": "bed",
+          "argument_type": "Input file",
+          "workflow_argument_name": "BEDfile"
+      },
+      {
+          "argument_format": "vcf",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "whiteList_vcf"
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "whiteList_vcf-check",
+          "argument_to_be_attached_to": "whiteList_vcf",
+          "qc_zipped": false,
+          "qc_html": false,
+          "qc_json": false,
+          "qc_table": true,
+          "qc_type": "quality_metric_vcfcheck"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "CLINVAR"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "SpliceAI"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "VEP"
+      }
+  ],
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+  "category": ["processing"],
+  "cwl_child_filenames": ["granite-whiteList.cwl", "vcf-integrity-check.cwl"],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v13/cwl",
+  "cwl_main_filename": "workflow_granite-whiteList_plus_vcf-integrity-check.cwl",
+  "cwl_pointer": "",
+  "description": "Run granite whiteList on vcf input file. Produce a filtered vcf file. An integrity check is performed on the output file",
+  "docker_image_name": "cgap/cgap:v13",
+  "docker_registry_url": "https://hub.docker.com/",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "name": "workflow_granite-whiteList-check_v13",
+  "aliases": ["cgap:workflow_granite-whiteList-check_v13"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_vcf",
+                  "source": [
+                      {
+                          "name": "input_vcf"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "bed",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "BEDfile",
+                  "source": [
+                      {
+                          "name": "BEDfile"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "CLINVAR",
+                  "source": [
+                      {
+                          "name": "CLINVAR"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "SpliceAI",
+                  "source": [
+                      {
+                          "name": "SpliceAI"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "VEP",
+                  "source": [
+                      {
+                          "name": "VEP"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Run granite whiteList"
+              ],
+              "software_used": [
+                 "/softwares/8d4ca59b-750b-4c22-8a34-c5d4e795b8ad"
+              ]
+          },
+          "name": "granite",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "whiteList_vcf",
+                  "target": [
+                      {
+                          "name": "whiteList_vcf",
+                          "step": "vcf-integrity-check"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf",
+                      "global": false,
+                      "type": "data file"
+                  },
+                  "name": "whiteList_vcf",
+                  "source": [
+                      {
+                          "name": "whiteList_vcf",
+                          "step": "granite"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Check integrity of vcf output file"
+              ],
+              "software_used": [
+                 "/softwares/f7ac2c5f-9203-49fa-b918-cede02bf46f7"
+              ]
+          },
+          "name": "vcf-integrity-check",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "whiteList_vcf-check",
+                  "target": [
+                      {
+                          "name": "whiteList_vcf-check"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Run granite whiteList plus output integrity-check",
+  "uuid": "ce7f9e0b-a0d1-4119-bd66-373ccfcabac7"
+}

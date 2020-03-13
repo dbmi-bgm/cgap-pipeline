@@ -1,6 +1,0 @@
-max_memory: '3G'
-nthreads: 1
-input_bam:
-  class: File
-  path:
-count: 0

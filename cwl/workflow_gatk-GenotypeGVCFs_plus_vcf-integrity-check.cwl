@@ -25,9 +25,14 @@ inputs:
       - .tbi
     doc: expect the path to the dbsnp vcf gz file
 
-  - id: verbosity
-    type: string
-    default: INFO
+  - id: chromosomes
+    type: File
+    doc: expect the path to the file defining chromosomes
+
+  - id: nthreads
+    type: int
+    default: 14
+    doc: number of threads used to run parallel
 
 outputs:
   vcf:
@@ -48,8 +53,10 @@ steps:
         source: reference
       known-sites-snp:
         source: known-sites-snp
-      verbosity:
-        source: verbosity
+      chromosomes:
+        source: chromosomes
+      nthreads:
+        source: nthreads
     out: [output]
 
   integrity-check:
