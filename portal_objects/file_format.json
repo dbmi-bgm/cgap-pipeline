@@ -189,6 +189,16 @@
         "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
+        "file_format": "rck_gz_tbi",
+        "standard_file_extension": "rck.gz.tbi",
+        "description": "Tabix index file of rck, compressed",
+        "uuid": "c55ace88-3289-49b0-a67a-c046e1004e5a",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "released",
+        "valid_item_types": ["FileProcessed", "FileReference"]
+    },
+    {
         "file_format": "rck_gz",
         "standard_file_extension": "rck.gz",
         "description": "read count keeper, compressed",
@@ -202,14 +212,14 @@
         "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
-        "file_format": "rck_gz_tbi",
-        "standard_file_extension": "rck.gz.tbi",
-        "description": "Tabix index file of rck, compressed",
-        "uuid": "c55ace88-3289-49b0-a67a-c046e1004e5a",
+        "file_format": "mti_json",
+        "standard_file_extension": "mti.json",
+        "description": "mutanno index info file",
+        "uuid": "a112ef25-bd5d-44c1-824a-d5c6156db0a4",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "released",
-        "valid_item_types": ["FileProcessed", "FileReference"]
+        "valid_item_types": ["FileReference"]
     },
     {
         "file_format": "mti_tar",
@@ -225,14 +235,14 @@
         "valid_item_types": ["FileReference"]
     },
     {
-        "file_format": "mti_json",
-        "standard_file_extension": "mti.json",
-        "description": "mutanno index info file",
-        "uuid": "a112ef25-bd5d-44c1-824a-d5c6156db0a4",
+        "file_format": "rck_tar_index",
+        "standard_file_extension": "rck.tar.index",
+        "description": "index file for rck archive",
+        "uuid": "1c7dc723-811c-4fcf-b8e5-d5e17a2013f7",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "released",
-        "valid_item_types": ["FileReference"]
+        "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
         "file_format": "rck_tar",
@@ -242,16 +252,6 @@
         "extrafile_formats": [
             "1c7dc723-811c-4fcf-b8e5-d5e17a2013f7"
         ],
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
-        "valid_item_types": ["FileProcessed", "FileReference"]
-    },
-    {
-        "file_format": "rck_tar_index",
-        "standard_file_extension": "rck.tar.index",
-        "description": "index file for rck archive",
-        "uuid": "1c7dc723-811c-4fcf-b8e5-d5e17a2013f7",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "released",
