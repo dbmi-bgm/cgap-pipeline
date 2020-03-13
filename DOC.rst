@@ -133,7 +133,7 @@ The output vcf file is checked for integrity to ensure the format is correct and
 Black List
 ++++++++++++++++++++++++++
 
-This step uses ``granite blackList`` to filter-out common and shared variant based on population allele frequency and jointly-called unrelated samples.
+This step uses ``granite blackList`` to filter-out common and shared variant based on population allele frequency and positions shared within unrelated samples.
 The output vcf file is checked for integrity to ensure the format is correct and the file not truncated.
 
 * CWL: workflow_granite-blackList-check.cwl
@@ -141,7 +141,7 @@ The output vcf file is checked for integrity to ensure the format is correct and
 De Novo Calling
 ++++++++++++++++++++++++++
 
-This step uses ``granite novoCaller`` to call *de novo* mutations assigning a posterior probability based on unrelated samples and trio.
+This step uses ``granite novoCaller`` to call *de novo* mutations by assigning a posterior probability based on unrelated samples and trio.
 The output vcf file is checked for integrity to ensure the format is correct and the file not truncated.
 
 * CWL: workflow_granite-novoCaller-rck-check.cwl
@@ -149,7 +149,7 @@ The output vcf file is checked for integrity to ensure the format is correct and
 Full Annotation
 ++++++++++++++++++++++++++
 
-This step uses ``mutanno annot`` to fully annotate a vcf.
+This step uses ``mutanno annot`` to fully annotate the input vcf.
 The output vcf file is checked for integrity to ensure the format is correct and the file not truncated.
 
 * CWL: workflow_mutanno-annot-check.cwl
