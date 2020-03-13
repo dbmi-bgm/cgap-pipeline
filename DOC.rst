@@ -115,7 +115,7 @@ This step uses ``GATK VariantRecalibrator`` to recalibrate the quality score for
 * CWL: workflow_gatk-VQSR_plus_vcf-integrity-check.cwl
 
 Micro Annotation
-++++++++++++++++++++++++++
+++++++++++++++++
 
 This step uses ``mutanno annot`` to minimally annotate the input vcf with VEP, CLINVAR and SpliceAI information.
 The output vcf file is checked for integrity to ensure the format is correct and the file not truncated.
@@ -123,7 +123,7 @@ The output vcf file is checked for integrity to ensure the format is correct and
 * CWL: workflow_mutanno-micro-annot-check.cwl
 
 White List
-++++++++++++++++++++++++++
+++++++++++
 
 This step uses ``granite witheList`` to filter-in exonic and functionally relevant variant based on VEP, CLINVAR and SpliceAI annotations.
 The output vcf file is checked for integrity to ensure the format is correct and the file not truncated.
@@ -131,15 +131,15 @@ The output vcf file is checked for integrity to ensure the format is correct and
 * CWL: workflow_granite-whiteList-check.cwl
 
 Black List
-++++++++++++++++++++++++++
+++++++++++
 
 This step uses ``granite blackList`` to filter-out common and shared variant based on population allele frequency and positions shared within unrelated samples.
 The output vcf file is checked for integrity to ensure the format is correct and the file not truncated.
 
 * CWL: workflow_granite-blackList-check.cwl
 
-De Novo Calling
-++++++++++++++++++++++++++
+Calling *de novo* mutations
++++++++++++++++++++++++++++
 
 This step uses ``granite novoCaller`` to call *de novo* mutations by assigning a posterior probability based on unrelated samples and trio.
 The output vcf file is checked for integrity to ensure the format is correct and the file not truncated.
@@ -147,7 +147,7 @@ The output vcf file is checked for integrity to ensure the format is correct and
 * CWL: workflow_granite-novoCaller-rck-check.cwl
 
 Full Annotation
-++++++++++++++++++++++++++
++++++++++++++++
 
 This step uses ``mutanno annot`` to fully annotate the input vcf.
 The output vcf file is checked for integrity to ensure the format is correct and the file not truncated.
