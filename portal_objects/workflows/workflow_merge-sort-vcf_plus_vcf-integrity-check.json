@@ -1,0 +1,146 @@
+{
+  "accession": "GAPL87J8PD3Q",
+  "app_name": "workflow_merge-sort-vcf-check",
+  "app_version": "v14",
+  "arguments": [
+      {
+          "argument_format": "vcf",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_vcf_1"
+      },
+      {
+          "argument_format": "vcf",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_vcf_2"
+      },
+      {
+          "argument_format": "vcf",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "merged_vcf"
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "merged_vcf-check",
+          "argument_to_be_attached_to": "merged_vcf",
+          "qc_zipped": false,
+          "qc_html": false,
+          "qc_json": false,
+          "qc_table": true,
+          "qc_type": "quality_metric_vcfcheck"
+      }
+  ],
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+  "category": ["processing"],
+  "cwl_child_filenames": ["merge-sort-vcf.cwl", "vcf-integrity-check.cwl"],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v14/cwl",
+  "cwl_main_filename": "workflow_merge-sort-vcf_plus_vcf-integrity-check.cwl",
+  "cwl_pointer": "",
+  "description": "Merge two vcf file and sort removing duplicates. An integrity check is performed on the output file",
+  "docker_image_name": "cgap/cgap:v14",
+  "docker_registry_url": "https://hub.docker.com/",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "name": "workflow_merge-sort-vcf-check_v14",
+  "aliases": ["cgap:workflow_merge-sort-vcf-check_v14"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_vcf_1",
+                  "source": [
+                      {
+                          "name": "input_vcf_1"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_vcf_2",
+                  "source": [
+                      {
+                          "name": "input_vcf_2"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Merge and sort two vcf files"
+              ]
+          },
+          "name": "merge-sort",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "merged_vcf",
+                  "target": [
+                      {
+                          "name": "merged_vcf",
+                          "step": "vcf-integrity-check"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf",
+                      "global": false,
+                      "type": "data file"
+                  },
+                  "name": "merged_vcf",
+                  "source": [
+                      {
+                          "name": "merged_vcf",
+                          "step": "merge-sort"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Check integrity of vcf output file"
+              ],
+              "software_used": [
+                 "/softwares/f7ac2c5f-9203-49fa-b918-cede02bf46f7"
+              ]
+          },
+          "name": "vcf-integrity-check",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "merged_vcf-check",
+                  "target": [
+                      {
+                          "name": "merged_vcf-check"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Merge and sort two vcf files plus output integrity-check",
+  "uuid": "4473ed53-ce74-4c8c-a3fe-facb79f37da5"
+}
