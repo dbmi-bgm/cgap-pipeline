@@ -123,6 +123,10 @@ RUN chmod +x annot-parallel.sh
 COPY tar-novoCaller.sh .
 RUN chmod +x tar-novoCaller.sh
 
+# merge vcf script
+COPY merge-sort-vcf.sh .
+RUN chmod +x merge-sort-vcf.sh
+
 # VQSR
 COPY vqsr-indel.sh .
 RUN chmod +x vqsr-indel.sh
