@@ -129,5 +129,17 @@
         "title": "granite_e1f8aa3",
         "uuid": "8d4ca59b-750b-4c22-8a34-c5d4e795b8ad",
         "commit": "e1f8aa3"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "granite",
+        "software_type": [
+            "filter"
+        ],
+        "source_url": "https://github.com/dbmi-bgm/granite",
+        "title": "granite_66345bb",
+        "uuid": "5a0b864e-dc16-4484-bcf3-c64e35a25df9",
+        "commit": "66345bb"
     }
 ]
