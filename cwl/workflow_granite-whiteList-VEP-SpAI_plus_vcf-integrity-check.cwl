@@ -17,7 +17,7 @@ inputs:
 
   - id: CLINVAR
     type: boolean
-    default: true
+    default: null
     doc: flag to whitelist variants with a CLINVAR Id
 
   - id: SpliceAI
@@ -27,7 +27,7 @@ inputs:
 
   - id: VEP
     type: boolean
-    default: null
+    default: true
     doc: use VEP annotations to whitelist exonic and functional relevant variants |
          removed by default intron_variant, intergenic_variant, downstream_gene_variant, |
          upstream_gene_variant, regulatory_region_variant

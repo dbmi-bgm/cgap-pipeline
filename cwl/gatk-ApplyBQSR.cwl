@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v13
+    dockerPull: cgap/cgap:v14
 
 baseCommand: [gatk, ApplyBQSR]
 
@@ -66,7 +66,7 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.input.nameroot + "_recalibrated_full.bam")
-    secondaryFiles: 
+    secondaryFiles:
         - ^.bai
 
 doc: |

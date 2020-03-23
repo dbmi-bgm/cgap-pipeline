@@ -1,0 +1,28 @@
+{
+    "parameters": {},
+    "workflow_uuid": "87b2bb1f-7a51-4beb-937c-252d45d03dbd",
+    "input_files" : [
+       {
+           "object_key": ".vcf.gz",
+           "workflow_argument_name": "input_vcf",
+           "uuid": "",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput",
+           "unzip": "gz"
+       }
+    ],
+    "config": {
+      "instance_type": "c5.large",
+      "ebs_size": "2x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_workflow_granite-whiteList-VEP-SpAI-check",
+      "behavior_on_capacity_limit": "wait_and_retry"
+    },
+    "_tibanna": {
+      "run_type": "workflow_granite-whiteList-VEP-SpAI-check",
+      "env": "fourfront-cgap"
+    },
+    "app_name": "workflow_granite-whiteList-VEP-SpAI-check",
+    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+}

@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v13
+    dockerPull: cgap/cgap:v14
 
 baseCommand: [cram_to_bam.sh]
 
@@ -30,7 +30,7 @@ inputs:
     doc: number of compression threads
 
   - id: reference_fasta
-    type: 
+    type:
       - File
       - "null"
     inputBinding:
@@ -39,9 +39,9 @@ inputs:
     secondaryFiles:
       - .fai
     doc: input reference fasta file (optional, if not provided, the reference will be downloaded and combined on the fly)
-  
+
   - id: reference_md5_list
-    type: 
+    type:
       - File
       - "null"
     inputBinding:
@@ -56,7 +56,7 @@ inputs:
       prefix: -o
     default: "out"
     doc: prefix of the output files (<out_prefix>.bam)
-      
+
 outputs:
   - id: converted_bam
     type: File

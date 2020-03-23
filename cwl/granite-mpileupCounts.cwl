@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v13
+    dockerPull: cgap/cgap:v14
 
 baseCommand: [mpileupCounts-parallel.sh]
 

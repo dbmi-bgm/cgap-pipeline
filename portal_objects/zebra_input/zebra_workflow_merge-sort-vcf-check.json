@@ -1,0 +1,33 @@
+{
+    "parameters": {},
+    "workflow_uuid": "4473ed53-ce74-4c8c-a3fe-facb79f37da5",
+    "input_files" : [
+       {
+           "object_key": ".vcf",
+           "workflow_argument_name": "input_vcf_1",
+           "uuid": "",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+       },
+       {
+           "object_key": ".vcf",
+           "workflow_argument_name": "input_vcf_2",
+           "uuid": "",
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+       }
+    ],
+    "config": {
+      "instance_type": "c5.large",
+      "ebs_size": "3x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_workflow_merge-sort-vcf-check",
+      "behavior_on_capacity_limit": "wait_and_retry"
+    },
+    "_tibanna": {
+      "run_type": "workflow_merge-sort-vcf-check",
+      "env": "fourfront-cgap"
+    },
+    "app_name": "workflow_merge-sort-vcf-check",
+    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+}

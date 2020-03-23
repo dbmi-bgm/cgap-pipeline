@@ -1,6 +1,6 @@
 {
-  "accession": "GAPL5KR43WE9",
-  "app_name": "workflow_granite-whiteList-CLI-SpAI-check",
+  "accession": "GAP87YLC4S2W",
+  "app_name": "workflow_granite-whiteList-VEP-SpAI-check",
   "app_version": "v14",
   "arguments": [
       {
@@ -33,14 +33,14 @@
   "category": ["processing"],
   "cwl_child_filenames": ["granite-whiteList.cwl", "vcf-integrity-check.cwl"],
   "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v14/cwl",
-  "cwl_main_filename": "workflow_granite-whiteList-CLI-SpAI_plus_vcf-integrity-check.cwl",
+  "cwl_main_filename": "workflow_granite-whiteList-VEP-SpAI_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
-  "description": "Run granite whiteList on vcf input file. Use only CLINVAR and SpliceAI annotations. Produce a filtered vcf file. An integrity check is performed on the output file",
+  "description": "Run granite whiteList on vcf input file. Use only VEP and SpliceAI annotations. Produce a filtered vcf file. An integrity check is performed on the output file",
   "docker_image_name": "cgap/cgap:v14",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-whiteList-CLI-SpAI-check_v14",
-  "aliases": ["cgap:workflow_granite-whiteList-CLI-SpAI-check_v14"],
+  "name": "workflow_granite-whiteList-VEP-SpAI-check_v14",
+  "aliases": ["cgap:workflow_granite-whiteList-VEP-SpAI-check_v14"],
   "steps": [
       {
           "inputs": [
@@ -144,8 +144,8 @@
           ]
       }
   ],
-  "title": "Run granite whiteList plus output integrity-check. Use only CLINVAR and SpliceAI annotations",
-  "uuid": "feb46c7b-a678-4f35-a7c8-0f5002be4606",
+  "title": "Run granite whiteList plus output integrity-check. Use only VEP and SpliceAI annotations",
+  "uuid": "87b2bb1f-7a51-4beb-937c-252d45d03dbd",
   "previous_version": ["ce7f9e0b-a0d1-4119-bd66-373ccfcabac7"],
-  "version_upgrade_log": "This workflow now only use CLINVAR and SpliceAI annotations, it is still possible to specify a bed file"
+  "version_upgrade_log": "This workflow now only use VEP and SpliceAI annotations, it is still possible to specify a bed file"
 }
