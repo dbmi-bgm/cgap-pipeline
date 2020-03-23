@@ -1,6 +1,6 @@
 {
     "parameters": {},
-    "workflow_uuid": "35daf195-4fc5-4e2a-ada3-7a0cce08a7e4",
+    "workflow_uuid": "f38b91fb-7e0c-44e0-a871-a91a58227b34",
     "input_files" : [
        {
            "object_key": ".vcf.gz",

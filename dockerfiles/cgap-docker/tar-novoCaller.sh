@@ -9,6 +9,7 @@ ppthr=$5
 aftag=$6
 afthr=$7
 afthr_unrelated=$8
+ADthr=$9
 
 # untar files
 tar -xf $unrelated_tar
@@ -35,6 +36,11 @@ fi
 if [ ! $afthr_unrelated == 0 ];
   then
     command+=" --afthr_unrelated $afthr_unrelated"
+fi
+
+if [ ! $ADthr == 0 ];
+  then
+    command+=" --ADthr $ADthr"
 fi
 
 # run command

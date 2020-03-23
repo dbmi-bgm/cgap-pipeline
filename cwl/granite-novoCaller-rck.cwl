@@ -71,6 +71,13 @@ inputs:
       position: 8
     doc: threshold to filter by allele frequency calculated among unrelated
 
+  - id: ADthr
+    type: int
+    default: 3
+    inputBinding:
+      position: 9
+    doc: threshold to filter by alternate allele depth in parents
+
 outputs:
   - id: output
     type: File

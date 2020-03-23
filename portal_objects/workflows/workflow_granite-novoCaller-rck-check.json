@@ -1,7 +1,7 @@
 {
-  "accession": "GAPS8B146J1A",
+  "accession": "GAPS8L8U721V",
   "app_name": "workflow_granite-novoCaller-rck-check",
-  "app_version": "v13",
+  "app_version": "v14",
   "arguments": [
       {
           "argument_format": "vcf",
@@ -49,20 +49,24 @@
       {
           "argument_type": "parameter",
           "workflow_argument_name": "afthr_unrelated"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "ADthr"
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["granite-novoCaller-rck.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v13/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v14/cwl",
   "cwl_main_filename": "workflow_granite-novoCaller-rck_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run granite novoCaller on vcf input file. Use rck files. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v13",
+  "docker_image_name": "cgap/cgap:v14",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-novoCaller-rck-check_v13",
-  "aliases": ["cgap:workflow_granite-novoCaller-rck-check_v13"],
+  "name": "workflow_granite-novoCaller-rck-check_v14",
+  "aliases": ["cgap:workflow_granite-novoCaller-rck-check_v14"],
   "steps": [
       {
           "inputs": [
@@ -159,6 +163,19 @@
                           "name": "afthr_unrelated"
                       }
                   ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "ADthr",
+                  "source": [
+                      {
+                          "name": "ADthr"
+                      }
+                  ]
               }
           ],
           "meta": {
@@ -233,5 +250,7 @@
       }
   ],
   "title": "Run granite novoCaller using rck files plus output integrity-check",
-  "uuid": "35daf195-4fc5-4e2a-ada3-7a0cce08a7e4"
+  "uuid": "f38b91fb-7e0c-44e0-a871-a91a58227b34",
+  "previous_version": ["35daf195-4fc5-4e2a-ada3-7a0cce08a7e4"],
+  "version_upgrade_log": "Updated command line arguments and default to not filter out variants"
 }

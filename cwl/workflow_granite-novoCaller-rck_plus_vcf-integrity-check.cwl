@@ -47,6 +47,11 @@ inputs:
     default: 0
     doc: threshold to filter by allele frequency calculated among unrelated
 
+  - id: ADthr
+    type: int
+    default: 3
+    doc: threshold to filter by alternate allele depth in parents
+
 outputs:
   novoCaller_vcf:
     type: File
@@ -76,6 +81,8 @@ steps:
         source: afthr
       afthr_unrelated:
         source: afthr_unrelated
+      ADthr:
+        source: ADthr
     out: [output]
 
   integrity-check:
