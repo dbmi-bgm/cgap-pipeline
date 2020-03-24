@@ -1,7 +1,7 @@
 {
   "accession": "GAPP8T75K13F",
   "app_name": "workflow_mutanno-micro-annot-check",
-  "app_version": "v13",
+  "app_version": "v14",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -46,15 +46,16 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["mutanno-annot.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v13/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v14/cwl",
   "cwl_main_filename": "workflow_mutanno-micro-annot_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run mutanno annot on vcf input file. Produce a micro-annotated vcf file. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v13",
+  "docker_image_name": "cgap/cgap:v14",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_mutanno-micro-annot-check_v13",
-  "aliases": ["cgap:workflow_mutanno-micro-annot-check_v13"],
+  "name": "workflow_mutanno-micro-annot-check_v14",
+  "aliases": ["cgap:workflow_mutanno-micro-annot-check_v14",
+              "cgap:workflow_mutanno-micro-annot-check_v13"],
   "steps": [
       {
           "inputs": [
