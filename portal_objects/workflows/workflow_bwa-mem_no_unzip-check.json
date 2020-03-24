@@ -1,5 +1,5 @@
 {
-  "accession": "GAPWF9HYUJB9",
+  "accession": "GAPPL9I3M1A2",
   "app_name": "workflow_bwa-mem_no_unzip-check",
   "app_version": "v14",
   "arguments": [
@@ -61,12 +61,7 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_bwa-mem_no_unzip-check_v14",
-  "aliases": ["cgap:workflow_bwa-mem_no_unzip-check_v14",
-              "cgap:workflow_bwa-mem_no_unzip-check_v13",
-              "cgap:workflow_bwa-mem_no_unzip-check_v12",
-              "cgap:workflow_bwa-mem_no_unzip-check_v11",
-              "cgap:workflow_bwa-mem_no_unzip-check_v10",
-              "cgap:workflow_bwa-mem_no_unzip-check_v9"],
+  "aliases": ["cgap:workflow_bwa-mem_no_unzip-check_v14"],
   "steps": [
       {
           "inputs": [
@@ -211,5 +206,7 @@
       }
   ],
   "title": "Paired-end reads alignment to reference plus output integrity-check",
-  "uuid": "9e094699-561b-4396-8d6a-ffc45f98c5e1"
+  "uuid": "50e75343-2e00-471d-a667-4acb083287d8",
+  "previous_version": ["9e094699-561b-4396-8d6a-ffc45f98c5e1"],
+  "version_upgrade_log": "Pipe errors are now intercepted and force exit 1"
 }

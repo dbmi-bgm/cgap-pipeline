@@ -1,6 +1,6 @@
 {
     "parameters": {},
-    "workflow_uuid": "9e094699-561b-4396-8d6a-ffc45f98c5e1",
+    "workflow_uuid": "50e75343-2e00-471d-a667-4acb083287d8",
     "input_files" : [
        {
            "object_key": ".fastq.gz",
