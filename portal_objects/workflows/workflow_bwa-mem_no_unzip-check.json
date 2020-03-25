@@ -50,6 +50,12 @@
           "workflow_argument_name": "count"
       }
   ],
+  "custom_errors": [
+      {
+          "error_type": "Unmatching pairs in fastq",
+          "pattern": "paired reads have different names: .+"
+      }
+  ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["bwa-mem-to-bam_no_unzip.cwl", "integrity-check.cwl"],
