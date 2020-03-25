@@ -99,7 +99,7 @@ RUN chmod +x GenotypeGVCFs-parallel.sh
 # granite
 RUN git clone https://github.com/dbmi-bgm/granite.git && \
     cd granite && \
-    git checkout 2dd8a0d && \
+    git checkout 92d1557 && \
     rm -rf tests && \
     python setup.py install && \
     cd ..

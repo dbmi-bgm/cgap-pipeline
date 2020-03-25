@@ -1,5 +1,5 @@
 {
-  "accession": "GAPF178LT2P9",
+  "accession": "GAPFK84GT38L",
   "app_name": "workflow_granite-mpileupCounts",
   "app_version": "v14",
   "arguments": [
@@ -27,6 +27,14 @@
       {
           "argument_type": "parameter",
           "workflow_argument_name": "nthreads"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "MQthr"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "BQthr"
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
@@ -40,8 +48,7 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_granite-mpileupCounts_v14",
-  "aliases": ["cgap:workflow_granite-mpileupCounts_v14",
-              "cgap:workflow_granite-mpileupCounts_v13"],
+  "aliases": ["cgap:workflow_granite-mpileupCounts_v14"],
   "steps": [
       {
           "inputs": [
@@ -99,6 +106,32 @@
                           "name": "nthreads"
                       }
                   ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "MQthr",
+                  "source": [
+                      {
+                          "name": "MQthr"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "BQthr",
+                  "source": [
+                      {
+                          "name": "BQthr"
+                      }
+                  ]
               }
           ],
           "meta": {
@@ -129,5 +162,7 @@
       }
   ],
   "title": "Run granite mpileupCounts",
-  "uuid": "e5c178cf-4b5c-488b-b4cc-08273d11697d"
+  "uuid": "6e89bc5d-b4a0-4954-9c3f-361477d5f537",
+  "previous_version": ["e5c178cf-4b5c-488b-b4cc-08273d11697d"],
+  "version_upgrade_log": "Updated command line arguments and default to 0 for MQ and BQ thresholds"
 }

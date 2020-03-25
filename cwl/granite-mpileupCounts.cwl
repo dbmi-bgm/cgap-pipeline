@@ -41,8 +41,22 @@ inputs:
     type: int
     default: 15
     inputBinding:
-      position: 6
+      position: 4
     doc: number of threads used to run parallel
+
+  - id: MQthr
+    type: int
+    default: 0
+    inputBinding:
+      position: 5
+    doc: minimum mapping quality
+
+  - id: BQthr
+    type: int
+    default: 0
+    inputBinding:
+      position: 6
+    doc: minimum base quality
 
 outputs:
   - id: rck
