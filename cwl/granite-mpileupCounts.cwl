@@ -46,14 +46,14 @@ inputs:
 
   - id: MQthr
     type: int
-    default: 0
+    default: -1
     inputBinding:
       position: 5
     doc: minimum mapping quality
 
   - id: BQthr
     type: int
-    default: 0
+    default: -1
     inputBinding:
       position: 6
     doc: minimum base quality
