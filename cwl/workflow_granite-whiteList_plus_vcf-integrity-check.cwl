@@ -20,6 +20,11 @@ inputs:
     default: true
     doc: flag to whitelist variants with a CLINVAR Id
 
+  - id: CLINVARonly
+    type: string[]
+    default: null
+    doc: only terms and keywords to be saved for CLINVAR
+
   - id: SpliceAI
     type: float
     default: 0.8
@@ -66,6 +71,8 @@ steps:
         source: outputfile
       CLINVAR:
         source: CLINVAR
+      CLINVARonly:
+        source: CLINVARonly
       SpliceAI:
         source: SpliceAI
       VEP:

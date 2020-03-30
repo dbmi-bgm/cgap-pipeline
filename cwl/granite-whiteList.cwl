@@ -34,6 +34,13 @@ inputs:
       prefix: --CLINVAR
     doc: flag to whitelist variants with a CLINVAR Id
 
+  - id: CLINVARonly
+    type: string[]
+    default: null
+    inputBinding:
+      prefix: --CLINVARonly
+    doc: only terms and keywords to be saved for CLINVAR
+
   - id: SpliceAI
     type: float
     default: null
