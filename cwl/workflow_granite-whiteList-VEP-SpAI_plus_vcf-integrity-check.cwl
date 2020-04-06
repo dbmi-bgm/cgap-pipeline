@@ -39,7 +39,7 @@ inputs:
 
   - id: VEPrescue
     type: string[]
-    default: null
+    default: ["splice_region_variant"]
     doc: terms to overrule removed flags and/or to rescue and whitelist variants
 
   - id: VEPremove
