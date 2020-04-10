@@ -204,14 +204,14 @@
     "extra_files": [
         {
             "file_format": "mti_gz_tbi",
-            "status": "uploading"
+            "status": "uploaded"
         },
         {
             "file_format": "mti_json",
-            "status": "uploading"
+            "status": "uploaded"
         }
     ],
-    "status": "uploading",
+    "status": "uploaded",
     "file_version": "0.4",
     "file_version_date": "2020-04-08",
     "file_type": "micro-annotation source"
@@ -226,16 +226,16 @@
     "extra_files": [
         {
             "file_format": "mti_gz_tbi",
-            "status": "uploading"
+            "status": "uploaded"
         },
         {
             "file_format": "mti_json",
-            "status": "uploading"
+            "status": "uploaded"
         }
     ],
-    "status": "uploading",
+    "status": "uploaded",
     "file_version": "0.4",
-    "file_version_date": "",
-    "file_type": "micro-annotation source"
+    "file_version_date": "2020-04-22",
+    "file_type": "annotation source"
   }
 ]
