@@ -193,5 +193,49 @@
     "file_version": "0.3",
     "file_version_date": "2020-03-09",
     "file_type": "annotation source"
+  },
+  {
+    "uuid": "6965df94-49c8-482e-af37-c175fac158d0",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "mti_gz",
+    "description": "mutanno index micro-annotation v0.4",
+    "aliases": ["cgap:mutanno-index-micro-annotation-v0.4"],
+    "extra_files": [
+        {
+            "file_format": "mti_gz_tbi",
+            "status": "uploading"
+        },
+        {
+            "file_format": "mti_json",
+            "status": "uploading"
+        }
+    ],
+    "status": "uploading",
+    "file_version": "0.4",
+    "file_version_date": "2020-04-08",
+    "file_type": "micro-annotation source"
+  },
+  {
+    "uuid": "3832e0d9-dfd0-4108-998e-a31c3291a7cf",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "mti_gz",
+    "description": "mutanno index full annotation v0.4",
+    "aliases": ["cgap:mutanno-index-annotation-v0.4"],
+    "extra_files": [
+        {
+            "file_format": "mti_gz_tbi",
+            "status": "uploading"
+        },
+        {
+            "file_format": "mti_json",
+            "status": "uploading"
+        }
+    ],
+    "status": "uploading",
+    "file_version": "0.4",
+    "file_version_date": "",
+    "file_type": "micro-annotation source"
   }
 ]

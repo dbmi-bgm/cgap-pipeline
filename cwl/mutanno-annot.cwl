@@ -11,7 +11,7 @@ hints:
   - class: DockerRequirement
     dockerPull: cgap/cgap:v14
 
-baseCommand: [annot-parallel.sh]
+baseCommand: [annot-parallel-mti.sh]
 
 inputs:
   - id: input
@@ -27,8 +27,9 @@ inputs:
     inputBinding:
       position: 2
     secondaryFiles:
+      - .tbi
       - ^.json
-    doc: expect the path to the mutanno index files tar archive
+    doc: expect the path to the mutanno index file
 
   - id: regions
     type: File

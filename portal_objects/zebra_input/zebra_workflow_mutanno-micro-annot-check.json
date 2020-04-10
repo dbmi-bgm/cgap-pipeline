@@ -3,7 +3,7 @@
         "nthreads": 70,
         "blocksize": 1000000
        },
-    "workflow_uuid": "04caaa82-6a32-46d3-b52c-c1017cc0490a",
+    "workflow_uuid": "de9c4579-30e2-432c-80e3-7f324d3d7dcb",
     "input_files" : [
        {
            "object_key": ".vcf.gz",
@@ -12,9 +12,9 @@
            "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
        },
        {
-           "object_key": ".mti.tar",
+           "object_key": ".mti.gz",
            "workflow_argument_name": "mti",
-           "uuid": "cdf22f3a-fded-4fdb-aa24-d348c2fb9426",
+           "uuid": "6965df94-49c8-482e-af37-c175fac158d0",
            "bucket_name": "elasticbeanstalk-fourfront-cgap-files",
            "mount": true
        },

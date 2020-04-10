@@ -9,7 +9,7 @@
           "workflow_argument_name": "input_vcf"
       },
       {
-          "argument_format": "mti_tar",
+          "argument_format": "mti_gz",
           "argument_type": "Input file",
           "workflow_argument_name": "mti"
       },
@@ -54,8 +54,7 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_mutanno-annot-check_v14",
-  "aliases": ["cgap:workflow_mutanno-annot-check_v14",
-              "cgap:workflow_mutanno-annot-check_v13"],
+  "aliases": ["cgap:workflow_mutanno-annot-check_v14"],
   "steps": [
       {
           "inputs": [
@@ -76,7 +75,7 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "mti_tar",
+                      "file_format": "mti_gz",
                       "global": true,
                       "type": "reference file"
                   },
@@ -200,5 +199,7 @@
       }
   ],
   "title": "Run mutanno annot plus output integrity-check",
-  "uuid": "883b7846-8c62-4f5a-a691-c84706420b93"
+  "uuid": "62f16824-4d4b-43fb-9f2f-3bb5b328431a",
+  "previous_version": ["883b7846-8c62-4f5a-a691-c84706420b93"],
+  "version_upgrade_log": "Workflow is now using a single data source file instead of archive"
 }

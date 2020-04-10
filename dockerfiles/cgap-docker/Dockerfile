@@ -119,6 +119,10 @@ RUN git clone https://github.com/dbmi-bgm/mutanno.git && \
 COPY annot-parallel.sh .
 RUN chmod +x annot-parallel.sh
 
+# annot parallel mti script
+COPY annot-parallel-mti.sh .
+RUN chmod +x annot-parallel-mti.sh
+
 # tar novoCaller script
 COPY tar-novoCaller.sh .
 RUN chmod +x tar-novoCaller.sh

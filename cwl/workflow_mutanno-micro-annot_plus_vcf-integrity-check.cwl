@@ -15,8 +15,9 @@ inputs:
   - id: mti
     type: File
     secondaryFiles:
+      - .tbi
       - ^.json
-    doc: expect the path to the mutanno index files tar archive
+    doc: expect the path to the mutanno index file
 
   - id: regions
     type: File
