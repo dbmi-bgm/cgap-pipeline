@@ -111,7 +111,7 @@ RUN mv granite/docker/mpileupCounts-parallel.sh . && \
 # mutanno
 RUN git clone https://github.com/dbmi-bgm/mutanno.git && \
     cd mutanno && \
-    git checkout 8a780bd && \
+    git checkout 9b5396c && \
     chmod +x mutanno.py && \
     cd ..
 
