@@ -112,7 +112,7 @@ RUN mv granite/docker/mpileupCounts-parallel.sh . && \
 RUN git clone https://github.com/dbmi-bgm/mutanno.git && \
     cd mutanno && \
     git checkout 9b5396c && \
-    chmod +x mutanno.py && \
+    python setup.py install && \
     cd ..
 
 # annot parallel script
@@ -130,13 +130,6 @@ RUN chmod +x tar-novoCaller.sh
 # merge vcf script
 COPY merge-sort-vcf.sh .
 RUN chmod +x merge-sort-vcf.sh
-
-# VQSR
-COPY vqsr-indel.sh .
-RUN chmod +x vqsr-indel.sh
-
-COPY vqsr-snv.sh .
-RUN chmod +x vqsr-snv.sh
 
 # cramtools
 RUN git clone https://github.com/enasequence/cramtools && \

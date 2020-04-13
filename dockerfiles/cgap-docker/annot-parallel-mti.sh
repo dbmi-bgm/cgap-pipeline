@@ -24,7 +24,7 @@ else
     additional_options='-clean_tag MUTANNO VEP gnomADgenome CLINVAR SpliceAI'
 fi
 
-command="tabix -h $input_vcf {} > {}.sharded.vcf; if [[ -e {}.sharded.vcf ]]; then mutanno.py annot -vcf {}.sharded.vcf -out ${directory}{}.ann.vcf -ds $resources_json -sourcefile $resources_mti -blocksize $blocksize $additional_options; fi; rm {}.sharded.vcf"
+command="tabix -h $input_vcf {} > {}.sharded.vcf; if [[ -e {}.sharded.vcf ]]; then mutanno annot -vcf {}.sharded.vcf -out ${directory}{}.ann.vcf -ds $resources_json -sourcefile $resources_mti -blocksize $blocksize $additional_options; fi; rm {}.sharded.vcf"
 
 # runnning annot in parallel
 cat $regionfile | parallel --halt 2 --jobs $nthreads $command || exit 1
