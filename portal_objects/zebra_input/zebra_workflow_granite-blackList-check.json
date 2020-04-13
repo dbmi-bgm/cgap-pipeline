@@ -14,7 +14,7 @@
        {
            "object_key": ".big",
            "workflow_argument_name": "bigfile",
-           "uuid": "745a3b78-31db-414b-bc8e-4f53065d8718",
+           "uuid": "20004873-b672-4d84-a7c1-7fd5c0407519",
            "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
        }
     ],
