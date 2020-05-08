@@ -13,7 +13,12 @@ inputs:
   - id: outputfile
     type: string
     default: "output.vcf"
-    doc: name of the output file
+    doc: name of the output file of whiteList
+
+  - id: outputfile_clean
+    type: string
+    default: "output_clean.vcf"
+    doc: name of the output file of cleanVCF
 
   - id: CLINVAR
     type: boolean
@@ -27,7 +32,7 @@ inputs:
 
   - id: SpliceAI
     type: float
-    default: 0.8
+    default: 0.2
     doc: threshold to whitelist variants by SpliceAI value
 
   - id: VEP
@@ -55,7 +60,7 @@ inputs:
 outputs:
   whiteList_vcf:
     type: File
-    outputSource: granite-whiteList/output
+    outputSource: granite-cleanVCF/output
 
   whiteList_vcf-check:
     type: File
@@ -85,13 +90,31 @@ steps:
         source: BEDfile
     out: [output]
 
+  granite-cleanVCF:
+    run: granite-cleanVCF.cwl
+    in:
+      input_vcf:
+        source: granite-whiteList/output
+      outputfile:
+        source: outputfile_clean
+      SpliceAI:
+        source: SpliceAI
+      VEP:
+        source: VEP
+      VEPrescue:
+        source: VEPrescue
+      VEPremove:
+        source: VEPremove
+    out: [output]
+
   integrity-check:
     run: vcf-integrity-check.cwl
     in:
       input:
-        source: granite-whiteList/output
+        source: granite-cleanVCF/output
     out: [output]
 
 doc: |
   run granite whiteList |
+  run cleanVCF to clean VEP annotations |
   run an integrity check on the output vcf
