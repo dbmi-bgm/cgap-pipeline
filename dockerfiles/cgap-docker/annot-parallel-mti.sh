@@ -7,6 +7,7 @@ regionfile=$3
 blocksize=$4
 nthreads=$5
 micro_annotation=$6  # 1 or 0
+chainfile=$7
 
 # get resources tar name
 resources_json=${resources_mti%.*}.json
@@ -19,9 +20,9 @@ mkdir -p $directory
 
 # command
 if [[ $micro_annotation == "1" ]]; then
-    additional_options='-add_genoinfo -split_multi_allelic_variant'
+    additional_options="-genoinfo -split_multi_allelic_variant"
 else
-    additional_options='-clean_tag MUTANNO VEP gnomADgenome CLINVAR SpliceAI'
+    additional_options="-clean_tag MUTANNO gnomADgenome CLINVAR SpliceAI -hg19 -chain $chainfile"
 fi
 
 command="tabix -h $input_vcf {} > {}.sharded.vcf; if [[ -e {}.sharded.vcf ]]; then mutanno annot -vcf {}.sharded.vcf -out ${directory}{}.ann.vcf -ds $resources_json -sourcefile $resources_mti -blocksize $blocksize $additional_options; fi; rm {}.sharded.vcf"

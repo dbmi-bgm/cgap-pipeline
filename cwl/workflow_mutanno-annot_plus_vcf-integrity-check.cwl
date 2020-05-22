@@ -37,6 +37,10 @@ inputs:
     default: "0"
     doc: whether this is micro-annotation (1) or full annotation (0)
 
+  - id: chainfile
+    type: File
+    doc: expect the path to the chain file for hg19
+
 outputs:
   annotated_vcf:
     type: File
@@ -62,6 +66,8 @@ steps:
         source: nthreads
       micro_annotation:
         source: micro_annotation
+      chainfile:
+        source: chainfile
     out: [output]
 
   integrity-check:

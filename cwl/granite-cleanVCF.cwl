@@ -57,6 +57,13 @@ inputs:
       prefix: --VEPremove
     doc: additional terms to be removed from annotations
 
+  - id: VEPsep
+    type: string
+    default: null
+    inputBinding:
+      prefix: --VEPsep
+    doc: VEP separator to use for subfields
+
 outputs:
   - id: output
     type: File

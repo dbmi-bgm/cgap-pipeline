@@ -78,6 +78,13 @@ inputs:
       prefix: --BEDfile
     doc: expect the path to bed file with positions to whitelist
 
+  - id: VEPsep
+    type: string
+    default: null
+    inputBinding:
+      prefix: --VEPsep
+    doc: VEP separator to use for subfields
+
 outputs:
   - id: output
     type: File

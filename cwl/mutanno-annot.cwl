@@ -54,6 +54,13 @@ inputs:
       position: 6
     doc: whether this is micro-annotation (1) or full annotation (0)
 
+  - id: chainfile
+    type: File
+    default: null
+    inputBinding:
+      position: 7
+    doc: expect the path to the chain file for hg19
+
 outputs:
   - id: output
     type: File

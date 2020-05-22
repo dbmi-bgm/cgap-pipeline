@@ -12,4 +12,7 @@ grep -v "^#" $input_vcf_1 > tmp.vcf
 grep -v "^#" $input_vcf_2 >> tmp.vcf
 
 # sorting variants and removing duplicates
-sort -V -k1,1 -k2,2n tmp.vcf | uniq >> sorted.vcf
+sort -V -k1,1 -k2,2n tmp.vcf >> sorted_tmp.vcf
+
+# removing duplicates
+python duplines_vcf.py -i sorted_tmp.vcf -o sorted.vcf

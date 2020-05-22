@@ -290,5 +290,15 @@
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "released",
         "valid_item_types": ["FileReference"]
+    },
+    {
+        "file_format": "chain",
+        "standard_file_extension": "chain.gz",
+        "description": "chain file for coordinates liftover, compressed",
+        "uuid": "dd1ef82d-da5e-4680-bd5c-cf471a87eb5b",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "released",
+        "valid_item_types": ["FileReference"]
     }
 ]

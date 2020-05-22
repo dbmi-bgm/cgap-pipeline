@@ -237,5 +237,36 @@
     "file_version": "0.4",
     "file_version_date": "2020-04-22",
     "file_type": "annotation source"
+  },
+  {
+    "uuid": "04b5b413-1229-4912-9853-43de8eb7163e",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "mti_gz",
+    "description": "mutanno index micro-annotation v0.4.2, full VEP annotation",
+    "aliases": ["cgap:mutanno-index-micro-annotation-v0.4.2"],
+    "extra_files": [
+        {
+            "file_format": "mti_gz_tbi",
+            "status": "uploaded"
+        },
+        {
+            "file_format": "mti_json",
+            "status": "uploaded"
+        }
+    ],
+    "status": "uploaded",
+    "file_version": "0.4.2",
+    "file_version_date": "2020-05-12",
+    "file_type": "micro-annotation source"
+  },
+  {
+    "uuid": "297c872a-5b6b-4fc3-83d3-f4a853f8805c",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "chain",
+    "description": "chain file for coordinates liftover, hg38 to hg19",
+    "aliases": ["cgap:hg38-to-hg19-chain"],
+    "status": "uploaded"
   }
 ]
