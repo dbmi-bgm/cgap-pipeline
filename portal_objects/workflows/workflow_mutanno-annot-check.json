@@ -14,6 +14,11 @@
           "workflow_argument_name": "mti"
       },
       {
+          "argument_format": "chain",
+          "argument_type": "Input file",
+          "workflow_argument_name": "chainfile"
+      },
+      {
           "argument_format": "txt",
           "argument_type": "Input file",
           "workflow_argument_name": "regions"
@@ -83,6 +88,20 @@
                   "source": [
                       {
                           "name": "mti"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "chain",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "chainfile",
+                  "source": [
+                      {
+                          "name": "chainfile"
                       }
                   ]
               },
