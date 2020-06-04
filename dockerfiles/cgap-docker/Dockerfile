@@ -82,6 +82,7 @@ RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
     cd cgap-scripts && \
     git checkout 1140e78 && \
     chmod +x AddReadGroups.py && \
+    chmod +x duplines_vcf.py && \
     cd ..
 
 # HaplotypeCaller parallel script
@@ -99,7 +100,7 @@ RUN chmod +x GenotypeGVCFs-parallel.sh
 # granite
 RUN git clone https://github.com/dbmi-bgm/granite.git && \
     cd granite && \
-    git checkout 4759213 && \
+    git checkout a4f81ae && \
     rm -rf tests && \
     python setup.py install && \
     cd ..
@@ -111,7 +112,7 @@ RUN mv granite/docker/mpileupCounts-parallel.sh . && \
 # mutanno
 RUN git clone https://github.com/dbmi-bgm/mutanno.git && \
     cd mutanno && \
-    git checkout 9b5396c && \
+    git checkout 9583985 && \
     python setup.py install && \
     cd ..
 
