@@ -86,7 +86,11 @@ RUN git clone https://github.com/nh13/pbgzip && \
     ./configure --enable-igzip && \
     make && \
     make install && \
-    cd ..
+    cd .. && \
+    rm -rf pbgzip-dir
+
+ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
 
 # bwa mem script
 COPY bwa-mem-to-bam.sh .
