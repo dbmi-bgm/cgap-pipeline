@@ -22,8 +22,11 @@ RUN apt-get update -y && apt-get install -y \
     parallel \
     autoconf \
     autogen \
+    autotools-dev \
+    automake \
     pkg-config \
-    tabix
+    tabix \
+    yasm
 
 WORKDIR /usr/local/bin
 
@@ -62,6 +65,30 @@ RUN git clone https://github.com/vcftools/vcftools.git && \
     make install && \
     cd ..
 
+# pigz
+RUN wget https://zlib.net/pigz/pigz-2.4.tar.gz && \
+    tar -xzf pigz-2.4.tar.gz && \
+    rm -rf pigz-2.4.tar.gz && \
+    cd pigz-2.4 && \
+    make && \
+    cd ..
+
+# pbgzip
+RUN git clone https://github.com/nh13/pbgzip && \
+    mv pbgzip pbgzip-dir && \
+    cd pbgzip-dir && \
+    git checkout 2b09f97 && \
+    cd igzip && \
+    make && \
+    make install && \
+    cd .. && \
+    sh autogen.sh && \
+    ./configure --enable-igzip && \
+    make && \
+    make install && \
+    cd .. && \
+    rm -rf pbgzip-dir
+
 # bwa mem script
 COPY bwa-mem-to-bam.sh .
 RUN chmod +x bwa-mem-to-bam.sh
@@ -80,7 +107,7 @@ RUN chmod +x vcf-integrity-check.sh
 # add read groups script
 RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
     cd cgap-scripts && \
-    git checkout 1140e78 && \
+    git checkout 41489dd && \
     chmod +x AddReadGroups.py && \
     chmod +x duplines_vcf.py && \
     cd ..
@@ -142,14 +169,6 @@ COPY cram_to_fastq.sh .
 COPY cram_to_bam.sh .
 RUN chmod +x cram_to_fastq.sh
 RUN chmod +x cram_to_bam.sh
-
-# pigz
-RUN wget https://zlib.net/pigz/pigz-2.4.tar.gz && \
-    tar -xzf pigz-2.4.tar.gz && \
-    rm -rf pigz-2.4.tar.gz && \
-    cd pigz-2.4 && \
-    make && \
-    cd ..
 
 # env paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
