@@ -23,10 +23,6 @@ inputs:
     type: File
     doc: expect the path to the file defining regions
 
-  - id: blocksize
-    type: int
-    default: 10000
-
   - id: nthreads
     type: int
     default: 1

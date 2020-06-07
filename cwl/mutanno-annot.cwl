@@ -37,28 +37,23 @@ inputs:
       position: 3
     doc: expect the path to the file defining regions
 
-  - id: blocksize
-    type: int
-    inputBinding:
-      position: 4
-
   - id: nthreads
     type: int
     inputBinding:
-      position: 5
+      position: 4
     doc: number of threads used to run parallel
 
   - id: micro_annotation
     type: string
     inputBinding:
-      position: 6
+      position: 5
     doc: whether this is micro-annotation (1) or full annotation (0)
 
   - id: chainfile
     type: File
     default: null
     inputBinding:
-      position: 7
+      position: 6
     doc: expect the path to the chain file for hg19
 
 outputs:
