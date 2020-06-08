@@ -52,8 +52,6 @@ steps:
         source: mti
       regions:
         source: regions
-      blocksize:
-        source: blocksize
       nthreads:
         source: nthreads
       micro_annotation:
