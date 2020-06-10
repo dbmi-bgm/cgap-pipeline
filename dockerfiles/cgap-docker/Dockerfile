@@ -91,7 +91,6 @@ RUN git clone https://github.com/nh13/pbgzip && \
 
 ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
-
 # bwa mem script
 COPY bwa-mem-to-bam.sh .
 RUN chmod +x bwa-mem-to-bam.sh
@@ -130,7 +129,7 @@ RUN chmod +x GenotypeGVCFs-parallel.sh
 # granite
 RUN git clone https://github.com/dbmi-bgm/granite.git && \
     cd granite && \
-    git checkout a4f81ae && \
+    git checkout 9030b73 && \
     rm -rf tests && \
     python setup.py install && \
     cd ..
