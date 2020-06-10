@@ -15,4 +15,4 @@ grep -v "^#" $input_vcf_2 >> tmp.vcf
 sort -V -k1,1 -k2,2n tmp.vcf >> sorted_tmp.vcf
 
 # removing duplicates
-python duplines_vcf.py -i sorted_tmp.vcf -o sorted.vcf
+duplines_vcf.py -i sorted_tmp.vcf -o sorted.vcf
