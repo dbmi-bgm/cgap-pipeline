@@ -5,7 +5,7 @@ input_vcf_1=$1
 input_vcf_2=$2
 
 # saving header
-grep "^#" $input_vcf_1 > sorted.vcf
+grep "^#" $input_vcf_1 > sorted_tmp.vcf
 
 # getting variants
 grep -v "^#" $input_vcf_1 > tmp.vcf

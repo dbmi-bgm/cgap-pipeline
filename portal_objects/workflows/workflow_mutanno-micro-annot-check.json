@@ -36,10 +36,6 @@
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": "blocksize"
-      },
-      {
-          "argument_type": "parameter",
           "workflow_argument_name": "nthreads"
       }
   ],
@@ -97,19 +93,6 @@
                   "source": [
                       {
                           "name": "regions"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "parameter"
-                  },
-                  "name": "blocksize",
-                  "source": [
-                      {
-                          "name": "blocksize"
                       }
                   ]
               },

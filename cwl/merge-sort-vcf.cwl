@@ -33,4 +33,5 @@ outputs:
       glob: sorted.vcf
 
 doc: |
-  run merge-sort-vcf.sh to merge and sort two vcf files
+  run merge-sort-vcf.sh to merge and sort two vcf files |
+  remove duplicate lines

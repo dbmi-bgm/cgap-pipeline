@@ -22,7 +22,7 @@ inputs:
 
   - id: CLINVARonly
     type: string[]
-    default: ["Pathogenic"]
+    default: ["Pathogenic", "risk_factor"]
     doc: only terms and keywords to be saved for CLINVAR
 
   - id: SpliceAI
@@ -54,7 +54,7 @@ inputs:
 
   - id: VEPsep
     type: string
-    default: "~"
+    default: null
     doc: VEP separator to use for subfields
 
 outputs:

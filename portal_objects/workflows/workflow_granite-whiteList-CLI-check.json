@@ -27,10 +27,6 @@
           "qc_json": false,
           "qc_table": true,
           "qc_type": "quality_metric_vcfcheck"
-      },
-      {
-          "argument_type": "parameter",
-          "workflow_argument_name": "VEPsep"
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
@@ -73,19 +69,6 @@
                   "source": [
                       {
                           "name": "BEDfile"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "parameter"
-                  },
-                  "name": "VEPsep",
-                  "source": [
-                      {
-                          "name": "VEPsep"
                       }
                   ]
               }

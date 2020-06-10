@@ -268,5 +268,27 @@
     "description": "chain file for coordinates liftover, hg38 to hg19",
     "aliases": ["cgap:hg38-to-hg19-chain"],
     "status": "uploaded"
+  },
+  {
+    "uuid": "6438bf8b-ea5f-4084-9c88-b2012a5d734d",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "mti_gz",
+    "description": "mutanno index micro-annotation v0.4.3, Ensembl filter",
+    "aliases": ["cgap:mutanno-index-micro-annotation-v0.4.3"],
+    "extra_files": [
+        {
+            "file_format": "mti_gz_tbi",
+            "status": "uploaded"
+        },
+        {
+            "file_format": "mti_json",
+            "status": "uploaded"
+        }
+    ],
+    "status": "uploaded",
+    "file_version": "0.4.3",
+    "file_version_date": "2020-06-04",
+    "file_type": "micro-annotation source"
   }
 ]
