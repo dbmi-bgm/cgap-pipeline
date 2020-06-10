@@ -1,6 +1,6 @@
 {
-  "accession": "GAPP8T9E313F",
-  "app_name": "workflow_mutanno-micro-annot-check",
+  "accession": "GAPG8L8B113P",
+  "app_name": "workflow_granite-filtering-check",
   "app_version": "v14",
   "arguments": [
       {
@@ -9,25 +9,24 @@
           "workflow_argument_name": "input_vcf"
       },
       {
-          "argument_format": "mti_gz",
+          "argument_format": "bed",
           "argument_type": "Input file",
-          "workflow_argument_name": "mti"
+          "workflow_argument_name": "BEDfile"
       },
       {
-          "argument_format": "txt",
+          "argument_format": "big",
           "argument_type": "Input file",
-          "workflow_argument_name": "regions"
+          "workflow_argument_name": "bigfile"
       },
       {
-          "argument_format": "vcf_gz",
+          "argument_format": "vcf",
           "argument_type": "Output processed file",
-          "workflow_argument_name": "annotated_vcf",
-          "secondary_file_formats": ["vcf_gz_tbi"]
+          "workflow_argument_name": "merged_vcf"
       },
       {
           "argument_type": "Output QC file",
-          "workflow_argument_name": "annotated_vcf-check",
-          "argument_to_be_attached_to": "annotated_vcf",
+          "workflow_argument_name": "merged_vcf-check",
+          "argument_to_be_attached_to": "merged_vcf",
           "qc_zipped": false,
           "qc_html": false,
           "qc_json": false,
@@ -36,25 +35,33 @@
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": ""
+          "workflow_argument_name": "SpliceAI"
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": "nthreads"
+          "workflow_argument_name": "VEPsep"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "aftag"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "afthr"
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
-  "cwl_child_filenames": ["mutanno-annot.cwl", "vcf-integrity-check.cwl"],
+  "cwl_child_filenames": ["granite-whiteList.cwl", "granite-cleanVCF.cwl", "granite-blackList.cwl", "merge-sort-vcf.cwl", "vcf-integrity-check.cwl"],
   "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v14/cwl",
-  "cwl_main_filename": "workflow_mutanno-micro-annot_plus_vcf-integrity-check.cwl",
+  "cwl_main_filename": "workflow_granite-filtering_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
-  "description": "Run mutanno annot on vcf input file. Produce a micro-annotated vcf file. An integrity check is performed on the output file",
+  "description": "Filter and clean the input vcf using granite (whiteList, cleanVCF, blackList). An integrity check is performed on the output file",
   "docker_image_name": "cgap/cgap:v14",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_mutanno-micro-annot-check_v14",
-  "aliases": ["cgap:workflow_mutanno-micro-annot-check_v14"],
+  "name": "workflow_granite-filtering-check_v14",
+  "aliases": ["cgap:workflow_granite-filtering-check_v14"],
   "steps": [
       {
           "inputs": [
@@ -75,28 +82,28 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "mti_gz",
+                      "file_format": "bed",
                       "global": true,
                       "type": "reference file"
                   },
-                  "name": "mti",
+                  "name": "BEDfile",
                   "source": [
                       {
-                          "name": "mti"
+                          "name": "BEDfile"
                       }
                   ]
               },
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "txt",
+                      "file_format": "big",
                       "global": true,
                       "type": "reference file"
                   },
-                  "name": "regions",
+                  "name": "bigfile",
                   "source": [
                       {
-                          "name": "regions"
+                          "name": "bigfile"
                       }
                   ]
               },
@@ -106,10 +113,10 @@
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "",
+                  "name": "SpliceAI",
                   "source": [
                       {
-                          "name": ""
+                          "name": "SpliceAI"
                       }
                   ]
               },
@@ -119,35 +126,61 @@
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "nthreads",
+                  "name": "VEPsep",
                   "source": [
                       {
-                          "name": "nthreads"
+                          "name": "VEPsep"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "aftag",
+                  "source": [
+                      {
+                          "name": "aftag"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "afthr",
+                  "source": [
+                      {
+                          "name": "afthr"
                       }
                   ]
               }
           ],
           "meta": {
               "analysis_step_types": [
-                  "Run mutanno annot"
+                  "Run granite whiteList, cleanVCF, blackList"
               ],
               "software_used": [
-                 "/softwares/1d28b7b8-1033-492f-8a1a-d4ac5b1ab55e"
+                 "/softwares/5a0b864e-dc16-4484-bcf3-c64e35a25df9"
               ]
           },
-          "name": "annot",
+          "name": "granite",
           "outputs": [
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "vcf_gz",
+                      "file_format": "vcf",
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "annotated_vcf",
+                  "name": "merged_vcf",
                   "target": [
                       {
-                          "name": "annotated_vcf",
+                          "name": "merged_vcf",
                           "step": "vcf-integrity-check"
                       }
                   ]
@@ -159,15 +192,15 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "vcf_gz",
+                      "file_format": "vcf",
                       "global": false,
                       "type": "data file"
                   },
-                  "name": "annotated_vcf",
+                  "name": "merged_vcf",
                   "source": [
                       {
-                          "name": "annotated_vcf",
-                          "step": "annot"
+                          "name": "merged_vcf",
+                          "step": "granite"
                       }
                   ]
               }
@@ -188,18 +221,16 @@
                       "global": true,
                       "type": "QC"
                   },
-                  "name": "annotated_vcf-check",
+                  "name": "merged_vcf-check",
                   "target": [
                       {
-                          "name": "annotated_vcf-check"
+                          "name": "merged_vcf-check"
                       }
                   ]
               }
           ]
       }
   ],
-  "title": "Run mutanno micro-annot plus output integrity-check",
-  "uuid": "de9c4579-30e2-432c-80e3-7f324d3d7dcb",
-  "previous_version": ["04caaa82-6a32-46d3-b52c-c1017cc0490a"],
-  "version_upgrade_log": "Workflow is now using a single data source file instead of archive"
+  "title": "Run granite to filter and clean input vcf (whiteList, cleanVCF, blackList) plus output integrity-check",
+  "uuid": "cb85683c-54a6-44e8-820c-1800aec9fdcd"
 }
