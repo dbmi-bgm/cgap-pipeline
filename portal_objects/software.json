@@ -138,9 +138,9 @@
             "filter"
         ],
         "source_url": "https://github.com/dbmi-bgm/granite",
-        "title": "granite_4759213",
+        "title": "granite_914b7ef",
         "uuid": "5a0b864e-dc16-4484-bcf3-c64e35a25df9",
-        "commit": "4759213"
+        "commit": "914b7ef"
     },
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
@@ -150,8 +150,8 @@
             "annotator"
         ],
         "source_url": "https://github.com/dbmi-bgm/mutanno",
-        "title": "mutanno_9b5396c",
+        "title": "mutanno_0.4.0",
         "uuid": "1d28b7b8-1033-492f-8a1a-d4ac5b1ab55e",
-        "commit": "9b5396c"
+        "commit": "0.4.0"
     }
 ]

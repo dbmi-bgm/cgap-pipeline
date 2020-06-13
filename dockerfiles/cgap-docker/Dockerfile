@@ -106,6 +106,10 @@ RUN chmod +x integrity-check.sh
 COPY vcf-integrity-check.sh .
 RUN chmod +x vcf-integrity-check.sh
 
+# sort bgzip-index vcf
+COPY sort-bgzip-vcf.sh .
+RUN chmod +x sort-bgzip-vcf.sh
+
 # add read groups script
 RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
     cd cgap-scripts && \
@@ -129,7 +133,7 @@ RUN chmod +x GenotypeGVCFs-parallel.sh
 # granite
 RUN git clone https://github.com/dbmi-bgm/granite.git && \
     cd granite && \
-    git checkout 9030b73 && \
+    git checkout 914b7ef && \
     rm -rf tests && \
     python setup.py install && \
     cd ..

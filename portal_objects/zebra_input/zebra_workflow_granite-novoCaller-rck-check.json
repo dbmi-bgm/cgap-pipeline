@@ -6,7 +6,8 @@
            "object_key": ".vcf.gz",
            "workflow_argument_name": "input_vcf",
            "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput",
+           "unzip": "gz"
        },
        {
            "object_key": ".rck.tar",
