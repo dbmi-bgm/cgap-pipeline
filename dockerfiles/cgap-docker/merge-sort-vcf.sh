@@ -16,3 +16,7 @@ sort -V -k1,1 -k2,2n tmp.vcf >> sorted_tmp.vcf
 
 # removing duplicates
 duplines_vcf.py -i sorted_tmp.vcf -o sorted.vcf
+
+# compress and index output vcf
+bgzip sorted.vcf
+tabix -p vcf sorted.vcf.gz

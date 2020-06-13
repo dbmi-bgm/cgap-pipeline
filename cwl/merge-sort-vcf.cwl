@@ -30,7 +30,9 @@ outputs:
   - id: output
     type: File
     outputBinding:
-      glob: sorted.vcf
+      glob: sorted.vcf.gz
+    secondaryFiles:
+      - .tbi
 
 doc: |
   run merge-sort-vcf.sh to merge and sort two vcf files |

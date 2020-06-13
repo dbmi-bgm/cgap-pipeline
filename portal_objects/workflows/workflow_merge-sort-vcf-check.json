@@ -14,9 +14,10 @@
           "workflow_argument_name": "input_vcf_2"
       },
       {
-          "argument_format": "vcf",
+          "argument_format": "vcf_gz",
           "argument_type": "Output processed file",
-          "workflow_argument_name": "merged_vcf"
+          "workflow_argument_name": "merged_vcf",
+          "secondary_file_formats": ["vcf_gz_tbi"]
       },
       {
           "argument_type": "Output QC file",
@@ -83,7 +84,7 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "vcf",
+                      "file_format": "vcf_gz",
                       "global": true,
                       "type": "data file"
                   },
@@ -102,7 +103,7 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "vcf",
+                      "file_format": "vcf_gz",
                       "global": false,
                       "type": "data file"
                   },
