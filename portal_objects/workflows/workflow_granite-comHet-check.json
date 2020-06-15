@@ -1,0 +1,171 @@
+{
+  "accession": "GAPKL48I02KC",
+  "app_name": "workflow_granite-comHet-check",
+  "app_version": "v14",
+  "arguments": [
+      {
+          "argument_format": "vcf_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_vcf"
+      },
+      {
+          "argument_format": "vcf_gz",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "comHet_vcf",
+          "secondary_file_formats": ["vcf_gz_tbi"]
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "comHet_vcf-json",
+          "argument_to_be_attached_to": "comHet_vcf",
+          "qc_zipped": false,
+          "qc_html": false,
+          "qc_json": true,
+          "qc_table": false,
+          "qc_type": "quality_metric_cmphet"
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "comHet_vcf-check",
+          "argument_to_be_attached_to": "comHet_vcf",
+          "qc_zipped": false,
+          "qc_html": false,
+          "qc_json": false,
+          "qc_table": true,
+          "qc_type": "quality_metric_vcfcheck"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "trio"
+      }
+  ],
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+  "category": ["processing"],
+  "cwl_child_filenames": ["granite-comHet.cwl", "sort-bgzip-vcf.cwl", "vcf-integrity-check.cwl"],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v14/cwl",
+  "cwl_main_filename": "workflow_granite-comHet_plus_vcf-integrity-check.cwl",
+  "cwl_pointer": "",
+  "description": "Run granite comHet on vcf input file. An integrity check is performed on the output file",
+  "docker_image_name": "cgap/cgap:v14",
+  "docker_registry_url": "https://hub.docker.com/",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "name": "workflow_granite-comHet-check_v14",
+  "aliases": ["cgap:workflow_granite-comHet-check_v14"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_vcf",
+                  "source": [
+                      {
+                          "name": "input_vcf"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "trio",
+                  "source": [
+                      {
+                          "name": "trio"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Run granite comHet"
+              ],
+              "software_used": [
+                 "/softwares/5a0b864e-dc16-4484-bcf3-c64e35a25df9"
+              ]
+          },
+          "name": "granite",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "comHet_vcf",
+                  "target": [
+                      {
+                          "name": "comHet_vcf",
+                          "step": "vcf-integrity-check"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "comHet_vcf-json",
+                  "target": [
+                      {
+                          "name": "comHet_vcf-json"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": false,
+                      "type": "data file"
+                  },
+                  "name": "comHet_vcf",
+                  "source": [
+                      {
+                          "name": "comHet_vcf",
+                          "step": "granite"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Check integrity of vcf output file"
+              ],
+              "software_used": [
+                 "/softwares/f7ac2c5f-9203-49fa-b918-cede02bf46f7"
+              ]
+          },
+          "name": "vcf-integrity-check",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "comHet_vcf-check",
+                  "target": [
+                      {
+                          "name": "comHet_vcf-check"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Run granite comHet plus output integrity-check",
+  "uuid": "4973be36-5e56-41be-98ef-dd771481f629"
+}
