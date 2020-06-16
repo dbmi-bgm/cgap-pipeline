@@ -14,7 +14,7 @@
            "object_key": ".chain.gz",
            "workflow_argument_name": "chainfile",
            "uuid": "297c872a-5b6b-4fc3-83d3-f4a853f8805c",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
        },
        {
            "object_key": ".mti.gz",
