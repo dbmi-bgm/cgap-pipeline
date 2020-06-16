@@ -274,7 +274,7 @@
     "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
     "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
     "file_format": "mti_gz",
-    "description": "mutanno index micro-annotation v0.4.3, Ensembl filter",
+    "description": "mutanno index micro-annotation v0.4.3, VEP BIOTYPE filter",
     "aliases": ["cgap:mutanno-index-micro-annotation-v0.4.3"],
     "extra_files": [
         {
@@ -296,7 +296,7 @@
     "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
     "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
     "file_format": "mti_gz",
-    "description": "mutanno index micro-annotation v0.4.4, Ensembl filter",
+    "description": "mutanno index micro-annotation v0.4.4, Ensembl BIOTYPE filter",
     "aliases": ["cgap:mutanno-index-micro-annotation-v0.4.4"],
     "extra_files": [
         {
