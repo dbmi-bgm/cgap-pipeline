@@ -290,5 +290,27 @@
     "file_version": "0.4.3",
     "file_version_date": "2020-06-04",
     "file_type": "micro-annotation source"
+  },
+  {
+    "uuid": "1408ceb9-7ae3-4002-aed7-c9a301014de2",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "mti_gz",
+    "description": "mutanno index micro-annotation v0.4.4, Ensembl filter",
+    "aliases": ["cgap:mutanno-index-micro-annotation-v0.4.4"],
+    "extra_files": [
+        {
+            "file_format": "mti_gz_tbi",
+            "status": "uploaded"
+        },
+        {
+            "file_format": "mti_json",
+            "status": "uploaded"
+        }
+    ],
+    "status": "uploaded",
+    "file_version": "0.4.4",
+    "file_version_date": "2020-06-14",
+    "file_type": "micro-annotation source"
   }
 ]
