@@ -221,8 +221,8 @@
     "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
     "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
     "file_format": "mti_gz",
-    "description": "mutanno index full annotation v0.4",
-    "aliases": ["cgap:mutanno-index-annotation-v0.4"],
+    "description": "mutanno index full annotation v0.4.6",
+    "aliases": ["cgap:mutanno-index-annotation-v0.4.6"],
     "extra_files": [
         {
             "file_format": "mti_gz_tbi",
@@ -234,8 +234,8 @@
         }
     ],
     "status": "uploaded",
-    "file_version": "0.4",
-    "file_version_date": "2020-04-22",
+    "file_version": "0.4.6",
+    "file_version_date": "2020-06-17",
     "file_type": "annotation source"
   },
   {
