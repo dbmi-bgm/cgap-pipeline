@@ -65,6 +65,12 @@ RUN git clone https://github.com/vcftools/vcftools.git && \
     make install && \
     cd ..
 
+# cramtools
+RUN git clone https://github.com/enasequence/cramtools && \
+    cd cramtools && \
+    git checkout 0b5c9ec && \
+    cd ..
+
 # pigz
 RUN wget https://zlib.net/pigz/pigz-2.4.tar.gz && \
     tar -xzf pigz-2.4.tar.gz && \
@@ -130,6 +136,13 @@ RUN chmod +x CombineGVCFs-parallel.sh
 COPY GenotypeGVCFs-parallel.sh .
 RUN chmod +x GenotypeGVCFs-parallel.sh
 
+# cram2fastq, cram2bam scripts
+COPY md5_to_fasta.py .
+COPY cram_to_fastq.sh .
+COPY cram_to_bam.sh .
+RUN chmod +x cram_to_fastq.sh
+RUN chmod +x cram_to_bam.sh
+
 # granite
 RUN git clone https://github.com/dbmi-bgm/granite.git && \
     cd granite && \
@@ -164,17 +177,6 @@ RUN chmod +x tar-novoCaller.sh
 # merge vcf script
 COPY merge-sort-vcf.sh .
 RUN chmod +x merge-sort-vcf.sh
-
-# cramtools
-RUN git clone https://github.com/enasequence/cramtools && \
-    cd cramtools && \
-    git checkout 0b5c9ec && \
-    cd ..
-COPY md5_to_fasta.py .
-COPY cram_to_fastq.sh .
-COPY cram_to_bam.sh .
-RUN chmod +x cram_to_fastq.sh
-RUN chmod +x cram_to_bam.sh
 
 # env paths
 ENV PATH=/usr/local/bin/samtools/:$PATH

@@ -6,22 +6,18 @@
     "workflow_uuid": "cb85683c-54a6-44e8-820c-1800aec9fdcd",
     "input_files" : [
        {
-           "object_key": ".vcf.gz",
            "workflow_argument_name": "input_vcf",
            "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput",
            "unzip": "gz"
        },
        {
-           "object_key": ".big",
            "workflow_argument_name": "bigfile",
            "uuid": "20004873-b672-4d84-a7c1-7fd5c0407519",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
        }
     ],
     "config": {
       "instance_type": "t3.medium",
-      "ebs_size": "4x",
+      "ebs_size": "6x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",
