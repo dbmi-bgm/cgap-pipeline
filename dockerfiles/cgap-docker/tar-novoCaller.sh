@@ -44,7 +44,7 @@ if [ ! $ADthr == 0 ];
 fi
 
 # run command
-eval $command
+eval $command || exit 1
 
 # sorting output vcf
 grep "^#" $outputfile > sorted.vcf
