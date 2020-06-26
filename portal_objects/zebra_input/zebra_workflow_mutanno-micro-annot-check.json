@@ -5,23 +5,17 @@
     "workflow_uuid": "de9c4579-30e2-432c-80e3-7f324d3d7dcb",
     "input_files" : [
        {
-           "object_key": ".vcf.gz",
            "workflow_argument_name": "input_vcf",
-           "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+           "uuid": ""
        },
        {
-           "object_key": ".mti.gz",
            "workflow_argument_name": "mti",
-           "uuid": "6438bf8b-ea5f-4084-9c88-b2012a5d734d",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-files",
+           "uuid": "1408ceb9-7ae3-4002-aed7-c9a301014de2",
            "mount": true
        },
        {
-           "object_key": ".txt",
            "workflow_argument_name": "regions",
-           "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+           "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28"
        }
     ],
     "config": {
@@ -37,6 +31,5 @@
       "run_type": "workflow_mutanno-micro-annot-check",
       "env": "fourfront-cgap"
     },
-    "app_name": "workflow_mutanno-micro-annot-check",
-    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+    "app_name": "workflow_mutanno-micro-annot-check"
 }

@@ -3,22 +3,16 @@
     "workflow_uuid": "c7223a1c-ed48-4c54-a39f-35f05d61e850",
     "input_files" : [
        {
-           "object_key": [""],
            "workflow_argument_name": "input_gvcfs",
-           "uuid": [""],
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+           "uuid": [""]
        },
        {
-           "object_key": ".fa",
            "workflow_argument_name": "reference",
-           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7"
        },
        {
-           "object_key": "",
            "workflow_argument_name": "chromosomes",
-           "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+           "uuid": ""
        }
     ],
     "config": {
@@ -34,6 +28,5 @@
       "run_type": "workflow_gatk-CombineGVCFs",
       "env": "fourfront-cgap"
     },
-    "app_name": "workflow_gatk-CombineGVCFs",
-    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+    "app_name": "workflow_gatk-CombineGVCFs"
 }

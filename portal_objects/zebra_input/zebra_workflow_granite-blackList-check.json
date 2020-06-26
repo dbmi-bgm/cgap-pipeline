@@ -6,16 +6,12 @@
     "workflow_uuid": "c258d1ec-397d-4b0a-a0be-7c8211d65e6a",
     "input_files" : [
        {
-           "object_key": ".vcf",
            "workflow_argument_name": "input_vcf",
-           "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+           "uuid": ""
        },
        {
-           "object_key": ".big",
            "workflow_argument_name": "bigfile",
-           "uuid": "20004873-b672-4d84-a7c1-7fd5c0407519",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+           "uuid": "20004873-b672-4d84-a7c1-7fd5c0407519"
        }
     ],
     "config": {
@@ -31,6 +27,5 @@
       "run_type": "workflow_granite-blackList-check",
       "env": "fourfront-cgap"
     },
-    "app_name": "workflow_granite-blackList-check",
-    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+    "app_name": "workflow_granite-blackList-check"
 }

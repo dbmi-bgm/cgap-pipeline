@@ -3,22 +3,16 @@
     "workflow_uuid": "50e75343-2e00-471d-a667-4acb083287d8",
     "input_files" : [
        {
-           "object_key": ".fastq.gz",
            "workflow_argument_name": "fastq_R1",
-           "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+           "uuid": ""
        },
        {
-           "object_key": ".fastq.gz",
            "workflow_argument_name": "fastq_R2",
-           "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+           "uuid": ""
        },
        {
-           "object_key": ".bwt",
            "workflow_argument_name": "reference",
-           "uuid": "b24ed5ed-a037-48a0-a938-3fecfb90d0cf",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+           "uuid": "b24ed5ed-a037-48a0-a938-3fecfb90d0cf"
        }
     ],
     "config": {
@@ -34,6 +28,5 @@
       "run_type": "workflow_bwa-mem_no_unzip-check",
       "env": "fourfront-cgap"
     },
-    "app_name": "workflow_bwa-mem_no_unzip-check",
-    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+    "app_name": "workflow_bwa-mem_no_unzip-check"
 }

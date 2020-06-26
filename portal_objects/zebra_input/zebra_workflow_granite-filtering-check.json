@@ -12,7 +12,7 @@
        },
        {
            "workflow_argument_name": "bigfile",
-           "uuid": "20004873-b672-4d84-a7c1-7fd5c0407519",
+           "uuid": "20004873-b672-4d84-a7c1-7fd5c0407519"
        }
     ],
     "config": {
@@ -28,6 +28,5 @@
       "run_type": "workflow_granite-filtering-check",
       "env": "fourfront-cgap"
     },
-    "app_name": "workflow_granite-filtering-check",
-    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+    "app_name": "workflow_granite-filtering-check"
 }

@@ -3,10 +3,8 @@
     "workflow_uuid": "feb46c7b-a678-4f35-a7c8-0f5002be4606",
     "input_files" : [
        {
-           "object_key": ".vcf.gz",
            "workflow_argument_name": "input_vcf",
            "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput",
            "unzip": "gz"
        }
     ],
@@ -23,6 +21,5 @@
       "run_type": "workflow_granite-whiteList-CLI-check",
       "env": "fourfront-cgap"
     },
-    "app_name": "workflow_granite-whiteList-CLI-check",
-    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+    "app_name": "workflow_granite-whiteList-CLI-check"
 }

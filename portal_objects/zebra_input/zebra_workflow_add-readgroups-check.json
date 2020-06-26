@@ -5,10 +5,8 @@
     "workflow_uuid": "1ebf697c-949d-46b2-b9a4-8b1a7699ef1f",
     "input_files" : [
        {
-           "object_key": ".bam",
            "workflow_argument_name": "input_bam",
-           "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+           "uuid": ""
        }
     ],
     "config": {
@@ -24,6 +22,5 @@
       "run_type": "workflow_add-readgroups-check",
       "env": "fourfront-cgap"
     },
-    "app_name": "workflow_add-readgroups-check",
-    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+    "app_name": "workflow_add-readgroups-check"
 }

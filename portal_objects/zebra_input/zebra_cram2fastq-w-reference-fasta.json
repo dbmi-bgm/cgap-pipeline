@@ -4,18 +4,15 @@
     "input_files" : [
        {
            "workflow_argument_name": "cram",
-           "uuid": "a1196e8b-2e22-43e7-ae9f-c6aa971b1d00",
-           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-files"
+           "uuid": "a1196e8b-2e22-43e7-ae9f-c6aa971b1d00"
        },
        {
            "workflow_argument_name": "reference_fasta",
-           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
-           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-files"
+           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7"
        },
        {
            "workflow_argument_name": "reference_md5_list",
-           "uuid": "db00cc5a-d7bc-424c-8560-e53827a52db9",
-           "bucket_name": "elasticbeanstalk-fourfront-cgapwolf-files"
+           "uuid": "db00cc5a-d7bc-424c-8560-e53827a52db9"
        }
     ],
     "config": {

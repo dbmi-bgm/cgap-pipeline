@@ -28,7 +28,7 @@
     },
     "_tibanna": {
       "run_type": "workflow_granite-mpileupCounts",
-      "env": "fourfront-cgapwolf"
+      "env": "fourfront-cgap"
     },
     "app_name": "workflow_granite-mpileupCounts"
 }

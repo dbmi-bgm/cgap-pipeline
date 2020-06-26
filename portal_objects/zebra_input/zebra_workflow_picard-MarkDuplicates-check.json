@@ -7,10 +7,8 @@
     "workflow_uuid": "beb2b340-94ee-4afe-b4e3-66caaf063397",
     "input_files" : [
        {
-           "object_key": ".bam",
            "workflow_argument_name": "input_bam",
-           "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+           "uuid": ""
        }
     ],
     "config": {
@@ -26,6 +24,5 @@
       "run_type": "workflow_picard-MarkDuplicates-check",
       "env": "fourfront-cgap"
     },
-    "app_name": "workflow_picard-MarkDuplicates-check",
-    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+    "app_name": "workflow_picard-MarkDuplicates-check"
 }

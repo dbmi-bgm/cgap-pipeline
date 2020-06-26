@@ -3,28 +3,20 @@
     "workflow_uuid": "4fbad226-859d-40d4-8192-10c305e819da",
     "input_files" : [
        {
-           "object_key": ".gvcf.gz",
            "workflow_argument_name": "input_gvcf",
-           "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+           "uuid": ""
        },
        {
-           "object_key": ".fa",
            "workflow_argument_name": "reference",
-           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7"
        },
        {
-           "object_key": ".vcf.gz",
            "workflow_argument_name": "known-sites-snp",
-           "uuid": "8ed35691-0af4-467a-adbc-81eb088549f0",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+           "uuid": "8ed35691-0af4-467a-adbc-81eb088549f0"
        },
        {
-           "object_key": ".txt",
            "workflow_argument_name": "chromosomes",
-           "uuid": "a1d504ee-a313-4064-b6ae-65fed9738980",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+           "uuid": "a1d504ee-a313-4064-b6ae-65fed9738980"
        }
     ],
     "config": {
@@ -40,6 +32,5 @@
       "run_type": "workflow_gatk-GenotypeGVCFs-check",
       "env": "fourfront-cgap"
     },
-    "app_name": "workflow_gatk-GenotypeGVCFs-check",
-    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+    "app_name": "workflow_gatk-GenotypeGVCFs-check"
 }

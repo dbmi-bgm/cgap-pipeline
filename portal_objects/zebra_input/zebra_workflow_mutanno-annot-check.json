@@ -5,29 +5,21 @@
     "workflow_uuid": "62f16824-4d4b-43fb-9f2f-3bb5b328431a",
     "input_files" : [
        {
-           "object_key": ".vcf.gz",
            "workflow_argument_name": "input_vcf",
-           "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+           "uuid": ""
        },
        {
-           "object_key": ".chain.gz",
            "workflow_argument_name": "chainfile",
-           "uuid": "297c872a-5b6b-4fc3-83d3-f4a853f8805c",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+           "uuid": "297c872a-5b6b-4fc3-83d3-f4a853f8805c"
        },
        {
-           "object_key": ".mti.gz",
            "workflow_argument_name": "mti",
-           "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-files",
+           "uuid": "3832e0d9-dfd0-4108-998e-a31c3291a7cf",
            "mount": true
        },
        {
-           "object_key": ".txt",
            "workflow_argument_name": "regions",
-           "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+           "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28"
        }
     ],
     "config": {
@@ -43,6 +35,5 @@
       "run_type": "workflow_mutanno-annot-check",
       "env": "fourfront-cgap"
     },
-    "app_name": "workflow_mutanno-annot-check",
-    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+    "app_name": "workflow_mutanno-annot-check"
 }

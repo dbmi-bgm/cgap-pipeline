@@ -7,22 +7,16 @@
     "workflow_uuid": "6c9c6f49-f954-4e76-8dfb-d385cddcebd6",
     "input_files" : [
        {
-           "object_key": ".bam",
            "workflow_argument_name": "input_bam",
-           "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+           "uuid": ""
        },
        {
-           "object_key": ".fa",
            "workflow_argument_name": "reference",
-           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7"
        },
        {
-           "object_key": "",
            "workflow_argument_name": "recalibration_report",
-           "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+           "uuid": ""
        }
     ],
     "config": {
@@ -38,6 +32,5 @@
       "run_type": "workflow_gatk-ApplyBQSR-check",
       "env": "fourfront-cgap"
     },
-    "app_name": "workflow_gatk-ApplyBQSR-check",
-    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+    "app_name": "workflow_gatk-ApplyBQSR-check"
 }

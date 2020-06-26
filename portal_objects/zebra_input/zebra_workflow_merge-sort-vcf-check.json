@@ -3,16 +3,12 @@
     "workflow_uuid": "4473ed53-ce74-4c8c-a3fe-facb79f37da5",
     "input_files" : [
        {
-           "object_key": ".vcf",
            "workflow_argument_name": "input_vcf_1",
-           "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+           "uuid": ""
        },
        {
-           "object_key": ".vcf",
            "workflow_argument_name": "input_vcf_2",
-           "uuid": "",
-           "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput"
+           "uuid": ""
        }
     ],
     "config": {
@@ -28,6 +24,5 @@
       "run_type": "workflow_merge-sort-vcf-check",
       "env": "fourfront-cgap"
     },
-    "app_name": "workflow_merge-sort-vcf-check",
-    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput"
+    "app_name": "workflow_merge-sort-vcf-check"
 }
