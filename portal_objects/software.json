@@ -150,8 +150,8 @@
             "annotator"
         ],
         "source_url": "https://github.com/dbmi-bgm/mutanno",
-        "title": "mutanno_0.4.1",
+        "title": "mutanno_0.4.2",
         "uuid": "1d28b7b8-1033-492f-8a1a-d4ac5b1ab55e",
-        "commit": "0.4.1"
+        "commit": "0.4.2"
     }
 ]
