@@ -1,1 +1,1 @@
-# cgap-bamqc
+# cgap-qc

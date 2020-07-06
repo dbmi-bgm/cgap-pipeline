@@ -61,7 +61,7 @@ inputs:
     doc: add transition-transversion ratio and statistics on substitutions
 
 outputs:
-  - id: output
+  - id: qc_json
     type: File
     outputBinding:
       glob: $(inputs.outputfile)
