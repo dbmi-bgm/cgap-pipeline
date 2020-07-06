@@ -1,7 +1,7 @@
 FROM 4dndcic/ubuntu16.04-miniconda-python36:v1
 MAINTAINER Soo Lee (duplexa@gmail.com), Michele Berselli (berselli.michele@gmail.com)
 
-# 1. general updates & installing necessary Linux components
+# general updates & installing necessary Linux components
 RUN apt-get update -y && apt-get install -y \
     bzip2 \
     gcc \
@@ -19,9 +19,26 @@ RUN apt-get update -y && apt-get install -y \
     libbz2-dev \
     liblzma-dev \
     locales \
-    parallel
+    parallel \
+    autoconf \
+    autogen \
+    pkg-config \
+    tabix
 
 WORKDIR /usr/local/bin
+
+# gatk4 & picard & python libraries
+RUN conda install -c bioconda -y gatk4==4.1.2.0 picard==2.20.2 \
+    pysam==0.15.3 bitarray==1.2.1 pytabix==0.0.2 h5py==2.10.0 numpy==1.18.1 pyfaidx==0.5.8 python=3.6.8 && \
+    conda clean -a -y -f
+
+# granite
+RUN git clone https://github.com/dbmi-bgm/granite.git && \
+    cd granite && \
+    git checkout 695d590 && \
+    rm -rf tests && \
+    python setup.py install && \
+    cd ..
 
 # R
 RUN apt-get install -y apt-transport-https software-properties-common  # to add add-apt-repository and to avoid method driver could not be found error
@@ -32,9 +49,6 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD5
     libssl-dev \
     r-base \
     r-base-dev
-
-# gatk4 & picard
-RUN conda install -c bioconda -y gatk4==4.1.2.0 picard==2.20.2
 
 # samtools
 RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2 && \
@@ -53,35 +67,9 @@ RUN wget https://github.com/arq5x/bedtools2/releases/download/v2.29.0/bedtools-2
     cd .. && \
     ln -s bedtools2 bedtools
 
-## fastqc
-#RUN wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.5.zip && \
-#    unzip fastqc_v0.11.5.zip && \
-#    cd FastQC && \
-#    chmod +x fastqc && \
-#    cd .. && \
-#    ln -s FastQC fastqc
-
-# scripts
-RUN git clone https://github.com/dbmi-bgm/qcboard.git && \
-    cd qcboard && \
-    git checkout 4fd2ec3 && \
-    cd .. && \
-    cp qcboard/bin/bamstat.py . && \
-    cp qcboard/qcboard.py . && \
-    cp qcboard/qcboard_bamqc.html .
-
-# makes script executable
-RUN chmod +x bamstat.py
-RUN chmod +x qcboard.py
-
-# import bash script
-COPY bamqc.sh .
-RUN chmod +x bamqc.sh
-
 # paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
 ENV PATH=/usr/local/bin/bedtools/bin/:$PATH
-#ENV PATH=/usr/local/bin/fastqc/:$PATH
 
 # supporting UTF-8
 RUN locale-gen "en_US.UTF-8" && update-locale LC_ALL="en_US.UTF-8"
