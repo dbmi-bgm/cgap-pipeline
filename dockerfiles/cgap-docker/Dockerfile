@@ -163,7 +163,7 @@ RUN git clone https://github.com/dbmi-bgm/mutanno.git && \
     cd ..
 
 # bamsnap
-RUN pip install bamsnap==0.2.2
+RUN pip install bamsnap==0.2.3
 
 # annot parallel script
 COPY annot-parallel.sh .
