@@ -2,7 +2,7 @@
     "parameters": {
       "sample_name": "mysample"
     },
-    "workflow_uuid": "1ebf697c-949d-46b2-b9a4-8b1a7699ef1f",
+    "workflow_uuid": "d554d59b-e709-4c35-a81f-68a0cb3dd38a",
     "input_files" : [
        {
            "workflow_argument_name": "input_bam",

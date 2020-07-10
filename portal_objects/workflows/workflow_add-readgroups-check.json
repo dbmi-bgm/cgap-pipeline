@@ -1,5 +1,5 @@
 {
-  "accession": "GAPWFVYEH57F",
+  "accession": "GAPWFB2ELK89",
   "app_name": "workflow_add-readgroups-check",
   "app_version": "v14",
   "arguments": [
@@ -47,9 +47,7 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_add-readgroups-check_v14",
-  "aliases": ["cgap:workflow_add-readgroups-check_v14",
-              "cgap:workflow_add-readgroups-check_v13",
-              "cgap:workflow_add-readgroups-check_v12"],
+  "aliases": ["cgap:workflow_add-readgroups-check_v14"],
   "steps": [
       {
           "inputs": [
@@ -99,7 +97,7 @@
                   "Add read groups to bam input file"
               ],
               "software_used": [
-                "/softwares/f455f9fe-6f4b-4cfe-8fce-f8c3c2b0b661"
+                "/softwares/7d1ab137-fa88-4649-8d22-349686f5bbba"
               ]
           },
           "name": "add-readgroups",
@@ -179,7 +177,7 @@
       }
   ],
   "title": "Add read groups plus output integrity-check",
-  "previous_version": ["1ebf697c-949d-46b2-b9a4-8b1a7699ef1f"],
-  "uuid": "6ea6bf43-76c2-4616-8dd6-dd60d72a2bf2",
-  "version_upgrade_log": "Some files not having EOF fixed. Added compatibility to older format for read ID."
+  "previous_version": ["6ea6bf43-76c2-4616-8dd6-dd60d72a2bf2"],
+  "uuid": "d554d59b-e709-4c35-a81f-68a0cb3dd38a",
+  "version_upgrade_log": "Fixed issue with EOF, now the script add the 28 bytes that are expected as EOF by samtools."
 }

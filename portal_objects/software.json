@@ -73,6 +73,18 @@
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "add-readgroups",
+        "software_type": [
+            "annotator"
+        ],
+        "source_url": "https://github.com/dbmi-bgm/cgap-scripts",
+        "title": "add-readgroups_ed2df3b",
+        "uuid": "7d1ab137-fa88-4649-8d22-349686f5bbba",
+        "commit": "ed2df3b"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "name": "vcf-tools",
         "software_type": [
             "quality metric generator"
