@@ -119,7 +119,7 @@ RUN chmod +x sort-bgzip-vcf.sh
 # add read groups script
 RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
     cd cgap-scripts && \
-    git checkout ed2df3b && \
+    git checkout 4bce067 && \
     chmod +x AddReadGroups.py && \
     chmod +x duplines_vcf.py && \
     cd ..
