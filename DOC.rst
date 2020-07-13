@@ -11,7 +11,7 @@ The pipeline is mostly based on ``bwa``, ``gatk4``, ``granite`` (https://github.
 Docker Image
 ############
 
-* Current docker image is ``cgap/cgap:v13``
+* Current docker image is ``cgap/cgap:v14``
 
 The image contains (but is not limited to) the following software packages:
 
@@ -20,8 +20,8 @@ The image contains (but is not limited to) the following software packages:
 - bwa 0.7.17
 - samtools 1.9
 - parallel
-- granite (e1f8aa3)
-- mutanno (8a780bd)
+- granite (914b7ef)
+- mutanno (0.4.2)
 
 
 Pipeline Steps
@@ -107,36 +107,23 @@ The output vcf file is checked for integrity to ensure the format is correct and
 
 * CWL: workflow_gatk-GenotypeGVCFs_plus_vcf-integrity-check.cwl
 
-VariantRecalibrator (VQSR)
-++++++++++++++++++++++++++
-
-This step uses ``GATK VariantRecalibrator`` to recalibrate the quality score for the variants that are called.
-
-* CWL: workflow_gatk-VQSR_plus_vcf-integrity-check.cwl
-
 Micro Annotation
 ++++++++++++++++
 
 This step uses ``mutanno annot`` to minimally annotate the input vcf with gnomAD, VEP, CLINVAR and SpliceAI information.
 The output vcf file is checked for integrity to ensure the format is correct and the file is not truncated.
 
-* CWL: workflow_mutanno-micro-annot-check.cwl
+* CWL: workflow_mutanno-micro-annot_plus_vcf-integrity-check.cwl
 
-White List
-++++++++++
+Filtering Variants
+++++++++++++++++++
 
 This step uses ``granite witheList`` to filter-in exonic and functionally relevant variant based on VEP, CLINVAR and SpliceAI annotations.
-The output vcf file is checked for integrity to ensure the format is correct and the file is not truncated.
-
-* CWL: workflow_granite-whiteList-check.cwl
-
-Black List
-++++++++++
-
+This step uses ``granite cleanVCF`` to clean annotations.
 This step uses ``granite blackList`` to filter-out common and shared variant based on gnomAD population allele frequency and positions shared within unrelated samples.
 The output vcf file is checked for integrity to ensure the format is correct and the file is not truncated.
 
-* CWL: workflow_granite-blackList-check.cwl
+* CWL: workflow_granite-filtering_plus_vcf-integrity-check.cwl
 
 Calling *de novo* mutations
 +++++++++++++++++++++++++++
@@ -144,7 +131,15 @@ Calling *de novo* mutations
 This step uses ``granite novoCaller`` to call *de novo* mutations by assigning a posterior probability based on unrelated samples and trio.
 The output vcf file is checked for integrity to ensure the format is correct and the file is not truncated.
 
-* CWL: workflow_granite-novoCaller-rck-check.cwl
+* CWL: workflow_granite-novoCaller-rck_plus_vcf-integrity-check.cwl
+
+Calling *compound heterozygous* mutations
++++++++++++++++++++++++++++++++++++++++++
+
+This step uses ``granite comHet`` to call *compound heterozygous* mutations by genes and transcripts, assigning the associate risk based on available annotations.
+The output vcf file is checked for integrity to ensure the format is correct and the file is not truncated.
+
+* CWL: workflow_granite-comHet_plus_vcf-integrity-check.cwl
 
 Full Annotation
 +++++++++++++++
@@ -152,4 +147,4 @@ Full Annotation
 This step uses ``mutanno annot`` to fully annotate the input vcf.
 The output vcf file is checked for integrity to ensure the format is correct and the file is not truncated.
 
-* CWL: workflow_mutanno-annot-check.cwl
+* CWL: workflow_mutanno-annot_plus_vcf-integrity-check.cwl

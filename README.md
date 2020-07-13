@@ -1,11 +1,17 @@
 ## CGAP pipeline
 * This repo contains CGAP pipeline components
   * CWL
-  * Docker source - Docker image name `cgap/cgap:v13`
+  * Docker source - Docker image name `cgap/cgap:v14`
   * Example Tibanna input jsons for individual steps
 
 
 ### Version updates
+#### v14
+* new workflows
+  * comHet
+  * filtering (whiteList, cleanVCF and blackList as single step)
+* solved EOF issue with add-readgroup
+
 #### v13
 * cram2fastq
   * faster fastq compression using pigz
@@ -21,5 +27,4 @@
 * cram2fastq added
 * add-readgroup
   * EOF marker missing error fixed
-  * Added compatibility to older format for read ID.
-
+  * added compatibility to older format for read ID
