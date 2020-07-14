@@ -31,14 +31,14 @@ inputs:
     doc: list of bam files to be snapped
 
   - id: input_vcf
-    type: string
+    type: File
     inputBinding:
       position: 2
       prefix: -vcf
     doc: vcf file containing the variants to be snapped
 
   - id: ref
-    type: string
+    type: File
     inputBinding:
       position: 4
       prefix: -ref
