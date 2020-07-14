@@ -1,0 +1,129 @@
+{
+  "accession": "GAPWFBH25DOP",
+  "app_name": "bamsnap",
+  "app_version": "v14",
+  "arguments": [
+      {
+          "argument_format": "bam",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_bams"
+      },
+      {
+          "argument_format": "fa",
+          "argument_type": "Input file",
+          "workflow_argument_name": "ref"
+      },
+      {
+          "argument_format": "vcf_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "regions"
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "bamsnap_images"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "titles"
+      }
+  ],
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+  "category": ["QC"],
+  "cwl_child_filenames": [],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v14/cwl",
+  "cwl_main_filename": "bamsnap.cwl",
+  "cwl_pointer": "",
+  "description": "Run bamsnap on a list of bam files given a vcf containing variants to be snapped",
+  "docker_image_name": "cgap/cgap:v14",
+  "docker_registry_url": "https://hub.docker.com/",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "name": "bamsnap_v14",
+  "aliases": ["cgap:bamsnap_v14"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "array",
+                      "file_format": "bam",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_bams",
+                  "source": [
+                      {
+                          "name": "input_bams"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "fa",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "ref",
+                  "source": [
+                      {
+                          "name": "ref"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_vcf",
+                  "source": [
+                      {
+                          "name": "input_vcf"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "array",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "titles",
+                  "source": [
+                      {
+                          "name": "titles"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Run bamsnap"
+              ],
+              "software_used": [
+                 "/softwares/54c46161-bca8-471b-af32-d4ac68b971f8",
+              ]
+          },
+          "name": "bamsnap",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "bamsnap_images",
+                  "target": [
+                      {
+                          "name": "bamsnap_images"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Run bamsnap",
+  "uuid": "a4016214-e4ce-4a34-93a1-c0751bbd1d37"
+}

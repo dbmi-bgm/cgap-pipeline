@@ -65,7 +65,7 @@ inputs:
     doc: prefix of the output zip file
 
 outputs:
-  - id: output
+  - id: bamsnap_images
     type: File
     outputBinding:
       glob: $(inputs.outprefix + ".zip")
