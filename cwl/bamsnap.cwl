@@ -20,12 +20,10 @@ arguments: ["-margin", "50", "-read_group", "strand", "-plot_margin_left", "20",
 
 inputs:
   - id: input_bams
-    type:
-      type: array
-      items: File
-      inputBinding:
-        prefix: -bam
-        position: 1
+    type: File[]
+    inputBinding:
+      prefix: -bam
+      position: 1
     secondaryFiles:
       - .bai
     doc: list of bam files to be snapped
