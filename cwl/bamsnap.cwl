@@ -13,9 +13,9 @@ hints:
 
 baseCommand: [bamsnap]
 
-arguments: ["-margin", "50", "-read_group", "strand", "-plot_margin_left", "20", \
-            "-plot_margin_right", "20", "-border", "-save_image_only", "-zipout", \
-            "-draw", "coordinates", "bamplot", "base", "gene", \
+arguments: ["-margin", "50", "-read_group", "strand", "-plot_margin_left", "20",
+            "-plot_margin_right", "20", "-border", "-save_image_only", "-zipout",
+            "-draw", "coordinates", "bamplot", "base", "gene",
             "-bamplot", "coverage", "base", "read"]
 
 inputs:
@@ -48,12 +48,10 @@ inputs:
     doc: reference genome fasta
 
   - id: titles
-    type:
-      type: array
-      items: string
-      inputBinding:
-        position: 5
-        prefix: -title
+    type: string[]
+    inputBinding:
+      position: 5
+      prefix: -title
     doc: list of titles (e.g. "NA12877 (Father)")
 
   - id: outprefix
