@@ -16,11 +16,13 @@
       {
           "argument_format": "vcf_gz",
           "argument_type": "Input file",
-          "workflow_argument_name": "regions"
+          "workflow_argument_name": "input_vcf"
       },
       {
           "argument_type": "Output QC file",
-          "workflow_argument_name": "bamsnap_images"
+          "workflow_argument_name": "bamsnap_images",
+          "qc_zipped": true,
+          "argument_to_be_attached_to": "input_vcf"
       },
       {
           "argument_type": "parameter",
