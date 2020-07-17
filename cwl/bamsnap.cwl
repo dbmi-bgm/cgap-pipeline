@@ -57,7 +57,7 @@ inputs:
     inputBinding:
       position: 6
       prefix: -out
-    default: out
+    default: bamsnap
     doc: prefix of the output zip file
 
 outputs:
