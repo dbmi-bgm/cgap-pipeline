@@ -52,10 +52,18 @@ inputs:
       prefix: -title
     doc: list of titles (e.g. "NA12877 (Father)")
 
+  - id: nproc
+    type: int
+    inputBinding:
+      position: 5
+      prefix: -process
+    default: 1
+    doc: number of processes to use
+
   - id: outprefix
     type: string
     inputBinding:
-      position: 6
+      position: 7
       prefix: -out
     default: bamsnap
     doc: prefix of the output zip file
