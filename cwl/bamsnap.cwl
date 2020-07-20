@@ -57,7 +57,7 @@ inputs:
     inputBinding:
       position: 5
       prefix: -process
-    default: 1
+    default: 16
     doc: number of processes to use
 
   - id: outprefix

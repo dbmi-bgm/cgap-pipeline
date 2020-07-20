@@ -1,0 +1,37 @@
+{
+    "parameters": {
+      "titles": ["NA12877 (Father)", "NA12878 (Mother)", "NA12879 (Daughter)"]
+    },
+    "workflow_uuid": "cgap:bamsnap_v14"
+    "input_files" : [
+       {
+           "workflow_argument_name": "input_vcf",
+           "uuid": "",
+           "mount": true
+       },
+       {
+           "workflow_argument_name": "input_bams",
+           "uuid": ["", "", ""],
+           "mount": true
+       },
+       {
+           "workflow_argument_name": "ref",
+           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
+           "mount": true
+       }
+    ],
+    "config": {
+      "instance_type": "c5.4xlarge",
+      "ebs_size": "10",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_bamsnap",
+      "behavior_on_capacity_limit": "wait_and_retry"
+    },
+    "_tibanna": {
+      "run_type": "bamsnap",
+      "env": "fourfront-cgap"
+    },
+    "app_name": "bamsnap"
+}
