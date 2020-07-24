@@ -5,7 +5,7 @@ CGAP WGS pipeline allows to process Whole Genome Sequencing data starting from f
 
 The pipeline is designed for trio analysis with proband diagnosed with a likely monogenic disease. It is optimized for data with 30x coverage and has been tested with data up to 80-90x coverage.
 
-The pipeline is mostly based on ``bwa``, ``gatk4``, ``granite`` (https://github.com/dbmi-bgm/granite) and ``mutanno`` (https://github.com/dbmi-bgm/mutanno). The pipeline only perform joint-sample variant calling within a family.
+The pipeline is mostly based on ``bwa``, ``gatk4``, ``granite`` (https://github.com/dbmi-bgm/granite), ``mutanno`` (https://github.com/dbmi-bgm/mutanno) and ``bamsnap`` (https://github.com/parklab/bamsnap). The pipeline perform joint-sample variant calling within a family, performs annotation and filtering, calls de novo mutations and compound hets, and generates snapshot images for the filtered set of variants.
 
 
 Docker Image
