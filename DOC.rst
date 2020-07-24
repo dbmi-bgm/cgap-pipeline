@@ -22,6 +22,7 @@ The image contains (but is not limited to) the following software packages:
 - parallel
 - granite (914b7ef)
 - mutanno (0.4.2)
+- bamsnap (0.2.5)
 
 
 Pipeline Steps
@@ -148,3 +149,10 @@ This step uses ``mutanno annot`` to fully annotate the input vcf.
 The output vcf file is checked for integrity to ensure the format is correct and the file is not truncated.
 
 * CWL: workflow_mutanno-annot_plus_vcf-integrity-check.cwl
+
+Bamsnap
++++++++
+
+This step generates a zip archive of bamsnap images for all the variants in the given vcf file and its associated bam files.
+
+* CWL: bamsnap.cwl
