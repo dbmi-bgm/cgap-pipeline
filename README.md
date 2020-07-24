@@ -10,7 +10,10 @@
 * new workflows
   * comHet
   * filtering (whiteList, cleanVCF and blackList as single step)
+  * bamsnap
 * solved EOF issue with add-readgroup
+* changes in annotation (mutanno version and options)
+* changes in filtering criteria
 
 #### v13
 * cram2fastq
