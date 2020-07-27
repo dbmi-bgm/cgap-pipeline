@@ -1,5 +1,6 @@
+=================
 CGAP WGS Pipeline
-======================
+=================
 
 CGAP WGS pipeline allows to process Whole Genome Sequencing data starting from fastq files and produce ``bam``, ``g.vcf`` and ``vcf`` files as output.
 
@@ -156,3 +157,18 @@ Bamsnap
 This step generates a zip archive of bamsnap images for all the variants in the given vcf file and its associated bam files.
 
 * CWL: bamsnap.cwl
+
+
+Contents:
+
+.. toctree::
+   :hidden:
+
+   self
+
+
+.. toctree::
+   :maxdepth: 4
+
+   news
+
