@@ -127,13 +127,13 @@ The output vcf file is checked for integrity to ensure the format is correct and
 
 * CWL: workflow_granite-filtering_plus_vcf-integrity-check.cwl
 
+
 Calling *de novo* mutations
 +++++++++++++++++++++++++++
 
-.. toctree::
-   :maxdepth: 4
+This step uses ``granite novoCaller`` to call de novo mutations by assigning a posterior probability based on unrelated samples and trio. The output vcf file is checked for integrity to ensure the format is correct and the file is not truncated.
 
-   denovo
+* CWL: workflow_granite-novoCaller-rck_plus_vcf-integrity-check.cwl
 
 
 Calling *compound heterozygous* mutations
@@ -165,4 +165,12 @@ Pipeline Flow
 
 .. image:: images/bioinfo-snv-indel-flow-20200724.png
 
+
+Pipeline Steps (detail)
+#######################
+
+.. toctree::
+   :maxdepth: 4
+
+   denovo
 
