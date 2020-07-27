@@ -4,6 +4,7 @@
   * Docker source - Docker image name `cgap/cgap:v14`
   * Example Tibanna input jsons for individual steps
 
+For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
 
 ### Version updates
 #### v14
