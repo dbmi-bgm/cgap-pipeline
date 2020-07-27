@@ -56,9 +56,7 @@ FAQ
  
 3. How does it work for chrX, Y, or M?
 
-::
-
-    Currently we do not report NovoPP for chrX, Y, or M, except when NovoPP=0. This is because the model assumed by NovoCaller does not fit well with these chromosomes.
+  | Currently we do not report NovoPP for chrX, Y, or M, except when NovoPP=0. This is because the model assumed by NovoCaller does not fit well with these chromosomes.
 
 
 4. Does it take BAM files instead of .rck.tar files?
