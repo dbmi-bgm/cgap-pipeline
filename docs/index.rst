@@ -2,7 +2,7 @@
 Overview
 ========
 
-This is a documentation for CGAP pipelines.
+This is a documentation for CGAP pipelines (https://github.com/dbmi-bgm/cgap-pipeline)
 
 
 Contents
