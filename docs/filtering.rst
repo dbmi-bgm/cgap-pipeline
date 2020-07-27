@@ -43,7 +43,7 @@ The blacklist step uses ``granite blackList`` to filter-out common and shared va
 Merging
 -------
 
-The CLINVAR whitelist result is merged with the rest of the filtering result. For variants that overlap between the two, the CLINVAR entry is chosen to preserve the entry without VEP cleaning for CLINVAR variants..
+The CLINVAR whitelist result is merged with the rest of the filtering result. For variants that overlap between the two, the CLINVAR entry is chosen to preserve the entry without VEP cleaning for CLINVAR variants.
 
 
 Output
