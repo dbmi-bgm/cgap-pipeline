@@ -1,3 +1,13 @@
 pre {
     white-space: pre-wrap;
 }
+
+pre code {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: block;
+    line-height: 1.6em;
+    font-size: 11px;
+    white-space: pre; 
+    word-wrap: normal;
+}
