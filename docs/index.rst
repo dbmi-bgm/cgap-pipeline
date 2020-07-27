@@ -18,5 +18,5 @@ Contents
 .. toctree::
    :maxdepth: 4
 
-   news
    wgs
+   news
