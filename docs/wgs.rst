@@ -172,5 +172,6 @@ Pipeline Steps (detail)
 .. toctree::
    :maxdepth: 4
 
+   filtering
    denovo
 
