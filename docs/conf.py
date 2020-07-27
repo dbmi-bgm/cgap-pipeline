@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# tibanna documentation build configuration file, created by
+# cgap-pipeline documentation build configuration file, created by
 # sphinx-quickstart on Wed Dec  6 12:32:49 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -68,7 +68,7 @@ def _read(*parts, **kwargs):
 
 
 def get_version():
-    version = open("../tibanna/_version.py").readlines()[-1].split()[-1].strip("\"'")
+    version = open("../VERSION").readlines()[0]
     return version
 
 
