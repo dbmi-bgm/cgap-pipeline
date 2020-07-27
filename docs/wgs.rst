@@ -24,6 +24,9 @@ The image contains (but is not limited to) the following software packages:
 - granite (914b7ef)
 - mutanno (0.4.2)
 - bamsnap (0.2.5)
+- cramtools (0b5c9ec)
+- pigz (2.4)
+- pbgzip (2b09f97)
 
 
 Pipeline Flow
