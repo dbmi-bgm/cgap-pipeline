@@ -159,7 +159,16 @@ This step generates a zip archive of bamsnap images for all the variants in the 
 * CWL: bamsnap.cwl
 
 
-Contents:
+Pipeline Flow
+#############
+
+.. image:: images/bioinfo-snv-indel-flow-20200724.png
+
+
+
+Contents
+########
+
 
 .. toctree::
    :hidden:
