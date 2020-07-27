@@ -20,7 +20,7 @@ Steps
 
 The filtering step is composed of multiple steps and the output vcf file is checked for integrity to ensure the format is correct and the file is not truncated.
 
-.. image: images/cgap_filtering_v14.png
+.. image:: images/cgap_filtering_v14.png
 
 Whitelist
 ---------
