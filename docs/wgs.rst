@@ -41,7 +41,7 @@ Pipeline Steps
 .. toctree::
    :maxdepth: 4
 
-   alignment
+   wgs-alignment
    addrg
    mergebam
    markdup
