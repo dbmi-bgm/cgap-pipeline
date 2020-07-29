@@ -46,7 +46,7 @@ Largely, the pipeline consists of three parts:
 The part associations and the run time of the different steps are summarized in the following diagram:
 
 .. image:: images/cgap-pipeline-downstream-v14-20200729-parts-scale.png
-
+  :target: images/cgap-pipeline-downstream-v14-20200729-parts-scale.png
 
 Pipeline Steps
 ##############
