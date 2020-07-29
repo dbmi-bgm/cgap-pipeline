@@ -54,19 +54,6 @@ Pipeline Steps
 .. toctree::
    :maxdepth: 4
 
-   wgs-step-alignment
-   wgs-step-addrg
-   wgs-step-mergebam
-   wgs-step-markdup
-   wgs-step-sort
-   wgs-step-bqsr
-   wgs-step-applybqsr
-   wgs-step-hc
-   wgs-step-combinegvcf
-   wgs-step-genotypegvcf
-   wgs-step-microannot
-   wgs-step-filtering
-   wgs-step-denovo
-   wgs-step-comhet
-   wgs-step-fullannot
-   wgs-step-bamsnap
+   wgs-part1
+   wgs-part2
+   wgs-part3
