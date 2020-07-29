@@ -6,6 +6,7 @@ Part 3. annotation and inheritance mode analysis
    :maxdepth: 4
 
    wgs-step-mpileup
+   wgs-step-rcktar
    wgs-step-microannot
    wgs-step-filtering
    wgs-step-denovo
