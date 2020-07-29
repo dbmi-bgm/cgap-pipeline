@@ -39,13 +39,13 @@ The overall flow of the pipeline looks as below:
 
 Largely, the pipeline consists of three parts:
 
-  Part 1. GATK-based per-sample processing
-  Part 2. GATK-based per-family variant calling
-  Part 3. annotation and inheritance mode analysis
+  | Part 1. GATK-based per-sample processing
+  | Part 2. GATK-based per-family variant calling
+  | Part 3. annotation and inheritance mode analysis
 
 The part associations and the run time of the different steps are summarized in the following diagram:
 
-.. image: images/cgap-pipeline-downstream-v14-20200729-parts-scale.png
+.. image:: images/cgap-pipeline-downstream-v14-20200729-parts-scale.png
 
 
 Pipeline Steps
