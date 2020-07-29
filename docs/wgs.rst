@@ -37,6 +37,9 @@ The overall flow of the pipeline looks as below:
 .. image:: images/bioinfo-snv-indel-flow-20200724.png
 
 
+Pipeline Parts and Runtimes
+###########################
+
 Largely, the pipeline consists of three parts:
 
   | Part 1. GATK-based per-sample processing
@@ -47,6 +50,7 @@ The part associations and the run time of the different steps are summarized in 
 
 .. image:: images/cgap-pipeline-downstream-v14-20200729-parts-scale.png
   :target: _images/cgap-pipeline-downstream-v14-20200729-parts-scale.png
+
 
 Pipeline Steps
 ##############
