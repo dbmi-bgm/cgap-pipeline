@@ -16,17 +16,17 @@ Docker Image
 
 The image contains (but is not limited to) the following software packages:
 
+- bwa 0.7.17
 - gatk4 4.1.2.0
 - picard 2.20.2
-- bwa 0.7.17
+- granite 914b7ef
+- mutanno 0.4.2
+- bamsnap 0.2.5
 - samtools 1.9
+- cramtools 0b5c9ec
+- pigz 2.4
+- pbgzip 2b09f97
 - parallel
-- granite (914b7ef)
-- mutanno (0.4.2)
-- bamsnap (0.2.5)
-- cramtools (0b5c9ec)
-- pigz (2.4)
-- pbgzip (2b09f97)
 
 
 Pipeline Flow
