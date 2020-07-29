@@ -5,6 +5,7 @@ Part 3. annotation and inheritance mode analysis
 .. toctree::
    :maxdepth: 4
 
+   wgs-step-mpileup
    wgs-step-microannot
    wgs-step-filtering
    wgs-step-denovo
