@@ -4,6 +4,14 @@ Mpileup count
 
 This step creates a .rck (Read Count Keeper) file from a BAM file. This is a pre-requisite step for calling de novo mutations.
 
+* CWL: granite-mpileupCounts.cwl
+
+
+Requirements
+++++++++++++
+
+A BAM file and a reference fasta file must be provided. The step also takes in a file containing a list of genomic regions (that collectively covers the whole genome), to specify regions to run in parallel.
+
 
 Output
 ++++++
