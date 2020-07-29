@@ -10,8 +10,8 @@ The output bam file is checked for integrity to ensure the file has a header and
 
 * CWL: workflow_bwa-mem-to-bam_no_unzip_plus_integrity-check.cwl
 
-Read Groups
-+++++++++++
+Add Read Groups
++++++++++++++++
 
 This step uses ``AddReadGroups.py`` (https://github.com/dbmi-bgm/cgap-scripts) to add read groups information to the input bam file, according to lanes and flowcells.
 The script parses the bam file that contains a mix of multiple lanes and flowcells, extracts this information from read headers and adds the proper read group to individual reads, unlike ``picard AddOrReplaceReadGroups`` which assumes a single read group throughout the file.
@@ -19,8 +19,8 @@ The output bam file is checked for integrity to ensure the file has a header and
 
 * CWL: workflow_add-readgroups_plus_integrity-check.cwl
 
-Merge
-+++++
+Merge Bams
+++++++++++
 
 This step uses ``samtools merge`` to merge multiple bam files when data comes in multiple replicates.
 If there are no replicates, this step is skipped.
