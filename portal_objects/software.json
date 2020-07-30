@@ -177,5 +177,17 @@
         "title": "bamsnap_0.2.5",
         "uuid": "54c46161-bca8-471b-af32-d4ac68b971f8",
         "version": "0.2.5"
-    }
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "granite",
+        "software_type": [
+            "filter"
+        ],
+        "source_url": "https://github.com/dbmi-bgm/granite",
+        "title": "granite_0.1.0",
+        "uuid": "d390c8ec-e62a-46ab-8ff5-1111196aaea6",
+        "commit": "0.1.0"
+    },
 ]
