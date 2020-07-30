@@ -1,12 +1,15 @@
 ## CGAP pipeline
 * This repo contains CGAP pipeline components
   * CWL
-  * Docker source - Docker image name `cgap/cgap:v14`
+  * Docker source - Docker image name `cgap/cgap:v15`
   * Example Tibanna input jsons for individual steps
 
 For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
 
 ### Version updates
+#### v15
+* comHet impact assignment changed - S/C treated the same as H/M.
+
 #### v14
 * new workflows
   * comHet
