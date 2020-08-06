@@ -35,7 +35,7 @@ RUN conda install -c bioconda -y gatk4==4.1.2.0 picard==2.20.2 \
 # granite
 RUN git clone https://github.com/dbmi-bgm/granite.git && \
     cd granite && \
-    git checkout 695d590 && \
+    git checkout df95a28 && \
     rm -rf tests && \
     python setup.py install && \
     cd ..
