@@ -1,7 +1,7 @@
 {
-  "accession": "GAPXFA26IC9Q",
+  "accession": "GAPXFA263GU4",
   "app_name": "workflow_granite-qcVCF",
-  "app_version": "v1",
+  "app_version": "v2",
   "arguments": [
       {
           "argument_format": "vcf",
@@ -42,15 +42,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["QC"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-qc/master/cwl/",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-qc/v2/cwl/",
   "cwl_main_filename": "granite-qcVCF.cwl",
   "cwl_pointer": "",
   "description": "Run granite qcVCF on vcf input file. Produce a json report for quality metrics",
-  "docker_image_name": "cgap/qc:v1",
+  "docker_image_name": "cgap/qc:v2",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-qcVCF_v1",
-  "aliases": ["cgap:workflow_granite-qcVCF_v1"],
+  "name": "workflow_granite-qcVCF_v2",
+  "aliases": ["cgap:workflow_granite-qcVCF_v2"],
   "steps": [
       {
           "inputs": [
@@ -139,7 +139,7 @@
                   "Run granite qcVCF"
               ],
               "software_used": [
-                  "/softwares/48d44723-0ebe-4f12-a444-50cab323aad1"
+                  "/softwares/d390c8ec-e62a-46ab-8ff5-1111196aaea6"
               ]
           },
           "name": "granite",
@@ -161,5 +161,5 @@
       }
   ],
   "title": "Run granite qcVCF",
-  "uuid": "33a85705-b757-49e0-aaef-d786695d6d03"
+  "uuid": "c331c258-9f29-4430-870e-ac66085ecc05"
 }

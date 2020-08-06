@@ -33,12 +33,7 @@ RUN conda install -c bioconda -y gatk4==4.1.2.0 picard==2.20.2 \
     conda clean -a -y -f
 
 # granite
-RUN git clone https://github.com/dbmi-bgm/granite.git && \
-    cd granite && \
-    git checkout df95a28 && \
-    rm -rf tests && \
-    python setup.py install && \
-    cd ..
+RUN pip install granite-suite==0.1.0
 
 # R
 RUN apt-get install -y apt-transport-https software-properties-common  # to add add-apt-repository and to avoid method driver could not be found error
