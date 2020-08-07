@@ -147,7 +147,7 @@ RUN chmod +x cram_to_bam.sh
 RUN pip install granite-suite==0.1.0
 
 # mpileupCounts parallel script
-RUN mv granite/docker/mpileupCounts-parallel.sh . && \
+RUN wget https://raw.githubusercontent.com/dbmi-bgm/granite/0.1.0/docker/mpileupCounts-parallel.sh && \
     chmod +x mpileupCounts-parallel.sh
 
 # mutanno
