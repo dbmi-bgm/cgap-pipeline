@@ -9,7 +9,7 @@ def main():
     parser.add_argument('-o', '--outprefix',
                         default='out',
                         help='output prefix for collated bam and stats')
-    parser.add_argument('-p', '--nthreads',
+    parser.add_argument('-p', '--nthreads', type=int,
                         default=1,
                         help='number of processes to use')
     parser.add_argument('-t', '--tmpprefix',
