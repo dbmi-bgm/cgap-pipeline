@@ -20,7 +20,7 @@ def main():
                         help='effective genome size (integer)')
     parser.add_argument('--skip-collate',
                         action='store_true',
-                        help='the input file is already collated, skip collate'')
+                        help='the input file is already collated, skip collate')
 
     args = parser.parse_args()
 
