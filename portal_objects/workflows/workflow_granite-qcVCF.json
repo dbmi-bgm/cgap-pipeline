@@ -1,5 +1,5 @@
 {
-  "accession": "GAPXFA263GU4",
+  "accession": "GAPXFA26IC9Q",
   "app_name": "workflow_granite-qcVCF",
   "app_version": "v2",
   "arguments": [
@@ -50,7 +50,7 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_granite-qcVCF_v2",
-  "aliases": ["cgap:workflow_granite-qcVCF_v2"],
+  "aliases": ["cgap:workflow_granite-qcVCF_v2", "cgap:workflow_granite-qcVCF_v1"],
   "steps": [
       {
           "inputs": [
@@ -161,5 +161,5 @@
       }
   ],
   "title": "Run granite qcVCF",
-  "uuid": "c331c258-9f29-4430-870e-ac66085ecc05"
+  "uuid": "33a85705-b757-49e0-aaef-d786695d6d03"
 }
