@@ -87,7 +87,7 @@
                   "Run granite comHet"
               ],
               "software_used": [
-                 "/softwares/5a0b864e-dc16-4484-bcf3-c64e35a25df9"
+                 "/softwares/d390c8ec-e62a-46ab-8ff5-1111196aaea6"
               ]
           },
           "name": "granite",
@@ -145,7 +145,7 @@
                   "Check integrity of vcf output file"
               ],
               "software_used": [
-                 "/softwares/d390c8ec-e62a-46ab-8ff5-1111196aaea6"
+                 "/softwares/f7ac2c5f-9203-49fa-b918-cede02bf46f7"
               ]
           },
           "name": "vcf-integrity-check",
@@ -167,7 +167,7 @@
       }
   ],
   "title": "Run granite comHet plus output integrity-check",
-  "uuid": "9e43a0ef-be16-43f1-a789-b76261ee95a3"
+  "uuid": "9e43a0ef-be16-43f1-a789-b76261ee95a3",
   "previous_version": ["4973be36-5e56-41be-98ef-dd771481f629"],
   "version_upgrade_log": "Impact assignment for comp het pairs is fixed so that S/C are treated the same way as H/M."
 }
