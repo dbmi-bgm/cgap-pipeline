@@ -6,16 +6,16 @@ import json
 def main():
     parser = argparse.ArgumentParser(description='bam qc')
     parser.add_argument('input_bam', help='input bam file')
-    parser.add_argument('-o|--outprefix',
+    parser.add_argument('-o', '--outprefix',
                         default='out',
                         help='output prefix for collated bam and stats')
-    parser.add_argument('-p|--nthreads',
+    parser.add_argument('-p', '--nthreads',
                         default=1,
                         help='number of processes to use')
-    parser.add_argument('-t|--tmpprefix',
+    parser.add_argument('-t', '--tmpprefix',
                         default='tmp-',
                         help='prefix for tmp files, default tmp-')
-    parser.add_argument('-g|--eff-genome-size',
+    parser.add_argument('-g', '--eff-genome-size',
                         default=2913022398,  # GRCh38 number of non-N bases
                         help='effective genome size (integer)')
     parser.add_argument('--skip-collate',
