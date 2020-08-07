@@ -41,10 +41,10 @@ def main():
             raise Exception(stderr)
 
     # calculate mapping stats
-    command_total_reads = 'samtools view %s | cut -f1 | uniq | wc -l' % collated_bam
-    command_both_mapped = 'samtools view -F12 %s | cut -f1 | uniq | wc -l' % collated_bam
-    command_mapped_singletons = 'samtools view -F 0x4 -f 0x8 %s | cut -f1 | uniq | wc -l' % collated_bam
-    command_both_unmapped = 'samtools view -f12 %s | cut -f1 | uniq | wc -l' % collated_bam
+    command_total_reads = 'samtools view -@%d %s | cut -f1 | uniq | wc -l' % (args.nthreads, collated_bam)
+    command_both_mapped = 'samtools view -@%d -F12 %s | cut -f1 | uniq | wc -l' % (args.nthreads, collated_bam)
+    command_mapped_singletons = 'samtools view -@%d -F 0x4 -f 0x8 %s | cut -f1 | uniq | wc -l' % (args.nthreads, collated_bam)
+    command_both_unmapped = 'samtools view -@%d -f12 %s | cut -f1 | uniq | wc -l' % (args.nthreads, collated_bam)
 
     stats = output['mapping stats']
     stats['total reads'] = subprocess.check_output(command_total_reads, shell=True)
