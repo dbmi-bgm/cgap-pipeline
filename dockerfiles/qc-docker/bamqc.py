@@ -18,6 +18,9 @@ def main():
     parser.add_argument('-g|--eff-genome-size',
                         default=2913022398,  # GRCh38 number of non-N bases
                         help='effective genome size (integer)')
+    parser.add_argument('--skip-collate',
+                        action='store_true',
+                        help='the input file is already collated, skip collate'')
 
     args = parser.parse_args()
 
@@ -26,13 +29,16 @@ def main():
     output{'mapping stats'} = dict()
 
     # first collate bam by reads
-    collated_bam = args.outprefix + '.collated.bam'
-    p = subprocess.Popen(['samtools', 'collate', '-@' + args.nthreads, '-o',
-                          collated_bam, input_bam, tmpprefix],
-                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    stdout, stderr = p.communicate()
-    if p.returncode != 0:
-        raise Exception(stderr)
+    if args.skip_collate:
+        collated_bam = args.input_bam
+    else:
+        collated_bam = args.outprefix + '.collated.bam'
+        p = subprocess.Popen(['samtools', 'collate', '-@' + args.nthreads, '-o',
+                              collated_bam, input_bam, tmpprefix],
+                              stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        stdout, stderr = p.communicate()
+        if p.returncode != 0:
+            raise Exception(stderr)
 
     # calculate mapping stats
     command_total_reads = 'samtools view %s | cut -f1 | uniq | wc -l' % collated_bam
