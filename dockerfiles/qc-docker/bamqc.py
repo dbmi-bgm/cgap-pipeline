@@ -33,8 +33,8 @@ def main():
         collated_bam = args.input_bam
     else:
         collated_bam = args.outprefix + '.collated.bam'
-        p = subprocess.Popen(['samtools', 'collate', '-@' + args.nthreads, '-o',
-                              collated_bam, input_bam, tmpprefix],
+        p = subprocess.Popen(['samtools', 'collate', '-@' + str(args.nthreads), '-o',
+                              collated_bam, args.input_bam, args.tmpprefix],
                               stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = p.communicate()
         if p.returncode != 0:
