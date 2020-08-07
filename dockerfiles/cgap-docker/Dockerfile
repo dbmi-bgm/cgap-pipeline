@@ -144,12 +144,7 @@ RUN chmod +x cram_to_fastq.sh
 RUN chmod +x cram_to_bam.sh
 
 # granite
-RUN git clone https://github.com/dbmi-bgm/granite.git && \
-    cd granite && \
-    git checkout 914b7ef && \
-    rm -rf tests && \
-    python setup.py install && \
-    cd ..
+RUN pip install granite-suite==0.1.0
 
 # mpileupCounts parallel script
 RUN mv granite/docker/mpileupCounts-parallel.sh . && \
@@ -158,7 +153,7 @@ RUN mv granite/docker/mpileupCounts-parallel.sh . && \
 # mutanno
 RUN git clone https://github.com/dbmi-bgm/mutanno.git && \
     cd mutanno && \
-    git checkout 0.4.2 && \
+    git checkout 0.4.3 && \
     python setup.py install && \
     cd ..
 
