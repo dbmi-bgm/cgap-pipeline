@@ -61,7 +61,7 @@ def main():
 
     # depth of coverage
     total_read_coverage = (stats['both mates mapped'] * 2 + stats['one mate mapped']) * stats['read length']
-    output['coverage'] = round(total_read_coverage / args.eff_genome_size, 1)
+    output['coverage'] = str(round(total_read_coverage / args.eff_genome_size, 1)) + 'X'
 
     # print output
     with open(args.outprefix + '.stats', 'w') as f:
