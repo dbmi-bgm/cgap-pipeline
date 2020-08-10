@@ -45,7 +45,7 @@ outputs:
   - id: qc_json
     type: File
     outputBinding:
-      glob: *stats
+      glob: "*.stats"
 
 doc: |
   run bamqc
