@@ -28,7 +28,7 @@ inputs:
     doc: number of processes to use
 
   - id: eff_genome_size
-    type: int
+    type: long
     default: 2913022398
     inputBinding:
       prefix: --eff-genome-size
