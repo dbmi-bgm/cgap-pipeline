@@ -17,7 +17,7 @@ def main():
     parser.add_argument('-t', '--tmpprefix',
                         default='tmp-',
                         help='prefix for tmp files, default tmp-')
-    parser.add_argument('-g', '--eff-genome-size',
+    parser.add_argument('-g', '--eff-genome-size', type=int,
                         default=2913022398,  # GRCh38 number of non-N bases
                         help='effective genome size (integer)')
     parser.add_argument('--skip-collate',
@@ -63,7 +63,7 @@ def main():
 
     # depth of coverage
     total_read_coverage = (stats['both mates mapped'] * 2 + stats['one mate mapped']) * stats['read length']
-    output['coverage'] = str(round(total_read_coverage / long(args.eff_genome_size), 1)) + 'X'
+    output['coverage'] = str(round(total_read_coverage / args.eff_genome_size, 1)) + 'X'
 
     # sample name
     output['sample'] = args.sample
