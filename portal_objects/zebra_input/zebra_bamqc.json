@@ -4,8 +4,7 @@
     "input_files" : [
        {
            "workflow_argument_name": "input_bam",
-           "uuid": "",
-           "unzip": "gz"
+           "uuid": ""
        }
     ],
     "config": {
