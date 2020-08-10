@@ -77,10 +77,8 @@ Impact
 The impact of a compound heterozygous pair is determined as below:
 
 
-    1. If the VEP impact of both variants are HIGH or MODERATE, the impact of the pair is STRONG_PAIR.
-    2. If at least one of the variants has spliceAI score > 0.8 ('S'), the impact of the pair is STRONG_PAIR.
-    3. If at least one of the variants is Pathogenic or Likely Pathogenic according to ClinVar ('C'), the impact of the pair is STRONG_PAIR.
-    4. If the VEP impact of one of the variants is HIGH or MODERATE (and neither is 'S' or 'C'), the impact of the pair is MEDIUM_PAIR.
+    1. If the VEP impact of both variants are HIGH ('H') or MODERATE ('M') or spliceAI score >0.8 ('S') or Clinvar Pathogenic or Likely Pathogenic ('C'), the impact of the pair is STRONG_PAIR.
+    2. If one of the variants are H, M, S or C, the impact of the pair is MEDIUM_PAIR.
     5. If the variants do not satisfy the above criteria, the impact of the pair is WEAK_PAIR.
  
 The impact is computed either at the gene level (gene impact) or at the transcript level (transcript impact).
