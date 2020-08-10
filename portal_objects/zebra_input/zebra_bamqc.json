@@ -1,5 +1,5 @@
 {
-    "parameters": {},
+    "parameters": {"sample": "NA12789_sample"},
     "workflow_uuid": "cgap:bamqc_v2",
     "input_files" : [
        {

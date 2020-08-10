@@ -9,6 +9,8 @@ def main():
     parser.add_argument('-o', '--outprefix',
                         default='out',
                         help='output prefix for collated bam and stats')
+    parser.add_argument('-s', '--sample',
+                        help='sample name')
     parser.add_argument('-p', '--nthreads', type=int,
                         default=1,
                         help='number of processes to use')
@@ -62,6 +64,9 @@ def main():
     # depth of coverage
     total_read_coverage = (stats['both mates mapped'] * 2 + stats['one mate mapped']) * stats['read length']
     output['coverage'] = str(round(total_read_coverage / args.eff_genome_size, 1)) + 'X'
+
+    # sample name
+    output['sample'] = args.sample
 
     # print output
     with open(args.outprefix + '.stats', 'w') as f:

@@ -24,6 +24,10 @@
       },
       {
           "argument_type": "parameter",
+          "workflow_argument_name": "sample"
+      },
+      {
+          "argument_type": "parameter",
           "workflow_argument_name": "eff_genome_size"
       }
   ],
@@ -62,6 +66,19 @@
                       "global": true,
                       "type": "parameter"
                   },
+                  "name": "sample",
+                  "source": [
+                      {
+                          "name": "sample"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
                   "name": "nthreads",
                   "source": [
                       {
@@ -85,7 +102,7 @@
           ],
           "meta": {
               "analysis_step_types": [
-                  "Run BAMQC"
+                  "QC"
               ],
               "software_used": [
               ]

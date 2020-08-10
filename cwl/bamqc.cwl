@@ -20,6 +20,12 @@ inputs:
       position: 1
     doc: expect the path to the bam file
 
+  - id: sample
+    type: string
+    inputBinding:
+      prefix: -s
+    doc: sample name to go into the output json file
+
   - id: nthreads
     type: int
     default: 16
