@@ -35,16 +35,6 @@ RUN conda install -c bioconda -y gatk4==4.1.2.0 picard==2.20.2 \
 # granite
 RUN pip install granite-suite==0.1.0
 
-# R
-RUN apt-get install -y apt-transport-https software-properties-common  # to add add-apt-repository and to avoid method driver could not be found error
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && \
-    add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial-cran35/' && \
-    apt-get update -y && apt-get install -y \
-    libcurl4-openssl-dev \
-    libssl-dev \
-    r-base \
-    r-base-dev
-
 # samtools
 RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2 && \
     tar -xjf samtools-1.9.tar.bz2 && \
@@ -54,13 +44,8 @@ RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9
     cd .. && \
     ln -s samtools-1.9 samtools
 
-# bedtools
-RUN wget https://github.com/arq5x/bedtools2/releases/download/v2.29.0/bedtools-2.29.0.tar.gz && \
-    tar -zxvf bedtools-2.29.0.tar.gz && \
-    cd bedtools2 && \
-    make && \
-    cd .. && \
-    ln -s bedtools2 bedtools
+# bamqc
+COPY bamqc.py .
 
 # paths
 ENV PATH=/usr/local/bin/samtools/:$PATH

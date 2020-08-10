@@ -22,6 +22,7 @@ inputs:
 
   - id: nthreads
     type: int
+    default: 16
     inputBinding:
       prefix: -p
     doc: number of processes to use
