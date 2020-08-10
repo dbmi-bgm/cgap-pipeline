@@ -151,11 +151,7 @@ RUN wget https://raw.githubusercontent.com/dbmi-bgm/granite/0.1.0/docker/mpileup
     chmod +x mpileupCounts-parallel.sh
 
 # mutanno
-RUN git clone https://github.com/dbmi-bgm/mutanno.git && \
-    cd mutanno && \
-    git checkout 0.4.2 && \
-    python setup.py install && \
-    cd ..
+RUN pip install mutanno==0.4.3
 
 # bamsnap
 RUN pip install bamsnap==0.2.5
