@@ -1,7 +1,7 @@
 {
-  "accession": "GAPKL48I02KC",
+  "accession": "GAPWFC53TF9O",
   "app_name": "workflow_granite-comHet-check",
-  "app_version": "v14",
+  "app_version": "v15",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -42,15 +42,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["granite-comHet.cwl", "sort-bgzip-vcf.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v14/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v15/cwl",
   "cwl_main_filename": "workflow_granite-comHet_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run granite comHet on vcf input file. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v14",
+  "docker_image_name": "cgap/cgap:v15",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-comHet-check_v14",
-  "aliases": ["cgap:workflow_granite-comHet-check_v14"],
+  "name": "workflow_granite-comHet-check_v15",
+  "aliases": ["cgap:workflow_granite-comHet-check_v15"],
   "steps": [
       {
           "inputs": [
@@ -87,7 +87,7 @@
                   "Run granite comHet"
               ],
               "software_used": [
-                 "/softwares/5a0b864e-dc16-4484-bcf3-c64e35a25df9"
+                 "/softwares/d390c8ec-e62a-46ab-8ff5-1111196aaea6"
               ]
           },
           "name": "granite",
@@ -167,5 +167,7 @@
       }
   ],
   "title": "Run granite comHet plus output integrity-check",
-  "uuid": "4973be36-5e56-41be-98ef-dd771481f629"
+  "uuid": "9e43a0ef-be16-43f1-a789-b76261ee95a3",
+  "previous_version": ["4973be36-5e56-41be-98ef-dd771481f629"],
+  "version_upgrade_log": "Impact assignment for comp het pairs is fixed so that S/C are treated the same way as H/M."
 }

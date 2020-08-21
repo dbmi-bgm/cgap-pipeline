@@ -2,7 +2,7 @@
     "parameters": {
       "trio": ["PROBAND_ID", "[PARENT_ID]", "[PARENT_ID]"]
     },
-    "workflow_uuid": "4973be36-5e56-41be-98ef-dd771481f629",
+    "workflow_uuid": "9e43a0ef-be16-43f1-a789-b76261ee95a3",
     "input_files" : [
        {
            "workflow_argument_name": "input_vcf",
