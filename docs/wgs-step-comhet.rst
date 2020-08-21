@@ -81,7 +81,7 @@ The impact of a compound heterozygous pair is determined as below:
 
     2. If one of the variants are H, M, S or C, the impact of the pair is MEDIUM_PAIR.
 
-    5. If the variants do not satisfy the above criteria, the impact of the pair is WEAK_PAIR.
+    3. If the variants do not satisfy the above criteria, the impact of the pair is WEAK_PAIR.
 
  
 The impact is computed either at the gene level (gene impact) or at the transcript level (transcript impact).
