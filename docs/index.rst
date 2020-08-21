@@ -21,3 +21,4 @@ Contents
 
    docker
    qcvcf
+   qcbam
