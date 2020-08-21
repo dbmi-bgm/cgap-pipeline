@@ -1,70 +1,62 @@
 {
-  "accession": "GAPXFA26IC9Q",
-  "app_name": "workflow_granite-qcVCF",
+  "accession": "GAPWF2R5TD9P",
+  "app_name": "cgap-bamqc",
   "app_version": "v2",
   "arguments": [
       {
-          "argument_format": "vcf",
+          "argument_format": "bam",
           "argument_type": "Input file",
-          "workflow_argument_name": "input_vcf"
+          "workflow_argument_name": "input_bam"
       },
       {
           "argument_type": "Output QC file",
           "workflow_argument_name": "qc_json",
-          "argument_to_be_attached_to": "input_vcf",
+          "argument_to_be_attached_to": "input_bam",
           "qc_zipped": false,
           "qc_html": false,
           "qc_json": true,
           "qc_table": false,
-          "qc_type": "quality_metric_vcfqc"
+          "qc_type": "quality_metric_bamqc"
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": "pedigree"
+          "workflow_argument_name": "nthreads"
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": "samples"
+          "workflow_argument_name": "sample"
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": "trio_errors"
-      },
-      {
-          "argument_type": "parameter",
-          "workflow_argument_name": "het_hom"
-      },
-      {
-          "argument_type": "parameter",
-          "workflow_argument_name": "ti_tv"
+          "workflow_argument_name": "eff_genome_size"
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["QC"],
   "cwl_child_filenames": [],
   "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-qc/v2/cwl/",
-  "cwl_main_filename": "granite-qcVCF.cwl",
+  "cwl_main_filename": "bamqc.cwl",
   "cwl_pointer": "",
-  "description": "Run granite qcVCF on vcf input file. Produce a json report for quality metrics",
+  "description": "Run minimal bamqc on a bam input file. Produce a json report for quality metrics",
   "docker_image_name": "cgap/qc:v2",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-qcVCF_v2",
-  "aliases": ["cgap:workflow_granite-qcVCF_v2", "cgap:workflow_granite-qcVCF_v1"],
+  "name": "bamqc_v2",
+  "aliases": ["cgap:bamqc_v2"],
   "steps": [
       {
           "inputs": [
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "vcf",
+                      "file_format": "bam",
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "input_vcf",
+                  "name": "input_bam",
                   "source": [
                       {
-                          "name": "input_vcf"
+                          "name": "input_bam"
                       }
                   ]
               },
@@ -74,10 +66,10 @@
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "pedigree",
+                  "name": "sample",
                   "source": [
                       {
-                          "name": "pedigree"
+                          "name": "sample"
                       }
                   ]
               },
@@ -87,10 +79,10 @@
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "samples",
+                  "name": "nthreads",
                   "source": [
                       {
-                          "name": "samples"
+                          "name": "nthreads"
                       }
                   ]
               },
@@ -100,49 +92,22 @@
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "trio_errors",
+                  "name": "eff_genome_size",
                   "source": [
                       {
-                          "name": "trio_errors"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "parameter"
-                  },
-                  "name": "het_hom",
-                  "source": [
-                      {
-                          "name": "het_hom"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "parameter"
-                  },
-                  "name": "ti_tv",
-                  "source": [
-                      {
-                          "name": "ti_tv"
+                          "name": "eff_genome_size"
                       }
                   ]
               }
           ],
           "meta": {
               "analysis_step_types": [
-                  "Run granite qcVCF"
+                  "QC"
               ],
               "software_used": [
-                  "/softwares/d390c8ec-e62a-46ab-8ff5-1111196aaea6"
               ]
           },
-          "name": "granite",
+          "name": "bamqc",
           "outputs": [
               {
                   "meta": {
@@ -160,6 +125,6 @@
           ]
       }
   ],
-  "title": "Run granite qcVCF",
-  "uuid": "33a85705-b757-49e0-aaef-d786695d6d03"
+  "title": "Run Minimal BAMQC",
+  "uuid": "d6651132-ab7c-40c0-886f-94f88ef6bdce"
 }
