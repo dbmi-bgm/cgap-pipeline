@@ -201,5 +201,17 @@
         "title": "mutanno_0.4.3",
         "uuid": "5d53e128-a0ac-4582-8281-89e349793e3a",
         "version": "0.4.3"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "mutanno",
+        "software_type": [
+            "annotator"
+        ],
+        "source_url": "https://github.com/dbmi-bgm/mutanno",
+        "title": "mutanno_0.4.4",
+        "uuid": "ee32798b-2915-4d7b-a4fd-4b6f978e5422",
+        "version": "0.4.4"
     }
 ]
