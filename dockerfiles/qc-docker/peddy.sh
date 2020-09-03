@@ -45,6 +45,3 @@ with open('output.json', 'w') as fo:
 "
 
 python -c "$py_script"
-
-# Compress results
-zip -r peddy.zip peddy.*

@@ -48,10 +48,10 @@ outputs:
     outputBinding:
       glob: "output.json"
 
-  - id: qc_zip
+  - id: qc_html
     type: File
     outputBinding:
-      glob: "peddy.zip"
+      glob: "peddy.html"
 
 doc: |
   run peddy
