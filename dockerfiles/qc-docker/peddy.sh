@@ -40,8 +40,10 @@ for ID in data:
     }
     data_json.append(tmp_dict)
 
+dict_json = {'ancestry and sex prediction': data_json}
+
 with open('output.json', 'w') as fo:
-    json.dump(data_json, fo, indent=2, sort_keys=False)
+    json.dump(dict_json, fo, indent=2, sort_keys=False)
 "
 
 python -c "$py_script"
