@@ -1,10 +1,10 @@
 {
-  "accession": "GAPXFA26IC9Q",
-  "app_name": "workflow_granite-qcVCF",
+  "accession": "GAPXFL3E5CG2",
+  "app_name": "workflow_peddy",
   "app_version": "v3",
   "arguments": [
       {
-          "argument_format": "vcf",
+          "argument_format": "vcf_gz",
           "argument_type": "Input file",
           "workflow_argument_name": "input_vcf"
       },
@@ -16,7 +16,18 @@
           "qc_html": false,
           "qc_json": true,
           "qc_table": false,
-          "qc_type": "quality_metric_vcfqc"
+          "qc_type": "quality_metric_peddyqc"
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "qc_zip",
+          "argument_to_be_attached_to": "input_vcf",
+          "qc_zipped": true,
+          "qc_html": true,
+          "qc_json": false,
+          "qc_table": false,
+          "qc_type": "quality_metric_peddyqc",
+          "qc_zipped_html": "peddy.html"
       },
       {
           "argument_type": "parameter",
@@ -24,42 +35,28 @@
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": "samples"
-      },
-      {
-          "argument_type": "parameter",
-          "workflow_argument_name": "trio_errors"
-      },
-      {
-          "argument_type": "parameter",
-          "workflow_argument_name": "het_hom"
-      },
-      {
-          "argument_type": "parameter",
-          "workflow_argument_name": "ti_tv"
+          "workflow_argument_name": "family"
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["QC"],
   "cwl_child_filenames": [],
   "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-qc/v3/cwl/",
-  "cwl_main_filename": "granite-qcVCF.cwl",
+  "cwl_main_filename": "peddy.cwl",
   "cwl_pointer": "",
-  "description": "Run granite qcVCF on vcf input file. Produce a json report for quality metrics",
+  "description": "Run peddy on vcf input file. Produce a json report for ancestry and a zip file with peddy output",
   "docker_image_name": "cgap/qc:v3",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-qcVCF_v3",
-  "aliases": ["cgap:workflow_granite-qcVCF_v3",
-              "cgap:workflow_granite-qcVCF_v2",
-              "cgap:workflow_granite-qcVCF_v1"],
+  "name": "workflow_peddy_v3",
+  "aliases": ["cgap:workflow_peddy_v3"],
   "steps": [
       {
           "inputs": [
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "vcf",
+                      "file_format": "vcf_gz",
                       "global": true,
                       "type": "data file"
                   },
@@ -89,62 +86,24 @@
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "samples",
+                  "name": "family",
                   "source": [
                       {
-                          "name": "samples"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "parameter"
-                  },
-                  "name": "trio_errors",
-                  "source": [
-                      {
-                          "name": "trio_errors"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "parameter"
-                  },
-                  "name": "het_hom",
-                  "source": [
-                      {
-                          "name": "het_hom"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "parameter"
-                  },
-                  "name": "ti_tv",
-                  "source": [
-                      {
-                          "name": "ti_tv"
+                          "name": "family"
                       }
                   ]
               }
           ],
           "meta": {
               "analysis_step_types": [
-                  "Run granite qcVCF"
+                  "Run peddy"
               ],
               "software_used": [
-                  "/softwares/d390c8ec-e62a-46ab-8ff5-1111196aaea6"
+                  "/softwares/82d7f187-b067-4df5-9c1d-ee82142e79f2",
+                  "/softwares/124c73f9-4bbe-4e5d-92e0-cc2d932f1228"
               ]
           },
-          "name": "granite",
+          "name": "peddy",
           "outputs": [
               {
                   "meta": {
@@ -158,10 +117,23 @@
                           "name": "qc_json"
                       }
                   ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "qc_zip",
+                  "target": [
+                      {
+                          "name": "qc_zip"
+                      }
+                  ]
               }
           ]
       }
   ],
-  "title": "Run granite qcVCF",
-  "uuid": "33a85705-b757-49e0-aaef-d786695d6d03"
+  "title": "Run peddy",
+  "uuid": "e17b9fe7-19e7-40d7-9c46-07bc7920ffc8"
 }
