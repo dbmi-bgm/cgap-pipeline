@@ -6,11 +6,36 @@ vcf_file=$2
 family=$3
 nthreads=$4
 
+# Preparing the input vcf file
+gunzip -c $vcf_file > input.vcf
+
+py_script="
+fo = open('output.vcf', 'w')
+with open('input.vcf') as fi:
+     for line in fi:
+         if line.startswith('#'):
+             fo.write(line)
+         else:
+             CHROM, POS, ID, REF, ALT, QUAL, FILTER, INFO, FORMAT = line.rstrip().split('\t')[:9]
+             GTS = line.rstrip().split('\t')[9:]
+             fo.write('{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t.\t{7}'.format(CHROM, POS, ID, REF, ALT, QUAL, FILTER, FORMAT))
+             for GT in GTS:
+                 fo.write('\t' + GT)
+             fo.write('\n')
+fo.close()
+"
+
+python -c "$py_script"
+
+# Indexing input vcf file
+bgzip output.vcf
+tabix -p vcf output.vcf.gz
+
 # Creating PED file
 granite toPED -o pedigree.ped --family $family -p $pedigree
 
 # Running peddy
-python -m peddy -p $nthreads --plot --sites hg38 --prefix peddy $vcf_file pedigree.ped
+python -m peddy -p $nthreads --plot --sites hg38 --prefix peddy output.vcf.gz pedigree.ped
 
 # Parse peddy to json
 py_script="
