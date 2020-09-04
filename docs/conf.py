@@ -22,7 +22,7 @@ copyright = '2019-2020, CGAP team, HMS DBMI'
 author = 'Michele Berselli, Soo Lee, CGAP team, HMS DBMI'
 
 # The full version, including alpha/beta/rc tags
-release = 'v2'
+release = 'v3'
 
 
 # -- General configuration ---------------------------------------------------
