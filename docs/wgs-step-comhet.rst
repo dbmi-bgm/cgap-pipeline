@@ -83,6 +83,96 @@ The impact of a compound heterozygous pair is determined as below:
 
     3. If the variants do not satisfy the above criteria, the impact of the pair is WEAK_PAIR.
 
- 
+
 The impact is computed either at the gene level (gene impact) or at the transcript level (transcript impact).
 
+
+Report
+++++++
+
+This step also generates a report that provides additional information on the compound heterozygous pairs that are called. The report contains statistics on the total number of pairs and their distribution by genes, transcripts, and predicted impact.
+
+
+By genes
+--------
+
+For each gene, the program reports the number of compound het pairs called for the gene (``name``), together with the number of transcripts and variants involved.
+In each category, it is reported the total number of elements that are involved in a compound het pair, as well as the total number of elements involved in a pair that is also phased.
+
+::
+
+    "by_genes": [
+      {
+        "name": "ENSG00000004455",
+        "pairs": {
+            "phased": 0,
+            "total": 1
+        },
+        "transcripts": {
+            "phased": 0,
+            "total": 11
+        },
+        "variants": {
+            "phased": 0,
+            "total": 2
+        }
+      },
+      ...
+    ]
+
+
+By transcripts
+--------------
+
+For each transcript, the program reports the number of compound het pairs called for the transcript (``name``), together with the number of variants involved and the gene to which the transcript belongs.
+In each category, it is reported the total number of elements that are involved in a compound het pair, as well as the total number of elements involved in a pair that is also phased.
+
+::
+
+    "by_transcripts": [
+      {
+        "name": "ENST00000218200",
+        "gene": "ENSG00000102081",
+        "pairs": {
+           "phased": 3,
+           "total": 6
+        },
+        "variants": {
+           "phased": 4,
+           "total": 4
+        }
+      },
+      ...
+    ]
+
+
+By impact
+--------
+
+For each impact, the program reports the number of compound het pairs predicted with that impact (``name``) as the worst possible impact, together with the number of genes, transcripts and variants involved.
+In each category, it is reported the total number of elements that are involved in a compound het pair, as well as the total number of elements involved in a pair that is also phased.
+
+::
+
+    "by_impact": [
+        {
+          "name": "MEDIUM_PAIR",
+          "pairs": {
+              "phased": 28,
+              "total": 44
+          },
+          "genes": {
+              "phased": 23,
+              "total": 34
+          },
+          "transcripts": {
+              "phased": 55,
+              "total": 81
+          },
+          "variants": {
+              "phased": 51,
+              "total": 78
+          }
+        },
+        ...
+      ]
