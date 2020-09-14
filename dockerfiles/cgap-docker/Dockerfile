@@ -140,8 +140,10 @@ RUN chmod +x GenotypeGVCFs-parallel.sh
 COPY md5_to_fasta.py .
 COPY cram_to_fastq.sh .
 COPY cram_to_bam.sh .
+COPY bam_to_fastq.sh .
 RUN chmod +x cram_to_fastq.sh
 RUN chmod +x cram_to_bam.sh
+RUN chmod +x bam_to_fastq.sh
 
 # granite
 RUN pip install granite-suite==0.1.0
@@ -151,7 +153,7 @@ RUN wget https://raw.githubusercontent.com/dbmi-bgm/granite/0.1.0/docker/mpileup
     chmod +x mpileupCounts-parallel.sh
 
 # mutanno
-RUN pip install mutanno==0.4.3
+RUN pip install mutanno==0.4.5
 
 # bamsnap
 RUN pip install bamsnap==0.2.5

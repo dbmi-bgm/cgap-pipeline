@@ -11,15 +11,15 @@ hints:
   - class: DockerRequirement
     dockerPull: cgap/cgap:v16
 
-baseCommand: [cram_to_fastq.sh]
+baseCommand: [bam_to_fastq.sh]
 
 inputs:
-  - id: cram
+  - id: bam
     type: File
     inputBinding:
       position: 1
       prefix: -i
-    doc: input cram file
+    doc: input bam file
 
   - id: nthreads
     type: int
@@ -29,28 +29,10 @@ inputs:
     default: 16
     doc: number of compression threads
 
-  - id: reference_fasta
-    type:
-      - File
-      - "null"
-    inputBinding:
-      position: 3
-      prefix: -f
-    doc: input reference fasta file (optional, if not provided, the reference will be downloaded and combined on the fly)
-
-  - id: reference_md5_list
-    type:
-      - File
-      - "null"
-    inputBinding:
-      position: 4
-      prefix: -m
-    doc: md5 list of the input reference fasta file (optional, if not provided, the reference will be downloaded and combined on the fly)
-
   - id: out_prefix
     type: string
     inputBinding:
-      position: 5
+      position: 3
       prefix: -o
     default: "out"
     doc: prefix of the output files (<out_prefix>.1.fastq.gz and <out_prefix>.2.fastq.gz)
@@ -67,4 +49,4 @@ outputs:
       glob: $(inputs.out_prefix + ".2.fastq.gz")
 
 doc: |
-  run cram_to_fastq.sh -i cram -p nthreads -f reference_fasta -m reference_md5_list -o out_prefix
+  run bam_to_fastq.sh -i bam -p nthreads -o out_prefix

@@ -334,5 +334,27 @@
     "file_version": "0.4.8",
     "file_version_date": "2020-08-07",
     "file_type": "annotation source"
+  },
+  {
+    "uuid": "2f396025-3d5e-49d2-8a9f-847717604e71",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "mti_gz",
+    "description": "mutanno index micro-annotation v0.4.5, Ensembl BIOTYPE filter",
+    "aliases": ["cgap:mutanno-index-micro-annotation-v0.4.5"],
+    "extra_files": [
+        {
+            "file_format": "mti_gz_tbi",
+            "status": "uploaded"
+        },
+        {
+            "file_format": "mti_json",
+            "status": "uploaded"
+        }
+    ],
+    "status": "uploaded",
+    "file_version": "0.4.5",
+    "file_version_date": "2020-08-25",
+    "file_type": "micro-annotation source"
   }
 ]

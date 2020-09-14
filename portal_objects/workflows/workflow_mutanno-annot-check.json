@@ -1,7 +1,7 @@
 {
-  "accession": "GAPWFB63RQKJ",
+  "accession": "GAPWIU93RDSP",
   "app_name": "workflow_mutanno-annot-check",
-  "app_version": "v15",
+  "app_version": "v16",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -47,15 +47,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["mutanno-annot.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v15/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v16/cwl",
   "cwl_main_filename": "workflow_mutanno-annot_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run mutanno annot on vcf input file. Produce a fully-annotated vcf file. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v15",
+  "docker_image_name": "cgap/cgap:v16",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_mutanno-annot-check_v15",
-  "aliases": ["cgap:workflow_mutanno-annot-check_v15"],
+  "name": "workflow_mutanno-annot-check_v16",
+  "aliases": ["cgap:workflow_mutanno-annot-check_v16"],
   "steps": [
       {
           "inputs": [
@@ -134,7 +134,7 @@
                   "Run mutanno annot"
               ],
               "software_used": [
-                 "/softwares/5d53e128-a0ac-4582-8281-89e349793e3a"
+                 "/softwares/ee32798b-2915-4d7b-a4fd-4b6f978e5422"
               ]
           },
           "name": "annot",
@@ -201,7 +201,7 @@
       }
   ],
   "title": "Run mutanno annot plus output integrity-check",
-  "uuid": "f3b91cd6-9f17-45c4-b041-4b6a73987e65",
-  "previous_version": ["62f16824-4d4b-43fb-9f2f-3bb5b328431a", "883b7846-8c62-4f5a-a691-c84706420b93"],
-  "version_upgrade_log": "Workflow is now using a single data source file instead of archive"
+  "uuid": "26769afe-3d0f-4494-8a67-9acc8de71b73",
+  "previous_version": ["f3b91cd6-9f17-45c4-b041-4b6a73987e65", "62f16824-4d4b-43fb-9f2f-3bb5b328431a", "883b7846-8c62-4f5a-a691-c84706420b93"],
+  "version_upgrade_log": "Updated mutanno version. Fixed split multi-allelic variants, PL and ENSEMBLANNOT in micro-annotation"
 }

@@ -2,8 +2,8 @@
 
 # apply this script to individual files in portal/workflow/ to update versions
 
-$old='v14';
-$new='v15';
+$old='v15';
+$new='v16';
 
 while(<>){
   chomp;
@@ -14,11 +14,11 @@ while(<>){
   }
   elsif(/(.+aliases.+)\[(.+)_$old\"\](.*)/) {
     print $1."[".$2."_$new\", ".$2."_$old\"]".$3."\n";
-  } 
+  }
   # app version
   elsif(/(.+app_version.+)$old(.+)/) {
     print $1."$new".$2."\n";
-  } 
+  }
   # cwl url
   elsif(/(.+)\/$old\/(.+)/) {
     print $1."/$new/".$2."\n";

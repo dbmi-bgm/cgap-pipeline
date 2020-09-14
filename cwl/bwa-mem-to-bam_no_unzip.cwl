@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v15
+    dockerPull: cgap/cgap:v16
 
 baseCommand: [bwa-mem-to-bam_no_unzip.sh]
 
