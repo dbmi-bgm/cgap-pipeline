@@ -26,7 +26,10 @@ RUN apt-get update -y && apt-get install -y \
     automake \
     pkg-config \
     tabix \
-    yasm
+    yasm \
+    libdbi-perl \
+    libmodule-build-perl \
+    libarchive-zip-perl
 
 WORKDIR /usr/local/bin
 
@@ -97,6 +100,16 @@ RUN git clone https://github.com/nh13/pbgzip && \
 
 ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
+# VEP
+RUN git clone https://github.com/Ensembl/ensembl-vep.git && \
+    cd ensembl-vep && \
+    git checkout release/99 && \
+    perl INSTALL.pl --AUTO a --NO_UPDATE
+
+# VEP script
+COPY vep-parallel.sh .
+RUN chmod +x vep-parallel.sh
+
 # bwa mem script
 COPY bwa-mem-to-bam.sh .
 RUN chmod +x bwa-mem-to-bam.sh
@@ -153,7 +166,7 @@ RUN wget https://raw.githubusercontent.com/dbmi-bgm/granite/0.1.0/docker/mpileup
     chmod +x mpileupCounts-parallel.sh
 
 # mutanno
-RUN pip install mutanno==0.4.5
+RUN pip install mutanno==0.4.6
 
 # bamsnap
 RUN pip install bamsnap==0.2.5
@@ -179,8 +192,7 @@ ENV PATH=/usr/local/bin/samtools/:$PATH
 ENV PATH=/usr/local/bin/bwa/:$PATH
 ENV PATH=/usr/local/bin/cgap-scripts/:$PATH
 ENV PATH=/usr/local/bin/pigz-2.4/:$PATH
-ENV PATH=/usr/local/bin/granite/:$PATH
-ENV PATH=/usr/local/bin/mutanno/:$PATH
+ENV PATH=/usr/local/bin/ensembl-vep/:$PATH
 
 # supporting UTF-8
 RUN locale-gen "en_US.UTF-8" && update-locale LC_ALL="en_US.UTF-8"
