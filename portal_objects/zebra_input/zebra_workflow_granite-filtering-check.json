@@ -3,7 +3,7 @@
       "aftag": "gnomADgenome",
       "afthr": 0.01
     },
-    "workflow_uuid": "cb85683c-54a6-44e8-820c-1800aec9fdcd",
+    "workflow_uuid": "e43171b4-4ee5-4074-8734-727399e3179d",
     "input_files" : [
        {
            "workflow_argument_name": "input_vcf",
