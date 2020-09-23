@@ -2,8 +2,8 @@
 
 # apply this script to individual files in portal/workflow/ to update versions
 
-$old='v15';
-$new='v16';
+$old='v16';
+$new='v17';
 
 while(<>){
   chomp;

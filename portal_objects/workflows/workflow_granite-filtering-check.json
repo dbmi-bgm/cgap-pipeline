@@ -1,7 +1,7 @@
 {
-  "accession": "GAPG8L8B113P",
+  "accession": "GAPG8LC7663P",
   "app_name": "workflow_granite-filtering-check",
-  "app_version": "v16",
+  "app_version": "v17",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -54,17 +54,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["granite-whiteList.cwl", "granite-cleanVCF.cwl", "granite-blackList.cwl", "merge-sort-vcf.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v16/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v17/cwl",
   "cwl_main_filename": "workflow_granite-filtering_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Filter and clean the input vcf using granite (whiteList, cleanVCF, blackList). An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v16",
+  "docker_image_name": "cgap/cgap:v17",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-filtering-check_v16",
-  "aliases": ["cgap:workflow_granite-filtering-check_v16",
-              "cgap:workflow_granite-filtering-check_v15",
-              "cgap:workflow_granite-filtering-check_v14"],
+  "name": "workflow_granite-filtering-check_v17",
+  "aliases": ["cgap:workflow_granite-filtering-check_v17"],
   "steps": [
       {
           "inputs": [
@@ -168,7 +166,7 @@
                   "Run granite whiteList, cleanVCF, blackList"
               ],
               "software_used": [
-                 "/softwares/5a0b864e-dc16-4484-bcf3-c64e35a25df9"
+                 "/softwares/c355f2aa-e1b5-4f07-adb8-f572be3d13f8"
               ]
           },
           "name": "granite",
@@ -235,5 +233,7 @@
       }
   ],
   "title": "Run granite to filter and clean input vcf (whiteList, cleanVCF, blackList) plus output integrity-check",
-  "uuid": "cb85683c-54a6-44e8-820c-1800aec9fdcd"
+  "uuid": "e43171b4-4ee5-4074-8734-727399e3179d",
+  "previous_version": ["cb85683c-54a6-44e8-820c-1800aec9fdcd"],
+  "version_upgrade_log": "Updated granite version, CSQ is now the default for VEP"
 }

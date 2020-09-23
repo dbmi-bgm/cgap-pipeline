@@ -1,12 +1,15 @@
 ## CGAP pipeline
 * This repo contains CGAP pipeline components
   * CWL
-  * Docker source - Docker image name `cgap/cgap:v16`
+  * Docker source - Docker image name `cgap/cgap:v17`
   * Example Tibanna input jsons for individual steps
 
 For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
 
 ### Version updates
+#### v17
+
+
 #### v16
 * mutanno
   * fixed multi-allelic variants split in microannotation

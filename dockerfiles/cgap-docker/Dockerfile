@@ -159,7 +159,7 @@ RUN chmod +x cram_to_bam.sh
 RUN chmod +x bam_to_fastq.sh
 
 # granite
-RUN pip install granite-suite==0.1.0
+RUN pip install granite-suite==0.1.2
 
 # mpileupCounts parallel script
 RUN wget https://raw.githubusercontent.com/dbmi-bgm/granite/0.1.0/docker/mpileupCounts-parallel.sh && \
@@ -170,10 +170,6 @@ RUN pip install mutanno==0.4.6
 
 # bamsnap
 RUN pip install bamsnap==0.2.5
-
-# annot parallel script
-COPY annot-parallel.sh .
-RUN chmod +x annot-parallel.sh
 
 # annot parallel mti script
 COPY annot-parallel-mti.sh .

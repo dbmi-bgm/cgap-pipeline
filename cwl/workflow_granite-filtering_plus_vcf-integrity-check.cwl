@@ -15,6 +15,11 @@ inputs:
     default: "~"
     doc: VEP separator to use for subfields
 
+  - id: VEPtag
+    type: string
+    default: "VEP"
+    doc: VEP tag to use
+
   - id: outputfile-CLI
     type: string
     default: "output-CLI.vcf"
@@ -138,6 +143,8 @@ steps:
         source: BEDfile
       VEPsep:
         source: string_null
+      VEPtag:
+        source: string_null
     out: [output]
 
   granite-whiteList-VEP-SpAI:
@@ -163,6 +170,8 @@ steps:
         source: file_null
       VEPsep:
         source: VEPsep
+      VEPtag:
+        source: VEPtag
     out: [output]
 
   granite-cleanVCF:
@@ -182,6 +191,8 @@ steps:
         source: VEPremove
       VEPsep:
         source: VEPsep
+      VEPtag:
+        source: VEPtag
     out: [output]
 
   granite-blackList:

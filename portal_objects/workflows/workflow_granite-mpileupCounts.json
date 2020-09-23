@@ -1,7 +1,7 @@
 {
-  "accession": "GAPFK84GT38L",
+  "accession": "GAPFKJG7638L",
   "app_name": "workflow_granite-mpileupCounts",
-  "app_version": "v16",
+  "app_version": "v17",
   "arguments": [
       {
           "argument_format": "bam",
@@ -40,17 +40,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v16/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v17/cwl",
   "cwl_main_filename": "granite-mpileupCounts.cwl",
   "cwl_pointer": "",
   "description": "Run granite mpileupCounts on bam input file. Produce a rck.gz file",
-  "docker_image_name": "cgap/cgap:v16",
+  "docker_image_name": "cgap/cgap:v17",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-mpileupCounts_v16",
-  "aliases": ["cgap:workflow_granite-mpileupCounts_v16",
-              "cgap:workflow_granite-mpileupCounts_v15",
-              "cgap:workflow_granite-mpileupCounts_v14"],
+  "name": "workflow_granite-mpileupCounts_v17",
+  "aliases": ["cgap:workflow_granite-mpileupCounts_v17"],
   "steps": [
       {
           "inputs": [
@@ -141,7 +139,7 @@
                   "Run granite mpileupCounts"
               ],
               "software_used": [
-                 "/softwares/5a0b864e-dc16-4484-bcf3-c64e35a25df9"
+                 "/softwares/c355f2aa-e1b5-4f07-adb8-f572be3d13f8"
               ]
           },
           "name": "granite",
@@ -164,7 +162,7 @@
       }
   ],
   "title": "Run granite mpileupCounts",
-  "uuid": "6e89bc5d-b4a0-4954-9c3f-361477d5f537",
-  "previous_version": ["e5c178cf-4b5c-488b-b4cc-08273d11697d"],
-  "version_upgrade_log": "Updated command line arguments and default to 0 for MQ and BQ thresholds"
+  "uuid": "c6dac0af-631d-402f-a1c1-282e091f1b3e",
+  "previous_version": ["6e89bc5d-b4a0-4954-9c3f-361477d5f537"],
+  "version_upgrade_log": "Updated granite version, CSQ is now the default for VEP"
 }
