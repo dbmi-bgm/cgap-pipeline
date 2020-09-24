@@ -1,7 +1,7 @@
 {
-  "accession": "GAPP8TJ2G1LK",
+  "accession": "GAPP8LK2GG1P",
   "app_name": "workflow_mutanno-micro-annot-check",
-  "app_version": "v16",
+  "app_version": "v17",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -12,6 +12,11 @@
           "argument_format": "mti_gz",
           "argument_type": "Input file",
           "workflow_argument_name": "mti"
+      },
+      {
+          "argument_format": "mti_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "mti_vep"
       },
       {
           "argument_format": "txt",
@@ -42,15 +47,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["mutanno-annot.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v16/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v17/cwl",
   "cwl_main_filename": "workflow_mutanno-micro-annot_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run mutanno annot on vcf input file. Produce a micro-annotated vcf file. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v16",
+  "docker_image_name": "cgap/cgap:v17",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_mutanno-micro-annot-check_v16",
-  "aliases": ["cgap:workflow_mutanno-micro-annot-check_v16"],
+  "name": "workflow_mutanno-micro-annot-check_v17",
+  "aliases": ["cgap:workflow_mutanno-micro-annot-check_v17"],
   "steps": [
       {
           "inputs": [
@@ -79,6 +84,20 @@
                   "source": [
                       {
                           "name": "mti"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "mti_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "mti_vep",
+                  "source": [
+                      {
+                          "name": "mti_vep"
                       }
                   ]
               },
@@ -115,7 +134,7 @@
                   "Run mutanno annot"
               ],
               "software_used": [
-                 "/softwares/ee32798b-2915-4d7b-a4fd-4b6f978e5422"
+                 "/softwares/f63a9a09-dcfc-492d-bbc2-1b4f0be6b132"
               ]
           },
           "name": "annot",
@@ -182,7 +201,7 @@
       }
   ],
   "title": "Run mutanno micro-annot plus output integrity-check",
-  "uuid": "087325b4-f098-4a43-a190-81a878039de2",
-  "previous_version": ["de9c4579-30e2-432c-80e3-7f324d3d7dcb", "04caaa82-6a32-46d3-b52c-c1017cc0490a"],
-  "version_upgrade_log": "Updated mutanno version. Fixed split multi-allelic variants, PL and ENSEMBLANNOT in micro-annotation"
+  "uuid": "ca3469c6-ac71-4a7d-97ea-477037b05f2f",
+  "previous_version": ["087325b4-f098-4a43-a190-81a878039de2"],
+  "version_upgrade_log": "Updated mutanno version. The program can now use multiple mti files"
 }

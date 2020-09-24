@@ -8,7 +8,12 @@ For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
 
 ### Version updates
 #### v17
-
+* added support for novel indels
+  * added step to run VEP to annotate novel indels
+* updated mutanno version
+  * can now handle multiple mti files for annotation
+* updated granite version
+  * default for VEP is CSQ
 
 #### v16
 * mutanno

@@ -219,7 +219,7 @@
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "released",
-        "valid_item_types": ["FileReference"]
+        "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
         "file_format": "mti_tar",
@@ -247,7 +247,7 @@
     {
         "file_format": "rck_tar",
         "standard_file_extension": "rck.tar",
-        "description": "rck files archive, compressed",
+        "description": "rck files archive",
         "uuid": "39f836d8-bbb1-46c7-80d4-e321d4a44204",
         "extrafile_formats": [
             "1c7dc723-811c-4fcf-b8e5-d5e17a2013f7"
@@ -275,7 +275,7 @@
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "released",
-        "valid_item_types": ["FileReference"]
+        "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
         "file_format": "mti_gz",
@@ -289,13 +289,36 @@
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "released",
-        "valid_item_types": ["FileReference"]
+        "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
         "file_format": "chain",
         "standard_file_extension": "chain.gz",
         "description": "chain file for coordinates liftover, compressed",
         "uuid": "dd1ef82d-da5e-4680-bd5c-cf471a87eb5b",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "released",
+        "valid_item_types": ["FileReference"]
+    },
+    {
+        "file_format": "plugins_tar",
+        "standard_file_extension": "plugins.tar.gz",
+        "description": "archive with VEP plugins, compressed",
+        "uuid": "65ccbf65-80f9-41b4-b002-468500821c62",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "released",
+        "valid_item_types": ["FileReference"]
+    },
+    {
+        "file_format": "vep_tar",
+        "standard_file_extension": "vep.tar.gz",
+        "description": "archive with VEP datasource, compressed",
+        "uuid": "d05f9688-0ee1-4a86-83f4-656e6e21352a",
+        "extrafile_formats": [
+            "65ccbf65-80f9-41b4-b002-468500821c62"
+        ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "released",

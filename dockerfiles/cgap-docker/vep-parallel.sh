@@ -3,13 +3,12 @@
 # variables from command line
 input_vcf=$1
 reference=$2
-resources_tar_gz=$3
-plugins_tar_gz=$4
-regionfile=$5
-resources_mti=$6
-nthreads=$7
-version=$8 #99
-assembly=$9 #GRCh38
+vep_tar_gz=$3
+regionfile=$4
+resources_mti=$5
+nthreads=$6
+version=$7 #99
+assembly=$8 #GRCh38
 
 # self variables
 directory=VCFS/
@@ -18,8 +17,8 @@ directory=VCFS/
 resources_json=${resources_mti%.*}.json
 
 # unpack data sources
-tar -xzf $resources_tar_gz
-tar -xzf $plugins_tar_gz
+tar -xzf $vep_tar_gz
+tar -xzf ${vep_tar_gz%%.*}.plugins.tar.gz
 
 # setting up output directory
 mkdir -p $directory
@@ -37,7 +36,7 @@ with open('input.vcf') as fi:
         else:
             CHROM, POS, ID, REF, ALT, QUAL, FILTER, INFO, FORMAT = line.rstrip().split('\t')[:9]
             if len(REF) > 1 or len(ALT) > 1:
-                fo.write(line)
+                fo.write(line.replace('*', '-'))
 fo.close()
 "
 

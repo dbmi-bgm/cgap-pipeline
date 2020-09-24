@@ -3,10 +3,11 @@
 # variables from command line
 input_vcf=$1
 resources_mti=$2
-regionfile=$3
-nthreads=$4
-micro_annotation=$5  # 1 or 0
-chainfile=$6
+resources_mti_vep=$3
+regionfile=$4
+nthreads=$5
+micro_annotation=$6  # 1 or 0
+chainfile=$7
 
 # get resources tar name
 resources_json=${resources_mti%.*}.json
@@ -19,12 +20,12 @@ mkdir -p $directory
 
 # command
 if [[ $micro_annotation == "1" ]]; then
-    additional_options="-genoinfo -split_multi_allelic_variant -single_source_mode"
+    additional_options="-genoinfo -split_multi_allelic_variant -use_raw_source"
 else
     additional_options="-clean_tag MUTANNO gnomADgenome CLINVAR SpliceAI -hg19 -chain $chainfile"
 fi
 
-command="tabix -h $input_vcf {} > {}.sharded.vcf; if [[ -e {}.sharded.vcf ]]; then mutanno annot -vcf {}.sharded.vcf -out ${directory}{}.ann.vcf -ds $resources_json -sourcefile $resources_mti $additional_options; fi; rm {}.sharded.vcf"
+command="tabix -h $input_vcf {} > {}.sharded.vcf; if [[ -e {}.sharded.vcf ]]; then mutanno annot -vcf {}.sharded.vcf -out ${directory}{}.ann.vcf -ds $resources_json -sourcefile $resources_mti $resources_mti_vep $additional_options; fi; rm {}.sharded.vcf"
 
 # runnning annot in parallel
 cat $regionfile | parallel --halt 2 --jobs $nthreads $command || exit 1

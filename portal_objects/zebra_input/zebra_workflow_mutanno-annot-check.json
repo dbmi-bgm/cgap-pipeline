@@ -2,7 +2,7 @@
     "parameters": {
         "nthreads": 1
        },
-    "workflow_uuid": "26769afe-3d0f-4494-8a67-9acc8de71b73",
+    "workflow_uuid": "04da27aa-204c-4db2-9d66-a1624a463c13",
     "input_files" : [
        {
            "workflow_argument_name": "input_vcf",
@@ -15,6 +15,11 @@
        {
            "workflow_argument_name": "mti",
            "uuid": "03c35388-2385-4004-bff0-f126cbb0a57e",
+           "mount": true
+       },
+       {
+           "workflow_argument_name": "mti_vep",
+           "uuid": "",
            "mount": true
        },
        {

@@ -166,7 +166,7 @@ RUN wget https://raw.githubusercontent.com/dbmi-bgm/granite/0.1.0/docker/mpileup
     chmod +x mpileupCounts-parallel.sh
 
 # mutanno
-RUN pip install mutanno==0.4.6
+RUN pip install mutanno==0.4.7
 
 # bamsnap
 RUN pip install bamsnap==0.2.5
