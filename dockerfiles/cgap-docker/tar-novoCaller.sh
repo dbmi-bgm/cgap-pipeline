@@ -51,5 +51,5 @@ grep "^#" $outputfile > sorted.vcf
 grep -v "^#" $outputfile | sort -V -k1,1 -k2,2n >> sorted.vcf
 
 # compress and index output vcf
-bgzip sorted.vcf
-tabix -p vcf sorted.vcf.gz
+bgzip sorted.vcf || exit 1
+tabix -p vcf sorted.vcf.gz || exit 1

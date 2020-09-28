@@ -54,5 +54,5 @@ if [[ -v  chr_M  ]]; then
 fi
 
 # compress and index combined gvcf
-pbgzip -ifn$nthreads combined.ann.vcf
-tabix -p vcf combined.ann.vcf.gz
+pbgzip -ifn$nthreads combined.ann.vcf || exit 1
+tabix -p vcf combined.ann.vcf.gz || exit 1

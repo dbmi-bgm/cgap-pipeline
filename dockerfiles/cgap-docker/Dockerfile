@@ -162,7 +162,7 @@ RUN chmod +x bam_to_fastq.sh
 RUN pip install granite-suite==0.1.2
 
 # mpileupCounts parallel script
-RUN wget https://raw.githubusercontent.com/dbmi-bgm/granite/0.1.0/docker/mpileupCounts-parallel.sh && \
+RUN wget https://raw.githubusercontent.com/dbmi-bgm/granite/master/docker/mpileupCounts-parallel.sh && \
     chmod +x mpileupCounts-parallel.sh
 
 # mutanno

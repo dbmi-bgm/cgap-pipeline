@@ -48,5 +48,5 @@ if [[ -v  chr_M  ]]; then
 fi
 
 # compress and index combined gvcf
-bgzip combined.gvcf
-tabix -p vcf combined.gvcf.gz
+bgzip combined.gvcf || exit 1
+tabix -p vcf combined.gvcf.gz || exit 1
