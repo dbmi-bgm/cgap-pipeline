@@ -104,7 +104,8 @@ ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 RUN git clone https://github.com/Ensembl/ensembl-vep.git && \
     cd ensembl-vep && \
     git checkout release/99 && \
-    perl INSTALL.pl --AUTO a --NO_UPDATE
+    perl INSTALL.pl --AUTO a --NO_UPDATE && \
+    cd ..
 
 # VEP script
 COPY vep-parallel.sh .

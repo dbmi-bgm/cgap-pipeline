@@ -356,5 +356,21 @@
     "file_version": "0.4.5",
     "file_version_date": "2020-08-25",
     "file_type": "micro-annotation source"
+  },
+  {
+    "uuid": "ddd384a3-1cf2-4a7e-b87b-a6d0ff9b5394",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "vep_tar",
+    "description": "datasource for VEP v99 plus plugins",
+    "aliases": ["cgap:vep-99"],
+    "extra_files": [
+        {
+            "file_format": "plugins_tar",
+            "status": "uploaded"
+        }
+    ],
+    "status": "uploaded",
+    "file_version": "99"
   }
 ]

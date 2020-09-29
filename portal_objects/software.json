@@ -237,5 +237,17 @@
         "title": "mutanno_0.4.7",
         "uuid": "f63a9a09-dcfc-492d-bbc2-1b4f0be6b132",
         "version": "0.4.7"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "vep",
+        "software_type": [
+            "annotator"
+        ],
+        "source_url": "https://github.com/Ensembl/ensembl-vep",
+        "title": "vep_99",
+        "uuid": "f8c6b757-24b9-4a63-b06c-fe0fcc47f37b",
+        "version": "99"
     }
 ]
