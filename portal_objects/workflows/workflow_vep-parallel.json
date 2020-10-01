@@ -1,0 +1,191 @@
+{
+  "accession": "GAPL8I45FW3P",
+  "app_name": "workflow_vep-parallel",
+  "app_version": "v17",
+  "arguments": [
+      {
+          "argument_format": "vcf_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_vcf"
+      },
+      {
+          "argument_format": "mti_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "mti"
+      },
+      {
+          "argument_format": "fa",
+          "argument_type": "Input file",
+          "workflow_argument_name": "reference"
+      },
+      {
+          "argument_format": "txt",
+          "argument_type": "Input file",
+          "workflow_argument_name": "regions"
+      },
+      {
+          "argument_format": "vep_tar",
+          "argument_type": "Input file",
+          "workflow_argument_name": "vep_tar"
+      },
+      {
+          "argument_format": "mti_gz",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "microannot_mti",
+          "secondary_file_formats": ["mti_gz_tbi"]
+      },
+      {
+          "argument_format": "mti_gz",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "annot_mti",
+          "secondary_file_formats": ["mti_gz_tbi"]
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "nthreads"
+      }
+  ],
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+  "category": ["processing"],
+  "cwl_child_filenames": [],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v17/cwl",
+  "cwl_main_filename": "vep-parallel.cwl",
+  "cwl_pointer": "",
+  "description": "Run VEP to annotate input vcf file. Run mutanno to produce mti files for micro and full annotation",
+  "docker_image_name": "cgap/cgap:v17",
+  "docker_registry_url": "https://hub.docker.com/",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "name": "workflow_vep-parallel_v17",
+  "aliases": ["cgap:workflow_vep-parallel_v17"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_vcf",
+                  "source": [
+                      {
+                          "name": "input_vcf"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "mti_gz",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "mti",
+                  "source": [
+                      {
+                          "name": "mti"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "fa",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "reference",
+                  "source": [
+                      {
+                          "name": "reference"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "txt",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "regions",
+                  "source": [
+                      {
+                          "name": "regions"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vep_tar",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "vep_tar",
+                  "source": [
+                      {
+                          "name": "vep_tar"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "nthreads",
+                  "source": [
+                      {
+                          "name": "nthreads"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Run VEP and mutanno"
+              ],
+              "software_used": [
+                 "/softwares/f8c6b757-24b9-4a63-b06c-fe0fcc47f37b",
+                 "/softwares/f63a9a09-dcfc-492d-bbc2-1b4f0be6b132"
+              ]
+          },
+          "name": "vep-mti",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "mti_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "microannot_mti",
+                  "target": [
+                      {
+                          "name": "microannot_mti"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "mti_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "annot_mti",
+                  "target": [
+                      {
+                          "name": "annot_mti"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Run VEP on input vcf file and produce mti files for full and micro annotation",
+  "uuid": "adc588cf-1c6c-4281-9193-9645726eb792"
+}
