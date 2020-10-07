@@ -34,7 +34,7 @@ Pipeline Flow
 
 The overall flow of the pipeline looks as below:
 
-.. image:: images/bioinfo-snv-indel-flow-20200724.png
+.. image:: images/bioinfo-snv-indel-flow-v17-20201006.png
 
 
 Pipeline Parts and Runtimes
@@ -48,8 +48,8 @@ Largely, the pipeline consists of three parts:
 
 The part associations and the run time of the different steps are summarized in the following diagram:
 
-.. image:: images/cgap-pipeline-downstream-v14-20200729-parts-scale-largefont.png
-  :target: _images/cgap-pipeline-downstream-v14-20200729-parts-scale-largefont.png
+.. image:: images/cgap-pipeline-downstream-v17-20201006-parts-scale-largefont.png
+  :target: _images/cgap-pipeline-downstream-v17-20201006-parts-scale-largefont.png
 
 
 Pipeline Steps
