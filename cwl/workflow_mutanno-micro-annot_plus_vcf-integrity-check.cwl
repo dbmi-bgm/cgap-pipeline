@@ -19,6 +19,12 @@ inputs:
       - ^.json
     doc: expect the path to the mutanno index file
 
+  - id: mti_vep
+    type: File
+    secondaryFiles:
+      - .tbi
+    doc: expect the path to the mutanno index file for VEP
+
   - id: regions
     type: File
     doc: expect the path to the file defining regions
@@ -50,6 +56,8 @@ steps:
         source: input_vcf
       mti:
         source: mti
+      mti_vep:
+        source: mti_vep
       regions:
         source: regions
       nthreads:

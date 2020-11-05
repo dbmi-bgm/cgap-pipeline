@@ -1,6 +1,6 @@
 {
     "parameters": {},
-    "workflow_uuid": "f38b91fb-7e0c-44e0-a871-a91a58227b34",
+    "workflow_uuid": "55c9ebf7-ef39-4eb0-9685-c090f2e788ae",
     "input_files" : [
        {
            "workflow_argument_name": "input_vcf",

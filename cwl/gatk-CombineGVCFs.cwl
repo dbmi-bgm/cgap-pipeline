@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v16
+    dockerPull: cgap/cgap:v17
 
 baseCommand: [CombineGVCFs-parallel.sh]
 

@@ -1,7 +1,7 @@
 {
-  "accession": "GAPS8L8U721V",
+  "accession": "GAPS8LLU7F9L",
   "app_name": "workflow_granite-novoCaller-rck-check",
-  "app_version": "v16",
+  "app_version": "v17",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -38,17 +38,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["granite-novoCaller-rck.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v16/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v17/cwl",
   "cwl_main_filename": "workflow_granite-novoCaller-rck_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run granite novoCaller on vcf input file. Use rck files. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v16",
+  "docker_image_name": "cgap/cgap:v17",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-novoCaller-rck-check_v16",
-  "aliases": ["cgap:workflow_granite-novoCaller-rck-check_v16",
-              "cgap:workflow_granite-novoCaller-rck-check_v15",
-              "cgap:workflow_granite-novoCaller-rck-check_v14"],
+  "name": "workflow_granite-novoCaller-rck-check_v17",
+  "aliases": ["cgap:workflow_granite-novoCaller-rck-check_v17"],
   "steps": [
       {
           "inputs": [
@@ -100,7 +98,7 @@
                   "Run granite novoCaller"
               ],
               "software_used": [
-                 "/softwares/5a0b864e-dc16-4484-bcf3-c64e35a25df9"
+                 "/softwares/c355f2aa-e1b5-4f07-adb8-f572be3d13f8"
               ]
           },
           "name": "granite",
@@ -167,7 +165,7 @@
       }
   ],
   "title": "Run granite novoCaller using rck files plus output integrity-check",
-  "uuid": "f38b91fb-7e0c-44e0-a871-a91a58227b34",
-  "previous_version": ["35daf195-4fc5-4e2a-ada3-7a0cce08a7e4"],
-  "version_upgrade_log": "Updated command line arguments and default to not filter out variants"
+  "uuid": "55c9ebf7-ef39-4eb0-9685-c090f2e788ae",
+  "previous_version": ["f38b91fb-7e0c-44e0-a871-a91a58227b34"],
+  "version_upgrade_log": "Updated granite version, CSQ is now the default for VEP"
 }

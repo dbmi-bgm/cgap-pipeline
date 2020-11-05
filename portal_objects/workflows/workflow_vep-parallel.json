@@ -1,32 +1,44 @@
 {
-  "accession": "GAPWFBH24DOI",
-  "app_name": "workflow_cram2fastq",
+  "accession": "GAPL8I45FW3P",
+  "app_name": "workflow_vep-parallel",
   "app_version": "v17",
   "arguments": [
       {
-          "argument_format": "CRAM",
+          "argument_format": "vcf_gz",
           "argument_type": "Input file",
-          "workflow_argument_name": "cram"
+          "workflow_argument_name": "input_vcf"
+      },
+      {
+          "argument_format": "mti_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "mti"
       },
       {
           "argument_format": "fa",
           "argument_type": "Input file",
-          "workflow_argument_name": "reference_fasta"
+          "workflow_argument_name": "reference"
       },
       {
-          "argument_format": "md5_list",
+          "argument_format": "txt",
           "argument_type": "Input file",
-          "workflow_argument_name": "reference_md5_list"
+          "workflow_argument_name": "regions"
       },
       {
-          "argument_format": "fastq",
-          "argument_type": "Output processed file",
-          "workflow_argument_name": "fastq1"
+          "argument_format": "vep_tar",
+          "argument_type": "Input file",
+          "workflow_argument_name": "vep_tar"
       },
       {
-          "argument_format": "fastq",
+          "argument_format": "mti_gz",
           "argument_type": "Output processed file",
-          "workflow_argument_name": "fastq2"
+          "workflow_argument_name": "microannot_mti",
+          "secondary_file_formats": ["mti_gz_tbi"]
+      },
+      {
+          "argument_format": "mti_gz",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "annot_mti",
+          "secondary_file_formats": ["mti_gz_tbi"]
       },
       {
           "argument_type": "parameter",
@@ -37,32 +49,42 @@
   "category": ["processing"],
   "cwl_child_filenames": [],
   "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v17/cwl",
-  "cwl_main_filename": "cram2fastq.cwl",
+  "cwl_main_filename": "vep-parallel.cwl",
   "cwl_pointer": "",
-  "description": "Convert cram to fastq files",
+  "description": "Run VEP to annotate input vcf file. Run mutanno to produce mti files for micro and full annotation",
   "docker_image_name": "cgap/cgap:v17",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_cram2fastq_v17",
-  "aliases": ["cgap:workflow_cram2fastq_v17",
-              "cgap:workflow_cram2fastq_v16",
-              "cgap:workflow_cram2fastq_v15",
-              "cgap:workflow_cram2fastq_v14",
-              "cgap:workflow_cram2fastq_v13"],
+  "name": "workflow_vep-parallel_v17",
+  "aliases": ["cgap:workflow_vep-parallel_v17"],
   "steps": [
       {
           "inputs": [
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "CRAM",
+                      "file_format": "vcf_gz",
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "cram",
+                  "name": "input_vcf",
                   "source": [
                       {
-                          "name": "cram"
+                          "name": "input_vcf"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "mti_gz",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "mti",
+                  "source": [
+                      {
+                          "name": "mti"
                       }
                   ]
               },
@@ -73,24 +95,38 @@
                       "global": true,
                       "type": "reference file"
                   },
-                  "name": "reference_fasta",
+                  "name": "reference",
                   "source": [
                       {
-                          "name": "reference_fasta"
+                          "name": "reference"
                       }
                   ]
               },
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "md5_list",
+                      "file_format": "txt",
                       "global": true,
                       "type": "reference file"
                   },
-                  "name": "reference_md5_list",
+                  "name": "regions",
                   "source": [
                       {
-                          "name": "reference_md5_list"
+                          "name": "regions"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vep_tar",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "vep_tar",
+                  "source": [
+                      {
+                          "name": "vep_tar"
                       }
                   ]
               },
@@ -110,49 +146,46 @@
           ],
           "meta": {
               "analysis_step_types": [
-                  "format conversion"
+                  "Run VEP and mutanno"
               ],
               "software_used": [
-                 "/softwares/3f2d3b0e-0365-4212-9468-c16ad9531c4d",
-                 "/softwares/72b0ca58-0cca-4344-8dd5-974a49c5a931",
-                 "/softwares/c4722fd7-633d-46aa-ac40-8eb5e00ac74d"
+                 "/softwares/f8c6b757-24b9-4a63-b06c-fe0fcc47f37b",
+                 "/softwares/f63a9a09-dcfc-492d-bbc2-1b4f0be6b132"
               ]
           },
-          "name": "cram2fastq",
+          "name": "vep-mti",
           "outputs": [
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "fastq",
+                      "file_format": "mti_gz",
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "fastq1",
+                  "name": "microannot_mti",
                   "target": [
                       {
-                          "name": "fastq1"
+                          "name": "microannot_mti"
                       }
                   ]
               },
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "fastq",
+                      "file_format": "mti_gz",
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "fastq2",
+                  "name": "annot_mti",
                   "target": [
                       {
-                          "name": "fastq2"
+                          "name": "annot_mti"
                       }
                   ]
               }
           ]
       }
   ],
-  "previous_version": ["3258380c-608b-4fb6-89ef-249d1692f492"],
-  "version_upgrade_log": "faster fastq compression using pigz",
-  "title": "Cram to fastq",
-  "uuid": "7bbf3487-a1fc-4073-952a-d5771973e875"
+  "title": "Run VEP on input vcf file and produce mti files for full and micro annotation",
+  "uuid": "adc588cf-1c6c-4281-9193-9645726eb792"
 }

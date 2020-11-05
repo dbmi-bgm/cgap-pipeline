@@ -30,6 +30,11 @@ inputs:
     default: "~"
     doc: separator to use for subfields
 
+  - id: VEPtag
+    type: string
+    default: "VEP"
+    doc: VEP tag to use
+
 outputs:
   comHet_vcf:
     type: File
@@ -57,6 +62,8 @@ steps:
         source: impact
       sep:
         source: sep
+      VEPtag:
+        source: VEPtag
     out: [output, output_log_json]
 
   sort-bgzip-vcf:

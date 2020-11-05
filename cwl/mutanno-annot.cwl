@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v16
+    dockerPull: cgap/cgap:v17
 
 baseCommand: [annot-parallel-mti.sh]
 
@@ -31,29 +31,37 @@ inputs:
       - ^.json
     doc: expect the path to the mutanno index file
 
-  - id: regions
+  - id: mti_vep
     type: File
     inputBinding:
       position: 3
+    secondaryFiles:
+      - .tbi
+    doc: expect the path to the mutanno index file for VEP
+
+  - id: regions
+    type: File
+    inputBinding:
+      position: 4
     doc: expect the path to the file defining regions
 
   - id: nthreads
     type: int
     inputBinding:
-      position: 4
+      position: 5
     doc: number of threads used to run parallel
 
   - id: micro_annotation
     type: string
     inputBinding:
-      position: 5
+      position: 6
     doc: whether this is micro-annotation (1) or full annotation (0)
 
   - id: chainfile
     type: File
     default: null
     inputBinding:
-      position: 6
+      position: 7
     doc: expect the path to the chain file for hg19
 
 outputs:

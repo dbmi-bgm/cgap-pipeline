@@ -38,7 +38,7 @@ if [[ $(cat integrity_check |cut -f2) != "OK" ]]; then
 fi
 
 # bam to fastq
-samtools collate -@$nthreads -O $input_bam | samtools fastq -1 $out_prefix.1.fastq -2 $out_prefix.2.fastq -@$nthreads - || { echo "cannot convert bam to fastq."; exit 1; }
+samtools collate -@$nthreads -O $input_bam | samtools fastq -0 /dev/null -s /dev/null -1 $out_prefix.1.fastq -2 $out_prefix.2.fastq -@$nthreads - || { echo "cannot convert bam to fastq."; exit 1; }
 
 # fastq line number check
 if [[ $(wc -l $out_prefix.1.fastq | cut -d' ' -f1) != $(wc -l $out_prefix.2.fastq | cut -d' ' -f1) ]]; then

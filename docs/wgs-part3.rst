@@ -7,10 +7,10 @@ Part 3. annotation and inheritance mode analysis
 
    wgs-step-mpileup
    wgs-step-rcktar
+   wgs-step-vep
    wgs-step-microannot
    wgs-step-filtering
    wgs-step-denovo
    wgs-step-comhet
    wgs-step-fullannot
    wgs-step-bamsnap
-

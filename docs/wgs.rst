@@ -12,15 +12,15 @@ The pipeline is mostly based on ``bwa``, ``gatk4``, ``granite`` (https://github.
 Docker Image
 ############
 
-* The current docker image is ``cgap/cgap:v16``
+* The current docker image is ``cgap/cgap:v17``
 
 The image contains (but is not limited to) the following software packages:
 
 - bwa (0.7.17)
 - gatk4 (4.1.2.0)
 - picard (2.20.2)
-- granite (0.1.0)
-- mutanno (0.4.3)
+- granite (0.1.2)
+- mutanno (0.4.8)
 - bamsnap (0.2.5)
 - samtools (1.9)
 - cramtools (0b5c9ec)
@@ -34,7 +34,7 @@ Pipeline Flow
 
 The overall flow of the pipeline looks as below:
 
-.. image:: images/bioinfo-snv-indel-flow-20200724.png
+.. image:: images/bioinfo-snv-indel-flow-v17-20201006.png
 
 
 Pipeline Parts and Runtimes
@@ -48,8 +48,8 @@ Largely, the pipeline consists of three parts:
 
 The part associations and the run time of the different steps are summarized in the following diagram:
 
-.. image:: images/cgap-pipeline-downstream-v14-20200729-parts-scale-largefont.png
-  :target: _images/cgap-pipeline-downstream-v14-20200729-parts-scale-largefont.png
+.. image:: images/cgap-pipeline-downstream-v17-20201006-parts-scale-largefont.png
+  :target: _images/cgap-pipeline-downstream-v17-20201006-parts-scale-largefont.png
 
 
 Pipeline Steps

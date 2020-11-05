@@ -1,7 +1,7 @@
 {
-  "accession": "GAPWFC53TF9O",
+  "accession": "GAPWFC63LD1O",
   "app_name": "workflow_granite-comHet-check",
-  "app_version": "v16",
+  "app_version": "v17",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -42,16 +42,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["granite-comHet.cwl", "sort-bgzip-vcf.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v16/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v17/cwl",
   "cwl_main_filename": "workflow_granite-comHet_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run granite comHet on vcf input file. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v16",
+  "docker_image_name": "cgap/cgap:v17",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-comHet-check_v16",
-  "aliases": ["cgap:workflow_granite-comHet-check_v16",
-              "cgap:workflow_granite-comHet-check_v15"],
+  "name": "workflow_granite-comHet-check_v17",
+  "aliases": ["cgap:workflow_granite-comHet-check_v17"],
   "steps": [
       {
           "inputs": [
@@ -88,7 +87,7 @@
                   "Run granite comHet"
               ],
               "software_used": [
-                 "/softwares/d390c8ec-e62a-46ab-8ff5-1111196aaea6"
+                 "/softwares/c355f2aa-e1b5-4f07-adb8-f572be3d13f8"
               ]
           },
           "name": "granite",
@@ -168,7 +167,7 @@
       }
   ],
   "title": "Run granite comHet plus output integrity-check",
-  "uuid": "9e43a0ef-be16-43f1-a789-b76261ee95a3",
-  "previous_version": ["4973be36-5e56-41be-98ef-dd771481f629"],
-  "version_upgrade_log": "Impact assignment for comp het pairs is fixed so that S/C are treated the same way as H/M."
+  "uuid": "f43c5ac3-d755-4acc-a6ed-7f65b8b4961b",
+  "previous_version": ["9e43a0ef-be16-43f1-a789-b76261ee95a3"],
+  "version_upgrade_log": "Updated granite version, CSQ is now the default for VEP"
 }

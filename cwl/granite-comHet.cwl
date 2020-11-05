@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v16
+    dockerPull: cgap/cgap:v17
 
 baseCommand: [granite, comHet]
 
@@ -47,6 +47,13 @@ inputs:
     inputBinding:
       prefix: --sep
     doc: separator to use for subfields
+
+  - id: VEPtag
+    type: string
+    default: null
+    inputBinding:
+      prefix: --VEPtag
+    doc: VEP tag to use
 
 outputs:
   - id: output
