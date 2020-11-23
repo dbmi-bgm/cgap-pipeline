@@ -103,13 +103,16 @@ ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 # VEP
 RUN git clone https://github.com/Ensembl/ensembl-vep.git && \
     cd ensembl-vep && \
-    git checkout release/99 && \
+    git checkout release/101 && \
     perl INSTALL.pl --AUTO a --NO_UPDATE && \
     cd ..
 
 # VEP script
 COPY vep-parallel.sh .
 RUN chmod +x vep-parallel.sh
+
+COPY vep-annot.sh .
+RUN chmod +x vep-annot.sh
 
 # bwa mem script
 COPY bwa-mem-to-bam.sh .
