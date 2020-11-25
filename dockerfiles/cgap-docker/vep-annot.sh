@@ -20,6 +20,14 @@ assembly=${13} # GRCh38
 # self variables
 directory=VCFS/
 
+# rename with version
+dbnsfp=dbNSFP4.1a.gz
+
+# rename dbNSFP
+ln -s $dbnsfp_gz $dbnsfp
+ln -s ${dbnsfp_gz}.tbi ${dbnsfp}.tbi
+ln -s ${dbnsfp_gz%.*}.readme.txt dbnsfp.readme.txt
+
 # unpack data sources
 tar -xzf $vep_tar_gz
 tar -xzf ${vep_tar_gz%%.*}.plugins.tar.gz
@@ -31,7 +39,7 @@ mkdir -p $directory
 # command line VEP
 # plugins
 plugin_entscan="--plugin MaxEntScan,fordownload"
-plugin_dbnsfp="--plugin dbNSFP,${dbnsfp_gz},ALL"
+plugin_dbnsfp="--plugin dbNSFP,${dbnsfp},ALL"
 plugin_spliceai="--plugin SpliceAI,snv=${spliceai_snv_gz},indel=${spliceai_indel_gz}"
 
 plugins="--dir_plugins VEP_plugins --plugin SpliceRegion,Extended --plugin TSSDistance $plugin_entscan $plugin_dbnsfp $plugin_spliceai"
