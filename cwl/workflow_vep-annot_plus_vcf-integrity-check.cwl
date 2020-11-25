@@ -89,11 +89,18 @@ outputs:
     outputSource: integrity-check/output
 
 steps:
+  bcftools-norm-multiallelics:
+    run: bcftools-norm-multiallelics.cwl
+    in:
+      input:
+        source: input_vcf
+      out: [output]
+
   vep-annot:
     run: vep-annot.cwl
     in:
       input:
-        source: input_vcf
+        source: bcftools-norm-multiallelics/output
       reference:
         source: reference
       regions:

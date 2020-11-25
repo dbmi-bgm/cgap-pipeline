@@ -48,6 +48,16 @@ RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9
     cd .. && \
     ln -s samtools-1.9 samtools
 
+# bcftools
+RUN wget https://github.com/samtools/bcftools/releases/download/1.11/bcftools-1.11.tar.bz2 && \
+    tar -xjf bcftools-1.11.tar.bz2 && \
+    rm -rf bcftools-1.11.tar.bz2 && \
+    cd bcftools-1.11 && \
+    ./configure && \
+    make && \
+    cd .. && \
+    ln -s bcftools-1.11 bcftools
+
 # bwa
 RUN wget https://github.com/lh3/bwa/archive/v0.7.17.tar.gz && \
     tar -xzf v0.7.17.tar.gz && \
@@ -187,8 +197,13 @@ RUN chmod +x tar-novoCaller.sh
 COPY merge-sort-vcf.sh .
 RUN chmod +x merge-sort-vcf.sh
 
+# bcftools norm multiallelics
+COPY bcftools-norm-multiallelics.sh .
+RUN chmod +x bcftools-norm-multiallelics.sh
+
 # env paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
+ENV PATH=/usr/local/bin/bcftools/:$PATH
 ENV PATH=/usr/local/bin/bwa/:$PATH
 ENV PATH=/usr/local/bin/cgap-scripts/:$PATH
 ENV PATH=/usr/local/bin/pigz-2.4/:$PATH
