@@ -39,6 +39,7 @@ inputs:
     type: File
     secondaryFiles:
       - .tbi
+      - ^.readme.txt
     doc: expect the path to the vcf gz file with dbNSFP annotations
 
   - id: maxent
