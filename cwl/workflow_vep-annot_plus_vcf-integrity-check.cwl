@@ -94,7 +94,7 @@ steps:
     in:
       input:
         source: input_vcf
-      out: [output]
+    out: [output]
 
   vep-annot:
     run: vep-annot.cwl
