@@ -16,6 +16,8 @@ baseCommand: [bcftools-norm-multiallelics.sh]
 inputs:
   - id: input
     type: File
+    inputBinding:
+      position: 1
 
 outputs:
   - id: output
