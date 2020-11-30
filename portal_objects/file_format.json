@@ -323,5 +323,49 @@
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "released",
         "valid_item_types": ["FileReference"]
+    },
+    {
+        "file_format": "dbnsfp_gz_tbi",
+        "standard_file_extension": "dbnsfp.gz.tbi",
+        "description": "Tabix index file for dbNSFP in vcf format, compressed",
+        "uuid": "311ac7bf-e1d5-463f-af15-61ebfea29608",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "released",
+        "valid_item_types": ["FileReference"]
+    },
+    {
+        "file_format": "dbnsfp_readme_txt",
+        "standard_file_extension": "dbnsfp.readme.txt",
+        "description": "readme file for dbNSFP",
+        "uuid": "ac822ea4-d281-41e0-b9c9-f283c51f1c15",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "released",
+        "valid_item_types": ["FileReference"]
+    },
+    {
+        "file_format": "dbnsfp_gz",
+        "standard_file_extension": "dbnsfp.gz",
+        "description": "dbNSFP source in vcf format, compressed",
+        "uuid": "65a2cca2-dae8-4ff2-ac8b-aa1e92f5416b",
+        "extrafile_formats": [
+            "311ac7bf-e1d5-463f-af15-61ebfea29608",
+            "ac822ea4-d281-41e0-b9c9-f283c51f1c15"
+        ],
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "released",
+        "valid_item_types": ["FileReference"]
+    },
+    {
+        "file_format": "tar_gz",
+        "standard_file_extension": "tar.gz",
+        "description": "files archive, compressed",
+        "uuid": "dp7f4220-b5aa-487f-836e-0672de38a234",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "released",
+        "valid_item_types": ["FileProcessed", "FileReference"]
     }
 ]
