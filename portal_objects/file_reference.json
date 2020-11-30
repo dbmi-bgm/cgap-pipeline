@@ -383,10 +383,10 @@
     "extra_files": [
         {
             "file_format": "plugins_tar",
-            "status": "uploading"
+            "status": "uploaded"
         }
     ],
-    "status": "uploading",
+    "status": "uploaded",
     "file_version": "101"
   },
   {
@@ -399,10 +399,10 @@
     "extra_files": [
         {
             "file_format": "vcf_gz_tbi",
-            "status": "uploading"
+            "status": "uploaded"
         }
     ],
-    "status": "uploading",
+    "status": "uploaded",
     "file_version": "2020111"
   },
   {
@@ -415,10 +415,10 @@
     "extra_files": [
         {
             "file_format": "vcf_gz_tbi",
-            "status": "uploading"
+            "status": "uploaded"
         }
     ],
-    "status": "uploading",
+    "status": "uploaded",
     "file_version": "3.1"
   },
   {
@@ -431,10 +431,10 @@
     "extra_files": [
         {
             "file_format": "vcf_gz_tbi",
-            "status": "uploading"
+            "status": "uploaded"
         }
     ],
-    "status": "uploading",
+    "status": "uploaded",
     "file_version": "1.3"
   },
   {
@@ -447,10 +447,10 @@
     "extra_files": [
         {
             "file_format": "vcf_gz_tbi",
-            "status": "uploading"
+            "status": "uploaded"
         }
     ],
-    "status": "uploading",
+    "status": "uploaded",
     "file_version": "1.3"
   },
   {
@@ -463,14 +463,14 @@
     "extra_files": [
         {
             "file_format": "dbnsfp_gz_tbi",
-            "status": "uploading"
+            "status": "uploaded"
         },
         {
           "file_format": "dbnsfp_readme_txt",
-          "status": "uploading"
+          "status": "uploaded"
         }
     ],
-    "status": "uploading",
+    "status": "uploaded",
     "file_version": "4.1a"
   },
   {
@@ -480,7 +480,7 @@
     "file_format": "tar_gz",
     "description": "datasource for MaxEnt v20040421",
     "aliases": ["cgap:maxent-20040421"],
-    "status": "uploading",
+    "status": "uploaded",
     "file_version": "20040421"
   }
 ]
