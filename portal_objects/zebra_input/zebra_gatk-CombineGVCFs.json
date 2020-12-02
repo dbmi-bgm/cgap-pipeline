@@ -4,15 +4,18 @@
     "input_files" : [
        {
            "workflow_argument_name": "input_gvcfs",
-           "uuid": [""]
+           "uuid": [""],
+           "mount": true
        },
        {
            "workflow_argument_name": "reference",
-           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7"
+           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
+           "mount": true
        },
        {
            "workflow_argument_name": "chromosomes",
-           "uuid": ""
+           "uuid": "",
+           "mount": true
        }
     ],
     "config": {

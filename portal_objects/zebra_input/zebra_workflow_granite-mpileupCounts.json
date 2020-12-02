@@ -16,7 +16,8 @@
        },
        {
            "workflow_argument_name": "regions",
-           "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28"
+           "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28",
+           "mount": true
        }
     ],
     "config": {

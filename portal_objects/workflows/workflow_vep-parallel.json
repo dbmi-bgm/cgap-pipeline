@@ -1,7 +1,7 @@
 {
   "accession": "GAPL8I45FW3P",
   "app_name": "workflow_vep-parallel",
-  "app_version": "v17",
+  "app_version": "v18",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -48,15 +48,16 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v17/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v18/cwl",
   "cwl_main_filename": "vep-parallel.cwl",
   "cwl_pointer": "",
   "description": "Run VEP to annotate input vcf file. Run mutanno to produce mti files for micro and full annotation",
-  "docker_image_name": "cgap/cgap:v17",
+  "docker_image_name": "cgap/cgap:v18",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_vep-parallel_v17",
-  "aliases": ["cgap:workflow_vep-parallel_v17"],
+  "name": "workflow_vep-parallel_v18",
+  "aliases": ["cgap:workflow_vep-parallel_v18",
+              "cgap:workflow_vep-parallel_v17"],
   "steps": [
       {
           "inputs": [

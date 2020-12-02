@@ -10,7 +10,7 @@ This step performs filtering of the variants.
 Requirements
 ++++++++++++
 
-A single, micro-annotated VCF file is an input. The micro-annotation should include annotation of VEP, CLINVAR and SpliceAI.
+A single, micro-annotated VCF file is an input. The micro-annotation should include annotation of VEP, ClinVar and SpliceAI.
 
 This step also requires a panel of unrelated samples in the .big format.
 
@@ -25,7 +25,7 @@ The filtering step is composed of multiple steps and the output vcf file is chec
 Whitelist
 ---------
 
-The whitelist steps use ``granite witheList`` to filter-in exonic and functionally relevant variant based on VEP, CLINVAR and SpliceAI annotations. The CLINVAR whitelist was performed separately so that the result does not undergo VEP cleaning and filtering by blacklist.
+The whitelist steps use ``granite witheList`` to filter-in exonic and functionally relevant variant based on VEP, ClinVar and SpliceAI annotations. The ClinVar whitelist is performed separately so that the result does not undergo VEP cleaning and filtering by blacklist.
 
 
 VEP cleaning
@@ -43,12 +43,10 @@ The blacklist step uses ``granite blackList`` to filter-out common and shared va
 Merging
 -------
 
-The CLINVAR whitelist result is merged with the rest of the filtering result. For variants that overlap between the two, the CLINVAR entry is chosen to preserve the entry without VEP cleaning for CLINVAR variants.
+The ClinVar whitelist result is merged with the rest of the filtering result. For variants that overlap between the two, the ClinVar entry is chosen to preserve the entry without VEP cleaning for ClinVar variants.
 
 
 Output
 ++++++
 
 The output is a filtered VCF file containing a lot fewer entries compared to the input VCF. The content of the remaining entries are identical to the input (no additional information added) except the VEP annotation has been cleaned up to remove irrelevant consequences.
-
-

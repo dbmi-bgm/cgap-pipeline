@@ -8,15 +8,18 @@
     "input_files" : [
        {
            "workflow_argument_name": "input_bam",
-           "uuid": ""
+           "uuid": "",
+           "mount": true
        },
        {
            "workflow_argument_name": "reference",
-           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7"
+           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
+           "mount": true
        },
        {
            "workflow_argument_name": "recalibration_report",
-           "uuid": ""
+           "uuid": "",
+           "mount": true
        }
     ],
     "config": {

@@ -45,7 +45,7 @@ It looks as below for example:
 
 ::
 
-    comHet=Phased|ENSG00000084636|ENST00000373672,ENST00000488897|STRONG_PAIR|STROING_PAIR|chr1:31662352G>A
+    comHet=Phased|ENSG00000084636|ENST00000373672~ENST00000488897|STRONG_PAIR|STROING_PAIR|chr1:31662352G>A
 
 
 The following header is added to the output VCF file.
@@ -77,7 +77,7 @@ Impact
 The impact of a compound heterozygous pair is determined as below:
 
 
-    1. If the VEP impact of both variants are HIGH ('H') or MODERATE ('M') or spliceAI score >0.8 ('S') or Clinvar Pathogenic or Likely Pathogenic ('C'), the impact of the pair is STRONG_PAIR.
+    1. If the VEP impact of both variants are HIGH ('H') or MODERATE ('M') or spliceAI score >0.8 ('S') or ClinVar Pathogenic or Likely Pathogenic ('C'), the impact of the pair is STRONG_PAIR.
 
     2. If one of the variants are H, M, S or C, the impact of the pair is MEDIUM_PAIR.
 

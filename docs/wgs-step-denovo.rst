@@ -25,10 +25,10 @@ An example line in an output VCF looks as below:
     chr1  1041200 .    C    T    573.12 .    AC=2;AF=0.333;AN=6;BaseQRankSum=0.408;DP=76;ExcessHet=3.01;FS=3.873;MLEAC=2;MLEAF=0.333;MQ=60.00;MQRankSum=0.00;QD=13.65;ReadPosRankSum=0.155;SOR=1.877;gnomADgenome=7.00849e-06;SpliceAI=0.11;VEP=ENSG00000188157|ENST00000379370|Transcript|missense_variant|AGRN|protein_coding;novoPP=0.0  GT:AD:DP:GQ:PL:RSTR   0/1:9,4:13:99:100,0,248:6,5,4,2 0/0:34,0:34:96:0,96,1440:23,0,11,0   0/1:12,17:29:99:484,0,309:12,17,2,4   ./.:.:.:.:.:29,0,20,0  ./.:.:.:.:.:19,0,16,0  ./.:.:.:.:.:16,1,22,0  ./.:.:.:.:.:21,0,18,0  ./.:.:.:.:.:28,0,22,0  ./.:.:.:.:.:20,0,24,0  ./.:.:.:.:.:21,0,26,0  ./.:.:.:.:.:11,0,11,0  ./.:.:.:.:.:15,0,13,0  ./.:.:.:.:.:29,0,22,0
 
 
-NovoPP
+novoPP
 ------
 
-The output VCF contains NovoPP (0 <= NovoPP <= 1) assigned to the proband sample field. The NovoPP value indicates the posterior probability that the given variant is a de novo mutation. A high NovoPP value suggests that the variant is likely to be a de novo mutation. 
+The output VCF contains novoPP (0 <= novoPP <= 1) assigned to the proband sample field. The novoPP value indicates the posterior probability that the given variant is a de novo mutation. A high novoPP value suggests that the variant is likely to be a de novo mutation.
 
 
 RSTR
@@ -45,18 +45,16 @@ FAQ
   | Yes
 
 
-2. What does NovoPP=0 mean?
+2. What does novoPP=0 mean?
 
-  | NovoPP=0 means that the parents had 3 or more ALT reads and the posterior probability was not calculated. It means that the variant is highly unlikely to be a de novo mutation.
+  | novoPP=0 means that the parents had 3 or more ALT reads and the posterior probability was not calculated. It means that the variant is highly unlikely to be a de novo mutation.
 
- 
+
 3. How does it work for chrX, Y, or M?
 
-  | Currently we do not report NovoPP for chrX, Y, or M, except when NovoPP=0. This is because the model assumed by NovoCaller does not fit well with these chromosomes.
+  | Currently we do not report novoPP for chrX, Y, or M, except when novoPP=0. This is because the model assumed by novoCaller does not fit well with these chromosomes.
 
 
 4. Does it take BAM files instead of .rck.tar files?
 
   | No.
-
-
