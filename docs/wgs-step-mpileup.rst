@@ -16,7 +16,7 @@ A BAM file and a reference fasta file must be provided. The step also takes in a
 Output
 ++++++
 
-The output .rck file contains read pileup count information for every genomic position, stratefied by allele (REF vs ALT), strand (Forward vs Reverse), and type (SNV, Insertion, Deletion).
+The output .rck file contains read pileup count information for every genomic position, stratified by allele (REF vs ALT), strand (Forward vs Reverse), and type (SNV, Insertion, Deletion).
 
 
 A few lines from an example .rck file is shown below:
@@ -28,4 +28,3 @@ A few lines from an example .rck file is shown below:
   13     2     35         18       15       1        1        0        0        0        0
 
 A .rck file is a tab-delimited text file and is tabix-indexed.
-

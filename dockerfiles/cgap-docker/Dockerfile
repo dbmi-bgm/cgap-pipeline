@@ -48,6 +48,16 @@ RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9
     cd .. && \
     ln -s samtools-1.9 samtools
 
+# bcftools
+RUN wget https://github.com/samtools/bcftools/releases/download/1.11/bcftools-1.11.tar.bz2 && \
+    tar -xjf bcftools-1.11.tar.bz2 && \
+    rm -rf bcftools-1.11.tar.bz2 && \
+    cd bcftools-1.11 && \
+    ./configure && \
+    make && \
+    cd .. && \
+    ln -s bcftools-1.11 bcftools
+
 # bwa
 RUN wget https://github.com/lh3/bwa/archive/v0.7.17.tar.gz && \
     tar -xzf v0.7.17.tar.gz && \
@@ -103,13 +113,16 @@ ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 # VEP
 RUN git clone https://github.com/Ensembl/ensembl-vep.git && \
     cd ensembl-vep && \
-    git checkout release/99 && \
+    git checkout release/101 && \
     perl INSTALL.pl --AUTO a --NO_UPDATE && \
     cd ..
 
 # VEP script
 COPY vep-parallel.sh .
 RUN chmod +x vep-parallel.sh
+
+COPY vep-annot.sh .
+RUN chmod +x vep-annot.sh
 
 # bwa mem script
 COPY bwa-mem-to-bam.sh .
@@ -170,7 +183,7 @@ RUN wget https://raw.githubusercontent.com/dbmi-bgm/granite/master/docker/mpileu
 RUN pip install mutanno==0.4.8
 
 # bamsnap
-RUN pip install bamsnap==0.2.5
+RUN pip install bamsnap==0.2.14
 
 # annot parallel mti script
 COPY annot-parallel-mti.sh .
@@ -184,8 +197,13 @@ RUN chmod +x tar-novoCaller.sh
 COPY merge-sort-vcf.sh .
 RUN chmod +x merge-sort-vcf.sh
 
+# bcftools norm multiallelics
+COPY bcftools-norm-multiallelics.sh .
+RUN chmod +x bcftools-norm-multiallelics.sh
+
 # env paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
+ENV PATH=/usr/local/bin/bcftools/:$PATH
 ENV PATH=/usr/local/bin/bwa/:$PATH
 ENV PATH=/usr/local/bin/cgap-scripts/:$PATH
 ENV PATH=/usr/local/bin/pigz-2.4/:$PATH

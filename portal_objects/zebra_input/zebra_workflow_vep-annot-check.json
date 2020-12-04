@@ -1,0 +1,70 @@
+{
+    "parameters": {
+      "nthreads": 72
+    },
+    "workflow_uuid": "a5464e85-dd94-486d-8ecd-d5e06dadc766",
+    "input_files" : [
+       {
+           "workflow_argument_name": "input_vcf",
+           "uuid": "",
+           "mount": true
+       },
+       {
+           "workflow_argument_name": "reference",
+           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
+           "mount": true
+       },
+       {
+           "workflow_argument_name": "regions",
+           "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28",
+           "mount": true
+       },
+       {
+           "workflow_argument_name": "vep",
+           "uuid": "4ff30e10-aa8b-4ebf-87ac-20c7bfc15a46"
+       },
+       {
+           "workflow_argument_name": "clinvar",
+           "uuid": "7db786d5-13d2-4622-bdd2-99866036b9b9",
+           "mount": true
+       },
+       {
+           "workflow_argument_name": "dbnsfp",
+           "uuid": "dc02df4c-49ac-4532-b85c-02800941aa44",
+           "mount": true
+       },
+       {
+           "workflow_argument_name": "maxent",
+           "uuid": "71a7d16b-8452-4266-ae80-bbede2e305e2"
+       },
+       {
+           "workflow_argument_name": "spliceai_snv",
+           "uuid": "a35e580c-7579-4312-a3a1-66810e6d9366",
+           "mount": true
+       },
+       {
+           "workflow_argument_name": "spliceai_indel",
+           "uuid": "3b7c0c29-5ee2-47c8-95a8-d28e15d5de47",
+           "mount": true
+       },
+       {
+           "workflow_argument_name": "gnomad",
+           "uuid": "52c6cbf6-ae94-4c10-ad03-26ed34f74a3e",
+           "mount": true
+       }
+    ],
+    "config": {
+      "instance_type": "c5n.18xlarge",
+      "ebs_size": "0.6x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_workflow_vep-annot-check",
+      "behavior_on_capacity_limit": "wait_and_retry"
+    },
+    "_tibanna": {
+      "run_type": "workflow_vep-annot-check",
+      "env": "fourfront-cgap"
+    },
+    "app_name": "workflow_vep-annot-check"
+}

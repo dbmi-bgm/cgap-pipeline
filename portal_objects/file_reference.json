@@ -372,5 +372,115 @@
     ],
     "status": "uploaded",
     "file_version": "99"
+  },
+  {
+    "uuid": "4ff30e10-aa8b-4ebf-87ac-20c7bfc15a46",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "vep_tar",
+    "description": "datasource for VEP v101 plus plugins",
+    "aliases": ["cgap:vep-101"],
+    "extra_files": [
+        {
+            "file_format": "plugins_tar",
+            "status": "uploaded"
+        }
+    ],
+    "status": "uploaded",
+    "file_version": "101"
+  },
+  {
+    "uuid": "7db786d5-13d2-4622-bdd2-99866036b9b9",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "vcf_gz",
+    "description": "datasource for ClinVar v20201101",
+    "aliases": ["cgap:clinvar-20201101"],
+    "extra_files": [
+        {
+            "file_format": "vcf_gz_tbi",
+            "status": "uploaded"
+        }
+    ],
+    "status": "uploaded",
+    "file_version": "20201101"
+  },
+  {
+    "uuid": "52c6cbf6-ae94-4c10-ad03-26ed34f74a3e",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "vcf_gz",
+    "description": "datasource for gnomAD v3.1, trimmed",
+    "aliases": ["cgap:gnomad-3.1"],
+    "extra_files": [
+        {
+            "file_format": "vcf_gz_tbi",
+            "status": "uploaded"
+        }
+    ],
+    "status": "uploaded",
+    "file_version": "3.1"
+  },
+  {
+    "uuid": "a35e580c-7579-4312-a3a1-66810e6d9366",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "vcf_gz",
+    "description": "datasource for SpliceAI SNV v1.3",
+    "aliases": ["cgap:spliceai_snv-1.3"],
+    "extra_files": [
+        {
+            "file_format": "vcf_gz_tbi",
+            "status": "uploaded"
+        }
+    ],
+    "status": "uploaded",
+    "file_version": "1.3"
+  },
+  {
+    "uuid": "3b7c0c29-5ee2-47c8-95a8-d28e15d5de47",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "vcf_gz",
+    "description": "datasource for SpliceAI indels v1.3",
+    "aliases": ["cgap:spliceai_indel-1.3"],
+    "extra_files": [
+        {
+            "file_format": "vcf_gz_tbi",
+            "status": "uploaded"
+        }
+    ],
+    "status": "uploaded",
+    "file_version": "1.3"
+  },
+  {
+    "uuid": "dc02df4c-49ac-4532-b85c-02800941aa44",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "dbnsfp_gz",
+    "description": "datasource for dbNSFP v4.1a",
+    "aliases": ["cgap:dbnsfp-4.1a"],
+    "extra_files": [
+        {
+            "file_format": "dbnsfp_gz_tbi",
+            "status": "uploaded"
+        },
+        {
+          "file_format": "dbnsfp_readme_txt",
+          "status": "uploaded"
+        }
+    ],
+    "status": "uploaded",
+    "file_version": "4.1a"
+  },
+  {
+    "uuid": "71a7d16b-8452-4266-ae80-bbede2e305e2",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "tar_gz",
+    "description": "datasource for MaxEnt v20040421",
+    "aliases": ["cgap:maxent-20040421"],
+    "status": "uploaded",
+    "file_version": "20040421"
   }
 ]

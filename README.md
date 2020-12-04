@@ -1,12 +1,16 @@
 ## CGAP pipeline
 * This repo contains CGAP pipeline components
   * CWL
-  * Docker source - Docker image name `cgap/cgap:v17`
+  * Docker source - Docker image name `cgap/cgap:v18`
   * Example Tibanna input jsons for individual steps
 
 For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
 
 ### Version updates
+#### v18
+* VEP is now the main source for annotations
+  * updated VEP to v101
+
 #### v17
 * added support for novel indels
   * added step to run VEP to annotate novel indels

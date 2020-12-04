@@ -11,22 +11,23 @@ hints:
   - class: DockerRequirement
     dockerPull: cgap/cgap:v18
 
-baseCommand: [sort-bgzip-vcf.sh]
+baseCommand: [bcftools-norm-multiallelics.sh]
 
 inputs:
   - id: input
     type: File
     inputBinding:
       position: 1
-    doc: expect the path to the vcf file
+    secondaryFiles:
+      - .tbi
 
 outputs:
   - id: output
     type: File
     outputBinding:
-      glob: sorted.vcf.gz
+      glob: split.vcf.gz
     secondaryFiles:
       - .tbi
 
 doc: |
-  sort, compress and index input vcf file
+  run bcftools norm to split multiallelic variants

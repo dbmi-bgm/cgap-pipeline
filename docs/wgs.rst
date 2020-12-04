@@ -12,7 +12,7 @@ The pipeline is mostly based on ``bwa``, ``gatk4``, ``granite`` (https://github.
 Docker Image
 ############
 
-* The current docker image is ``cgap/cgap:v17``
+* The current docker image is ``cgap/cgap:v18``
 
 The image contains (but is not limited to) the following software packages:
 
@@ -21,11 +21,13 @@ The image contains (but is not limited to) the following software packages:
 - picard (2.20.2)
 - granite (0.1.2)
 - mutanno (0.4.8)
-- bamsnap (0.2.5)
+- bamsnap (0.2.14)
 - samtools (1.9)
+- bcftools (1.11)
 - cramtools (0b5c9ec)
 - pigz (2.4)
 - pbgzip (2b09f97)
+- vep (101)
 - parallel
 
 

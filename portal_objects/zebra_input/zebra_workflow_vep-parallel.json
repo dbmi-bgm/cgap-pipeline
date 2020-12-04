@@ -6,7 +6,8 @@
     "input_files" : [
        {
            "workflow_argument_name": "input_vcf",
-           "uuid": ""
+           "uuid": "",
+           "mount": true
        },
        {
            "workflow_argument_name": "mti",
@@ -20,12 +21,12 @@
        },
        {
            "workflow_argument_name": "regions",
-           "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28"
+           "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28",
+           "mount": true
        },
        {
            "workflow_argument_name": "vep_tar",
-           "uuid": "ddd384a3-1cf2-4a7e-b87b-a6d0ff9b5394",
-           "mount": true
+           "uuid": "4ff30e10-aa8b-4ebf-87ac-20c7bfc15a46"
        }
     ],
     "config": {
