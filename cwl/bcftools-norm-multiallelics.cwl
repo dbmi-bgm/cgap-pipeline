@@ -18,6 +18,8 @@ inputs:
     type: File
     inputBinding:
       position: 1
+    secondaryFiles:
+      - .tbi
 
 outputs:
   - id: output

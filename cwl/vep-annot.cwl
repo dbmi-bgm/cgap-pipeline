@@ -94,21 +94,18 @@ inputs:
 
   - id: nthreads
     type: int
-    default: 50
     inputBinding:
       position: 11
     doc: number of threads used to run parallel
 
   - id: version
     type: string
-    default: "101"
     inputBinding:
       position: 12
     doc: vep datasource version
 
   - id: assembly
     type: string
-    default: "GRCh38"
     inputBinding:
       position: 13
     doc: genome assembly version

@@ -4,13 +4,11 @@
     "input_files" : [
        {
            "workflow_argument_name": "input_vcf_1",
-           "uuid": "",
-           "mount": true
+           "uuid": ""
        },
        {
            "workflow_argument_name": "input_vcf_2",
-           "uuid": "",
-           "mount": true
+           "uuid": ""
        }
     ],
     "config": {

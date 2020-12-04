@@ -66,7 +66,6 @@ inputs:
 
   - id: nthreads
     type: int
-    default: 50
     doc: number of threads used to run parallel
 
   - id: version
