@@ -6,7 +6,7 @@
         "uuid": "106199e5-5a85-4817-9a55-7b31698e1fda",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -16,7 +16,7 @@
         "uuid": "8db70ed6-0121-4fe1-a72e-d91dc5aa6cd3",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -26,7 +26,7 @@
         "uuid": "7373ca48-0b3e-467b-967a-80870846f89b",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -36,7 +36,7 @@
         "uuid": "11f2fc36-9a65-4d60-9365-d8ff241df4f7",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -52,7 +52,7 @@
         ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -66,7 +66,7 @@
         ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -76,7 +76,7 @@
         "uuid": "4ed9f7e0-2b2f-4aca-9533-a0a652b43442",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -86,7 +86,7 @@
         "uuid": "fb728bb4-bc56-46d5-8df5-a05562826b9a",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -99,7 +99,7 @@
         ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
@@ -109,7 +109,7 @@
         "uuid": "ec96f95a-cf13-4633-ab0d-c4a5138bbe0b",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
@@ -122,7 +122,7 @@
         ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference", "FileProcessed"]
     },
     {
@@ -132,7 +132,7 @@
         "uuid": "f84f1922-7f4e-4afc-922f-bec620969bf1",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference", "FileProcessed"]
     },
     {
@@ -145,7 +145,7 @@
         ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileProcessed"]
     },
     {
@@ -155,7 +155,7 @@
         "uuid": "b01ee86e-b2c7-4725-81d7-798718674485",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileProcessed"]
     },
     {
@@ -165,7 +165,7 @@
         "uuid": "1362126e-e6ee-4010-9fb8-06e9b39dbb83",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -175,7 +175,7 @@
         "uuid": "f66af4df-c107-44f0-bc94-227f1b4ccf72",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
@@ -185,7 +185,7 @@
         "uuid": "228190b1-4178-46ad-872e-9b8ca1931a31",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
@@ -195,7 +195,7 @@
         "uuid": "c55ace88-3289-49b0-a67a-c046e1004e5a",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
@@ -208,7 +208,7 @@
         ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
@@ -218,7 +218,7 @@
         "uuid": "a112ef25-bd5d-44c1-824a-d5c6156db0a4",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
@@ -231,7 +231,7 @@
         ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -241,7 +241,7 @@
         "uuid": "1c7dc723-811c-4fcf-b8e5-d5e17a2013f7",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
@@ -254,7 +254,7 @@
         ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
@@ -264,7 +264,7 @@
         "uuid": "4c04f6de-89a7-4477-8dc4-811b50c67401",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
@@ -274,7 +274,7 @@
         "uuid": "c0a56f31-d1af-4b88-9041-57b0830eeb8a",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
@@ -288,7 +288,7 @@
         ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
@@ -298,7 +298,7 @@
         "uuid": "dd1ef82d-da5e-4680-bd5c-cf471a87eb5b",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -308,7 +308,7 @@
         "uuid": "65ccbf65-80f9-41b4-b002-468500821c62",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -321,7 +321,7 @@
         ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -331,7 +331,7 @@
         "uuid": "311ac7bf-e1d5-463f-af15-61ebfea29608",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -341,7 +341,7 @@
         "uuid": "ac822ea4-d281-41e0-b9c9-f283c51f1c15",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -355,7 +355,7 @@
         ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileReference"]
     },
     {
@@ -365,7 +365,7 @@
         "uuid": "f2ec3b9f-a898-4e6c-8da5-734a7a6410b8",
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "released",
+        "status": "shared",
         "valid_item_types": ["FileProcessed", "FileReference"]
     }
 ]

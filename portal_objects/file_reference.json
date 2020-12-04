@@ -394,8 +394,8 @@
     "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
     "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
     "file_format": "vcf_gz",
-    "description": "datasource for ClinVar v2020111",
-    "aliases": ["cgap:clinvar-2020111"],
+    "description": "datasource for ClinVar v20201101",
+    "aliases": ["cgap:clinvar-20201101"],
     "extra_files": [
         {
             "file_format": "vcf_gz_tbi",
@@ -403,7 +403,7 @@
         }
     ],
     "status": "uploaded",
-    "file_version": "2020111"
+    "file_version": "20201101"
   },
   {
     "uuid": "52c6cbf6-ae94-4c10-ad03-26ed34f74a3e",
