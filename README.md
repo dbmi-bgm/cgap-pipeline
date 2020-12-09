@@ -10,6 +10,7 @@ For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
 #### v18
 * VEP is now the main source for annotations
   * updated VEP to v101
+* Bamsnap bug fix for reference fasta sequence being scrambled with multithreading.
 
 #### v17
 * added support for novel indels
