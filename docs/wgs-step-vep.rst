@@ -1,10 +1,7 @@
-=======================
-Novel indels annotation
-=======================
+===================
+Variants annotation
+===================
 
-This step extracts and annotates indels from the input vcf file. ``vep`` is used for annotation and ``mutanno preprocess`` is used to create source files for subsequent annotation steps.
+This step splits multialleic variants, realigns indels, and annotates variants for the input vcf file. ``bcftools`` is used for split and realignment, ``vep`` is used for annotation.
 
-This step is necessary to create additional sources of annotation for novel indels that are missing in the main annotation source.
-
-
-* CWL: vep-parallel.cwl
+* CWL: workflow_vep-annot_plus_vcf-integrity-check.cwl

@@ -1,12 +1,18 @@
 ## CGAP pipeline
 * This repo contains CGAP pipeline components
   * CWL
-  * Docker source - Docker image name `cgap/cgap:v18`
+  * Docker source - Docker image name `cgap/cgap:v19`
   * Example Tibanna input jsons for individual steps
 
 For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
 
 ### Version updates
+#### v19
+* added indels realignment when splitting variants with bcftools
+* extended ClinVar fields used by VEP
+* removed older gnomAD used by VEP by default
+* added geneList to filtering
+
 #### v18
 * VEP is now the main source for annotations
   * updated VEP to v101

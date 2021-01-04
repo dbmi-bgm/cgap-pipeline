@@ -1,7 +1,7 @@
 {
   "accession": "GAPW9ID4L32T",
   "app_name": "workflow_granite-rckTar",
-  "app_version": "v18",
+  "app_version": "v19",
   "arguments": [
       {
           "argument_format": "rck_gz",
@@ -18,15 +18,16 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v18/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v19/cwl",
   "cwl_main_filename": "granite-rckTar.cwl",
   "cwl_pointer": "",
   "description": "Create a tar archive of rck files. Create an index file for the archive",
-  "docker_image_name": "cgap/cgap:v18",
+  "docker_image_name": "cgap/cgap:v19",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-rckTar_v18",
-  "aliases": ["cgap:workflow_granite-rckTar_v18",
+  "name": "workflow_granite-rckTar_v19",
+  "aliases": ["cgap:workflow_granite-rckTar_v19",
+              "cgap:workflow_granite-rckTar_v18",
               "cgap:workflow_granite-rckTar_v17"],
   "steps": [
       {
@@ -51,7 +52,7 @@
                   "Run granite rckTar"
               ],
               "software_used": [
-                 "/softwares/c355f2aa-e1b5-4f07-adb8-f572be3d13f8"
+                 "/softwares/946ed27d-9a81-4568-88f5-9f67160a5821"
               ]
           },
           "name": "granite",

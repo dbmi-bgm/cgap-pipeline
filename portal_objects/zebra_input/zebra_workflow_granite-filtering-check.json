@@ -1,9 +1,9 @@
 {
     "parameters": {
-      "aftag": "gnomADgenome",
+      "aftag": "",
       "afthr": 0.01
     },
-    "workflow_uuid": "e43171b4-4ee5-4074-8734-727399e3179d",
+    "workflow_uuid": "8e075e1f-95ae-41f3-8f25-527d80af0787",
     "input_files" : [
        {
            "workflow_argument_name": "input_vcf",
@@ -11,8 +11,8 @@
            "unzip": "gz"
        },
        {
-           "workflow_argument_name": "bigfile",
-           "uuid": "20004873-b672-4d84-a7c1-7fd5c0407519"
+           "workflow_argument_name": "genes",
+           "uuid": "84f2bb24-edd7-459b-ab89-0a21866d7826"
        }
     ],
     "config": {

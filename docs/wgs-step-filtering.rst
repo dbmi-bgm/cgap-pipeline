@@ -10,7 +10,7 @@ This step performs filtering of the variants.
 Requirements
 ++++++++++++
 
-A single, micro-annotated VCF file is an input. The micro-annotation should include annotation of VEP, ClinVar and SpliceAI.
+A single, annotated VCF file is an input. The annotation should include annotation of VEP, ClinVar and SpliceAI.
 
 This step also requires a panel of unrelated samples in the .big format.
 
@@ -21,6 +21,12 @@ Steps
 The filtering step is composed of multiple steps and the output vcf file is checked for integrity to ensure the format is correct and the file is not truncated.
 
 .. image:: images/cgap_filtering_v14.png
+
+Genelist
+---------
+
+The genelist step uses ``granite geneList`` to clean VEP annotations for transcripts that are not mapping to any gene of interest.
+
 
 Whitelist
 ---------
