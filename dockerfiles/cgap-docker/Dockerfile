@@ -170,7 +170,7 @@ RUN chmod +x cram_to_bam.sh
 RUN chmod +x bam_to_fastq.sh
 
 # granite
-RUN pip install granite-suite==0.1.3
+RUN pip install granite-suite==0.1.4
 
 # mpileupCounts parallel script
 RUN wget https://raw.githubusercontent.com/dbmi-bgm/granite/master/docker/mpileupCounts-parallel.sh && \

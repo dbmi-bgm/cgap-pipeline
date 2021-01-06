@@ -1,6 +1,6 @@
 {
     "parameters": {
-      "aftag": "",
+      "aftag": "gnomADg_AF",
       "afthr": 0.01
     },
     "workflow_uuid": "8e075e1f-95ae-41f3-8f25-527d80af0787",
