@@ -1,5 +1,5 @@
 {
-  "accession": "GAPL8RDL9RFL",
+  "accession": "GAPL8RDL92TY",
   "app_name": "workflow_vep-annot-check",
   "app_version": "v19",
   "arguments": [
@@ -85,8 +85,7 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_vep-annot-check_v19",
-  "aliases": ["cgap:workflow_vep-annot-check_v19",
-              "cgap:workflow_vep-annot-check_v18"],
+  "aliases": ["cgap:workflow_vep-annot-check_v19"],
   "steps": [
       {
           "inputs": [
@@ -317,5 +316,7 @@
       }
   ],
   "title": "Split multiallelic variants and run VEP to annotate input vcf file",
-  "uuid": "a5464e85-dd94-486d-8ecd-d5e06dadc766"
+  "uuid": "860a1240-f15a-425d-875b-7b8f943130d4",
+  "previous_version": ["a5464e85-dd94-486d-8ecd-d5e06dadc766"],
+  "version_update_log": "Indel reaglienment added for multiallelic splitting, extended ClinVar fields used by VEP, removed older gnomAD used by VEP by default"
 }

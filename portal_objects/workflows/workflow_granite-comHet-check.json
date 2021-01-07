@@ -1,5 +1,5 @@
 {
-  "accession": "GAPWFC63LD1O",
+  "accession": "GAPWFC63L2IK",
   "app_name": "workflow_granite-comHet-check",
   "app_version": "v19",
   "arguments": [
@@ -50,9 +50,7 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_granite-comHet-check_v19",
-  "aliases": ["cgap:workflow_granite-comHet-check_v19",
-              "cgap:workflow_granite-comHet-check_v18",
-              "cgap:workflow_granite-comHet-check_v17"],
+  "aliases": ["cgap:workflow_granite-comHet-check_v19"],
   "steps": [
       {
           "inputs": [
@@ -169,7 +167,7 @@
       }
   ],
   "title": "Run granite comHet plus output integrity-check",
-  "uuid": "f43c5ac3-d755-4acc-a6ed-7f65b8b4961b",
-  "previous_version": ["9e43a0ef-be16-43f1-a789-b76261ee95a3"],
-  "version_upgrade_log": "Updated granite version, CSQ is now the default for VEP"
+  "uuid": "ece08c81-b1c7-4c2b-a91f-b49ae38dc57d",
+  "previous_version": ["f43c5ac3-d755-4acc-a6ed-7f65b8b4961b"],
+  "version_upgrade_log": "Updated granite version but no expected difference."
 }
