@@ -147,5 +147,5 @@
   "title": "Run bamsnap",
   "uuid": "b1a1598b-610d-4826-96a2-e5126a8c7488",
   "previous_version": ["a4016214-e4ce-4a34-93a1-c0751bbd1d37"],
-  "version_update_log": "fasta coordinate bug fixed"
+  "version_upgrade_log": "fasta coordinate bug fixed"
 }

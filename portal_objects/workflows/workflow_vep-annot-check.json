@@ -318,5 +318,5 @@
   "title": "Split multiallelic variants and run VEP to annotate input vcf file",
   "uuid": "860a1240-f15a-425d-875b-7b8f943130d4",
   "previous_version": ["a5464e85-dd94-486d-8ecd-d5e06dadc766"],
-  "version_update_log": "Indel reaglienment added for multiallelic splitting, extended ClinVar fields used by VEP, removed older gnomAD used by VEP by default"
+  "version_upgrade_log": "Indel reaglienment added for multiallelic splitting, extended ClinVar fields used by VEP, removed older gnomAD used by VEP by default"
 }
