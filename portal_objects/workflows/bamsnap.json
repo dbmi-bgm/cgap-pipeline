@@ -1,5 +1,5 @@
 {
-  "accession": "GAPWFBH25DOP",
+  "accession": "GAPWFBH2535R",
   "app_name": "bamsnap",
   "app_version": "v19",
   "arguments": [
@@ -45,12 +45,7 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "bamsnap_v19",
-  "aliases": ["cgap:bamsnap_v19",
-              "cgap:bamsnap_v18",
-              "cgap:bamsnap_v17",
-              "cgap:bamsnap_v16",
-              "cgap:bamsnap_v15",
-              "cgap:bamsnap_v14"],
+  "aliases": ["cgap:bamsnap_v19"],
   "steps": [
       {
           "inputs": [
@@ -128,7 +123,7 @@
                   "Run bamsnap"
               ],
               "software_used": [
-                 "/softwares/54c46161-bca8-471b-af32-d4ac68b971f8"
+                 "/softwares/87f15e8b-bef6-48f3-a8f3-6eabe68a4cd3"
               ]
           },
           "name": "bamsnap",
@@ -150,5 +145,7 @@
       }
   ],
   "title": "Run bamsnap",
-  "uuid": "a4016214-e4ce-4a34-93a1-c0751bbd1d37"
+  "uuid": "b1a1598b-610d-4826-96a2-e5126a8c7488",
+  "previous_version": ["a4016214-e4ce-4a34-93a1-c0751bbd1d37"],
+  "version_update_log": "fasta coordinate bug fixed"
 }
