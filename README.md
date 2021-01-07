@@ -12,6 +12,7 @@ For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
 * extended ClinVar fields used by VEP
 * removed older gnomAD used by VEP by default
 * added geneList to filtering
+* Bamsnap bug fix reflected in the portal objects
 
 #### v18
 * VEP is now the main source for annotations
