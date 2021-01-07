@@ -6,6 +6,13 @@
 
 For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
 
+## Updating portal objects
+The following command patches/posts all portal objects including softwares, file formats and workflows
+```
+python post_patch_to_portal.py [--ff-env=<env_name>] [--skip-software] [--skip-file-format] [--skip-workflow]
+# env_name : fourfront-cgapwolf (default), fourfront-cgap
+```
+
 ### Version updates
 #### v19
 * added indels realignment when splitting variants with bcftools
