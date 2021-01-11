@@ -1,5 +1,5 @@
 {
-  "accession": "GAPS8LLU7F9L",
+  "accession": "GAPS8LLU7B87",
   "app_name": "workflow_granite-novoCaller-rck-check",
   "app_version": "v19",
   "arguments": [
@@ -46,9 +46,7 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_granite-novoCaller-rck-check_v19",
-  "aliases": ["cgap:workflow_granite-novoCaller-rck-check_v19",
-              "cgap:workflow_granite-novoCaller-rck-check_v18",
-              "cgap:workflow_granite-novoCaller-rck-check_v17"],
+  "aliases": ["cgap:workflow_granite-novoCaller-rck-check_v19"],
   "steps": [
       {
           "inputs": [
@@ -167,7 +165,7 @@
       }
   ],
   "title": "Run granite novoCaller using rck files plus output integrity-check",
-  "uuid": "55c9ebf7-ef39-4eb0-9685-c090f2e788ae",
-  "previous_version": ["f38b91fb-7e0c-44e0-a871-a91a58227b34"],
-  "version_upgrade_log": "Updated granite version, CSQ is now the default for VEP"
+  "uuid": "e9edb072-a2ea-4ba8-a1d0-ada670f7e17c",
+  "previous_version": ["55c9ebf7-ef39-4eb0-9685-c090f2e788ae"],
+  "version_upgrade_log": "Updated granite version but no expected difference."
 }

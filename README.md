@@ -6,12 +6,20 @@
 
 For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
 
+### Updating portal objects
+The following command patches/posts all portal objects including softwares, file formats and workflows
+```
+python post_patch_to_portal.py [--ff-env=<env_name>] [--skip-software] [--skip-file-format] [--skip-workflow]
+# env_name : fourfront-cgapwolf (default), fourfront-cgap
+```
+
 ### Version updates
 #### v19
 * added indels realignment when splitting variants with bcftools
 * extended ClinVar fields used by VEP
 * removed older gnomAD used by VEP by default
 * added geneList to filtering
+* Bamsnap bug fix reflected in the portal objects
 
 #### v18
 * VEP is now the main source for annotations
