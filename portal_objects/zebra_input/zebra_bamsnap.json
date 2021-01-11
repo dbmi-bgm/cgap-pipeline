@@ -2,7 +2,7 @@
     "parameters": {
       "titles": ["NA12877 (Father)", "NA12878 (Mother)", "NA12879 (Daughter)"]
     },
-    "workflow_uuid": "cgap:bamsnap_v16"
+    "workflow_uuid": "b1a1598b-610d-4826-96a2-e5126a8c7488"
     "input_files" : [
        {
            "workflow_argument_name": "input_vcf",
