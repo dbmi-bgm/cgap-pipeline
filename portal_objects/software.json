@@ -53,30 +53,6 @@
         "software_type": [
             "annotator"
         ],
-        "source_url": "https://github.com/dbmi-bgm/cgap-pipeline/blob/master/dockerfiles/cgap-docker/AddReadGroups.py",
-        "title": "add-readgroups_81ca652",
-        "uuid": "d7ac4c75-e133-4a8e-a19e-b7e87873cc16",
-        "commit": "81ca652"
-    },
-    {
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "name": "add-readgroups",
-        "software_type": [
-            "annotator"
-        ],
-        "source_url": "https://github.com/dbmi-bgm/cgap-scripts",
-        "title": "add-readgroups_1140e78",
-        "uuid": "f455f9fe-6f4b-4cfe-8fce-f8c3c2b0b661",
-        "commit": "1140e78"
-    },
-    {
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "name": "add-readgroups",
-        "software_type": [
-            "annotator"
-        ],
         "source_url": "https://github.com/dbmi-bgm/cgap-scripts",
         "title": "add-readgroups_4bce067",
         "uuid": "7d1ab137-fa88-4649-8d22-349686f5bbba",
@@ -121,62 +97,14 @@
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "name": "mutanno",
-        "software_type": [
-            "annotator"
-        ],
-        "source_url": "https://github.com/dbmi-bgm/mutanno",
-        "title": "mutanno_8a780bd",
-        "uuid": "76479248-09d2-48e5-9ab3-94c167e51cc6",
-        "commit": "8a780bd"
-    },
-    {
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "name": "granite",
-        "software_type": [
-            "filter"
-        ],
-        "source_url": "https://github.com/dbmi-bgm/granite",
-        "title": "granite_e1f8aa3",
-        "uuid": "8d4ca59b-750b-4c22-8a34-c5d4e795b8ad",
-        "commit": "e1f8aa3"
-    },
-    {
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "name": "granite",
-        "software_type": [
-            "filter"
-        ],
-        "source_url": "https://github.com/dbmi-bgm/granite",
-        "title": "granite_914b7ef",
-        "uuid": "5a0b864e-dc16-4484-bcf3-c64e35a25df9",
-        "commit": "914b7ef"
-    },
-    {
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "name": "mutanno",
-        "software_type": [
-            "annotator"
-        ],
-        "source_url": "https://github.com/dbmi-bgm/mutanno",
-        "title": "mutanno_0.4.2",
-        "uuid": "1d28b7b8-1033-492f-8a1a-d4ac5b1ab55e",
-        "version": "0.4.2"
-    },
-    {
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "name": "bamsnap",
         "software_type": [
             "image generator"
         ],
         "source_url": "https://github.com/parklab/bamsnap",
-        "title": "bamsnap_0.2.5",
-        "uuid": "54c46161-bca8-471b-af32-d4ac68b971f8",
-        "version": "0.2.5"
+        "title": "bamsnap_0.2.14",
+        "uuid": "87f15e8b-bef6-48f3-a8f3-6eabe68a4cd3",
+        "version": "0.2.14"
     },
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
@@ -186,69 +114,9 @@
             "filter"
         ],
         "source_url": "https://github.com/dbmi-bgm/granite",
-        "title": "granite_0.1.0",
-        "uuid": "d390c8ec-e62a-46ab-8ff5-1111196aaea6",
-        "commit": "0.1.0"
-    },
-    {
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "name": "granite",
-        "software_type": [
-            "filter"
-        ],
-        "source_url": "https://github.com/dbmi-bgm/granite",
-        "title": "granite_0.1.2",
-        "uuid": "c355f2aa-e1b5-4f07-adb8-f572be3d13f8",
-        "commit": "0.1.2"
-    },
-    {
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "name": "mutanno",
-        "software_type": [
-            "annotator"
-        ],
-        "source_url": "https://github.com/dbmi-bgm/mutanno",
-        "title": "mutanno_0.4.3",
-        "uuid": "5d53e128-a0ac-4582-8281-89e349793e3a",
-        "version": "0.4.3"
-    },
-    {
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "name": "mutanno",
-        "software_type": [
-            "annotator"
-        ],
-        "source_url": "https://github.com/dbmi-bgm/mutanno",
-        "title": "mutanno_0.4.5",
-        "uuid": "ee32798b-2915-4d7b-a4fd-4b6f978e5422",
-        "version": "0.4.5"
-    },
-    {
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "name": "mutanno",
-        "software_type": [
-            "annotator"
-        ],
-        "source_url": "https://github.com/dbmi-bgm/mutanno",
-        "title": "mutanno_0.4.8",
-        "uuid": "f63a9a09-dcfc-492d-bbc2-1b4f0be6b132",
-        "version": "0.4.8"
-    },
-    {
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "name": "vep",
-        "software_type": [
-            "annotator"
-        ],
-        "source_url": "https://github.com/Ensembl/ensembl-vep",
-        "title": "vep_99",
-        "uuid": "f8c6b757-24b9-4a63-b06c-fe0fcc47f37b",
-        "version": "99"
+        "title": "granite_0.1.4",
+        "uuid": "946ed27d-9a81-4568-88f5-9f67160a5821",
+        "commit": "0.1.4"
     },
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",

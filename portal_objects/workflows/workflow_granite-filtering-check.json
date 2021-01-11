@@ -1,12 +1,17 @@
 {
-  "accession": "GAPG8LC7663P",
+  "accession": "GAPG8SG7O9K3",
   "app_name": "workflow_granite-filtering-check",
-  "app_version": "v18",
+  "app_version": "v19",
   "arguments": [
       {
           "argument_format": "vcf_gz",
           "argument_type": "Input file",
           "workflow_argument_name": "input_vcf"
+      },
+      {
+          "argument_format": "txt",
+          "argument_type": "Input file",
+          "workflow_argument_name": "genes"
       },
       {
           "argument_format": "bed",
@@ -53,17 +58,16 @@
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
-  "cwl_child_filenames": ["granite-whiteList.cwl", "granite-cleanVCF.cwl", "granite-blackList.cwl", "merge-sort-vcf.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v18/cwl",
+  "cwl_child_filenames": ["granite-geneList.cwl", "granite-whiteList.cwl", "granite-cleanVCF.cwl", "granite-blackList.cwl", "merge-sort-vcf.cwl", "vcf-integrity-check.cwl"],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v19/cwl",
   "cwl_main_filename": "workflow_granite-filtering_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
-  "description": "Filter and clean the input vcf using granite (whiteList, cleanVCF, blackList). An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v18",
+  "description": "Filter and clean the input vcf using granite (geneList, whiteList, cleanVCF, blackList). An integrity check is performed on the output file",
+  "docker_image_name": "cgap/cgap:v19",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-filtering-check_v18",
-  "aliases": ["cgap:workflow_granite-filtering-check_v18",
-              "cgap:workflow_granite-filtering-check_v17"],
+  "name": "workflow_granite-filtering-check_v19",
+  "aliases": ["cgap:workflow_granite-filtering-check_v19"],
   "steps": [
       {
           "inputs": [
@@ -78,6 +82,20 @@
                   "source": [
                       {
                           "name": "input_vcf"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "txt",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "genes",
+                  "source": [
+                      {
+                          "name": "genes"
                       }
                   ]
               },
@@ -164,10 +182,10 @@
           ],
           "meta": {
               "analysis_step_types": [
-                  "Run granite whiteList, cleanVCF, blackList"
+                  "Run granite geneList, whiteList, cleanVCF, blackList"
               ],
               "software_used": [
-                 "/softwares/c355f2aa-e1b5-4f07-adb8-f572be3d13f8"
+                 "/softwares/946ed27d-9a81-4568-88f5-9f67160a5821"
               ]
           },
           "name": "granite",
@@ -233,8 +251,8 @@
           ]
       }
   ],
-  "title": "Run granite to filter and clean input vcf (whiteList, cleanVCF, blackList) plus output integrity-check",
-  "uuid": "e43171b4-4ee5-4074-8734-727399e3179d",
-  "previous_version": ["cb85683c-54a6-44e8-820c-1800aec9fdcd"],
-  "version_upgrade_log": "Updated granite version, CSQ is now the default for VEP"
+  "title": "Run granite to filter and clean input vcf (geneList, whiteList, cleanVCF, blackList) plus output integrity-check",
+  "uuid": "8e075e1f-95ae-41f3-8f25-527d80af0787",
+  "previous_version": ["e43171b4-4ee5-4074-8734-727399e3179d"],
+  "version_upgrade_log": "Added geneList filter, updated granite to work with standard VEP format"
 }

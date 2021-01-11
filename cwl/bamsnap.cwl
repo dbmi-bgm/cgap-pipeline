@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v18
+    dockerPull: cgap/cgap:v19
 
 baseCommand: [bamsnap]
 

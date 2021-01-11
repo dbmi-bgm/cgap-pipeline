@@ -482,5 +482,16 @@
     "aliases": ["cgap:maxent-20040421"],
     "status": "uploaded",
     "file_version": "20040421"
+  },
+  {
+    "uuid": "84f2bb24-edd7-459b-ab89-0a21866d7826",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "txt",
+    "description": "list of genes",
+    "aliases": ["cgap:genes-0.4.6"],
+    "extra_files": [],
+    "status": "uploaded",
+    "file_version": "0.4.6"
   }
 ]

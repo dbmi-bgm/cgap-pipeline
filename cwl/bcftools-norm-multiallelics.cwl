@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v18
+    dockerPull: cgap/cgap:v19
 
 baseCommand: [bcftools-norm-multiallelics.sh]
 
@@ -20,6 +20,15 @@ inputs:
       position: 1
     secondaryFiles:
       - .tbi
+
+  - id: reference
+    type: File
+    inputBinding:
+      position: 2
+    secondaryFiles:
+      - ^.dict
+      - .fai
+    doc: expect the path to the fa file
 
 outputs:
   - id: output

@@ -1,7 +1,7 @@
 {
-  "accession": "GAPS8LLU7F9L",
+  "accession": "GAPS8LLU7B87",
   "app_name": "workflow_granite-novoCaller-rck-check",
-  "app_version": "v18",
+  "app_version": "v19",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -38,16 +38,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["granite-novoCaller-rck.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v18/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v19/cwl",
   "cwl_main_filename": "workflow_granite-novoCaller-rck_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run granite novoCaller on vcf input file. Use rck files. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v18",
+  "docker_image_name": "cgap/cgap:v19",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-novoCaller-rck-check_v18",
-  "aliases": ["cgap:workflow_granite-novoCaller-rck-check_v18",
-              "cgap:workflow_granite-novoCaller-rck-check_v17"],
+  "name": "workflow_granite-novoCaller-rck-check_v19",
+  "aliases": ["cgap:workflow_granite-novoCaller-rck-check_v19"],
   "steps": [
       {
           "inputs": [
@@ -99,7 +98,7 @@
                   "Run granite novoCaller"
               ],
               "software_used": [
-                 "/softwares/c355f2aa-e1b5-4f07-adb8-f572be3d13f8"
+                 "/softwares/946ed27d-9a81-4568-88f5-9f67160a5821"
               ]
           },
           "name": "granite",
@@ -166,7 +165,7 @@
       }
   ],
   "title": "Run granite novoCaller using rck files plus output integrity-check",
-  "uuid": "55c9ebf7-ef39-4eb0-9685-c090f2e788ae",
-  "previous_version": ["f38b91fb-7e0c-44e0-a871-a91a58227b34"],
-  "version_upgrade_log": "Updated granite version, CSQ is now the default for VEP"
+  "uuid": "e9edb072-a2ea-4ba8-a1d0-ada670f7e17c",
+  "previous_version": ["55c9ebf7-ef39-4eb0-9685-c090f2e788ae"],
+  "version_upgrade_log": "Updated granite version but no expected difference."
 }

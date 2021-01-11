@@ -118,9 +118,6 @@ RUN git clone https://github.com/Ensembl/ensembl-vep.git && \
     cd ..
 
 # VEP script
-COPY vep-parallel.sh .
-RUN chmod +x vep-parallel.sh
-
 COPY vep-annot.sh .
 RUN chmod +x vep-annot.sh
 
@@ -173,14 +170,11 @@ RUN chmod +x cram_to_bam.sh
 RUN chmod +x bam_to_fastq.sh
 
 # granite
-RUN pip install granite-suite==0.1.2
+RUN pip install granite-suite==0.1.4
 
 # mpileupCounts parallel script
 RUN wget https://raw.githubusercontent.com/dbmi-bgm/granite/master/docker/mpileupCounts-parallel.sh && \
     chmod +x mpileupCounts-parallel.sh
-
-# mutanno
-RUN pip install mutanno==0.4.8
 
 # bamsnap
 RUN pip install bamsnap==0.2.14

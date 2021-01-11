@@ -1,7 +1,7 @@
 {
-  "accession": "GAPWFC63LD1O",
+  "accession": "GAPWFC63L2IK",
   "app_name": "workflow_granite-comHet-check",
-  "app_version": "v18",
+  "app_version": "v19",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -42,16 +42,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["granite-comHet.cwl", "sort-bgzip-vcf.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v18/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v19/cwl",
   "cwl_main_filename": "workflow_granite-comHet_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run granite comHet on vcf input file. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v18",
+  "docker_image_name": "cgap/cgap:v19",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-comHet-check_v18",
-  "aliases": ["cgap:workflow_granite-comHet-check_v18",
-              "cgap:workflow_granite-comHet-check_v17"],
+  "name": "workflow_granite-comHet-check_v19",
+  "aliases": ["cgap:workflow_granite-comHet-check_v19"],
   "steps": [
       {
           "inputs": [
@@ -88,7 +87,7 @@
                   "Run granite comHet"
               ],
               "software_used": [
-                 "/softwares/c355f2aa-e1b5-4f07-adb8-f572be3d13f8"
+                 "/softwares/946ed27d-9a81-4568-88f5-9f67160a5821"
               ]
           },
           "name": "granite",
@@ -168,7 +167,7 @@
       }
   ],
   "title": "Run granite comHet plus output integrity-check",
-  "uuid": "f43c5ac3-d755-4acc-a6ed-7f65b8b4961b",
-  "previous_version": ["9e43a0ef-be16-43f1-a789-b76261ee95a3"],
-  "version_upgrade_log": "Updated granite version, CSQ is now the default for VEP"
+  "uuid": "ece08c81-b1c7-4c2b-a91f-b49ae38dc57d",
+  "previous_version": ["f43c5ac3-d755-4acc-a6ed-7f65b8b4961b"],
+  "version_upgrade_log": "Updated granite version but no expected difference."
 }

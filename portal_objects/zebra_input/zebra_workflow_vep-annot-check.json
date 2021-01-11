@@ -2,7 +2,7 @@
     "parameters": {
       "nthreads": 72
     },
-    "workflow_uuid": "a5464e85-dd94-486d-8ecd-d5e06dadc766",
+    "workflow_uuid": "860a1240-f15a-425d-875b-7b8f943130d4",
     "input_files" : [
        {
            "workflow_argument_name": "input_vcf",

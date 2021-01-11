@@ -27,12 +27,12 @@ inputs:
 
   - id: sep
     type: string
-    default: "~"
+    default: null
     doc: separator to use for subfields
 
   - id: VEPtag
     type: string
-    default: "VEP"
+    default: null
     doc: VEP tag to use
 
 outputs:

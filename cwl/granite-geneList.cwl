@@ -11,7 +11,7 @@ hints:
   - class: DockerRequirement
     dockerPull: cgap/cgap:v19
 
-baseCommand: [granite, blackList]
+baseCommand: [granite, geneList]
 
 inputs:
   - id: input
@@ -27,26 +27,18 @@ inputs:
       prefix: -o
     doc: name of the output file
 
-  - id: bigfile
+  - id: genes
     type: File
-    default: null
     inputBinding:
-      prefix: -b
-    doc: expect the path to big file with positions set for blacklist
+      prefix: -g
+    doc: expect the path to the tsv file with list of genes to apply
 
-  - id: aftag
+  - id: VEPtag
     type: string
     default: null
     inputBinding:
-      prefix: --aftag
-    doc: TAG (TAG=<float>) to be used to filter by population allele frequency
-
-  - id: afthr
-    type: float
-    default: null
-    inputBinding:
-      prefix: --afthr
-    doc: threshold to filter by population allele frequency
+      prefix: --VEPtag
+    doc: VEP tag to use
 
 outputs:
   - id: output
@@ -55,4 +47,4 @@ outputs:
       glob: $(inputs.outputfile)
 
 doc: |
-  run granite blackList
+  run granite geneList

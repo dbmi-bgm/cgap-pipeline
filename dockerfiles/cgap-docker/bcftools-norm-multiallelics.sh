@@ -2,9 +2,10 @@
 
 # variables from command line
 input_vcf=$1
+reference=$2
 
 # run bcftools
-bcftools norm --multiallelics - -o split_tmp.vcf -O v $input_vcf
+bcftools norm -m -any -f $reference -o split_tmp.vcf -O v $input_vcf
 
 py_script="
 fo = open('split.vcf', 'w')

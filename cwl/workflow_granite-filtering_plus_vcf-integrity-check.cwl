@@ -10,15 +10,24 @@ inputs:
     type: File
     doc: expect the path to the vcf file
 
+  - id: genes
+    type: File
+    doc: expect the path to the tsv file with list of genes to apply
+
   - id: VEPsep
     type: string
-    default: "~"
+    default: null
     doc: VEP separator to use for subfields
 
   - id: VEPtag
     type: string
-    default: "VEP"
+    default: null
     doc: VEP tag to use
+
+  - id: outputfile-genes
+    type: string
+    default: "output-genes.vcf"
+    doc: name of the output file
 
   - id: outputfile-CLI
     type: string
@@ -120,11 +129,24 @@ outputs:
     outputSource: integrity-check/output
 
 steps:
+  granite-geneList:
+    run: granite-geneList.cwl
+    in:
+      input:
+        source: input_vcf
+      outputfile:
+        source: outputfile-genes
+      genes:
+        source: genes
+      VEPtag:
+        source: VEPtag
+    out: [output]
+
   granite-whiteList-CLI:
     run: granite-whiteList.cwl
     in:
       input:
-        source: input_vcf
+        source: granite-geneList/output
       outputfile:
         source: outputfile-CLI
       CLINVAR:
@@ -151,7 +173,7 @@ steps:
     run: granite-whiteList.cwl
     in:
       input:
-        source: input_vcf
+        source: granite-geneList/output
       outputfile:
         source: outputfile-VEP-SpAI
       CLINVAR:
@@ -227,6 +249,7 @@ steps:
     out: [output]
 
 doc: |
+  run granite geneList |
   run granite whiteList CLINVAR |
   run granite whiteList VEP-SpAI with cleanVCF, run blackList |
   run merge-sort-vcf.sh to merge and sort the two vcf files |

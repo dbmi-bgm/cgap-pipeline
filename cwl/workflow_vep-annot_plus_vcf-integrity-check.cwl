@@ -93,6 +93,8 @@ steps:
     in:
       input:
         source: input_vcf
+      reference:
+        source: reference
     out: [output]
 
   vep-annot:
