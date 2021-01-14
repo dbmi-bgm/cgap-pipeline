@@ -1,7 +1,7 @@
 {
-  "accession": "GAPFKJG7638L",
+  "accession": "GAPFKJG7T9KG",
   "app_name": "workflow_granite-mpileupCounts",
-  "app_version": "v19",
+  "app_version": "v20",
   "arguments": [
       {
           "argument_format": "bam",
@@ -40,17 +40,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v19/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v20/cwl",
   "cwl_main_filename": "granite-mpileupCounts.cwl",
   "cwl_pointer": "",
   "description": "Run granite mpileupCounts on bam input file. Produce a rck.gz file",
-  "docker_image_name": "cgap/cgap:v19",
+  "docker_image_name": "cgap/cgap:v20",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-mpileupCounts_v19",
-  "aliases": ["cgap:workflow_granite-mpileupCounts_v19",
-              "cgap:workflow_granite-mpileupCounts_v18",
-              "cgap:workflow_granite-mpileupCounts_v17"],
+  "name": "workflow_granite-mpileupCounts_v20",
+  "aliases": ["cgap:workflow_granite-mpileupCounts_v20"],
   "steps": [
       {
           "inputs": [
@@ -141,7 +139,7 @@
                   "Run granite mpileupCounts"
               ],
               "software_used": [
-                 "/softwares/946ed27d-9a81-4568-88f5-9f67160a5821"
+                 "/softwares/ddc704e2-66b0-44e1-99b9-65c9e31c41c9"
               ]
           },
           "name": "granite",
@@ -164,7 +162,7 @@
       }
   ],
   "title": "Run granite mpileupCounts",
-  "uuid": "c6dac0af-631d-402f-a1c1-282e091f1b3e",
-  "previous_version": ["6e89bc5d-b4a0-4954-9c3f-361477d5f537"],
-  "version_upgrade_log": "Updated granite version, CSQ is now the default for VEP"
+  "uuid": "ee996546-e768-4116-804f-79fd3900a9fe",
+  "previous_version": ["c6dac0af-631d-402f-a1c1-282e091f1b3e"],
+  "version_upgrade_log": "Updated granite version but no expected difference"
 }

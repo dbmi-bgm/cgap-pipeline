@@ -1,7 +1,7 @@
 {
-  "accession": "GAPS8LLU7B87",
+  "accession": "GAPS8LJK898F",
   "app_name": "workflow_granite-novoCaller-rck-check",
-  "app_version": "v19",
+  "app_version": "v20",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -38,15 +38,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["granite-novoCaller-rck.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v19/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v20/cwl",
   "cwl_main_filename": "workflow_granite-novoCaller-rck_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run granite novoCaller on vcf input file. Use rck files. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v19",
+  "docker_image_name": "cgap/cgap:v20",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-novoCaller-rck-check_v19",
-  "aliases": ["cgap:workflow_granite-novoCaller-rck-check_v19"],
+  "name": "workflow_granite-novoCaller-rck-check_v20",
+  "aliases": ["cgap:workflow_granite-novoCaller-rck-check_v20"],
   "steps": [
       {
           "inputs": [
@@ -98,7 +98,7 @@
                   "Run granite novoCaller"
               ],
               "software_used": [
-                 "/softwares/946ed27d-9a81-4568-88f5-9f67160a5821"
+                 "/softwares/ddc704e2-66b0-44e1-99b9-65c9e31c41c9"
               ]
           },
           "name": "granite",
@@ -165,7 +165,7 @@
       }
   ],
   "title": "Run granite novoCaller using rck files plus output integrity-check",
-  "uuid": "e9edb072-a2ea-4ba8-a1d0-ada670f7e17c",
-  "previous_version": ["55c9ebf7-ef39-4eb0-9685-c090f2e788ae"],
-  "version_upgrade_log": "Updated granite version but no expected difference."
+  "uuid": "db3c2e27-db49-4090-9d8e-03904fcf3b28",
+  "previous_version": ["e9edb072-a2ea-4ba8-a1d0-ada670f7e17c"],
+  "version_upgrade_log": "Updated granite version but no expected difference"
 }

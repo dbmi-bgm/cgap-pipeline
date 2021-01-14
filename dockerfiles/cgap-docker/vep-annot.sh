@@ -67,41 +67,22 @@ array=(${directory}*.vep.vcf)
 IFS=$'\n' sorted=($(sort -V <<<"${array[*]}"))
 unset IFS
 
-grep "^#" ${sorted[0]} > combined_tmp.vep.vcf
+grep "^#" ${sorted[0]} > combined.vep.vcf
 
 for filename in ${sorted[@]};
   do
     if [[ $filename =~ "M" ]]; then
       chr_M=$filename
     else
-      grep -v "^#" $filename >> combined_tmp.vep.vcf
+      grep -v "^#" $filename >> combined.vep.vcf
       rm -f $filename
     fi
   done
 
 if [[ -v  chr_M  ]]; then
-  grep -v "^#" $chr_M >> combined_tmp.vep.vcf
+  grep -v "^#" $chr_M >> combined.vep.vcf
   rm -f $chr_M
 fi
-
-py_script="
-fo = open('combined.vep.vcf', 'w')
-with open('combined_tmp.vep.vcf') as fi:
-    for line in fi:
-        if line.startswith('#'):
-            fo.write(line)
-        else:
-            line_split = line.rstrip().split('\t')
-            line_split[4] = line_split[4].replace('-', '*')
-            fo.write('\t'.join(line_split) + '\n')
-        #end if
-    #end for
-#end with
-
-fo.close()
-"
-
-python -c "$py_script"
 
 # compress and index output vcf
 bgzip combined.vep.vcf || exit 1
