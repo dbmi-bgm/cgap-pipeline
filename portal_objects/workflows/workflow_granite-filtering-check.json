@@ -254,5 +254,5 @@
   "title": "Run granite to filter and clean input vcf (geneList, whiteList, cleanVCF, blackList) plus output integrity-check",
   "uuid": "cc82b0c5-680e-4d80-a01a-417cf7f4cb96",
   "previous_version": ["8e075e1f-95ae-41f3-8f25-527d80af0787"],
-  "version_upgrade_log": "Updated granite version but no expected difference"
+  "version_upgrade_log": "Updated granite version but no expected difference, reading vcf.gz directly instead of downloading and unzipping"
 }

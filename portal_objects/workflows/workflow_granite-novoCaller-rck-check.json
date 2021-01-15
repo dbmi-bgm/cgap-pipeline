@@ -167,5 +167,5 @@
   "title": "Run granite novoCaller using rck files plus output integrity-check",
   "uuid": "db3c2e27-db49-4090-9d8e-03904fcf3b28",
   "previous_version": ["e9edb072-a2ea-4ba8-a1d0-ada670f7e17c"],
-  "version_upgrade_log": "Updated granite version but no expected difference"
+  "version_upgrade_log": "Updated granite version but no expected difference, reading vcf.gz directly instead of downloading and unzipping"
 }

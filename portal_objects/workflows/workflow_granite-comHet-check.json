@@ -169,5 +169,5 @@
   "title": "Run granite comHet plus output integrity-check",
   "uuid": "8a9c5158-a3ed-4f06-bef4-79278070429a",
   "previous_version": ["ece08c81-b1c7-4c2b-a91f-b49ae38dc57d"],
-  "version_upgrade_log": "Updated granite version but no expected difference"
+  "version_upgrade_log": "Updated granite version but no expected difference, reading vcf.gz directly instead of downloading and unzipping"
 }
