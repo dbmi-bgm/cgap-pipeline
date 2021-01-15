@@ -12,7 +12,7 @@ Requirements
 
 A single, annotated VCF file is an input. The annotation should include annotation of VEP, ClinVar and SpliceAI.
 
-This step also requires a panel of unrelated samples in the .big format.
+This step can optionally take in a panel of unrelated samples in the .big format for blacklisting variants with reads appearing in unrelated samples, but this option is not used for the current pipeline.
 
 
 Steps
@@ -20,12 +20,13 @@ Steps
 
 The filtering step is composed of multiple steps and the output vcf file is checked for integrity to ensure the format is correct and the file is not truncated.
 
-.. image:: images/cgap_filtering_v14.png
+.. image:: images/cgap_filtering_v20.png
+
 
 Genelist
 ---------
 
-The genelist step uses ``granite geneList`` to clean VEP annotations for transcripts that are not mapping to any gene of interest.
+The genelist step uses ``granite geneList`` to clean VEP annotations for transcripts that are not mapping to any gene of interest. It is similar to VEP cleaning (below) but applies to genes rather than consequences. This step does not remove any variants, but only modifies the VEP annotation.
 
 
 Whitelist
@@ -37,7 +38,7 @@ The whitelist steps use ``granite witheList`` to filter-in exonic and functional
 VEP cleaning
 ------------
 
-This step uses ``granite cleanVCF`` to clean VEP annotations.
+This step uses ``granite cleanVCF`` to clean VEP annotations, to remove consequences that we do not want to include, such as introns. This step does not remove any variants, but only modifies the VEP annotation.
 
 
 Blacklist
