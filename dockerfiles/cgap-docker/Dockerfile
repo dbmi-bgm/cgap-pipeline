@@ -180,10 +180,6 @@ RUN wget https://raw.githubusercontent.com/dbmi-bgm/granite/master/docker/mpileu
 # bamsnap
 RUN pip install bamsnap==0.2.14
 
-# annot parallel mti script
-COPY annot-parallel-mti.sh .
-RUN chmod +x annot-parallel-mti.sh
-
 # tar novoCaller script
 COPY tar-novoCaller.sh .
 RUN chmod +x tar-novoCaller.sh
