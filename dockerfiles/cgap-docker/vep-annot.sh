@@ -85,5 +85,5 @@ if [[ -v  chr_M  ]]; then
 fi
 
 # compress and index output vcf
-bgzip combined.vep.vcf || exit 1
+pbgzip -ifn$nthreads combined.vep.vcf || exit 1
 tabix -p vcf combined.vep.vcf.gz || exit 1

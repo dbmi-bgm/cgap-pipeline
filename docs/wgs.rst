@@ -36,7 +36,7 @@ Pipeline Flow
 
 The overall flow of the pipeline looks as below:
 
-.. image:: images/bioinfo-snv-indel-flow-v17-20201006.png
+.. image:: images/bioinfo-snv-indel-flow-v20-20210115.png
 
 
 Pipeline Parts and Runtimes
