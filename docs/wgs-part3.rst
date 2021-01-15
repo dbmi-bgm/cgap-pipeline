@@ -7,6 +7,7 @@ Part 3. annotation and inheritance mode analysis
 
    wgs-step-mpileup
    wgs-step-rcktar
+   wgs-step-samplegeno
    wgs-step-vep
    wgs-step-filtering
    wgs-step-denovo
