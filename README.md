@@ -16,7 +16,8 @@ python post_patch_to_portal.py [--ff-env=<env_name>] [--skip-software] [--skip-f
 ### Version updates
 #### v20
 * added step to add samplegeno annotation to variants
-* updated granite version
+* conversion of ALT allele `-` back to `*` after VEP annotation is no longer performed.
+* updated granite version - vcf.gz is read directly rather than is downloaded and unzipped.
 
 #### v19
 * added indels realignment when splitting variants with bcftools
