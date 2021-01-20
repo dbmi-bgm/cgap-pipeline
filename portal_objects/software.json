@@ -114,9 +114,9 @@
             "filter"
         ],
         "source_url": "https://github.com/dbmi-bgm/granite",
-        "title": "granite_0.1.5",
+        "title": "granite_0.1.6",
         "uuid": "ddc704e2-66b0-44e1-99b9-65c9e31c41c9",
-        "commit": "0.1.5"
+        "commit": "0.1.6"
     },
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",

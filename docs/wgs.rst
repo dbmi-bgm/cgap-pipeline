@@ -19,7 +19,7 @@ The image contains (but is not limited to) the following software packages:
 - bwa (0.7.17)
 - gatk4 (4.1.2.0)
 - picard (2.20.2)
-- granite (0.1.5)
+- granite (0.1.6)
 - bamsnap (0.2.14)
 - samtools (1.9)
 - bcftools (1.11)
