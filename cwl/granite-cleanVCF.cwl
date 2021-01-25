@@ -71,6 +71,13 @@ inputs:
       prefix: --VEPtag
     doc: VEP tag to use
 
+  - id: filter_VEP
+    type: bool
+    default: null
+    inputBinding:
+      prefix: --filter_VEP
+    doc: filter out variants that are missing VEP after cleaning
+
 outputs:
   - id: output
     type: File

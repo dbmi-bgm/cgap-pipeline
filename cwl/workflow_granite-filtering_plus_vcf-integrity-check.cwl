@@ -215,6 +215,8 @@ steps:
         source: VEPsep
       VEPtag:
         source: VEPtag
+      filter_VEP:
+        source: boolean_true
     out: [output]
 
   granite-blackList:
