@@ -38,7 +38,7 @@ The whitelist steps use ``granite witheList`` to filter-in exonic and functional
 VEP cleaning
 ------------
 
-This step uses ``granite cleanVCF`` to clean VEP annotations, to remove consequences that we do not want to include, such as introns. This step does not remove any variants, but only modifies the VEP annotation.
+This step uses ``granite cleanVCF`` to clean VEP annotations, to remove consequences that we do not want to include, such as introns. This step removes variants that remain with no VEP annotations after the cleaning.
 
 
 Blacklist
