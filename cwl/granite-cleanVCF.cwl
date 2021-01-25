@@ -72,7 +72,7 @@ inputs:
     doc: VEP tag to use
 
   - id: filter_VEP
-    type: bool
+    type: boolean
     default: null
     inputBinding:
       prefix: --filter_VEP
