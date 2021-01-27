@@ -23,7 +23,8 @@
           "workflow_argument_name": "bamsnap_images",
           "qc_zipped": true,
           "argument_to_be_attached_to": "input_vcf",
-          "qc_acl": "private"
+          "qc_acl": "private",
+          "qc_unzip_from_ec2": true
       },
       {
           "argument_type": "parameter",
