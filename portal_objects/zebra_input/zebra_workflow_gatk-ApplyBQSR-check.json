@@ -1,9 +1,5 @@
 {
-    "parameters": {
-      "static-quantized-quals_1": 10,
-      "static-quantized-quals_2": 20,
-      "static-quantized-quals_3": 30
-    },
+    "parameters": {},
     "workflow_uuid": "6c9c6f49-f954-4e76-8dfb-d385cddcebd6",
     "input_files" : [
        {
