@@ -32,7 +32,7 @@ bgzip output.vcf
 tabix -p vcf output.vcf.gz
 
 # Creating PED file
-granite toPED -o pedigree.ped --family $family -p $pedigree
+granite toPED -o pedigree.ped --family $family -p \'${pedigree}\'
 
 # Running peddy
 python -m peddy -p $nthreads --plot --sites hg38 --prefix peddy output.vcf.gz pedigree.ped
