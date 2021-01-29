@@ -9,4 +9,16 @@
     "title": "peddy_0.4.7",
     "uuid": "124c73f9-4bbe-4e5d-92e0-cc2d932f1228",
     "version": "0.4.7"
+},
+{
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "name": "granite",
+    "software_type": [
+        "filter"
+    ],
+    "source_url": "https://github.com/dbmi-bgm/granite",
+    "title": "granite_0.1.8",
+    "uuid": "e88580b2-fc38-4f38-bfc5-7566ab21dd78",
+    "commit": "0.1.8"
 }
