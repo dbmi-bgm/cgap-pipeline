@@ -35,7 +35,7 @@ RUN conda install -c bioconda -y gatk4==4.1.2.0 picard==2.20.2 \
     conda clean -a -y -f
 
 # granite
-RUN pip install granite-suite==0.1.7
+RUN pip install granite-suite==0.1.8
 
 # samtools
 RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2 && \
