@@ -1,7 +1,7 @@
 {
-  "accession": "GAPXFA26IC9Q",
+  "accession": "GAPXFA2P9U1Z",
   "app_name": "workflow_granite-qcVCF",
-  "app_version": "v3",
+  "app_version": "v4",
   "arguments": [
       {
           "argument_format": "vcf",
@@ -42,17 +42,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["QC"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-qc/v3/cwl/",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-qc/v4/cwl/",
   "cwl_main_filename": "granite-qcVCF.cwl",
   "cwl_pointer": "",
   "description": "Run granite qcVCF on vcf input file. Produce a json report for quality metrics",
-  "docker_image_name": "cgap/qc:v3",
+  "docker_image_name": "cgap/qc:v4",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-qcVCF_v3",
-  "aliases": ["cgap:workflow_granite-qcVCF_v3",
-              "cgap:workflow_granite-qcVCF_v2",
-              "cgap:workflow_granite-qcVCF_v1"],
+  "name": "workflow_granite-qcVCF_v4",
+  "aliases": ["cgap:workflow_granite-qcVCF_v4"],
   "steps": [
       {
           "inputs": [
@@ -141,7 +139,7 @@
                   "Run granite qcVCF"
               ],
               "software_used": [
-                  "/softwares/d390c8ec-e62a-46ab-8ff5-1111196aaea6"
+                  "/softwares/ddc704e2-66b0-44e1-99b9-65c9e31c41c9"
               ]
           },
           "name": "granite",
@@ -163,5 +161,7 @@
       }
   ],
   "title": "Run granite qcVCF",
-  "uuid": "33a85705-b757-49e0-aaef-d786695d6d03"
+  "uuid": "29085493-c13d-4ee6-b5b4-8e1cf36b6209",
+  "previous_version": ["33a85705-b757-49e0-aaef-d786695d6d03"],
+  "version_upgrade_log": "Updated granite version but no expected difference, reading vcf.gz directly instead of downloading and unzipping.
 }

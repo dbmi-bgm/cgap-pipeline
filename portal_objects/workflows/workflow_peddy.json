@@ -1,7 +1,7 @@
 {
-  "accession": "GAPXFL3E5CG2",
+  "accession": "GAPXFLL3KC2W",
   "app_name": "workflow_peddy",
-  "app_version": "v3",
+  "app_version": "v4",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -40,15 +40,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["QC"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-qc/v3/cwl/",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-qc/v4/cwl/",
   "cwl_main_filename": "peddy.cwl",
   "cwl_pointer": "",
   "description": "Run peddy on vcf input file",
-  "docker_image_name": "cgap/qc:v3",
+  "docker_image_name": "cgap/qc:v4",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_peddy_v3",
-  "aliases": ["cgap:workflow_peddy_v3"],
+  "name": "workflow_peddy_v4",
+  "aliases": ["cgap:workflow_peddy_v4"],
   "steps": [
       {
           "inputs": [
@@ -98,7 +98,7 @@
                   "Run peddy"
               ],
               "software_used": [
-                  "/softwares/82d7f187-b067-4df5-9c1d-ee82142e79f2",
+                  "/softwares/ddc704e2-66b0-44e1-99b9-65c9e31c41c9",
                   "/softwares/124c73f9-4bbe-4e5d-92e0-cc2d932f1228"
               ]
           },
@@ -134,5 +134,7 @@
       }
   ],
   "title": "Run peddy",
-  "uuid": "e17b9fe7-19e7-40d7-9c46-07bc7920ffc8"
+  "uuid": "2ba8440c-b157-4394-9e86-c634aa15129d",
+  "previous_version": ["e17b9fe7-19e7-40d7-9c46-07bc7920ffc8"],
+  "version_upgrade_log": "Updated granite version but no expected difference, reading vcf.gz directly instead of downloading and unzipping.
 }

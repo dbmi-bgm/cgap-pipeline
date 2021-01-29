@@ -1,30 +1,6 @@
 {
     "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
     "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "name": "granite",
-    "software_type": [
-        "filter"
-    ],
-    "source_url": "https://github.com/dbmi-bgm/granite",
-    "title": "granite_0.1.0",
-    "uuid": "d390c8ec-e62a-46ab-8ff5-1111196aaea6",
-    "version": "0.1.0"
-},
-{
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "name": "granite",
-    "software_type": [
-        "filter"
-    ],
-    "source_url": "https://github.com/dbmi-bgm/granite",
-    "title": "granite_0.1.1",
-    "uuid": "82d7f187-b067-4df5-9c1d-ee82142e79f2",
-    "version": "0.1.1"
-},
-{
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
     "name": "peddy",
     "software_type": [
         "quality metric generator"

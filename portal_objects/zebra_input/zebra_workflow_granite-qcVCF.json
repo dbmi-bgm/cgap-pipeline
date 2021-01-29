@@ -11,7 +11,7 @@
        {
            "workflow_argument_name": "input_vcf",
            "uuid": "",
-           "unzip": "gz"
+           "mount": true
        }
     ],
     "config": {
