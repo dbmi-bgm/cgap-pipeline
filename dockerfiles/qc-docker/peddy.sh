@@ -31,8 +31,10 @@ python -c "$py_script"
 bgzip output.vcf
 tabix -p vcf output.vcf.gz
 
+echo $pedigree > pedigree.json
+
 # Creating PED file
-granite toPED -o pedigree.ped --family $family -p \'${pedigree}\'
+granite toPED -o pedigree.ped --family $family -p pedigree.json
 
 # Running peddy
 python -m peddy -p $nthreads --plot --sites hg38 --prefix peddy output.vcf.gz pedigree.ped
