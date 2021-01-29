@@ -163,5 +163,5 @@
   "title": "Run granite qcVCF",
   "uuid": "29085493-c13d-4ee6-b5b4-8e1cf36b6209",
   "previous_version": ["33a85705-b757-49e0-aaef-d786695d6d03"],
-  "version_upgrade_log": "Updated granite version but no expected difference, reading vcf.gz directly instead of downloading and unzipping.
+  "version_upgrade_log": "Updated granite version but no expected difference, reading vcf.gz directly instead of downloading and unzipping."
 }

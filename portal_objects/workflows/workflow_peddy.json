@@ -136,5 +136,5 @@
   "title": "Run peddy",
   "uuid": "2ba8440c-b157-4394-9e86-c634aa15129d",
   "previous_version": ["e17b9fe7-19e7-40d7-9c46-07bc7920ffc8"],
-  "version_upgrade_log": "Updated granite version but no expected difference, reading vcf.gz directly instead of downloading and unzipping.
+  "version_upgrade_log": "Updated granite version but no expected difference, reading vcf.gz directly instead of downloading and unzipping."
 }
