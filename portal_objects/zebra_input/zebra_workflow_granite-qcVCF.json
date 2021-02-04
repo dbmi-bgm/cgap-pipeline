@@ -6,7 +6,7 @@
       "het_hom": true,
       "ti_tv": true
     },
-    "workflow_uuid": "33a85705-b757-49e0-aaef-d786695d6d03",
+    "workflow_uuid": "29085493-c13d-4ee6-b5b4-8e1cf36b6209",
     "input_files" : [
        {
            "workflow_argument_name": "input_vcf",

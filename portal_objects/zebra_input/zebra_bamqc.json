@@ -1,16 +1,16 @@
 {
     "parameters": {"sample": "NA12789_sample"},
-    "workflow_uuid": "cgap:bamqc_v3",
+    "workflow_uuid": "cgap:bamqc_v4",
     "input_files" : [
        {
            "workflow_argument_name": "input_bam",
            "uuid": "",
-           "mount": True
+           "mount": true
        }
     ],
     "config": {
       "instance_type": "c5n.2xlarge",
-      "ebs_size": "1.5x",
+      "ebs_size": "2.5x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",
