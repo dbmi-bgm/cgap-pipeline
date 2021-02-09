@@ -85,10 +85,10 @@ RUN git clone https://github.com/enasequence/cramtools && \
     cd ..
 
 # pigz
-RUN wget https://zlib.net/pigz/pigz-2.4.tar.gz && \
-    tar -xzf pigz-2.4.tar.gz && \
-    rm -rf pigz-2.4.tar.gz && \
-    cd pigz-2.4 && \
+RUN wget https://zlib.net/pigz/pigz-2.6.tar.gz && \
+    tar -xzf pigz-2.6.tar.gz && \
+    rm -rf pigz-2.6.tar.gz && \
+    cd pigz-2.6 && \
     make && \
     cd ..
 
@@ -178,7 +178,7 @@ RUN wget https://raw.githubusercontent.com/dbmi-bgm/granite/master/docker/mpileu
     chmod +x mpileupCounts-parallel.sh
 
 # bamsnap
-RUN pip install bamsnap==0.2.14
+RUN pip install bamsnap==0.2.17
 
 # tar novoCaller script
 COPY tar-novoCaller.sh .

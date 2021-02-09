@@ -90,9 +90,9 @@
             "compressor"
         ],
         "source_url": "https://zlib.net/pigz/",
-        "title": "pigz_pigz-2.4",
-        "uuid": "c4722fd7-633d-46aa-ac40-8eb5e00ac74d",
-        "version": "2.4"
+        "title": "pigz_pigz-2.6",
+        "uuid": "c730b361-1b4d-4d29-8eff-8f7576d776e2",
+        "version": "2.6"
     },
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
@@ -102,9 +102,9 @@
             "image generator"
         ],
         "source_url": "https://github.com/parklab/bamsnap",
-        "title": "bamsnap_0.2.14",
+        "title": "bamsnap_0.2.17",
         "uuid": "87f15e8b-bef6-48f3-a8f3-6eabe68a4cd3",
-        "version": "0.2.14"
+        "version": "0.2.17"
     },
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
