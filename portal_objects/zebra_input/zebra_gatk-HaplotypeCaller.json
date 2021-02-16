@@ -4,18 +4,15 @@
     "input_files" : [
        {
            "workflow_argument_name": "input_bam",
-           "uuid": "",
-           "mount": true
+           "uuid": ""
        },
        {
            "workflow_argument_name": "reference",
-           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
-           "mount": true
+           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7"
        },
        {
            "workflow_argument_name": "regions",
-           "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28",
-           "mount": true
+           "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28"
        }
     ],
     "config": {

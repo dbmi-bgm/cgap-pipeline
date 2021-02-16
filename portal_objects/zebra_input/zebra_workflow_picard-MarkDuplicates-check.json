@@ -8,8 +8,7 @@
     "input_files" : [
        {
            "workflow_argument_name": "input_bam",
-           "uuid": "",
-           "mount": true
+           "uuid": ""
        }
     ],
     "config": {
