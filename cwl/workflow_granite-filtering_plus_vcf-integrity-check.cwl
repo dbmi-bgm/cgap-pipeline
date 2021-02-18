@@ -81,12 +81,12 @@ inputs:
 
   - id: aftag
     type: string
-    default: null
+    default: "gnomADg_AF"
     doc: TAG to be used to filter by population allele frequency
 
   - id: afthr
     type: float
-    default: null
+    default: 0.01
     doc: threshold to filter by population allele frequency
 
   - id: float_null
