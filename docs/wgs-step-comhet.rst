@@ -16,7 +16,7 @@ The input VCF must have VEP annotations (VEP consequences, gene and transcript a
 Specifications
 ++++++++++++++
 
-Gene Assignments
+Gene assignments
 ----------------
 
 To determine compound heterozygous pairs, variants must be first assigned to genes. For consistent and inclusive gene assignment, we followed the rules described below:

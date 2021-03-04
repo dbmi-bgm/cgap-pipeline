@@ -1,5 +1,5 @@
 =================
-Adding SampleGeno
+Adding SAMPLEGENO
 =================
 
 This step is for portal compatibility, and can be skipped for non-portal use cases. The tag SAMPLEGENO is added to the INFO field during this step. The main purpose of this step are:

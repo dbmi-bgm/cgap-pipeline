@@ -1,5 +1,5 @@
 ==================
-Filtering Variants
+Filtering variants
 ==================
 
 This step performs filtering of the variants.

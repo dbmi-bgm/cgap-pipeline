@@ -62,3 +62,4 @@ Pipeline Steps
    wgs-part1
    wgs-part2
    wgs-part3
+   validation

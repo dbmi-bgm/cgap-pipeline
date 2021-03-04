@@ -1,5 +1,5 @@
 ================================================
-Part 3. annotation and inheritance mode analysis
+Part 3. Annotation and inheritance mode analysis
 ================================================
 
 .. toctree::
