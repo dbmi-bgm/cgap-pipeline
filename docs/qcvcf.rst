@@ -21,6 +21,9 @@ The metrics currently available for family are:
 
   - mendelian errors in trio
 
+For each sample, ancestry and sex are also predicted using ``peddy`` [1]_.
+The predicted values allow to identify errors in sample labeling, contaminations events, and other errors that can occur during handling and processing of the sample.
+
 Definitions
 +++++++++++
 
@@ -82,3 +85,13 @@ Mendelian errors are counted by variant type and classified based on genotype co
 +------------+------------+-----------+---------------------+
 | 1/1 \| 0/1 | (any)      | ./.       | missing in parent   |
 +------------+------------+-----------+---------------------+
+
+ancestry and sex prediction
+---------------------------
+
+Ancestry prediction is based on projection onto the thousand genomes principal components.
+Sex is predicted by using the genotypes observed outside the pseudo-autosomal region on X chromosome.
+
+---------------------------
+
+.. [1] Pedersen and Quinlan, Who’s Who? Detecting and Resolving Sample Anomalies in Human DNA Sequencing Studies with Peddy, The American Journal of Human Genetics (2017), http://dx.doi.org/10.1016/j.ajhg.2017.01.017

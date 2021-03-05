@@ -1,10 +1,10 @@
 {
-  "accession": "GAPXFA2P9U1Z",
-  "app_name": "workflow_granite-qcVCF",
+  "accession": "GAPXFLL3KC2W",
+  "app_name": "workflow_peddy",
   "app_version": "v4",
   "arguments": [
       {
-          "argument_format": "vcf",
+          "argument_format": "vcf_gz",
           "argument_type": "Input file",
           "workflow_argument_name": "input_vcf"
       },
@@ -16,7 +16,17 @@
           "qc_html": false,
           "qc_json": true,
           "qc_table": false,
-          "qc_type": "quality_metric_vcfqc"
+          "qc_type": "quality_metric_peddyqc"
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "qc_html",
+          "argument_to_be_attached_to": "input_vcf",
+          "qc_zipped": false,
+          "qc_html": true,
+          "qc_json": false,
+          "qc_table": false,
+          "qc_type": "quality_metric_peddyqc"
       },
       {
           "argument_type": "parameter",
@@ -24,40 +34,28 @@
       },
       {
           "argument_type": "parameter",
-          "workflow_argument_name": "samples"
-      },
-      {
-          "argument_type": "parameter",
-          "workflow_argument_name": "trio_errors"
-      },
-      {
-          "argument_type": "parameter",
-          "workflow_argument_name": "het_hom"
-      },
-      {
-          "argument_type": "parameter",
-          "workflow_argument_name": "ti_tv"
+          "workflow_argument_name": "family"
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["QC"],
   "cwl_child_filenames": [],
   "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-qc/v4/cwl/",
-  "cwl_main_filename": "granite-qcVCF.cwl",
+  "cwl_main_filename": "peddy.cwl",
   "cwl_pointer": "",
-  "description": "Run granite qcVCF on vcf input file. Produce a json report for quality metrics",
+  "description": "Run peddy on vcf input file",
   "docker_image_name": "cgap/qc:v4",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-qcVCF_v4",
-  "aliases": ["cgap:workflow_granite-qcVCF_v4"],
+  "name": "workflow_peddy_v4",
+  "aliases": ["cgap:workflow_peddy_v4"],
   "steps": [
       {
           "inputs": [
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "vcf",
+                      "file_format": "vcf_gz",
                       "global": true,
                       "type": "data file"
                   },
@@ -87,62 +85,24 @@
                       "global": true,
                       "type": "parameter"
                   },
-                  "name": "samples",
+                  "name": "family",
                   "source": [
                       {
-                          "name": "samples"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "parameter"
-                  },
-                  "name": "trio_errors",
-                  "source": [
-                      {
-                          "name": "trio_errors"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "parameter"
-                  },
-                  "name": "het_hom",
-                  "source": [
-                      {
-                          "name": "het_hom"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "parameter"
-                  },
-                  "name": "ti_tv",
-                  "source": [
-                      {
-                          "name": "ti_tv"
+                          "name": "family"
                       }
                   ]
               }
           ],
           "meta": {
               "analysis_step_types": [
-                  "Run granite qcVCF"
+                  "Run peddy"
               ],
               "software_used": [
-                  "/softwares/e88580b2-fc38-4f38-bfc5-7566ab21dd78"
+                  "/softwares/e88580b2-fc38-4f38-bfc5-7566ab21dd78",
+                  "/softwares/124c73f9-4bbe-4e5d-92e0-cc2d932f1228"
               ]
           },
-          "name": "granite",
+          "name": "peddy",
           "outputs": [
               {
                   "meta": {
@@ -156,12 +116,25 @@
                           "name": "qc_json"
                       }
                   ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "qc_html",
+                  "target": [
+                      {
+                          "name": "qc_html"
+                      }
+                  ]
               }
           ]
       }
   ],
-  "title": "Run granite qcVCF",
-  "uuid": "29085493-c13d-4ee6-b5b4-8e1cf36b6209",
-  "previous_version": ["33a85705-b757-49e0-aaef-d786695d6d03"],
+  "title": "Run peddy",
+  "uuid": "2ba8440c-b157-4394-9e86-c634aa15129d",
+  "previous_version": ["e17b9fe7-19e7-40d7-9c46-07bc7920ffc8"],
   "version_upgrade_log": "Updated granite version but no expected difference, reading vcf.gz directly instead of downloading and unzipping."
 }

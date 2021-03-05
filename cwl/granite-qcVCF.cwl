@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/qc:v2
+    dockerPull: cgap/qc:v4
 
 baseCommand: [granite, qcVCF]
 
