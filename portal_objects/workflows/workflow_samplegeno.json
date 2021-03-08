@@ -1,79 +1,77 @@
 {
-  "accession": "GAPW9IDR632G",
-  "app_name": "workflow_granite-rckTar",
+  "accession": "GAPGLK9R65M2",
+  "app_name": "workflow_samplegeno",
   "app_version": "v20",
   "arguments": [
       {
-          "argument_format": "rck_gz",
+          "argument_format": "vcf_gz",
           "argument_type": "Input file",
-          "workflow_argument_name": "input_rcks"
+          "workflow_argument_name": "input_vcf"
       },
       {
-          "argument_format": "rck_tar",
+          "argument_format": "vcf_gz",
           "argument_type": "Output processed file",
-          "workflow_argument_name": "rck_tar",
-          "secondary_file_formats": ["rck_tar_index"]
+          "workflow_argument_name": "samplegeno_vcf",
+          "secondary_file_formats": ["vcf_gz_tbi"]
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": [],
   "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v20/cwl",
-  "cwl_main_filename": "granite-rckTar.cwl",
+  "cwl_main_filename": "samplegeno.cwl",
   "cwl_pointer": "",
-  "description": "Create a tar archive of rck files. Create an index file for the archive",
+  "description": "Add samplegeno information to variants from input vcf",
   "docker_image_name": "cgap/cgap:v20",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-rckTar_v20",
-  "aliases": ["cgap:workflow_granite-rckTar_v20"],
+  "name": "workflow_samplegeno_v20",
+  "aliases": ["cgap:workflow_samplegeno_v20"],
   "steps": [
       {
           "inputs": [
               {
                   "meta": {
-                      "cardinality": "array",
-                      "file_format": "rck_gz",
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "input_rcks",
+                  "name": "input_vcf",
                   "source": [
                       {
-                          "name": "input_rcks"
+                          "name": "input_vcf"
                       }
                   ]
               }
           ],
           "meta": {
               "analysis_step_types": [
-                  "Run granite rckTar"
+                  "Run samplegeno"
               ],
               "software_used": [
-                 "/softwares/ddc704e2-66b0-44e1-99b9-65c9e31c41c9"
+                 "/softwares/c2380d3a-80a2-4009-a343-f9475381aab1"
               ]
           },
-          "name": "granite",
+          "name": "samplegeno",
           "outputs": [
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "rck_tar",
+                      "file_format": "vcf_gz",
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "rck_tar",
+                  "name": "samplegeno_vcf",
                   "target": [
                       {
-                          "name": "rck_tar"
+                          "name": "samplegeno_vcf"
                       }
                   ]
               }
           ]
       }
   ],
-  "title": "Create a tar archive of rck files and an associate index file",
-  "uuid": "32888589-c477-4776-ae03-e05c7a062a8f",
-  "previous_version": ["64ff003a-b25d-4856-a9fc-ad8702b8c6d4"],
-  "version_upgrade_log": "Updated granite version but no expected difference"
+  "title": "Add samplegeno",
+  "uuid": "1e86fc97-2cc5-4648-ae3b-9b2295c5f012"
 }

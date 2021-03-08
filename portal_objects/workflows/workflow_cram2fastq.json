@@ -1,7 +1,7 @@
 {
   "accession": "GAPWFBH24DOI",
   "app_name": "workflow_cram2fastq",
-  "app_version": "v19",
+  "app_version": "v20",
   "arguments": [
       {
           "argument_format": "CRAM",
@@ -36,15 +36,16 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v19/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v20/cwl",
   "cwl_main_filename": "cram2fastq.cwl",
   "cwl_pointer": "",
   "description": "Convert cram to fastq files",
-  "docker_image_name": "cgap/cgap:v19",
+  "docker_image_name": "cgap/cgap:v20",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_cram2fastq_v19",
-  "aliases": ["cgap:workflow_cram2fastq_v19",
+  "name": "workflow_cram2fastq_v20",
+  "aliases": ["cgap:workflow_cram2fastq_v20",
+              "cgap:workflow_cram2fastq_v19",
               "cgap:workflow_cram2fastq_v18",
               "cgap:workflow_cram2fastq_v17",
               "cgap:workflow_cram2fastq_v16",
@@ -117,7 +118,7 @@
               "software_used": [
                  "/softwares/3f2d3b0e-0365-4212-9468-c16ad9531c4d",
                  "/softwares/72b0ca58-0cca-4344-8dd5-974a49c5a931",
-                 "/softwares/c4722fd7-633d-46aa-ac40-8eb5e00ac74d"
+                 "/softwares/c730b361-1b4d-4d29-8eff-8f7576d776e2"
               ]
           },
           "name": "cram2fastq",

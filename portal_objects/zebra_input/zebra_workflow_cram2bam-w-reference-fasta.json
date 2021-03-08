@@ -1,6 +1,6 @@
 {
-    "parameters": { "nthreads": 8 },
-    "workflow_uuid": "cgap:workflow_cram2bam_v13",
+    "parameters": {},
+    "workflow_uuid": "2a086f2b-7be4-4708-9516-1b39639292bf",
     "input_files" : [
        {
            "workflow_argument_name": "cram",

@@ -1,6 +1,6 @@
 {
     "parameters": {},
-    "workflow_uuid": "30802d8c-20c3-4eea-82dd-dd34621569c6",
+    "workflow_uuid": "4853a03a-8c0c-4624-a45d-c5206a72907b",
     "input_files" : [
        {
            "workflow_argument_name": "input_bams",
@@ -10,7 +10,7 @@
     ],
     "config": {
       "instance_type": "c5.2xlarge",
-      "ebs_size": "2.2x",
+      "ebs_size": "2x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",

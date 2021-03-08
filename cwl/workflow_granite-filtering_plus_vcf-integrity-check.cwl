@@ -81,12 +81,12 @@ inputs:
 
   - id: aftag
     type: string
-    default: null
+    default: "gnomADg_AF"
     doc: TAG to be used to filter by population allele frequency
 
   - id: afthr
     type: float
-    default: null
+    default: 0.01
     doc: threshold to filter by population allele frequency
 
   - id: float_null
@@ -215,6 +215,8 @@ steps:
         source: VEPsep
       VEPtag:
         source: VEPtag
+      filter_VEP:
+        source: boolean_true
     out: [output]
 
   granite-blackList:

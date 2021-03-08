@@ -1,7 +1,7 @@
 ## CGAP pipeline
 * This repo contains CGAP pipeline components
   * CWL
-  * Docker source - Docker image name `cgap/cgap:v19`
+  * Docker source - Docker image name `cgap/cgap:v20`
   * Example Tibanna input jsons for individual steps
 
 For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
@@ -14,6 +14,11 @@ python post_patch_to_portal.py [--ff-env=<env_name>] [--skip-software] [--skip-f
 ```
 
 ### Version updates
+#### v20
+* added step to add samplegeno annotation to variants
+* conversion of ALT allele `-` back to `*` after VEP annotation is no longer performed.
+* updated granite version - vcf.gz is read directly rather than is downloaded and unzipped.
+
 #### v19
 * added indels realignment when splitting variants with bcftools
 * extended ClinVar fields used by VEP

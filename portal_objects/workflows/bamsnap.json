@@ -1,7 +1,7 @@
 {
-  "accession": "GAPWFBH2535R",
+  "accession": "GAPWFBR378IK",
   "app_name": "bamsnap",
-  "app_version": "v19",
+  "app_version": "v20",
   "arguments": [
       {
           "argument_format": "bam",
@@ -23,7 +23,8 @@
           "workflow_argument_name": "bamsnap_images",
           "qc_zipped": true,
           "argument_to_be_attached_to": "input_vcf",
-          "qc_acl": "private"
+          "qc_acl": "private",
+          "qc_unzip_from_ec2": true
       },
       {
           "argument_type": "parameter",
@@ -37,15 +38,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["QC"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v19/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v20/cwl",
   "cwl_main_filename": "bamsnap.cwl",
   "cwl_pointer": "",
   "description": "Run bamsnap on a list of bam files given a vcf containing variants to be snapped",
-  "docker_image_name": "cgap/cgap:v19",
+  "docker_image_name": "cgap/cgap:v20",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "bamsnap_v19",
-  "aliases": ["cgap:bamsnap_v19"],
+  "name": "bamsnap_v20",
+  "aliases": ["cgap:bamsnap_v20"],
   "steps": [
       {
           "inputs": [
@@ -123,7 +124,7 @@
                   "Run bamsnap"
               ],
               "software_used": [
-                 "/softwares/87f15e8b-bef6-48f3-a8f3-6eabe68a4cd3"
+                 "/softwares/a8b47313-8bcb-460b-8be8-b71c7f6b1b27"
               ]
           },
           "name": "bamsnap",
@@ -145,7 +146,7 @@
       }
   ],
   "title": "Run bamsnap",
-  "uuid": "b1a1598b-610d-4826-96a2-e5126a8c7488",
-  "previous_version": ["a4016214-e4ce-4a34-93a1-c0751bbd1d37"],
-  "version_upgrade_log": "fasta coordinate bug fixed"
+  "uuid": "a147d85c-07c7-4e01-82bb-73b381ebbf11",
+  "previous_version": ["b1a1598b-610d-4826-96a2-e5126a8c7488"],
+  "version_upgrade_log": "bamsnap png file path changed from using colon to underscore"
 }

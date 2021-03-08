@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v19
+    dockerPull: cgap/cgap:v20
 
 baseCommand: [granite, cleanVCF]
 
@@ -70,6 +70,13 @@ inputs:
     inputBinding:
       prefix: --VEPtag
     doc: VEP tag to use
+
+  - id: filter_VEP
+    type: boolean
+    default: null
+    inputBinding:
+      prefix: --filter_VEP
+    doc: filter out variants that are missing VEP after cleaning
 
 outputs:
   - id: output

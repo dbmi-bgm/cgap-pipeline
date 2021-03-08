@@ -85,10 +85,10 @@ RUN git clone https://github.com/enasequence/cramtools && \
     cd ..
 
 # pigz
-RUN wget https://zlib.net/pigz/pigz-2.4.tar.gz && \
-    tar -xzf pigz-2.4.tar.gz && \
-    rm -rf pigz-2.4.tar.gz && \
-    cd pigz-2.4 && \
+RUN wget https://zlib.net/pigz/pigz-2.6.tar.gz && \
+    tar -xzf pigz-2.6.tar.gz && \
+    rm -rf pigz-2.6.tar.gz && \
+    cd pigz-2.6 && \
     make && \
     cd ..
 
@@ -143,9 +143,10 @@ RUN chmod +x sort-bgzip-vcf.sh
 # add read groups script
 RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
     cd cgap-scripts && \
-    git checkout 4bce067 && \
+    git checkout 22ff179 && \
     chmod +x AddReadGroups.py && \
     chmod +x duplines_vcf.py && \
+    chmod +x samplegeno.py && \
     cd ..
 
 # HaplotypeCaller parallel script
@@ -170,18 +171,14 @@ RUN chmod +x cram_to_bam.sh
 RUN chmod +x bam_to_fastq.sh
 
 # granite
-RUN pip install granite-suite==0.1.4
+RUN pip install granite-suite==0.1.7
 
 # mpileupCounts parallel script
 RUN wget https://raw.githubusercontent.com/dbmi-bgm/granite/master/docker/mpileupCounts-parallel.sh && \
     chmod +x mpileupCounts-parallel.sh
 
 # bamsnap
-RUN pip install bamsnap==0.2.14
-
-# annot parallel mti script
-COPY annot-parallel-mti.sh .
-RUN chmod +x annot-parallel-mti.sh
+RUN pip install bamsnap==0.2.19
 
 # tar novoCaller script
 COPY tar-novoCaller.sh .
@@ -194,6 +191,10 @@ RUN chmod +x merge-sort-vcf.sh
 # bcftools norm multiallelics
 COPY bcftools-norm-multiallelics.sh .
 RUN chmod +x bcftools-norm-multiallelics.sh
+
+# samplegeno
+COPY samplegeno.sh .
+RUN chmod +x samplegeno.sh
 
 # env paths
 ENV PATH=/usr/local/bin/samtools/:$PATH

@@ -8,13 +8,12 @@
     "input_files" : [
        {
            "workflow_argument_name": "input_bam",
-           "uuid": "",
-           "mount": true
+           "uuid": ""
        }
     ],
     "config": {
       "instance_type": "c5n.18xlarge",
-      "ebs_size": "2.5x",
+      "ebs_size": "3x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",

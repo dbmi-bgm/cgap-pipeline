@@ -1,6 +1,6 @@
 {
     "parameters": {},
-    "workflow_uuid": "64ff003a-b25d-4856-a9fc-ad8702b8c6d4",
+    "workflow_uuid": "32888589-c477-4776-ae03-e05c7a062a8f",
     "input_files" : [
        {
            "workflow_argument_name": "input_rcks",

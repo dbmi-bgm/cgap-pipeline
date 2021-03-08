@@ -3,21 +3,22 @@
       "aftag": "gnomADg_AF",
       "afthr": 0.01
     },
-    "workflow_uuid": "8e075e1f-95ae-41f3-8f25-527d80af0787",
+    "workflow_uuid": "cc82b0c5-680e-4d80-a01a-417cf7f4cb96",
     "input_files" : [
        {
            "workflow_argument_name": "input_vcf",
            "uuid": "",
-           "unzip": "gz"
+           "mount": true
        },
        {
            "workflow_argument_name": "genes",
-           "uuid": "84f2bb24-edd7-459b-ab89-0a21866d7826"
+           "uuid": "84f2bb24-edd7-459b-ab89-0a21866d7826",
+           "mount": true
        }
     ],
     "config": {
       "instance_type": "t3.medium",
-      "ebs_size": "6x",
+      "ebs_size": "9x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",

@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v19
+    dockerPull: cgap/cgap:v20
 
 baseCommand: [bam_to_fastq.sh]
 

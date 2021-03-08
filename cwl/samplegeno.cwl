@@ -11,20 +11,22 @@ hints:
   - class: DockerRequirement
     dockerPull: cgap/cgap:v20
 
-baseCommand: [vcf-integrity-check.sh]
+baseCommand: [samplegeno.sh]
 
 inputs:
-  - id: input
+  - id: input_vcf
     type: File
     inputBinding:
       position: 1
-    doc: expect the path to the vcf gz file
+    doc: expect the path to the vcf file
 
 outputs:
-  - id: output
+  - id: samplegeno_vcf
     type: File
     outputBinding:
-      glob: integrity_check
+      glob: output.vcf.gz
+    secondaryFiles:
+      - .tbi
 
 doc: |
-  run a quick integrity check on the input vcf file
+  run samplegeno.py

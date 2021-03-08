@@ -1,7 +1,7 @@
 {
-  "accession": "GAPG8SG7O9K3",
+  "accession": "GAPK43R7O9K2",
   "app_name": "workflow_granite-filtering-check",
-  "app_version": "v19",
+  "app_version": "v20",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -59,15 +59,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["granite-geneList.cwl", "granite-whiteList.cwl", "granite-cleanVCF.cwl", "granite-blackList.cwl", "merge-sort-vcf.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v19/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v20/cwl",
   "cwl_main_filename": "workflow_granite-filtering_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Filter and clean the input vcf using granite (geneList, whiteList, cleanVCF, blackList). An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v19",
+  "docker_image_name": "cgap/cgap:v20",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-filtering-check_v19",
-  "aliases": ["cgap:workflow_granite-filtering-check_v19"],
+  "name": "workflow_granite-filtering-check_v20",
+  "aliases": ["cgap:workflow_granite-filtering-check_v20"],
   "steps": [
       {
           "inputs": [
@@ -185,7 +185,7 @@
                   "Run granite geneList, whiteList, cleanVCF, blackList"
               ],
               "software_used": [
-                 "/softwares/946ed27d-9a81-4568-88f5-9f67160a5821"
+                 "/softwares/ddc704e2-66b0-44e1-99b9-65c9e31c41c9"
               ]
           },
           "name": "granite",
@@ -252,7 +252,7 @@
       }
   ],
   "title": "Run granite to filter and clean input vcf (geneList, whiteList, cleanVCF, blackList) plus output integrity-check",
-  "uuid": "8e075e1f-95ae-41f3-8f25-527d80af0787",
-  "previous_version": ["e43171b4-4ee5-4074-8734-727399e3179d"],
-  "version_upgrade_log": "Added geneList filter, updated granite to work with standard VEP format"
+  "uuid": "cc82b0c5-680e-4d80-a01a-417cf7f4cb96",
+  "previous_version": ["8e075e1f-95ae-41f3-8f25-527d80af0787"],
+  "version_upgrade_log": "Updated granite version but no expected difference, reading vcf.gz directly instead of downloading and unzipping. Added filter to cleanVCF to drop variants with no VEP after cleaning"
 }

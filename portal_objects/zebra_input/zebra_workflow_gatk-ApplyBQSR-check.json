@@ -1,30 +1,23 @@
 {
-    "parameters": {
-      "static-quantized-quals_1": 10,
-      "static-quantized-quals_2": 20,
-      "static-quantized-quals_3": 30
-    },
+    "parameters": {},
     "workflow_uuid": "6c9c6f49-f954-4e76-8dfb-d385cddcebd6",
     "input_files" : [
        {
            "workflow_argument_name": "input_bam",
-           "uuid": "",
-           "mount": true
+           "uuid": ""
        },
        {
            "workflow_argument_name": "reference",
-           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
-           "mount": true
+           "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7"
        },
        {
            "workflow_argument_name": "recalibration_report",
-           "uuid": "",
-           "mount": true
+           "uuid": ""
        }
     ],
     "config": {
       "instance_type": "t3.micro",
-      "ebs_size": "2.5x",
+      "ebs_size": "3.5x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",

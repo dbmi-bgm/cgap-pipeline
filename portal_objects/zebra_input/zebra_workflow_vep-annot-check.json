@@ -1,8 +1,8 @@
 {
     "parameters": {
-      "nthreads": 72
+      "nthreads": 64
     },
-    "workflow_uuid": "860a1240-f15a-425d-875b-7b8f943130d4",
+    "workflow_uuid": "d865baaa-7fc9-4e36-abd0-35c909d8eca5",
     "input_files" : [
        {
            "workflow_argument_name": "input_vcf",
@@ -55,7 +55,7 @@
     ],
     "config": {
       "instance_type": "c5n.18xlarge",
-      "ebs_size": "0.6x",
+      "ebs_size": "0.5x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",
