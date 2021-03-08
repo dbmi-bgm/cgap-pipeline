@@ -149,6 +149,15 @@ RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
     chmod +x samplegeno.py && \
     cd ..
 
+# add dbSNP ID fixer scripts
+RUN git clone https://github.com/dbmi-bgm/cgap-annotations.git && \
+    cd cgap-annotations && \
+    git checkout 78b4518 && \
+    cd .. && \
+    cp cgap-annotations/variants/scripts/dbSNP_ID_fixer.py . && \
+    chmod +x dbSNP_ID_fixer.py
+    rm -rf cgap-annotations
+
 # HaplotypeCaller parallel script
 COPY HaplotypeCaller-parallel.sh .
 RUN chmod +x HaplotypeCaller-parallel.sh
@@ -195,6 +204,10 @@ RUN chmod +x bcftools-norm-multiallelics.sh
 # samplegeno
 COPY samplegeno.sh .
 RUN chmod +x samplegeno.sh
+
+# dbSNP ID fix
+COPY parallel_dbSNP_ID_fixer.sh .
+RUN chmod +x parallel_dbSNP_ID_fixer.sh
 
 # env paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
