@@ -109,6 +109,18 @@
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "bamsnap",
+        "software_type": [
+            "image generator"
+        ],
+        "source_url": "https://github.com/parklab/bamsnap",
+        "title": "bamsnap_0.2.19",
+        "uuid": "a8b47313-8bcb-460b-8be8-b71c7f6b1b27",
+        "version": "0.2.19"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "name": "granite",
         "software_type": [
             "filter"
