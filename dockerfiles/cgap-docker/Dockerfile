@@ -155,7 +155,7 @@ RUN git clone https://github.com/dbmi-bgm/cgap-annotations.git && \
     git checkout 78b4518 && \
     cd .. && \
     cp cgap-annotations/variants/scripts/dbSNP_ID_fixer.py . && \
-    chmod +x dbSNP_ID_fixer.py
+    chmod +x dbSNP_ID_fixer.py && \
     rm -rf cgap-annotations
 
 # HaplotypeCaller parallel script
