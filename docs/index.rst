@@ -2,7 +2,7 @@
 Overview
 ========
 
-This is a documentation for CGAP pipelines ``v20`` (https://github.com/dbmi-bgm/cgap-pipeline/tree/v20)
+This is a documentation for CGAP pipelines ``v21`` (https://github.com/dbmi-bgm/cgap-pipeline/tree/v21)
 
 Contents
 ########

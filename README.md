@@ -1,7 +1,7 @@
 ## CGAP pipeline
 * This repo contains CGAP pipeline components
   * CWL
-  * Docker source - Docker image name `cgap/cgap:v20`
+  * Docker source - Docker image name `cgap/cgap:v21`
   * Example Tibanna input jsons for individual steps
 
 For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
@@ -14,6 +14,9 @@ python post_patch_to_portal.py [--ff-env=<env_name>] [--skip-software] [--skip-f
 ```
 
 ### Version updates
+#### v21
+* added step to correct dbSNP error from GATK
+
 #### v20
 * added step to add samplegeno annotation to variants
 * conversion of ALT allele `-` back to `*` after VEP annotation is no longer performed.

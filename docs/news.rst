@@ -4,6 +4,7 @@ News and updates
 
 Version updates
 +++++++++++++++
+  **Mar 30, 2021**  CGAP (WGS) pipeline v21 is released!
 
   **Jan 20, 2021**  CGAP (WGS) pipeline v20 is released!
 
