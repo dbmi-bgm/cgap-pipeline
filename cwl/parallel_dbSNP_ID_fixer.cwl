@@ -14,7 +14,7 @@ hints:
 baseCommand: [parallel_dbSNP_ID_fixer.sh]
 
 inputs:
-  - id: reference
+  - id: dbSNP_ref_vcf
     type: File
     inputBinding:
       position: 1
@@ -28,7 +28,7 @@ inputs:
       position: 2
     secondaryFiles:
       - .tbi
-    doc: expect the path to the sample gvcf gz file
+    doc: expect the path to the sample vcf gz file
 
   - id: region_file
     type: File
