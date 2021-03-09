@@ -1,7 +1,7 @@
 {
-  "accession": "GAPXFA2P9U1Z",
+  "accession": "GAPXFAL9K11P",
   "app_name": "workflow_granite-qcVCF",
-  "app_version": "v4",
+  "app_version": "v5",
   "arguments": [
       {
           "argument_format": "vcf",
@@ -16,6 +16,16 @@
           "qc_html": false,
           "qc_json": true,
           "qc_table": false,
+          "qc_type": "quality_metric_vcfqc"
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "uniq_variants",
+          "argument_to_be_attached_to": "input_vcf",
+          "qc_zipped": false,
+          "qc_html": false,
+          "qc_json": false,
+          "qc_table": true,
           "qc_type": "quality_metric_vcfqc"
       },
       {
@@ -41,16 +51,16 @@
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["QC"],
-  "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-qc/v4/cwl/",
-  "cwl_main_filename": "granite-qcVCF.cwl",
+  "cwl_child_filenames": ["granite-qcVCF.cwl", "uniq_variants.cwl"],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-qc/v5/cwl/",
+  "cwl_main_filename": "workflow_granite-qcVCF_plus_uniq_variants.cwl",
   "cwl_pointer": "",
   "description": "Run granite qcVCF on vcf input file. Produce a json report for quality metrics",
-  "docker_image_name": "cgap/qc:v4",
+  "docker_image_name": "cgap/qc:v5",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-qcVCF_v4",
-  "aliases": ["cgap:workflow_granite-qcVCF_v4"],
+  "name": "workflow_granite-qcVCF_v5",
+  "aliases": ["cgap:workflow_granite-qcVCF_v5"],
   "steps": [
       {
           "inputs": [
@@ -156,12 +166,25 @@
                           "name": "qc_json"
                       }
                   ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "uniq_variants",
+                  "target": [
+                      {
+                          "name": "uniq_variants"
+                      }
+                  ]
               }
           ]
       }
   ],
   "title": "Run granite qcVCF",
-  "uuid": "29085493-c13d-4ee6-b5b4-8e1cf36b6209",
-  "previous_version": ["33a85705-b757-49e0-aaef-d786695d6d03"],
-  "version_upgrade_log": "Updated granite version but no expected difference, reading vcf.gz directly instead of downloading and unzipping."
+  "uuid": "432558d0-f68b-40e8-95b6-5943aaaf7f92",
+  "previous_version": ["29085493-c13d-4ee6-b5b4-8e1cf36b6209"],
+  "version_upgrade_log": "added step to count unique variants in vcf as qc"
 }

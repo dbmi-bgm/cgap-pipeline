@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/qc:v4
+    dockerPull: cgap/qc:v5
 
 baseCommand: [python, /usr/local/bin/bamqc.py]
 

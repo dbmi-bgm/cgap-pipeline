@@ -2,7 +2,7 @@
 Docker Image
 ============
 
-* The current docker image is ``cgap/qc:v4``
+* The current docker image is ``cgap/qc:v5``
 
 The image contains (but is not limited to) the following software packages:
 

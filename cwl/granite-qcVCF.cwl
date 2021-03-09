@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/qc:v4
+    dockerPull: cgap/qc:v5
 
 baseCommand: [granite, qcVCF]
 
@@ -18,7 +18,7 @@ inputs:
     type: File
     inputBinding:
       prefix: -i
-    doc: expect the path to the vcf file
+    doc: expect the path to the vcf gz file
 
   - id: outputfile
     type: string

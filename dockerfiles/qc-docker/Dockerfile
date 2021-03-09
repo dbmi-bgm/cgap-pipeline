@@ -53,6 +53,10 @@ COPY bamqc.py .
 COPY peddy.sh .
 RUN chmod +x peddy.sh
 
+# unique variants
+COPY uniq_variants.sh .
+RUN chmod +x uniq_variants.sh
+
 # paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
 ENV PATH=/usr/local/bin/bedtools/bin/:$PATH
