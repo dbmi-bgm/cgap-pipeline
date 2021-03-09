@@ -493,5 +493,21 @@
     "extra_files": [],
     "status": "uploaded",
     "file_version": "0.4.6"
+  },
+  {
+    "uuid": "aa542c8e-b31c-4cff-b2d4-aa4037bb913c",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "vcf_gz",
+    "description": "dbSNP v151 reference vcf",
+    "aliases": ["cgap:dbSNPv151"],
+    "extra_files": [
+        {
+            "file_format": "vcf_gz_tbi",
+            "status": "uploading"
+        }
+    ],
+    "status": "uploading",
+    "file_version": "151"
   }
 ]

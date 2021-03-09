@@ -165,5 +165,17 @@
         "title": "samplegeno_22ff179",
         "uuid": "c2380d3a-80a2-4009-a343-f9475381aab1",
         "commit": "22ff179"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "dbSNP_ID_fixer",
+        "software_type": [
+            "annotator"
+        ],
+        "source_url": "https://github.com/dbmi-bgm/cgap-annotations",
+        "title": "dbSNP_ID_fixer_0ec3c1b",
+        "uuid": "f9ecea14-7820-4f73-a4a1-e91f9199a0bc",
+        "commit": "0ec3c1b"
     }
 ]
