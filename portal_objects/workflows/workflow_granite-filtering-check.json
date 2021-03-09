@@ -1,7 +1,7 @@
 {
   "accession": "GAPK43R7O9K2",
   "app_name": "workflow_granite-filtering-check",
-  "app_version": "v20",
+  "app_version": "v21",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -59,15 +59,16 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["granite-geneList.cwl", "granite-whiteList.cwl", "granite-cleanVCF.cwl", "granite-blackList.cwl", "merge-sort-vcf.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v20/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v21/cwl",
   "cwl_main_filename": "workflow_granite-filtering_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Filter and clean the input vcf using granite (geneList, whiteList, cleanVCF, blackList). An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v20",
+  "docker_image_name": "cgap/cgap:v21",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-filtering-check_v20",
-  "aliases": ["cgap:workflow_granite-filtering-check_v20"],
+  "name": "workflow_granite-filtering-check_v21",
+  "aliases": ["cgap:workflow_granite-filtering-check_v21",
+              "cgap:workflow_granite-filtering-check_v20"],
   "steps": [
       {
           "inputs": [
