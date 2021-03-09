@@ -6,29 +6,29 @@ requirements:
   MultipleInputFeatureRequirement: {}
 
 inputs:
-- id: input_vcf
-  type: File
-  doc: expect the path to the vcf gz file
+  - id: input_vcf
+    type: File
+    doc: expect the path to the vcf gz file
 
-- id: pedigree
-  type: string
-  doc: string representation of pedigree as json
+  - id: pedigree
+    type: string
+    doc: string representation of pedigree as json
 
-- id: samples
-  type: string[]
-  doc: samples to collect metrics for
+  - id: samples
+    type: string[]
+    doc: samples to collect metrics for
 
-- id: trio_errors
-  type: boolean
-  doc: add statistics on mendelian errors based on trio
+  - id: trio_errors
+    type: boolean
+    doc: add statistics on mendelian errors based on trio
 
-- id: het_hom
-  type: boolean
-  doc: add heterozygosity ratio and statistics on zygosity
+  - id: het_hom
+    type: boolean
+    doc: add heterozygosity ratio and statistics on zygosity
 
-- id: ti_tv
-  type: boolean
-  doc: add transition-transversion ratio and statistics on substitutions
+  - id: ti_tv
+    type: boolean
+    doc: add transition-transversion ratio and statistics on substitutions
 
 outputs:
   qc_json:
