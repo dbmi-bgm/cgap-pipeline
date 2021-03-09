@@ -1,0 +1,186 @@
+{
+  "accession": "GAPWFD85NPFX",
+  "app_name": "workflow_dbSNP_ID_fixer-check",
+  "app_version": "v21",
+  "arguments": [
+      {
+          "argument_format": "vcf_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "dbSNP_ref_vcf"
+      },
+      {
+          "argument_format": "vcf_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_vcf"
+      },
+      {
+          "argument_format": "vcf_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "region_file"
+      },
+      {
+          "argument_format": "vcf_gz",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "vcf",
+          "secondary_file_formats": ["vcf_gz_tbi"]
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "vcf-check",
+          "argument_to_be_attached_to": "vcf",
+          "qc_zipped": false,
+          "qc_html": false,
+          "qc_json": false,
+          "qc_table": true,
+          "qc_type": "quality_metric_vcfcheck"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "nthreads"
+      }
+  ],
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+  "category": ["processing"],
+  "cwl_child_filenames": ["parallel_dbSNP_ID_fixer.cwl", "vcf-integrity-check.cwl"],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v21/cwl",
+  "cwl_main_filename": "workflow_parallel_dbSNP_ID_fixer_plus_vcf-integrity-check.cwl",
+  "cwl_pointer": "",
+  "description": "Run parallel_dbSNP_ID_fixer on sample file and update ID column with rsIDs from reference dbSNP vcf. An integrity check is performed on the output file",
+  "docker_image_name": "cgap/cgap:v21",
+  "docker_registry_url": "https://hub.docker.com/",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "name": "workflow_dbSNP_ID_fixer-check_v21",
+  "aliases": ["workflow_dbSNP_ID_fixer-check_v21"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "dbSNP_ref_vcf",
+                  "source": [
+                      {
+                          "name": "dbSNP_ref_vcf"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_vcf",
+                  "source": [
+                      {
+                          "name": "input_vcf"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "txt",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "region_file",
+                  "source": [
+                      {
+                          "name": "region_file"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "nthreads",
+                  "source": [
+                      {
+                          "name": "nthreads"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Run dbSNP_ID_fixer"
+              ],
+              "software_used": [
+                 "/softwares/f9ecea14-7820-4f73-a4a1-e91f9199a0bc"
+              ]
+          },
+          "name": "dbSNP_ID_fixer",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "vcf",
+                  "target": [
+                      {
+                          "name": "vcf",
+                          "step": "vcf-integrity-check"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": false,
+                      "type": "data file"
+                  },
+                  "name": "vcf",
+                  "source": [
+                      {
+                          "name": "vcf",
+                          "step": "dbSNP_ID_fixer"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Check integrity of vcf output file"
+              ],
+              "software_used": [
+                 "/softwares/f7ac2c5f-9203-49fa-b918-cede02bf46f7"
+              ]
+          },
+          "name": "vcf-integrity-check",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "vcf-check",
+                  "target": [
+                      {
+                          "name": "vcf-check"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Run dbSNP ID fixer plus output integrity-check",
+  "uuid": "1467c3bb-fd18-444b-89c9-3b07c3ddb4b8"
+}
