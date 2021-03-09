@@ -14,7 +14,7 @@ sample_vcf_out=fixed_${sample_vcf_path_stripped%%.*}.vcf
 directory=`pwd`
 
 # grab header from sample_vcf and create chr0:header
-python3 vcf_write_header.py -i $sample_vcf
+gunzip -c $sample_vcf | grep '^#' > chr0:header
 
 # running dbSNP rsID fixer
 
