@@ -37,7 +37,7 @@ outputs:
 
   uniq_variants:
     type: File
-    outputSource: uniq_variants/output
+    outputSource: count_variants/output
 
 steps:
   granite-qcVCF:
@@ -57,7 +57,7 @@ steps:
         source: ti_tv
     out: [qc_json]
 
-  uniq_variants:
+  count_variants:
     run: uniq_variants.cwl
     in:
       input:
