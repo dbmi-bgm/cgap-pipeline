@@ -24,7 +24,7 @@ outputs:
   - id: output
     type: File
     outputBinding:
-      glob: "uniq_variants"
+      glob: "uniq_variants.json"
 
 doc: |
   count the number of unique variants in vcf |

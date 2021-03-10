@@ -24,8 +24,8 @@
           "argument_to_be_attached_to": "input_vcf",
           "qc_zipped": false,
           "qc_html": false,
-          "qc_json": false,
-          "qc_table": true,
+          "qc_json": true,
+          "qc_table": false,
           "qc_type": "quality_metric_vcfqc"
       },
       {
