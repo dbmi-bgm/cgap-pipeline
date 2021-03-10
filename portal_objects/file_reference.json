@@ -65,8 +65,8 @@
     "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
     "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
     "file_format": "vcf_gz",
-    "description": "hg38 dbsnp_b151",
-    "aliases": ["cgap:hg38-dbsnp-b151"],
+    "description": "hg38 dbsnp_b151 common variants",
+    "aliases": ["cgap:hg38-dbsnp-b151","cgap:hg38-dbsnp-b151-common-only"],
     "extra_files": [
         {
             "file_format": "vcf_gz_tbi",
@@ -499,8 +499,8 @@
     "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
     "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
     "file_format": "vcf_gz",
-    "description": "dbSNP v151 reference vcf",
-    "aliases": ["cgap:dbSNPv151"],
+    "description": "hg38 dbSNP v151 all variants",
+    "aliases": ["cgap:hg38-dbSNPv151-all-variants"],
     "extra_files": [
         {
             "file_format": "vcf_gz_tbi",
