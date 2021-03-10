@@ -37,7 +37,7 @@ outputs:
     outputSource: integrity-check/output
 
 steps:
-  gparallel_dbSNP_ID_fixer:
+  parallel_dbSNP_ID_fixer:
     run: parallel_dbSNP_ID_fixer.cwl
     in:
       dbSNP_ref_vcf:

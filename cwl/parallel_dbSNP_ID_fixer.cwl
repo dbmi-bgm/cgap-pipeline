@@ -41,8 +41,8 @@ inputs:
     inputBinding:
       position: 4
     doc: number of threads used to run parallel
- 
- outputs:
+
+outputs:
   - id: output
     type: File
     outputBinding:
