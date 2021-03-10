@@ -41,6 +41,14 @@ inputs:
     inputBinding:
       position: 4
     doc: number of threads used to run parallel
+ 
+ outputs:
+  - id: output
+    type: File
+    outputBinding:
+      glob: 'fixed*vcf.gz'
+    secondaryFiles:
+      - .tbi
 
 doc: |
   run dbSNP_ID_fixer.py to update sample vcf ID column with rsID(s)
