@@ -50,7 +50,7 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_dbSNP_ID_fixer-check_v21",
-  "aliases": ["workflow_dbSNP_ID_fixer-check_v21"],
+  "aliases": ["cgap:workflow_dbSNP_ID_fixer-check_v21"],
   "steps": [
       {
           "inputs": [
