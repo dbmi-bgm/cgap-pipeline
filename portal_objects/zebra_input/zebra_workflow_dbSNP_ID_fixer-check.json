@@ -20,7 +20,7 @@
     ],
     "config": {
       "instance_type": "c5n.4xlarge",
-      "ebs_size": "1.5x",
+      "ebs_size": "3.5x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",
@@ -29,7 +29,7 @@
     },
     "_tibanna": {
       "run_type": "workflow_dbSNP_ID_fixer-check",
-      "env": "fourfront-cgap"
+      "env": "fourfront-cgapwolf"
     },
     "app_name": "workflow_dbSNP_ID_fixer-check"
 }
