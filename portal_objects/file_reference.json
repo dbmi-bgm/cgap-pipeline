@@ -504,10 +504,10 @@
     "extra_files": [
         {
             "file_format": "vcf_gz_tbi",
-            "status": "uploading"
+            "status": "uploaded"
         }
     ],
-    "status": "uploading",
+    "status": "uploaded",
     "file_version": "151"
   }
 ]
