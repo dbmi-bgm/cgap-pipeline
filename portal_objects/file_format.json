@@ -367,5 +367,28 @@
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "shared",
         "valid_item_types": ["FileProcessed", "FileReference"]
+    },
+    {
+        "file_format": "sv_vcf_gz",
+        "standard_file_extension": "sv.vcf.gz",
+        "description": "SV vcf, compressed",
+        "uuid": "a9ce449e-5f56-4106-be87-c96427912edf",
+        "extrafile_formats": [
+            "193bc1cd-b8a9-41dc-b0dc-9cbad87ace09"
+        ],
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "shared",
+        "valid_item_types": ["FileReference", "FileProcessed"]
+    },
+    {
+        "file_format": "sv_vcf_gz_tbi",
+        "standard_file_extension": "sv.vcf.gz.tbi",
+        "description": "Tabix index file of SV vcf, compressed",
+        "uuid": "193bc1cd-b8a9-41dc-b0dc-9cbad87ace09",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "shared",
+        "valid_item_types": ["FileReference", "FileProcessed"]
     }
 ]
