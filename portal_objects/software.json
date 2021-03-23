@@ -177,5 +177,29 @@
         "title": "dbSNP_ID_fixer_0ec3c1b",
         "uuid": "f9ecea14-7820-4f73-a4a1-e91f9199a0bc",
         "commit": "0ec3c1b"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "liftover_hg19",
+        "software_type": [
+            "annotator"
+        ],
+        "source_url": "https://github.com/dbmi-bgm/cgap-annotations",
+        "title": "liftover_hg19_73ceabf",
+        "uuid":"3aa33ef0-add7-484b-b913-d69532e58fff",
+        "commit":"73ceabf"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "hgvsg_creator",
+        "software_type": [
+            "annotator"
+        ],
+        "source_url": "https://github.com/dbmi-bgm/cgap-annotations",
+        "title": "hgvsg_creator_73ceabf",
+        "uuid":"4654848a-42ec-4a92-952b-5091f2faa2b7",
+        "commit":"73ceabf"
     }
 ]
