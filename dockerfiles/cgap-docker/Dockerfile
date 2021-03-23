@@ -158,6 +158,17 @@ RUN git clone https://github.com/dbmi-bgm/cgap-annotations.git && \
     chmod +x dbSNP_ID_fixer.py && \
     rm -rf cgap-annotations
 
+# add hgvsg and liftover_hg19
+RUN git clone https://github.com/dbmi-bgm/cgap-annotations.git && \
+    cd cgap-annotations && \
+    git checkout 73ceabf && \
+    cd .. && \
+    cp cgap-annotations/variants/scripts/hgvsg_creator.py . && \
+    chmod +x hgvsg_creator.py && \
+    cp cgap-annotations/variants/scripts/liftover_hg19.py . && \
+    chmod +x liftover_hg19.py && \
+    rm -rf cgap-annotations
+
 # HaplotypeCaller parallel script
 COPY HaplotypeCaller-parallel.sh .
 RUN chmod +x HaplotypeCaller-parallel.sh
