@@ -34,6 +34,7 @@ steps:
     in:
       input:
         source: liftover_hg19/output
+    out: [output]
 
   integrity-check:
     run: vcf-integrity-check.cwl
