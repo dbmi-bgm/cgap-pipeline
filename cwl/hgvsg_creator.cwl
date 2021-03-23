@@ -22,7 +22,7 @@ inputs:
     doc: expect the path to the sample vcf gz file
 
   - id: output
-    default: './hgvsg.vcf'
+    default: 'hgvsg.vcf'
     type: string
     inputBinding:
       position: 2
@@ -33,10 +33,9 @@ outputs:
   - id: output
     type: File
     outputBinding:
-      glob: '*.gz'
+      glob: $(inputs.outputfile + ".gz")
     secondaryFiles:
       - .tbi
-
 
 doc: |
   run hgvsg_creator.py to add hgvsg data to INFO field for qualified variants

@@ -22,7 +22,7 @@ inputs:
     doc: expect the path to the sample vcf gz file
 
   - id: output
-    default: './liftover.vcf'
+    default: 'liftover.vcf'
     type: string
     inputBinding:
       position: 2
@@ -33,7 +33,7 @@ outputs:
   - id: output
     type: File
     outputBinding:
-      glob: '*.gz'
+      glob: $(inputs.outputfile + ".gz")
     secondaryFiles:
       - .tbi
 
