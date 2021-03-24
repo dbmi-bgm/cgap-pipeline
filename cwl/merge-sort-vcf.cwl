@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v21
+    dockerPull: cgap/cgap:v22
 
 baseCommand: [merge-sort-vcf.sh]
 

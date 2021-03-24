@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v21
+    dockerPull: cgap/cgap:v22
 
 baseCommand: [parallel_dbSNP_ID_fixer.sh]
 
