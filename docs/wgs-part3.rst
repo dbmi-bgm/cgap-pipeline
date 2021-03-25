@@ -13,4 +13,5 @@ Part 3. Annotation and inheritance mode analysis
    wgs-step-denovo
    wgs-step-comhet
    wgs-step-dbSNP
+   wgs-step-hg19LO-hgvsg
    wgs-step-bamsnap
