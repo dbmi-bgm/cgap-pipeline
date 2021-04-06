@@ -390,5 +390,38 @@
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "shared",
         "valid_item_types": ["FileReference", "FileProcessed"]
+    },
+    {
+        "file_format": "BigWig",
+        "standard_file_extension": "bw",
+        "description": "dense continuous data with genomic coordinates. compressed wiggle (wig) file",
+        "uuid": "33f30c42-d582-4163-af44-fecf586b9dd3",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "shared",
+        "valid_item_types": ["FileReference"]
+    },
+    {
+        "file_format": "tsv_gz",
+        "standard_file_extension": "tsv.gz",
+        "description": "tab-separate values (tsv), compressed",
+        "uuid": "11ca3783-db6e-430e-997b-9cf0ca275814",
+        "extrafile_formats": [
+            "829ed303-e427-4d9a-a217-be75ad11317e"
+        ],
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "shared",
+        "valid_item_types": ["FileReference"]
+    },
+    {
+        "file_format": "tsv_gz_tbi",
+        "standard_file_extension": "tsv.gz.tbi",
+        "description": "Tabix index file of tab-separate values (tsv), compressed",
+        "uuid": "829ed303-e427-4d9a-a217-be75ad11317e",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "shared",
+        "valid_item_types": ["FileReference"]
     }
 ]
