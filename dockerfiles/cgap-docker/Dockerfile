@@ -151,10 +151,6 @@ ENV PERL5LIB=$PERL5LIB:/root/cpanm/lib/perl5
 COPY vep-annot.sh .
 RUN chmod +x vep-annot.sh
 
-# TESTING VEP SCRIPT
-COPY vep-update.sh .
-RUN chmod +x vep-update.sh
-
 # bwa mem script
 COPY bwa-mem-to-bam.sh .
 RUN chmod +x bwa-mem-to-bam.sh
