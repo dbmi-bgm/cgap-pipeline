@@ -21,6 +21,8 @@ python post_patch_to_portal.py [--ff-env=<env_name>] [--skip-software] [--skip-f
 * added step to add samplegeno annotation to variants
 * conversion of ALT allele `-` back to `*` after VEP annotation is no longer performed.
 * updated granite version - vcf.gz is read directly rather than is downloaded and unzipped.
+* bamsnap empty zip file bug fix
+* bamsnap png file path changed from `chr1:1234.png` to `chr1_1234.png`
 
 #### v19
 * added indels realignment when splitting variants with bcftools
