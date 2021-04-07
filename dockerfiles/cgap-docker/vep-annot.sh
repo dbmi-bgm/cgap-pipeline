@@ -54,7 +54,7 @@ basic_vep="--sift b --polyphen b --ccds --hgvs --symbol --numbers --domains --re
 
 # options and full command line
 options="--fasta $reference --assembly $assembly --use_given_ref --offline --cache_version $version --dir_cache . $basic_vep --force_overwrite --vcf"
-command="tabix -h $input_vcf {} > {}.sharded.vcf; if [[ -e {}.sharded.vcf ]]; then if grep -q -v '^#' {}.sharded.vcf; then vep -i {}.sharded.vcf -o ${directory}{}.vep.vcf $options $plugins $customs; fi; fi; rm {}.sharded.vcf"
+command="tabix -h $input_vcf {} > {}.sharded.vcf; if [[ -e {}.sharded.vcf ]]; then if grep -q -v '^#' {}.sharded.vcf; then vep -i {}.sharded.vcf -o ${directory}{}.vep.vcf $options $customs $plugins; fi; fi; rm {}.sharded.vcf"
 
 # runnning VEP in parallel
 echo "Running VEP"
