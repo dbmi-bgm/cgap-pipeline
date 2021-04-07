@@ -29,7 +29,10 @@ RUN apt-get update -y && apt-get install -y \
     yasm \
     libdbi-perl \
     libmodule-build-perl \
-    libarchive-zip-perl
+    libarchive-zip-perl \
+    libmysqlclient-dev \
+    libpng-dev \
+    libexpat1-dev
 
 WORKDIR /usr/local/bin
 
@@ -117,9 +120,40 @@ RUN git clone https://github.com/Ensembl/ensembl-vep.git && \
     perl INSTALL.pl --AUTO a --NO_UPDATE && \
     cd ..
 
+# perl module for VEP
+RUN cpan App::cpanminus && \
+    wget https://github.com/ucscGenomeBrowser/kent/archive/v335_base.tar.gz && \
+    tar xzf v335_base.tar.gz && \
+    export KENT_SRC=/usr/local/bin/kent-335_base/src && \
+    export MACHTYPE=$(uname -m) && \
+    export CFLAGS="-fPIC" && \
+    export MYSQLINC=`mysql_config --include | sed -e 's/^-I//g'` && \
+    MYSQLLIBS=`mysql_config --libs` && \
+    export MYSQLLIBS && \
+    cd $KENT_SRC/lib && \
+    echo 'CFLAGS="-fPIC"' > ../inc/localEnvironment.mk && \
+    make clean && make && \
+    cd ../jkOwnLib && \
+    make clean && make && \
+    cd /usr/local/bin/ && \
+    mkdir -p $HOME/cpanm && \
+    export PERL5LIB=$PERL5LIB:$HOME/cpanm/lib/perl5 && \
+    cpanm -l $HOME/cpanm Bio::DB::BigFile && \
+    rm -f v335_base.tar.gz && \
+    rm -rf kent-335_base/ && \
+    cd /usr/local/bin/ensembl-vep && \
+    perl -Imodules t/AnnotationSource_File_BigWig.t && \
+    cd /usr/local/bin
+
+ENV PERL5LIB=$PERL5LIB:/root/cpanm/lib/perl5
+
 # VEP script
 COPY vep-annot.sh .
 RUN chmod +x vep-annot.sh
+
+# TESTING VEP SCRIPT
+COPY vep-update.sh .
+RUN chmod +x vep-update.sh
 
 # bwa mem script
 COPY bwa-mem-to-bam.sh .
