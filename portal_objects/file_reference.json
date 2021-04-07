@@ -509,5 +509,83 @@
     ],
     "status": "uploaded",
     "file_version": "151"
+  },
+  {
+    "uuid": "672de47f-d058-4dbd-9fc4-3e134cfe71d8",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "tsv_gz",
+    "description": "CADD hg38 all possible SNVs",
+    "aliases": ["cgap:hg38-CADD-SNVs-v1.6"],
+    "extra_files": [
+        {
+            "file_format": "tsv_gz_tbi",
+            "status": "uploading"
+        }
+    ],
+    "status": "uploading",
+    "file_version": "v1.6"
+  },
+  {
+    "uuid": "b9f123dd-be05-4a14-957a-5e1e5a5ce254",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "tsv_gz",
+    "description": "CADD hg38 InDels",
+    "aliases": ["cgap:hg38-CADD-InDels-v1.6"],
+    "extra_files": [
+        {
+            "file_format": "tsv_gz_tbi",
+            "status": "uploading"
+        }
+    ],
+    "status": "uploading",
+    "file_version": "v1.6"
+  },
+  {
+    "uuid": "dd6f0384-d0b5-47d6-99a8-395c0b72feed",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "vcf_gz",
+    "description": "datasource for gnomAD exome v2.1 hg38 liftover, trimmed",
+    "aliases": ["cgap:gnomad-exome-2.1"],
+    "extra_files": [
+        {
+            "file_format": "vcf_gz_tbi",
+            "status": "uploading"
+        }
+    ],
+    "status": "uploading",
+    "file_version": "2.1"
+  },
+  {
+    "uuid": "f6809af1-f7b9-43c0-882a-16764ccc431d",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "bw",
+    "description": "phyloP 30-way mammalian BigWig",
+    "aliases": ["cgap:phyloP30way-hg38"],
+    "status": "uploading",
+    "file_version": "hg38"
+  },
+  {
+    "uuid": "af93aecb-6b8e-4c8b-b159-eefb3f9d0ffb",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "bw",
+    "description": "phyloP 100-way vertebrate BigWig",
+    "aliases": ["cgap:phyloP100way-hg38"],
+    "status": "uploading",
+    "file_version": "hg38"
+  },
+  {
+    "uuid": "19f03828-175b-4594-ba1a-52ddabcf640d",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "bw",
+    "description": "PhastCons 100-way vertebrate BigWig",
+    "aliases": ["cgap:PhastCons100way-hg38"],
+    "status": "uploading",
+    "file_version": "hg38"
   }
 ]
