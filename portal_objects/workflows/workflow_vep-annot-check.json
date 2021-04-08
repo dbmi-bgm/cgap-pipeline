@@ -69,17 +69,17 @@
           "workflow_argument_name": "CADD_indel"
       },
       {
-          "argument_format": "bw",
+          "argument_format": "BigWig",
           "argument_type": "Input file",
           "workflow_argument_name": "phylop100bw"
       },
       {
-          "argument_format": "bw",
+          "argument_format": "BigWig",
           "argument_type": "Input file",
           "workflow_argument_name": "phylop30bw"
       },
       {
-          "argument_format": "bw",
+          "argument_format": "BigWig",
           "argument_type": "Input file",
           "workflow_argument_name": "phastc100bw"
       },
@@ -304,7 +304,7 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "bw",
+                      "file_format": "BigWig",
                       "global": true,
                       "type": "reference file"
                   },
@@ -318,7 +318,7 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "bw",
+                      "file_format": "BigWig",
                       "global": true,
                       "type": "reference file"
                   },
@@ -332,7 +332,7 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "bw",
+                      "file_format": "BigWig",
                       "global": true,
                       "type": "reference file"
                   },
