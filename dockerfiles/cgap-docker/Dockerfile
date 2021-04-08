@@ -136,16 +136,16 @@ RUN cpan App::cpanminus && \
     cd ../jkOwnLib && \
     make clean && make && \
     cd /usr/local/bin/ && \
-    mkdir -p $HOME/cpanm && \
-    export PERL5LIB=$PERL5LIB:$HOME/cpanm/lib/perl5 && \
-    cpanm -l $HOME/cpanm Bio::DB::BigFile && \
+    mkdir -p /usr/local/bin/cpanm_bw && \
+    export PERL5LIB=$PERL5LIB:/usr/local/bin/cpanm_bw/lib/perl5 && \
+    cpanm -l /usr/local/bin/cpanm_bw Bio::DB::BigFile && \
     rm -f v335_base.tar.gz && \
     rm -rf kent-335_base/ && \
     cd /usr/local/bin/ensembl-vep && \
     perl -Imodules t/AnnotationSource_File_BigWig.t && \
     cd /usr/local/bin
 
-ENV PERL5LIB=$PERL5LIB:/root/cpanm/lib/perl5
+ENV PERL5LIB=$PERL5LIB:/usr/local/bin/cpanm_bw/lib/perl5
 
 # VEP script
 COPY vep-annot.sh .
