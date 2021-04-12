@@ -12,6 +12,10 @@ inputs:
       - .tbi
     doc: expect the path to the sample vcf gz file
 
+  - id: chainfile
+    type: File
+    doc: expect the path to the hg38-to-hg19-chain file
+
 outputs:
   vcf:
     type: File
@@ -27,6 +31,8 @@ steps:
     in:
       input:
         source: input_vcf
+      chainfile:
+        source: chainfile
     out: [output]
 
   hgvsg_creator:

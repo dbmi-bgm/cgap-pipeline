@@ -6,6 +6,11 @@
            "workflow_argument_name": "input_vcf",
            "uuid": "",
            "mount": true
+       },
+       {
+           "workflow_argument_name": "chainfile",
+           "uuid": "297c872a-5b6b-4fc3-83d3-f4a853f8805c",
+           "mount": true
        }
     ],
     "config": {

@@ -9,6 +9,11 @@
           "workflow_argument_name": "input_vcf"
       },
       {
+          "argument_format": "chain",
+          "argument_type": "Input file",
+          "workflow_argument_name": "chainfile"
+      },
+      {
           "argument_format": "vcf_gz",
           "argument_type": "Output processed file",
           "workflow_argument_name": "vcf",
@@ -32,7 +37,7 @@
   "cwl_main_filename": "workflow_hg19lo_hgvsg_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run hg19 liftover on an input vcf. hgvsg_creator is run on the output vcf to create another vcf. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v22",
+  "docker_image_name": "cgap/cgap:v22b",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_hg19lo_hgvsg-check_v22",
@@ -51,6 +56,20 @@
                   "source": [
                       {
                           "name": "input_vcf"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "chain",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "chainfile",
+                  "source": [
+                      {
+                          "name": "chainfile"
                       }
                   ]
               }
