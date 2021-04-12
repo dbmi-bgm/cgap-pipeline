@@ -191,7 +191,7 @@ RUN git clone https://github.com/dbmi-bgm/cgap-annotations.git && \
 # add hgvsg and liftover_hg19
 RUN git clone https://github.com/dbmi-bgm/cgap-annotations.git && \
     cd cgap-annotations && \
-    git checkout 73ceabf && \
+    git checkout ef95e1b && \
     cd .. && \
     cp cgap-annotations/variants/scripts/hgvsg_creator.py . && \
     chmod +x hgvsg_creator.py && \
