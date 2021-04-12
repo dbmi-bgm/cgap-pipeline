@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v22
+    dockerPull: cgap/cgap:v22b
 
 baseCommand: [python3, /usr/local/bin/liftover_hg19.py]
 
@@ -22,7 +22,6 @@ inputs:
     doc: expect the path to the sample vcf gz file
 
   - id: chainfile
-    default: 'GAPFIYPTSAU8.chain.gz'
     type: File
     inputBinding:
       position: 2
