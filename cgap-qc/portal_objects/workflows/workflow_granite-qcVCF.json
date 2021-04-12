@@ -1,0 +1,190 @@
+{
+  "accession": "GAPXFAL9K11P",
+  "app_name": "workflow_granite-qcVCF",
+  "app_version": "v5",
+  "arguments": [
+      {
+          "argument_format": "vcf",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_vcf"
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "qc_json",
+          "argument_to_be_attached_to": "input_vcf",
+          "qc_zipped": false,
+          "qc_html": false,
+          "qc_json": true,
+          "qc_table": false,
+          "qc_type": "quality_metric_vcfqc"
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "uniq_variants",
+          "argument_to_be_attached_to": "input_vcf",
+          "qc_zipped": false,
+          "qc_html": false,
+          "qc_json": true,
+          "qc_table": false,
+          "qc_type": "quality_metric_vcfqc"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "pedigree"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "samples"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "trio_errors"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "het_hom"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "ti_tv"
+      }
+  ],
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+  "category": ["QC"],
+  "cwl_child_filenames": ["granite-qcVCF.cwl", "uniq_variants.cwl"],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-qc/v5/cwl/",
+  "cwl_main_filename": "workflow_granite-qcVCF_plus_uniq_variants.cwl",
+  "cwl_pointer": "",
+  "description": "Run granite qcVCF on vcf input file. Produce a json report for quality metrics",
+  "docker_image_name": "cgap/qc:v5",
+  "docker_registry_url": "https://hub.docker.com/",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "name": "workflow_granite-qcVCF_v5",
+  "aliases": ["cgap:workflow_granite-qcVCF_v5"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_vcf",
+                  "source": [
+                      {
+                          "name": "input_vcf"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "pedigree",
+                  "source": [
+                      {
+                          "name": "pedigree"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "samples",
+                  "source": [
+                      {
+                          "name": "samples"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "trio_errors",
+                  "source": [
+                      {
+                          "name": "trio_errors"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "het_hom",
+                  "source": [
+                      {
+                          "name": "het_hom"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "ti_tv",
+                  "source": [
+                      {
+                          "name": "ti_tv"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Run granite qcVCF"
+              ],
+              "software_used": [
+                  "/softwares/e88580b2-fc38-4f38-bfc5-7566ab21dd78"
+              ]
+          },
+          "name": "granite",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "qc_json",
+                  "target": [
+                      {
+                          "name": "qc_json"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "uniq_variants",
+                  "target": [
+                      {
+                          "name": "uniq_variants"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Run granite qcVCF",
+  "uuid": "432558d0-f68b-40e8-95b6-5943aaaf7f92",
+  "previous_version": ["29085493-c13d-4ee6-b5b4-8e1cf36b6209"],
+  "version_upgrade_log": "added step to count unique variants in vcf as qc"
+}

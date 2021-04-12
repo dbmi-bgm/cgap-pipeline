@@ -1,0 +1,10 @@
+{
+    "mapping stats": {
+        "total reads": 9991,
+        "both mates mapped": 9963,
+        "one mate mapped": 23,
+        "neither mate mapped": 5,
+        "read length": 100
+    },
+    "coverage": 0.0
+}

@@ -1,0 +1,25 @@
+{
+    "parameters": {"sample": "NA12789_sample"},
+    "workflow_uuid": "cgap:bamqc_v5",
+    "input_files" : [
+       {
+           "workflow_argument_name": "input_bam",
+           "uuid": "",
+           "mount": true
+       }
+    ],
+    "config": {
+      "instance_type": "c5n.2xlarge",
+      "ebs_size": "2.5x",
+      "EBS_optimized": true,
+      "spot_instance": true,
+      "log_bucket": "tibanna-output",
+      "run_name": "run_bamqc",
+      "behavior_on_capacity_limit": "wait_and_retry"
+    },
+    "_tibanna": {
+      "run_type": "bamqc",
+      "env": "fourfront-cgap"
+    },
+    "app_name": "bamqc"
+}
