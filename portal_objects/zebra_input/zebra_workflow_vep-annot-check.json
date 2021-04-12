@@ -2,7 +2,7 @@
     "parameters": {
       "nthreads": 64
     },
-    "workflow_uuid": "d865baaa-7fc9-4e36-abd0-35c909d8eca5",
+    "workflow_uuid": "e051a5ae-093e-4030-9c3f-ae93f1d9606d",
     "input_files" : [
        {
            "workflow_argument_name": "input_vcf",
@@ -51,6 +51,36 @@
            "workflow_argument_name": "gnomad",
            "uuid": "52c6cbf6-ae94-4c10-ad03-26ed34f74a3e",
            "mount": true
+       },
+       {
+           "workflow_argument_name": "gnomad2",
+           "uuid": "dd6f0384-d0b5-47d6-99a8-395c0b72feed",
+           "mount": true
+       },
+       {
+           "workflow_argument_name": "CADD_snv",
+           "uuid": "672de47f-d058-4dbd-9fc4-3e134cfe71d8",
+           "mount": true
+       },
+       {
+           "workflow_argument_name": "CADD_indel",
+           "uuid": "b9f123dd-be05-4a14-957a-5e1e5a5ce254",
+           "mount": true
+       },
+       {
+           "workflow_argument_name": "phylop100bw",
+           "uuid": "af93aecb-6b8e-4c8b-b159-eefb3f9d0ffb",
+           "mount": true
+       },
+       {
+           "workflow_argument_name": "phylop30bw",
+           "uuid": "f6809af1-f7b9-43c0-882a-16764ccc431d",
+           "mount": true
+       },
+       {
+           "workflow_argument_name": "phastc100bw",
+           "uuid": "19f03828-175b-4594-ba1a-52ddabcf640d",
+           "mount": true
        }
     ],
     "config": {
@@ -64,7 +94,7 @@
     },
     "_tibanna": {
       "run_type": "workflow_vep-annot-check",
-      "env": "fourfront-cgap"
+      "env": "fourfront-cgapwolf"
     },
     "app_name": "workflow_vep-annot-check"
 }
