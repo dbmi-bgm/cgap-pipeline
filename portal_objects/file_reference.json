@@ -547,8 +547,8 @@
     "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
     "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
     "file_format": "vcf_gz",
-    "description": "datasource for gnomAD exome v2.1 hg38 liftover, trimmed",
-    "aliases": ["cgap:gnomad-exome-2.1"],
+    "description": "datasource for gnomAD exome v2.1.1 hg38 liftover, trimmed",
+    "aliases": ["cgap:gnomad-exome-2.1.1"],
     "extra_files": [
         {
             "file_format": "vcf_gz_tbi",
@@ -556,7 +556,7 @@
         }
     ],
     "status": "uploading",
-    "file_version": "2.1"
+    "file_version": "2.1.1"
   },
   {
     "uuid": "f6809af1-f7b9-43c0-882a-16764ccc431d",
