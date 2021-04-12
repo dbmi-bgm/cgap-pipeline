@@ -180,20 +180,13 @@ RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
     chmod +x samplegeno.py && \
     cd ..
 
-# add dbSNP ID fixer scripts
-RUN git clone https://github.com/dbmi-bgm/cgap-annotations.git && \
-    cd cgap-annotations && \
-    git checkout 78b4518 && \
-    cd .. && \
-    cp cgap-annotations/variants/scripts/dbSNP_ID_fixer.py . && \
-    chmod +x dbSNP_ID_fixer.py && \
-    rm -rf cgap-annotations
-
-# add hgvsg and liftover_hg19
+# add annotation fixing scripts - dbSNP ID, hgvsg, liftover_hg19
 RUN git clone https://github.com/dbmi-bgm/cgap-annotations.git && \
     cd cgap-annotations && \
     git checkout ef95e1b && \
     cd .. && \
+    cp cgap-annotations/variants/scripts/dbSNP_ID_fixer.py . && \
+    chmod +x dbSNP_ID_fixer.py && \
     cp cgap-annotations/variants/scripts/hgvsg_creator.py . && \
     chmod +x hgvsg_creator.py && \
     cp cgap-annotations/variants/scripts/liftover_hg19.py . && \
