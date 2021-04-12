@@ -24,7 +24,7 @@
     },
     "_tibanna": {
       "run_type": "workflow_hg19lo_hgvsg-check",
-      "env": "fourfront-cgapwolf"
+      "env": "fourfront-cgap"
     },
     "app_name": "workflow_hg19lo_hgvsg-check"
 }
