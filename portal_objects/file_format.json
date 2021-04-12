@@ -212,29 +212,6 @@
         "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
-        "file_format": "mti_json",
-        "standard_file_extension": "mti.json",
-        "description": "mutanno index info file",
-        "uuid": "a112ef25-bd5d-44c1-824a-d5c6156db0a4",
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "shared",
-        "valid_item_types": ["FileProcessed", "FileReference"]
-    },
-    {
-        "file_format": "mti_tar",
-        "standard_file_extension": "mti.tar",
-        "description": "mutanno index files archive",
-        "uuid": "d243d800-96b6-4b0a-a0ff-fc81be438365",
-        "extrafile_formats": [
-            "a112ef25-bd5d-44c1-824a-d5c6156db0a4"
-        ],
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "shared",
-        "valid_item_types": ["FileReference"]
-    },
-    {
         "file_format": "rck_tar_index",
         "standard_file_extension": "rck.tar.index",
         "description": "index file for rck archive",
@@ -262,30 +239,6 @@
         "standard_file_extension": "bed",
         "description": "bed, uncompressed",
         "uuid": "4c04f6de-89a7-4477-8dc4-811b50c67401",
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "shared",
-        "valid_item_types": ["FileProcessed", "FileReference"]
-    },
-    {
-        "file_format": "mti_gz_tbi",
-        "standard_file_extension": "mti.gz.tbi",
-        "description": "Tabix index file of mti, compressed",
-        "uuid": "c0a56f31-d1af-4b88-9041-57b0830eeb8a",
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "shared",
-        "valid_item_types": ["FileProcessed", "FileReference"]
-    },
-    {
-        "file_format": "mti_gz",
-        "standard_file_extension": "mti.gz",
-        "description": "mutanno index file, compressed",
-        "uuid": "d7fd1020-ae85-41a9-a45d-c66285efa996",
-        "extrafile_formats": [
-            "c0a56f31-d1af-4b88-9041-57b0830eeb8a",
-            "a112ef25-bd5d-44c1-824a-d5c6156db0a4"
-        ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "shared",

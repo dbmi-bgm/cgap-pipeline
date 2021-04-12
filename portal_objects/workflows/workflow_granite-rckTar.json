@@ -1,5 +1,5 @@
 {
-  "accession": "GAPW9IDR632G",
+  "accession": "GAPW9IDRFD9P",
   "app_name": "workflow_granite-rckTar",
   "app_version": "v22",
   "arguments": [
@@ -26,9 +26,7 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_granite-rckTar_v22",
-  "aliases": ["cgap:workflow_granite-rckTar_v22",
-              "cgap:workflow_granite-rckTar_v21",
-              "cgap:workflow_granite-rckTar_v20"],
+  "aliases": ["cgap:workflow_granite-rckTar_v22"],
   "steps": [
       {
           "inputs": [
@@ -52,7 +50,7 @@
                   "Run granite rckTar"
               ],
               "software_used": [
-                 "/softwares/ddc704e2-66b0-44e1-99b9-65c9e31c41c9"
+                 "/softwares/071647ab-d344-4489-8a6b-7d911908ed2b"
               ]
           },
           "name": "granite",
@@ -75,7 +73,7 @@
       }
   ],
   "title": "Create a tar archive of rck files and an associate index file",
-  "uuid": "32888589-c477-4776-ae03-e05c7a062a8f",
-  "previous_version": ["64ff003a-b25d-4856-a9fc-ad8702b8c6d4"],
+  "uuid": "dca2f426-7ef0-456b-927d-ba0ab388d0da",
+  "previous_version": ["32888589-c477-4776-ae03-e05c7a062a8f"],
   "version_upgrade_log": "Updated granite version but no expected difference"
 }

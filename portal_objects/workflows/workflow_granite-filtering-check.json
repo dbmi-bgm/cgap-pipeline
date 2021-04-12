@@ -1,5 +1,5 @@
 {
-  "accession": "GAPK43R7O9K2",
+  "accession": "GAPK43R7PKJ8",
   "app_name": "workflow_granite-filtering-check",
   "app_version": "v22",
   "arguments": [
@@ -67,9 +67,7 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_granite-filtering-check_v22",
-  "aliases": ["cgap:workflow_granite-filtering-check_v22",
-              "cgap:workflow_granite-filtering-check_v21",
-              "cgap:workflow_granite-filtering-check_v20"],
+  "aliases": ["cgap:workflow_granite-filtering-check_v22"],
   "steps": [
       {
           "inputs": [
@@ -187,7 +185,7 @@
                   "Run granite geneList, whiteList, cleanVCF, blackList"
               ],
               "software_used": [
-                 "/softwares/ddc704e2-66b0-44e1-99b9-65c9e31c41c9"
+                 "/softwares/071647ab-d344-4489-8a6b-7d911908ed2b"
               ]
           },
           "name": "granite",
@@ -254,7 +252,7 @@
       }
   ],
   "title": "Run granite to filter and clean input vcf (geneList, whiteList, cleanVCF, blackList) plus output integrity-check",
-  "uuid": "cc82b0c5-680e-4d80-a01a-417cf7f4cb96",
-  "previous_version": ["8e075e1f-95ae-41f3-8f25-527d80af0787"],
-  "version_upgrade_log": "Updated granite version but no expected difference, reading vcf.gz directly instead of downloading and unzipping. Added filter to cleanVCF to drop variants with no VEP after cleaning"
+  "uuid": "4a78b81f-3b1b-46d3-8f68-3c28229962bd",
+  "previous_version": ["cc82b0c5-680e-4d80-a01a-417cf7f4cb96"],
+  "version_upgrade_log": "Updated granite version but no expected difference"
 }

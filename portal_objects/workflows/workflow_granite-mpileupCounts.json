@@ -1,5 +1,5 @@
 {
-  "accession": "GAPFKJG7T9KG",
+  "accession": "GAPFKJG7JVC2",
   "app_name": "workflow_granite-mpileupCounts",
   "app_version": "v22",
   "arguments": [
@@ -48,9 +48,7 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_granite-mpileupCounts_v22",
-  "aliases": ["cgap:workflow_granite-mpileupCounts_v22",
-              "cgap:workflow_granite-mpileupCounts_v21",
-              "cgap:workflow_granite-mpileupCounts_v20"],
+  "aliases": ["cgap:workflow_granite-mpileupCounts_v22"],
   "steps": [
       {
           "inputs": [
@@ -141,7 +139,7 @@
                   "Run granite mpileupCounts"
               ],
               "software_used": [
-                 "/softwares/ddc704e2-66b0-44e1-99b9-65c9e31c41c9"
+                 "/softwares/071647ab-d344-4489-8a6b-7d911908ed2b"
               ]
           },
           "name": "granite",
@@ -164,7 +162,7 @@
       }
   ],
   "title": "Run granite mpileupCounts",
-  "uuid": "ee996546-e768-4116-804f-79fd3900a9fe",
-  "previous_version": ["c6dac0af-631d-402f-a1c1-282e091f1b3e"],
+  "uuid": "7d79eb1a-e784-43e8-b902-5f99ccecde0f",
+  "previous_version": ["ee996546-e768-4116-804f-79fd3900a9fe"],
   "version_upgrade_log": "Updated granite version but no expected difference"
 }
