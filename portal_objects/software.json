@@ -189,5 +189,17 @@
         "title": "hgvsg_creator_73ceabf",
         "uuid":"4654848a-42ec-4a92-952b-5091f2faa2b7",
         "commit":"73ceabf"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "peddy",
+        "software_type": [
+            "quality metric generator"
+        ],
+        "source_url": "https://github.com/brentp/peddy",
+        "title": "peddy_0.4.7",
+        "uuid": "124c73f9-4bbe-4e5d-92e0-cc2d932f1228",
+        "version": "0.4.7"
     }
 ]

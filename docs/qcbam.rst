@@ -1,5 +1,5 @@
 ===================
-BAM Quality Control
+BAM quality control
 ===================
 
 Overview
@@ -38,6 +38,3 @@ Coverage (=Depth of Coverage) is calculated as below:
 
 
 where effective genome size is the number of non-N bases in the genome.
-
-
-

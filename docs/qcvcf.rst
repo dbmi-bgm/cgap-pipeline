@@ -1,5 +1,5 @@
 ===================
-VCF Quality Control
+VCF quality control
 ===================
 
 Overview
@@ -27,7 +27,7 @@ The predicted values allow to identify errors in sample labeling, contaminations
 Definitions
 +++++++++++
 
-variant types distribution
+Variant types distribution
 --------------------------
 
 Total number of variants classified by type as:
@@ -38,25 +38,25 @@ Total number of variants classified by type as:
   - **M**\ ulti-\ **A**\ llelic **V**\ ariant  (*A>T,C*)
   - **M**\ ulti-\ **N**\ ucleotide **V**\ ariant  (*AA>TT*)
 
-base substitutions
+Base substitutions
 ------------------
 
 Total number of SNVs classified by the type of substitution (e.g. C>T).
 
-transition-transversion ratio
+Transition-transversion ratio
 -----------------------------
 
 Ratio of transitions to transversions in SNVs.
 It is expected to be [2, 2.20] for WGS and [2.6, 3.3] for WES.
 
-heterozygosity ratio
+Heterozygosity ratio
 --------------------
 
 Ratio of heterozygous to alternate homozygous variants.
 It is expected to be [1.5, 2.5] for WGS analysis.
 Heterozygous and alternate homozygous sites are counted by variant type.
 
-depth of coverage
+Depth of coverage
 -----------------
 
 Average depth of all variant sites called in the sample.
@@ -64,7 +64,7 @@ Average depth of all variant sites called in the sample.
 Depth of coverage (GATK) is calculated based on DP values as assigned by GATK.
 Depth of coverage (raw) is calculated based on raw read counts calculated directly from the bam file.
 
-mendelian errors in trio
+Mendelian errors in trio
 ------------------------
 
 Variant sites in proband that are not consistent with mendelian inheritance rules based on parent genotypes.
@@ -86,7 +86,7 @@ Mendelian errors are counted by variant type and classified based on genotype co
 | 1/1 \| 0/1 | (any)      | ./.       | missing in parent   |
 +------------+------------+-----------+---------------------+
 
-ancestry and sex prediction
+Ancestry and sex prediction
 ---------------------------
 
 Ancestry prediction is based on projection onto the thousand genomes principal components.

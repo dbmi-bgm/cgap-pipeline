@@ -1,0 +1,132 @@
+{
+  "accession": "GAPWF2R5LG4P",
+  "app_name": "cgap-bamqc",
+  "app_version": "v22",
+  "arguments": [
+      {
+          "argument_format": "bam",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_bam"
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "qc_json",
+          "argument_to_be_attached_to": "input_bam",
+          "qc_zipped": false,
+          "qc_html": false,
+          "qc_json": true,
+          "qc_table": false,
+          "qc_type": "quality_metric_bamqc"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "nthreads"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "sample"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "eff_genome_size"
+      }
+  ],
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+  "category": ["QC"],
+  "cwl_child_filenames": [],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v22/cwl",
+  "cwl_main_filename": "bamqc.cwl",
+  "cwl_pointer": "",
+  "description": "Run minimal bamqc on a bam input file. Produce a json report for quality metrics",
+  "docker_image_name": "cgap/cgap:v22",
+  "docker_registry_url": "https://hub.docker.com/",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "name": "bamqc_v22",
+  "aliases": ["cgap:bamqc_v22"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "bam",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_bam",
+                  "source": [
+                      {
+                          "name": "input_bam"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "sample",
+                  "source": [
+                      {
+                          "name": "sample"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "nthreads",
+                  "source": [
+                      {
+                          "name": "nthreads"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "eff_genome_size",
+                  "source": [
+                      {
+                          "name": "eff_genome_size"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "QC"
+              ],
+              "software_used": [
+              ]
+          },
+          "name": "bamqc",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "qc_json",
+                  "target": [
+                      {
+                          "name": "qc_json"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Run Minimal BAMQC",
+  "uuid": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
+  "previous_version": ["d6651132-ab7c-40c0-886f-94f88ef6bdce"],
+  "version_upgrade_log": "Moved qc v5 to pipeline v22"
+}

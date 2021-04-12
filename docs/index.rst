@@ -18,4 +18,5 @@ Contents
    :maxdepth: 4
 
    wgs
+   qc
    news

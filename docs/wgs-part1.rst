@@ -10,7 +10,7 @@ The output bam file is checked for integrity to ensure the file has a header and
 
 * CWL: workflow_bwa-mem-to-bam_no_unzip_plus_integrity-check.cwl
 
-Add Read Groups
+Add read groups
 +++++++++++++++
 
 This step uses ``AddReadGroups.py`` (https://github.com/dbmi-bgm/cgap-scripts) to add read groups information to the input bam file, according to lanes and flowcells.
@@ -19,7 +19,7 @@ The output bam file is checked for integrity to ensure the file has a header and
 
 * CWL: workflow_add-readgroups_plus_integrity-check.cwl
 
-Merge Bams
+Merge bams
 ++++++++++
 
 This step uses ``samtools merge`` to merge multiple bam files when data comes in multiple replicates.
@@ -28,7 +28,7 @@ The output bam file is checked for integrity to ensure the file has a header and
 
 * CWL: workflow_merge-bam_plus_integrity-check.cwl
 
-Mark Duplicates
+Mark duplicates
 +++++++++++++++
 
 This step uses ``picard MarkDuplicates`` to detect and mark PCR duplicates. It creates a duplicate-marked bam file and a report with duplicate stats.
@@ -51,7 +51,7 @@ This step uses ``GATK BaseRecalibrator`` to create a base quality score recalibr
 
 * CWL: gatk-BaseRecalibrator.cwl
 
-Apply BQSR & Indexing
+Apply BQSR & indexing
 +++++++++++++++++++++
 
 This step uses ``GATK ApplyBQSR`` to apply a base quality score recalibration report to the input bam file.
@@ -66,4 +66,3 @@ HaplotypeCaller
 This step uses ``GATK HaplotypeCaller`` to create a g.vcf file from the input bam file.
 
 * CWL: gatk-HaplotypeCaller.cwl
-
