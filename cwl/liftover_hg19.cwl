@@ -21,6 +21,14 @@ inputs:
       prefix: -i
     doc: expect the path to the sample vcf gz file
 
+  - id: chainfile
+    default: 'GAPFIYPTSAU8.chain.gz'
+    type: File
+    inputBinding:
+      position: 2
+      prefix: -c
+    doc: expect the path to the hg38-to-hg19-chain file
+
   - id: output
     default: 'liftover.vcf'
     type: string
