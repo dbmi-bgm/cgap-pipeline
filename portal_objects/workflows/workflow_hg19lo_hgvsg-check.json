@@ -37,7 +37,7 @@
   "cwl_main_filename": "workflow_hg19lo_hgvsg_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run hg19 liftover on an input vcf. hgvsg_creator is run on the output vcf to create another vcf. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v22b",
+  "docker_image_name": "cgap/cgap:v22",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_hg19lo_hgvsg-check_v22",
