@@ -1,6 +1,6 @@
 {
     "parameters": {"sample": "NA12789_sample"},
-    "workflow_uuid": "cgap:bamqc_v22",
+    "workflow_uuid": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
     "input_files" : [
        {
            "workflow_argument_name": "input_bam",
