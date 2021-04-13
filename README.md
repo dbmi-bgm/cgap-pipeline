@@ -1,7 +1,7 @@
 ## CGAP pipeline
 * This repo contains CGAP pipeline components
   * CWL
-  * Docker source - Docker image name `cgap/cgap:v21`
+  * Docker source - Docker image name `cgap/cgap:v22`
   * Example Tibanna input jsons for individual steps
 
 For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
@@ -14,6 +14,13 @@ python post_patch_to_portal.py [--ff-env=<env_name>] [--skip-software] [--skip-f
 ```
 
 ### Version updates
+
+#### v22
+* modified VEP to bring PhyloP30, PhyloP100, PhastCons100, and CADD Phred scores from source files instead of from dbNSFP
+  * previously, these scores were only available for non-synonymous variants
+* modified VEP to annotate gnomAD v2.1.1 exome data for variants
+* added a step to expand the number of variants receiving hgvsg and hg19 liftover annotations
+
 #### v21
 * added step to correct dbSNP error from GATK
 
