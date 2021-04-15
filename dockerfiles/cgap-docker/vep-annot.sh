@@ -45,7 +45,7 @@ mkdir -p $directory
 # command line VEP
 # plugins
 plugin_entscan="--plugin MaxEntScan,fordownload"
-plugin_dbnsfp="--plugin dbNSFP,${dbnsfp},ALL"
+plugin_dbnsfp="--plugin dbNSFP,${dbnsfp},phyloP100way_vertebrate_rankscore,GERP++_RS,GERP++_RS_rankscore,SiPhy_29way_logOdds,SiPhy_29way_pi,PrimateAI_score,PrimateAI_pred,PrimateAI_rankscore,CADD_raw_rankscore,Polyphen2_HVAR_pred,Polyphen2_HVAR_rankscore,Polyphen2_HVAR_score,SIFT_pred,SIFT_converted_rankscore,SIFT_score,REVEL_rankscore,REVEL_score,Ensembl_geneid,Ensembl_proteinid,Ensembl_transcriptid"
 plugin_spliceai="--plugin SpliceAI,snv=${spliceai_snv_gz},indel=${spliceai_indel_gz}"
 plugin_CADD="--plugin CADD,${CADD_snv},${CADD_indel}"
 
