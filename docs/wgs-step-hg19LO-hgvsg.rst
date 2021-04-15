@@ -27,6 +27,7 @@ The data associated with these tags are also added to the INFO field of the VCF 
 For hg19 LiftOver:
 
 1. For the hg19 LiftOver, all variants with successful conversions will include data for both the ``hg19_chr=`` and ``hg19_pos=`` tags in the INFO field.  Failed conversions (e.g., coordinates that do not have a corresponding region in hg19) will not print the tags or any LiftOver data.
+2. Given that pyliftover does not convert ranges, the single-point coordinate in hg38 corresponding to each variant's CHROM and POS are used as query, and the hg19 coordinate (result) will also be a single-point coordinate.
 
 For hgvsg:
 
