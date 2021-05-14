@@ -162,9 +162,9 @@
             "annotator"
         ],
         "source_url": "https://github.com/dbmi-bgm/cgap-annotations",
-        "title": "dbSNP_ID_fixer_ef95e1b",
+        "title": "dbSNP_ID_fixer_7a5fb7b",
         "uuid": "f9ecea14-7820-4f73-a4a1-e91f9199a0bc",
-        "commit": "ef95e1b"
+        "commit": "7a5fb7b"
     },
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
@@ -174,9 +174,9 @@
             "annotator"
         ],
         "source_url": "https://github.com/dbmi-bgm/cgap-annotations",
-        "title": "liftover_hg19_ef95e1b",
+        "title": "liftover_hg19_7a5fb7b",
         "uuid":"3aa33ef0-add7-484b-b913-d69532e58fff",
-        "commit":"ef95e1b"
+        "commit":"7a5fb7b"
     },
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
@@ -186,9 +186,9 @@
             "annotator"
         ],
         "source_url": "https://github.com/dbmi-bgm/cgap-annotations",
-        "title": "hgvsg_creator_ef95e1b",
+        "title": "hgvsg_creator_7a5fb7b",
         "uuid":"4654848a-42ec-4a92-952b-5091f2faa2b7",
-        "commit":"ef95e1b"
+        "commit":"7a5fb7b"
     },
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
