@@ -183,7 +183,7 @@ RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
 # add cgap-annotations scripts - dbSNP ID, hgvsg, liftover_hg19
 RUN git clone https://github.com/dbmi-bgm/cgap-annotations.git && \
     cd cgap-annotations && \
-    git checkout f02e373 && \
+    git checkout 7a5fb7b && \
     cd .. && \
     cp cgap-annotations/variants/scripts/dbSNP_ID_fixer.py . && \
     chmod +x dbSNP_ID_fixer.py && \
