@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v20
+    dockerPull: cgap/cgap:v22
 
 baseCommand: [vep-annot.sh]
 
@@ -90,24 +90,66 @@ inputs:
       position: 10
     secondaryFiles:
       - .tbi
-    doc: expect the path to the vcf gz file with gnomAD annotations
+    doc: expect the path to the vcf gz file with gnomAD v3.1 genome annotations
+
+  - id: gnomad2
+    type: File
+    inputBinding:
+      position: 11
+    secondaryFiles:
+      - .tbi
+    doc: expect the path to the vcf gz file with gnomAD v2.1 exome annotations
+
+  - id: CADD_snv
+    type: File
+    inputBinding:
+      position: 12
+    secondaryFiles:
+      - .tbi
+    doc: expect the path to the tsv gz file with CADD Phred annotations for SNVs
+
+  - id: CADD_indel
+    type: File
+    inputBinding:
+      position: 13
+    secondaryFiles:
+      - .tbi
+    doc: expect the path to the tsv gz file with CADD Phred annotations for indels
+
+  - id: phylop100bw
+    type: File
+    inputBinding:
+      position: 14
+    doc: expect the path to the bw file with phyloP 100-way vertebrate conservation scores
+
+  - id: phylop30bw
+    type: File
+    inputBinding:
+      position: 15
+    doc: expect the path to the bw file with phyloP 30-way mammalian conservation scores
+
+  - id: phastc100bw
+    type: File
+    inputBinding:
+      position: 16
+    doc: expect the path to the bw file with PhastCons 100-way vertebrate conservation scores
 
   - id: nthreads
     type: int
     inputBinding:
-      position: 11
+      position: 17
     doc: number of threads used to run parallel
 
   - id: version
     type: string
     inputBinding:
-      position: 12
+      position: 18
     doc: vep datasource version
 
   - id: assembly
     type: string
     inputBinding:
-      position: 13
+      position: 19
     doc: genome assembly version
 
 outputs:

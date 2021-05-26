@@ -1,5 +1,5 @@
 =================
-CGAP WGS Pipeline
+CGAP WGS pipeline
 =================
 
 CGAP WGS pipeline allows to process Whole Genome Sequencing (WGS) data starting from fastq files and produce ``bam``, ``g.vcf`` and ``vcf`` files as output. Optionally, the pipeline can take a ``cram`` file and convert it to ``fastq`` files to go through the rest of the pipeline.
@@ -12,7 +12,7 @@ The pipeline is mostly based on ``bwa``, ``gatk4``, ``granite`` (https://github.
 Docker Image
 ############
 
-* The current docker image is ``cgap/cgap:v20``
+* The current docker image is ``cgap/cgap:v22``
 
 The image contains (but is not limited to) the following software packages:
 
@@ -27,6 +27,7 @@ The image contains (but is not limited to) the following software packages:
 - pigz (2.4)
 - pbgzip (2b09f97)
 - vep (101)
+- peddy (0.4.7)
 - parallel
 
 

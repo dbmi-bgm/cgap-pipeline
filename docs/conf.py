@@ -48,7 +48,7 @@ master_doc = 'index'
 # General information about the project.
 project = 'CGAP pipeline'
 copyright = '2019-2020, CGAP team, HMS DBMI'
-author = 'Michele Berselli, Soo Lee, CGAP team, HMS DBMI'
+author = 'Michele Berselli, Soo Lee, Phil Grayson, CGAP team, HMS DBMI'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

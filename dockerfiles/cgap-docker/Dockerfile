@@ -11,6 +11,7 @@ RUN apt-get update -y && apt-get install -y \
     libncurses-dev \
     make \
     time \
+    zip \
     unzip \
     vim \
     wget \
@@ -29,13 +30,16 @@ RUN apt-get update -y && apt-get install -y \
     yasm \
     libdbi-perl \
     libmodule-build-perl \
-    libarchive-zip-perl
+    libarchive-zip-perl \
+    libmysqlclient-dev \
+    libpng-dev \
+    libexpat1-dev
 
 WORKDIR /usr/local/bin
 
 # gatk4 & picard & python libraries
 RUN conda install -c bioconda -y gatk4==4.1.2.0 picard==2.20.2 \
-    pysam==0.15.3 bitarray==1.2.1 pytabix==0.0.2 h5py==2.10.0 numpy==1.18.1 pyfaidx==0.5.8 tqdm==4.48.2 python=3.6.8 && \
+    pysam==0.15.3 bitarray==1.2.1 pytabix==0.0.2 h5py==2.10.0 numpy==1.18.1 pyfaidx==0.5.8 tqdm==4.48.2 pyliftover==0.4 python=3.6.8 peddy==0.4.7 && \
     conda clean -a -y -f
 
 # samtools
@@ -117,6 +121,33 @@ RUN git clone https://github.com/Ensembl/ensembl-vep.git && \
     perl INSTALL.pl --AUTO a --NO_UPDATE && \
     cd ..
 
+# perl module for VEP
+RUN cpan App::cpanminus && \
+    wget https://github.com/ucscGenomeBrowser/kent/archive/v335_base.tar.gz && \
+    tar xzf v335_base.tar.gz && \
+    export KENT_SRC=/usr/local/bin/kent-335_base/src && \
+    export MACHTYPE=$(uname -m) && \
+    export CFLAGS="-fPIC" && \
+    export MYSQLINC=`mysql_config --include | sed -e 's/^-I//g'` && \
+    MYSQLLIBS=`mysql_config --libs` && \
+    export MYSQLLIBS && \
+    cd $KENT_SRC/lib && \
+    echo 'CFLAGS="-fPIC"' > ../inc/localEnvironment.mk && \
+    make clean && make && \
+    cd ../jkOwnLib && \
+    make clean && make && \
+    cd /usr/local/bin/ && \
+    mkdir -p /usr/local/bin/cpanm_bw && \
+    export PERL5LIB=$PERL5LIB:/usr/local/bin/cpanm_bw/lib/perl5 && \
+    cpanm -l /usr/local/bin/cpanm_bw Bio::DB::BigFile && \
+    rm -f v335_base.tar.gz && \
+    rm -rf kent-335_base/ && \
+    cd /usr/local/bin/ensembl-vep && \
+    perl -Imodules t/AnnotationSource_File_BigWig.t && \
+    cd /usr/local/bin
+
+ENV PERL5LIB=$PERL5LIB:/usr/local/bin/cpanm_bw/lib/perl5
+
 # VEP script
 COPY vep-annot.sh .
 RUN chmod +x vep-annot.sh
@@ -149,6 +180,19 @@ RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
     chmod +x samplegeno.py && \
     cd ..
 
+# add cgap-annotations scripts - dbSNP ID, hgvsg, liftover_hg19
+RUN git clone https://github.com/dbmi-bgm/cgap-annotations.git && \
+    cd cgap-annotations && \
+    git checkout 7a5fb7b && \
+    cd .. && \
+    cp cgap-annotations/variants/scripts/dbSNP_ID_fixer.py . && \
+    chmod +x dbSNP_ID_fixer.py && \
+    cp cgap-annotations/variants/scripts/hgvsg_creator.py . && \
+    chmod +x hgvsg_creator.py && \
+    cp cgap-annotations/variants/scripts/liftover_hg19.py . && \
+    chmod +x liftover_hg19.py && \
+    rm -rf cgap-annotations
+
 # HaplotypeCaller parallel script
 COPY HaplotypeCaller-parallel.sh .
 RUN chmod +x HaplotypeCaller-parallel.sh
@@ -171,7 +215,7 @@ RUN chmod +x cram_to_bam.sh
 RUN chmod +x bam_to_fastq.sh
 
 # granite
-RUN pip install granite-suite==0.1.7
+RUN pip install granite-suite==0.1.11
 
 # mpileupCounts parallel script
 RUN wget https://raw.githubusercontent.com/dbmi-bgm/granite/master/docker/mpileupCounts-parallel.sh && \
@@ -195,6 +239,21 @@ RUN chmod +x bcftools-norm-multiallelics.sh
 # samplegeno
 COPY samplegeno.sh .
 RUN chmod +x samplegeno.sh
+
+# dbSNP ID fix
+COPY parallel_dbSNP_ID_fixer.sh .
+RUN chmod +x parallel_dbSNP_ID_fixer.sh
+
+# bamqc
+COPY bamqc.py .
+
+# peddy
+COPY peddy.sh .
+RUN chmod +x peddy.sh
+
+# unique variants
+COPY uniq_variants.sh .
+RUN chmod +x uniq_variants.sh
 
 # env paths
 ENV PATH=/usr/local/bin/samtools/:$PATH

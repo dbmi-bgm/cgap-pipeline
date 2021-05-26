@@ -1,0 +1,140 @@
+{
+  "accession": "GAPXFLL31Z9D",
+  "app_name": "workflow_peddy",
+  "app_version": "v22",
+  "arguments": [
+      {
+          "argument_format": "vcf_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_vcf"
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "qc_json",
+          "argument_to_be_attached_to": "input_vcf",
+          "qc_zipped": false,
+          "qc_html": false,
+          "qc_json": true,
+          "qc_table": false,
+          "qc_type": "quality_metric_peddyqc"
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "qc_html",
+          "argument_to_be_attached_to": "input_vcf",
+          "qc_zipped": false,
+          "qc_html": true,
+          "qc_json": false,
+          "qc_table": false,
+          "qc_type": "quality_metric_peddyqc"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "pedigree"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "family"
+      }
+  ],
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+  "category": ["QC"],
+  "cwl_child_filenames": [],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v22/cwl",
+  "cwl_main_filename": "peddy.cwl",
+  "cwl_pointer": "",
+  "description": "Run peddy on vcf input file",
+  "docker_image_name": "cgap/cgap:v22",
+  "docker_registry_url": "https://hub.docker.com/",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "name": "workflow_peddy_v22",
+  "aliases": ["cgap:workflow_peddy_v22"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_vcf",
+                  "source": [
+                      {
+                          "name": "input_vcf"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "pedigree",
+                  "source": [
+                      {
+                          "name": "pedigree"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "family",
+                  "source": [
+                      {
+                          "name": "family"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Run peddy"
+              ],
+              "software_used": [
+                  "/softwares/071647ab-d344-4489-8a6b-7d911908ed2b",
+                  "/softwares/124c73f9-4bbe-4e5d-92e0-cc2d932f1228"
+              ]
+          },
+          "name": "peddy",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "qc_json",
+                  "target": [
+                      {
+                          "name": "qc_json"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "qc_html",
+                  "target": [
+                      {
+                          "name": "qc_html"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Run peddy",
+  "uuid": "d03e23cd-9875-43b5-b596-f8b080c5545e",
+  "previous_version": ["2ba8440c-b157-4394-9e86-c634aa15129d"],
+  "version_upgrade_log": "Updated granite version but no expected difference. Moved qc v5 to pipeline v22"
+}

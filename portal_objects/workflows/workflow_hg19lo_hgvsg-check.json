@@ -1,0 +1,195 @@
+{
+  "accession": "GAPWFL4FJL32",
+  "app_name": "workflow_hg19lo_hgvsg-check",
+  "app_version": "v22",
+  "arguments": [
+      {
+          "argument_format": "vcf_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_vcf"
+      },
+      {
+          "argument_format": "chain",
+          "argument_type": "Input file",
+          "workflow_argument_name": "chainfile"
+      },
+      {
+          "argument_format": "vcf_gz",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "vcf",
+          "secondary_file_formats": ["vcf_gz_tbi"]
+      },
+      {
+          "argument_type": "Output QC file",
+          "workflow_argument_name": "vcf-check",
+          "argument_to_be_attached_to": "vcf",
+          "qc_zipped": false,
+          "qc_html": false,
+          "qc_json": false,
+          "qc_table": true,
+          "qc_type": "quality_metric_vcfcheck"
+      }
+  ],
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+  "category": ["processing"],
+  "cwl_child_filenames": ["liftover_hg19.cwl", "hgvsg_creator.cwl", "vcf-integrity-check.cwl"],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v22/cwl",
+  "cwl_main_filename": "workflow_hg19lo_hgvsg_plus_vcf-integrity-check.cwl",
+  "cwl_pointer": "",
+  "description": "Run hg19 liftover on an input vcf. hgvsg_creator is run on the output vcf to create another vcf. An integrity check is performed on the output file",
+  "docker_image_name": "cgap/cgap:v22",
+  "docker_registry_url": "https://hub.docker.com/",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "name": "workflow_hg19lo_hgvsg-check_v22",
+  "aliases": ["cgap:workflow_hg19lo_hgvsg-check_v22"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_vcf",
+                  "source": [
+                      {
+                          "name": "input_vcf"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "chain",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "chainfile",
+                  "source": [
+                      {
+                          "name": "chainfile"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Run liftover_hg19"
+              ],
+              "software_used": [
+                 "/softwares/3aa33ef0-add7-484b-b913-d69532e58fff"
+              ]
+          },
+          "name": "liftover_hg19",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "vcf",
+                  "target": [
+                      {
+                          "name": "LOvcf",
+                          "step": "hgvsg_creator"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": false,
+                      "type": "data file"
+                  },
+                  "name": "LOvcf",
+                  "source": [
+                      {
+                          "name": "LOvcf",
+                          "step": "liftover_hg19"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Run hgvsg_creator"
+              ],
+              "software_used": [
+                 "/softwares/4654848a-42ec-4a92-952b-5091f2faa2b7"
+              ]
+          },
+          "name": "hgvsg_creator",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "vcf",
+                  "target": [
+                      {
+                          "name": "vcf",
+                          "step": "vcf-integrity-check"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": false,
+                      "type": "data file"
+                  },
+                  "name": "vcf",
+                  "source": [
+                      {
+                          "name": "vcf",
+                          "step": "hgvsg_creator"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Check integrity of vcf output file"
+              ],
+              "software_used": [
+                 "/softwares/f7ac2c5f-9203-49fa-b918-cede02bf46f7"
+              ]
+          },
+          "name": "vcf-integrity-check",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "vcf-check",
+                  "target": [
+                      {
+                          "name": "vcf-check"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Run hg19 liftover, hsgvsg creator, and a vcf integrity check",
+  "uuid": "d77fd7b5-c7d3-4689-914a-443c2d4ec17d"
+}

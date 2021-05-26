@@ -212,29 +212,6 @@
         "valid_item_types": ["FileProcessed", "FileReference"]
     },
     {
-        "file_format": "mti_json",
-        "standard_file_extension": "mti.json",
-        "description": "mutanno index info file",
-        "uuid": "a112ef25-bd5d-44c1-824a-d5c6156db0a4",
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "shared",
-        "valid_item_types": ["FileProcessed", "FileReference"]
-    },
-    {
-        "file_format": "mti_tar",
-        "standard_file_extension": "mti.tar",
-        "description": "mutanno index files archive",
-        "uuid": "d243d800-96b6-4b0a-a0ff-fc81be438365",
-        "extrafile_formats": [
-            "a112ef25-bd5d-44c1-824a-d5c6156db0a4"
-        ],
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "shared",
-        "valid_item_types": ["FileReference"]
-    },
-    {
         "file_format": "rck_tar_index",
         "standard_file_extension": "rck.tar.index",
         "description": "index file for rck archive",
@@ -262,30 +239,6 @@
         "standard_file_extension": "bed",
         "description": "bed, uncompressed",
         "uuid": "4c04f6de-89a7-4477-8dc4-811b50c67401",
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "shared",
-        "valid_item_types": ["FileProcessed", "FileReference"]
-    },
-    {
-        "file_format": "mti_gz_tbi",
-        "standard_file_extension": "mti.gz.tbi",
-        "description": "Tabix index file of mti, compressed",
-        "uuid": "c0a56f31-d1af-4b88-9041-57b0830eeb8a",
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "status": "shared",
-        "valid_item_types": ["FileProcessed", "FileReference"]
-    },
-    {
-        "file_format": "mti_gz",
-        "standard_file_extension": "mti.gz",
-        "description": "mutanno index file, compressed",
-        "uuid": "d7fd1020-ae85-41a9-a45d-c66285efa996",
-        "extrafile_formats": [
-            "c0a56f31-d1af-4b88-9041-57b0830eeb8a",
-            "a112ef25-bd5d-44c1-824a-d5c6156db0a4"
-        ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "shared",
@@ -367,5 +320,61 @@
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
         "status": "shared",
         "valid_item_types": ["FileProcessed", "FileReference"]
+    },
+    {
+        "file_format": "sv_vcf_gz_tbi",
+        "standard_file_extension": "sv.vcf.gz.tbi",
+        "description": "Tabix index file of SV vcf, compressed",
+        "uuid": "193bc1cd-b8a9-41dc-b0dc-9cbad87ace09",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "shared",
+        "valid_item_types": ["FileReference", "FileProcessed"]
+    },
+    {
+        "file_format": "sv_vcf_gz",
+        "standard_file_extension": "sv.vcf.gz",
+        "description": "SV vcf, compressed",
+        "uuid": "a9ce449e-5f56-4106-be87-c96427912edf",
+        "extrafile_formats": [
+            "193bc1cd-b8a9-41dc-b0dc-9cbad87ace09"
+        ],
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "shared",
+        "valid_item_types": ["FileReference", "FileProcessed"]
+    },
+    {
+        "file_format": "BigWig",
+        "standard_file_extension": "bw",
+        "description": "dense continuous data with genomic coordinates. compressed wiggle (wig) file",
+        "uuid": "33f30c42-d582-4163-af44-fecf586b9dd3",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "shared",
+        "valid_item_types": ["FileReference"]
+    },
+    {
+        "file_format": "tsv_gz_tbi",
+        "standard_file_extension": "tsv.gz.tbi",
+        "description": "Tabix index file of tab-separate values (tsv), compressed",
+        "uuid": "829ed303-e427-4d9a-a217-be75ad11317e",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "shared",
+        "valid_item_types": ["FileReference", "FileProcessed"]
+    },
+    {
+        "file_format": "tsv_gz",
+        "standard_file_extension": "tsv.gz",
+        "description": "tab-separate values (tsv), compressed",
+        "uuid": "11ca3783-db6e-430e-997b-9cf0ca275814",
+        "extrafile_formats": [
+            "829ed303-e427-4d9a-a217-be75ad11317e"
+        ],
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "shared",
+        "valid_item_types": ["FileReference", "FileProcessed"]
     }
 ]

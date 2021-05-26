@@ -1,7 +1,7 @@
 {
-  "accession": "GAPL8102G2TK",
+  "accession": "GAPWFEE45T1G",
   "app_name": "workflow_vep-annot-check",
-  "app_version": "v20",
+  "app_version": "v22",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -55,6 +55,36 @@
       },
       {
           "argument_format": "vcf_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "gnomad2"
+      },
+      {
+          "argument_format": "tsv_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "CADD_snv"
+      },
+      {
+          "argument_format": "tsv_gz",
+          "argument_type": "Input file",
+          "workflow_argument_name": "CADD_indel"
+      },
+      {
+          "argument_format": "BigWig",
+          "argument_type": "Input file",
+          "workflow_argument_name": "phylop100bw"
+      },
+      {
+          "argument_format": "BigWig",
+          "argument_type": "Input file",
+          "workflow_argument_name": "phylop30bw"
+      },
+      {
+          "argument_format": "BigWig",
+          "argument_type": "Input file",
+          "workflow_argument_name": "phastc100bw"
+      },
+      {
+          "argument_format": "vcf_gz",
           "argument_type": "Output processed file",
           "workflow_argument_name": "annotated_vcf",
           "secondary_file_formats": ["vcf_gz_tbi"]
@@ -77,15 +107,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["vep-annot.cwl", "bcftools-norm-multiallelics.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v20/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v22/cwl",
   "cwl_main_filename": "workflow_vep-annot_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Split multiallelic variants. Run VEP to annotate input vcf file. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v20",
+  "docker_image_name": "cgap/cgap:v22",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_vep-annot-check_v20",
-  "aliases": ["cgap:workflow_vep-annot-check_v20"],
+  "name": "workflow_vep-annot-check_v22",
+  "aliases": ["cgap:workflow_vep-annot-check_v22"],
   "steps": [
       {
           "inputs": [
@@ -232,6 +262,90 @@
               {
                   "meta": {
                       "cardinality": "single",
+                      "file_format": "vcf_gz",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "gnomad2",
+                  "source": [
+                      {
+                          "name": "gnomad2"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "tsv_gz",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "CADD_snv",
+                  "source": [
+                      {
+                          "name": "CADD_snv"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "tsv_gz",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "CADD_indel",
+                  "source": [
+                      {
+                          "name": "CADD_indel"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "BigWig",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "phylop100bw",
+                  "source": [
+                      {
+                          "name": "phylop100bw"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "BigWig",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "phylop30bw",
+                  "source": [
+                      {
+                          "name": "phylop30bw"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "BigWig",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "phastc100bw",
+                  "source": [
+                      {
+                          "name": "phastc100bw"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
                       "global": true,
                       "type": "parameter"
                   },
@@ -316,7 +430,7 @@
       }
   ],
   "title": "Split multiallelic variants and run VEP to annotate input vcf file",
-  "uuid": "d865baaa-7fc9-4e36-abd0-35c909d8eca5",
-  "previous_version": ["860a1240-f15a-425d-875b-7b8f943130d4"],
-  "version_upgrade_log": "deletion are marked with -, there is no conversion back to *"
+  "uuid": "e051a5ae-093e-4030-9c3f-ae93f1d9606d",
+  "previous_version": ["d865baaa-7fc9-4e36-abd0-35c909d8eca5"],
+  "version_upgrade_log": "using customs and plugins to add gnomAD v2.1 exome data, CADD, PhyloP30, PhyloP100, and PhastCons for majority of variants"
 }

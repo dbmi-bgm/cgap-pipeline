@@ -102,18 +102,6 @@
             "image generator"
         ],
         "source_url": "https://github.com/parklab/bamsnap",
-        "title": "bamsnap_0.2.17",
-        "uuid": "87f15e8b-bef6-48f3-a8f3-6eabe68a4cd3",
-        "version": "0.2.17"
-    },
-    {
-        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-        "name": "bamsnap",
-        "software_type": [
-            "image generator"
-        ],
-        "source_url": "https://github.com/parklab/bamsnap",
         "title": "bamsnap_0.2.19",
         "uuid": "a8b47313-8bcb-460b-8be8-b71c7f6b1b27",
         "version": "0.2.19"
@@ -126,9 +114,9 @@
             "filter"
         ],
         "source_url": "https://github.com/dbmi-bgm/granite",
-        "title": "granite_0.1.7",
-        "uuid": "ddc704e2-66b0-44e1-99b9-65c9e31c41c9",
-        "commit": "0.1.7"
+        "title": "granite_0.1.11",
+        "uuid": "071647ab-d344-4489-8a6b-7d911908ed2b",
+        "commit": "0.1.11"
     },
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
@@ -165,5 +153,53 @@
         "title": "samplegeno_22ff179",
         "uuid": "c2380d3a-80a2-4009-a343-f9475381aab1",
         "commit": "22ff179"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "dbSNP_ID_fixer",
+        "software_type": [
+            "annotator"
+        ],
+        "source_url": "https://github.com/dbmi-bgm/cgap-annotations",
+        "title": "dbSNP_ID_fixer_7a5fb7b",
+        "uuid": "f9ecea14-7820-4f73-a4a1-e91f9199a0bc",
+        "commit": "7a5fb7b"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "liftover_hg19",
+        "software_type": [
+            "annotator"
+        ],
+        "source_url": "https://github.com/dbmi-bgm/cgap-annotations",
+        "title": "liftover_hg19_7a5fb7b",
+        "uuid":"3aa33ef0-add7-484b-b913-d69532e58fff",
+        "commit":"7a5fb7b"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "hgvsg_creator",
+        "software_type": [
+            "annotator"
+        ],
+        "source_url": "https://github.com/dbmi-bgm/cgap-annotations",
+        "title": "hgvsg_creator_7a5fb7b",
+        "uuid":"4654848a-42ec-4a92-952b-5091f2faa2b7",
+        "commit":"7a5fb7b"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "peddy",
+        "software_type": [
+            "quality metric generator"
+        ],
+        "source_url": "https://github.com/brentp/peddy",
+        "title": "peddy_0.4.7",
+        "uuid": "124c73f9-4bbe-4e5d-92e0-cc2d932f1228",
+        "version": "0.4.7"
     }
 ]

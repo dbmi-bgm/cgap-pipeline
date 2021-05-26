@@ -64,6 +64,36 @@ inputs:
       - .tbi
     doc: expect the path to the vcf gz file with gnomAD annotations
 
+  - id: gnomad2
+    type: File
+    secondaryFiles:
+      - .tbi
+    doc: expect the path to the vcf gz file with gnomAD v2.1 exome annotations
+
+  - id: CADD_snv
+    type: File
+    secondaryFiles:
+      - .tbi
+    doc: expect the path to the tsv gz file with CADD Phred annotations for SNVs
+
+  - id: CADD_indel
+    type: File
+    secondaryFiles:
+      - .tbi
+    doc: expect the path to the tsv gz file with CADD Phred annotations for indels
+
+  - id: phylop100bw
+    type: File
+    doc: expect the path to the bw file with phyloP 100-way vertebrate conservation scores
+
+  - id: phylop30bw
+    type: File
+    doc: expect the path to the bw file with phyloP 30-way mammalian conservation scores
+
+  - id: phastc100bw
+    type: File
+    doc: expect the path to the bw file with PhastCons 100-way vertebrate conservation scores
+
   - id: nthreads
     type: int
     doc: number of threads used to run parallel
@@ -120,6 +150,18 @@ steps:
         source: spliceai_indel
       gnomad:
         source: gnomad
+      gnomad2:
+        source: gnomad2
+      CADD_snv:
+        source: CADD_snv
+      CADD_indel:
+        source: CADD_indel
+      phylop100bw:
+        source: phylop100bw
+      phylop30bw:
+        source: phylop30bw
+      phastc100bw:
+        source: phastc100bw
       nthreads:
         source: nthreads
       version:
