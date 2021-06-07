@@ -1,112 +1,137 @@
 {
-  "app_name": "WGS_trio",
-  "app_version": "v23",
+  "name": "WGS_trio",
+  "title": "WGS Trio Pipeline",
+  "version": "v23",
   "uuid": "475a0518-9b72-4dc1-b049-070f366ab821",
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "input": [
     {
       "argument_name": "reference_bwa",
       "argument_type": "file",
-      "file": "b24ed5ed-a037-48a0-a938-3fecfb90d0cf"
+      "files": [{"file": "b24ed5ed-a037-48a0-a938-3fecfb90d0cf"}]
     },
     {
       "argument_name": "reference_fa",
       "argument_type": "file",
-      "file": "1936f246-22e1-45dc-bb5c-9cfd55537fe7"
+      "files": [{"file": "1936f246-22e1-45dc-bb5c-9cfd55537fe7"}]
     },
     {
       "argument_name": "known-sites-indels",
       "argument_type": "file",
-      "file": "55ac5044-f927-4df7-afa2-bf713764ee57"
+      "files": [{"file": "55ac5044-f927-4df7-afa2-bf713764ee57"}]
     },
     {
       "argument_name": "known-sites-snp",
       "argument_type": "file",
-      "file": "8ed35691-0af4-467a-adbc-81eb088549f0"
+      "files": [{"file": "8ed35691-0af4-467a-adbc-81eb088549f0"}]
     },
     {
       "argument_name": "regions",
       "argument_type": "file",
-      "file": "1c07a3aa-e2a3-498c-b838-15991c4a2f28"
+      "files": [{"file": "1c07a3aa-e2a3-498c-b838-15991c4a2f28"}]
     },
     {
       "argument_name": "chromosomes",
       "argument_type": "file",
-      "file": "a1d504ee-a313-4064-b6ae-65fed9738980"
+      "files": [{"file": "a1d504ee-a313-4064-b6ae-65fed9738980"}]
     },
     {
       "argument_name": "vep",
       "argument_type": "file",
-      "file": "4ff30e10-aa8b-4ebf-87ac-20c7bfc15a46"
+      "files": [{"file": "4ff30e10-aa8b-4ebf-87ac-20c7bfc15a46"}]
     },
     {
       "argument_name": "clinvar",
       "argument_type": "file",
-      "file": "7db786d5-13d2-4622-bdd2-99866036b9b9"
+      "files": [{"file": "7db786d5-13d2-4622-bdd2-99866036b9b9"}]
     },
     {
       "argument_name": "dbnsfp",
       "argument_type": "file",
-      "file": "dc02df4c-49ac-4532-b85c-02800941aa44"
+      "files": [{"file": "dc02df4c-49ac-4532-b85c-02800941aa44"}]
     },
     {
       "argument_name": "maxent",
       "argument_type": "file",
-      "file": "71a7d16b-8452-4266-ae80-bbede2e305e2"
+      "files": [{"file": "71a7d16b-8452-4266-ae80-bbede2e305e2"}]
     },
     {
       "argument_name": "spliceai_snv",
       "argument_type": "file",
-      "file": "a35e580c-7579-4312-a3a1-66810e6d9366"
+      "files": [{"file": "a35e580c-7579-4312-a3a1-66810e6d9366"}]
     },
     {
       "argument_name": "spliceai_indel",
       "argument_type": "file",
-      "file": "3b7c0c29-5ee2-47c8-95a8-d28e15d5de47"
+      "files": [{"file": "3b7c0c29-5ee2-47c8-95a8-d28e15d5de47"}]
     },
     {
       "argument_name": "gnomad",
       "argument_type": "file",
-      "file": "52c6cbf6-ae94-4c10-ad03-26ed34f74a3e"
+      "files": [{"file": "52c6cbf6-ae94-4c10-ad03-26ed34f74a3e"}]
     },
     {
       "argument_name": "gnomad2",
       "argument_type": "file",
-      "file": "dd6f0384-d0b5-47d6-99a8-395c0b72feed"
+      "files": [{"file": "dd6f0384-d0b5-47d6-99a8-395c0b72feed"}]
     },
     {
       "argument_name": "CADD_snv",
       "argument_type": "file",
-      "file": "672de47f-d058-4dbd-9fc4-3e134cfe71d8"
+      "files": [{"file": "672de47f-d058-4dbd-9fc4-3e134cfe71d8"}]
     },
     {
       "argument_name": "CADD_indel",
       "argument_type": "file",
-      "file": "b9f123dd-be05-4a14-957a-5e1e5a5ce254"
+      "files": [{"file": "b9f123dd-be05-4a14-957a-5e1e5a5ce254"}]
     },
     {
       "argument_name": "phylop100bw",
       "argument_type": "file",
-      "file": "af93aecb-6b8e-4c8b-b159-eefb3f9d0ffb"
+      "files": [{"file": "af93aecb-6b8e-4c8b-b159-eefb3f9d0ffb"}]
     },
     {
       "argument_name": "phylop30bw",
       "argument_type": "file",
-      "file": "f6809af1-f7b9-43c0-882a-16764ccc431d"
+      "files": [{"file": "f6809af1-f7b9-43c0-882a-16764ccc431d"}]
     },
     {
       "argument_name": "phastc100bw",
       "argument_type": "file",
-      "file": "19f03828-175b-4594-ba1a-52ddabcf640d"
+      "files": [{"file": "19f03828-175b-4594-ba1a-52ddabcf640d"}]
     },
     {
       "argument_name": "genes",
       "argument_type": "file",
-      "file": "84f2bb24-edd7-459b-ab89-0a21866d7826"
+      "files": [{"file": "84f2bb24-edd7-459b-ab89-0a21866d7826"}]
     },
     {
       "argument_name": "unrelated",
       "argument_type": "file",
-      "file": "4468e4a2-6c92-4d82-b333-821be68d0a55"
+      "files": [{"file": "4468e4a2-6c92-4d82-b333-821be68d0a55"}]
+    },
+    {
+      "argument_name": "dbSNP_full_ref_vcf",
+      "argument_type": "file",
+      "files": [{"file": "aa542c8e-b31c-4cff-b2d4-aa4037bb913c"}]
+    },
+    {
+      "argument_name": "chainfile",
+      "argument_type": "file",
+      "files": [{"file": "297c872a-5b6b-4fc3-83d3-f4a853f8805c"}]
+    },
+    {
+      "argument_name": "variant_filtering_aftag",
+      "argument_type": "parameter",
+      "value": "gnomADg_AF",
+      "value_type": "string"
+    },
+    {
+      "argument_name": "variant_filtering_afthr",
+      "argument_type": "parameter",
+      "value": "0.01",
+      "value_type": "float"
     }
   ],
   "workflows": [
@@ -121,6 +146,12 @@
         "log_bucket": "tibanna-output",
         "run_name": "run_workflow_bwa-mem_no_unzip-check",
         "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "custom_pf_fields": {
+          "raw_bam": {
+              "file_type": "intermediate file",
+              "description": "Intermediate alignment file"
+          }
       },
       "input": [
         {
@@ -155,6 +186,12 @@
         "run_name": "run_workflow_add-readgroups-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
+      "custom_pf_fields": {
+          "bam_w_readgroups": {
+              "file_type": "intermediate file",
+              "description": "Intermediate alignment file"
+          }
+      },
       "input": [
         {
           "argument_name": "input_bam",
@@ -181,6 +218,12 @@
         "run_name": "run_workflow_merge-bam-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
+      "custom_pf_fields": {
+          "merged_bam": {
+              "file_type": "intermediate file",
+              "description": "Intermediate alignment file"
+          }
+      },
       "input": [
         {
           "argument_name": "input_bams",
@@ -204,6 +247,12 @@
         "run_name": "run_workflow_picard-MarkDuplicates-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
+      "custom_pf_fields": {
+          "dupmarked_bam": {
+              "file_type": "intermediate file",
+              "description": "Intermediate alignment file"
+          }
+      },
       "input": [
         {
           "argument_name": "input_bam",
@@ -224,6 +273,12 @@
         "log_bucket": "tibanna-output",
         "run_name": "run_workflow_sort-bam-check",
         "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "custom_pf_fields": {
+          "sorted_bam": {
+              "file_type": "intermediate file",
+              "description": "Intermediate alignment file"
+          }
       },
       "input": [
         {
@@ -246,6 +301,12 @@
         "log_bucket": "tibanna-output",
         "run_name": "run_workflow_gatk-BaseRecalibrator",
         "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "custom_pf_fields": {
+          "recalibration_report": {
+              "file_type": "intermediate file",
+              "description": "Intermediate report file"
+          }
       },
       "input": [
         {
@@ -285,6 +346,12 @@
         "run_name": "run_workflow_gatk-ApplyBQSR-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
+      "custom_pf_fields": {
+          "recalibrated_bam": {
+              "file_type": "alignments",
+              "description": "processed output from cgap upstream pipeline"
+          }
+      },
       "input": [
         {
           "argument_name": "input_bam",
@@ -318,38 +385,11 @@
         "run_name": "run_workflow_granite-mpileupCounts",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
-      "input": [
-        {
-          "argument_name": "input_bam",
-          "argument_type": "file",
-          "mount": true,
-          "source": "workflow_gatk-ApplyBQSR-check",
-          "source_argument_name": "recalibrated_bam"
-        },
-        {
-          "argument_name": "reference",
-          "argument_type": "file",
-          "source_argument_name": "reference_fa",
-          "mount": true
-        },
-        {
-          "argument_name": "regions",
-          "argument_type": "file",
-          "mount": true
-        }
-      ]
-    },
-    {
-      "name": "workflow_gatk-HaplotypeCaller",
-      "workflow": "7fd67e19-3425-45f8-8149-c7cac4278fdb",
-      "config": {
-        "instance_type": "c5n.18xlarge",
-        "ebs_size": "5x",
-        "EBS_optimized": true,
-        "spot_instance": true,
-        "log_bucket": "tibanna-output",
-        "run_name": "run_workflow_gatk-HaplotypeCaller",
-        "behavior_on_capacity_limit": "wait_and_retry"
+      "custom_pf_fields": {
+          "rck": {
+              "file_type": "read counts (rck)",
+              "description": "read counts (rck) file"
+          }
       },
       "input": [
         {
@@ -369,6 +409,57 @@
           "argument_name": "regions",
           "argument_type": "file",
           "mount": true
+        },
+        {
+          "argument_name": "nthreads",
+          "argument_type": "parameter",
+          "value": "15",
+          "value_type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "workflow_gatk-HaplotypeCaller",
+      "workflow": "7fd67e19-3425-45f8-8149-c7cac4278fdb",
+      "config": {
+        "instance_type": "c5n.18xlarge",
+        "ebs_size": "5x",
+        "EBS_optimized": true,
+        "spot_instance": true,
+        "log_bucket": "tibanna-output",
+        "run_name": "run_workflow_gatk-HaplotypeCaller",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "custom_pf_fields": {
+          "gvcf": {
+              "file_type": "gVCF",
+              "description": "processed output from cgap upstream pipeline"
+          }
+      },
+      "input": [
+        {
+          "argument_name": "input_bam",
+          "argument_type": "file",
+          "mount": true,
+          "source": "workflow_gatk-ApplyBQSR-check",
+          "source_argument_name": "recalibrated_bam"
+        },
+        {
+          "argument_name": "reference",
+          "argument_type": "file",
+          "source_argument_name": "reference_fa",
+          "mount": true
+        },
+        {
+          "argument_name": "regions",
+          "argument_type": "file",
+          "mount": true
+        },
+        {
+          "argument_name": "nthreads",
+          "argument_type": "parameter",
+          "value": "20",
+          "value_type": "integer"
         }
       ]
     },
@@ -410,6 +501,12 @@
         "run_name": "run_workflow_gatk-CombineGVCFs",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
+      "custom_pf_fields": {
+          "combined_gvcf": {
+              "file_type": "combined gVCF",
+              "description": "processed output from cgap downstream pipeline"
+          }
+      },
       "input": [
         {
           "argument_name": "input_gvcfs",
@@ -432,7 +529,6 @@
         }
       ]
     },
-
     {
       "name": "workflow_granite-rckTar",
       "workflow": "dca2f426-7ef0-456b-927d-ba0ab388d0da",
@@ -445,6 +541,12 @@
         "run_name": "run_workflow_granite-rckTar",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
+      "custom_pf_fields": {
+          "rck_tar": {
+              "file_type": "tarred read counts (rck)",
+              "description": "tarred read counts (rck) file"
+          }
+      },
       "input": [
         {
           "argument_name": "input_rcks",
@@ -456,7 +558,6 @@
         }
       ]
     },
-
     {
       "name": "workflow_gatk-GenotypeGVCFs-check",
       "workflow": "4fbad226-859d-40d4-8192-10c305e819da",
@@ -468,6 +569,12 @@
         "log_bucket": "tibanna-output",
         "run_name": "run_workflow_gatk-GenotypeGVCFs-check",
         "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "custom_pf_fields": {
+          "vcf": {
+              "file_type": "raw VCF",
+              "description": "processed output from cgap downstream pipeline"
+          }
       },
       "input": [
         {
@@ -507,6 +614,12 @@
         "run_name": "run_samplegeno",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
+      "custom_pf_fields": {
+          "samplegeno_vcf": {
+              "file_type": "intermediate file",
+              "description": "Intermediate VCF file"
+          }
+      },
       "input": [
         {
           "argument_name": "input_vcf",
@@ -529,12 +642,13 @@
         "run_name": "run_workflow_vep-annot-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
+      "custom_pf_fields": {
+          "annotated_vcf": {
+              "file_type": "vep-annotated VCF",
+              "description": "vep-annotated VCF file"
+          }
+      },
       "input": [
-        {
-          "argument_name": "nthreads",
-          "argument_type": "parameter",
-          "value": 64
-        },
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
@@ -617,6 +731,12 @@
           "argument_name": "phastc100bw",
           "argument_type": "file",
           "mount": true
+        },
+        {
+          "argument_name": "nthreads",
+          "argument_type": "parameter",
+          "value": "64",
+          "value_type": "integer"
         }
       ]
     },
@@ -644,8 +764,8 @@
           "argument_type": "parameter"
         },
         {
-          "argument_name": "sample_name",
-          "argument_type": "family"
+          "argument_name": "family",
+          "argument_type": "parameter"
         }
       ]
     },
@@ -672,26 +792,29 @@
         },
         {
           "argument_name": "pedigree",
-          "argument_type": "family"
+          "argument_type": "parameter"
         },
         {
           "argument_name": "samples",
-          "argument_type": "family"
+          "argument_type": "parameter"
         },
         {
           "argument_name": "trio_errors",
-          "argument_type": "family",
-          "value": true
+          "argument_type": "parameter",
+          "value": "true",
+          "value_type": "boolean"
         },
         {
           "argument_name": "het_hom",
-          "argument_type": "family",
-          "value": true
+          "argument_type": "parameter",
+          "value": "true",
+          "value_type": "boolean"
         },
         {
           "argument_name": "ti_tv",
-          "argument_type": "family",
-          "value": true
+          "argument_type": "parameter",
+          "value": "true",
+          "value_type": "boolean"
         }
       ]
     },
@@ -706,6 +829,12 @@
         "log_bucket": "tibanna-output",
         "run_name": "run_workflow_granite-filtering-check",
         "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "custom_pf_fields": {
+          "merged_vcf": {
+              "file_type": "intermediate file",
+              "description": "Intermediate VCF file"
+          }
       },
       "input": [
         {
@@ -723,12 +852,12 @@
         {
           "argument_name": "aftag",
           "argument_type": "parameter",
-          "value": "gnomADg_AF"
+          "source_argument_name": "variant_filtering_aftag"
         },
         {
           "argument_name": "afthr",
           "argument_type": "parameter",
-          "value": 0.01
+          "source_argument_name": "variant_filtering_afthr"
         }
       ]
     },
@@ -743,6 +872,12 @@
         "log_bucket": "tibanna-output",
         "run_name": "run_workflow_granite-novoCaller-rck-check",
         "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "custom_pf_fields": {
+          "novoCaller_vcf": {
+              "file_type": "intermediate file",
+              "description": "Intermediate VCF file"
+          }
       },
       "input": [
         {
@@ -778,6 +913,12 @@
         "run_name": "run_workflow_granite-comHet-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
+      "custom_pf_fields": {
+          "comHet_vcf": {
+              "file_type": "intermediate file",
+              "description": "Intermediate VCF file"
+          }
+      },
       "input": [
         {
           "argument_name": "input_vcf",
@@ -789,6 +930,172 @@
         {
           "argument_name": "trio",
           "argument_type": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "workflow_dbSNP_ID_fixer-check",
+      "workflow": "1467c3bb-fd18-444b-89c9-3b07c3ddb4b8",
+      "config": {
+        "instance_type": "t3.micro",
+        "ebs_size": 10,
+        "EBS_optimized": true,
+        "spot_instance": true,
+        "log_bucket": "tibanna-output",
+        "run_name": "run_workflow_dbSNP_ID_fixer-check",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "custom_pf_fields": {
+          "vcf": {
+              "file_type": "intermediate file",
+              "description": "Intermediate VCF file"
+          }
+      },
+      "input": [
+        {
+          "argument_name": "input_vcf",
+          "argument_type": "file",
+          "mount": true,
+          "source": "workflow_granite-comHet-check",
+          "source_argument_name": "comHet_vcf"
+        },
+        {
+          "argument_name": "dbSNP_ref_vcf",
+          "argument_type": "file",
+          "mount": true,
+          "source_argument_name": "dbSNP_full_ref_vcf"
+        },
+        {
+          "argument_name": "region_file",
+          "argument_type": "file",
+          "mount": true,
+          "source_argument_name": "regions"
+        }
+      ]
+    },
+    {
+      "name": "workflow_hg19lo_hgvsg-check",
+      "workflow": "d77fd7b5-c7d3-4689-914a-443c2d4ec17d",
+      "config": {
+        "instance_type": "t3.micro",
+        "ebs_size": 10,
+        "EBS_optimized": true,
+        "spot_instance": true,
+        "log_bucket": "tibanna-output",
+        "run_name": "run_workflow_hg19lo_hgvsg-check",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "custom_pf_fields": {
+          "vcf": {
+              "file_type": "full annotated VCF",
+              "description": "full annotated VCF file"
+          }
+      },
+      "input": [
+        {
+          "argument_name": "input_vcf",
+          "argument_type": "file",
+          "mount": true,
+          "source": "workflow_dbSNP_ID_fixer-check",
+          "source_argument_name": "vcf"
+        },
+        {
+          "argument_name": "chainfile",
+          "argument_type": "file",
+          "mount": true
+        }
+      ]
+    },
+    {
+      "name": "bamsnap",
+      "workflow": "a147d85c-07c7-4e01-82bb-73b381ebbf11",
+      "config": {
+        "instance_type": "r5a.4xlarge",
+        "ebs_size": 30,
+        "EBS_optimized": true,
+        "spot_instance": false,
+        "log_bucket": "tibanna-output",
+        "run_name": "run_bamsnap",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "input": [
+        {
+          "argument_name": "input_bams",
+          "argument_type": "file",
+          "mount": true,
+          "source": "workflow_gatk-ApplyBQSR-check",
+          "source_argument_name": "recalibrated_bam",
+          "gather": 1
+        },
+        {
+          "argument_name": "input_vcf",
+          "argument_type": "file",
+          "mount": true,
+          "source": "workflow_hg19lo_hgvsg-checkk",
+          "source_argument_name": "vcf"
+        },
+        {
+          "argument_name": "ref",
+          "argument_type": "file",
+          "mount": true,
+          "source_argument_name": "reference_fa"
+        },
+        {
+          "argument_name": "nproc",
+          "argument_type": "parameter",
+          "value": "16",
+          "value_type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "workflow_granite-qcVCF-2",
+      "workflow": "a28d7aee-54df-4c33-a1be-268217ea5a72",
+      "config": {
+        "instance_type": "t3.small",
+        "ebs_size": "1x",
+        "EBS_optimized": true,
+        "spot_instance": true,
+        "log_bucket": "tibanna-output",
+        "run_name": "run_workflow_granite-qcVCF-2",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "custom_qc_fields": {
+          "filtering_condition": "((Exonic and splice variants OR spliceAI>0.2) AND (gnomAD AF<0.01)) OR (Clinvar Pathogenic/Likely Pathogenic, Conflicting Interpretation or Risk Factor)"
+      },
+      "input": [
+        {
+          "argument_name": "input_vcf",
+          "argument_type": "file",
+          "mount": true,
+          "source": "workflow_vep-annot-check",
+          "source_argument_name": "annotated_vcf"
+        },
+        {
+          "argument_name": "pedigree",
+          "argument_type": "parameter"
+        },
+        {
+          "argument_name": "samples",
+          "argument_type": "parameter"
+        },
+        {
+          "argument_name": "trio_errors",
+          "argument_type": "parameter",
+          "value": "true",
+          "value_type": "boolean"
+        },
+        {
+          "argument_name": "het_hom",
+          "argument_type": "parameter",
+          "value": "false",
+          "value_type": "boolean"
+        },
+        {
+          "argument_name": "ti_tv",
+          "argument_type": "parameter",
+          "value": "false",
+          "value_type": "boolean"
         }
       ]
     }
