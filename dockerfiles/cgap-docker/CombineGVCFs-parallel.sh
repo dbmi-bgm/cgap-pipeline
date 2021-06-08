@@ -18,7 +18,8 @@ command="gatk CombineGVCFs -L {} -O ${directory}out.{}.g.vcf -R $reference"
 # adding files to combine
 for arg in $@;
   do
-    command+=" -V $arg"
+    #command+=" -V $arg"
+    command+=" -V $arg" || exit 1
   done
 
 # running command
