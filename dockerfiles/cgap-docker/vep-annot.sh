@@ -65,14 +65,10 @@ basic_vep="--sift b --polyphen b --ccds --hgvs --symbol --numbers --domains --re
 
 # options and full command line
 options="--fasta $reference --assembly $assembly --use_given_ref --offline --cache_version $version --dir_cache . $basic_vep --force_overwrite --vcf"
-#command="tabix -h $input_vcf {} > {}.sharded.vcf; if [[ -e {}.sharded.vcf ]]; then if grep -q -v '^#' {}.sharded.vcf; then vep -i {}.sharded.vcf -o ${directory}{}.vep.vcf $options $plugins $customs; fi; fi; rm {}.sharded.vcf"
 command="tabix -h $input_vcf {} > {}.sharded.vcf || exit 1; if [[ -e {}.sharded.vcf ]] || exit 1; then if grep -q -v '^#' {}.sharded.vcf || exit 1; then vep -i {}.sharded.vcf -o ${directory}{}.vep.vcf $options $plugins $customs || exit 1; fi; fi; rm {}.sharded.vcf || exit 1"
 
 # runnning VEP in parallel
 echo "Running VEP"
-#cat $regionfile | parallel --halt 2 --jobs $nthreads $command || exit 1
-#cat $regionfile | xargs -P $nthreads -i $command || exit 1
-#cat $regionfile | xargs -P $nthreads -i sh -c "$command" || exit 1
 cat $regionfile | xargs -P $nthreads -i bash -c "$command" || exit 1
 
 # merging the results
