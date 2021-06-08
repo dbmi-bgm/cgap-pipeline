@@ -69,7 +69,8 @@ command="tabix -h $input_vcf {} > {}.sharded.vcf; if [[ -e {}.sharded.vcf ]]; th
 
 # runnning VEP in parallel
 echo "Running VEP"
-cat $regionfile | parallel --halt 2 --jobs $nthreads $command || exit 1
+#cat $regionfile | parallel --halt 2 --jobs $nthreads $command || exit 1
+cat $regionfile | xargs -P $nthreads -i $command || exit 1
 
 # merging the results
 echo "Merging vcf files"
