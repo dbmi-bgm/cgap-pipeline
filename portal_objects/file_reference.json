@@ -150,20 +150,20 @@
     "status": "uploaded"
   },
   {
-    "uuid": "4ff30e10-aa8b-4ebf-87ac-20c7bfc15a46",
+    "uuid": "ea103486-b65a-4439-9d0b-1186f8e59388",
     "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
     "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
     "file_format": "vep_tar",
-    "description": "datasource for VEP v101 plus plugins",
-    "aliases": ["cgap:vep-101"],
+    "description": "datasource for VEP v101 plus plugins, including a modified dbNSFP plugin to annotate non-missense variants",
+    "aliases": ["cgap:vep-101b"],
     "extra_files": [
         {
             "file_format": "plugins_tar",
-            "status": "uploaded"
+            "status": "uploading"
         }
     ],
     "status": "uploaded",
-    "file_version": "101"
+    "file_version": "101b"
   },
   {
     "uuid": "7db786d5-13d2-4622-bdd2-99866036b9b9",
