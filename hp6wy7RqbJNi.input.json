@@ -1,0 +1,155 @@
+{
+    "app_name": "workflow_vep-annot-check",
+    "workflow_uuid": "cgap:workflow_vep-annot-check_v22",
+    "parameters": {
+        "nthreads": 64
+    },
+    "config": {
+        "instance_type": "c5n.18xlarge",
+        "ebs_size": "0.25x",
+        "EBS_optimized": true,
+        "spot_instance": true,
+        "log_bucket": "tibanna-output",
+        "key_name": "4dn-encode",
+        "public_postrun_json": true,
+        "behavior_on_capacity_limit": "wait_and_retry",
+        "run_name": "workflow_vep-annot-check_GAPFIQOGRXEU-8d2c362e-e405-4c9a-9809-3c8a1ab627a5"
+    },
+    "custom_pf_fields": {
+        "annotated_vcf": {
+            "file_type": "vep-annotated VCF",
+            "description": "vep-annotated VCF file",
+            "genome_assembly": "GRCh38"
+        }
+    },
+    "common_fields": {
+        "project": "/projects/brigham-genomic-medicine/",
+        "institution": "/institutions/bwh/"
+    },
+    "input_files": [
+        {
+            "workflow_argument_name": "CADD_indel",
+            "object_key": "GAPFI1GC6AXF.tsv.gz",
+            "uuid": "b9f123dd-be05-4a14-957a-5e1e5a5ce254",
+            "bucket_name": "elasticbeanstalk-fourfront-cgap-files",
+            "mount": true
+        },
+        {
+            "workflow_argument_name": "CADD_snv",
+            "object_key": "GAPFI566QQCV.tsv.gz",
+            "uuid": "672de47f-d058-4dbd-9fc4-3e134cfe71d8",
+            "bucket_name": "elasticbeanstalk-fourfront-cgap-files",
+            "mount": true
+        },
+        {
+            "workflow_argument_name": "clinvar",
+            "object_key": "GAPFI121RWQE.vcf.gz",
+            "uuid": "7db786d5-13d2-4622-bdd2-99866036b9b9",
+            "bucket_name": "elasticbeanstalk-fourfront-cgap-files",
+            "mount": true
+        },
+        {
+            "workflow_argument_name": "dbnsfp",
+            "object_key": "GAPFIKJ66FKY.dbnsfp.gz",
+            "uuid": "dc02df4c-49ac-4532-b85c-02800941aa44",
+            "bucket_name": "elasticbeanstalk-fourfront-cgap-files",
+            "mount": true
+        },
+        {
+            "workflow_argument_name": "gnomad",
+            "object_key": "GAPFIJOMA2Q8.vcf.gz",
+            "uuid": "52c6cbf6-ae94-4c10-ad03-26ed34f74a3e",
+            "bucket_name": "elasticbeanstalk-fourfront-cgap-files",
+            "mount": true
+        },
+        {
+            "workflow_argument_name": "gnomad2",
+            "object_key": "GAPFIC5416E6.vcf.gz",
+            "uuid": "dd6f0384-d0b5-47d6-99a8-395c0b72feed",
+            "bucket_name": "elasticbeanstalk-fourfront-cgap-files",
+            "mount": true
+        },
+        {
+            "workflow_argument_name": "input_vcf",
+            "object_key": "GAPFIQOGRXEU.vcf.gz",
+            "uuid": "14f54d98-f701-400b-9034-6414d04d9da4",
+            "bucket_name": "elasticbeanstalk-fourfront-cgap-wfoutput",
+            "mount": true
+        },
+        {
+            "workflow_argument_name": "maxent",
+            "object_key": "GAPFI6BNNTKA.tar.gz",
+            "uuid": "71a7d16b-8452-4266-ae80-bbede2e305e2",
+            "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+        },
+        {
+            "workflow_argument_name": "phastc100bw",
+            "object_key": "GAPFI6KXAQMV.bw",
+            "uuid": "19f03828-175b-4594-ba1a-52ddabcf640d",
+            "bucket_name": "elasticbeanstalk-fourfront-cgap-files",
+            "mount": true
+        },
+        {
+            "workflow_argument_name": "phylop100bw",
+            "object_key": "GAPFIMQ7MHGA.bw",
+            "uuid": "af93aecb-6b8e-4c8b-b159-eefb3f9d0ffb",
+            "bucket_name": "elasticbeanstalk-fourfront-cgap-files",
+            "mount": true
+        },
+        {
+            "workflow_argument_name": "phylop30bw",
+            "object_key": "GAPFI5MRTDLN.bw",
+            "uuid": "f6809af1-f7b9-43c0-882a-16764ccc431d",
+            "bucket_name": "elasticbeanstalk-fourfront-cgap-files",
+            "mount": true
+        },
+        {
+            "workflow_argument_name": "reference",
+            "object_key": "GAPFIXRDPDK5.fa",
+            "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
+            "bucket_name": "elasticbeanstalk-fourfront-cgap-files",
+            "mount": true
+        },
+        {
+            "workflow_argument_name": "regions",
+            "object_key": "GAPFIBGEOI72.txt",
+            "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28",
+            "bucket_name": "elasticbeanstalk-fourfront-cgap-files",
+            "mount": true
+        },
+        {
+            "workflow_argument_name": "spliceai_indel",
+            "object_key": "GAPFIZOPCWIU.vcf.gz",
+            "uuid": "3b7c0c29-5ee2-47c8-95a8-d28e15d5de47",
+            "bucket_name": "elasticbeanstalk-fourfront-cgap-files",
+            "mount": true
+        },
+        {
+            "workflow_argument_name": "spliceai_snv",
+            "object_key": "GAPFISUOC64Q.vcf.gz",
+            "uuid": "a35e580c-7579-4312-a3a1-66810e6d9366",
+            "bucket_name": "elasticbeanstalk-fourfront-cgap-files",
+            "mount": true
+        },
+        {
+            "workflow_argument_name": "vep",
+            "object_key": "GAPFIPK4VGWV.vep.tar.gz",
+            "uuid": "4ff30e10-aa8b-4ebf-87ac-20c7bfc15a46",
+            "bucket_name": "elasticbeanstalk-fourfront-cgap-files"
+        }
+    ],
+    "output_bucket": "elasticbeanstalk-fourfront-cgap-wfoutput",
+    "_tibanna": {
+        "run_id": "GAPFIQOGRXEU",
+        "env": "fourfront-cgap",
+        "url": "https://console.aws.amazon.com/states/home?region=us-east-1#/executions/details/arn:aws:states:us-east-1:643366669028:execution:tibanna_zebra:workflow_vep-annot-check_GAPFIQOGRXEU-8d2c362e-e405-4c9a-9809-3c8a1ab627a5",
+        "run_type": "workflow_vep-annot-check",
+        "run_name": "workflow_vep-annot-check_GAPFIQOGRXEU-8d2c362e-e405-4c9a-9809-3c8a1ab627a5",
+        "exec_arn": "arn:aws:states:us-east-1:643366669028:execution:tibanna_zebra:workflow_vep-annot-check_GAPFIQOGRXEU-8d2c362e-e405-4c9a-9809-3c8a1ab627a5"
+    },
+    "step_function_name": "tibanna_zebra",
+    "public_postrun_json": true,
+    "env_name": "fourfront-cgap",
+    "jobid": "hp6wy7RqbJNi",
+    "push_error_to_end": true
+}

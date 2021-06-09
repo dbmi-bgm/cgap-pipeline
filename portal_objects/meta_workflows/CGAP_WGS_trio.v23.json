@@ -2,10 +2,18 @@
   "name": "WGS_trio",
   "title": "WGS Trio Pipeline",
   "version": "v23",
-  "uuid": "475a0518-9b72-4dc1-b049-070f366ab821",
+  "uuid": "70199ad7-c0c9-45e1-b647-c93b348bc025",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "input": [
+    {
+      "argument_name": "fastq_R1",
+      "argument_type": "file"
+    },
+    {
+      "argument_name": "fastq_R2",
+      "argument_type": "file"
+    },
     {
       "argument_name": "reference_bwa",
       "argument_type": "file",
@@ -39,7 +47,7 @@
     {
       "argument_name": "vep",
       "argument_type": "file",
-      "files": [{"file": "4ff30e10-aa8b-4ebf-87ac-20c7bfc15a46"}]
+      "files": [{"file": "ea103486-b65a-4439-9d0b-1186f8e59388"}]
     },
     {
       "argument_name": "clinvar",
@@ -136,6 +144,50 @@
   ],
   "workflows": [
     {
+      "name": "fastqc-r1",
+      "workflow": "49e96b51-ed6c-4418-a693-d0e9f79adfa5",
+      "config": {
+        "instance_type": "t3.small",
+        "ebs_size": 10,
+        "EBS_optimized": true,
+        "spot_instance": false,
+        "log_bucket": "tibanna-output",
+        "run_name": "run_fastqc-r1",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "input": [
+        {
+          "argument_name": "input_fastq",
+          "argument_type": "file",
+          "scatter": 2,
+          "mount": true,
+          "source_argument_name": "fastq_R1"
+        }
+      ]
+    },
+    {
+      "name": "fastqc-r2",
+      "workflow": "49e96b51-ed6c-4418-a693-d0e9f79adfa5",
+      "config": {
+        "instance_type": "t3.small",
+        "ebs_size": 10,
+        "EBS_optimized": true,
+        "spot_instance": false,
+        "log_bucket": "tibanna-output",
+        "run_name": "run_fastqc-r2",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "input": [
+        {
+          "argument_name": "input_fastq",
+          "argument_type": "file",
+          "scatter": 2,
+          "mount": true,
+          "source_argument_name": "fastq_R2"
+        }
+      ]
+    },
+    {
       "name": "workflow_bwa-mem_no_unzip-check",
       "workflow": "50e75343-2e00-471d-a667-4acb083287d8",
       "config": {
@@ -157,13 +209,11 @@
         {
           "argument_name": "fastq_R1",
           "argument_type": "file",
-          "scatter": 2,
           "mount": true
         },
         {
           "argument_name": "fastq_R2",
           "argument_type": "file",
-          "scatter": 2,
           "mount": true
         },
         {
@@ -420,7 +470,7 @@
     },
     {
       "name": "workflow_gatk-HaplotypeCaller",
-      "workflow": "7fd67e19-3425-45f8-8149-c7cac4278fdb",
+      "workflow": "a09b0e1d-6a6c-483c-b907-1e1eb3bc172a",
       "config": {
         "instance_type": "c5n.18xlarge",
         "ebs_size": "5x",
@@ -491,7 +541,7 @@
     },
     {
       "name": "workflow_gatk-CombineGVCFs",
-      "workflow": "c7223a1c-ed48-4c54-a39f-35f05d61e850",
+      "workflow": "2d0eed17-0bf5-49ea-94b1-c4913bf1a058",
       "config": {
         "instance_type": "c5n.4xlarge",
         "ebs_size": "10x",
@@ -560,7 +610,7 @@
     },
     {
       "name": "workflow_gatk-GenotypeGVCFs-check",
-      "workflow": "4fbad226-859d-40d4-8192-10c305e819da",
+      "workflow": "4ff008de-6c9c-4991-879a-5925893ca1b1",
       "config": {
         "instance_type": "c5n.4xlarge",
         "ebs_size": "1.5x",
@@ -632,7 +682,7 @@
     },
     {
       "name": "workflow_vep-annot-check",
-      "workflow": "e051a5ae-093e-4030-9c3f-ae93f1d9606d",
+      "workflow": "2f997f5f-d334-4c2b-873c-e4392d6b83f5",
       "config": {
         "instance_type": "c5n.18xlarge",
         "ebs_size": "0.25x",
@@ -935,7 +985,7 @@
     },
     {
       "name": "workflow_dbSNP_ID_fixer-check",
-      "workflow": "1467c3bb-fd18-444b-89c9-3b07c3ddb4b8",
+      "workflow": "7f1a001e-cc1d-442d-9b32-857a6356a85c",
       "config": {
         "instance_type": "t3.micro",
         "ebs_size": 10,
