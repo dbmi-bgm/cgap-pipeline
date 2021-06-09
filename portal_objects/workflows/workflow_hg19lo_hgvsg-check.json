@@ -1,7 +1,7 @@
 {
   "accession": "GAPWFL4FJL32",
   "app_name": "workflow_hg19lo_hgvsg-check",
-  "app_version": "v22",
+  "app_version": "v23",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -33,15 +33,16 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["liftover_hg19.cwl", "hgvsg_creator.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v22/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v23/cwl",
   "cwl_main_filename": "workflow_hg19lo_hgvsg_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run hg19 liftover on an input vcf. hgvsg_creator is run on the output vcf to create another vcf. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v22",
+  "docker_image_name": "cgap/cgap:v23",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_hg19lo_hgvsg-check_v22",
-  "aliases": ["cgap:workflow_hg19lo_hgvsg-check_v22"],
+  "name": "workflow_hg19lo_hgvsg-check_v23",
+  "aliases": ["cgap:workflow_hg19lo_hgvsg-check_v23",
+              "cgap:workflow_hg19lo_hgvsg-check_v22"],
   "steps": [
       {
           "inputs": [
