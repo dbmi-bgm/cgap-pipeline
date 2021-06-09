@@ -1,6 +1,6 @@
 {
     "parameters": {},
-    "workflow_uuid": "1467c3bb-fd18-444b-89c9-3b07c3ddb4b8",
+    "workflow_uuid": "7f1a001e-cc1d-442d-9b32-857a6356a85c",
     "input_files" : [
        {
            "workflow_argument_name": "dbSNP_ref_vcf",
