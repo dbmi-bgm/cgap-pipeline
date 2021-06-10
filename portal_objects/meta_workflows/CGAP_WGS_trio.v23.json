@@ -1140,8 +1140,8 @@
           "argument_name": "input_vcf",
           "argument_type": "file",
           "mount": true,
-          "source": "workflow_vep-annot-check",
-          "source_argument_name": "annotated_vcf"
+          "source": "workflow_hg19lo_hgvsg-check",
+          "source_argument_name": "vcf"
         },
         {
           "argument_name": "pedigree",

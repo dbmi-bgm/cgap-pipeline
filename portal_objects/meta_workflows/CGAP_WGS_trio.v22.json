@@ -1,6 +1,6 @@
 {
   "name": "WGS_trio",
-  "title": "WGS Trio Pipeline V22",
+  "title": "WGS Trio V22",
   "version": "v22",
   "uuid": "475a0518-9b72-4dc1-b049-070f366ab821",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
@@ -1140,8 +1140,8 @@
           "argument_name": "input_vcf",
           "argument_type": "file",
           "mount": true,
-          "source": "workflow_vep-annot-check",
-          "source_argument_name": "annotated_vcf"
+          "source": "workflow_hg19lo_hgvsg-check",
+          "source_argument_name": "vcf"
         },
         {
           "argument_name": "pedigree",

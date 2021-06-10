@@ -1,6 +1,6 @@
 {
   "name": "WGS_proband_only",
-  "title": "WGS Proband-only Pipeline V22",
+  "title": "WGS Proband-only V22",
   "version": "v22",
   "uuid": "461a29d8-3adf-492f-8146-ec4de8e33d63",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
@@ -971,8 +971,8 @@
           "argument_name": "input_vcf",
           "argument_type": "file",
           "mount": true,
-          "source": "workflow_vep-annot-check",
-          "source_argument_name": "annotated_vcf"
+          "source": "workflow_hg19lo_hgvsg-check",
+          "source_argument_name": "vcf"
         },
         {
           "argument_name": "pedigree",
