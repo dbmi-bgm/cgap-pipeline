@@ -1,18 +1,34 @@
 {
   "name": "WGS_trio",
-  "title": "WGS Trio Pipeline",
+  "title": "WGS Trio Pipeline V22",
   "version": "v22",
   "uuid": "475a0518-9b72-4dc1-b049-070f366ab821",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "input": [
     {
-      "argument_name": "fastq_R1",
+      "argument_name": "fastqs_proband_first_R1",
       "argument_type": "file"
     },
     {
-      "argument_name": "fastq_R2",
+      "argument_name": "fastqs_proband_first_R2",
       "argument_type": "file"
+    },
+    {
+      "argument_name": "sample_names_proband_first",
+      "argument_type": "parameter"
+    },
+    {
+      "argument_name": "pedigree",
+      "argument_type": "parameter"
+    },
+    {
+      "argument_name": "rcktar_content_file_names",
+      "argument_type": "parameter"
+    },
+    {
+      "argument_name": "famiy_size",
+      "argument_type": "parameter"
     },
     {
       "argument_name": "reference_bwa",
@@ -161,7 +177,7 @@
           "argument_type": "file",
           "scatter": 2,
           "mount": true,
-          "source_argument_name": "fastq_R1"
+          "source_argument_name": "fastqs_proband_first_R1"
         }
       ]
     },
@@ -183,7 +199,7 @@
           "argument_type": "file",
           "scatter": 2,
           "mount": true,
-          "source_argument_name": "fastq_R2"
+          "source_argument_name": "fastqs_proband_first_R2"
         }
       ]
     },
@@ -209,12 +225,16 @@
         {
           "argument_name": "fastq_R1",
           "argument_type": "file",
-          "mount": true
+          "mount": true,
+          "scatter": 2,
+          "source_argument_name": "fastqs_proband_first_R1"
         },
         {
           "argument_name": "fastq_R2",
           "argument_type": "file",
-          "mount": true
+          "mount": true,
+          "scatter": 2,
+          "source_argument_name": "fastqs_proband_first_R2"
         },
         {
           "argument_name": "reference",
@@ -252,7 +272,9 @@
         },
         {
           "argument_name": "sample_name",
-          "argument_type": "parameter"
+          "argument_type": "parameter",
+          "source_argument_name": "sample_names_proband_first",
+          "scatter": 1
         }
       ]
     },
@@ -535,7 +557,9 @@
         },
         {
           "argument_name": "sample",
-          "argument_type": "parameter"
+          "argument_type": "parameter",
+          "source_argument_name": "sample_names_proband_first",
+          "scatter": 1
         }
       ]
     },
@@ -544,7 +568,7 @@
       "workflow": "c7223a1c-ed48-4c54-a39f-35f05d61e850",
       "config": {
         "instance_type": "c5n.4xlarge",
-        "ebs_size": "10x",
+        "ebs_size": "formula:str(10 + family_size - 3) + 'x'",
         "EBS_optimized": true,
         "spot_instance": true,
         "log_bucket": "tibanna-output",
@@ -602,7 +626,7 @@
           "argument_name": "input_rcks",
           "argument_type": "file",
           "gather": 1,
-          "rename": "formula:NAME",
+          "rename": "formula:rcktar_content_file_names",
           "source": "workflow_granite-mpileupCounts",
           "source_argument_name": "rck"
         }
@@ -812,10 +836,6 @@
         {
           "argument_name": "pedigree",
           "argument_type": "parameter"
-        },
-        {
-          "argument_name": "family",
-          "argument_type": "parameter"
         }
       ]
     },
@@ -846,7 +866,8 @@
         },
         {
           "argument_name": "samples",
-          "argument_type": "parameter"
+          "argument_type": "parameter",
+          "source_argument_name": "sample_names_proband_first"
         },
         {
           "argument_name": "trio_errors",
@@ -979,7 +1000,8 @@
         },
         {
           "argument_name": "trio",
-          "argument_type": "parameter"
+          "argument_type": "parameter",
+          "source_argument_name": "sample_names_proband_first"
         }
       ]
     },
@@ -1081,7 +1103,7 @@
           "argument_name": "input_vcf",
           "argument_type": "file",
           "mount": true,
-          "source": "workflow_hg19lo_hgvsg-checkk",
+          "source": "workflow_hg19lo_hgvsg-check",
           "source_argument_name": "vcf"
         },
         {
@@ -1127,7 +1149,8 @@
         },
         {
           "argument_name": "samples",
-          "argument_type": "parameter"
+          "argument_type": "parameter",
+          "source_argument_name": "sample_names_proband_first"
         },
         {
           "argument_name": "trio_errors",
