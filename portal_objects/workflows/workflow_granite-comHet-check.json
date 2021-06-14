@@ -1,5 +1,5 @@
 {
-  "accession": "GAPWFC63IL4K",
+  "accession": "GAPWFC63LK8I",
   "app_name": "workflow_granite-comHet-check",
   "app_version": "v23",
   "arguments": [
@@ -50,8 +50,7 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_granite-comHet-check_v23",
-  "aliases": ["cgap:workflow_granite-comHet-check_v23",
-              "cgap:workflow_granite-comHet-check_v22"],
+  "aliases": ["cgap:workflow_granite-comHet-check_v23"],
   "steps": [
       {
           "inputs": [
@@ -88,7 +87,7 @@
                   "Run granite comHet"
               ],
               "software_used": [
-                 "/softwares/071647ab-d344-4489-8a6b-7d911908ed2b"
+                 "/softwares/aa7c1c7d-8533-4ad7-bfe1-7ea40e86bb52"
               ]
           },
           "name": "granite",
@@ -168,7 +167,7 @@
       }
   ],
   "title": "Run granite comHet plus output integrity-check",
-  "uuid": "81c29481-81df-49e9-80e8-4bfe36d3a5bf",
-  "previous_version": ["8a9c5158-a3ed-4f06-bef4-79278070429a"],
-  "version_upgrade_log": "Updated granite version, fix to comp het calculation to exclude het shared by both parents in trio"
+  "uuid": "8fc79178-a81e-4da1-8cfd-121d4193e12c",
+  "previous_version": ["81c29481-81df-49e9-80e8-4bfe36d3a5bf"],
+  "version_upgrade_log": "Updated granite version, novoCaller expect proband first now"
 }

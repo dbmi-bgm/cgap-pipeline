@@ -1,5 +1,5 @@
 {
-  "accession": "GAPXFAL92ER4",
+  "accession": "GAPXFAL93FSQ",
   "app_name": "workflow_granite-qcVCF",
   "app_version": "v23",
   "arguments": [
@@ -60,8 +60,7 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_granite-qcVCF_v23",
-  "aliases": ["cgap:workflow_granite-qcVCF_v23",
-              "cgap:workflow_granite-qcVCF_v22"],
+  "aliases": ["cgap:workflow_granite-qcVCF_v23"],
   "steps": [
       {
           "inputs": [
@@ -150,7 +149,7 @@
                   "Run granite qcVCF"
               ],
               "software_used": [
-                  "/softwares/071647ab-d344-4489-8a6b-7d911908ed2b"
+                  "/softwares/aa7c1c7d-8533-4ad7-bfe1-7ea40e86bb52"
               ]
           },
           "name": "granite",
@@ -185,7 +184,7 @@
       }
   ],
   "title": "Run granite qcVCF",
-  "uuid": "a28d7aee-54df-4c33-a1be-268217ea5a72",
-  "previous_version": ["432558d0-f68b-40e8-95b6-5943aaaf7f92"],
-  "version_upgrade_log": "Updated granite version but no expected difference. Moved qc v5 to pipeline v22"
+  "uuid": "e9a20462-5b4f-4105-8835-7f669629d88d",
+  "previous_version": ["a28d7aee-54df-4c33-a1be-268217ea5a72"],
+  "version_upgrade_log": "Updated granite version, novoCaller expect proband first now"
 }
