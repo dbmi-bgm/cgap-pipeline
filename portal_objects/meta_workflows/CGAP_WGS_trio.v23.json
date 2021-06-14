@@ -447,7 +447,7 @@
     },
     {
       "name": "workflow_granite-mpileupCounts",
-      "workflow": "7d79eb1a-e784-43e8-b902-5f99ccecde0f",
+      "workflow": "620671e7-b21a-4c48-aa90-b5beb3283d64",
       "config": {
         "instance_type": "c5.4xlarge",
         "ebs_size": 200,
@@ -605,7 +605,7 @@
     },
     {
       "name": "workflow_granite-rckTar",
-      "workflow": "dca2f426-7ef0-456b-927d-ba0ab388d0da",
+      "workflow": "43200ef2-a5da-4216-a736-4d4eac4449d0",
       "config": {
         "instance_type": "c5.xlarge",
         "ebs_size": "2.5x",
@@ -841,7 +841,7 @@
     },
     {
       "name": "workflow_granite-qcVCF",
-      "workflow": "a28d7aee-54df-4c33-a1be-268217ea5a72",
+      "workflow": "e9a20462-5b4f-4105-8835-7f669629d88d",
       "dependencies": ["workflow_peddy"],
       "config": {
         "instance_type": "t3.small",
@@ -891,7 +891,7 @@
     },
     {
       "name": "workflow_granite-filtering-check",
-      "workflow": "4a78b81f-3b1b-46d3-8f68-3c28229962bd",
+      "workflow": "77b36194-7f22-41b0-a4c9-12d0682501ef",
       "config": {
         "instance_type": "t3.medium",
         "ebs_size": "9x",
@@ -934,7 +934,7 @@
     },
     {
       "name": "workflow_granite-novoCaller-rck-check",
-      "workflow": "d95137cf-f926-4bcf-9b4b-78738c00b0a0",
+      "workflow": "efbd956d-809d-4860-9ebd-cd1abe490b46",
       "config": {
         "instance_type": "c5.xlarge",
         "ebs_size": "1.5x",
@@ -974,7 +974,7 @@
     },
     {
       "name": "workflow_granite-comHet-check",
-      "workflow": "81c29481-81df-49e9-80e8-4bfe36d3a5bf",
+      "workflow": "8fc79178-a81e-4da1-8cfd-121d4193e12c",
       "config": {
         "instance_type": "t3.small",
         "ebs_size": "2.5x",
@@ -1122,7 +1122,7 @@
     },
     {
       "name": "workflow_granite-qcVCF-2",
-      "workflow": "a28d7aee-54df-4c33-a1be-268217ea5a72",
+      "workflow": "e9a20462-5b4f-4105-8835-7f669629d88d",
       "config": {
         "instance_type": "t3.small",
         "ebs_size": "1x",
