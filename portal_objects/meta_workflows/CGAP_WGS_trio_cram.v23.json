@@ -174,12 +174,12 @@
       },
       "custom_pf_fields": {
           "fastq1": {
-              "file_type": "intermediate file",
-              "description": "Intermediate alignment file"
+              "file_type": "reads (from .cram)",
+              "description": "Reads (from .cram)"
           },
           "fastq2": {
-              "file_type": "intermediate file",
-              "description": "Intermediate alignment file"
+              "file_type": "reads (from .cram)",
+              "description": "Reads (from .cram)"
           }
       },
       "input": [
