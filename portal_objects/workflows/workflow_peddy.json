@@ -1,5 +1,5 @@
 {
-  "accession": "GAPXFLL31Z9D",
+  "accession": "GAPXKK231Z9P",
   "app_name": "workflow_peddy",
   "app_version": "v23",
   "arguments": [
@@ -48,8 +48,7 @@
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_peddy_v23",
-  "aliases": ["cgap:workflow_peddy_v23",
-              "cgap:workflow_peddy_v22"],
+  "aliases": ["cgap:workflow_peddy_v23"],
   "steps": [
       {
           "inputs": [
@@ -99,7 +98,7 @@
                   "Run peddy"
               ],
               "software_used": [
-                  "/softwares/071647ab-d344-4489-8a6b-7d911908ed2b",
+                  "/softwares/aa7c1c7d-8533-4ad7-bfe1-7ea40e86bb52",
                   "/softwares/124c73f9-4bbe-4e5d-92e0-cc2d932f1228"
               ]
           },
@@ -135,7 +134,7 @@
       }
   ],
   "title": "Run peddy",
-  "uuid": "d03e23cd-9875-43b5-b596-f8b080c5545e",
-  "previous_version": ["2ba8440c-b157-4394-9e86-c634aa15129d"],
-  "version_upgrade_log": "Updated granite version but no expected difference. Moved qc v5 to pipeline v22"
+  "uuid": "dc98d286-dbde-436b-8fca-3fa46f33f150",
+  "previous_version": ["d03e23cd-9875-43b5-b596-f8b080c5545e"],
+  "version_upgrade_log": "Updated granite version, no expected differences"
 }
