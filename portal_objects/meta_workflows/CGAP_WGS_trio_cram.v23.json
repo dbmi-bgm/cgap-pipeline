@@ -1,17 +1,13 @@
 {
-  "name": "WGS_trio",
-  "title": "WGS Trio V23",
+  "name": "WGS_trio_cram",
+  "title": "WGS Trio Cram V23",
   "version": "v23",
-  "uuid": "70199ad7-c0c9-45e1-b647-c93b348bc025",
+  "uuid": "79583bdc-87bf-449f-a7c4-c362d3b4c050",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "input": [
     {
-      "argument_name": "fastqs_proband_first_R1",
-      "argument_type": "file"
-    },
-    {
-      "argument_name": "fastqs_proband_first_R2",
+      "argument_name": "crams_proband_first",
       "argument_type": "file"
     },
     {
@@ -39,6 +35,11 @@
       "argument_name": "reference_fa",
       "argument_type": "file",
       "files": [{"file": "1936f246-22e1-45dc-bb5c-9cfd55537fe7"}]
+    },
+    {
+      "argument_name": "reference_md5list",
+      "argument_type": "file",
+      "files": [{"file": "db00cc5a-d7bc-424c-8560-e53827a52db9"}]
     },
     {
       "argument_name": "known-sites-indels",
@@ -160,6 +161,50 @@
   ],
   "workflows": [
     {
+      "name": "workflow_cram2fastq",
+      "workflow": "7bbf3487-a1fc-4073-952a-d5771973e875",
+      "config": {
+        "instance_type": "c5.4xlarge",
+        "ebs_size": "30x",
+        "EBS_optimized": true,
+        "spot_instance": true,
+        "log_bucket": "tibanna-output",
+        "run_name": "run_workflow_cram2fastq",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "custom_pf_fields": {
+          "fastq1": {
+              "file_type": "reads (from .cram)",
+              "description": "Reads (from .cram)"
+          },
+          "fastq2": {
+              "file_type": "reads (from .cram)",
+              "description": "Reads (from .cram)"
+          }
+      },
+      "input": [
+        {
+          "argument_name": "cram",
+          "argument_type": "file",
+          "mount": false,
+          "scatter": 2,
+          "source_argument_name": "crams_proband_first"
+        },
+        {
+          "argument_name": "reference_fasta",
+          "argument_type": "file",
+          "source_argument_name": "reference_fa",
+          "mount": false
+        },
+        {
+          "argument_name": "reference_md5list",
+          "argument_type": "file",
+          "source_argument_name": "reference_md5list",
+          "mount": false
+        }
+      ]
+    },
+    {
       "name": "fastqc-r1",
       "workflow": "49e96b51-ed6c-4418-a693-d0e9f79adfa5",
       "config": {
@@ -175,9 +220,9 @@
         {
           "argument_name": "input_fastq",
           "argument_type": "file",
-          "scatter": 2,
           "mount": true,
-          "source_argument_name": "fastqs_proband_first_R1"
+          "source_argument_name": "fastq1",
+          "source": "workflow_cram2fastq"
         }
       ]
     },
@@ -197,9 +242,9 @@
         {
           "argument_name": "input_fastq",
           "argument_type": "file",
-          "scatter": 2,
           "mount": true,
-          "source_argument_name": "fastqs_proband_first_R2"
+          "source_argument_name": "fastq2",
+          "source": "workflow_cram2fastq"
         }
       ]
     },
@@ -226,15 +271,15 @@
           "argument_name": "fastq_R1",
           "argument_type": "file",
           "mount": true,
-          "scatter": 2,
-          "source_argument_name": "fastqs_proband_first_R1"
+          "source_argument_name": "fastq2",
+          "source": "workflow_cram2fastq"
         },
         {
           "argument_name": "fastq_R2",
           "argument_type": "file",
           "mount": true,
-          "scatter": 2,
-          "source_argument_name": "fastqs_proband_first_R2"
+          "source_argument_name": "fastq2",
+          "source": "workflow_cram2fastq"
         },
         {
           "argument_name": "reference",
@@ -816,7 +861,7 @@
     },
     {
       "name": "workflow_peddy",
-      "workflow": "dc98d286-dbde-436b-8fca-3fa46f33f150",
+      "workflow": "d03e23cd-9875-43b5-b596-f8b080c5545e",
       "config": {
         "instance_type": "t3.small",
         "ebs_size": "10x",
@@ -1047,7 +1092,7 @@
     },
     {
       "name": "workflow_hg19lo_hgvsg-check",
-      "workflow": "66434019-65c5-498f-a986-9e791eeff0ad",
+      "workflow": "d77fd7b5-c7d3-4689-914a-443c2d4ec17d",
       "config": {
         "instance_type": "t3.micro",
         "ebs_size": 10,

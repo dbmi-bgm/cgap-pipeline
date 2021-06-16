@@ -2,11 +2,16 @@ import json
 import copy
 import uuid
 from magma_ff.metawfl import MetaWorkflow
+from magma_ff.metawflrun import MetaWorkflowRun
 from dcicutils import ff_utils
-ff_key = ff_utils.get_authentication_with_server(ff_env='fourfront-cgapwolf')
 
 metawf_uuid = '475a0518-9b72-4dc1-b049-070f366ab821'  # v22
-case_uuid = '1ea344bc-e211-4b11-8bde-7b94dadda7e2'  # NA12879
+
+# ff_key = ff_utils.get_authentication_with_server(ff_env='fourfront-cgapwolf')
+# case_uuid = '1ea344bc-e211-4b11-8bde-7b94dadda7e2'  # NA12879 on cgapwolf
+
+ff_key = ff_utils.get_authentication_with_server(ff_env='fourfront-cgap')
+case_uuid = '81278096-7c10-4c5a-8ac3-5e3014e83bbb'  # NA12879 on cgap
 
 
 def create_metawfr_from_case(metawf_uuid, case_uuid, ff_key, post=False, verbose=False):
@@ -73,6 +78,7 @@ def create_metawfr_from_case(metawf_uuid, case_uuid, ff_key, post=False, verbose
                'common_fields': {'project': case_meta['project'],
                                  'institution': case_meta['institution']},
                'final_status': 'pending',
+               'workflow_runs' : [],
                'uuid': str(uuid.uuid4())}
 
     mwf = MetaWorkflow(metawf_meta)
