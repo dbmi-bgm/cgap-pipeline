@@ -4,7 +4,7 @@
   "app_version": "v22",
   "arguments": [
       {
-          "argument_format": "CRAM",
+          "argument_format": "cram",
           "argument_type": "Input file",
           "workflow_argument_name": "cram"
       },
@@ -60,7 +60,7 @@
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "CRAM",
+                      "file_format": "cram",
                       "global": true,
                       "type": "data file"
                   },
