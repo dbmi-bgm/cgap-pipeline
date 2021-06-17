@@ -5,27 +5,27 @@
        {
            "workflow_argument_name": "input_bam",
            "uuid": "",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "reference",
            "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "known-sites-indels",
            "uuid": "55ac5044-f927-4df7-afa2-bf713764ee57",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "known-sites-snp",
            "uuid": "8ed35691-0af4-467a-adbc-81eb088549f0",
-           "mount": true
+           "mount": false
        }
     ],
     "config": {
       "instance_type": "t3.small",
-      "ebs_size": "1x",
+      "ebs_size": "2x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",

@@ -5,22 +5,22 @@
        {
            "workflow_argument_name": "fastq_R1",
            "uuid": "",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "fastq_R2",
            "uuid": "",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "reference",
            "uuid": "b24ed5ed-a037-48a0-a938-3fecfb90d0cf",
-           "mount": true
+           "mount": false
        }
     ],
     "config": {
       "instance_type": "c5n.18xlarge",
-      "ebs_size": "5.3x",
+      "ebs_size": "6.3x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",

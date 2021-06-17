@@ -5,22 +5,22 @@
        {
            "workflow_argument_name": "input_vcf",
            "uuid": "",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "unrelated",
            "uuid": "4468e4a2-6c92-4d82-b333-821be68d0a55",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "trio",
            "uuid": "",
-           "mount": true
+           "mount": false
        }
     ],
     "config": {
       "instance_type": "c5.xlarge",
-      "ebs_size": "1.5x",
+      "ebs_size": "2.5x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",

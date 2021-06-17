@@ -5,22 +5,22 @@
        {
            "workflow_argument_name": "input_gvcfs",
            "uuid": [""],
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "reference",
            "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "chromosomes",
            "uuid": "",
-           "mount": true
+           "mount": false
        }
     ],
     "config": {
       "instance_type": "c5n.4xlarge",
-      "ebs_size": "10x",
+      "ebs_size": "11x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",

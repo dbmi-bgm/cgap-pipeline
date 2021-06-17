@@ -5,12 +5,12 @@
        {
            "workflow_argument_name": "input_vcf",
            "uuid": "",
-           "mount": true
+           "mount": false
        }
     ],
     "config": {
       "instance_type": "t3.small",
-      "ebs_size": "6x",
+      "ebs_size": "7x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",

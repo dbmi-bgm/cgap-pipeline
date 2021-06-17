@@ -1,91 +1,93 @@
 {
     "parameters": {
-      "nthreads": 64
+      "nthreads": 72
     },
     "workflow_uuid": "2f997f5f-d334-4c2b-873c-e4392d6b83f5",
     "input_files" : [
        {
            "workflow_argument_name": "input_vcf",
            "uuid": "",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "reference",
            "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "regions",
            "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "vep",
-           "uuid": "ea103486-b65a-4439-9d0b-1186f8e59388"
+           "uuid": "ea103486-b65a-4439-9d0b-1186f8e59388",
+           "mount": false
        },
        {
            "workflow_argument_name": "clinvar",
            "uuid": "7db786d5-13d2-4622-bdd2-99866036b9b9",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "dbnsfp",
            "uuid": "dc02df4c-49ac-4532-b85c-02800941aa44",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "maxent",
-           "uuid": "71a7d16b-8452-4266-ae80-bbede2e305e2"
+           "uuid": "71a7d16b-8452-4266-ae80-bbede2e305e2",
+           "mount": false
        },
        {
            "workflow_argument_name": "spliceai_snv",
            "uuid": "a35e580c-7579-4312-a3a1-66810e6d9366",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "spliceai_indel",
            "uuid": "3b7c0c29-5ee2-47c8-95a8-d28e15d5de47",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "gnomad",
            "uuid": "52c6cbf6-ae94-4c10-ad03-26ed34f74a3e",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "gnomad2",
            "uuid": "dd6f0384-d0b5-47d6-99a8-395c0b72feed",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "CADD_snv",
            "uuid": "672de47f-d058-4dbd-9fc4-3e134cfe71d8",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "CADD_indel",
            "uuid": "b9f123dd-be05-4a14-957a-5e1e5a5ce254",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "phylop100bw",
            "uuid": "af93aecb-6b8e-4c8b-b159-eefb3f9d0ffb",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "phylop30bw",
            "uuid": "f6809af1-f7b9-43c0-882a-16764ccc431d",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "phastc100bw",
            "uuid": "19f03828-175b-4594-ba1a-52ddabcf640d",
-           "mount": true
+           "mount": false
        }
     ],
     "config": {
       "instance_type": "c5n.18xlarge",
-      "ebs_size": "0.25x",
+      "ebs_size": "1.35x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",

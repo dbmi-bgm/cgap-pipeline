@@ -5,22 +5,22 @@
        {
            "workflow_argument_name": "dbSNP_ref_vcf",
            "uuid": "aa542c8e-b31c-4cff-b2d4-aa4037bb913c",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "input_vcf",
            "uuid": "",
-           "mount": true
+           "mount": false
        },
        {
            "workflow_argument_name": "region_file",
            "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28",
-           "mount": true
+           "mount": false
        }
     ],
     "config": {
       "instance_type": "t3.micro",
-      "ebs_size": 10,
+      "ebs_size": "2x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",

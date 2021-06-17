@@ -5,12 +5,12 @@
        {
            "workflow_argument_name": "input_bam",
            "uuid": "",
-           "mount": true
+           "mount": false
        }
     ],
     "config": {
       "instance_type": "c5n.2xlarge",
-      "ebs_size": "2.5x",
+      "ebs_size": "3.5x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",
