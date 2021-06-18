@@ -526,8 +526,8 @@
           "argument_name": "input_gvcf",
           "argument_type": "file",
           "mount": true,
-          "source": "workflow_gatk-CombineGVCFs",
-          "source_argument_name": "combined_gvcf"
+          "source": "workflow_gatk-HaplotypeCaller",
+          "source_argument_name": "gvcf"
         },
         {
           "argument_name": "reference",
