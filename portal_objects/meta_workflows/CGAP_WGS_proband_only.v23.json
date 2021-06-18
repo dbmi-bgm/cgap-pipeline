@@ -826,8 +826,8 @@
           "argument_name": "input_vcf",
           "argument_type": "file",
           "mount": true,
-          "source": "workflow_granite-novoCaller-rck-check",
-          "source_argument_name": "novoCaller_vcf"
+          "source": "workflow_granite-filtering-check",
+          "source_argument_name": "merged_vcf"
         },
         {
           "argument_name": "trio",
