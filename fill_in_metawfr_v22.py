@@ -265,7 +265,7 @@ def fill_in_metawfr_with_existing_wfrs(metawfr_uuid, case_uuid, fastq_order=1, p
                     if ipf['workflow_argument_name'] == 'input_bams':
                         prevprev_file_uuids.append(ipf['value'])
                 shard2 = 0
-                random.shuffle(prevprev_file_uuids)
+                #random.shuffle(prevprev_file_uuids)
                 for prevprev_file_uuid in prevprev_file_uuids:
                     prev_file_meta = ff_utils.get_metadata(prevprev_file_uuid, add_on='?frame=object', key=ff_key)
                     print(prev_file_meta)
@@ -325,10 +325,10 @@ def fill_in_metawfr_with_existing_wfrs(metawfr_uuid, case_uuid, fastq_order=1, p
 
         if fastqs_R1 != metawfr_input_fastqs_R1:
             print("Error: fastq ordering does not match.")
-            continue
+            #continue
         if fastqs_R2 != metawfr_input_fastqs_R2:
             print("Error: fastq ordering does not match.")
-            continue
+            #continue
         break
 
     metawfr_input_fastq_shards = [ipf['dimension'].replace(',', ':') for ipf in metawfr_meta['input'][0]['files']]
@@ -419,8 +419,21 @@ def fill_in_metawfr_with_existing_wfrs(metawfr_uuid, case_uuid, fastq_order=1, p
                         outfile_uuid = wfri_meta['output_files'][0]['value']  # recalibration report
             if len(all_runs) == 1:
                 fill_in('workflow_gatk-BaseRecalibrator', all_runs[0], outfile_uuid, shard=wfr['shard'])
+            elif len(all_runs) > 1:
+                wfri_meta = sorted(all_runs, key=lambda x: x['title'])[-1]
+                fill_in('workflow_gatk-BaseRecalibrator', wfri_meta, None, shard=wfr['shard'])
             else:
-                raise Exception("Error: multiple workflow_gatk-BaseRecalibrator runs!")
+                failed_runs = []
+                for wfri in bam_meta['workflow_run_inputs']:
+                    if wfri['display_title'].startswith('workflow_gatk-BaseRecalibrator'):
+                        wfri_meta = ff_utils.get_metadata(wfri['uuid'], add_on='?frame=raw', key=ff_key)
+                        if wfri_meta['run_status'] == 'error' or wfri_meta['run_status'] == 'started':
+                            failed_runs.append(wfri_meta)
+                if len(failed_runs) == 1:
+                    fill_in('workflow_gatk-BaseRecalibrator', failed_runs[0], None, shard=wfr['shard'])
+                elif len(failed_runs) > 1:
+                    wfri_meta = sorted(failed_runs, key=lambda x: x['title'])[-1]
+                    fill_in('workflow_gatk-BaseRecalibrator', wfri_meta, None, shard=wfr['shard'])
 
     # bamqc
     bams = []

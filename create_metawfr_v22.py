@@ -14,11 +14,93 @@ ff_key = ff_utils.get_authentication_with_server(ff_env='fourfront-cgap')
 case_uuid = '81278096-7c10-4c5a-8ac3-5e3014e83bbb'  # NA12879 on cgap
 
 
+def create_metawfr_from_case_proband_only(metawf_uuid, case_uuid, ff_key, post=False, verbose=False):
+
+    def sort_pedigree(pedigree):
+        sorted_pedigree = sorted(pedigree, key=lambda x: x['relationship'] != 'proband') # make it proband-first
+        sorted_pedigree[1:] = sorted(sorted_pedigree[1:], key=lambda x: x['relationship'] not in ['mother','father']) # parents next
+        return sorted_pedigree
+
+    case_meta = ff_utils.get_metadata(case_uuid, add_on='?frame=raw', key=ff_key)
+    sp_uuid = case_meta['sample_processing']
+    sp_meta = ff_utils.get_metadata(sp_uuid, add_on='?frame=object', key=ff_key)
+    pedigree = sp_meta['samples_pedigree']
+    pedigree = remove_parents_without_sample(pedigree)  # remove no-sample individuals
+    pedigree = sort_pedigree(pedigree)
+    pedigree = pedigree[0:1]
+
+    sample = pedigree[0]
+    sample_acc = sample['sample_accession']
+    sample_meta = ff_utils.get_metadata(sample_acc, add_on='?frame=raw', key=ff_key)
+    fastq_uuids = sample_meta['files']
+    r1_uuids =[]
+    r2_uuids = []
+    j = 0  # second dimension of files
+    for fastq_uuid in fastq_uuids:
+        fastq_meta = ff_utils.get_metadata(fastq_uuid, add_on='?frame=raw', key=ff_key)
+        if fastq_meta['paired_end'] == '1':
+            dimension = str(j)  # dimension string for files
+            r1_uuids.append({'file': fastq_meta['uuid'], 'dimension': dimension})
+            r2_uuids.append({'file': fastq_meta['related_files'][0]['file'], 'dimension': dimension})
+            j += 1
+
+
+    # sample names
+    sample_names = [sample['sample_name']]
+    sample_names_str = json.dumps(sample_names)
+
+    # qc pedigree parameter
+    qc_pedigree_str = json.dumps(pedigree_to_qc_pedigree(pedigree))
+
+    # family size
+    family_size = len(pedigree)
+
+    # create metawfr
+    metawf_meta = ff_utils.get_metadata(metawf_uuid, add_on='?frame=raw', key=ff_key)
+
+    input = [{'argument_name': 'fastqs_R1', 'argument_type': 'file', 'files': r1_uuids},
+             {'argument_name': 'fastqs_R2', 'argument_type': 'file', 'files': r2_uuids},
+             {'argument_name': 'sample_names', 'argument_type': 'parameter', 'value': sample_names_str, 'value_type': 'json'},
+             {'argument_name': 'pedigree', 'argument_type': 'parameter', 'value': qc_pedigree_str, 'value_type': 'json'}]
+
+    metawfr = {'meta_workflow': metawf_uuid,
+               'input': input,
+               'title': 'MetaWorkflowRun %s on case %s' % (metawf_meta['title'], case_meta['accession']),
+               #'name': 'metawf_%s_on_case_%s' % (metawf_meta['accession'], case_meta['accession']),
+               #'name': 'MetaWorkflowRun %s for case %s' % (metawf_meta['title'], case_meta['accession']),
+               'project': case_meta['project'],
+               'institution': case_meta['institution'],
+               'common_fields': {'project': case_meta['project'],
+                                 'institution': case_meta['institution']},
+               'final_status': 'pending',
+               'workflow_runs' : [],
+               'uuid': str(uuid.uuid4())}
+
+    mwf = MetaWorkflow(metawf_meta)
+
+    # get the input structure in magma format
+    metawfr_mgm = MetaWorkflowRun(metawfr).to_json()
+    input_structure = metawfr_mgm['input'][0]['files']
+
+    # create workflow_runs
+    mwfr = mwf.write_run(input_structure)
+    metawfr['workflow_runs'] = mwfr['workflow_runs']
+
+    # post meta-wfr
+    if post:
+        res_post = ff_utils.post_metadata(metawfr, 'MetaWorkflowRun', key=ff_key)
+        if verbose:
+            print(res_post)
+
+    return metawfr
+
+
+
 def create_metawfr_from_case(metawf_uuid, case_uuid, ff_key, post=False, verbose=False):
 
     def sort_pedigree(pedigree):
         sorted_pedigree = sorted(pedigree, key=lambda x: x['relationship'] != 'proband') # make it proband-first
-        sorted_pedigree[1:] = sorted(pedigree[1:], key=lambda x: x['relationship'] not in ['mother','father']) # parents next
+        sorted_pedigree[1:] = sorted(sorted_pedigree[1:], key=lambda x: x['relationship'] not in ['mother','father']) # parents next
         return sorted_pedigree
 
     case_meta = ff_utils.get_metadata(case_uuid, add_on='?frame=raw', key=ff_key)
