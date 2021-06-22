@@ -180,14 +180,12 @@
         {
           "argument_name": "reference_fasta",
           "argument_type": "file",
-          "source_argument_name": "reference_fa",
-          "mount": false
+          "source_argument_name": "reference_fa"
         },
         {
           "argument_name": "reference_md5list",
           "argument_type": "file",
-          "source_argument_name": "reference_md5list",
-          "mount": false
+          "source_argument_name": "reference_md5list"
         }
       ]
     },
@@ -207,7 +205,6 @@
         {
           "argument_name": "input_fastq",
           "argument_type": "file",
-          "mount": true,
           "source_argument_name": "fastq1",
           "source": "workflow_cram2fastq"
         }
@@ -229,7 +226,6 @@
         {
           "argument_name": "input_fastq",
           "argument_type": "file",
-          "mount": true,
           "source_argument_name": "fastq2",
           "source": "workflow_cram2fastq"
         }
@@ -240,7 +236,7 @@
       "workflow": "50e75343-2e00-471d-a667-4acb083287d8",
       "config": {
         "instance_type": "c5n.18xlarge",
-        "ebs_size": "5.3x",
+        "ebs_size": "6.3x",
         "EBS_optimized": true,
         "spot_instance": true,
         "log_bucket": "tibanna-output",
@@ -257,22 +253,19 @@
         {
           "argument_name": "fastq_R1",
           "argument_type": "file",
-          "mount": true,
           "source_argument_name": "fastq1",
           "source": "workflow_cram2fastq"
         },
         {
           "argument_name": "fastq_R2",
           "argument_type": "file",
-          "mount": true,
           "source_argument_name": "fastq2",
           "source": "workflow_cram2fastq"
         },
         {
           "argument_name": "reference",
           "argument_type": "file",
-          "source_argument_name": "reference_bwa",
-          "mount": true
+          "source_argument_name": "reference_bwa"
         }
       ]
     },
@@ -281,7 +274,7 @@
       "workflow": "d554d59b-e709-4c35-a81f-68a0cb3dd38a",
       "config": {
         "instance_type": "c5.2xlarge",
-        "ebs_size": "2.5x",
+        "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
         "log_bucket": "tibanna-output",
@@ -298,7 +291,6 @@
         {
           "argument_name": "input_bam",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_bwa-mem_no_unzip-check",
           "source_argument_name": "raw_bam"
         },
@@ -315,7 +307,7 @@
       "workflow": "4853a03a-8c0c-4624-a45d-c5206a72907b",
       "config": {
         "instance_type": "c5.2xlarge",
-        "ebs_size": "2x",
+        "ebs_size": "3x",
         "EBS_optimized": true,
         "spot_instance": true,
         "log_bucket": "tibanna-output",
@@ -333,7 +325,6 @@
           "argument_name": "input_bams",
           "argument_type": "file",
           "gather": 1,
-          "mount": true,
           "source": "workflow_add-readgroups-check",
           "source_argument_name": "bam_w_readgroups"
         }
@@ -371,7 +362,7 @@
       "workflow": "560f5194-cd3a-4799-9b1a-6a2d2c371c89",
       "config": {
         "instance_type": "m5a.2xlarge",
-        "ebs_size": "2.2x",
+        "ebs_size": "3.2x",
         "EBS_optimized": true,
         "spot_instance": true,
         "log_bucket": "tibanna-output",
@@ -388,7 +379,6 @@
         {
           "argument_name": "input_bam",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_picard-MarkDuplicates-check",
           "source_argument_name": "dupmarked_bam"
         }
@@ -399,7 +389,7 @@
       "workflow": "455b3056-64ca-4a9b-b546-294b01c9ca92",
       "config": {
         "instance_type": "t3.small",
-        "ebs_size": "1x",
+        "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
         "log_bucket": "tibanna-output",
@@ -416,25 +406,21 @@
         {
           "argument_name": "input_bam",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_sort-bam-check",
           "source_argument_name": "sorted_bam"
         },
         {
           "argument_name": "reference",
           "argument_type": "file",
-          "source_argument_name": "reference_fa",
-          "mount": true
+          "source_argument_name": "reference_fa"
         },
         {
           "argument_name": "known-sites-indels",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "known-sites-snp",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         }
       ]
     },
@@ -472,8 +458,7 @@
         {
           "argument_name": "reference",
           "argument_type": "file",
-          "source_argument_name": "reference_fa",
-          "mount": true
+          "source_argument_name": "reference_fa"
         }
       ]
     },
@@ -499,20 +484,17 @@
         {
           "argument_name": "input_bam",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_gatk-ApplyBQSR-check",
           "source_argument_name": "recalibrated_bam"
         },
         {
           "argument_name": "reference",
           "argument_type": "file",
-          "source_argument_name": "reference_fa",
-          "mount": true
+          "source_argument_name": "reference_fa"
         },
         {
           "argument_name": "regions",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "nthreads",
@@ -527,7 +509,7 @@
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
         "instance_type": "c5n.2xlarge",
-        "ebs_size": "2.5x",
+        "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
         "log_bucket": "tibanna-output",
@@ -538,7 +520,6 @@
         {
           "argument_name": "input_bam",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_gatk-ApplyBQSR-check",
           "source_argument_name": "recalibrated_bam"
         },
@@ -555,7 +536,7 @@
       "workflow": "4ff008de-6c9c-4991-879a-5925893ca1b1",
       "config": {
         "instance_type": "c5n.4xlarge",
-        "ebs_size": "1.5x",
+        "ebs_size": "2.5x",
         "EBS_optimized": true,
         "spot_instance": true,
         "log_bucket": "tibanna-output",
@@ -572,25 +553,21 @@
         {
           "argument_name": "input_gvcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_gatk-CombineGVCFs",
           "source_argument_name": "combined_gvcf"
         },
         {
           "argument_name": "reference",
           "argument_type": "file",
-          "source_argument_name": "reference_fa",
-          "mount": true
+          "source_argument_name": "reference_fa"
         },
         {
           "argument_name": "chromosomes",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "known-sites-snp",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         }
       ]
     },
@@ -599,7 +576,7 @@
       "workflow": "1e86fc97-2cc5-4648-ae3b-9b2295c5f012",
       "config": {
         "instance_type": "t3.small",
-        "ebs_size": "6x",
+        "ebs_size": "7x",
         "EBS_optimized": true,
         "spot_instance": true,
         "log_bucket": "tibanna-output",
@@ -616,7 +593,6 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_gatk-GenotypeGVCFs-check",
           "source_argument_name": "vcf"
         }
@@ -627,7 +603,7 @@
       "workflow": "2f997f5f-d334-4c2b-873c-e4392d6b83f5",
       "config": {
         "instance_type": "c5n.18xlarge",
-        "ebs_size": "0.25x",
+        "ebs_size": "1.35x",
         "EBS_optimized": true,
         "spot_instance": true,
         "log_bucket": "tibanna-output",
@@ -644,85 +620,69 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_samplegeno",
           "source_argument_name": "samplegeno_vcf"
         },
         {
           "argument_name": "reference",
           "argument_type": "file",
-          "source_argument_name": "reference_fa",
-          "mount": true
+          "source_argument_name": "reference_fa"
         },
         {
           "argument_name": "regions",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "vep",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "clinvar",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "dbnsfp",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "maxent",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "spliceai_snv",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "spliceai_indel",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "gnomad",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "gnomad2",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "CADD_snv",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "CADD_indel",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "phylop100bw",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "phylop30bw",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "phastc100bw",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "nthreads",
@@ -763,7 +723,7 @@
       "dependencies": ["workflow_peddy"],
       "config": {
         "instance_type": "t3.small",
-        "ebs_size": "1x",
+        "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
         "log_bucket": "tibanna-output",
@@ -774,7 +734,6 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_vep-annot-check",
           "source_argument_name": "annotated_vcf"
         },
@@ -812,7 +771,7 @@
       "workflow": "77b36194-7f22-41b0-a4c9-12d0682501ef",
       "config": {
         "instance_type": "t3.medium",
-        "ebs_size": "9x",
+        "ebs_size": "10x",
         "EBS_optimized": true,
         "spot_instance": true,
         "log_bucket": "tibanna-output",
@@ -829,14 +788,12 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_vep-annot-check",
           "source_argument_name": "annotated_vcf"
         },
         {
           "argument_name": "genes",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "aftag",
@@ -855,7 +812,7 @@
       "workflow": "8fc79178-a81e-4da1-8cfd-121d4193e12c",
       "config": {
         "instance_type": "t3.small",
-        "ebs_size": "2.5x",
+        "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
         "log_bucket": "tibanna-output",
@@ -872,7 +829,6 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_granite-novoCaller-rck-check",
           "source_argument_name": "novoCaller_vcf"
         },
@@ -888,7 +844,7 @@
       "workflow": "7f1a001e-cc1d-442d-9b32-857a6356a85c",
       "config": {
         "instance_type": "t3.micro",
-        "ebs_size": 10,
+        "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
         "log_bucket": "tibanna-output",
@@ -905,20 +861,17 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_granite-comHet-check",
           "source_argument_name": "comHet_vcf"
         },
         {
           "argument_name": "dbSNP_ref_vcf",
           "argument_type": "file",
-          "mount": true,
           "source_argument_name": "dbSNP_full_ref_vcf"
         },
         {
           "argument_name": "region_file",
           "argument_type": "file",
-          "mount": true,
           "source_argument_name": "regions"
         }
       ]
@@ -928,7 +881,7 @@
       "workflow": "66434019-65c5-498f-a986-9e791eeff0ad",
       "config": {
         "instance_type": "t3.micro",
-        "ebs_size": 10,
+        "ebs_size": "3x",
         "EBS_optimized": true,
         "spot_instance": true,
         "log_bucket": "tibanna-output",
@@ -945,14 +898,12 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_dbSNP_ID_fixer-check",
           "source_argument_name": "vcf"
         },
         {
           "argument_name": "chainfile",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         }
       ]
     },
@@ -961,7 +912,7 @@
       "workflow": "a147d85c-07c7-4e01-82bb-73b381ebbf11",
       "config": {
         "instance_type": "r5a.4xlarge",
-        "ebs_size": 30,
+        "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": false,
         "log_bucket": "tibanna-output",
@@ -972,21 +923,18 @@
         {
           "argument_name": "input_bams",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_gatk-ApplyBQSR-check",
           "source_argument_name": "recalibrated_bam"
         },
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_hg19lo_hgvsg-check",
           "source_argument_name": "vcf"
         },
         {
           "argument_name": "ref",
           "argument_type": "file",
-          "mount": true,
           "source_argument_name": "reference_fa"
         },
         {
@@ -1002,7 +950,7 @@
       "workflow": "e9a20462-5b4f-4105-8835-7f669629d88d",
       "config": {
         "instance_type": "t3.small",
-        "ebs_size": "1x",
+        "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
         "log_bucket": "tibanna-output",
@@ -1016,7 +964,6 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_hg19lo_hgvsg-check",
           "source_argument_name": "vcf"
         },
