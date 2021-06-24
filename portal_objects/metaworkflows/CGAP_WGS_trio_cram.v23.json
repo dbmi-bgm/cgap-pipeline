@@ -7,7 +7,7 @@
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "input": [
     {
-      "argument_name": "crams_proband_first",
+      "argument_name": "crams",
       "argument_type": "file"
     },
     {
@@ -37,7 +37,7 @@
       "files": [{"file": "1936f246-22e1-45dc-bb5c-9cfd55537fe7"}]
     },
     {
-      "argument_name": "reference_md5list",
+      "argument_name": "reference_md5_list",
       "argument_type": "file",
       "files": [{"file": "db00cc5a-d7bc-424c-8560-e53827a52db9"}]
     },
@@ -188,7 +188,7 @@
           "argument_type": "file",
           "mount": false,
           "scatter": 2,
-          "source_argument_name": "crams_proband_first"
+          "source_argument_name": "crams"
         },
         {
           "argument_name": "reference_fasta",
@@ -196,9 +196,9 @@
           "source_argument_name": "reference_fa"
         },
         {
-          "argument_name": "reference_md5list",
+          "argument_name": "reference_md5_list",
           "argument_type": "file",
-          "source_argument_name": "reference_md5list"
+          "source_argument_name": "reference_md5_list"
         }
       ]
     },
