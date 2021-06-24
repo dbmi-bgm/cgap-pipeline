@@ -94,7 +94,8 @@ RUN wget https://zlib.net/pigz/pigz-2.6.tar.gz && \
     rm -rf pigz-2.6.tar.gz && \
     cd pigz-2.6 && \
     make && \
-    cd ..
+    cd .. && \
+    ln -s pigz-2.6 pigz
 
 # pbgzip
 RUN git clone https://github.com/nh13/pbgzip && \
@@ -260,7 +261,7 @@ ENV PATH=/usr/local/bin/samtools/:$PATH
 ENV PATH=/usr/local/bin/bcftools/:$PATH
 ENV PATH=/usr/local/bin/bwa/:$PATH
 ENV PATH=/usr/local/bin/cgap-scripts/:$PATH
-ENV PATH=/usr/local/bin/pigz-2.4/:$PATH
+ENV PATH=/usr/local/bin/pigz/:$PATH
 ENV PATH=/usr/local/bin/ensembl-vep/:$PATH
 
 # supporting UTF-8
