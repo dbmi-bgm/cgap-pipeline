@@ -19,6 +19,10 @@
       "argument_type": "parameter"
     },
     {
+      "argument_name": "bamsnap_titles",
+      "argument_type": "parameter"
+    },
+    {
       "argument_name": "pedigree",
       "argument_type": "parameter"
     },
@@ -1445,6 +1449,11 @@
           "argument_type": "parameter",
           "value": "16",
           "value_type": "integer"
+        },
+        {
+          "argument_name": "titles",
+          "source_argument_name": "bamsnap_titles",
+          "argument_type": "parameter"
         }
       ]
     },
