@@ -19,6 +19,10 @@
       "argument_type": "parameter"
     },
     {
+      "argument_name": "bamsnap_titles",
+      "argument_type": "parameter"
+    },
+    {
       "argument_name": "pedigree",
       "argument_type": "parameter"
     },
@@ -164,7 +168,7 @@
       "workflow": "49e96b51-ed6c-4418-a693-d0e9f79adfa5",
       "config": {
         "instance_type": "t3.small",
-        "ebs_size": 10,
+        "ebs_size": "1.1x",
         "EBS_optimized": true,
         "spot_instance": false,
         "log_bucket": "tibanna-output",
@@ -186,7 +190,7 @@
       "workflow": "49e96b51-ed6c-4418-a693-d0e9f79adfa5",
       "config": {
         "instance_type": "t3.small",
-        "ebs_size": 10,
+        "ebs_size": "1.1x",
         "EBS_optimized": true,
         "spot_instance": false,
         "log_bucket": "tibanna-output",
@@ -1083,7 +1087,7 @@
       "workflow": "a147d85c-07c7-4e01-82bb-73b381ebbf11",
       "config": {
         "instance_type": "r5a.4xlarge",
-        "ebs_size": 30,
+        "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": false,
         "log_bucket": "tibanna-output",
@@ -1117,6 +1121,11 @@
           "argument_type": "parameter",
           "value": "16",
           "value_type": "integer"
+        },
+        {
+          "argument_name": "titles",
+          "source_argument_name": "bamsnap_titles",
+          "argument_type": "parameter"
         }
       ]
     },
