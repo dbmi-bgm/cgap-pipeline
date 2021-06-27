@@ -1229,7 +1229,8 @@
           "argument_name": "input_bams",
           "argument_type": "file",
           "source": "workflow_gatk-ApplyBQSR-check",
-          "source_argument_name": "recalibrated_bam"
+          "source_argument_name": "recalibrated_bam",
+          "gather": 1
         },
         {
           "argument_name": "input_vcf",
