@@ -9,7 +9,7 @@ For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
 ### Updating portal objects
 The following command patches/posts all portal objects including softwares, file formats and workflows
 ```
-python post_patch_to_portal.py [--ff-env=<env_name>] [--skip-software] [--skip-file-format] [--skip-workflow] [--skip-metaworkflow]
+python post_patch_to_portal.py [--ff-env=<env_name>] [--skip-software] [--skip-file-format] [--skip-workflow] [--skip-metaworkflow] [--del-prev-version]
 # env_name : fourfront-cgapwolf (default), fourfront-cgap
 ```
 
