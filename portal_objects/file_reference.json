@@ -9,22 +9,22 @@
     "extra_files": [
         {
             "file_format": "ann",
-            "status": "uploaded"
+            "status": "uploading"
         },
         {
             "file_format": "amb",
-            "status": "uploaded"
+            "status": "uploading"
         },
         {
             "file_format": "sa",
-            "status": "uploaded"
+            "status": "uploading"
         },
         {
             "file_format": "pac",
-            "status": "uploaded"
+            "status": "uploading"
         }
     ],
-    "status": "uploaded"
+    "status": "uploading"
   },
   {
     "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
@@ -36,14 +36,14 @@
     "extra_files": [
         {
             "file_format": "dict",
-            "status": "uploaded"
+            "status": "uploading"
         },
         {
             "file_format": "fa_fai",
-            "status": "uploaded"
+            "status": "uploading"
         }
     ],
-    "status": "uploaded"
+    "status": "uploading"
   },
   {
     "uuid": "55ac5044-f927-4df7-afa2-bf713764ee57",
@@ -55,10 +55,10 @@
     "extra_files": [
         {
             "file_format": "vcf_idx",
-            "status": "uploaded"
+            "status": "uploading"
         }
     ],
-    "status": "uploaded"
+    "status": "uploading"
   },
   {
     "uuid": "8ed35691-0af4-467a-adbc-81eb088549f0",
@@ -70,10 +70,10 @@
     "extra_files": [
         {
             "file_format": "vcf_gz_tbi",
-            "status": "uploaded"
+            "status": "uploading"
         }
     ],
-    "status": "uploaded"
+    "status": "uploading"
   },
   {
     "uuid": "3f7161f3-1698-4665-a59b-20c3009a3998",
@@ -85,10 +85,10 @@
     "extra_files": [
         {
             "file_format": "vcf_idx",
-            "status": "uploaded"
+            "status": "uploading"
         }
     ],
-    "status": "uploaded"
+    "status": "uploading"
   },
   {
     "uuid": "5ca55bd5-4050-440e-b060-9441da57060e",
@@ -100,10 +100,10 @@
     "extra_files": [
         {
             "file_format": "vcf_idx",
-            "status": "uploaded"
+            "status": "uploading"
         }
     ],
-    "status": "uploaded"
+    "status": "uploading"
   },
   {
     "uuid": "f0684716-6c8c-4197-b9c4-a1e287d834a5",
@@ -115,10 +115,10 @@
     "extra_files": [
         {
             "file_format": "vcf_idx",
-            "status": "uploaded"
+            "status": "uploading"
         }
     ],
-    "status": "uploaded"
+    "status": "uploading"
   },
   {
     "uuid": "a1d504ee-a313-4064-b6ae-65fed9738980",
@@ -128,7 +128,7 @@
     "description": "hg38 chromosomes Yfirst",
     "aliases": ["cgap:hg38-chromosomes-Yfirst"],
     "extra_files": [],
-    "status": "uploaded"
+    "status": "uploading"
   },
   {
     "uuid": "db00cc5a-d7bc-424c-8560-e53827a52db9",
@@ -138,7 +138,7 @@
     "description": "md5 list of hg38",
     "aliases": ["cgap:hg38-md5-list"],
     "extra_files": [],
-    "status": "uploaded"
+    "status": "uploading"
   },
   {
     "uuid": "297c872a-5b6b-4fc3-83d3-f4a853f8805c",
@@ -147,7 +147,7 @@
     "file_format": "chain",
     "description": "chain file for coordinates liftover, hg38 to hg19",
     "aliases": ["cgap:hg38-to-hg19-chain"],
-    "status": "uploaded"
+    "status": "uploading"
   },
   {
     "uuid": "ea103486-b65a-4439-9d0b-1186f8e59388",
@@ -175,10 +175,10 @@
     "extra_files": [
         {
             "file_format": "vcf_gz_tbi",
-            "status": "uploaded"
+            "status": "uploading"
         }
     ],
-    "status": "uploaded",
+    "status": "uploading",
     "file_version": "20201101"
   },
   {
@@ -191,10 +191,10 @@
     "extra_files": [
         {
             "file_format": "vcf_gz_tbi",
-            "status": "uploaded"
+            "status": "uploading"
         }
     ],
-    "status": "uploaded",
+    "status": "uploading",
     "file_version": "3.1"
   },
   {
@@ -207,10 +207,10 @@
     "extra_files": [
         {
             "file_format": "vcf_gz_tbi",
-            "status": "uploaded"
+            "status": "uploading"
         }
     ],
-    "status": "uploaded",
+    "status": "uploading",
     "file_version": "1.3"
   },
   {
@@ -223,10 +223,10 @@
     "extra_files": [
         {
             "file_format": "vcf_gz_tbi",
-            "status": "uploaded"
+            "status": "uploading"
         }
     ],
-    "status": "uploaded",
+    "status": "uploading",
     "file_version": "1.3"
   },
   {
@@ -239,14 +239,14 @@
     "extra_files": [
         {
             "file_format": "dbnsfp_gz_tbi",
-            "status": "uploaded"
+            "status": "uploading"
         },
         {
           "file_format": "dbnsfp_readme_txt",
-          "status": "uploaded"
+          "status": "uploading"
         }
     ],
-    "status": "uploaded",
+    "status": "uploading",
     "file_version": "4.1a"
   },
   {
@@ -256,7 +256,7 @@
     "file_format": "tar_gz",
     "description": "datasource for MaxEnt v20040421",
     "aliases": ["cgap:maxent-20040421"],
-    "status": "uploaded",
+    "status": "uploading",
     "file_version": "20040421"
   },
   {
@@ -267,7 +267,7 @@
     "description": "list of genes",
     "aliases": ["cgap:genes-0.4.6"],
     "extra_files": [],
-    "status": "uploaded",
+    "status": "uploading",
     "file_version": "0.4.6"
   },
   {
@@ -280,10 +280,10 @@
     "extra_files": [
         {
             "file_format": "vcf_gz_tbi",
-            "status": "uploaded"
+            "status": "uploading"
         }
     ],
-    "status": "uploaded",
+    "status": "uploading",
     "file_version": "151"
   },
   {
@@ -379,5 +379,15 @@
     ],
     "status": "uploading",
     "file_version": "v1"
+  },
+  {
+    "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "txt",
+    "description": "hg38 300 regions",
+    "aliases": ["cgap:hg38_regionfile300"],
+    "extra_files": [],
+    "status": "uploading"
   }
 ]
