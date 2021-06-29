@@ -1,6 +1,6 @@
 import os
 import json
-from dcicutils import ff_utils
+from dcicutils import ff_utils, s3_utils
 import argparse
 
 
@@ -8,7 +8,12 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
          skip_workflow=False, skip_metaworkflow=False, skip_file_reference=False,
          del_prev_version=False):
     """post / patch contents from portal_objects to the portal"""
-    keycgap = ff_utils.get_authentication_with_server(ff_env=ff_env)
+
+    if os.environ.get('GLOBAL_BUCKET_ENV', ''):  # new cgap account
+        s3 = s3_utils.s3Utils(env=ff_env)
+        keycgap = s3.get_access_keys('access_key_tibanna')
+    else:
+        keycgap = ff_utils.get_authentication_with_server(ff_env=ff_env)
 
     # Software
     if not skip_software:
