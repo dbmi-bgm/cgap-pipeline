@@ -6,7 +6,7 @@ import argparse
 
 def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=False,
          skip_workflow=False, skip_metaworkflow=False, skip_file_reference=False,
-         del_prev_version=False):
+         del_prev_version=False, ignore_key_conflict=False):
     """post / patch contents from portal_objects to the portal"""
 
     if os.environ.get('GLOBAL_BUCKET_ENV', ''):  # new cgap account
@@ -38,8 +38,14 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
             print("  processing uuid %s" % dd['uuid'])
             try:
                 ff_utils.post_metadata(dd, 'FileFormat', key=keycgap)
-            except:
-                ff_utils.patch_metadata(dd, dd['uuid'], key=keycgap)
+            except Exception as e:
+                if 'Keys conflict' in str(e):
+                    if ignore_key_conflict:
+                        pass
+                    else:
+                        raise(e)
+                else:
+                    ff_utils.patch_metadata(dd, dd['uuid'], key=keycgap)
 
     # Workflows
     if not skip_workflow:
@@ -68,6 +74,7 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
 
     # File reference
     if not skip_file_reference:
+        print("Processing file reference...")
         with open('portal_objects/file_reference.json') as f:
             d = json.load(f)
 
@@ -103,8 +110,9 @@ if __name__ == "__main__":
     parser.add_argument('--skip-metaworkflow', action='store_true')
     parser.add_argument('--skip-file-reference', action='store_true')
     parser.add_argument('--del-prev-version', action='store_true')
+    parser.add_argument('--ignore-key-conflict', action='store_true')
     args = parser.parse_args()
     main(ff_env=args.ff_env, skip_software=args.skip_software,
          skip_file_format=args.skip_file_format, skip_workflow=args.skip_workflow,
          skip_metaworkflow=args.skip_metaworkflow, skip_file_reference=args.skip_file_reference,
-         del_prev_version=args.del_prev_version,)
+         del_prev_version=args.del_prev_version, ignore_key_conflict=args.ignore_key_conflict)
