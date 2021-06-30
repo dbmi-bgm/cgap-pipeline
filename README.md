@@ -13,6 +13,7 @@ python post_patch_to_portal.py [--ff-env=<env_name>] [--del-prev-version]
                                [--skip-software]
                                [--skip-file-format] [--skip-file-reference]
                                [--skip-workflow] [--skip-metaworkflow]
+                               [--ugrp-unrelated] [--ignore-key-conflict]
 # env_name : fourfront-cgapwolf (default), fourfront-cgap
 ```
 
