@@ -11,7 +11,7 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
 
     if os.environ.get('GLOBAL_BUCKET_ENV', ''):  # new cgap account
         s3 = s3_utils.s3Utils(env=ff_env)
-        keycgap = s3.get_access_keys('access_key_tibanna')
+        keycgap = s3.get_access_keys('access_key_admin')
     else:
         keycgap = ff_utils.get_authentication_with_server(ff_env=ff_env)
 
