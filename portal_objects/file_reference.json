@@ -389,5 +389,21 @@
     "aliases": ["cgap:hg38_regionfile300"],
     "extra_files": [],
     "status": "uploading"
+  },
+  {
+    "uuid": "fcd6a543-fe49-4d32-b569-1d63db7176d3",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "file_format": "rck_tar",
+    "description": "archive of 20 unrelated rck.gz files from UGRP, MQ = 0 and BQ = 0",
+    "aliases": ["cgap:novoCaller_unrelated_rcks_ugrp"],
+    "extra_files": [
+        {
+            "file_format": "rck_tar_index",
+            "status": "uploading"
+        }
+    ],
+    "status": "uploading",
+    "file_version": "v1"
   }
 ]
