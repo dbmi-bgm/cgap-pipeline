@@ -20,7 +20,7 @@ tests_requires = [
 
 setup(
     name='cgap-pipeline-utils',
-    version=open('VERSION').readlines()[-1].replace('v', '').strip(),
+    version=open('VERSION').readlines()[-1].replace('v', '').strip() + '.0', # VERSION.release
     description = 'Collection of utilities for cgap-pipeline',
     long_description = long_description,
     long_description_content_type = 'text/markdown',
