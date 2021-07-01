@@ -112,7 +112,8 @@ fastqs_dict = {
 def check_lines(metawfr_uuid, ff_key, steps=steps_dict, fastqs=fastqs_dict):
     """
     """
-    print('### ' + metawfr_uuid + '\n')
+    print('Meta Workflow:')
+    print(' -> ' + metawfr_uuid + '\n')
 
     # Get meta-workflow-run and create MetaWorkflowRun object
     run_json = ff_utils.get_metadata(metawfr_uuid, add_on='?frame=raw&datastore=database', key=ff_key)
@@ -133,11 +134,14 @@ def check_lines(metawfr_uuid, ff_key, steps=steps_dict, fastqs=fastqs_dict):
                         break
                     #end if
                 #end for
-                print(run_obj.shard_name + ': ' + str(count))
+                print('Shard:')
+                print(' -> ' + run_obj.shard_name + ', ' + str(count))
 
                 # Get input file to match from jobid
+                print('File/s to match:')
                 ffwr_obj = wfrutils.FFWfrUtils(env='env')
                 ffwr_obj._ff_key = ff_key
+                file_match = True
                 for file in ffwr_obj.wfr_metadata(run_obj.jobid)['input_files']:
                     if file['workflow_argument_name'] in fastqs[run_obj.name]['input_match']:
                         input_uuid = file['value']['uuid']
@@ -145,11 +149,12 @@ def check_lines(metawfr_uuid, ff_key, steps=steps_dict, fastqs=fastqs_dict):
                         match_count = int(get_count_fastqc(qc_key, input_uuid, ff_key))
                         if not count == match_count:
                             is_match = False
+                            file_match = False
                         #end if
-                        print(file['workflow_argument_name'] + ': ' + str(match_count))
+                        print(' -> ' + file['workflow_argument_name'] + ', ' + str(match_count))
                     #end if
                 #end for
-                print('Matching: ' + str(count == match_count) + '\n')
+                print('Matching: ' + str(file_match) + '\n')
             else:
                 print('Missing: ' + run_obj.name + '\n')
                 print('Completed: False\n')
@@ -172,9 +177,11 @@ def check_lines(metawfr_uuid, ff_key, steps=steps_dict, fastqs=fastqs_dict):
                         break
                     #end if
                 #end for
-                print(run_obj.shard_name + ': ' + str(count))
+                print('Shard:')
+                print(' -> ' + run_obj.shard_name + ', ' + str(count))
 
                 # Get dependencies count
+                print('Shard/s to match (sum):')
                 for shard_name in run_obj.dependencies:
                     if shard_name.split(':')[0] == steps[run_obj.name]['dependency']:
                         run_obj_ = metawflrun_obj.runs[shard_name]
@@ -182,11 +189,12 @@ def check_lines(metawfr_uuid, ff_key, steps=steps_dict, fastqs=fastqs_dict):
                             if output['argument_name'] == steps[run_obj.name]['output_match']:
                                 output_uuid = output['file']
                                 qc_key = steps[run_obj.name]['key_match']
-                                total_count += int(get_count_qc(qc_key, output_uuid, ff_key))
+                                count_ = int(get_count_qc(qc_key, output_uuid, ff_key))
+                                total_count += count_
                                 break
                             #end if
                         #end for
-                        print(shard_name + ': ' + str(total_count))
+                        print(' -> ' + shard_name + ', ' + str(count_))
                     #end if
                 #end for
                 print('Matching: ' + str(count == total_count) + '\n')
