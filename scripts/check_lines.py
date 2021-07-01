@@ -15,6 +15,7 @@
 import sys, os
 from magma_ff.metawflrun import MetaWorkflowRun
 from magma_ff import wfrutils
+from dcicutils import ff_utils
 
 ################################################
 #   Variables
