@@ -1,0 +1,2 @@
+dcicutils
+magma-suite

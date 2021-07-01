@@ -1,2 +1,10 @@
-.DS_Store
 __pycache__
+*egg-info*
+.DS_Store
+.coverage
+build
+dist
+.eggs
+_build
+_static
+_templates
