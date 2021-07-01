@@ -38,6 +38,6 @@ setup(
     install_requires=install_requires,
     setup_requires=install_requires,
     tests_require=tests_requires,
-    python_requires = '>=3.6',
+    python_requires = '>=3.6, <3.8',
     license = 'MIT'
 )
