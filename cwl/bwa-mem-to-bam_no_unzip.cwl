@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v23
+    dockerPull: cgap/cgap:v24
 
 baseCommand: [bwa-mem-to-bam_no_unzip.sh]
 
@@ -36,6 +36,7 @@ inputs:
       - ^.amb
       - ^.pac
       - ^.sa
+      - ^.alt
     doc: expect the path to the bwt file
 
   - id: outdir

@@ -21,6 +21,7 @@ inputs:
       - ^.amb
       - ^.pac
       - ^.sa
+      - ^.alt
     doc: expect the path to the bwt file
 
   - id: outdir

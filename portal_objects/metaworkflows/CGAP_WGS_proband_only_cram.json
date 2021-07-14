@@ -1,10 +1,12 @@
 {
   "name": "WGS_proband_only_cram",
-  "title": "WGS Proband-only Cram V23",
-  "version": "v23",
-  "uuid": "30531c43-818e-48c4-b720-6dab38d5a421",
+  "title": "WGS Proband-only Cram V24",
+  "version": "v24",
+  "uuid": "ca47e1f7-abf7-4a0b-930a-b4e52d6b9a06",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "previous_version": ["30531c43-818e-48c4-b720-6dab38d5a421"],
+  "version_upgrade_log": "Updated reference file for bwa, includes alt index now",
   "input": [
     {
       "argument_name": "crams",
@@ -25,7 +27,7 @@
     {
       "argument_name": "reference_bwa",
       "argument_type": "file",
-      "files": [{"file": "b24ed5ed-a037-48a0-a938-3fecfb90d0cf"}]
+      "files": [{"file": "e91a59c0-c546-4bea-a407-df6ab5552f13"}]
     },
     {
       "argument_name": "reference_fa",
@@ -234,7 +236,7 @@
     },
     {
       "name": "workflow_bwa-mem_no_unzip-check",
-      "workflow": "50e75343-2e00-471d-a667-4acb083287d8",
+      "workflow": "aa490a0f-e6a7-4b97-9c91-4e15b5896423",
       "config": {
         "instance_type": "c5n.18xlarge",
         "ebs_size": "6.3x",

@@ -1,11 +1,11 @@
 [
   {
-    "uuid": "b24ed5ed-a037-48a0-a938-3fecfb90d0cf",
+    "uuid": "e91a59c0-c546-4bea-a407-df6ab5552f13",
     "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
     "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
     "file_format": "bwt",
-    "description": "hg38 bwa genome index for CGAP, untarred, uncompressed",
-    "aliases": ["cgap:hg38-bwt"],
+    "description": "hg38 bwa genome index, include alt index",
+    "aliases": ["cgap:hg38-bwt-alt"],
     "extra_files": [
         {
             "file_format": "ann",
@@ -21,6 +21,10 @@
         },
         {
             "file_format": "pac",
+            "status": "uploading"
+        },
+        {
+            "file_format": "alt",
             "status": "uploading"
         }
     ],

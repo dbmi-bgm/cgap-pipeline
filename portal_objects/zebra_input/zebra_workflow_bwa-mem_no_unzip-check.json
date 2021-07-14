@@ -1,6 +1,6 @@
 {
     "parameters": {},
-    "workflow_uuid": "50e75343-2e00-471d-a667-4acb083287d8",
+    "workflow_uuid": "aa490a0f-e6a7-4b97-9c91-4e15b5896423",
     "input_files" : [
        {
            "workflow_argument_name": "fastq_R1",
@@ -14,7 +14,7 @@
        },
        {
            "workflow_argument_name": "reference",
-           "uuid": "b24ed5ed-a037-48a0-a938-3fecfb90d0cf",
+           "uuid": "e91a59c0-c546-4bea-a407-df6ab5552f13",
            "mount": true
        }
     ],
