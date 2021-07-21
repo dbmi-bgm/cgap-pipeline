@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v23
+    dockerPull: cgap/cgap:v24
 
 baseCommand: [python3, /usr/local/bin/liftover_hg19.py]
 
