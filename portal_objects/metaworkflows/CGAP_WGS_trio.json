@@ -1509,5 +1509,7 @@
         }
       ]
     }
-  ]
+  ],
+  "previous_version": ["475a0518-9b72-4dc1-b049-070f366ab821"],
+  "version_upgrade_log": "modified dbNSFP plugin for VEP to allow for annotation of non-missense variants, replaced GNU Parallel with xargs to improve error detection, turned off mounting."
 }
