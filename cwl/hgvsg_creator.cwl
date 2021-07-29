@@ -21,7 +21,7 @@ inputs:
       prefix: -i
     doc: expect the path to the sample vcf gz file
 
-  - id: output
+  - id: outputfile
     default: 'hgvsg.vcf'
     type: string
     inputBinding:
@@ -33,7 +33,7 @@ outputs:
   - id: output
     type: File
     outputBinding:
-      glob: $(inputs.output + ".gz")
+      glob: $(inputs.outputfile + ".gz")
     secondaryFiles:
       - .tbi
 

@@ -38,6 +38,7 @@ inputs:
 
   - id: nthreads
     type: int
+    default: 2
     inputBinding:
       position: 4
     doc: number of threads used to run parallel
