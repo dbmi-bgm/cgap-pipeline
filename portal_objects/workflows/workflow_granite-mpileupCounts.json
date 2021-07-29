@@ -1,7 +1,7 @@
 {
-  "accession": "GAPFKJG7JVC2",
+  "accession": "GAPFKJF3DVCP",
   "app_name": "workflow_granite-mpileupCounts",
-  "app_version": "v22",
+  "app_version": "v23",
   "arguments": [
       {
           "argument_format": "bam",
@@ -40,15 +40,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v22/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v23/cwl",
   "cwl_main_filename": "granite-mpileupCounts.cwl",
   "cwl_pointer": "",
   "description": "Run granite mpileupCounts on bam input file. Produce a rck.gz file",
-  "docker_image_name": "cgap/cgap:v22",
+  "docker_image_name": "cgap/cgap:v23",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-mpileupCounts_v22",
-  "aliases": ["cgap:workflow_granite-mpileupCounts_v22"],
+  "name": "workflow_granite-mpileupCounts_v23",
+  "aliases": ["cgap:workflow_granite-mpileupCounts_v23"],
   "steps": [
       {
           "inputs": [
@@ -139,7 +139,7 @@
                   "Run granite mpileupCounts"
               ],
               "software_used": [
-                 "/softwares/071647ab-d344-4489-8a6b-7d911908ed2b"
+                 "/softwares/aa7c1c7d-8533-4ad7-bfe1-7ea40e86bb52"
               ]
           },
           "name": "granite",
@@ -162,7 +162,7 @@
       }
   ],
   "title": "Run granite mpileupCounts",
-  "uuid": "7d79eb1a-e784-43e8-b902-5f99ccecde0f",
-  "previous_version": ["ee996546-e768-4116-804f-79fd3900a9fe"],
-  "version_upgrade_log": "Updated granite version but no expected difference"
+  "uuid": "620671e7-b21a-4c48-aa90-b5beb3283d64",
+  "previous_version": ["7d79eb1a-e784-43e8-b902-5f99ccecde0f"],
+  "version_upgrade_log": "Updated granite version, novoCaller expect proband first now"
 }

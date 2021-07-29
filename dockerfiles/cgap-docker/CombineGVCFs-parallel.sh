@@ -18,11 +18,14 @@ command="gatk CombineGVCFs -L {} -O ${directory}out.{}.g.vcf -R $reference"
 # adding files to combine
 for arg in $@;
   do
-    command+=" -V $arg"
+    #command+=" -V $arg"
+    command+=" -V $arg" || exit 1
   done
 
 # running command
-cat $chromosomefile | parallel --halt 2 --jobs $nthreads $command || exit 1
+#cat $chromosomefile | parallel --halt 2 --jobs $nthreads $command || exit 1
+cat $chromosomefile | xargs -P $nthreads -i bash -c "$command" || exit 1
+
 
 # merging the results
 array=(${directory}*g.vcf)

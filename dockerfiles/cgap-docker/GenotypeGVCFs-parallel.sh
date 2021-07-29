@@ -17,7 +17,9 @@ mkdir -p $directory
 command="gatk --java-options \"-Xmx4g\" GenotypeGVCFs -V $input_gvcf -R $reference --dbsnp $dbsnp -verbosity INFO -L {} -O ${directory}out.{}.vcf --annotations-to-exclude ExcessHet"
 
 # running command
-cat $chromosomefile | parallel --halt 2 --jobs $nthreads $command || exit 1
+#cat $chromosomefile | parallel --halt 2 --jobs $nthreads $command || exit 1
+cat $chromosomefile | xargs -P $nthreads -i bash -c "$command" || exit 1
+
 
 # merging the results
 array=(${directory}*.vcf)

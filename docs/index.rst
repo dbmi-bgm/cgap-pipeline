@@ -2,7 +2,7 @@
 Overview
 ========
 
-This is a documentation for CGAP pipelines ``v22`` (https://github.com/dbmi-bgm/cgap-pipeline/tree/v22)
+This is a documentation for CGAP pipelines ``v23`` (https://github.com/dbmi-bgm/cgap-pipeline/tree/v23)
 
 Contents
 ########
@@ -20,3 +20,4 @@ Contents
    wgs
    qc
    news
+   utils

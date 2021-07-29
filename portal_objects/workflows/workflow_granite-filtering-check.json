@@ -1,7 +1,7 @@
 {
-  "accession": "GAPK43R7PKJ8",
+  "accession": "GAPK43RH92D8",
   "app_name": "workflow_granite-filtering-check",
-  "app_version": "v22",
+  "app_version": "v23",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -59,15 +59,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["granite-geneList.cwl", "granite-whiteList.cwl", "granite-cleanVCF.cwl", "granite-blackList.cwl", "merge-sort-vcf.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v22/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v23/cwl",
   "cwl_main_filename": "workflow_granite-filtering_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Filter and clean the input vcf using granite (geneList, whiteList, cleanVCF, blackList). An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v22",
+  "docker_image_name": "cgap/cgap:v23",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-filtering-check_v22",
-  "aliases": ["cgap:workflow_granite-filtering-check_v22"],
+  "name": "workflow_granite-filtering-check_v23",
+  "aliases": ["cgap:workflow_granite-filtering-check_v23"],
   "steps": [
       {
           "inputs": [
@@ -185,7 +185,7 @@
                   "Run granite geneList, whiteList, cleanVCF, blackList"
               ],
               "software_used": [
-                 "/softwares/071647ab-d344-4489-8a6b-7d911908ed2b"
+                 "/softwares/aa7c1c7d-8533-4ad7-bfe1-7ea40e86bb52"
               ]
           },
           "name": "granite",
@@ -252,7 +252,7 @@
       }
   ],
   "title": "Run granite to filter and clean input vcf (geneList, whiteList, cleanVCF, blackList) plus output integrity-check",
-  "uuid": "4a78b81f-3b1b-46d3-8f68-3c28229962bd",
-  "previous_version": ["cc82b0c5-680e-4d80-a01a-417cf7f4cb96"],
-  "version_upgrade_log": "Updated granite version but no expected difference"
+  "uuid": "77b36194-7f22-41b0-a4c9-12d0682501ef",
+  "previous_version": ["4a78b81f-3b1b-46d3-8f68-3c28229962bd"],
+  "version_upgrade_log": "Updated granite version, novoCaller expect proband first now"
 }

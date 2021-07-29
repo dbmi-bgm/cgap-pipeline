@@ -3,7 +3,7 @@
       "pedigree": "",
       "family": ""
     },
-    "workflow_uuid": "d03e23cd-9875-43b5-b596-f8b080c5545e",
+    "workflow_uuid": "dc98d286-dbde-436b-8fca-3fa46f33f150",
     "input_files" : [
        {
            "workflow_argument_name": "input_vcf",

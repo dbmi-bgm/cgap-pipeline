@@ -114,9 +114,9 @@
             "filter"
         ],
         "source_url": "https://github.com/dbmi-bgm/granite",
-        "title": "granite_0.1.11",
-        "uuid": "071647ab-d344-4489-8a6b-7d911908ed2b",
-        "commit": "0.1.11"
+        "title": "granite_0.1.12",
+        "uuid": "aa7c1c7d-8533-4ad7-bfe1-7ea40e86bb52",
+        "commit": "0.1.12"
     },
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
@@ -201,5 +201,16 @@
         "title": "peddy_0.4.7",
         "uuid": "124c73f9-4bbe-4e5d-92e0-cc2d932f1228",
         "version": "0.4.7"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "fastqc",
+        "software_type": [
+            "quality metric generator"
+        ],
+        "title": "fastqc_0.11.9",
+        "uuid": "efdac7ec-7da3-4f23-9056-7a04abbc5e8b",
+        "version": "0.11.9"
     }
 ]

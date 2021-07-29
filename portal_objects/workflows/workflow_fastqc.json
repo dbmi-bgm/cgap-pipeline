@@ -1,0 +1,87 @@
+{
+    "accession": "GAPBH36DY72P",
+    "app_name": "fastqc",
+    "app_version": "v2",
+    "arguments": [
+        {
+            "argument_format": "fastq",
+            "argument_type": "Input file",
+            "workflow_argument_name": "input_fastq"
+        },
+        {
+            "argument_type": "Output QC file",
+            "workflow_argument_name": "report_zip",
+            "argument_to_be_attached_to": "input_fastq",
+            "qc_html": true,
+            "qc_json": false,
+            "qc_type": "quality_metric_fastqc",
+            "qc_table": true,
+            "qc_zipped": true,
+            "qc_zipped_html": "fastqc_report.html",
+            "qc_zipped_tables": [
+                "summary.txt",
+                "fastqc_data.txt"
+            ]
+        }
+    ],
+    "category": ["QC"],
+    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+    "description": "FastQC quality control step for fastq files",
+    "cwl_main_filename": "fastqc.cwl",
+    "cwl_child_filenames": [],
+    "cwl_directory_url_v1": "https://raw.githubusercontent.com/4dn-dcic/docker-fastqc/v2/cwl/",
+    "cwl_pointer": "",
+    "docker_image_name": "4dndcic/fastqc:v2",
+    "docker_registry_url": "https://hub.docker.com/",
+    "name": "fastqc_v2",
+    "aliases": ["cgap:fastq_v2"],
+    "steps": [
+        {
+            "meta": {
+                "description": "FastQC QC for fastq files",
+                "software_used": [
+                    "/softwares/efdac7ec-7da3-4f23-9056-7a04abbc5e8b/"
+                ],
+                "analysis_step_types": [
+                    "QC calculation"
+                ]
+            },
+            "name": "FastQC",
+            "inputs": [
+                {
+                    "meta": {
+                        "type": "data file",
+                        "global": true,
+                        "cardinality": "single",
+                        "file_format": "fastq"
+                    },
+                    "name": "input_fastq",
+                    "source": [
+                        {
+                            "name": "input_fastq"
+                        }
+                    ]
+                }
+            ],
+            "outputs": [
+                {
+                    "meta": {
+                        "type": "report",
+                        "global": true,
+                        "cardinality": "single",
+                        "file_format": "zip"
+                    },
+                    "name": "report_zip",
+                    "target": [
+                        {
+                            "name": "report_zip"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "title": "FastQC v2",
+    "uuid": "49e96b51-ed6c-4418-a693-d0e9f79adfa5"
+}

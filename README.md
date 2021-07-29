@@ -1,7 +1,7 @@
 ## CGAP pipeline
 * This repo contains CGAP pipeline components
   * CWL
-  * Docker source - Docker image name `cgap/cgap:v22`
+  * Docker source - Docker image name `cgap/cgap:v23`
   * Example Tibanna input jsons for individual steps
 
 For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
@@ -9,11 +9,20 @@ For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
 ### Updating portal objects
 The following command patches/posts all portal objects including softwares, file formats and workflows
 ```
-python post_patch_to_portal.py [--ff-env=<env_name>] [--skip-software] [--skip-file-format] [--skip-workflow]
+python post_patch_to_portal.py [--ff-env=<env_name>] [--del-prev-version]
+                               [--skip-software]
+                               [--skip-file-format] [--skip-file-reference]
+                               [--skip-workflow] [--skip-metaworkflow]
+                               [--ugrp-unrelated] [--ignore-key-conflict]
 # env_name : fourfront-cgapwolf (default), fourfront-cgap
 ```
 
 ### Version updates
+
+#### v23
+* modified dbNSFP plugin for VEP to allow for annotation of non-missense variants
+* replaced GNU Parallel with xargs to improve error detection
+* turned off mounting to improve error detection
 
 #### v22
 * modified VEP to bring PhyloP30, PhyloP100, PhastCons100, and CADD Phred scores from source files instead of from dbNSFP

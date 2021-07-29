@@ -1,383 +1,494 @@
 [
-  {
-    "uuid": "b24ed5ed-a037-48a0-a938-3fecfb90d0cf",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "bwt",
-    "description": "hg38 bwa genome index for CGAP, untarred, uncompressed",
-    "aliases": ["cgap:hg38-bwt"],
-    "extra_files": [
-        {
-            "file_format": "ann",
-            "status": "uploaded"
-        },
-        {
-            "file_format": "amb",
-            "status": "uploaded"
-        },
-        {
-            "file_format": "sa",
-            "status": "uploaded"
-        },
-        {
-            "file_format": "pac",
-            "status": "uploaded"
-        }
-    ],
-    "status": "uploaded"
-  },
-  {
-    "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "fa",
-    "description": "hg38 full reference fasta plus decoy for CGAP",
-    "aliases": ["cgap:hg38-plus-decoy-fasta"],
-    "extra_files": [
-        {
-            "file_format": "dict",
-            "status": "uploaded"
-        },
-        {
-            "file_format": "fa_fai",
-            "status": "uploaded"
-        }
-    ],
-    "status": "uploaded"
-  },
-  {
-    "uuid": "55ac5044-f927-4df7-afa2-bf713764ee57",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "vcf",
-    "description": "hg38 Mills_and_1000G_gold_standard_indels",
-    "aliases": ["cgap:hg38-Mills-and-1000G-gold-standard-indels"],
-    "extra_files": [
-        {
-            "file_format": "vcf_idx",
-            "status": "uploaded"
-        }
-    ],
-    "status": "uploaded"
-  },
-  {
-    "uuid": "8ed35691-0af4-467a-adbc-81eb088549f0",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "vcf_gz",
-    "description": "hg38 dbsnp_b151 common variants",
-    "aliases": ["cgap:hg38-dbsnp-b151","cgap:hg38-dbsnp-b151-common-only"],
-    "extra_files": [
-        {
-            "file_format": "vcf_gz_tbi",
-            "status": "uploaded"
-        }
-    ],
-    "status": "uploaded"
-  },
-  {
-    "uuid": "3f7161f3-1698-4665-a59b-20c3009a3998",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "vcf",
-    "description": "hg38 1000G_omni2.5",
-    "aliases": ["cgap:hg38-1000G_omni2.5"],
-    "extra_files": [
-        {
-            "file_format": "vcf_idx",
-            "status": "uploaded"
-        }
-    ],
-    "status": "uploaded"
-  },
-  {
-    "uuid": "5ca55bd5-4050-440e-b060-9441da57060e",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "vcf",
-    "description": "hg38 1000G_phase1.snps.high_confidence",
-    "aliases": ["cgap:hg38-1000G_phase1.snps.high_confidence"],
-    "extra_files": [
-        {
-            "file_format": "vcf_idx",
-            "status": "uploaded"
-        }
-    ],
-    "status": "uploaded"
-  },
-  {
-    "uuid": "f0684716-6c8c-4197-b9c4-a1e287d834a5",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "vcf",
-    "description": "hg38 hapmap_3.3",
-    "aliases": ["cgap:hg38-hapmap_3.3"],
-    "extra_files": [
-        {
-            "file_format": "vcf_idx",
-            "status": "uploaded"
-        }
-    ],
-    "status": "uploaded"
-  },
-  {
-    "uuid": "a1d504ee-a313-4064-b6ae-65fed9738980",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "txt",
-    "description": "hg38 chromosomes Yfirst",
-    "aliases": ["cgap:hg38-chromosomes-Yfirst"],
-    "extra_files": [],
-    "status": "uploaded"
-  },
-  {
-    "uuid": "db00cc5a-d7bc-424c-8560-e53827a52db9",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "md5_list",
-    "description": "md5 list of hg38",
-    "aliases": ["cgap:hg38-md5-list"],
-    "extra_files": [],
-    "status": "uploaded"
-  },
-  {
-    "uuid": "297c872a-5b6b-4fc3-83d3-f4a853f8805c",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "chain",
-    "description": "chain file for coordinates liftover, hg38 to hg19",
-    "aliases": ["cgap:hg38-to-hg19-chain"],
-    "status": "uploaded"
-  },
-  {
-    "uuid": "4ff30e10-aa8b-4ebf-87ac-20c7bfc15a46",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "vep_tar",
-    "description": "datasource for VEP v101 plus plugins",
-    "aliases": ["cgap:vep-101"],
-    "extra_files": [
-        {
-            "file_format": "plugins_tar",
-            "status": "uploaded"
-        }
-    ],
-    "status": "uploaded",
-    "file_version": "101"
-  },
-  {
-    "uuid": "7db786d5-13d2-4622-bdd2-99866036b9b9",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "vcf_gz",
-    "description": "datasource for ClinVar v20201101",
-    "aliases": ["cgap:clinvar-20201101"],
-    "extra_files": [
-        {
-            "file_format": "vcf_gz_tbi",
-            "status": "uploaded"
-        }
-    ],
-    "status": "uploaded",
-    "file_version": "20201101"
-  },
-  {
-    "uuid": "52c6cbf6-ae94-4c10-ad03-26ed34f74a3e",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "vcf_gz",
-    "description": "datasource for gnomAD v3.1, trimmed",
-    "aliases": ["cgap:gnomad-3.1"],
-    "extra_files": [
-        {
-            "file_format": "vcf_gz_tbi",
-            "status": "uploaded"
-        }
-    ],
-    "status": "uploaded",
-    "file_version": "3.1"
-  },
-  {
-    "uuid": "a35e580c-7579-4312-a3a1-66810e6d9366",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "vcf_gz",
-    "description": "datasource for SpliceAI SNV v1.3",
-    "aliases": ["cgap:spliceai_snv-1.3"],
-    "extra_files": [
-        {
-            "file_format": "vcf_gz_tbi",
-            "status": "uploaded"
-        }
-    ],
-    "status": "uploaded",
-    "file_version": "1.3"
-  },
-  {
-    "uuid": "3b7c0c29-5ee2-47c8-95a8-d28e15d5de47",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "vcf_gz",
-    "description": "datasource for SpliceAI indels v1.3",
-    "aliases": ["cgap:spliceai_indel-1.3"],
-    "extra_files": [
-        {
-            "file_format": "vcf_gz_tbi",
-            "status": "uploaded"
-        }
-    ],
-    "status": "uploaded",
-    "file_version": "1.3"
-  },
-  {
-    "uuid": "dc02df4c-49ac-4532-b85c-02800941aa44",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "dbnsfp_gz",
-    "description": "datasource for dbNSFP v4.1a",
-    "aliases": ["cgap:dbnsfp-4.1a"],
-    "extra_files": [
-        {
-            "file_format": "dbnsfp_gz_tbi",
-            "status": "uploaded"
-        },
-        {
-          "file_format": "dbnsfp_readme_txt",
-          "status": "uploaded"
-        }
-    ],
-    "status": "uploaded",
-    "file_version": "4.1a"
-  },
-  {
-    "uuid": "71a7d16b-8452-4266-ae80-bbede2e305e2",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "tar_gz",
-    "description": "datasource for MaxEnt v20040421",
-    "aliases": ["cgap:maxent-20040421"],
-    "status": "uploaded",
-    "file_version": "20040421"
-  },
-  {
-    "uuid": "84f2bb24-edd7-459b-ab89-0a21866d7826",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "txt",
-    "description": "list of genes",
-    "aliases": ["cgap:genes-0.4.6"],
-    "extra_files": [],
-    "status": "uploaded",
-    "file_version": "0.4.6"
-  },
-  {
-    "uuid": "aa542c8e-b31c-4cff-b2d4-aa4037bb913c",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "vcf_gz",
-    "description": "hg38 dbSNP v151 all variants",
-    "aliases": ["cgap:hg38-dbSNPv151-all-variants"],
-    "extra_files": [
-        {
-            "file_format": "vcf_gz_tbi",
-            "status": "uploaded"
-        }
-    ],
-    "status": "uploaded",
-    "file_version": "151"
-  },
-  {
-    "uuid": "672de47f-d058-4dbd-9fc4-3e134cfe71d8",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "tsv_gz",
-    "description": "CADD hg38 all possible SNVs",
-    "aliases": ["cgap:hg38-CADD-SNVs-v1.6"],
-    "extra_files": [
-        {
-            "file_format": "tsv_gz_tbi",
-            "status": "uploading"
-        }
-    ],
-    "status": "uploading",
-    "file_version": "v1.6"
-  },
-  {
-    "uuid": "b9f123dd-be05-4a14-957a-5e1e5a5ce254",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "tsv_gz",
-    "description": "CADD hg38 InDels",
-    "aliases": ["cgap:hg38-CADD-InDels-v1.6"],
-    "extra_files": [
-        {
-            "file_format": "tsv_gz_tbi",
-            "status": "uploading"
-        }
-    ],
-    "status": "uploading",
-    "file_version": "v1.6"
-  },
-  {
-    "uuid": "dd6f0384-d0b5-47d6-99a8-395c0b72feed",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "vcf_gz",
-    "description": "datasource for gnomAD exome v2.1.1 hg38 liftover, trimmed",
-    "aliases": ["cgap:gnomad-exome-2.1.1"],
-    "extra_files": [
-        {
-            "file_format": "vcf_gz_tbi",
-            "status": "uploading"
-        }
-    ],
-    "status": "uploading",
-    "file_version": "2.1.1"
-  },
-  {
-    "uuid": "f6809af1-f7b9-43c0-882a-16764ccc431d",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "BigWig",
-    "description": "phyloP 30-way mammalian BigWig",
-    "aliases": ["cgap:phyloP30way-hg38"],
-    "status": "uploading",
-    "file_version": "hg38"
-  },
-  {
-    "uuid": "af93aecb-6b8e-4c8b-b159-eefb3f9d0ffb",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "BigWig",
-    "description": "phyloP 100-way vertebrate BigWig",
-    "aliases": ["cgap:phyloP100way-hg38"],
-    "status": "uploading",
-    "file_version": "hg38"
-  },
-  {
-    "uuid": "19f03828-175b-4594-ba1a-52ddabcf640d",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "BigWig",
-    "description": "PhastCons 100-way vertebrate BigWig",
-    "aliases": ["cgap:PhastCons100way-hg38"],
-    "status": "uploading",
-    "file_version": "hg38"
-  },
-  {
-    "uuid": "4468e4a2-6c92-4d82-b333-821be68d0a55",
-    "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-    "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
-    "file_format": "rck_tar",
-    "description": "archive of 20 unrelated rck.gz files, MQ = 0 and BQ = 0",
-    "aliases": ["cgap:novoCaller_unrelated_rcks"],
-    "extra_files": [
-        {
-            "file_format": "rck_tar_index",
-            "status": "uploading"
-        }
-    ],
-    "status": "uploading",
-    "file_version": "v1"
-  }
+    {
+        "uuid": "b24ed5ed-a037-48a0-a938-3fecfb90d0cf",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "bwt",
+        "description": "hg38 bwa genome index for CGAP, untarred, uncompressed",
+        "aliases": [
+            "cgap:hg38-bwt"
+        ],
+        "extra_files": [
+            {
+                "file_format": "ann",
+                "status": "uploading"
+            },
+            {
+                "file_format": "amb",
+                "status": "uploading"
+            },
+            {
+                "file_format": "sa",
+                "status": "uploading"
+            },
+            {
+                "file_format": "pac",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "accession": "GAPFI4U1HXIY"
+    },
+    {
+        "uuid": "1936f246-22e1-45dc-bb5c-9cfd55537fe7",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "fa",
+        "description": "hg38 full reference fasta plus decoy for CGAP",
+        "aliases": [
+            "cgap:hg38-plus-decoy-fasta"
+        ],
+        "extra_files": [
+            {
+                "file_format": "dict",
+                "status": "uploading"
+            },
+            {
+                "file_format": "fa_fai",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "accession": "GAPFIXRDPDK5"
+    },
+    {
+        "uuid": "55ac5044-f927-4df7-afa2-bf713764ee57",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "vcf",
+        "description": "hg38 Mills_and_1000G_gold_standard_indels",
+        "aliases": [
+            "cgap:hg38-Mills-and-1000G-gold-standard-indels"
+        ],
+        "extra_files": [
+            {
+                "file_format": "vcf_idx",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "accession": "GAPFIAX2PPYB"
+    },
+    {
+        "uuid": "8ed35691-0af4-467a-adbc-81eb088549f0",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "vcf_gz",
+        "description": "hg38 dbsnp_b151 common variants",
+        "aliases": [
+            "cgap:hg38-dbsnp-b151",
+            "cgap:hg38-dbsnp-b151-common-only"
+        ],
+        "extra_files": [
+            {
+                "file_format": "vcf_gz_tbi",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "accession": "GAPFI4LJRN98"
+    },
+    {
+        "uuid": "3f7161f3-1698-4665-a59b-20c3009a3998",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "vcf",
+        "description": "hg38 1000G_omni2.5",
+        "aliases": [
+            "cgap:hg38-1000G_omni2.5"
+        ],
+        "extra_files": [
+            {
+                "file_format": "vcf_idx",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "accession": "GAPFINDZ7H7H"
+    },
+    {
+        "uuid": "5ca55bd5-4050-440e-b060-9441da57060e",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "vcf",
+        "description": "hg38 1000G_phase1.snps.high_confidence",
+        "aliases": [
+            "cgap:hg38-1000G_phase1.snps.high_confidence"
+        ],
+        "extra_files": [
+            {
+                "file_format": "vcf_idx",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "accession": "GAPFIEA3YJ6S"
+    },
+    {
+        "uuid": "f0684716-6c8c-4197-b9c4-a1e287d834a5",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "vcf",
+        "description": "hg38 hapmap_3.3",
+        "aliases": [
+            "cgap:hg38-hapmap_3.3"
+        ],
+        "extra_files": [
+            {
+                "file_format": "vcf_idx",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "accession": "GAPFILGA4UIX"
+    },
+    {
+        "uuid": "a1d504ee-a313-4064-b6ae-65fed9738980",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "txt",
+        "description": "hg38 chromosomes Yfirst",
+        "aliases": [
+            "cgap:hg38-chromosomes-Yfirst"
+        ],
+        "extra_files": [],
+        "status": "uploading",
+        "accession": "GAPFIGJVJDUY"
+    },
+    {
+        "uuid": "db00cc5a-d7bc-424c-8560-e53827a52db9",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "md5_list",
+        "description": "md5 list of hg38",
+        "aliases": [
+            "cgap:hg38-md5-list"
+        ],
+        "extra_files": [],
+        "status": "uploading",
+        "accession": "GAPFIGWSGHNU"
+    },
+    {
+        "uuid": "297c872a-5b6b-4fc3-83d3-f4a853f8805c",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "chain",
+        "description": "chain file for coordinates liftover, hg38 to hg19",
+        "aliases": [
+            "cgap:hg38-to-hg19-chain"
+        ],
+        "status": "uploading",
+        "accession": "GAPFIYPTSAU8"
+    },
+    {
+        "uuid": "ea103486-b65a-4439-9d0b-1186f8e59388",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "vep_tar",
+        "description": "datasource for VEP v101 plus plugins, including a modified dbNSFP plugin to annotate non-missense variants",
+        "aliases": [
+            "cgap:vep-101b"
+        ],
+        "extra_files": [
+            {
+                "file_format": "plugins_tar",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "file_version": "101b",
+        "accession": "GAPFIL8XMTIV"
+    },
+    {
+        "uuid": "7db786d5-13d2-4622-bdd2-99866036b9b9",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "vcf_gz",
+        "description": "datasource for ClinVar v20201101",
+        "aliases": [
+            "cgap:clinvar-20201101"
+        ],
+        "extra_files": [
+            {
+                "file_format": "vcf_gz_tbi",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "file_version": "20201101",
+        "accession": "GAPFI121RWQE"
+    },
+    {
+        "uuid": "52c6cbf6-ae94-4c10-ad03-26ed34f74a3e",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "vcf_gz",
+        "description": "datasource for gnomAD v3.1, trimmed",
+        "aliases": [
+            "cgap:gnomad-3.1"
+        ],
+        "extra_files": [
+            {
+                "file_format": "vcf_gz_tbi",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "file_version": "3.1",
+        "accession": "GAPFIJOMA2Q8"
+    },
+    {
+        "uuid": "a35e580c-7579-4312-a3a1-66810e6d9366",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "vcf_gz",
+        "description": "datasource for SpliceAI SNV v1.3",
+        "aliases": [
+            "cgap:spliceai_snv-1.3"
+        ],
+        "extra_files": [
+            {
+                "file_format": "vcf_gz_tbi",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "file_version": "1.3",
+        "accession": "GAPFISUOC64Q"
+    },
+    {
+        "uuid": "3b7c0c29-5ee2-47c8-95a8-d28e15d5de47",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "vcf_gz",
+        "description": "datasource for SpliceAI indels v1.3",
+        "aliases": [
+            "cgap:spliceai_indel-1.3"
+        ],
+        "extra_files": [
+            {
+                "file_format": "vcf_gz_tbi",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "file_version": "1.3",
+        "accession": "GAPFIZOPCWIU"
+    },
+    {
+        "uuid": "dc02df4c-49ac-4532-b85c-02800941aa44",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "dbnsfp_gz",
+        "description": "datasource for dbNSFP v4.1a",
+        "aliases": [
+            "cgap:dbnsfp-4.1a"
+        ],
+        "extra_files": [
+            {
+                "file_format": "dbnsfp_gz_tbi",
+                "status": "uploading"
+            },
+            {
+                "file_format": "dbnsfp_readme_txt",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "file_version": "4.1a",
+        "accession": "GAPFIKJ66FKY"
+    },
+    {
+        "uuid": "71a7d16b-8452-4266-ae80-bbede2e305e2",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "tar_gz",
+        "description": "datasource for MaxEnt v20040421",
+        "aliases": [
+            "cgap:maxent-20040421"
+        ],
+        "status": "uploading",
+        "file_version": "20040421",
+        "accession": "GAPFI6BNNTKA"
+    },
+    {
+        "uuid": "84f2bb24-edd7-459b-ab89-0a21866d7826",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "txt",
+        "description": "list of genes",
+        "aliases": [
+            "cgap:genes-0.4.6"
+        ],
+        "extra_files": [],
+        "status": "uploading",
+        "file_version": "0.4.6",
+        "accession": "GAPFI5MKCART"
+    },
+    {
+        "uuid": "aa542c8e-b31c-4cff-b2d4-aa4037bb913c",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "vcf_gz",
+        "description": "hg38 dbSNP v151 all variants",
+        "aliases": [
+            "cgap:hg38-dbSNPv151-all-variants"
+        ],
+        "extra_files": [
+            {
+                "file_format": "vcf_gz_tbi",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "file_version": "151",
+        "accession": "GAPFIF4JKLTH"
+    },
+    {
+        "uuid": "672de47f-d058-4dbd-9fc4-3e134cfe71d8",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "tsv_gz",
+        "description": "CADD hg38 all possible SNVs",
+        "aliases": [
+            "cgap:hg38-CADD-SNVs-v1.6"
+        ],
+        "extra_files": [
+            {
+                "file_format": "tsv_gz_tbi",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "file_version": "v1.6",
+        "accession": "GAPFI566QQCV"
+    },
+    {
+        "uuid": "b9f123dd-be05-4a14-957a-5e1e5a5ce254",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "tsv_gz",
+        "description": "CADD hg38 InDels",
+        "aliases": [
+            "cgap:hg38-CADD-InDels-v1.6"
+        ],
+        "extra_files": [
+            {
+                "file_format": "tsv_gz_tbi",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "file_version": "v1.6",
+        "accession": "GAPFI1GC6AXF"
+    },
+    {
+        "uuid": "dd6f0384-d0b5-47d6-99a8-395c0b72feed",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "vcf_gz",
+        "description": "datasource for gnomAD exome v2.1.1 hg38 liftover, trimmed",
+        "aliases": [
+            "cgap:gnomad-exome-2.1.1"
+        ],
+        "extra_files": [
+            {
+                "file_format": "vcf_gz_tbi",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "file_version": "2.1.1",
+        "accession": "GAPFIC5416E6"
+    },
+    {
+        "uuid": "f6809af1-f7b9-43c0-882a-16764ccc431d",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "BigWig",
+        "description": "phyloP 30-way mammalian BigWig",
+        "aliases": [
+            "cgap:phyloP30way-hg38"
+        ],
+        "status": "uploading",
+        "file_version": "hg38",
+        "accession": "GAPFI5MRTDLN"
+    },
+    {
+        "uuid": "af93aecb-6b8e-4c8b-b159-eefb3f9d0ffb",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "BigWig",
+        "description": "phyloP 100-way vertebrate BigWig",
+        "aliases": [
+            "cgap:phyloP100way-hg38"
+        ],
+        "status": "uploading",
+        "file_version": "hg38",
+        "accession": "GAPFIMQ7MHGA"
+    },
+    {
+        "uuid": "19f03828-175b-4594-ba1a-52ddabcf640d",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "BigWig",
+        "description": "PhastCons 100-way vertebrate BigWig",
+        "aliases": [
+            "cgap:PhastCons100way-hg38"
+        ],
+        "status": "uploading",
+        "file_version": "hg38",
+        "accession": "GAPFI6KXAQMV"
+    },
+    {
+        "uuid": "4468e4a2-6c92-4d82-b333-821be68d0a55",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "rck_tar",
+        "description": "archive of 20 unrelated rck.gz files, MQ = 0 and BQ = 0",
+        "aliases": [
+            "cgap:novoCaller_unrelated_rcks"
+        ],
+        "extra_files": [
+            {
+                "file_format": "rck_tar_index",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "file_version": "v1",
+        "accession": "GAPFIXD5LCRG"
+    },
+    {
+        "uuid": "1c07a3aa-e2a3-498c-b838-15991c4a2f28",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "txt",
+        "description": "hg38 300 regions",
+        "aliases": [
+            "cgap:hg38_regionfile300"
+        ],
+        "extra_files": [],
+        "status": "uploading",
+        "accession": "GAPFIBGEOI72"
+    },
+    {
+        "uuid": "fcd6a543-fe49-4d32-b569-1d63db7176d3",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "rck_tar",
+        "description": "archive of 20 unrelated rck.gz files from UGRP, MQ = 0 and BQ = 0",
+        "aliases": [
+            "cgap:novoCaller_unrelated_rcks_ugrp"
+        ],
+        "extra_files": [
+            {
+                "file_format": "rck_tar_index",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "file_version": "v1",
+        "accession": "GAPFI84GCNW1"
+    }
 ]

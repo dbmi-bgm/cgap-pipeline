@@ -1,0 +1,2 @@
+dcicutils>=1.19.0
+magma-suite>=0.2.1
