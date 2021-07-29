@@ -97,6 +97,11 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
                 with open(os.path.join(wf_dir, fn), 'r') as f:
                     d = json.load(f)
 
+                if del_prev_version:
+                    # Clean previous version if present
+                    if d.get('previous_version'):
+                        del d['previous_version']
+
                 if ugrp_unrelated:
                     uuid_ugrp_unrl = 'fcd6a543-fe49-4d32-b569-1d63db7176d3'
                     for input in d['input']:
