@@ -5,6 +5,8 @@
   "uuid": "c09fb9fd-0648-4892-a847-f6aa0c51f156",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "previous_version": ["0b2e2be7-7292-4f5c-b75c-78837b27c6ea"],
+  "version_upgrade_log": "no change",
   "input": [
     {
       "argument_name": "fastqs_proband_first_R1",
@@ -1181,7 +1183,5 @@
         }
       ]
     }
-  ],
-  "previous_version": ["0b2e2be7-7292-4f5c-b75c-78837b27c6ea"],
-  "version_upgrade_log": "no change"
+  ]
 }
