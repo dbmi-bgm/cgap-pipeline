@@ -6,20 +6,20 @@ CGAP WGS pipeline allows to process Whole Genome Sequencing (WGS) data starting 
 
 The pipeline is designed for a trio analysis with proband diagnosed with a likely monogenic disease. It is optimized for data with 30x coverage and has been tested with data up to 80-90x coverage.
 
-The pipeline is mostly based on ``bwa``, ``gatk4``, ``granite`` (https://github.com/dbmi-bgm/granite), ``mutanno`` (https://github.com/dbmi-bgm/mutanno) and ``bamsnap`` (https://github.com/parklab/bamsnap). The pipeline perform joint-sample variant calling within a family, performs annotation and filtering, calls de novo mutations and compound hets, and generates snapshot images for the filtered set of variants.
+The pipeline is mostly based on ``bwa``, ``gatk4``, ``granite`` (https://github.com/dbmi-bgm/granite), ``ensembl-vep`` ((https://github.com/Ensembl/ensembl-vep) and ``bamsnap`` (https://github.com/parklab/bamsnap). The pipeline perform joint-sample variant calling within a family, performs annotation and filtering, calls de novo mutations and compound hets, and generates snapshot images for the filtered set of variants.
 
 
 Docker Image
 ############
 
-* The current docker image is ``cgap/cgap:v22``
+* The current docker image is ``cgap/cgap:v24``
 
 The image contains (but is not limited to) the following software packages:
 
 - bwa (0.7.17)
 - gatk4 (4.1.2.0)
 - picard (2.20.2)
-- granite (0.1.7)
+- granite (0.1.12)
 - bamsnap (0.2.19)
 - samtools (1.9)
 - bcftools (1.11)
