@@ -1,5 +1,19 @@
 [
     {
+        "status": "shared",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "description": "This format is used for aligned reads",
+        "file_format": "txt",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "date_created": "2019-08-27T03:45:40.635467+00:00",
+        "valid_item_types": [
+            "FileProcessed",
+            "FileReference"
+        ],
+        "standard_file_extension": "txt",
+        "uuid": "0cd4e777-a596-4927-95c8-b07716121aa3"
+    },
+    {
         "file_format": "ann",
         "standard_file_extension": "ann",
         "description": "An extra file of a bwt file",
