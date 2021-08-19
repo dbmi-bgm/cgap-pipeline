@@ -1,7 +1,7 @@
 {
-  "accession": "GAPWFNPFXD85",
+  "accession": "GAPWFRQ54BGL",
   "app_name": "workflow_dbSNP_ID_fixer-check",
-  "app_version": "v24",
+  "app_version": "v25",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -42,16 +42,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["parallel_dbSNP_ID_fixer.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v24/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v25/cwl",
   "cwl_main_filename": "workflow_parallel_dbSNP_ID_fixer_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run parallel_dbSNP_ID_fixer on sample file and update ID column with rsIDs from reference dbSNP vcf. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v24",
+  "docker_image_name": "cgap/cgap:v25",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_dbSNP_ID_fixer-check_v24",
-  "aliases": ["cgap:workflow_dbSNP_ID_fixer-check_v24",
-              "cgap:workflow_dbSNP_ID_fixer-check_v23"],
+  "name": "workflow_dbSNP_ID_fixer-check_v25",
+  "aliases": ["cgap:workflow_dbSNP_ID_fixer-check_v25"],
   "steps": [
       {
           "inputs": [
@@ -116,7 +115,7 @@
                   "Run dbSNP_ID_fixer"
               ],
               "software_used": [
-                 "/softwares/f9ecea14-7820-4f73-a4a1-e91f9199a0bc"
+                 "/softwares/d3d3b223-6565-4942-8e39-bc9e79c1a4e7"
               ]
           },
           "name": "dbSNP_ID_fixer",
@@ -183,7 +182,7 @@
       }
   ],
   "title": "Run dbSNP ID fixer plus output integrity-check",
-  "uuid": "7f1a001e-cc1d-442d-9b32-857a6356a85c",
-  "previous_version": ["1467c3bb-fd18-444b-89c9-3b07c3ddb4b8"],
-  "version_upgrade_log": "Replaced parallel with xargs"
+  "uuid": "b9fe14eb-eab0-4360-b70c-d7a37292ffce",
+  "previous_version": ["7f1a001e-cc1d-442d-9b32-857a6356a85c"],
+  "version_upgrade_log": "modified try except in python script to be specific to tabix error"
 }
