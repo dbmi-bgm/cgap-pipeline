@@ -8,6 +8,8 @@ requirements:
 inputs:
   - id: input_bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: input file
 
   - id: reference
@@ -32,6 +34,11 @@ inputs:
   - id: static-quantized-quals_3
     type: int
     default: 30
+
+  - id: nthreads
+    type: int
+    default: 15
+    doc: number of threads used to run parallel
 
   - id: count
     type: int
@@ -63,6 +70,8 @@ steps:
         source: static-quantized-quals_2
       static-quantized-quals_3:
         source: static-quantized-quals_3
+      nthreads:
+        source: nthreads
     out: [output]
 
   integrity-check:

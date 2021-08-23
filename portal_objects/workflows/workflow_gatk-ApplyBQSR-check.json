@@ -1,7 +1,7 @@
 {
-  "accession": "GAPWF2MHT4SY",
+  "accession": "GAPWFF87W4S1",
   "app_name": "workflow_gatk-ApplyBQSR-check",
-  "app_version": "v24",
+  "app_version": "v25",
   "arguments": [
       {
           "argument_format": "bam",
@@ -49,35 +49,24 @@
       {
           "argument_type": "parameter",
           "workflow_argument_name": "count"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "nthreads"
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["gatk-ApplyBQSR.cwl", "integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v24/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v25/cwl",
   "cwl_main_filename": "workflow_gatk-ApplyBQSR_plus_integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run gatk ApplyBQSR on bam input file. Produce a recalibrated bam file. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v24",
+  "docker_image_name": "cgap/cgap:v25",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_gatk-ApplyBQSR-check_v24",
-  "aliases": ["cgap:workflow_gatk-ApplyBQSR-check_v24",
-              "cgap:workflow_gatk-ApplyBQSR-check_v23",
-              "cgap:workflow_gatk-ApplyBQSR-check_v22",
-              "cgap:workflow_gatk-ApplyBQSR-check_v21",
-              "cgap:workflow_gatk-ApplyBQSR-check_v20",
-              "cgap:workflow_gatk-ApplyBQSR-check_v19",
-              "cgap:workflow_gatk-ApplyBQSR-check_v18",
-              "cgap:workflow_gatk-ApplyBQSR-check_v17",
-              "cgap:workflow_gatk-ApplyBQSR-check_v16",
-              "cgap:workflow_gatk-ApplyBQSR-check_v15",
-              "cgap:workflow_gatk-ApplyBQSR-check_v14",
-              "cgap:workflow_gatk-ApplyBQSR-check_v13",
-              "cgap:workflow_gatk-ApplyBQSR-check_v12",
-              "cgap:workflow_gatk-ApplyBQSR-check_v11",
-              "cgap:workflow_gatk-ApplyBQSR-check_v10",
-              "cgap:workflow_gatk-ApplyBQSR-check_v9"],
+  "name": "workflow_gatk-ApplyBQSR-check_v25",
+  "aliases": ["cgap:workflow_gatk-ApplyBQSR-check_v25"],
   "steps": [
       {
           "inputs": [
@@ -161,6 +150,19 @@
                           "name": "static-quantized-quals_3"
                       }
                   ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "nthreads",
+                  "source": [
+                      {
+                          "name": "nthreads"
+                      }
+                  ]
               }
           ],
           "meta": {
@@ -168,7 +170,8 @@
                   "Run gatk ApplyBQSR"
               ],
               "software_used": [
-                 "/softwares/4ae88fb4-23f2-4939-8852-4644069d14d9"
+                 "/softwares/4ae88fb4-23f2-4939-8852-4644069d14d9",
+                 "/softwares/3d60553d-5b48-44eb-94f6-00f3355cfe02"
               ]
           },
           "name": "ApplyBQSR",
@@ -248,5 +251,7 @@
       }
   ],
   "title": "Run gatk ApplyBQSR plus output integrity-check",
-  "uuid": "6c9c6f49-f954-4e76-8dfb-d385cddcebd6"
+  "uuid": "c4d9ce59-7ff3-44c8-8336-f46774a4d882",
+  "previous_version": ["6c9c6f49-f954-4e76-8dfb-d385cddcebd6"],
+  "version_upgrade_log": "ApplyBQSR runs in parallel now"
 }

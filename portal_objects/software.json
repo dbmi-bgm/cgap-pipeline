@@ -212,5 +212,17 @@
         "title": "fastqc_0.11.9",
         "uuid": "efdac7ec-7da3-4f23-9056-7a04abbc5e8b",
         "version": "0.11.9"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "split_bam",
+        "software_type": [
+            "file format converter"
+        ],
+        "source_url": "https://github.com/dbmi-bgm/cgap-scripts",
+        "title": "split_bam_28520db",
+        "uuid": "3d60553d-5b48-44eb-94f6-00f3355cfe02",
+        "commit": "28520db"
     }
 ]

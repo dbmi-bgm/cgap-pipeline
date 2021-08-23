@@ -175,10 +175,11 @@ RUN chmod +x sort-bgzip-vcf.sh
 # add read groups script
 RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
     cd cgap-scripts && \
-    git checkout 22ff179 && \
+    git checkout 28520db && \
     chmod +x AddReadGroups.py && \
     chmod +x duplines_vcf.py && \
     chmod +x samplegeno.py && \
+    chmod +x split_bam.py && \
     cd ..
 
 # add cgap-annotations scripts - dbSNP ID, hgvsg, liftover_hg19
@@ -258,6 +259,10 @@ RUN chmod +x peddy.sh
 # unique variants
 COPY uniq_variants.sh .
 RUN chmod +x uniq_variants.sh
+
+# ApplyBQSR parallel
+COPY ApplyBQSR-parallel.sh .
+RUN chmod +x ApplyBQSR-parallel.sh
 
 # env paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
