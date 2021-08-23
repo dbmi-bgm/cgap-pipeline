@@ -8,8 +8,6 @@ requirements:
 inputs:
   - id: input_bam
     type: File
-    secondaryFiles:
-      - .bai
     doc: input file
 
   - id: reference
