@@ -260,6 +260,10 @@ RUN chmod +x peddy.sh
 COPY uniq_variants.sh .
 RUN chmod +x uniq_variants.sh
 
+# qc variant line count
+COPY qc_variant_line_count.sh .
+RUN chmod +x qc_variant_line_count.sh
+
 # ApplyBQSR parallel
 COPY ApplyBQSR-parallel.sh .
 RUN chmod +x ApplyBQSR-parallel.sh
