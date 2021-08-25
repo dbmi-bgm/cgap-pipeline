@@ -28,4 +28,4 @@ outputs:
 
 doc: |
   count the number of unique variants in vcf |
-  return a tsv file
+  return a json file
