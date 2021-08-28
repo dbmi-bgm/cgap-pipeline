@@ -8,3 +8,9 @@ dist
 _build
 _static
 _templates
+# Anything ending in env/ is a virtual env and to be ignored
+*env/
+# Emacs backup files
+*~
+# PyCharm working files
+.idea/
