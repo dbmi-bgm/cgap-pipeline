@@ -511,12 +511,12 @@
     },
     {
       "name": "workflow_gatk-ApplyBQSR-check",
-      "workflow": "6c9c6f49-f954-4e76-8dfb-d385cddcebd6",
+      "workflow": "c4d9ce59-7ff3-44c8-8336-f46774a4d882",
       "config": {
-        "instance_type": "t3.small",
-        "ebs_size": "3.5x",
+        "instance_type": "c5n.9xlarge",
+        "ebs_size": "5.5x",
         "EBS_optimized": true,
-        "spot_instance": false,
+        "spot_instance": true,
         "run_name": "run_workflow_gatk-ApplyBQSR-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -543,6 +543,12 @@
           "argument_name": "reference",
           "argument_type": "file",
           "source_argument_name": "reference_fa"
+        },
+        {
+          "argument_name": "nthreads",
+          "argument_type": "parameter",
+          "value": "28",
+          "value_type": "integer"
         }
       ]
     },

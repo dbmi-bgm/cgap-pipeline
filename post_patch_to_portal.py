@@ -103,7 +103,7 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
                         del d['previous_version']
 
                 if ugrp_unrelated:
-                    uuid_ugrp_unrl = 'fcd6a543-fe49-4d32-b569-1d63db7176d3'
+                    uuid_ugrp_unrl = 'eac862c0-8c87-4838-83cb-9a77412bff6f'
                     for input in d['input']:
                         if input['argument_name'] == 'unrelated':
                             input['files'] = [{"file": uuid_ugrp_unrl}]

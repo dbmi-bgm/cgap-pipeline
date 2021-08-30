@@ -1,7 +1,7 @@
 ## CGAP pipeline
 * This repo contains CGAP pipeline components
   * CWL
-  * Docker source - Docker image name `cgap/cgap:v24`
+  * Docker source - Docker image name `cgap/cgap:v25`
   * Example Tibanna input jsons for individual steps
 
 For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
@@ -18,6 +18,10 @@ python post_patch_to_portal.py [--ff-env=<env_name>] [--del-prev-version]
 ```
 
 ### Version updates
+
+#### v25
+* unrelated for novoCaller are now created from UGRP samples run with the alt index
+* ApplyBQSR now runs in parallel
 
 #### v24
 * changed bwa mem to use additional index files for alternative contigs
