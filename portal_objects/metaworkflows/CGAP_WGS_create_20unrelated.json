@@ -1,12 +1,12 @@
 {
   "name": "WGS_create_20unrelated",
-  "title": "WGS create 20 unrelated V24",
-  "version": "v24",
-  "uuid": "00e919c4-99f8-45a1-b9a8-da1d758ee515",
+  "title": "WGS create 20 unrelated v25",
+  "version": "v25",
+  "uuid": "0c61d21e-003e-4845-ab57-932a307bf531",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "previous_version": ["e08b631c-22a2-463d-b6da-e774c7956620"],
-  "version_upgrade_log": "Updated reference file for bwa, includes alt index now",
+  "previous_version": ["00e919c4-99f8-45a1-b9a8-da1d758ee515"],
+  "version_upgrade_log": "new parallel ApplyBQSR",
   "input": [
     {
       "argument_name": "fastqs_R1",

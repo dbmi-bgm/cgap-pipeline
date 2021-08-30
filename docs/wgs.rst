@@ -12,7 +12,7 @@ The pipeline is mostly based on ``bwa``, ``gatk4``, ``granite`` (https://github.
 Docker Image
 ############
 
-* The current docker image is ``cgap/cgap:v24``
+* The current docker image is ``cgap/cgap:v25``
 
 The image contains (but is not limited to) the following software packages:
 

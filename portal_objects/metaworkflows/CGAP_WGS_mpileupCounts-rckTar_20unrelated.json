@@ -1,10 +1,12 @@
 {
   "name": "WGS_mpileupCounts-rckTar_20unrelated",
-  "title": "WGS mpileupCounts-rckTar 20 unrelated V24",
-  "version": "v24",
-  "uuid": "01339661-9faa-4130-b0a1-83bbe51fbed5",
+  "title": "WGS mpileupCounts-rckTar 20 unrelated v25",
+  "version": "v25",
+  "uuid": "da5f6b0a-1f9f-46ba-8a18-80e84c353a48",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "previous_version": ["01339661-9faa-4130-b0a1-83bbe51fbed5"],
+  "version_upgrade_log": "no change",
   "input": [
     {
       "argument_name": "input_bams",

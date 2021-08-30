@@ -1,12 +1,12 @@
 {
   "name": "WGS_trio",
-  "title": "WGS Trio V24",
-  "version": "v24",
-  "uuid": "6a6f293c-21a9-428b-8ddd-ee29e2c8a1df",
+  "title": "WGS Trio v25",
+  "version": "v25",
+  "uuid": "d20ab9c2-932b-411e-95fd-792bd1001d77",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "previous_version": ["70199ad7-c0c9-45e1-b647-c93b348bc025"],
-  "version_upgrade_log": "Updated reference file for bwa, includes alt index now",
+  "previous_version": ["6a6f293c-21a9-428b-8ddd-ee29e2c8a1df"],
+  "version_upgrade_log": "updated unrelated to new UGRP run with alt index, new parallel ApplyBQSR",
   "input": [
     {
       "argument_name": "fastqs_proband_first_R1",

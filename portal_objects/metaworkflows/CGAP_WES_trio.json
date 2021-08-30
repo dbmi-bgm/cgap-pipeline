@@ -1,12 +1,12 @@
 {
   "name": "WES_trio",
-  "title": "WES Trio V24",
-  "version": "v24",
-  "uuid": "5bcc0741-fb07-4193-ad89-e9b80bfcb75c",
+  "title": "WES Trio v25",
+  "version": "v25",
+  "uuid": "68b86341-d7a9-44f0-ba30-7cb090c52c42",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "previous_version": ["c09fb9fd-0648-4892-a847-f6aa0c51f156"],
-  "version_upgrade_log": "Updated workflows. Updated reference file for bwa, includes alt index now",
+  "previous_version": ["5bcc0741-fb07-4193-ad89-e9b80bfcb75c"],
+  "version_upgrade_log": "updated unrelated to new UGRP run with alt index, new parallel ApplyBQSR",
   "input": [
     {
       "argument_name": "fastqs_proband_first_R1",

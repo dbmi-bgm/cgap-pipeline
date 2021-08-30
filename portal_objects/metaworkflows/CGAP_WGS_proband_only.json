@@ -1,12 +1,12 @@
 {
   "name": "WGS_proband_only",
-  "title": "WGS Proband-only V24",
-  "version": "v24",
-  "uuid": "ecc83f50-7301-4c2c-8367-cbec402bbde1",
+  "title": "WGS Proband-only v25",
+  "version": "v25",
+  "uuid": "d414f11b-17cb-494d-9c66-36ab0920bc73",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "previous_version": ["be4f0e94-e744-462f-a785-de9cdf6b33e5"],
-  "version_upgrade_log": "Updated reference file for bwa, includes alt index now",
+  "previous_version": ["ecc83f50-7301-4c2c-8367-cbec402bbde1"],
+  "version_upgrade_log": "new parallel ApplyBQSR",
   "input": [
     {
       "argument_name": "fastqs_R1",
