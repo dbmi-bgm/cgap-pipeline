@@ -1265,7 +1265,7 @@
     },
     {
       "name": "bamsnap",
-      "workflow": "a147d85c-07c7-4e01-82bb-73b381ebbf11",
+      "workflow": "5d3a7a4b-15d4-4343-9738-79bbc0d44642",
       "config": {
         "instance_type": "r5a.4xlarge",
         "ebs_size": "2x",
