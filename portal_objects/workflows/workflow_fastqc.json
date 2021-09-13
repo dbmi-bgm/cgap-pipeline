@@ -30,12 +30,13 @@
     "description": "FastQC quality control step for fastq files",
     "cwl_main_filename": "fastqc.cwl",
     "cwl_child_filenames": [],
-    "cwl_directory_url_v1": "https://raw.githubusercontent.com/4dn-dcic/docker-fastqc/v2/cwl/",
+    "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v25/cwl",
     "cwl_pointer": "",
-    "docker_image_name": "4dndcic/fastqc:v2",
+    "docker_image_name": "cgap/fastqc:v25",
     "docker_registry_url": "https://hub.docker.com/",
-    "name": "fastqc_v2",
-    "aliases": ["cgap:fastq_v2"],
+    "name": "fastqc_v25",
+    "aliases": ["cgap:fastq_v25",
+                "cgap:fastq_v2"],
     "steps": [
         {
             "meta": {
