@@ -2,7 +2,7 @@
   "hints": [
     {
       "class": "DockerRequirement",
-      "dockerPull": "4dndcic/fastqc:v2"
+      "dockerPull": "cgap/fastqc:v25"
     }
   ],
   "baseCommand": [
