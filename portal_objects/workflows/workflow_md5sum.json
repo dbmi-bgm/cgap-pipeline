@@ -1,0 +1,71 @@
+{
+  "accession": "GAPWFW415Q3A",
+  "app_name": "md5",
+  "app_version": "v24",
+  "arguments": [
+      {
+          "argument_format": "fastq",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_file"
+      },
+      {
+          "argument_type": "Output report file",
+          "workflow_argument_name": "report"
+      }
+  ],
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+  "category": ["QC"],
+  "cwl_child_filenames": [],
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v24/cwl",
+  "cwl_main_filename": "md5.cwl",
+  "cwl_pointer": "",
+  "description": "md5 on uncompressed file",
+  "docker_image_name": "cgap/md5:v2",
+  "docker_registry_url": "https://hub.docker.com/",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "name": "md5_v24",
+  "aliases": ["cgap:md5_v24"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "fastq",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_file",
+                  "source": [
+                      {
+                          "name": "input_file"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "QC calculation"
+              ]
+          },
+          "name": "md5",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "QC"
+                  },
+                  "name": "report",
+                  "target": [
+                      {
+                          "name": "report"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "md5",
+  "uuid": "c77a117b-9a58-477e-aaa5-291a109a99f6"
+}

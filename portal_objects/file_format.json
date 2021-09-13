@@ -1,5 +1,19 @@
 [
     {
+        "status": "shared",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "description": "This format is used for aligned reads",
+        "file_format": "txt",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "date_created": "2019-08-27T03:45:40.635467+00:00",
+        "valid_item_types": [
+            "FileProcessed",
+            "FileReference"
+        ],
+        "standard_file_extension": "txt",
+        "uuid": "0cd4e777-a596-4927-95c8-b07716121aa3"
+    },
+    {
         "file_format": "ann",
         "standard_file_extension": "ann",
         "description": "An extra file of a bwt file",
@@ -40,6 +54,16 @@
         "valid_item_types": ["FileReference"]
     },
     {
+        "file_format": "alt",
+        "standard_file_extension": "alt",
+        "description": "An extra file of a bwt file",
+        "uuid": "9ed3e9f9-fee2-47e3-bbe3-c63a52f8d3b8",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "status": "shared",
+        "valid_item_types": ["FileReference"]
+    },
+    {
         "file_format": "bwt",
         "standard_file_extension": "bwt",
         "description": "BWA genome index, untarred, uncompressed",
@@ -48,7 +72,8 @@
              "106199e5-5a85-4817-9a55-7b31698e1fda",
              "8db70ed6-0121-4fe1-a72e-d91dc5aa6cd3",
              "7373ca48-0b3e-467b-967a-80870846f89b",
-             "11f2fc36-9a65-4d60-9365-d8ff241df4f7"
+             "11f2fc36-9a65-4d60-9365-d8ff241df4f7",
+             "9ed3e9f9-fee2-47e3-bbe3-c63a52f8d3b8"
         ],
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
         "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",

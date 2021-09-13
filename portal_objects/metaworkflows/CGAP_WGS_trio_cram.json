@@ -1,10 +1,12 @@
 {
   "name": "WGS_trio_cram",
-  "title": "WGS Trio Cram V23",
-  "version": "v23",
-  "uuid": "79583bdc-87bf-449f-a7c4-c362d3b4c050",
+  "title": "WGS Trio Cram V24",
+  "version": "v24",
+  "uuid": "aed85144-0a22-48cd-b4a2-f10e053937ac",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "previous_version": ["79583bdc-87bf-449f-a7c4-c362d3b4c050"],
+  "version_upgrade_log": "Updated reference file for bwa, includes alt index now",
   "input": [
     {
       "argument_name": "crams",
@@ -33,7 +35,7 @@
     {
       "argument_name": "reference_bwa",
       "argument_type": "file",
-      "files": [{"file": "b24ed5ed-a037-48a0-a938-3fecfb90d0cf"}]
+      "files": [{"file": "e91a59c0-c546-4bea-a407-df6ab5552f13"}]
     },
     {
       "argument_name": "reference_fa",
@@ -247,7 +249,7 @@
     },
     {
       "name": "workflow_bwa-mem_no_unzip-check",
-      "workflow": "50e75343-2e00-471d-a667-4acb083287d8",
+      "workflow": "aa490a0f-e6a7-4b97-9c91-4e15b5896423",
       "config": {
         "instance_type": "c5n.18xlarge",
         "ebs_size": "6.3x",
@@ -286,7 +288,7 @@
       "name": "cgap-bamqc",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "c5n.2xlarge",
+        "instance_type": "r4.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -344,7 +346,7 @@
       "name": "cgap-bamqc-1",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "c5n.2xlarge",
+        "instance_type": "r4.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -397,7 +399,7 @@
       "name": "cgap-bamqc-2",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "c5n.2xlarge",
+        "instance_type": "r4.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -449,7 +451,7 @@
       "name": "cgap-bamqc-3",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "c5n.2xlarge",
+        "instance_type": "r4.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -501,7 +503,7 @@
       "name": "cgap-bamqc-4",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "c5n.2xlarge",
+        "instance_type": "r4.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -566,10 +568,10 @@
       "name": "workflow_gatk-ApplyBQSR-check",
       "workflow": "6c9c6f49-f954-4e76-8dfb-d385cddcebd6",
       "config": {
-        "instance_type": "t3.micro",
+        "instance_type": "t3.small",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
-        "spot_instance": true,
+        "spot_instance": false,
         "run_name": "run_workflow_gatk-ApplyBQSR-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -603,7 +605,7 @@
       "name": "cgap-bamqc-5",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "c5n.2xlarge",
+        "instance_type": "r4.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,

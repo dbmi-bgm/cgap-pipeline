@@ -1,7 +1,7 @@
 {
-  "accession": "GAPPL9I3M1A2",
+  "accession": "GAPPL9LF21A1",
   "app_name": "workflow_bwa-mem_no_unzip-check",
-  "app_version": "v23",
+  "app_version": "v24",
   "arguments": [
       {
           "argument_format": "fastq",
@@ -59,24 +59,15 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["bwa-mem-to-bam_no_unzip.cwl", "integrity-check.cwl"],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v23/cwl",
+  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v24/cwl",
   "cwl_main_filename": "workflow_bwa-mem-to-bam_no_unzip_plus_integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Align paired-end reads to reference genome. Processing from fastq input files to bam output file. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v23",
+  "docker_image_name": "cgap/cgap:v24",
   "docker_registry_url": "https://hub.docker.com/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_bwa-mem_no_unzip-check_v23",
-  "aliases": ["cgap:workflow_bwa-mem_no_unzip-check_v23",
-              "cgap:workflow_bwa-mem_no_unzip-check_v22",
-              "cgap:workflow_bwa-mem_no_unzip-check_v21",
-              "cgap:workflow_bwa-mem_no_unzip-check_v20",
-              "cgap:workflow_bwa-mem_no_unzip-check_v19",
-              "cgap:workflow_bwa-mem_no_unzip-check_v18",
-              "cgap:workflow_bwa-mem_no_unzip-check_v17",
-              "cgap:workflow_bwa-mem_no_unzip-check_v16",
-              "cgap:workflow_bwa-mem_no_unzip-check_v15",
-              "cgap:workflow_bwa-mem_no_unzip-check_v14"],
+  "name": "workflow_bwa-mem_no_unzip-check_v24",
+  "aliases": ["cgap:workflow_bwa-mem_no_unzip-check_v24"],
   "steps": [
       {
           "inputs": [
@@ -221,7 +212,7 @@
       }
   ],
   "title": "Paired-end reads alignment to reference plus output integrity-check",
-  "uuid": "50e75343-2e00-471d-a667-4acb083287d8",
-  "previous_version": ["9e094699-561b-4396-8d6a-ffc45f98c5e1"],
-  "version_upgrade_log": "Pipe errors are now intercepted and force exit 1"
+  "uuid": "aa490a0f-e6a7-4b97-9c91-4e15b5896423",
+  "previous_version": ["50e75343-2e00-471d-a667-4acb083287d8"],
+  "version_upgrade_log": "Updated reference file for bwa, includes alt index now"
 }

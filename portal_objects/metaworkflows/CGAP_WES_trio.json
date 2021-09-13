@@ -1,10 +1,12 @@
 {
   "name": "WES_trio",
-  "title": "WES Trio V23",
-  "version": "v23",
-  "uuid": "c09fb9fd-0648-4892-a847-f6aa0c51f156",
+  "title": "WES Trio V24",
+  "version": "v24",
+  "uuid": "5bcc0741-fb07-4193-ad89-e9b80bfcb75c",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "previous_version": ["c09fb9fd-0648-4892-a847-f6aa0c51f156"],
+  "version_upgrade_log": "Updated workflows. Updated reference file for bwa, includes alt index now",
   "input": [
     {
       "argument_name": "fastqs_proband_first_R1",
@@ -37,7 +39,7 @@
     {
       "argument_name": "reference_bwa",
       "argument_type": "file",
-      "files": [{"file": "b24ed5ed-a037-48a0-a938-3fecfb90d0cf"}]
+      "files": [{"file": "e91a59c0-c546-4bea-a407-df6ab5552f13"}]
     },
     {
       "argument_name": "reference_fa",
@@ -67,7 +69,7 @@
     {
       "argument_name": "vep",
       "argument_type": "file",
-      "files": [{"file": "4ff30e10-aa8b-4ebf-87ac-20c7bfc15a46"}]
+      "files": [{"file": "ea103486-b65a-4439-9d0b-1186f8e59388"}]
     },
     {
       "argument_name": "clinvar",
@@ -171,7 +173,6 @@
         "ebs_size": "1.1x",
         "EBS_optimized": true,
         "spot_instance": false,
-        "log_bucket": "tibanna-output",
         "run_name": "run_fastqc-r1",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -180,7 +181,6 @@
           "argument_name": "input_fastq",
           "argument_type": "file",
           "scatter": 2,
-          "mount": true,
           "source_argument_name": "fastqs_proband_first_R1"
         }
       ]
@@ -193,7 +193,6 @@
         "ebs_size": "1.1x",
         "EBS_optimized": true,
         "spot_instance": false,
-        "log_bucket": "tibanna-output",
         "run_name": "run_fastqc-r2",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -202,20 +201,18 @@
           "argument_name": "input_fastq",
           "argument_type": "file",
           "scatter": 2,
-          "mount": true,
           "source_argument_name": "fastqs_proband_first_R2"
         }
       ]
     },
     {
       "name": "workflow_bwa-mem_no_unzip-check",
-      "workflow": "50e75343-2e00-471d-a667-4acb083287d8",
+      "workflow": "aa490a0f-e6a7-4b97-9c91-4e15b5896423",
       "config": {
         "instance_type": "c5n.18xlarge",
-        "ebs_size": "5.3x",
+        "ebs_size": "6.3x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
         "run_name": "run_workflow_bwa-mem_no_unzip-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -229,22 +226,45 @@
         {
           "argument_name": "fastq_R1",
           "argument_type": "file",
-          "mount": true,
           "scatter": 2,
           "source_argument_name": "fastqs_proband_first_R1"
         },
         {
           "argument_name": "fastq_R2",
           "argument_type": "file",
-          "mount": true,
           "scatter": 2,
           "source_argument_name": "fastqs_proband_first_R2"
         },
         {
           "argument_name": "reference",
           "argument_type": "file",
-          "source_argument_name": "reference_bwa",
-          "mount": true
+          "source_argument_name": "reference_bwa"
+        }
+      ]
+    },
+    {
+      "name": "cgap-bamqc",
+      "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
+      "config": {
+        "instance_type": "r4.2xlarge",
+        "ebs_size": "3.5x",
+        "EBS_optimized": true,
+        "spot_instance": true,
+        "run_name": "run_bamqc",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "input": [
+        {
+          "argument_name": "input_bam",
+          "argument_type": "file",
+          "source": "workflow_bwa-mem_no_unzip-check",
+          "source_argument_name": "raw_bam"
+        },
+        {
+          "argument_name": "sample",
+          "argument_type": "parameter",
+          "source_argument_name": "sample_names_proband_first",
+          "scatter": 1
         }
       ]
     },
@@ -253,10 +273,9 @@
       "workflow": "d554d59b-e709-4c35-a81f-68a0cb3dd38a",
       "config": {
         "instance_type": "c5.2xlarge",
-        "ebs_size": "2.5x",
+        "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
         "run_name": "run_workflow_add-readgroups-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -270,7 +289,6 @@
         {
           "argument_name": "input_bam",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_bwa-mem_no_unzip-check",
           "source_argument_name": "raw_bam"
         },
@@ -283,14 +301,39 @@
       ]
     },
     {
+      "name": "cgap-bamqc-1",
+      "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
+      "config": {
+        "instance_type": "r4.2xlarge",
+        "ebs_size": "3.5x",
+        "EBS_optimized": true,
+        "spot_instance": true,
+        "run_name": "run_bamqc",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "input": [
+        {
+          "argument_name": "input_bam",
+          "argument_type": "file",
+          "source": "workflow_add-readgroups-check",
+          "source_argument_name": "bam_w_readgroups"
+        },
+        {
+          "argument_name": "sample",
+          "argument_type": "parameter",
+          "source_argument_name": "sample_names_proband_first",
+          "scatter": 1
+        }
+      ]
+    },
+    {
       "name": "workflow_merge-bam-check",
       "workflow": "4853a03a-8c0c-4624-a45d-c5206a72907b",
       "config": {
         "instance_type": "c5.2xlarge",
-        "ebs_size": "2x",
+        "ebs_size": "3x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
         "run_name": "run_workflow_merge-bam-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -305,9 +348,34 @@
           "argument_name": "input_bams",
           "argument_type": "file",
           "gather": 1,
-          "mount": true,
           "source": "workflow_add-readgroups-check",
           "source_argument_name": "bam_w_readgroups"
+        }
+      ]
+    },
+    {
+      "name": "cgap-bamqc-2",
+      "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
+      "config": {
+        "instance_type": "r4.2xlarge",
+        "ebs_size": "3.5x",
+        "EBS_optimized": true,
+        "spot_instance": true,
+        "run_name": "run_bamqc",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "input": [
+        {
+          "argument_name": "input_bam",
+          "argument_type": "file",
+          "source": "workflow_merge-bam-check",
+          "source_argument_name": "merged_bam"
+        },
+        {
+          "argument_name": "sample",
+          "argument_type": "parameter",
+          "source_argument_name": "sample_names_proband_first",
+          "scatter": 1
         }
       ]
     },
@@ -319,7 +387,6 @@
         "ebs_size": "3x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
         "run_name": "run_workflow_picard-MarkDuplicates-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -339,14 +406,39 @@
       ]
     },
     {
+      "name": "cgap-bamqc-3",
+      "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
+      "config": {
+        "instance_type": "r4.2xlarge",
+        "ebs_size": "3.5x",
+        "EBS_optimized": true,
+        "spot_instance": true,
+        "run_name": "run_bamqc",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "input": [
+        {
+          "argument_name": "input_bam",
+          "argument_type": "file",
+          "source": "workflow_picard-MarkDuplicates-check",
+          "source_argument_name": "dupmarked_bam"
+        },
+        {
+          "argument_name": "sample",
+          "argument_type": "parameter",
+          "source_argument_name": "sample_names_proband_first",
+          "scatter": 1
+        }
+      ]
+    },
+    {
       "name": "workflow_sort-bam-check",
       "workflow": "560f5194-cd3a-4799-9b1a-6a2d2c371c89",
       "config": {
         "instance_type": "m5a.2xlarge",
-        "ebs_size": "2.2x",
+        "ebs_size": "3.2x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
         "run_name": "run_workflow_sort-bam-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -360,9 +452,34 @@
         {
           "argument_name": "input_bam",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_picard-MarkDuplicates-check",
           "source_argument_name": "dupmarked_bam"
+        }
+      ]
+    },
+    {
+      "name": "cgap-bamqc-4",
+      "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
+      "config": {
+        "instance_type": "r4.2xlarge",
+        "ebs_size": "3.5x",
+        "EBS_optimized": true,
+        "spot_instance": true,
+        "run_name": "run_bamqc",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "input": [
+        {
+          "argument_name": "input_bam",
+          "argument_type": "file",
+          "source": "workflow_sort-bam-check",
+          "source_argument_name": "sorted_bam"
+        },
+        {
+          "argument_name": "sample",
+          "argument_type": "parameter",
+          "source_argument_name": "sample_names_proband_first",
+          "scatter": 1
         }
       ]
     },
@@ -371,10 +488,9 @@
       "workflow": "455b3056-64ca-4a9b-b546-294b01c9ca92",
       "config": {
         "instance_type": "t3.small",
-        "ebs_size": "1x",
+        "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
         "run_name": "run_workflow_gatk-BaseRecalibrator",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -388,25 +504,21 @@
         {
           "argument_name": "input_bam",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_sort-bam-check",
           "source_argument_name": "sorted_bam"
         },
         {
           "argument_name": "reference",
           "argument_type": "file",
-          "source_argument_name": "reference_fa",
-          "mount": true
+          "source_argument_name": "reference_fa"
         },
         {
           "argument_name": "known-sites-indels",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "known-sites-snp",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         }
       ]
     },
@@ -414,11 +526,10 @@
       "name": "workflow_gatk-ApplyBQSR-check",
       "workflow": "6c9c6f49-f954-4e76-8dfb-d385cddcebd6",
       "config": {
-        "instance_type": "t3.micro",
+        "instance_type": "t3.small",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
-        "spot_instance": true,
-        "log_bucket": "tibanna-output",
+        "spot_instance": false,
         "run_name": "run_workflow_gatk-ApplyBQSR-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -444,20 +555,44 @@
         {
           "argument_name": "reference",
           "argument_type": "file",
-          "source_argument_name": "reference_fa",
-          "mount": true
+          "source_argument_name": "reference_fa"
+        }
+      ]
+    },
+    {
+      "name": "cgap-bamqc-5",
+      "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
+      "config": {
+        "instance_type": "r4.2xlarge",
+        "ebs_size": "3.5x",
+        "EBS_optimized": true,
+        "spot_instance": true,
+        "run_name": "run_bamqc",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "input": [
+        {
+          "argument_name": "input_bam",
+          "argument_type": "file",
+          "source": "workflow_gatk-ApplyBQSR-check",
+          "source_argument_name": "recalibrated_bam"
+        },
+        {
+          "argument_name": "sample",
+          "argument_type": "parameter",
+          "source_argument_name": "sample_names_proband_first",
+          "scatter": 1
         }
       ]
     },
     {
       "name": "workflow_granite-mpileupCounts",
-      "workflow": "7d79eb1a-e784-43e8-b902-5f99ccecde0f",
+      "workflow": "620671e7-b21a-4c48-aa90-b5beb3283d64",
       "config": {
         "instance_type": "c5.4xlarge",
-        "ebs_size": 200,
+        "ebs_size": "4x",
         "EBS_optimized": true,
         "spot_instance": false,
-        "log_bucket": "tibanna-output",
         "run_name": "run_workflow_granite-mpileupCounts",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -471,20 +606,17 @@
         {
           "argument_name": "input_bam",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_gatk-ApplyBQSR-check",
           "source_argument_name": "recalibrated_bam"
         },
         {
           "argument_name": "reference",
           "argument_type": "file",
-          "source_argument_name": "reference_fa",
-          "mount": true
+          "source_argument_name": "reference_fa"
         },
         {
           "argument_name": "regions",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "nthreads",
@@ -496,13 +628,12 @@
     },
     {
       "name": "workflow_gatk-HaplotypeCaller",
-      "workflow": "7fd67e19-3425-45f8-8149-c7cac4278fdb",
+      "workflow": "a09b0e1d-6a6c-483c-b907-1e1eb3bc172a",
       "config": {
         "instance_type": "c5n.18xlarge",
         "ebs_size": "5x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
         "run_name": "run_workflow_gatk-HaplotypeCaller",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -516,20 +647,17 @@
         {
           "argument_name": "input_bam",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_gatk-ApplyBQSR-check",
           "source_argument_name": "recalibrated_bam"
         },
         {
           "argument_name": "reference",
           "argument_type": "file",
-          "source_argument_name": "reference_fa",
-          "mount": true
+          "source_argument_name": "reference_fa"
         },
         {
           "argument_name": "regions",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "nthreads",
@@ -540,42 +668,13 @@
       ]
     },
     {
-      "name": "cgap-bamqc",
-      "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
-      "config": {
-        "instance_type": "c5n.2xlarge",
-        "ebs_size": "2.5x",
-        "EBS_optimized": true,
-        "spot_instance": true,
-        "log_bucket": "tibanna-output",
-        "run_name": "run_bamqc",
-        "behavior_on_capacity_limit": "wait_and_retry"
-      },
-      "input": [
-        {
-          "argument_name": "input_bam",
-          "argument_type": "file",
-          "mount": true,
-          "source": "workflow_gatk-ApplyBQSR-check",
-          "source_argument_name": "recalibrated_bam"
-        },
-        {
-          "argument_name": "sample",
-          "argument_type": "parameter",
-          "source_argument_name": "sample_names_proband_first",
-          "scatter": 1
-        }
-      ]
-    },
-    {
       "name": "workflow_gatk-CombineGVCFs",
-      "workflow": "c7223a1c-ed48-4c54-a39f-35f05d61e850",
+      "workflow": "2d0eed17-0bf5-49ea-94b1-c4913bf1a058",
       "config": {
         "instance_type": "c5n.4xlarge",
         "ebs_size": "formula:str(10 + family_size - 3) + 'x'",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
         "run_name": "run_workflow_gatk-CombineGVCFs",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -590,32 +689,28 @@
           "argument_name": "input_gvcfs",
           "argument_type": "file",
           "gather": 1,
-          "mount": true,
           "source": "workflow_gatk-HaplotypeCaller",
           "source_argument_name": "gvcf"
         },
         {
           "argument_name": "reference",
           "argument_type": "file",
-          "source_argument_name": "reference_fa",
-          "mount": true
+          "source_argument_name": "reference_fa"
         },
         {
           "argument_name": "chromosomes",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         }
       ]
     },
     {
       "name": "workflow_granite-rckTar",
-      "workflow": "dca2f426-7ef0-456b-927d-ba0ab388d0da",
+      "workflow": "43200ef2-a5da-4216-a736-4d4eac4449d0",
       "config": {
         "instance_type": "c5.xlarge",
         "ebs_size": "2.5x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
         "run_name": "run_workflow_granite-rckTar",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -638,13 +733,12 @@
     },
     {
       "name": "workflow_gatk-GenotypeGVCFs-check",
-      "workflow": "4fbad226-859d-40d4-8192-10c305e819da",
+      "workflow": "4ff008de-6c9c-4991-879a-5925893ca1b1",
       "config": {
         "instance_type": "c5n.4xlarge",
-        "ebs_size": "1.5x",
+        "ebs_size": "2.5x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
         "run_name": "run_workflow_gatk-GenotypeGVCFs-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -658,25 +752,68 @@
         {
           "argument_name": "input_gvcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_gatk-CombineGVCFs",
           "source_argument_name": "combined_gvcf"
         },
         {
           "argument_name": "reference",
           "argument_type": "file",
-          "source_argument_name": "reference_fa",
-          "mount": true
+          "source_argument_name": "reference_fa"
         },
         {
           "argument_name": "chromosomes",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "known-sites-snp",
+          "argument_type": "file"
+        }
+      ]
+    },
+    {
+      "name": "workflow_granite-qcVCF",
+      "workflow": "e9a20462-5b4f-4105-8835-7f669629d88d",
+      "config": {
+        "instance_type": "t3.small",
+        "ebs_size": "2x",
+        "EBS_optimized": true,
+        "spot_instance": true,
+        "run_name": "run_workflow_granite-qcVCF",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "input": [
+        {
+          "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true
+          "source": "workflow_gatk-GenotypeGVCFs-check",
+          "source_argument_name": "vcf"
+        },
+        {
+          "argument_name": "pedigree",
+          "argument_type": "parameter"
+        },
+        {
+          "argument_name": "samples",
+          "argument_type": "parameter",
+          "source_argument_name": "sample_names_proband_first"
+        },
+        {
+          "argument_name": "trio_errors",
+          "argument_type": "parameter",
+          "value": "true",
+          "value_type": "boolean"
+        },
+        {
+          "argument_name": "het_hom",
+          "argument_type": "parameter",
+          "value": "false",
+          "value_type": "boolean"
+        },
+        {
+          "argument_name": "ti_tv",
+          "argument_type": "parameter",
+          "value": "false",
+          "value_type": "boolean"
         }
       ]
     },
@@ -685,10 +822,9 @@
       "workflow": "1e86fc97-2cc5-4648-ae3b-9b2295c5f012",
       "config": {
         "instance_type": "t3.small",
-        "ebs_size": "6x",
+        "ebs_size": "7x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
         "run_name": "run_samplegeno",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -702,21 +838,66 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_gatk-GenotypeGVCFs-check",
           "source_argument_name": "vcf"
         }
       ]
     },
     {
-      "name": "workflow_vep-annot-check",
-      "workflow": "e051a5ae-093e-4030-9c3f-ae93f1d9606d",
+      "name": "workflow_granite-qcVCF-1",
+      "workflow": "e9a20462-5b4f-4105-8835-7f669629d88d",
       "config": {
-        "instance_type": "c5n.18xlarge",
-        "ebs_size": "0.25x",
+        "instance_type": "t3.small",
+        "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
+        "run_name": "run_workflow_granite-qcVCF",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "input": [
+        {
+          "argument_name": "input_vcf",
+          "argument_type": "file",
+          "source": "workflow_samplegeno",
+          "source_argument_name": "samplegeno_vcf"
+        },
+        {
+          "argument_name": "pedigree",
+          "argument_type": "parameter"
+        },
+        {
+          "argument_name": "samples",
+          "argument_type": "parameter",
+          "source_argument_name": "sample_names_proband_first"
+        },
+        {
+          "argument_name": "trio_errors",
+          "argument_type": "parameter",
+          "value": "true",
+          "value_type": "boolean"
+        },
+        {
+          "argument_name": "het_hom",
+          "argument_type": "parameter",
+          "value": "false",
+          "value_type": "boolean"
+        },
+        {
+          "argument_name": "ti_tv",
+          "argument_type": "parameter",
+          "value": "false",
+          "value_type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "workflow_vep-annot-check",
+      "workflow": "2f997f5f-d334-4c2b-873c-e4392d6b83f5",
+      "config": {
+        "instance_type": "c5n.18xlarge",
+        "ebs_size": "1.35x",
+        "EBS_optimized": true,
+        "spot_instance": true,
         "run_name": "run_workflow_vep-annot-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -730,103 +911,86 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_samplegeno",
           "source_argument_name": "samplegeno_vcf"
         },
         {
           "argument_name": "reference",
           "argument_type": "file",
-          "source_argument_name": "reference_fa",
-          "mount": true
+          "source_argument_name": "reference_fa"
         },
         {
           "argument_name": "regions",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "vep",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "clinvar",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "dbnsfp",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "maxent",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "spliceai_snv",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "spliceai_indel",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "gnomad",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "gnomad2",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "CADD_snv",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "CADD_indel",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "phylop100bw",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "phylop30bw",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "phastc100bw",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "nthreads",
           "argument_type": "parameter",
-          "value": "72",
+          "value": "60",
           "value_type": "integer"
         }
       ]
     },
     {
       "name": "workflow_peddy",
-      "workflow": "d03e23cd-9875-43b5-b596-f8b080c5545e",
+      "workflow": "dc98d286-dbde-436b-8fca-3fa46f33f150",
       "config": {
         "instance_type": "t3.small",
         "ebs_size": "10x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
         "run_name": "run_workflow_peddy",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -844,15 +1008,14 @@
       ]
     },
     {
-      "name": "workflow_granite-qcVCF",
-      "workflow": "a28d7aee-54df-4c33-a1be-268217ea5a72",
+      "name": "workflow_granite-qcVCF-2",
+      "workflow": "e9a20462-5b4f-4105-8835-7f669629d88d",
       "dependencies": ["workflow_peddy"],
       "config": {
         "instance_type": "t3.small",
-        "ebs_size": "1x",
+        "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
         "run_name": "run_workflow_granite-qcVCF",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -860,7 +1023,6 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_vep-annot-check",
           "source_argument_name": "annotated_vcf"
         },
@@ -895,13 +1057,12 @@
     },
     {
       "name": "workflow_granite-filtering-check",
-      "workflow": "4a78b81f-3b1b-46d3-8f68-3c28229962bd",
+      "workflow": "77b36194-7f22-41b0-a4c9-12d0682501ef",
       "config": {
         "instance_type": "t3.medium",
-        "ebs_size": "9x",
+        "ebs_size": "10x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
         "run_name": "run_workflow_granite-filtering-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -915,14 +1076,12 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_vep-annot-check",
           "source_argument_name": "annotated_vcf"
         },
         {
           "argument_name": "genes",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "aftag",
@@ -937,14 +1096,60 @@
       ]
     },
     {
-      "name": "workflow_granite-novoCaller-rck-check",
-      "workflow": "d95137cf-f926-4bcf-9b4b-78738c00b0a0",
+      "name": "workflow_granite-qcVCF-3",
+      "workflow": "e9a20462-5b4f-4105-8835-7f669629d88d",
       "config": {
-        "instance_type": "c5.xlarge",
-        "ebs_size": "1.5x",
+        "instance_type": "t3.small",
+        "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
+        "run_name": "run_workflow_granite-qcVCF",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "input": [
+        {
+          "argument_name": "input_vcf",
+          "argument_type": "file",
+          "source": "workflow_granite-filtering-check",
+          "source_argument_name": "merged_vcf"
+        },
+        {
+          "argument_name": "pedigree",
+          "argument_type": "parameter"
+        },
+        {
+          "argument_name": "samples",
+          "argument_type": "parameter",
+          "source_argument_name": "sample_names_proband_first"
+        },
+        {
+          "argument_name": "trio_errors",
+          "argument_type": "parameter",
+          "value": "true",
+          "value_type": "boolean"
+        },
+        {
+          "argument_name": "het_hom",
+          "argument_type": "parameter",
+          "value": "false",
+          "value_type": "boolean"
+        },
+        {
+          "argument_name": "ti_tv",
+          "argument_type": "parameter",
+          "value": "false",
+          "value_type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "workflow_granite-novoCaller-rck-check",
+      "workflow": "efbd956d-809d-4860-9ebd-cd1abe490b46",
+      "config": {
+        "instance_type": "c5.xlarge",
+        "ebs_size": "2.5x",
+        "EBS_optimized": true,
+        "spot_instance": true,
         "run_name": "run_workflow_granite-novoCaller-rck-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -958,33 +1163,76 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_granite-filtering-check",
           "source_argument_name": "merged_vcf"
         },
         {
           "argument_name": "unrelated",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         },
         {
           "argument_name": "trio",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_granite-rckTar",
           "source_argument_name": "rck_tar"
         }
       ]
     },
     {
-      "name": "workflow_granite-comHet-check",
-      "workflow": "81c29481-81df-49e9-80e8-4bfe36d3a5bf",
+      "name": "workflow_granite-qcVCF-4",
+      "workflow": "e9a20462-5b4f-4105-8835-7f669629d88d",
       "config": {
         "instance_type": "t3.small",
-        "ebs_size": "2.5x",
+        "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
+        "run_name": "run_workflow_granite-qcVCF",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "input": [
+        {
+          "argument_name": "input_vcf",
+          "argument_type": "file",
+          "source": "workflow_granite-novoCaller-rck-check",
+          "source_argument_name": "novoCaller_vcf"
+        },
+        {
+          "argument_name": "pedigree",
+          "argument_type": "parameter"
+        },
+        {
+          "argument_name": "samples",
+          "argument_type": "parameter",
+          "source_argument_name": "sample_names_proband_first"
+        },
+        {
+          "argument_name": "trio_errors",
+          "argument_type": "parameter",
+          "value": "true",
+          "value_type": "boolean"
+        },
+        {
+          "argument_name": "het_hom",
+          "argument_type": "parameter",
+          "value": "false",
+          "value_type": "boolean"
+        },
+        {
+          "argument_name": "ti_tv",
+          "argument_type": "parameter",
+          "value": "false",
+          "value_type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "workflow_granite-comHet-check",
+      "workflow": "8fc79178-a81e-4da1-8cfd-121d4193e12c",
+      "config": {
+        "instance_type": "t3.small",
+        "ebs_size": "3.5x",
+        "EBS_optimized": true,
+        "spot_instance": true,
         "run_name": "run_workflow_granite-comHet-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -998,7 +1246,6 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_granite-novoCaller-rck-check",
           "source_argument_name": "novoCaller_vcf"
         },
@@ -1010,14 +1257,60 @@
       ]
     },
     {
-      "name": "workflow_dbSNP_ID_fixer-check",
-      "workflow": "1467c3bb-fd18-444b-89c9-3b07c3ddb4b8",
+      "name": "workflow_granite-qcVCF-5",
+      "workflow": "e9a20462-5b4f-4105-8835-7f669629d88d",
       "config": {
-        "instance_type": "t3.micro",
-        "ebs_size": 10,
+        "instance_type": "t3.small",
+        "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
+        "run_name": "run_workflow_granite-qcVCF",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "input": [
+        {
+          "argument_name": "input_vcf",
+          "argument_type": "file",
+          "source": "workflow_granite-comHet-check",
+          "source_argument_name": "comHet_vcf"
+        },
+        {
+          "argument_name": "pedigree",
+          "argument_type": "parameter"
+        },
+        {
+          "argument_name": "samples",
+          "argument_type": "parameter",
+          "source_argument_name": "sample_names_proband_first"
+        },
+        {
+          "argument_name": "trio_errors",
+          "argument_type": "parameter",
+          "value": "true",
+          "value_type": "boolean"
+        },
+        {
+          "argument_name": "het_hom",
+          "argument_type": "parameter",
+          "value": "false",
+          "value_type": "boolean"
+        },
+        {
+          "argument_name": "ti_tv",
+          "argument_type": "parameter",
+          "value": "false",
+          "value_type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "workflow_dbSNP_ID_fixer-check",
+      "workflow": "7f1a001e-cc1d-442d-9b32-857a6356a85c",
+      "config": {
+        "instance_type": "t3.micro",
+        "ebs_size": "2x",
+        "EBS_optimized": true,
+        "spot_instance": true,
         "run_name": "run_workflow_dbSNP_ID_fixer-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -1031,33 +1324,76 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_granite-comHet-check",
           "source_argument_name": "comHet_vcf"
         },
         {
           "argument_name": "dbSNP_ref_vcf",
           "argument_type": "file",
-          "mount": true,
           "source_argument_name": "dbSNP_full_ref_vcf"
         },
         {
           "argument_name": "region_file",
           "argument_type": "file",
-          "mount": true,
           "source_argument_name": "regions"
         }
       ]
     },
     {
-      "name": "workflow_hg19lo_hgvsg-check",
-      "workflow": "d77fd7b5-c7d3-4689-914a-443c2d4ec17d",
+      "name": "workflow_granite-qcVCF-6",
+      "workflow": "e9a20462-5b4f-4105-8835-7f669629d88d",
       "config": {
-        "instance_type": "t3.micro",
-        "ebs_size": 10,
+        "instance_type": "t3.small",
+        "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
+        "run_name": "run_workflow_granite-qcVCF",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "input": [
+        {
+          "argument_name": "input_vcf",
+          "argument_type": "file",
+          "source": "workflow_dbSNP_ID_fixer-check",
+          "source_argument_name": "vcf"
+        },
+        {
+          "argument_name": "pedigree",
+          "argument_type": "parameter"
+        },
+        {
+          "argument_name": "samples",
+          "argument_type": "parameter",
+          "source_argument_name": "sample_names_proband_first"
+        },
+        {
+          "argument_name": "trio_errors",
+          "argument_type": "parameter",
+          "value": "true",
+          "value_type": "boolean"
+        },
+        {
+          "argument_name": "het_hom",
+          "argument_type": "parameter",
+          "value": "false",
+          "value_type": "boolean"
+        },
+        {
+          "argument_name": "ti_tv",
+          "argument_type": "parameter",
+          "value": "false",
+          "value_type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "workflow_hg19lo_hgvsg-check",
+      "workflow": "66434019-65c5-498f-a986-9e791eeff0ad",
+      "config": {
+        "instance_type": "t3.micro",
+        "ebs_size": "3x",
+        "EBS_optimized": true,
+        "spot_instance": true,
         "run_name": "run_workflow_hg19lo_hgvsg-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -1071,14 +1407,12 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_dbSNP_ID_fixer-check",
           "source_argument_name": "vcf"
         },
         {
           "argument_name": "chainfile",
-          "argument_type": "file",
-          "mount": true
+          "argument_type": "file"
         }
       ]
     },
@@ -1090,7 +1424,6 @@
         "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": false,
-        "log_bucket": "tibanna-output",
         "run_name": "run_bamsnap",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -1098,7 +1431,6 @@
         {
           "argument_name": "input_bams",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_gatk-ApplyBQSR-check",
           "source_argument_name": "recalibrated_bam",
           "gather": 1
@@ -1106,14 +1438,12 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_hg19lo_hgvsg-check",
           "source_argument_name": "vcf"
         },
         {
           "argument_name": "ref",
           "argument_type": "file",
-          "mount": true,
           "source_argument_name": "reference_fa"
         },
         {
@@ -1130,14 +1460,13 @@
       ]
     },
     {
-      "name": "workflow_granite-qcVCF-2",
-      "workflow": "a28d7aee-54df-4c33-a1be-268217ea5a72",
+      "name": "workflow_granite-qcVCF-7",
+      "workflow": "e9a20462-5b4f-4105-8835-7f669629d88d",
       "config": {
         "instance_type": "t3.small",
-        "ebs_size": "1x",
+        "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "log_bucket": "tibanna-output",
         "run_name": "run_workflow_granite-qcVCF-2",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -1148,7 +1477,6 @@
         {
           "argument_name": "input_vcf",
           "argument_type": "file",
-          "mount": true,
           "source": "workflow_hg19lo_hgvsg-check",
           "source_argument_name": "vcf"
         },
@@ -1181,7 +1509,5 @@
         }
       ]
     }
-  ],
-  "previous_version": ["0b2e2be7-7292-4f5c-b75c-78837b27c6ea"],
-  "version_upgrade_log": "no change"
+  ]
 }

@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v23
+    dockerPull: cgap/cgap:v24
 
 baseCommand: [python3, /usr/local/bin/liftover_hg19.py]
 
@@ -28,7 +28,7 @@ inputs:
       prefix: -c
     doc: expect the path to the hg38-to-hg19-chain file
 
-  - id: output
+  - id: outputfile
     default: 'liftover.vcf'
     type: string
     inputBinding:
@@ -40,7 +40,7 @@ outputs:
   - id: output
     type: File
     outputBinding:
-      glob: $(inputs.output + ".gz")
+      glob: $(inputs.outputfile + ".gz")
     secondaryFiles:
       - .tbi
 

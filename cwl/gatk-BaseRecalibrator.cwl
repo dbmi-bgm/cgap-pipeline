@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v23
+    dockerPull: cgap/cgap:v24
 
 baseCommand: [gatk, BaseRecalibrator]
 

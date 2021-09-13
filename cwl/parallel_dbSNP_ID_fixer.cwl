@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v23
+    dockerPull: cgap/cgap:v24
 
 baseCommand: [parallel_dbSNP_ID_fixer.sh]
 
@@ -38,6 +38,7 @@ inputs:
 
   - id: nthreads
     type: int
+    default: 2
     inputBinding:
       position: 4
     doc: number of threads used to run parallel

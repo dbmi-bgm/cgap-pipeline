@@ -9,7 +9,7 @@
        }
     ],
     "config": {
-      "instance_type": "c5n.2xlarge",
+      "instance_type": "r4.2xlarge",
       "ebs_size": "2.5x",
       "EBS_optimized": true,
       "spot_instance": true,
