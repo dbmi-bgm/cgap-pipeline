@@ -28,7 +28,7 @@
   ],
   "hints": [
     {
-      "dockerPull": "cgap/md5:v2",
+      "dockerPull": "cgap/md5:v25",
       "class": "DockerRequirement"
     }
   ],
