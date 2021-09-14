@@ -1,7 +1,7 @@
 {
   "accession": "GAPWFHLFG275",
   "app_name": "workflow_hg19lo_hgvsg-check",
-  "app_version": "v25",
+  "app_version": "VERSION",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -37,11 +37,11 @@
   "cwl_main_filename": "workflow_hg19lo_hgvsg_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run hg19 liftover on an input vcf. hgvsg_creator is run on the output vcf to create another vcf. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v25",
+  "docker_image_name": "cgap/cgap:VERSION",
   "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_hg19lo_hgvsg-check_v25",
-  "aliases": ["cgap:workflow_hg19lo_hgvsg-check_v25",
+  "name": "workflow_hg19lo_hgvsg-check_VERSION",
+  "aliases": ["cgap:workflow_hg19lo_hgvsg-check_VERSION",
               "cgap:workflow_hg19lo_hgvsg-check_v24",
               "cgap:workflow_hg19lo_hgvsg-check_v23"],
   "steps": [

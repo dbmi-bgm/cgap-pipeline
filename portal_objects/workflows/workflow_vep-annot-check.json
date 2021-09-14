@@ -1,7 +1,7 @@
 {
   "accession": "GAPWFUG1O1DB",
   "app_name": "workflow_vep-annot-check",
-  "app_version": "v25",
+  "app_version": "VERSION",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -111,11 +111,11 @@
   "cwl_main_filename": "workflow_vep-annot_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Split multiallelic variants. Run VEP to annotate input vcf file. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v25",
+  "docker_image_name": "cgap/cgap:VERSION",
   "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_vep-annot-check_v25",
-  "aliases": ["cgap:workflow_vep-annot-check_v25",
+  "name": "workflow_vep-annot-check_VERSION",
+  "aliases": ["cgap:workflow_vep-annot-check_VERSION",
               "cgap:workflow_vep-annot-check_v24",
               "cgap:workflow_vep-annot-check_v23"],
   "steps": [

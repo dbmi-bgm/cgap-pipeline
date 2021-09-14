@@ -1,7 +1,7 @@
 {
   "accession": "GAPWFBRDS2L1",
   "app_name": "bamsnap",
-  "app_version": "v25",
+  "app_version": "VERSION",
   "arguments": [
       {
           "argument_format": "bam",
@@ -46,11 +46,11 @@
   "cwl_main_filename": "bamsnap.cwl",
   "cwl_pointer": "",
   "description": "Run bamsnap on a list of bam files given a vcf containing variants to be snapped",
-  "docker_image_name": "cgap/cgap:v25",
+  "docker_image_name": "cgap/cgap:VERSION",
   "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "bamsnap_v25",
-  "aliases": ["cgap:bamsnap_v25"],
+  "name": "bamsnap_VERSION",
+  "aliases": ["cgap:bamsnap_VERSION"],
   "steps": [
       {
           "inputs": [

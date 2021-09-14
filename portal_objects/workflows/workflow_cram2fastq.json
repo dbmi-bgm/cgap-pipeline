@@ -1,7 +1,7 @@
 {
   "accession": "GAPWFBH24DOI",
   "app_name": "workflow_cram2fastq",
-  "app_version": "v25",
+  "app_version": "VERSION",
   "arguments": [
       {
           "argument_format": "cram",
@@ -40,11 +40,11 @@
   "cwl_main_filename": "cram2fastq.cwl",
   "cwl_pointer": "",
   "description": "Convert cram to fastq files",
-  "docker_image_name": "cgap/cgap:v25",
+  "docker_image_name": "cgap/cgap:VERSION",
   "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_cram2fastq_v25",
-  "aliases": ["cgap:workflow_cram2fastq_v25",
+  "name": "workflow_cram2fastq_VERSION",
+  "aliases": ["cgap:workflow_cram2fastq_VERSION",
               "cgap:workflow_cram2fastq_v24",
               "cgap:workflow_cram2fastq_v23",
               "cgap:workflow_cram2fastq_v22",

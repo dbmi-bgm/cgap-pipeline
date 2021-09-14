@@ -1,7 +1,7 @@
 {
   "accession": "GAPXKK231Z9P",
   "app_name": "workflow_peddy",
-  "app_version": "v25",
+  "app_version": "VERSION",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -44,11 +44,11 @@
   "cwl_main_filename": "peddy.cwl",
   "cwl_pointer": "",
   "description": "Run peddy on vcf input file",
-  "docker_image_name": "cgap/cgap:v25",
+  "docker_image_name": "cgap/cgap:VERSION",
   "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_peddy_v25",
-  "aliases": ["cgap:workflow_peddy_v25",
+  "name": "workflow_peddy_VERSION",
+  "aliases": ["cgap:workflow_peddy_VERSION",
               "cgap:workflow_peddy_v24",
               "cgap:workflow_peddy_v23"],
   "steps": [

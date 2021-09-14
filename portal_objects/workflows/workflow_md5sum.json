@@ -1,7 +1,7 @@
 {
   "accession": "GAPWFW415Q3A",
   "app_name": "md5",
-  "app_version": "v25",
+  "app_version": "VERSION",
   "arguments": [
       {
           "argument_format": "fastq",
@@ -20,11 +20,11 @@
   "cwl_main_filename": "md5.cwl",
   "cwl_pointer": "",
   "description": "md5 on uncompressed file",
-  "docker_image_name": "cgap/md5:v25",
+  "docker_image_name": "cgap/md5:VERSION",
   "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "md5_v25",
-  "aliases": ["cgap:md5_v25",
+  "name": "md5_VERSION",
+  "aliases": ["cgap:md5_VERSION",
               "cgap:md5_v24"],
   "steps": [
       {

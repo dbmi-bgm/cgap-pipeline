@@ -1,7 +1,7 @@
 {
   "accession": "GAPW9IDRLG3D",
   "app_name": "workflow_granite-rckTar",
-  "app_version": "v25",
+  "app_version": "VERSION",
   "arguments": [
       {
           "argument_format": "rck_gz",
@@ -22,11 +22,11 @@
   "cwl_main_filename": "granite-rckTar.cwl",
   "cwl_pointer": "",
   "description": "Create a tar archive of rck files. Create an index file for the archive",
-  "docker_image_name": "cgap/cgap:v25",
+  "docker_image_name": "cgap/cgap:VERSION",
   "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-rckTar_v25",
-  "aliases": ["cgap:workflow_granite-rckTar_v25",
+  "name": "workflow_granite-rckTar_VERSION",
+  "aliases": ["cgap:workflow_granite-rckTar_VERSION",
               "cgap:workflow_granite-rckTar_v24",
               "cgap:workflow_granite-rckTar_v23"],
   "steps": [

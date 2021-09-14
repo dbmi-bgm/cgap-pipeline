@@ -1,7 +1,7 @@
 {
   "accession": "GAPWFRQ54BGL",
   "app_name": "workflow_dbSNP_ID_fixer-check",
-  "app_version": "v25",
+  "app_version": "VERSION",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -46,11 +46,11 @@
   "cwl_main_filename": "workflow_parallel_dbSNP_ID_fixer_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run parallel_dbSNP_ID_fixer on sample file and update ID column with rsIDs from reference dbSNP vcf. An integrity check is performed on the output file",
-  "docker_image_name": "cgap/cgap:v25",
+  "docker_image_name": "cgap/cgap:VERSION",
   "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_dbSNP_ID_fixer-check_v25",
-  "aliases": ["cgap:workflow_dbSNP_ID_fixer-check_v25"],
+  "name": "workflow_dbSNP_ID_fixer-check_VERSION",
+  "aliases": ["cgap:workflow_dbSNP_ID_fixer-check_VERSION"],
   "steps": [
       {
           "inputs": [

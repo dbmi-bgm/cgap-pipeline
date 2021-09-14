@@ -1,7 +1,7 @@
 {
   "accession": "GAPGLK9R65M2",
   "app_name": "workflow_samplegeno",
-  "app_version": "v25",
+  "app_version": "VERSION",
   "arguments": [
       {
           "argument_format": "vcf_gz",
@@ -22,11 +22,11 @@
   "cwl_main_filename": "samplegeno.cwl",
   "cwl_pointer": "",
   "description": "Add samplegeno information to variants from input vcf",
-  "docker_image_name": "cgap/cgap:v25",
+  "docker_image_name": "cgap/cgap:VERSION",
   "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_samplegeno_v25",
-  "aliases": ["cgap:workflow_samplegeno_v25",
+  "name": "workflow_samplegeno_VERSION",
+  "aliases": ["cgap:workflow_samplegeno_VERSION",
               "cgap:workflow_samplegeno_v24",
               "cgap:workflow_samplegeno_v23",
               "cgap:workflow_samplegeno_v22",

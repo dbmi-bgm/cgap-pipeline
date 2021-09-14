@@ -1,7 +1,7 @@
 {
   "accession": "GAPWF2R5LG4P",
   "app_name": "cgap-bamqc",
-  "app_version": "v25",
+  "app_version": "VERSION",
   "arguments": [
       {
           "argument_format": "bam",
@@ -38,11 +38,11 @@
   "cwl_main_filename": "bamqc.cwl",
   "cwl_pointer": "",
   "description": "Run minimal bamqc on a bam input file. Produce a json report for quality metrics",
-  "docker_image_name": "cgap/cgap:v25",
+  "docker_image_name": "cgap/cgap:VERSION",
   "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "bamqc_v25",
-  "aliases": ["cgap:bamqc_v25",
+  "name": "bamqc_VERSION",
+  "aliases": ["cgap:bamqc_VERSION",
               "cgap:bamqc_v24",
               "cgap:bamqc_v23",
               "cgap:bamqc_v22"],
