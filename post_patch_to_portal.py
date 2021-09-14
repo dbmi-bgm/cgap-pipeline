@@ -1,12 +1,12 @@
-import os
+import os, sys, argparse
 import json
 from dcicutils import ff_utils, s3_utils
-import argparse
-
+import boto3
 
 def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=False,
          skip_workflow=False, skip_metaworkflow=False, skip_file_reference=False,
-         del_prev_version=False, ignore_key_conflict=False, ugrp_unrelated=False):
+         skip_cwl=False, cwl_bucket='', account='', region='', pipeline='', del_prev_version=False, ignore_key_conflict=False,
+         ugrp_unrelated=False, action='store_true'):
     """post / patch contents from portal_objects to the portal"""
 
     if os.environ.get('GLOBAL_BUCKET_ENV', ''):  # new cgap account
@@ -14,6 +14,12 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
         keycgap = s3.get_access_keys('access_key_admin')
     else:
         keycgap = ff_utils.get_authentication_with_server(ff_env=ff_env)
+
+    # Version
+    with open("VERSION") as f:
+        for line in f:
+            if "v" in line:
+                version = line.strip('\n')
 
     # Software
     if not skip_software:
@@ -66,6 +72,14 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
                     if d.get('aliases'):
                         d['aliases'] = [d['aliases'][0]]
 
+                # if json_conversion:
+                #     print(d['docker_image_name'])
+                #if
+                #d['docker_registry_url'] = "https://console.aws.amazon.com/ecr/repositories/"
+                #d['cwl_directory_url_v1'] = "s3_bucket_name_placeholder"
+                #d['docker_image_name'] = "643366669028.dkr.ecr.us-east-1.amazonaws.com/snv:"+version
+                #d['app_version'] = version
+                #print(d)
                 # Patch
                 try:
                     ff_utils.post_metadata(d, 'Workflow', key=keycgap)
@@ -96,6 +110,8 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
                 print("  processing file %s" % fn)
                 with open(os.path.join(wf_dir, fn), 'r') as f:
                     d = json.load(f)
+                    for k in ['title','version']:
+                        d[k] = d[k].replace("VERSION", version)
 
                 if del_prev_version:
                     # Clean previous version if present
@@ -112,6 +128,50 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
                     ff_utils.post_metadata(d, 'MetaWorkflow', key=keycgap)
                 except:
                     ff_utils.patch_metadata(d, d['uuid'], key=keycgap)
+    # CWLs
+    if not skip_cwl:
+        print("Processing cwl files...")
+        wf_dir = "cwl"
+        s3 = boto3.resource('s3')
+        if cwl_bucket != '' and account != '' and region != '' and pipeline != '':
+            #mk tmp dir for modified cwls
+            os.mkdir(wf_dir+"/upload")
+            account_region = account+".dkr.ecr."+region+".amazonaws.com"
+            files = os.listdir(wf_dir)
+            for fn in files:
+                if fn.endswith('.cwl'):
+                    # set original file path and path for s3
+                    file_path = wf_dir+'/'+fn
+                    s3_path_and_file = pipeline+'/'+version+'/'+fn
+
+                    # separate workflows, which can be automatically uploaded to s3 without edits ...
+                    if fn.startswith('workflow'):
+                        print("  processing file %s" % fn)
+                        s3.meta.client.upload_file(file_path, cwl_bucket, s3_path_and_file, ExtraArgs={'ACL':'public-read'})
+
+                    # ... from CommandLineTool files which have the dockerPull that needs modification
+                    else:
+                        print("  processing file %s" % fn)
+                        with open(file_path, 'r') as f:
+                            with open(wf_dir+"/upload/"+fn, 'w') as w:
+                                for line in f:
+                                    if "dockerPull" in line:
+                                        # modify line for output file by replacing generic variables
+                                        line = line.replace("ACCOUNT",account_region).replace("VERSION",version)
+                                    w.write(line)
+                        # once modified, upload to s3
+                        upload_path_and_file = wf_dir+"/upload/"+fn
+                        s3.meta.client.upload_file(upload_path_and_file, cwl_bucket, s3_path_and_file, ExtraArgs={'ACL':'public-read'})
+
+                        # delete file to allow tmp folder to be deleted at the end
+                        os.remove(upload_path_and_file)
+
+            # clean the directory from github repo
+            os.rmdir(wf_dir+"/upload")
+        else:
+            # throw an error if the necessary input variables are not provided
+            print("ERROR: when run without --skip-cwl, user must provide input for:\n    --cwl-bucket (user provided: "+cwl_bucket+")\n    --account (user provided: "+account+")\n    --region (user provided: "+region+")\n    --pipeline (user provied: "+pipeline+" choices are \'snv\' or \'sv\')")
+            sys.exit(1)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -121,12 +181,19 @@ if __name__ == "__main__":
     parser.add_argument('--skip-workflow', action='store_true')
     parser.add_argument('--skip-metaworkflow', action='store_true')
     parser.add_argument('--skip-file-reference', action='store_true')
+    parser.add_argument('--skip-cwl', action='store_true')
+    parser.add_argument('--cwl-bucket', default='')
+    parser.add_argument('--account', default='')
+    parser.add_argument('--region', default='')
+    parser.add_argument('--pipeline', default='', choices=['snv', 'sv'])
     parser.add_argument('--del-prev-version', action='store_true')
     parser.add_argument('--ignore-key-conflict', action='store_true')
     parser.add_argument('--ugrp-unrelated', action='store_true')
+
     args = parser.parse_args()
     main(ff_env=args.ff_env, skip_software=args.skip_software,
          skip_file_format=args.skip_file_format, skip_workflow=args.skip_workflow,
          skip_metaworkflow=args.skip_metaworkflow, skip_file_reference=args.skip_file_reference,
-         del_prev_version=args.del_prev_version, ignore_key_conflict=args.ignore_key_conflict,
-         ugrp_unrelated=args.ugrp_unrelated)
+         skip_cwl=args.skip_cwl, cwl_bucket=args.cwl_bucket, account=args.account,
+         region=args.region, pipeline=args.pipeline, del_prev_version=args.del_prev_version,
+         ignore_key_conflict=args.ignore_key_conflict, ugrp_unrelated=args.ugrp_unrelated)
