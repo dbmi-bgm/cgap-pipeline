@@ -42,7 +42,7 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["QC"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v25/cwl",
+  "cwl_directory_url_v1": "http://CWLBUCKET.s3.amazonaws.com/snv/VERSION",
   "cwl_main_filename": "bamsnap.cwl",
   "cwl_pointer": "",
   "description": "Run bamsnap on a list of bam files given a vcf containing variants to be snapped",
