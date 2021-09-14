@@ -47,7 +47,7 @@
   "cwl_pointer": "",
   "description": "Run bamsnap on a list of bam files given a vcf containing variants to be snapped",
   "docker_image_name": "cgap/cgap:v25",
-  "docker_registry_url": "https://hub.docker.com/",
+  "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "bamsnap_v25",
   "aliases": ["cgap:bamsnap_v25"],

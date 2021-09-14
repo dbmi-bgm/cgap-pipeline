@@ -21,7 +21,7 @@
   "cwl_pointer": "",
   "description": "md5 on uncompressed file",
   "docker_image_name": "cgap/md5:v25",
-  "docker_registry_url": "https://hub.docker.com/",
+  "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "md5_v25",
   "aliases": ["cgap:md5_v25",
