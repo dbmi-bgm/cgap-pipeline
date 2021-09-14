@@ -1,0 +1,101 @@
+{
+  "name": "WGS_mpileupCounts-rckTar_20unrelated",
+  "title": "WGS mpileupCounts-rckTar 20 unrelated v25",
+  "version": "v25",
+  "uuid": "da5f6b0a-1f9f-46ba-8a18-80e84c353a48",
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "previous_version": ["01339661-9faa-4130-b0a1-83bbe51fbed5"],
+  "version_upgrade_log": "no change",
+  "input": [
+    {
+      "argument_name": "input_bams",
+      "argument_type": "file"
+    },
+    {
+      "argument_name": "rcktar_content_file_names",
+      "argument_type": "parameter"
+    },
+    {
+      "argument_name": "reference_fa",
+      "argument_type": "file",
+      "files": [{"file": "1936f246-22e1-45dc-bb5c-9cfd55537fe7"}]
+    },
+    {
+      "argument_name": "regions",
+      "argument_type": "file",
+      "files": [{"file": "1c07a3aa-e2a3-498c-b838-15991c4a2f28"}]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "workflow_granite-mpileupCounts",
+      "workflow": "620671e7-b21a-4c48-aa90-b5beb3283d64",
+      "config": {
+        "instance_type": "c5.4xlarge",
+        "ebs_size": "4x",
+        "EBS_optimized": true,
+        "spot_instance": false,
+        "run_name": "run_workflow_granite-mpileupCounts",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "custom_pf_fields": {
+          "rck": {
+              "file_type": "read counts (rck)",
+              "description": "read counts (rck) file"
+          }
+      },
+      "input": [
+        {
+          "argument_name": "input_bam",
+          "argument_type": "file",
+          "scatter": 1,
+          "source_argument_name": "input_bams"
+        },
+        {
+          "argument_name": "reference",
+          "argument_type": "file",
+          "source_argument_name": "reference_fa"
+        },
+        {
+          "argument_name": "regions",
+          "argument_type": "file"
+        },
+        {
+          "argument_name": "nthreads",
+          "argument_type": "parameter",
+          "value": "15",
+          "value_type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "workflow_granite-rckTar",
+      "workflow": "43200ef2-a5da-4216-a736-4d4eac4449d0",
+      "config": {
+        "instance_type": "c5.xlarge",
+        "ebs_size": "2.5x",
+        "EBS_optimized": true,
+        "spot_instance": true,
+        "run_name": "run_workflow_granite-rckTar",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "custom_pf_fields": {
+          "rck_tar": {
+              "file_type": "tarred read counts (rck)",
+              "description": "tarred read counts (rck) file"
+          }
+      },
+      "input": [
+        {
+          "argument_name": "input_rcks",
+          "argument_type": "file",
+          "gather": 1,
+          "rename": "formula:rcktar_content_file_names",
+          "source": "workflow_granite-mpileupCounts",
+          "source_argument_name": "rck"
+        }
+      ]
+    }
+  ]
+}
