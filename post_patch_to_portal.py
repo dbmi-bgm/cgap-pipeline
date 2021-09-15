@@ -56,35 +56,45 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
     # Workflows
     if not skip_workflow:
         print("Processing workflow...")
-        wf_dir = "portal_objects/workflows"
-        files = os.listdir(wf_dir)
+        if cwl_bucket != '' and account != '' and region != '':
+            wf_dir = "portal_objects/workflows"
+            files = os.listdir(wf_dir)
 
-        for fn in files:
-            if fn.endswith('.json'):
-                print("  processing file %s" % fn)
-                with open(os.path.join(wf_dir, fn), 'r') as f:
-                    d = json.load(f)
+            for fn in files:
+                if fn.endswith('.json'):
+                    print("  processing file %s" % fn)
+                    with open(os.path.join(wf_dir, fn), 'r') as f:
+                        d = json.load(f)
 
-                if del_prev_version:
-                    # Clean previous version and aliases if present
-                    if d.get('previous_version'):
-                        del d['previous_version']
-                    if d.get('aliases'):
-                        d['aliases'] = [d['aliases'][0]]
+                    if del_prev_version:
+                        # Clean previous version and aliases if present
+                        if d.get('previous_version'):
+                            del d['previous_version']
+                        if d.get('aliases'):
+                            d['aliases'] = [d['aliases'][0]]
 
-                # if json_conversion:
-                #     print(d['docker_image_name'])
-                #if
-                #d['docker_registry_url'] = "https://console.aws.amazon.com/ecr/repositories/"
-                #d['cwl_directory_url_v1'] = "s3_bucket_name_placeholder"
-                #d['docker_image_name'] = "643366669028.dkr.ecr.us-east-1.amazonaws.com/snv:"+version
-                #d['app_version'] = version
-                #print(d)
-                # Patch
-                try:
-                    ff_utils.post_metadata(d, 'Workflow', key=keycgap)
-                except:
-                    ff_utils.patch_metadata(d, d['uuid'], key=keycgap)
+                    # replace VERSION variable with correct version
+                    d["aliases"][0] = d["aliases"][0].replace("VERSION",version)
+
+                    for i in ["app_version", "docker_image_name", "name"]:
+                        d[i] = d[i].replace("VERSION",version)
+
+                    # replace CWLBUCKET and VERSION variables in cwl_directory_url_v1
+                    d["cwl_directory_url_v1"] = d["cwl_directory_url_v1"].replace("CWLBUCKET", cwl_bucket).replace("VERSION", version)
+
+                    # replace ACCOUNT and VERSION variables for docker_image_name
+                    account_region = account+".dkr.ecr."+region+".amazonaws.com"
+                    d["docker_image_name"] = d["docker_image_name"].replace("ACCOUNT",account_region).replace("VERSION",version)
+
+                    # Patch
+                    try:
+                        ff_utils.post_metadata(d, 'Workflow', key=keycgap)
+                    except:
+                        ff_utils.patch_metadata(d, d['uuid'], key=keycgap)
+        else:
+            # throw an error if the cwl bucket is not provided
+            print("ERROR: when run without --skip-workflow, user must provide input for:\n    --cwl-bucket (user provided: "+cwl_bucket+")\n    --account (user provided: "+account+")\n    --region (user provided: "+region+")")
+            sys.exit(1)
 
     # File reference
     if not skip_file_reference:
@@ -131,9 +141,9 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
     # CWLs
     if not skip_cwl:
         print("Processing cwl files...")
-        wf_dir = "cwl"
-        s3 = boto3.resource('s3')
         if cwl_bucket != '' and account != '' and region != '' and pipeline != '':
+            wf_dir = "cwl"
+            s3 = boto3.resource('s3')
             #mk tmp dir for modified cwls
             os.mkdir(wf_dir+"/upload")
             account_region = account+".dkr.ecr."+region+".amazonaws.com"
