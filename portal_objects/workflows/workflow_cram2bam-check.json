@@ -39,7 +39,7 @@
   "cwl_main_filename": "workflow_cram2bam_plus_integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Convert cram to bam files",
-  "docker_image_name": "cgap/cgap:VERSION",
+  "docker_image_name": "ACCOUNT/snv:VERSION",
   "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_cram2bam_VERSION",

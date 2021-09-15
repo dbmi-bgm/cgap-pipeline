@@ -32,7 +32,7 @@
     "cwl_child_filenames": [],
     "cwl_directory_url_v1": "http://CWLBUCKET.s3.amazonaws.com/snv/VERSION",
     "cwl_pointer": "",
-    "docker_image_name": "cgap/fastqc:VERSION",
+    "docker_image_name": "ACCOUNT/fastqc:VERSION",
     "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
     "name": "fastqc_VERSION",
     "aliases": ["cgap:fastq_VERSION",

@@ -38,7 +38,7 @@
   "cwl_main_filename": "bamqc.cwl",
   "cwl_pointer": "",
   "description": "Run minimal bamqc on a bam input file. Produce a json report for quality metrics",
-  "docker_image_name": "cgap/cgap:VERSION",
+  "docker_image_name": "ACCOUNT/snv:VERSION",
   "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "bamqc_VERSION",

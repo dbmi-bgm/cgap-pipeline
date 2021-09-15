@@ -36,7 +36,7 @@
   "cwl_main_filename": "gatk-BaseRecalibrator.cwl",
   "cwl_pointer": "",
   "description": "Run gatk BaseRecalibrator on bam input file. Produce a recalibration report",
-  "docker_image_name": "cgap/cgap:VERSION",
+  "docker_image_name": "ACCOUNT/snv:VERSION",
   "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_gatk-BaseRecalibrator_VERSION",
