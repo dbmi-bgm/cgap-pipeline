@@ -20,14 +20,13 @@ python post_patch_to_portal.py [--ff-env=<env_name>] [--del-prev-version]
                                [--skip-file-format] [--skip-file-reference]
                                [--skip-workflow] [--skip-metaworkflow]
                                [--skip-cwl] [--skip-ecr] [--cwl-bucket=<cwl_s3_bucket>]
-                               [--account=<account_num>] [--region=<region>] [--pipeline=<pipeline>]
+                               [--account=<account_num>] [--region=<region>]
                                [--ugrp-unrelated] [--ignore-key-conflict]
 
 # env_name : fourfront-cgapwolf (default), fourfront-cgap
 # cwl_s3_bucket : '' (default); provide s3 cwl bucket name, required for cwl and workflow steps
 # account_num : '' (default); provide aws account number, required for cwl, workflow, and ecr steps
 # region : '' (default); provide aws account region, required for cwl, workflow, and ecr steps
-# pipeline : '' (default), snv, sv; provide cgap pipeline type, required for cwl step
 ```
 
 ### Version updates
