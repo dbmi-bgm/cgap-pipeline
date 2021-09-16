@@ -1,12 +1,10 @@
 {
-  "name": "WGS_trio_cram",
-  "title": "WGS Trio Cram v25",
+  "name": "WGS_trio_cram_60x",
+  "title": "WGS Trio Cram v25, 60x",
   "version": "v25",
-  "uuid": "34054f67-9b23-4e8b-99d5-a5c9463c9af3",
+  "uuid": "e34f3995-f4a9-44e3-a677-c6e45ec7e638",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "previous_version": ["aed85144-0a22-48cd-b4a2-f10e053937ac"],
-  "version_upgrade_log": "updated unrelated to new UGRP run with alt index, new parallel ApplyBQSR",
   "input": [
     {
       "argument_name": "crams",
@@ -254,7 +252,7 @@
         "instance_type": "c5n.18xlarge",
         "ebs_size": "6.3x",
         "EBS_optimized": true,
-        "spot_instance": true,
+        "spot_instance": false,
         "run_name": "run_workflow_bwa-mem_no_unzip-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -428,7 +426,7 @@
         "instance_type": "c5n.18xlarge",
         "ebs_size": "3x",
         "EBS_optimized": true,
-        "spot_instance": true,
+        "spot_instance": false,
         "run_name": "run_workflow_picard-MarkDuplicates-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -532,7 +530,7 @@
         "instance_type": "t3.small",
         "ebs_size": "2x",
         "EBS_optimized": true,
-        "spot_instance": true,
+        "spot_instance": false,
         "run_name": "run_workflow_gatk-BaseRecalibrator",
         "behavior_on_capacity_limit": "wait_and_retry"
       },

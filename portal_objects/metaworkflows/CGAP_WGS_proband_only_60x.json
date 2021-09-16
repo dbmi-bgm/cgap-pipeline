@@ -1,12 +1,10 @@
 {
-  "name": "WGS_proband_only",
-  "title": "WGS Proband-only v25",
+  "name": "WGS_proband_only_60x",
+  "title": "WGS Proband-only v25, 60x",
   "version": "v25",
-  "uuid": "d414f11b-17cb-494d-9c66-36ab0920bc73",
+  "uuid": "a9bd8812-0eb4-45dc-9680-3f8733b7f91e",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "previous_version": ["ecc83f50-7301-4c2c-8367-cbec402bbde1"],
-  "version_upgrade_log": "new parallel ApplyBQSR",
   "input": [
     {
       "argument_name": "fastqs_R1",
@@ -199,7 +197,7 @@
         "instance_type": "c5n.18xlarge",
         "ebs_size": "6.3x",
         "EBS_optimized": true,
-        "spot_instance": true,
+        "spot_instance": false,
         "run_name": "run_workflow_bwa-mem_no_unzip-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -373,7 +371,7 @@
         "instance_type": "c5n.18xlarge",
         "ebs_size": "3x",
         "EBS_optimized": true,
-        "spot_instance": true,
+        "spot_instance": false,
         "run_name": "run_workflow_picard-MarkDuplicates-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -477,7 +475,7 @@
         "instance_type": "t3.small",
         "ebs_size": "2x",
         "EBS_optimized": true,
-        "spot_instance": true,
+        "spot_instance": false,
         "run_name": "run_workflow_gatk-BaseRecalibrator",
         "behavior_on_capacity_limit": "wait_and_retry"
       },

@@ -1,12 +1,10 @@
 {
-  "name": "WGS_proband_only_cram",
-  "title": "WGS Proband-only Cram v25",
+  "name": "WGS_proband_only_cram_60x",
+  "title": "WGS Proband-only Cram v25, 60x",
   "version": "v25",
-  "uuid": "4fa5fd3b-22f2-4d15-89ab-f18bb94064f3",
+  "uuid": "5dd0393b-c124-4263-8066-97e98659e36e",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "previous_version": ["ca47e1f7-abf7-4a0b-930a-b4e52d6b9a06"],
-  "version_upgrade_log": "new parallel ApplyBQSR",
   "input": [
     {
       "argument_name": "crams",
@@ -241,7 +239,7 @@
         "instance_type": "c5n.18xlarge",
         "ebs_size": "6.3x",
         "EBS_optimized": true,
-        "spot_instance": true,
+        "spot_instance": false,
         "run_name": "run_workflow_bwa-mem_no_unzip-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -415,7 +413,7 @@
         "instance_type": "c5n.18xlarge",
         "ebs_size": "3x",
         "EBS_optimized": true,
-        "spot_instance": true,
+        "spot_instance": false,
         "run_name": "run_workflow_picard-MarkDuplicates-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -519,7 +517,7 @@
         "instance_type": "t3.small",
         "ebs_size": "2x",
         "EBS_optimized": true,
-        "spot_instance": true,
+        "spot_instance": false,
         "run_name": "run_workflow_gatk-BaseRecalibrator",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
