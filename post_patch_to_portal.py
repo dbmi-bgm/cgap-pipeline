@@ -3,10 +3,16 @@ import json
 from dcicutils import ff_utils, s3_utils
 import boto3
 
+'''
+Possible future upgrades:
+- Build pubic docker image within post/patch script (would require Dockerfiles for each image)
+- Replace try/except with query to database for the post/patch steps
+'''
+
 def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=False,
          skip_workflow=False, skip_metaworkflow=False, skip_file_reference=False,
          skip_cwl=False, skip_ecr=False, cwl_bucket='', account='', region='',
-         pipeline='', del_prev_version=False, ignore_key_conflict=False,
+         del_prev_version=False, ignore_key_conflict=False,
          ugrp_unrelated=False, action='store_true'):
     """post / patch contents from portal_objects to the portal"""
 
@@ -18,9 +24,11 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
 
     # Version
     with open("VERSION") as f:
-        for line in f:
-            if "v" in line:
-                version = line.strip('\n')
+        version = f.readlines()[0].strip()
+
+    # Pipeline - REMOVE INPUT
+    with open("PIPELINE") as f:
+        pipeline = f.readlines()[0].strip()
 
     # Software
     if not skip_software:
@@ -55,9 +63,9 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
                     ff_utils.patch_metadata(dd, dd['uuid'], key=keycgap)
 
     # Workflows
-    if not skip_workflow:
+    if not skip_workflow: #going to add in PIPELINE replacement for ecr url.
         print("Processing workflow...")
-        if cwl_bucket != '' and account != '' and region != '':
+        if cwl_bucket != '' and account != '' and region != '' and pipeline != '':
             wf_dir = "portal_objects/workflows"
             files = os.listdir(wf_dir)
 
@@ -77,11 +85,11 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
                     # replace VERSION variable with correct version
                     d["aliases"][0] = d["aliases"][0].replace("VERSION",version)
 
-                    for i in ["app_version", "docker_image_name", "name"]:
-                        d[i] = d[i].replace("VERSION",version)
+                    for k in ["app_version", "docker_image_name", "name"]:
+                        d[k] = d[k].replace("VERSION",version)
 
                     # replace CWLBUCKET and VERSION variables in cwl_directory_url_v1
-                    d["cwl_directory_url_v1"] = d["cwl_directory_url_v1"].replace("CWLBUCKET", cwl_bucket).replace("VERSION", version)
+                    d["cwl_directory_url_v1"] = d["cwl_directory_url_v1"].replace("CWLBUCKET", cwl_bucket).replace("PIPELINE", pipeline).replace("VERSION", version)
 
                     # replace ACCOUNT and VERSION variables for docker_image_name
                     account_region = account+".dkr.ecr."+region+".amazonaws.com"
@@ -94,7 +102,7 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
                         ff_utils.patch_metadata(d, d['uuid'], key=keycgap)
         else:
             # throw an error if the cwl bucket is not provided
-            print("ERROR: when run without --skip-workflow, user must provide input for:\n    --cwl-bucket (user provided: "+cwl_bucket+")\n    --account (user provided: "+account+")\n    --region (user provided: "+region+")")
+            print("ERROR: when run without --skip-workflow, user must provide input for:\n    --cwl-bucket (user provided: "+cwl_bucket+")\n    --account (user provided: "+account+")\n    --region (user provided: "+region+")\n    --pipeline (user provied: "+pipeline+", choices are \'snv\' or \'sv\')")
             sys.exit(1)
 
     # File reference
@@ -181,15 +189,17 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
             os.rmdir(wf_dir+"/upload")
         else:
             # throw an error if the necessary input variables are not provided
-            print("ERROR: when run without --skip-cwl, user must provide input for:\n    --cwl-bucket (user provided: "+cwl_bucket+")\n    --account (user provided: "+account+")\n    --region (user provided: "+region+")\n    --pipeline (user provied: "+pipeline+" choices are \'snv\' or \'sv\')")
+            print("ERROR: when run without --skip-cwl, user must provide input for:\n    --cwl-bucket (user provided: "+cwl_bucket+")\n    --account (user provided: "+account+")\n    --region (user provided: "+region+")\n    --pipeline (user provied: "+pipeline+", choices are \'snv\' or \'sv\')")
             sys.exit(1)
 
     if not skip_ecr:
         print("Processing ECR images...")
-        if account != '' and region != '':
+        if account != '' and region != '' and pipeline != '':
             account_region = account+".dkr.ecr."+region+".amazonaws.com"
-            cmd = '''
+            # generic bash commands to be modified to correct version and account information
+            snv_images = '''
             # login
+            echo "For this to work, proper permissions are required within the EC2 environment"
             aws ecr get-login-password --region REGION | docker login --username AWS --password-stdin ACCOUNT
 
             # cgap on docker is snv on ECR
@@ -208,8 +218,27 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
             docker push ACCOUNT/fastqc:VERSION
             '''
 
+            sv_images = '''
+            # login
+            echo "For this to work, proper permissions are required within the EC2 environment"
+            aws ecr get-login-password --region REGION | docker login --username AWS --password-stdin ACCOUNT
+
+            # cgap-manta on docker is manta on ECR
+            docker pull cgap/cgap-manta:VERSION
+            docker tag cgap/cgap-manta:VERSION ACCOUNT/manta:VERSION
+            docker push ACCOUNT/manta:VERSION
+
+            # cnv is same on docker and ECR
+            docker pull cgap/cnv:VERSION
+            docker tag cgap/cnv:VERSION ACCOUNT/cnv:VERSION
+            docker push ACCOUNT/cnv:VERSION
+            '''
+
+            if pipeline == 'snv':
+                cmd = snv_images.replace("REGION", region).replace("ACCOUNT", account_region).replace("VERSION", version)
             # replace all variables
-            cmd = cmd.replace("REGION", region).replace("ACCOUNT", account_region).replace("VERSION", version)
+            elif pipeline == 'sv':
+                cmd = sv_images.replace("REGION", region).replace("ACCOUNT", account_region).replace("VERSION", version)
 
             # push create and push images
             subprocess.check_call(cmd, shell=True)
@@ -217,7 +246,7 @@ def main(ff_env='fourfront-cgapwolf', skip_software=False, skip_file_format=Fals
             print("ECR images created!")
         else:
             # throw an error if the cwl bucket is not provided
-            print("ERROR: when run without --skip-ecr, user must provide input for:\n    --account (user provided: "+account+")\n    --region (user provided: "+region+")")
+            print("ERROR: when run without --skip-ecr, user must provide input for:\n    --account (user provided: "+account+")\n    --region (user provided: "+region+")\n    --pipeline (user provied: "+pipeline+", choices are \'snv\' or \'sv\')")
             sys.exit(1)
 
 if __name__ == "__main__":
@@ -233,7 +262,6 @@ if __name__ == "__main__":
     parser.add_argument('--cwl-bucket', default='')
     parser.add_argument('--account', default='')
     parser.add_argument('--region', default='')
-    parser.add_argument('--pipeline', default='', choices=['snv', 'sv'])
     parser.add_argument('--del-prev-version', action='store_true')
     parser.add_argument('--ignore-key-conflict', action='store_true')
     parser.add_argument('--ugrp-unrelated', action='store_true')
@@ -243,5 +271,5 @@ if __name__ == "__main__":
          skip_file_format=args.skip_file_format, skip_workflow=args.skip_workflow,
          skip_metaworkflow=args.skip_metaworkflow, skip_file_reference=args.skip_file_reference,
          skip_cwl=args.skip_cwl, skip_ecr=args.skip_ecr, cwl_bucket=args.cwl_bucket, account=args.account,
-         region=args.region, pipeline=args.pipeline, del_prev_version=args.del_prev_version,
+         region=args.region, del_prev_version=args.del_prev_version,
          ignore_key_conflict=args.ignore_key_conflict, ugrp_unrelated=args.ugrp_unrelated)
