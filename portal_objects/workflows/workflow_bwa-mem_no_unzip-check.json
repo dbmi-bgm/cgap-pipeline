@@ -59,7 +59,7 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["bwa-mem-to-bam_no_unzip.cwl", "integrity-check.cwl"],
-  "cwl_directory_url_v1": "http://CWLBUCKET.s3.amazonaws.com/snv/VERSION",
+  "cwl_directory_url_v1": "http://CWLBUCKET.s3.amazonaws.com/PIPELINE/VERSION",
   "cwl_main_filename": "workflow_bwa-mem-to-bam_no_unzip_plus_integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Align paired-end reads to reference genome. Processing from fastq input files to bam output file. An integrity check is performed on the output file",

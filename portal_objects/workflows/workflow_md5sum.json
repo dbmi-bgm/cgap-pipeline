@@ -16,7 +16,7 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["QC"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "http://CWLBUCKET.s3.amazonaws.com/snv/VERSION",
+  "cwl_directory_url_v1": "http://CWLBUCKET.s3.amazonaws.com/PIPELINE/VERSION",
   "cwl_main_filename": "md5.cwl",
   "cwl_pointer": "",
   "description": "md5 on uncompressed file",
