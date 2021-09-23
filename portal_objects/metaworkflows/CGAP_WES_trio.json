@@ -33,7 +33,7 @@
       "argument_type": "parameter"
     },
     {
-      "argument_name": "famiy_size",
+      "argument_name": "family_size",
       "argument_type": "parameter"
     },
     {
@@ -1473,7 +1473,7 @@
         "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "run_name": "run_workflow_granite-qcVCF-2",
+        "run_name": "run_workflow_granite-qcVCF",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
       "custom_qc_fields": {
