@@ -37,6 +37,12 @@
       "argument_type": "parameter"
     },
     {
+      "argument_name": "eff_genome_size",
+      "argument_type": "parameter",
+      "value": "62847115",
+      "value_type": "integer"
+    },
+    {
       "argument_name": "reference_bwa",
       "argument_type": "file",
       "files": [{"file": "e91a59c0-c546-4bea-a407-df6ab5552f13"}]
@@ -261,6 +267,11 @@
           "source_argument_name": "raw_bam"
         },
         {
+          "argument_name": "eff_genome_size",
+          "argument_type": "parameter",
+          "source_argument_name": "eff_genome_size"
+        },
+        {
           "argument_name": "sample",
           "argument_type": "parameter",
           "source_argument_name": "sample_names_proband_first",
@@ -319,6 +330,11 @@
           "source_argument_name": "bam_w_readgroups"
         },
         {
+          "argument_name": "eff_genome_size",
+          "argument_type": "parameter",
+          "source_argument_name": "eff_genome_size"
+        },
+        {
           "argument_name": "sample",
           "argument_type": "parameter",
           "source_argument_name": "sample_names_proband_first",
@@ -370,6 +386,11 @@
           "argument_type": "file",
           "source": "workflow_merge-bam-check",
           "source_argument_name": "merged_bam"
+        },
+        {
+          "argument_name": "eff_genome_size",
+          "argument_type": "parameter",
+          "source_argument_name": "eff_genome_size"
         },
         {
           "argument_name": "sample",
@@ -424,6 +445,11 @@
           "source_argument_name": "dupmarked_bam"
         },
         {
+          "argument_name": "eff_genome_size",
+          "argument_type": "parameter",
+          "source_argument_name": "eff_genome_size"
+        },
+        {
           "argument_name": "sample",
           "argument_type": "parameter",
           "source_argument_name": "sample_names_proband_first",
@@ -474,6 +500,11 @@
           "argument_type": "file",
           "source": "workflow_sort-bam-check",
           "source_argument_name": "sorted_bam"
+        },
+        {
+          "argument_name": "eff_genome_size",
+          "argument_type": "parameter",
+          "source_argument_name": "eff_genome_size"
         },
         {
           "argument_name": "sample",
@@ -584,6 +615,11 @@
           "source_argument_name": "recalibrated_bam"
         },
         {
+          "argument_name": "eff_genome_size",
+          "argument_type": "parameter",
+          "source_argument_name": "eff_genome_size"
+        },
+        {
           "argument_name": "sample",
           "argument_type": "parameter",
           "source_argument_name": "sample_names_proband_first",
@@ -596,7 +632,7 @@
       "workflow": "620671e7-b21a-4c48-aa90-b5beb3283d64",
       "config": {
         "instance_type": "c5.4xlarge",
-        "ebs_size": "4x",
+        "ebs_size": "16x",
         "EBS_optimized": true,
         "spot_instance": false,
         "run_name": "run_workflow_granite-mpileupCounts",
