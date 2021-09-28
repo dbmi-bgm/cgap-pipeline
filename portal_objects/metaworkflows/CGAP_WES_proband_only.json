@@ -237,7 +237,7 @@
       "name": "cgap-bamqc",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "r4.2xlarge",
+        "instance_type": "c5a.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -268,7 +268,7 @@
       "name": "workflow_add-readgroups-check",
       "workflow": "d554d59b-e709-4c35-a81f-68a0cb3dd38a",
       "config": {
-        "instance_type": "c5.2xlarge",
+        "instance_type": "c5a.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -300,7 +300,7 @@
       "name": "cgap-bamqc-1",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "r4.2xlarge",
+        "instance_type": "c5a.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -331,7 +331,7 @@
       "name": "workflow_merge-bam-check",
       "workflow": "4853a03a-8c0c-4624-a45d-c5206a72907b",
       "config": {
-        "instance_type": "c5.2xlarge",
+        "instance_type": "c5a.2xlarge",
         "ebs_size": "3x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -358,7 +358,7 @@
       "name": "cgap-bamqc-2",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "r4.2xlarge",
+        "instance_type": "c5a.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -415,7 +415,7 @@
       "name": "cgap-bamqc-3",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "r4.2xlarge",
+        "instance_type": "c5a.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -472,7 +472,7 @@
       "name": "cgap-bamqc-4",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "r4.2xlarge",
+        "instance_type": "c5a.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -585,7 +585,7 @@
       "name": "cgap-bamqc-5",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "r4.2xlarge",
+        "instance_type": "c5a.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -900,7 +900,7 @@
         {
           "argument_name": "nthreads",
           "argument_type": "parameter",
-          "value": "72",
+          "value": "50",
           "value_type": "integer"
         }
       ]
