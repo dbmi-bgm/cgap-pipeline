@@ -686,6 +686,7 @@
       "custom_pf_fields": {
           "gvcf": {
               "file_type": "gVCF",
+              "variant_type": "SNV",
               "description": "processed output from cgap upstream pipeline"
           }
       },
@@ -727,6 +728,7 @@
       "custom_pf_fields": {
           "combined_gvcf": {
               "file_type": "combined gVCF",
+              "variant_type": "SNV",
               "description": "processed output from cgap downstream pipeline"
           }
       },
@@ -791,6 +793,7 @@
       "custom_pf_fields": {
           "vcf": {
               "file_type": "raw VCF",
+              "variant_type": "SNV",
               "description": "processed output from cgap downstream pipeline"
           }
       },
@@ -877,6 +880,7 @@
       "custom_pf_fields": {
           "samplegeno_vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -950,6 +954,7 @@
       "custom_pf_fields": {
           "annotated_vcf": {
               "file_type": "vep-annotated VCF",
+              "variant_type": "SNV",
               "description": "vep-annotated VCF file"
           }
       },
@@ -1115,6 +1120,7 @@
       "custom_pf_fields": {
           "merged_vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -1202,6 +1208,7 @@
       "custom_pf_fields": {
           "novoCaller_vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -1285,6 +1292,7 @@
       "custom_pf_fields": {
           "comHet_vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -1363,6 +1371,7 @@
       "custom_pf_fields": {
           "vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -1446,6 +1455,7 @@
       "custom_pf_fields": {
           "vcf": {
               "file_type": "full annotated VCF",
+              "variant_type": "SNV",
               "description": "full annotated VCF file"
           }
       },
