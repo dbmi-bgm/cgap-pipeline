@@ -46,3 +46,7 @@ fi
 # compress and index combined gvcf
 bgzip $sample_vcf_out || exit 1
 tabix -p vcf ${sample_vcf_out}.gz || exit 1
+
+# test that dbSNP output is not empty (known bug that requires rerun)
+line_count=`bgzip -cd ${sample_vcf_out}.gz | wc -l`
+if [ "$line_count" == "0" ]; then exit 1; fi
