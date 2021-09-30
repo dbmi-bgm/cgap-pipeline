@@ -47,6 +47,8 @@ if [[ ! -z "$chr_M" ]]; then
   rm $chr_M
 fi
 
+mv $sample_vcf_out ../ || exit 1
+cd ../ || exit 1
 
 # compress and index combined gvcf
 bgzip $sample_vcf_out || exit 1
