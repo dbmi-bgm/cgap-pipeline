@@ -11,7 +11,12 @@ sample_vcf_path_stripped=${sample_vcf##*/}
 sample_vcf_out=fixed_${sample_vcf_path_stripped%%.*}.vcf
 
 ## self variables
-directory=`pwd`
+#directory=`pwd`
+directory=dbSNP/
+
+# setting up output directory
+mkdir -p $directory || exit 1
+cd $directory || exit 1
 
 # grab header from sample_vcf and create chr0:header
 gunzip -c $sample_vcf | grep '^#' > chr0:header
@@ -22,7 +27,7 @@ gunzip -c $sample_vcf | grep '^#' > chr0:header
 cat $regionfile | xargs -P $nthreads -i python3 /usr/local/bin/dbSNP_ID_fixer.py -db $dbSNP_vcf --inputvcf $sample_vcf --regionfile {} || exit 1
 
 # merging the results
-array=(${directory}/*chr*:*)
+array=(*chr*:*)
 
 IFS=$'\n' sorted=($(sort -V <<<"${array[*]}"))
 unset IFS
