@@ -15,16 +15,16 @@ sample_vcf_out=fixed_${sample_vcf_path_stripped%%.*}.vcf
 directory=dbSNP/
 
 # setting up output directory
-mkdir -p $directory || exit 1
-cd $directory || exit 1
+mkdir -p $directory || echo "FAILED TO CREATE DIR"; exit 1
+cd $directory || echo "FAILED TO CD TO DIR"; exit 1
 
 # grab header from sample_vcf and create chr0:header
-gunzip -c $sample_vcf | grep '^#' > chr0:header
+gunzip -c $sample_vcf | grep '^#' > chr0:header || echo "FAILED TO CREATE HEADER FILE"; exit 1
 
 # running dbSNP rsID fixer
 
 #cat $regionfile | parallel --halt 2 --jobs $nthreads python3 /usr/local/bin/dbSNP_ID_fixer.py -db $dbSNP_vcf --inputvcf $sample_vcf --regionfile {} || exit 1
-cat $regionfile | xargs -P $nthreads -i python3 /usr/local/bin/dbSNP_ID_fixer.py -db $dbSNP_vcf --inputvcf $sample_vcf --regionfile {} || exit 1
+cat $regionfile | xargs -P $nthreads -i python3 /usr/local/bin/dbSNP_ID_fixer.py -db $dbSNP_vcf --inputvcf $sample_vcf --regionfile {} || echo "FAILED DURING RUN"; exit 1
 
 # merging the results
 array=(*chr*:*)
@@ -47,13 +47,13 @@ if [[ ! -z "$chr_M" ]]; then
   rm $chr_M
 fi
 
-mv $sample_vcf_out ../ || exit 1
-cd ../ || exit 1
+mv $sample_vcf_out ../ || echo "FAILED TO MV OUTPUT "; exit 1
+cd ../ || echo "FAILED TO CD SECOND TIME"; exit 1
 
 # compress and index combined gvcf
-bgzip $sample_vcf_out || exit 1
-tabix -p vcf ${sample_vcf_out}.gz || exit 1
+bgzip $sample_vcf_out || echo "FAILED TO BGZIP"; exit 1
+tabix -p vcf ${sample_vcf_out}.gz || echo "FAILED to TABIX"; exit 1
 
 # test that dbSNP output is not empty (known bug that requires rerun)
 line_count=`bgzip -cd ${sample_vcf_out}.gz | wc -l`
-if [ "$line_count" == "0" ]; then exit 1; fi
+if [ "$line_count" == "0" ]; then echo "FAILED LINECOUNT WAS ZERO"; exit 1; fi
