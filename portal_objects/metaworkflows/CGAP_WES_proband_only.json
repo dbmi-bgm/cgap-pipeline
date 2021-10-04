@@ -1152,7 +1152,7 @@
       "name": "workflow_dbSNP_ID_fixer-check",
       "workflow": "b9fe14eb-eab0-4360-b70c-d7a37292ffce",
       "config": {
-        "instance_type": "t3.micro",
+        "instance_type": "t3.small",
         "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
