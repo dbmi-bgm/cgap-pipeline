@@ -11,7 +11,6 @@ sample_vcf_path_stripped=${sample_vcf##*/}
 sample_vcf_out=fixed_${sample_vcf_path_stripped%%.*}.vcf
 
 ## self variables
-#directory=`pwd`
 directory=dbSNP/
 
 # setting up output directory
