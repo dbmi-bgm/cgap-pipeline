@@ -1,18 +1,20 @@
-=================
-CGAP WGS pipeline
-=================
+==========================
+CGAP WGS and WES pipelines
+==========================
 
-CGAP WGS pipeline allows to process Whole Genome Sequencing (WGS) data starting from fastq files and produce ``bam``, ``g.vcf`` and ``vcf`` files as output. Optionally, the pipeline can take a ``cram`` file and convert it to ``fastq`` files to go through the rest of the pipeline.
+CGAP WGS pipeline processes Whole Genome Sequencing (WGS) data starting from ``fastq`` files and produces ``bam``, ``g.vcf`` and ``vcf`` files as output. Optionally, the pipeline can take a ``cram`` file and convert it to ``fastq`` files to go through the rest of the pipeline.
 
-The pipeline is designed for a trio analysis with proband diagnosed with a likely monogenic disease. It is optimized for data with 30x coverage and has been tested with data up to 80-90x coverage.
+The WGS pipeline is designed for a trio analysis with proband diagnosed with a likely monogenic disease. It is optimized for data with 30x coverage and has been tested with data up to 80-90x coverage. It can also be run in proband-only, and family modes using appropriate metaworkflows.
 
-The pipeline is mostly based on ``bwa``, ``gatk4``, ``granite`` (https://github.com/dbmi-bgm/granite), ``ensembl-vep`` ((https://github.com/Ensembl/ensembl-vep) and ``bamsnap`` (https://github.com/parklab/bamsnap). The pipeline perform joint-sample variant calling within a family, performs annotation and filtering, calls de novo mutations and compound hets, and generates snapshot images for the filtered set of variants.
+CGAP WES pipeline is a recent extension of the WGS pipeline, which allows for the processing of Whole Exome Sequencing (WES) data starting from ``fastq`` files from a proband, trio or family to produce ``bam``, ``g.vcf`` and ``vcf`` files as output. We are currently optimizing for 90x coverage and testing from 20x-200x.
+
+Both pipelines are mostly based on ``bwa``, ``gatk4``, ``granite`` (https://github.com/dbmi-bgm/granite), ``ensembl-vep`` (https://github.com/Ensembl/ensembl-vep) and ``bamsnap`` (https://github.com/parklab/bamsnap). The pipelines perform joint-sample variant calling within a family, perform annotation and filtering, call *de novo* mutations and compound hets, and generate snapshot images for the filtered set of variants.
 
 
 Docker Image
 ############
 
-* The current docker image is ``cgap/cgap:v25``
+The public docker image for most of the WGS/WES pipeline and QC steps is ``cgap/cgap:v25``
 
 The image contains (but is not limited to) the following software packages:
 
@@ -28,8 +30,22 @@ The image contains (but is not limited to) the following software packages:
 - pbgzip (2b09f97)
 - vep (101)
 - peddy (0.4.7)
-- parallel
 
+The public docker image for ``md5`` is ``cgap/md5:v25``
+The ``Dockerfile`` for this image can be found here: https://github.com/4dn-dcic/docker-md5/blob/master/Dockerfile
+
+This image contains (but is not limited to) the following software packages:
+
+- md5sum (8.25)
+
+The public docker image for ``fastqc`` is ``cgap/fastqc:v25``
+The ``Dockerfile`` for this image can be found here: https://github.com/4dn-dcic/docker-fastqc/blob/master/Dockerfile
+
+This image contains (but is not limited to) the following software packages:
+
+- fastqc (0.11.9)
+
+CGAP is now running on a deployable model. Public docker images are pushed to private ECRs using the ``post_patch_to_portal.py`` script during deployment and/or pipeline updates.
 
 Pipeline Flow
 #############
@@ -42,25 +58,23 @@ The overall flow of the pipeline looks as below:
 Pipeline Parts and Runtimes
 ###########################
 
-Largely, the pipeline consists of three parts:
+Largely, the pipeline consists of two parts:
 
-  | Part 1. GATK-based per-sample processing
-  | Part 2. GATK-based per-family variant calling
-  | Part 3. annotation and inheritance mode analysis
+  | Part 1. GATK Best Practice Mapping and Variant Calling
+  | Part 2. Variant Annotation and Filtering
 
-The part associations and the run time of the different steps are summarized in the following diagram:
+The run time of the different steps are summarized in the following diagram:
 
-.. image:: images/cgap-pipeline-downstream-v22-20210511-parts-scale-largefont.png
-  :target: _images/cgap-pipeline-downstream-v22-20210511-parts-scale-largefont.png
+.. image:: images/bioinfo-snv-indel-flow-2parts-v25-20211006.png
+  :target: _images/bioinfo-snv-indel-flow-2parts-v25-20211006.png
 
 
 Pipeline Steps
 ##############
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
 
    wgs-part1
    wgs-part2
-   wgs-part3
    validation

@@ -5,7 +5,7 @@ VCF quality control
 Overview
 ++++++++
 
-To evaluate the quality of a VCF file, different metrics are calculated using ``granite qcVCF``.
+To evaluate the quality of a ``vcf`` file, different metrics are calculated using ``granite qcVCF``.
 The software calculates both sample-based, as well as, family-based metrics.
 
 The metrics currently available for sample are:

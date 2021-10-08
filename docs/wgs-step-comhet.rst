@@ -2,7 +2,7 @@
 Calling compound heterozygous mutations
 =======================================
 
-This step uses ``granite comHet`` to call compound heterozygous mutations by genes and transcripts, assigning the associate risk based on available annotations. The output vcf file is checked for integrity to ensure the format is correct and the file is not truncated.
+This step uses ``granite comHet`` to call compound heterozygous mutations by genes and transcripts, assigning the associate risk based on available annotations. The output ``vcf`` file is checked for integrity to ensure the format is correct and the file is not truncated.
 
 * CWL: workflow_granite-comHet_plus_vcf-integrity-check.cwl
 
@@ -10,7 +10,7 @@ This step uses ``granite comHet`` to call compound heterozygous mutations by gen
 Requirements
 ++++++++++++
 
-The input VCF must have VEP annotations (VEP consequences, gene and transcript are required). If the VEP annotation includes VEP impact, the step uses it. If not, it uses an existing VEP table (https://m.ensembl.org/info/genome/variation/prediction/predicted_data.html).
+The input ``vcf`` must have VEP annotations (VEP consequences, gene and transcript are required). If the VEP annotation includes VEP impact, the step uses it. If not, it uses an existing VEP table (https://m.ensembl.org/info/genome/variation/prediction/predicted_data.html).
 
 
 Specifications
@@ -28,27 +28,27 @@ To determine compound heterozygous pairs, variants must be first assigned to gen
 .. image:: images/gene_assignment_v14.png
 
 
-This gene assignment is ensured by first 'cleaning' the pre-existing VEP annotation according to spliceAI and ClinVar annotations. This VEP cleaning is performed during the Filtering step of the pipeline. The Compound Het calling step assumes that VEP annotation in the input VCF already reflects the above rules.
+This gene assignment is ensured by first 'cleaning' the pre-existing VEP annotation according to spliceAI and ClinVar annotations. This VEP cleaning is performed during the Filtering step of the pipeline. The Compound Het calling step assumes that VEP annotation in the input ``vcf`` already reflects the above rules.
 
 
 Output
 ++++++
 
-The output VCF preserves the input VCF and adds information to variants that are potentially compound heterozygous (no lines are removed). This additional information is in the following format:
+The output ``vcf`` preserves the input ``vcf`` and adds information to variants that are potentially compound heterozygous (no lines are removed). This additional information is in the following format:
 
 ::
 
     comHet=<Phased_or_Unphased>|<gene_id>|<transcript_id>|<gene_impact_of_comphet_pair>|<transcript_impact_of_comphet_pair>|<mate_variant>
 
 
-It looks as below for example:
+An example appears below:
 
 ::
 
-    comHet=Phased|ENSG00000084636|ENST00000373672~ENST00000488897|STRONG_PAIR|STROING_PAIR|chr1:31662352G>A
+    comHet=Phased|ENSG00000084636|ENST00000373672~ENST00000488897|STRONG_PAIR|STRONG_PAIR|chr1:31662352G>A
 
 
-The following header is added to the output VCF file.
+The following header is added to the output ``vcf`` file.
 
 ::
 
@@ -147,7 +147,7 @@ In each category, it is reported the total number of elements that are involved 
 
 
 By impact
---------
+---------
 
 For each impact, the program reports the number of compound het pairs predicted with that impact (``name``) as the worst possible impact, together with the number of genes, transcripts and variants involved.
 In each category, it is reported the total number of elements that are involved in a compound het pair, as well as the total number of elements involved in a pair that is also phased.

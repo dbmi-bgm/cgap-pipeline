@@ -5,7 +5,7 @@ BAM quality control
 Overview
 ++++++++
 
-To evaluate the quality of a BAM file, different metrics are calculated using a custom script ``bamqc.py``.
+To evaluate the quality of a ``bam`` file, different metrics are calculated using a custom script ``bamqc.py``.
 
 The metrics currently available are:
 
@@ -21,14 +21,14 @@ The metrics currently available are:
 Definitions
 +++++++++++
 
-Mapping stats
--------------
+Mapping statistics
+------------------
 
 The number of reads (not alignments) are counted as number unique read pairs, i.e. if a read pair is mapped to multiple locations, it is counted once.
 
 
 Coverage
-________
+--------
 
 Coverage (=Depth of Coverage) is calculated as below:
 
