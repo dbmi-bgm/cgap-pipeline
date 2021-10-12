@@ -949,7 +949,7 @@
         {
           "argument_name": "nthreads",
           "argument_type": "parameter",
-          "value": "72",
+          "value": "50",
           "value_type": "integer"
         }
       ]
