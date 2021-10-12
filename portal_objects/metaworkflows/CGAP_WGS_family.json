@@ -31,10 +31,6 @@
       "argument_type": "parameter"
     },
     {
-      "argument_name": "rcktar_content_file_names",
-      "argument_type": "parameter"
-    },
-    {
       "argument_name": "family_size",
       "argument_type": "parameter"
     },
