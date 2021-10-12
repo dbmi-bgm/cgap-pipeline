@@ -40,7 +40,7 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "http://CWLBUCKET.s3.amazonaws.com/PIPELINE/VERSION",
+  "cwl_directory_url_v1": "https://CWLBUCKET.s3.amazonaws.com/PIPELINE/VERSION",
   "cwl_main_filename": "gatk-HaplotypeCaller.cwl",
   "cwl_pointer": "",
   "description": "Run gatk HaplotypeCaller on bam input file. Produce a g.vcf file",

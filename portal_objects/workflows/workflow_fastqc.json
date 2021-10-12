@@ -30,7 +30,7 @@
     "description": "FastQC quality control step for fastq files",
     "cwl_main_filename": "fastqc.cwl",
     "cwl_child_filenames": [],
-    "cwl_directory_url_v1": "http://CWLBUCKET.s3.amazonaws.com/PIPELINE/VERSION",
+    "cwl_directory_url_v1": "https://CWLBUCKET.s3.amazonaws.com/PIPELINE/VERSION",
     "cwl_pointer": "",
     "docker_image_name": "ACCOUNT/fastqc:VERSION",
     "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",

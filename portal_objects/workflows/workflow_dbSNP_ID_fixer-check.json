@@ -42,7 +42,7 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": ["parallel_dbSNP_ID_fixer.cwl", "vcf-integrity-check.cwl"],
-  "cwl_directory_url_v1": "http://CWLBUCKET.s3.amazonaws.com/PIPELINE/VERSION",
+  "cwl_directory_url_v1": "https://CWLBUCKET.s3.amazonaws.com/PIPELINE/VERSION",
   "cwl_main_filename": "workflow_parallel_dbSNP_ID_fixer_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
   "description": "Run parallel_dbSNP_ID_fixer on sample file and update ID column with rsIDs from reference dbSNP vcf. An integrity check is performed on the output file",
