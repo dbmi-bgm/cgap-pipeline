@@ -1,8 +1,8 @@
 {
-  "name": "WGS_family",
-  "title": "WGS Family VERSION",
+  "name": "WES_family",
+  "title": "WES Family VERSION",
   "version": "VERSION",
-  "uuid": "22bc65ef-3f3b-4d6d-8050-9e86eaaf66a0",
+  "uuid": "d081e609-c3c9-48f0-91c5-1a157195ee7d",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "input": [
