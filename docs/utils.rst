@@ -7,7 +7,7 @@ Functions
 
 check_lines
 ^^^^^^^^^^^
-*check_lines* function can be used to check that line counts are matching between two steps output, or between a output bam and the input fastq files.
+*check_lines* function can be used to check that line counts are matching between the output of two steps where lines should not be dropped (i.e., any steps that modify without filtering), or between an output bam and the input fastq files.
 Requires uuid for the MetaWorkflowRun object to check and ff_key to access the metadata on the portal. The steps to compare are specified as dictionaries, examples below.
 
 .. code-block:: python
@@ -38,3 +38,5 @@ Requires uuid for the MetaWorkflowRun object to check and ff_key to access the m
     #                          },
     #     ...
     # }
+
+Currently, this check is run through ``foursight``, where we have pipeline-specific dictionaries stored in https://github.com/dbmi-bgm/foursight-cgap/blob/master/chalicelib/checks/helpers/linecount_dicts.py. 

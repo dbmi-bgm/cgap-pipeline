@@ -1,7 +1,7 @@
 {
     "accession": "GAPBH36DY72P",
     "app_name": "fastqc",
-    "app_version": "v25",
+    "app_version": "VERSION",
     "arguments": [
         {
             "argument_format": "fastq",
@@ -30,12 +30,12 @@
     "description": "FastQC quality control step for fastq files",
     "cwl_main_filename": "fastqc.cwl",
     "cwl_child_filenames": [],
-    "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v25/cwl",
+    "cwl_directory_url_v1": "http://CWLBUCKET.s3.amazonaws.com/PIPELINE/VERSION",
     "cwl_pointer": "",
-    "docker_image_name": "cgap/fastqc:v25",
-    "docker_registry_url": "https://hub.docker.com/",
-    "name": "fastqc_v25",
-    "aliases": ["cgap:fastq_v25",
+    "docker_image_name": "ACCOUNT/fastqc:VERSION",
+    "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
+    "name": "fastqc_VERSION",
+    "aliases": ["cgap:fastq_VERSION",
                 "cgap:fastq_v2"],
     "steps": [
         {
@@ -83,6 +83,6 @@
             ]
         }
     ],
-    "title": "FastQC v25",
+    "title": "FastQC",
     "uuid": "49e96b51-ed6c-4418-a693-d0e9f79adfa5"
 }

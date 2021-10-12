@@ -1,7 +1,7 @@
 {
   "name": "WGS_proband_only_60x",
-  "title": "WGS Proband-only v25, 60x",
-  "version": "v25",
+  "title": "WGS Proband-only VERSION, 60x",
+  "version": "VERSION",
   "uuid": "a9bd8812-0eb4-45dc-9680-3f8733b7f91e",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
@@ -590,6 +590,7 @@
       "custom_pf_fields": {
           "gvcf": {
               "file_type": "gVCF",
+              "variant_type": "SNV",
               "description": "processed output from cgap upstream pipeline"
           }
       },
@@ -631,6 +632,7 @@
       "custom_pf_fields": {
           "vcf": {
               "file_type": "raw VCF",
+              "variant_type": "SNV",
               "description": "processed output from cgap downstream pipeline"
           }
       },
@@ -717,6 +719,7 @@
       "custom_pf_fields": {
           "samplegeno_vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -790,6 +793,7 @@
       "custom_pf_fields": {
           "annotated_vcf": {
               "file_type": "vep-annotated VCF",
+              "variant_type": "SNV",
               "description": "vep-annotated VCF file"
           }
       },
@@ -955,6 +959,7 @@
       "custom_pf_fields": {
           "merged_vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -1042,6 +1047,7 @@
       "custom_pf_fields": {
           "comHet_vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -1110,7 +1116,7 @@
       "name": "workflow_dbSNP_ID_fixer-check",
       "workflow": "b9fe14eb-eab0-4360-b70c-d7a37292ffce",
       "config": {
-        "instance_type": "t3.micro",
+        "instance_type": "t3.small",
         "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -1120,6 +1126,7 @@
       "custom_pf_fields": {
           "vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -1203,6 +1210,7 @@
       "custom_pf_fields": {
           "vcf": {
               "file_type": "full annotated VCF",
+              "variant_type": "SNV",
               "description": "full annotated VCF file"
           }
       },
@@ -1270,7 +1278,7 @@
         "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "run_name": "run_workflow_granite-qcVCF-2",
+        "run_name": "run_workflow_granite-qcVCF",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
       "custom_qc_fields": {
