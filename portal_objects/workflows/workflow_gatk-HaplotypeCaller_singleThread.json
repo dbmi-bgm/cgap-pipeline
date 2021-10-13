@@ -1,0 +1,166 @@
+{
+  "accession": "GAPWFMU49CW2",
+  "app_name": "workflow_gatk-HaplotypeCaller",
+  "app_version": "VERSION",
+  "arguments": [
+      {
+          "argument_format": "bam",
+          "argument_type": "Input file",
+          "workflow_argument_name": "input_bam"
+      },
+      {
+          "argument_format": "fa",
+          "argument_type": "Input file",
+          "workflow_argument_name": "reference"
+      },
+      {
+          "argument_format": "bed",
+          "argument_type": "Input file",
+          "workflow_argument_name": "regions"
+      },
+      {
+          "argument_format": "gvcf_gz",
+          "argument_type": "Output processed file",
+          "workflow_argument_name": "gvcf",
+          "secondary_file_formats": ["gvcf_gz_tbi"]
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "threshold"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "ERC"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "nthreads"
+      }
+  ],
+  "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+  "category": ["processing"],
+  "cwl_child_filenames": [],
+  "cwl_directory_url_v1": "https://CWLBUCKET.s3.amazonaws.com/PIPELINE/VERSION",
+  "cwl_main_filename": "gatk-HaplotypeCaller_singleThread.cwl",
+  "cwl_pointer": "",
+  "description": "Run gatk HaplotypeCaller on bam input file. Produce a g.vcf file",
+  "docker_image_name": "ACCOUNT/snv:VERSION",
+  "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
+  "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "name": "workflow_gatk-HaplotypeCaller_VERSION",
+  "aliases": ["cgap:workflow_gatk-HaplotypeCaller_VERSION"],
+  "steps": [
+      {
+          "inputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "bam",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "input_bam",
+                  "source": [
+                      {
+                          "name": "input_bam"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "fa",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "reference",
+                  "source": [
+                      {
+                          "name": "reference"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "txt",
+                      "global": true,
+                      "type": "reference file"
+                  },
+                  "name": "regions",
+                  "source": [
+                      {
+                          "name": "regions"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "threshold",
+                  "source": [
+                      {
+                          "name": "threshold"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "ERC",
+                  "source": [
+                      {
+                          "name": "ERC"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "nthreads",
+                  "source": [
+                      {
+                          "name": "nthreads"
+                      }
+                  ]
+              }
+          ],
+          "meta": {
+              "analysis_step_types": [
+                  "Run gatk HaplotypeCaller"
+              ],
+              "software_used": [
+                 "/softwares/4ae88fb4-23f2-4939-8852-4644069d14d9"
+              ]
+          },
+          "name": "HaplotypeCaller",
+          "outputs": [
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "file_format": "gvcf_gz",
+                      "global": true,
+                      "type": "data file"
+                  },
+                  "name": "gvcf",
+                  "target": [
+                      {
+                          "name": "gvcf"
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "title": "Run gatk HaplotypeCaller",
+  "uuid": "c64b8f19-ab15-44a5-94e8-f8c778d93db0"
+}
