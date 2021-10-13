@@ -202,6 +202,10 @@ RUN git clone https://github.com/dbmi-bgm/cgap-annotations.git && \
 COPY HaplotypeCaller-parallel.sh .
 RUN chmod +x HaplotypeCaller-parallel.sh
 
+# HaplotypeCaller script
+COPY HaplotypeCaller.sh .
+RUN chmod +x HaplotypeCaller.sh
+
 # CombineGVCFs parallel script
 COPY CombineGVCFs-parallel.sh .
 RUN chmod +x CombineGVCFs-parallel.sh
