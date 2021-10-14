@@ -1,11 +1,11 @@
-========================================
-Part 1. GATK-based per-sample processing
-========================================
+======================================================
+Part 1. GATK Best Practice Mapping and Variant Calling
+======================================================
 
 Alignment
 +++++++++
 
-This step uses ``bwa mem`` to align a set of fastq reads to the genome reference.
+This step uses ``bwa mem`` to align a set of fastq reads to the genome reference. The ``bwa mem`` step was updated in ``v24`` to use additional index files for alternative contigs.
 The output bam file is checked for integrity to ensure the file has a header and it is not truncated.
 
 * CWL: workflow_bwa-mem-to-bam_no_unzip_plus_integrity-check.cwl
@@ -59,10 +59,3 @@ This step creates a recalibrated bam file and its index.
 The output bam file is checked for integrity to ensure the file has a header and it is not truncated.
 
 * CWL: workflow_gatk-ApplyBQSR_plus_integrity-check.cwl
-
-HaplotypeCaller
-+++++++++++++++
-
-This step uses ``GATK HaplotypeCaller`` to create a g.vcf file from the input bam file.
-
-* CWL: gatk-HaplotypeCaller.cwl

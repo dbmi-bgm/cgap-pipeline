@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v24
+    dockerPull: ACCOUNT/snv:VERSION
 
 baseCommand: [bamsnap]
 
@@ -38,7 +38,7 @@ inputs:
   - id: ref
     type: File
     inputBinding:
-      position: 4
+      position: 3
       prefix: -ref
     secondaryFiles:
       - ^.dict
@@ -48,7 +48,7 @@ inputs:
   - id: titles
     type: string[]
     inputBinding:
-      position: 5
+      position: 4
       prefix: -title
     doc: list of titles (e.g. "NA12877 (Father)")
 
@@ -63,10 +63,18 @@ inputs:
   - id: outprefix
     type: string
     inputBinding:
-      position: 7
+      position: 6
       prefix: -out
     default: bamsnap
     doc: prefix of the output zip file
+
+  - id: exclude_chr
+    type: string[]
+    inputBinding:
+      position: 7
+      prefix: -exclude_chr
+    default: ["chrM"]
+    doc: list of chromosomes to exclude
 
 outputs:
   - id: bamsnap_images

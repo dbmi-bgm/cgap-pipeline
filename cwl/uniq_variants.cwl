@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v24
+    dockerPull: ACCOUNT/snv:VERSION
 
 baseCommand: [uniq_variants.sh]
 
@@ -28,4 +28,4 @@ outputs:
 
 doc: |
   count the number of unique variants in vcf |
-  return a tsv file
+  return a json file

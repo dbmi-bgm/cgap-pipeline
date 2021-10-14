@@ -9,25 +9,21 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: cgap/cgap:v24
+    dockerPull: ACCOUNT/snv:VERSION
 
-baseCommand: [gatk, ApplyBQSR]
-
-arguments: ["-O", $(inputs.input.nameroot + "_recalibrated_full.bam"), "--use-original-qualities"]
+baseCommand: [ApplyBQSR-parallel.sh]
 
 inputs:
   - id: input
     type: File
     inputBinding:
       position: 1
-      prefix: -I
     doc: input file
 
   - id: reference
     type: File
     inputBinding:
       position: 2
-      prefix: -R
     secondaryFiles:
       - ^.dict
       - .fai
@@ -37,37 +33,40 @@ inputs:
     type: File
     inputBinding:
       position: 3
-      prefix: --bqsr
     doc: expect the path to the recalibration_report
 
   - id: static-quantized-quals_1
     type: int
     inputBinding:
       position: 4
-      prefix: --static-quantized-quals
     doc:
 
   - id: static-quantized-quals_2
     type: int
     inputBinding:
       position: 5
-      prefix: --static-quantized-quals
     doc:
 
   - id: static-quantized-quals_3
     type: int
     inputBinding:
       position: 6
-      prefix: --static-quantized-quals
     doc:
+
+  - id: nthreads
+    type: int
+    default: 28
+    inputBinding:
+      position: 7
+    doc: number of threads used to run parallel
 
 outputs:
   - id: output
     type: File
     outputBinding:
-      glob: $(inputs.input.nameroot + "_recalibrated_full.bam")
+      glob: recalibrated.bam
     secondaryFiles:
-        - ^.bai
+        - .bai
 
 doc: |
   run gatk ApplyBQSR

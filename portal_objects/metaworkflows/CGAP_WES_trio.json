@@ -1,12 +1,12 @@
 {
   "name": "WES_trio",
-  "title": "WES Trio V24",
-  "version": "v24",
-  "uuid": "5bcc0741-fb07-4193-ad89-e9b80bfcb75c",
+  "title": "WES Trio VERSION",
+  "version": "VERSION",
+  "uuid": "68b86341-d7a9-44f0-ba30-7cb090c52c42",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "previous_version": ["c09fb9fd-0648-4892-a847-f6aa0c51f156"],
-  "version_upgrade_log": "Updated workflows. Updated reference file for bwa, includes alt index now",
+  "previous_version": ["5bcc0741-fb07-4193-ad89-e9b80bfcb75c"],
+  "version_upgrade_log": "updated unrelated to new UGRP run with alt index, new parallel ApplyBQSR",
   "input": [
     {
       "argument_name": "fastqs_proband_first_R1",
@@ -33,8 +33,14 @@
       "argument_type": "parameter"
     },
     {
-      "argument_name": "famiy_size",
+      "argument_name": "family_size",
       "argument_type": "parameter"
+    },
+    {
+      "argument_name": "eff_genome_size",
+      "argument_type": "parameter",
+      "value": "62847115",
+      "value_type": "integer"
     },
     {
       "argument_name": "reference_bwa",
@@ -139,7 +145,7 @@
     {
       "argument_name": "unrelated",
       "argument_type": "file",
-      "files": [{"file": "4468e4a2-6c92-4d82-b333-821be68d0a55"}]
+      "files": [{"file": "eac862c0-8c87-4838-83cb-9a77412bff6f"}]
     },
     {
       "argument_name": "dbSNP_full_ref_vcf",
@@ -246,7 +252,7 @@
       "name": "cgap-bamqc",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "r4.2xlarge",
+        "instance_type": "c5a.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -261,6 +267,11 @@
           "source_argument_name": "raw_bam"
         },
         {
+          "argument_name": "eff_genome_size",
+          "argument_type": "parameter",
+          "source_argument_name": "eff_genome_size"
+        },
+        {
           "argument_name": "sample",
           "argument_type": "parameter",
           "source_argument_name": "sample_names_proband_first",
@@ -272,7 +283,7 @@
       "name": "workflow_add-readgroups-check",
       "workflow": "d554d59b-e709-4c35-a81f-68a0cb3dd38a",
       "config": {
-        "instance_type": "c5.2xlarge",
+        "instance_type": "c5a.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -304,7 +315,7 @@
       "name": "cgap-bamqc-1",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "r4.2xlarge",
+        "instance_type": "c5a.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -319,6 +330,11 @@
           "source_argument_name": "bam_w_readgroups"
         },
         {
+          "argument_name": "eff_genome_size",
+          "argument_type": "parameter",
+          "source_argument_name": "eff_genome_size"
+        },
+        {
           "argument_name": "sample",
           "argument_type": "parameter",
           "source_argument_name": "sample_names_proband_first",
@@ -330,7 +346,7 @@
       "name": "workflow_merge-bam-check",
       "workflow": "4853a03a-8c0c-4624-a45d-c5206a72907b",
       "config": {
-        "instance_type": "c5.2xlarge",
+        "instance_type": "c5a.2xlarge",
         "ebs_size": "3x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -357,7 +373,7 @@
       "name": "cgap-bamqc-2",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "r4.2xlarge",
+        "instance_type": "c5a.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -370,6 +386,11 @@
           "argument_type": "file",
           "source": "workflow_merge-bam-check",
           "source_argument_name": "merged_bam"
+        },
+        {
+          "argument_name": "eff_genome_size",
+          "argument_type": "parameter",
+          "source_argument_name": "eff_genome_size"
         },
         {
           "argument_name": "sample",
@@ -409,7 +430,7 @@
       "name": "cgap-bamqc-3",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "r4.2xlarge",
+        "instance_type": "c5a.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -422,6 +443,11 @@
           "argument_type": "file",
           "source": "workflow_picard-MarkDuplicates-check",
           "source_argument_name": "dupmarked_bam"
+        },
+        {
+          "argument_name": "eff_genome_size",
+          "argument_type": "parameter",
+          "source_argument_name": "eff_genome_size"
         },
         {
           "argument_name": "sample",
@@ -461,7 +487,7 @@
       "name": "cgap-bamqc-4",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "r4.2xlarge",
+        "instance_type": "c5a.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -474,6 +500,11 @@
           "argument_type": "file",
           "source": "workflow_sort-bam-check",
           "source_argument_name": "sorted_bam"
+        },
+        {
+          "argument_name": "eff_genome_size",
+          "argument_type": "parameter",
+          "source_argument_name": "eff_genome_size"
         },
         {
           "argument_name": "sample",
@@ -524,12 +555,12 @@
     },
     {
       "name": "workflow_gatk-ApplyBQSR-check",
-      "workflow": "6c9c6f49-f954-4e76-8dfb-d385cddcebd6",
+      "workflow": "c4d9ce59-7ff3-44c8-8336-f46774a4d882",
       "config": {
-        "instance_type": "t3.small",
-        "ebs_size": "3.5x",
+        "instance_type": "c5n.9xlarge",
+        "ebs_size": "5.5x",
         "EBS_optimized": true,
-        "spot_instance": false,
+        "spot_instance": true,
         "run_name": "run_workflow_gatk-ApplyBQSR-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -556,6 +587,12 @@
           "argument_name": "reference",
           "argument_type": "file",
           "source_argument_name": "reference_fa"
+        },
+        {
+          "argument_name": "nthreads",
+          "argument_type": "parameter",
+          "value": "28",
+          "value_type": "integer"
         }
       ]
     },
@@ -563,7 +600,7 @@
       "name": "cgap-bamqc-5",
       "workflow": "9ff0c046-9352-4ec4-9a34-bf3f547bde61",
       "config": {
-        "instance_type": "r4.2xlarge",
+        "instance_type": "c5a.2xlarge",
         "ebs_size": "3.5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -578,6 +615,11 @@
           "source_argument_name": "recalibrated_bam"
         },
         {
+          "argument_name": "eff_genome_size",
+          "argument_type": "parameter",
+          "source_argument_name": "eff_genome_size"
+        },
+        {
           "argument_name": "sample",
           "argument_type": "parameter",
           "source_argument_name": "sample_names_proband_first",
@@ -590,7 +632,7 @@
       "workflow": "620671e7-b21a-4c48-aa90-b5beb3283d64",
       "config": {
         "instance_type": "c5.4xlarge",
-        "ebs_size": "4x",
+        "ebs_size": "16x",
         "EBS_optimized": true,
         "spot_instance": false,
         "run_name": "run_workflow_granite-mpileupCounts",
@@ -640,6 +682,7 @@
       "custom_pf_fields": {
           "gvcf": {
               "file_type": "gVCF",
+              "variant_type": "SNV",
               "description": "processed output from cgap upstream pipeline"
           }
       },
@@ -681,6 +724,7 @@
       "custom_pf_fields": {
           "combined_gvcf": {
               "file_type": "combined gVCF",
+              "variant_type": "SNV",
               "description": "processed output from cgap downstream pipeline"
           }
       },
@@ -745,6 +789,7 @@
       "custom_pf_fields": {
           "vcf": {
               "file_type": "raw VCF",
+              "variant_type": "SNV",
               "description": "processed output from cgap downstream pipeline"
           }
       },
@@ -831,6 +876,7 @@
       "custom_pf_fields": {
           "samplegeno_vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -904,6 +950,7 @@
       "custom_pf_fields": {
           "annotated_vcf": {
               "file_type": "vep-annotated VCF",
+              "variant_type": "SNV",
               "description": "vep-annotated VCF file"
           }
       },
@@ -978,7 +1025,7 @@
         {
           "argument_name": "nthreads",
           "argument_type": "parameter",
-          "value": "60",
+          "value": "50",
           "value_type": "integer"
         }
       ]
@@ -1069,6 +1116,7 @@
       "custom_pf_fields": {
           "merged_vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -1156,6 +1204,7 @@
       "custom_pf_fields": {
           "novoCaller_vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -1239,6 +1288,7 @@
       "custom_pf_fields": {
           "comHet_vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -1305,9 +1355,9 @@
     },
     {
       "name": "workflow_dbSNP_ID_fixer-check",
-      "workflow": "7f1a001e-cc1d-442d-9b32-857a6356a85c",
+      "workflow": "b9fe14eb-eab0-4360-b70c-d7a37292ffce",
       "config": {
-        "instance_type": "t3.micro",
+        "instance_type": "t3.small",
         "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -1317,6 +1367,7 @@
       "custom_pf_fields": {
           "vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -1400,6 +1451,7 @@
       "custom_pf_fields": {
           "vcf": {
               "file_type": "full annotated VCF",
+              "variant_type": "SNV",
               "description": "full annotated VCF file"
           }
       },
@@ -1418,7 +1470,7 @@
     },
     {
       "name": "bamsnap",
-      "workflow": "a147d85c-07c7-4e01-82bb-73b381ebbf11",
+      "workflow": "5d3a7a4b-15d4-4343-9738-79bbc0d44642",
       "config": {
         "instance_type": "r5a.4xlarge",
         "ebs_size": "2x",
@@ -1467,7 +1519,7 @@
         "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "run_name": "run_workflow_granite-qcVCF-2",
+        "run_name": "run_workflow_granite-qcVCF",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
       "custom_qc_fields": {

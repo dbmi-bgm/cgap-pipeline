@@ -492,5 +492,24 @@
         "status": "uploading",
         "file_version": "v1",
         "accession": "GAPFI84GCNW1"
+    },
+    {
+        "uuid": "eac862c0-8c87-4838-83cb-9a77412bff6f",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "rck_tar",
+        "description": "archive of 20 unrelated rck.gz files from UGRP, MQ = 0 and BQ = 0 re-aligned using alt index",
+        "aliases": [
+            "cgap:novoCaller_unrelated_rcks_ugrp_v2"
+        ],
+        "extra_files": [
+            {
+                "file_format": "rck_tar_index",
+                "status": "uploading"
+            }
+        ],
+        "status": "uploading",
+        "file_version": "v2",
+        "accession": "GAPFIMO8Y4PZ"
     }
 ]

@@ -1,6 +1,8 @@
 {
-    "parameters": {},
-    "workflow_uuid": "6c9c6f49-f954-4e76-8dfb-d385cddcebd6",
+    "parameters": {
+      "nthreads": 28
+    },
+    "workflow_uuid": "c4d9ce59-7ff3-44c8-8336-f46774a4d882",
     "input_files" : [
        {
            "workflow_argument_name": "input_bam",
@@ -16,8 +18,8 @@
        }
     ],
     "config": {
-      "instance_type": "t3.micro",
-      "ebs_size": "3.5x",
+      "instance_type": "c5n.9xlarge",
+      "ebs_size": "5.5x",
       "EBS_optimized": true,
       "spot_instance": true,
       "log_bucket": "tibanna-output",

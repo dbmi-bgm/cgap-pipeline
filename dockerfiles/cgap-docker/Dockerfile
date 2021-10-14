@@ -175,10 +175,11 @@ RUN chmod +x sort-bgzip-vcf.sh
 # add read groups script
 RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
     cd cgap-scripts && \
-    git checkout 22ff179 && \
+    git checkout 28520db && \
     chmod +x AddReadGroups.py && \
     chmod +x duplines_vcf.py && \
     chmod +x samplegeno.py && \
+    chmod +x split_bam.py && \
     cd ..
 
 # add cgap-annotations scripts - dbSNP ID, hgvsg, liftover_hg19
@@ -186,12 +187,15 @@ RUN git clone https://github.com/dbmi-bgm/cgap-annotations.git && \
     cd cgap-annotations && \
     git checkout 7a5fb7b && \
     cd .. && \
-    cp cgap-annotations/variants/scripts/dbSNP_ID_fixer.py . && \
-    chmod +x dbSNP_ID_fixer.py && \
     cp cgap-annotations/variants/scripts/hgvsg_creator.py . && \
     chmod +x hgvsg_creator.py && \
     cp cgap-annotations/variants/scripts/liftover_hg19.py . && \
     chmod +x liftover_hg19.py && \
+    cd cgap-annotations && \
+    git checkout 2a9b3d7 && \
+    cd .. && \
+    cp cgap-annotations/variants/scripts/dbSNP_ID_fixer.py . && \
+    chmod +x dbSNP_ID_fixer.py && \
     rm -rf cgap-annotations
 
 # HaplotypeCaller parallel script
@@ -223,7 +227,7 @@ RUN wget https://raw.githubusercontent.com/dbmi-bgm/granite/master/docker/mpileu
     chmod +x mpileupCounts-parallel.sh
 
 # bamsnap
-RUN pip install bamsnap==0.2.19
+RUN pip install bamsnap-cgap==0.3.0
 
 # tar novoCaller script
 COPY tar-novoCaller.sh .
@@ -255,6 +259,14 @@ RUN chmod +x peddy.sh
 # unique variants
 COPY uniq_variants.sh .
 RUN chmod +x uniq_variants.sh
+
+# qc variant line count
+COPY qc_variant_line_count.sh .
+RUN chmod +x qc_variant_line_count.sh
+
+# ApplyBQSR parallel
+COPY ApplyBQSR-parallel.sh .
+RUN chmod +x ApplyBQSR-parallel.sh
 
 # env paths
 ENV PATH=/usr/local/bin/samtools/:$PATH

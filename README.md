@@ -1,23 +1,40 @@
 ## CGAP pipeline
 * This repo contains CGAP pipeline components
   * CWL
-  * Docker source - Docker image name `cgap/cgap:v24`
+  * Public Docker sources - Docker image names: `cgap/cgap:v25`, `cgap/md5:v25`, `cgap/fastqc:v25`
+  * Private ECR sources created dynamically at deployment with `post_patch_to_portal.py`
   * Example Tibanna input jsons for individual steps
 
 For more detailed documentation : https://cgap-pipeline.readthedocs.io/en/latest
 
-### Updating portal objects
-The following command patches/posts all portal objects including softwares, file formats and workflows
+### Creating and updating Portal Objects, CWL files, and ECR images
+The following script carries out a number of tasks for the bioinformatics team when setting up or updating a CGAP account:
+1. Creates account/environment-specific private ECR images from public Docker images
+2. Modifies CWL files to pull appropriate ECR images and uploads CWL files to s3
+3. Modifies JSON workflow and metaworkflow files to be consistent with version and the CWL files
+4. Posts/Patches all portal objects, including: softwares, file formats, reference files, workflows, and metaworkflows
+
 ```
 python post_patch_to_portal.py [--ff-env=<env_name>] [--del-prev-version]
                                [--skip-software]
                                [--skip-file-format] [--skip-file-reference]
                                [--skip-workflow] [--skip-metaworkflow]
+                               [--skip-cwl] [--skip-ecr] [--cwl-bucket=<cwl_s3_bucket>]
+                               [--account=<account_num>] [--region=<region>]
                                [--ugrp-unrelated] [--ignore-key-conflict]
+
 # env_name : fourfront-cgapwolf (default), fourfront-cgap
+# cwl_s3_bucket : '' (default); provide s3 cwl bucket name, required for cwl and workflow steps
+# account_num : '' (default); provide aws account number, required for cwl, workflow, and ecr steps
+# region : '' (default); provide aws account region, required for cwl, workflow, and ecr steps
 ```
 
 ### Version updates
+
+#### v25
+* unrelated for novoCaller are now created from UGRP samples run with the alt index
+* ApplyBQSR now runs in parallel
+* Public Docker images now replaced by private ECR images during post/patch script
 
 #### v24
 * changed bwa mem to use additional index files for alternative contigs

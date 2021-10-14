@@ -101,10 +101,10 @@
         "software_type": [
             "image generator"
         ],
-        "source_url": "https://github.com/parklab/bamsnap",
-        "title": "bamsnap_0.2.19",
-        "uuid": "a8b47313-8bcb-460b-8be8-b71c7f6b1b27",
-        "version": "0.2.19"
+        "source_url": "https://github.com/dbmi-bgm/bamsnap",
+        "title": "bamsnap-cgap_0.3.0",
+        "uuid": "fd97e01c-0308-4e96-b4aa-52ef4f04790b",
+        "version": "0.3.0"
     },
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
@@ -162,9 +162,9 @@
             "annotator"
         ],
         "source_url": "https://github.com/dbmi-bgm/cgap-annotations",
-        "title": "dbSNP_ID_fixer_7a5fb7b",
-        "uuid": "f9ecea14-7820-4f73-a4a1-e91f9199a0bc",
-        "commit": "7a5fb7b"
+        "title": "dbSNP_ID_fixer_2a9b3d7",
+        "uuid": "d3d3b223-6565-4942-8e39-bc9e79c1a4e7",
+        "commit": "2a9b3d7"
     },
     {
         "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
@@ -212,5 +212,17 @@
         "title": "fastqc_0.11.9",
         "uuid": "efdac7ec-7da3-4f23-9056-7a04abbc5e8b",
         "version": "0.11.9"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "split_bam",
+        "software_type": [
+            "file format converter"
+        ],
+        "source_url": "https://github.com/dbmi-bgm/cgap-scripts",
+        "title": "split_bam_28520db",
+        "uuid": "3d60553d-5b48-44eb-94f6-00f3355cfe02",
+        "commit": "28520db"
     }
 ]

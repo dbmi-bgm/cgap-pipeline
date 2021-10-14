@@ -1,6 +1,6 @@
-================
-Calls validation
-================
+===============
+Call validation
+===============
 
 For validation we are using a 3 generation family with children (C), parents (P), and grand-parents (GP).
 The statistics are calculated using ``granite validateVCF`` command. Samples for all family members are necessary.
@@ -20,8 +20,8 @@ GATK heterozygous calls
 
 Requirements:
 
-  - VCF file with joint calls for all family members, family-VCF
-  - VCF file with joint calls for trio (child and parents), trio-VCF
+  - ``vcf`` file with joint calls for all family members, family-VCF
+  - ``vcf`` file with joint calls for trio (child and parents), trio-VCF
   - family pedigree files in json format, one for each parent
 
 As a first step, we rename the samples in trio-VCF and merge trio-VCF to family-VCF using ``bcftools merge``.
@@ -69,8 +69,8 @@ novoCaller *de novo* calls (one child)
 
 | Requirements:
 
-  - VCF file with joint calls for all family members, family-VCF
-  - VCF file with joint calls for trio (child and parents) with novoCaller scores, novo-VCF.
+  - ``vcf`` file with joint calls for all family members, family-VCF
+  - ``vcf`` file with joint calls for trio (child and parents) with novoCaller scores, novo-VCF.
   - family pedigree file in json format for the child
 
 As a first step, we rename the samples in novo-VCF and merge novo-VCF to family-VCF using ``bcftools merge``.

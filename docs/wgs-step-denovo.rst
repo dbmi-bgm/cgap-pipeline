@@ -1,8 +1,8 @@
-=========================
-Calling de novo mutations
-=========================
+===========================
+Calling *de novo* mutations
+===========================
 
-This step uses granite novoCaller to call de novo mutations by assigning a posterior probability based on unrelated samples and trio. The output vcf file is checked for integrity to ensure the format is correct and the file is not truncated.
+This step uses granite novoCaller to call *de novo* mutations by assigning a posterior probability based on unrelated samples and trio. The output ``vcf`` file is checked for integrity to ensure the format is correct and the file is not truncated.
 
 * CWL: workflow_granite-novoCaller-rck_plus_vcf-integrity-check.cwl
 
@@ -10,15 +10,15 @@ This step uses granite novoCaller to call de novo mutations by assigning a poste
 Requirements
 ++++++++++++
 
-The proband must have two parents (may have additional samples) in the VCF. The step requires two .rck.tar files, one from the trio and one from a panel of unrelated individuals. A .rck.tar file is a tarball of .rck files that are created from bam files to record allele-specific and strand-specific read counts.
+The proband must have two parents (may have additional samples) in the ``vcf``. The step requires two .rck.tar files, one from the trio and one from a panel of unrelated individuals. A .rck.tar file is a tarball of .rck files that are created from bam files to record allele-specific and strand-specific read counts.
 
 
 Output
 ++++++
 
-The step creates an output VCF file that has the same entries from the input VCF file (no line is removed), but with additional information.
+The step creates an output ``vcf`` file that has the same entries from the input ``vcf`` file (no line is removed), but with additional information.
 
-An example line in an output VCF looks as below:
+An example line in an output ``vcf`` looks as below:
 
 ::
 
@@ -28,13 +28,13 @@ An example line in an output VCF looks as below:
 novoPP
 ------
 
-The output VCF contains novoPP (0 <= novoPP <= 1) assigned to the proband sample field. The novoPP value indicates the posterior probability that the given variant is a de novo mutation. A high novoPP value suggests that the variant is likely to be a de novo mutation.
+The output ``vcf`` contains novoPP (0 <= novoPP <= 1) assigned to the proband sample field. The novoPP value indicates the posterior probability that the given variant is a *de novo* mutation. A high novoPP value suggests that the variant is likely to be a *de novo* mutation.
 
 
 RSTR
 ----
 
-The output VCF also contains sample fields for the panel of unrelated samples. These fields only contain RSTR tags in the format of ``Rf,Af,Rr,Ar`` (R: ref, A: alt, f: forward, r: reverse) (e.g. ``16,7,25,0``). The RSTR tag is also added to the sample fields of the trio samples.
+The output ``vcf`` also contains sample fields for the panel of unrelated samples. These fields only contain RSTR tags in the format of ``Rf,Af,Rr,Ar`` (R: ref, A: alt, f: forward, r: reverse) (e.g. ``16,7,25,0``). The RSTR tag is also added to the sample fields of the trio samples.
 
 
 FAQ
@@ -47,7 +47,7 @@ FAQ
 
 2. What does novoPP=0 mean?
 
-  | novoPP=0 means that the parents had 3 or more ALT reads and the posterior probability was not calculated. It means that the variant is highly unlikely to be a de novo mutation.
+  | novoPP=0 means that the parents had 3 or more ALT reads and the posterior probability was not calculated. It means that the variant is highly unlikely to be a *de novo* mutation.
 
 
 3. How does it work for chrX, Y, or M?

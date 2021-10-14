@@ -1,7 +1,7 @@
 {
-  "accession": "GAPWFBR378IK",
+  "accession": "GAPWFBRDS2L1",
   "app_name": "bamsnap",
-  "app_version": "v24",
+  "app_version": "VERSION",
   "arguments": [
       {
           "argument_format": "bam",
@@ -33,24 +33,24 @@
       {
           "argument_type": "parameter",
           "workflow_argument_name": "nproc"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "exclude_chr"
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["QC"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v24/cwl",
+  "cwl_directory_url_v1": "https://CWLBUCKET.s3.amazonaws.com/PIPELINE/VERSION",
   "cwl_main_filename": "bamsnap.cwl",
   "cwl_pointer": "",
   "description": "Run bamsnap on a list of bam files given a vcf containing variants to be snapped",
-  "docker_image_name": "cgap/cgap:v24",
-  "docker_registry_url": "https://hub.docker.com/",
+  "docker_image_name": "ACCOUNT/snv:VERSION",
+  "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "bamsnap_v24",
-  "aliases": ["cgap:bamsnap_v24",
-              "cgap:bamsnap_v23",
-              "cgap:bamsnap_v22",
-              "cgap:bamsnap_v21",
-              "cgap:bamsnap_v20"],
+  "name": "bamsnap_VERSION",
+  "aliases": ["cgap:bamsnap_VERSION"],
   "steps": [
       {
           "inputs": [
@@ -121,6 +121,19 @@
                           "name": "nproc"
                       }
                   ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "exclude_chr",
+                  "source": [
+                      {
+                          "name": "exclude_chr"
+                      }
+                  ]
               }
           ],
           "meta": {
@@ -128,7 +141,7 @@
                   "Run bamsnap"
               ],
               "software_used": [
-                 "/softwares/a8b47313-8bcb-460b-8be8-b71c7f6b1b27"
+                 "/softwares/fd97e01c-0308-4e96-b4aa-52ef4f04790b"
               ]
           },
           "name": "bamsnap",
@@ -150,7 +163,7 @@
       }
   ],
   "title": "Run bamsnap",
-  "uuid": "a147d85c-07c7-4e01-82bb-73b381ebbf11",
-  "previous_version": ["b1a1598b-610d-4826-96a2-e5126a8c7488"],
-  "version_upgrade_log": "bamsnap png file path changed from using colon to underscore"
+  "uuid": "5d3a7a4b-15d4-4343-9738-79bbc0d44642",
+  "previous_version": ["a147d85c-07c7-4e01-82bb-73b381ebbf11"],
+  "version_upgrade_log": "it is now possible to filter out chromosomes, by default filters chrM"
 }

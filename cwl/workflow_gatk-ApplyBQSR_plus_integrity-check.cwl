@@ -33,6 +33,11 @@ inputs:
     type: int
     default: 30
 
+  - id: nthreads
+    type: int
+    default: 28
+    doc: number of threads used to run parallel
+
   - id: count
     type: int
     default: 0
@@ -63,6 +68,8 @@ steps:
         source: static-quantized-quals_2
       static-quantized-quals_3:
         source: static-quantized-quals_3
+      nthreads:
+        source: nthreads
     out: [output]
 
   integrity-check:

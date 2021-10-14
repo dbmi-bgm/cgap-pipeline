@@ -1,7 +1,7 @@
 {
   "accession": "GAPWFR81TL97",
   "app_name": "workflow_gatk-CombineGVCFs",
-  "app_version": "v24",
+  "app_version": "VERSION",
   "arguments": [
       {
           "argument_format": "gvcf_gz",
@@ -32,15 +32,16 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": [],
-  "cwl_directory_url_v1": "https://raw.githubusercontent.com/dbmi-bgm/cgap-pipeline/v24/cwl",
+  "cwl_directory_url_v1": "https://CWLBUCKET.s3.amazonaws.com/PIPELINE/VERSION",
   "cwl_main_filename": "gatk-CombineGVCFs.cwl",
   "cwl_pointer": "",
   "description": "Run gatk CombineGVCFs on input g.vcf files",
-  "docker_image_name": "cgap/cgap:v24",
-  "docker_registry_url": "https://hub.docker.com/",
+  "docker_image_name": "ACCOUNT/snv:VERSION",
+  "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_gatk-CombineGVCFs_v24",
-  "aliases": ["cgap:workflow_gatk-CombineGVCFs_v24",
+  "name": "workflow_gatk-CombineGVCFs_VERSION",
+  "aliases": ["cgap:workflow_gatk-CombineGVCFs_VERSION",
+              "cgap:workflow_gatk-CombineGVCFs_v24",
               "cgap:workflow_gatk-CombineGVCFs_v23"],
   "steps": [
       {

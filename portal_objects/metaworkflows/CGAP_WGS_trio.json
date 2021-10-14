@@ -1,12 +1,12 @@
 {
   "name": "WGS_trio",
-  "title": "WGS Trio V24",
-  "version": "v24",
-  "uuid": "6a6f293c-21a9-428b-8ddd-ee29e2c8a1df",
+  "title": "WGS Trio VERSION",
+  "version": "VERSION",
+  "uuid": "d20ab9c2-932b-411e-95fd-792bd1001d77",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "previous_version": ["70199ad7-c0c9-45e1-b647-c93b348bc025"],
-  "version_upgrade_log": "Updated reference file for bwa, includes alt index now",
+  "previous_version": ["6a6f293c-21a9-428b-8ddd-ee29e2c8a1df"],
+  "version_upgrade_log": "updated unrelated to new UGRP run with alt index, new parallel ApplyBQSR",
   "input": [
     {
       "argument_name": "fastqs_proband_first_R1",
@@ -33,7 +33,7 @@
       "argument_type": "parameter"
     },
     {
-      "argument_name": "famiy_size",
+      "argument_name": "family_size",
       "argument_type": "parameter"
     },
     {
@@ -139,7 +139,7 @@
     {
       "argument_name": "unrelated",
       "argument_type": "file",
-      "files": [{"file": "4468e4a2-6c92-4d82-b333-821be68d0a55"}]
+      "files": [{"file": "eac862c0-8c87-4838-83cb-9a77412bff6f"}]
     },
     {
       "argument_name": "dbSNP_full_ref_vcf",
@@ -524,12 +524,12 @@
     },
     {
       "name": "workflow_gatk-ApplyBQSR-check",
-      "workflow": "6c9c6f49-f954-4e76-8dfb-d385cddcebd6",
+      "workflow": "c4d9ce59-7ff3-44c8-8336-f46774a4d882",
       "config": {
-        "instance_type": "t3.small",
-        "ebs_size": "3.5x",
+        "instance_type": "c5n.9xlarge",
+        "ebs_size": "5.5x",
         "EBS_optimized": true,
-        "spot_instance": false,
+        "spot_instance": true,
         "run_name": "run_workflow_gatk-ApplyBQSR-check",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
@@ -556,6 +556,12 @@
           "argument_name": "reference",
           "argument_type": "file",
           "source_argument_name": "reference_fa"
+        },
+        {
+          "argument_name": "nthreads",
+          "argument_type": "parameter",
+          "value": "28",
+          "value_type": "integer"
         }
       ]
     },
@@ -640,6 +646,7 @@
       "custom_pf_fields": {
           "gvcf": {
               "file_type": "gVCF",
+              "variant_type": "SNV",
               "description": "processed output from cgap upstream pipeline"
           }
       },
@@ -681,6 +688,7 @@
       "custom_pf_fields": {
           "combined_gvcf": {
               "file_type": "combined gVCF",
+              "variant_type": "SNV",
               "description": "processed output from cgap downstream pipeline"
           }
       },
@@ -745,6 +753,7 @@
       "custom_pf_fields": {
           "vcf": {
               "file_type": "raw VCF",
+              "variant_type": "SNV",
               "description": "processed output from cgap downstream pipeline"
           }
       },
@@ -831,6 +840,7 @@
       "custom_pf_fields": {
           "samplegeno_vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -904,6 +914,7 @@
       "custom_pf_fields": {
           "annotated_vcf": {
               "file_type": "vep-annotated VCF",
+              "variant_type": "SNV",
               "description": "vep-annotated VCF file"
           }
       },
@@ -1069,6 +1080,7 @@
       "custom_pf_fields": {
           "merged_vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -1156,6 +1168,7 @@
       "custom_pf_fields": {
           "novoCaller_vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -1239,6 +1252,7 @@
       "custom_pf_fields": {
           "comHet_vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -1305,9 +1319,9 @@
     },
     {
       "name": "workflow_dbSNP_ID_fixer-check",
-      "workflow": "7f1a001e-cc1d-442d-9b32-857a6356a85c",
+      "workflow": "b9fe14eb-eab0-4360-b70c-d7a37292ffce",
       "config": {
-        "instance_type": "t3.micro",
+        "instance_type": "t3.small",
         "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -1317,6 +1331,7 @@
       "custom_pf_fields": {
           "vcf": {
               "file_type": "intermediate file",
+              "variant_type": "SNV",
               "description": "Intermediate VCF file"
           }
       },
@@ -1400,6 +1415,7 @@
       "custom_pf_fields": {
           "vcf": {
               "file_type": "full annotated VCF",
+              "variant_type": "SNV",
               "description": "full annotated VCF file"
           }
       },
@@ -1418,7 +1434,7 @@
     },
     {
       "name": "bamsnap",
-      "workflow": "a147d85c-07c7-4e01-82bb-73b381ebbf11",
+      "workflow": "5d3a7a4b-15d4-4343-9738-79bbc0d44642",
       "config": {
         "instance_type": "r5a.4xlarge",
         "ebs_size": "2x",
@@ -1467,7 +1483,7 @@
         "ebs_size": "2x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "run_name": "run_workflow_granite-qcVCF-2",
+        "run_name": "run_workflow_granite-qcVCF",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
       "custom_qc_fields": {
