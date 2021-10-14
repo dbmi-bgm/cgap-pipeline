@@ -2,11 +2,12 @@
   "name": "WGS_proband_only",
   "title": "WGS Proband-only VERSION",
   "version": "VERSION",
-  "uuid": "d414f11b-17cb-494d-9c66-36ab0920bc73",
+  "accession": "GAPMWFX98V4K",
+  "uuid": "09ac593e-cada-4e72-970b-860115800d79",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "previous_version": ["ecc83f50-7301-4c2c-8367-cbec402bbde1"],
-  "version_upgrade_log": "new parallel ApplyBQSR",
+  "previous_version": ["d414f11b-17cb-494d-9c66-36ab0920bc73"],
+  "version_upgrade_log": "added accession",
   "input": [
     {
       "argument_name": "fastqs_R1",

@@ -2,9 +2,12 @@
   "name": "WGS_family",
   "title": "WGS Family VERSION",
   "version": "VERSION",
-  "uuid": "22bc65ef-3f3b-4d6d-8050-9e86eaaf66a0",
+  "accession": "GAPMWFG73CK1",
+  "uuid": "af403aec-79cc-45a4-915e-9d52c76a44c2",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "previous_version": ["22bc65ef-3f3b-4d6d-8050-9e86eaaf66a0"],
+  "version_upgrade_log": "added accession",
   "input": [
     {
       "argument_name": "fastqs_proband_first_R1",

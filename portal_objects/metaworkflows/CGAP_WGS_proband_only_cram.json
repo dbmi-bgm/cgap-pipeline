@@ -2,11 +2,12 @@
   "name": "WGS_proband_only_cram",
   "title": "WGS Proband-only Cram VERSION",
   "version": "VERSION",
-  "uuid": "4fa5fd3b-22f2-4d15-89ab-f18bb94064f3",
+  "accession": "GAPMWFC9JSS2",
+  "uuid": "0e569396-d80d-436e-ba51-787378ba49df",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "previous_version": ["ca47e1f7-abf7-4a0b-930a-b4e52d6b9a06"],
-  "version_upgrade_log": "new parallel ApplyBQSR",
+  "previous_version": ["4fa5fd3b-22f2-4d15-89ab-f18bb94064f3"],
+  "version_upgrade_log": "added accession",
   "input": [
     {
       "argument_name": "crams",

@@ -2,11 +2,12 @@
   "name": "WGS_trio_cram",
   "title": "WGS Trio Cram VERSION",
   "version": "VERSION",
-  "uuid": "34054f67-9b23-4e8b-99d5-a5c9463c9af3",
+  "accession": "GAPMWFH7C92V",
+  "uuid": "00cd40e6-7d58-437d-9544-0097bd89aa86",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "previous_version": ["aed85144-0a22-48cd-b4a2-f10e053937ac"],
-  "version_upgrade_log": "updated unrelated to new UGRP run with alt index, new parallel ApplyBQSR",
+  "previous_version": ["34054f67-9b23-4e8b-99d5-a5c9463c9af3"],
+  "version_upgrade_log": "added accession",
   "input": [
     {
       "argument_name": "crams",

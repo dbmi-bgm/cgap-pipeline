@@ -2,9 +2,12 @@
   "name": "WGS_proband_only_60x",
   "title": "WGS Proband-only VERSION, 60x",
   "version": "VERSION",
-  "uuid": "a9bd8812-0eb4-45dc-9680-3f8733b7f91e",
+  "accession": "GAPMWFBY8NC2",
+  "uuid": "0e07fb7b-f146-4d6b-a4de-87dda05111c3",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "previous_version": ["a9bd8812-0eb4-45dc-9680-3f8733b7f91e"],
+  "version_upgrade_log": "added accession",
   "input": [
     {
       "argument_name": "fastqs_R1",

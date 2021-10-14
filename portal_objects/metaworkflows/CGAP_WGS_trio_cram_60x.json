@@ -2,9 +2,12 @@
   "name": "WGS_trio_cram_60x",
   "title": "WGS Trio Cram VERSION, 60x",
   "version": "VERSION",
-  "uuid": "e34f3995-f4a9-44e3-a677-c6e45ec7e638",
+  "accession": "GAPMWFXP2M66",
+  "uuid": "32e2c5bb-5cdb-4717-9a8d-8cd0c64eb8f1",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "previous_version": ["e34f3995-f4a9-44e3-a677-c6e45ec7e638"],
+  "version_upgrade_log": "added accession",
   "input": [
     {
       "argument_name": "crams",
