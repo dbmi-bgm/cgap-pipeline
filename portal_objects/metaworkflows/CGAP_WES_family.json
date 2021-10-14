@@ -2,9 +2,12 @@
   "name": "WES_family",
   "title": "WES Family VERSION",
   "version": "VERSION",
-  "uuid": "d081e609-c3c9-48f0-91c5-1a157195ee7d",
+  "accession": "GAPMWFVVY39C",
+  "uuid": "17befa1f-c490-40f8-b1a8-2c460f45a463",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+  "previous_version": ["d081e609-c3c9-48f0-91c5-1a157195ee7d"],
+  "version_upgrade_log": "bed region for HaplotypeCaller. added accession",
   "input": [
     {
       "argument_name": "fastqs_proband_first_R1",
@@ -64,6 +67,11 @@
       "argument_name": "regions",
       "argument_type": "file",
       "files": [{"file": "1c07a3aa-e2a3-498c-b838-15991c4a2f28"}]
+    },
+    {
+      "argument_name": "regions_exome_bed",
+      "argument_type": "file",
+      "files": [{"file": "27cfd5ba-bb5f-4b60-914e-70332db875a4"}]
     },
     {
       "argument_name": "chromosomes",
@@ -622,9 +630,9 @@
     },
     {
       "name": "workflow_gatk-HaplotypeCaller",
-      "workflow": "a09b0e1d-6a6c-483c-b907-1e1eb3bc172a",
+      "workflow": "c64b8f19-ab15-44a5-94e8-f8c778d93db0",
       "config": {
-        "instance_type": "c5n.18xlarge",
+        "instance_type": "t3.xlarge",
         "ebs_size": "5x",
         "EBS_optimized": true,
         "spot_instance": true,
@@ -652,12 +660,13 @@
         },
         {
           "argument_name": "regions",
-          "argument_type": "file"
+          "argument_type": "file",
+          "source_argument_name": "regions_exome_bed"
         },
         {
           "argument_name": "nthreads",
           "argument_type": "parameter",
-          "value": "20",
+          "value": "1",
           "value_type": "integer"
         }
       ]
