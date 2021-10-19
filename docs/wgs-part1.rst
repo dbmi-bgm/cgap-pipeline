@@ -5,7 +5,7 @@ Part 1. GATK Best Practice Mapping and Variant Calling
 Alignment
 +++++++++
 
-This step uses ``bwa mem`` to align a set of fastq reads to the genome reference. The ``bwa mem`` step was updated in ``v24`` to use additional index files for alternative contigs.
+This step uses ``bwa mem`` to align a set of fastq reads to the genome reference. The ``bwa mem`` step was updated in ``v24`` to use additional index files for alternative contigs. This procedure is described for GRCH38 here (https://gatk.broadinstitute.org/hc/en-us/articles/360037498992) and the 6 reference files ``Homo_sapiens_assembly38.fasta.64.xxx`` were downloaded from here (https://console.cloud.google.com/storage/browser/genomics-public-data/resources/broad/hg38/v0).
 The output bam file is checked for integrity to ensure the file has a header and it is not truncated.
 
 * CWL: workflow_bwa-mem-to-bam_no_unzip_plus_integrity-check.cwl
