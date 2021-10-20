@@ -16,7 +16,7 @@ mkdir -p $directory
 
 # runnning HaplotypeCaller
 
-gatk HaplotypeCaller --java-options '-Xms8g' -R $reference -O ${directory}combined.g.vcf -I $inputbam -L $regionfile -ERC $ERC --max-alternate-alleles 3 --read-filter OverclippedReadFilter -stand-call-conf $threshold -ip 500 || exit 1
+gatk HaplotypeCaller --java-options '-Xms8g' -R $reference -O ${directory}combined.g.vcf -I $inputbam -L $regionfile -ERC $ERC --max-alternate-alleles 3 --read-filter OverclippedReadFilter -stand-call-conf $threshold -ip 50 || exit 1
 
 # move results
 
