@@ -49,6 +49,7 @@
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_peddy_VERSION",
   "aliases": ["cgap:workflow_peddy_VERSION",
+              "cgap:workflow_peddy_v25",
               "cgap:workflow_peddy_v24",
               "cgap:workflow_peddy_v23"],
   "steps": [

@@ -49,6 +49,7 @@
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_granite-mpileupCounts_VERSION",
   "aliases": ["cgap:workflow_granite-mpileupCounts_VERSION",
+              "cgap:workflow_granite-mpileupCounts_v25",
               "cgap:workflow_granite-mpileupCounts_v24",
               "cgap:workflow_granite-mpileupCounts_v23"],
   "steps": [

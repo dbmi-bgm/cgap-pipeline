@@ -629,14 +629,14 @@
       ]
     },
     {
-      "name": "workflow_gatk-HaplotypeCaller",
+      "name": "workflow_gatk-HaplotypeCaller_exome",
       "workflow": "c64b8f19-ab15-44a5-94e8-f8c778d93db0",
       "config": {
         "instance_type": "t3.xlarge",
         "ebs_size": "5x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "run_name": "run_workflow_gatk-HaplotypeCaller",
+        "run_name": "run_workflow_gatk-HaplotypeCaller_exome",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
       "custom_pf_fields": {

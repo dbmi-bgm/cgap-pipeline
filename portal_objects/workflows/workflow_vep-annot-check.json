@@ -116,6 +116,7 @@
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_vep-annot-check_VERSION",
   "aliases": ["cgap:workflow_vep-annot-check_VERSION",
+              "cgap:workflow_vep-annot-check_v25",
               "cgap:workflow_vep-annot-check_v24",
               "cgap:workflow_vep-annot-check_v23"],
   "steps": [

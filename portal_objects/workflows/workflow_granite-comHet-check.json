@@ -51,6 +51,7 @@
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_granite-comHet-check_VERSION",
   "aliases": ["cgap:workflow_granite-comHet-check_VERSION",
+              "cgap:workflow_granite-comHet-check_v25",
               "cgap:workflow_granite-comHet-check_v24",
               "cgap:workflow_granite-comHet-check_v23"],
   "steps": [

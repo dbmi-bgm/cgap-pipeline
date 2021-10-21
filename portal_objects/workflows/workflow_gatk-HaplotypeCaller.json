@@ -49,6 +49,7 @@
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_gatk-HaplotypeCaller_VERSION",
   "aliases": ["cgap:workflow_gatk-HaplotypeCaller_VERSION",
+              "cgap:workflow_gatk-HaplotypeCaller_v25",
               "cgap:workflow_gatk-HaplotypeCaller_v24",
               "cgap:workflow_gatk-HaplotypeCaller_v23"],
   "steps": [

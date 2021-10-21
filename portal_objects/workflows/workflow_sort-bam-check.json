@@ -48,6 +48,7 @@
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_sort-bam-check_VERSION",
   "aliases": ["cgap:workflow_sort-bam-check_VERSION",
+              "cgap:workflow_sort-bam-check_v25",
               "cgap:workflow_sort-bam-check_v24",
               "cgap:workflow_sort-bam-check_v23",
               "cgap:workflow_sort-bam-check_v22",

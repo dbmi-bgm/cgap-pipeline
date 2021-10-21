@@ -25,6 +25,7 @@
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "md5_VERSION",
   "aliases": ["cgap:md5_VERSION",
+              "cgap:md5_v25",
               "cgap:md5_v24"],
   "steps": [
       {

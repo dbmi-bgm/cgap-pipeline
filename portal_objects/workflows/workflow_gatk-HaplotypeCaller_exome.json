@@ -1,6 +1,6 @@
 {
   "accession": "GAPWFMU49CW2",
-  "app_name": "workflow_gatk-HaplotypeCaller",
+  "app_name": "workflow_gatk-HaplotypeCaller_exome",
   "app_version": "VERSION",
   "arguments": [
       {
@@ -41,14 +41,14 @@
   "category": ["processing"],
   "cwl_child_filenames": [],
   "cwl_directory_url_v1": "https://CWLBUCKET.s3.amazonaws.com/PIPELINE/VERSION",
-  "cwl_main_filename": "gatk-HaplotypeCaller_singleThread.cwl",
+  "cwl_main_filename": "gatk-HaplotypeCaller_exome.cwl",
   "cwl_pointer": "",
-  "description": "Run gatk HaplotypeCaller on bam input file. Produce a g.vcf file",
+  "description": "Run gatk HaplotypeCaller exome on bam input file. Produce a g.vcf file",
   "docker_image_name": "ACCOUNT/snv:VERSION",
   "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_gatk-HaplotypeCaller_VERSION",
-  "aliases": ["cgap:workflow_gatk-HaplotypeCaller_VERSION"],
+  "name": "workflow_gatk-HaplotypeCaller_exome_VERSION",
+  "aliases": ["cgap:workflow_gatk-HaplotypeCaller_exome_VERSION"],
   "steps": [
       {
           "inputs": [
