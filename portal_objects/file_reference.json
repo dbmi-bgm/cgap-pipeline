@@ -511,5 +511,18 @@
         "status": "uploading",
         "file_version": "v2",
         "accession": "GAPFIMO8Y4PZ"
+    },
+    {
+        "uuid": "27cfd5ba-bb5f-4b60-914e-70332db875a4",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "file_format": "bed",
+        "description": "hg38 exome regions VEP v101",
+        "aliases": [
+            "cgap:hg38_exome_regions_VEP_v101"
+        ],
+        "extra_files": [],
+        "status": "uploading",
+        "accession": "GAPFITVOHD45"
     }
 ]
