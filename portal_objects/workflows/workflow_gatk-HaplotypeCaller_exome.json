@@ -161,6 +161,6 @@
           ]
       }
   ],
-  "title": "Run gatk HaplotypeCaller",
+  "title": "Run gatk HaplotypeCaller exome",
   "uuid": "c64b8f19-ab15-44a5-94e8-f8c778d93db0"
 }
