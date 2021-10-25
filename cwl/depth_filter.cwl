@@ -41,8 +41,6 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.outputfile)
-    secondaryFiles:
-      - .tbi
 
 
 doc: |
