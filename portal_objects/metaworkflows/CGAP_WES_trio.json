@@ -740,7 +740,7 @@
           "argument_name": "input_gvcfs",
           "argument_type": "file",
           "gather": 1,
-          "source": "workflow_gatk-HaplotypeCaller",
+          "source": "workflow_gatk-HaplotypeCaller_exome",
           "source_argument_name": "gvcf"
         },
         {
