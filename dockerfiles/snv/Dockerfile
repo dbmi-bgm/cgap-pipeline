@@ -197,7 +197,7 @@ RUN git clone https://github.com/dbmi-bgm/cgap-annotations.git && \
     cp cgap-annotations/variants/scripts/dbSNP_ID_fixer.py . && \
     chmod +x dbSNP_ID_fixer.py && \
     cd cgap-annotations && \
-    git checkout 35789f6 && \
+    git checkout 7776a34 && \
     cd .. && \
     cp cgap-annotations/variants/scripts/depth_filter.py . && \
     chmod +x depth_filter.py && \
