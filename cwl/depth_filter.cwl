@@ -40,7 +40,9 @@ outputs:
   - id: output
     type: File
     outputBinding:
-      glob: $(inputs.outputfile)
+      glob: $(inputs.outputfile + ".gz")
+    secondaryFiles:
+      - .tbi
 
 
 doc: |
