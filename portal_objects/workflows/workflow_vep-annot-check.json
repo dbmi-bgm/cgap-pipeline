@@ -1,5 +1,5 @@
 {
-  "accession": "GAPWFUG1O1DB",
+  "accession": "GAPWFEE29PCB",
   "app_name": "workflow_vep-annot-check",
   "app_version": "VERSION",
   "arguments": [
@@ -7,6 +7,10 @@
           "argument_format": "vcf_gz",
           "argument_type": "Input file",
           "workflow_argument_name": "input_vcf"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "min_depth"
       },
       {
           "argument_format": "fa",
@@ -106,11 +110,11 @@
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
-  "cwl_child_filenames": ["vep-annot.cwl", "bcftools-norm-multiallelics.cwl", "vcf-integrity-check.cwl"],
+  "cwl_child_filenames": ["vep-annot.cwl", "bcftools-norm-multiallelics.cwl", "depth_filter.cwl" , "vcf-integrity-check.cwl"],
   "cwl_directory_url_v1": "https://CWLBUCKET.s3.amazonaws.com/PIPELINE/VERSION",
   "cwl_main_filename": "workflow_vep-annot_plus_vcf-integrity-check.cwl",
   "cwl_pointer": "",
-  "description": "Split multiallelic variants. Run VEP to annotate input vcf file. An integrity check is performed on the output file",
+  "description": "Split multiallelic variants. Run depth filter. Run VEP to annotate input vcf file. An integrity check is performed on the output file",
   "docker_image_name": "ACCOUNT/snv:VERSION",
   "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
@@ -133,6 +137,19 @@
                   "source": [
                       {
                           "name": "input_vcf"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "min_depth",
+                  "source": [
+                      {
+                          "name": "min_depth"
                       }
                   ]
               },
@@ -362,11 +379,12 @@
           ],
           "meta": {
               "analysis_step_types": [
-                  "Run bcftools and VEP to annotate vcf input file"
+                  "Run bcftools, depth_filter, and VEP to annotate vcf input file"
               ],
               "software_used": [
                  "/softwares/791a7248-9ba3-44da-bff9-0d9b121eaf5c",
-                 "/softwares/85041e50-a7fc-4633-a83b-983b8ebbc48e"
+                 "/softwares/85041e50-a7fc-4633-a83b-983b8ebbc48e",
+                 "/softwares/742c5810-b3f8-4d3e-87aa-eeb5710f2c0c"
               ]
           },
           "name": "vep-annot",
@@ -432,8 +450,8 @@
           ]
       }
   ],
-  "title": "Split multiallelic variants and run VEP to annotate input vcf file",
-  "uuid": "2f997f5f-d334-4c2b-873c-e4392d6b83f5",
-  "previous_version": ["e051a5ae-093e-4030-9c3f-ae93f1d9606d"],
-  "version_upgrade_log": "replaced parallel with xargs. modified dbNSFP plugin for non-missense variants"
+  "title": "Split multiallelic variants, filter by variant depth (DP), and run VEP to annotate input vcf file",
+  "uuid": "5b9412d0-7bca-49f3-9b8f-e02497b693a5",
+  "previous_version": ["2f997f5f-d334-4c2b-873c-e4392d6b83f5"],
+  "version_upgrade_log": "added depth_filter step"
 }
