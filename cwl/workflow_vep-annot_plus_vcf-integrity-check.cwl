@@ -15,9 +15,6 @@ inputs:
   - id: min_depth
     type: int
     default: 3
-    inputBinding:
-      position: 2
-      prefix: -d
     doc: expect the minimum DP (depth) value for a given variant. at least 1 sample must have DP >= min_depth to keep a variant.
 
   - id: reference
