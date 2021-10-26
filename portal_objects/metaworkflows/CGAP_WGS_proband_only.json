@@ -7,7 +7,7 @@
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "previous_version": ["d414f11b-17cb-494d-9c66-36ab0920bc73"],
-  "version_upgrade_log": "added accession",
+  "version_upgrade_log": "depth filter for VEP and added accession",
   "input": [
     {
       "argument_name": "fastqs_R1",
@@ -784,7 +784,7 @@
     },
     {
       "name": "workflow_vep-annot-check",
-      "workflow": "2f997f5f-d334-4c2b-873c-e4392d6b83f5",
+      "workflow": "5b9412d0-7bca-49f3-9b8f-e02497b693a5",
       "config": {
         "instance_type": "c5n.18xlarge",
         "ebs_size": "1.35x",
