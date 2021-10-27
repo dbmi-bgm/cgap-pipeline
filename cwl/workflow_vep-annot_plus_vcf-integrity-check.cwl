@@ -15,7 +15,7 @@ inputs:
   - id: min_depth
     type: int
     default: 3
-    doc: expect the minimum DP (depth) value for a given variant. at least 1 sample must have DP >= min_depth to keep a variant.
+    doc: expect the minimum DP (depth) value for a given variant, at least 1 sample must have DP >= min_depth to keep a variant
 
   - id: reference
     type: File
