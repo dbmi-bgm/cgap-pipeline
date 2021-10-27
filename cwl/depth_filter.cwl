@@ -29,18 +29,18 @@ inputs:
     doc: expect the minimum DP (depth) value for a given variant, at least 1 sample must have DP >= min_depth to keep a variant
 
   - id: outputfile
-    default: 'depth_filtered.vcf.gz'
+    default: 'depth_filtered.vcf'
     type: string
     inputBinding:
       position: 3
       prefix: -o
-    doc: name of output vcf gz file
+    doc: name of output intermediate vcf file
 
 outputs:
   - id: output
     type: File
     outputBinding:
-      glob: $(inputs.outputfile)
+      glob: $(inputs.outputfile + ".gz")
     secondaryFiles:
       - .tbi
 
