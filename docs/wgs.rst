@@ -14,7 +14,7 @@ Both pipelines are mostly based on ``bwa``, ``gatk4``, ``granite`` (https://gith
 Docker Image
 ############
 
-The public docker image for most of the WGS/WES pipeline and QC steps is ``cgap/cgap:v25``
+The public docker image for most of the WGS/WES pipeline and QC steps is ``cgap/cgap:v26``
 
 The image contains (but is not limited to) the following software packages:
 
@@ -31,14 +31,14 @@ The image contains (but is not limited to) the following software packages:
 - vep (101)
 - peddy (0.4.7)
 
-The public docker image for ``md5`` is ``cgap/md5:v25``
+The public docker image for ``md5`` is ``cgap/md5:v26``
 The ``Dockerfile`` for this image can be found here: https://github.com/4dn-dcic/docker-md5/blob/master/Dockerfile
 
 This image contains (but is not limited to) the following software packages:
 
 - md5sum (8.25)
 
-The public docker image for ``fastqc`` is ``cgap/fastqc:v25``
+The public docker image for ``fastqc`` is ``cgap/fastqc:v26``
 The ``Dockerfile`` for this image can be found here: https://github.com/4dn-dcic/docker-fastqc/blob/master/Dockerfile
 
 This image contains (but is not limited to) the following software packages:
