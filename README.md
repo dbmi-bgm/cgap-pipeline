@@ -1,4 +1,4 @@
-<img src="https://github.com/dbmi-bgm/cgap-pipeline/blob/v26/docs/images/cgap_logo.png" width="150">
+<img src="https://github.com/dbmi-bgm/cgap-pipeline/blob/v26/docs/images/cgap_logo.png" width="200">
 
 ## CGAP pipeline
 * This repo contains CGAP pipeline components
