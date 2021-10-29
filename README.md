@@ -1,5 +1,5 @@
 
-## CGAP pipeline <img src="https://github.com/dbmi-bgm/cgap-pipeline/blob/v26/docs/images/cgap_logo.png" width="100"> 
+## <img src="https://github.com/dbmi-bgm/cgap-pipeline/blob/v26/docs/images/cgap_logo.png" width="100"> - CGAP pipeline 
 * This repo contains CGAP pipeline components
   * CWL
   * Public Docker sources - Docker image names: `cgap/cgap:v26`, `cgap/md5:v26`, `cgap/fastqc:v26`
