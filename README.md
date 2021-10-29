@@ -1,7 +1,7 @@
 ## CGAP pipeline
 * This repo contains CGAP pipeline components
   * CWL
-  * Public Docker sources - Docker image names: `cgap/cgap:v25`, `cgap/md5:v25`, `cgap/fastqc:v25`
+  * Public Docker sources - Docker image names: `cgap/cgap:v26`, `cgap/md5:v26`, `cgap/fastqc:v26`
   * Private ECR sources created dynamically at deployment with `post_patch_to_portal.py`
   * Example Tibanna input jsons for individual steps
 
@@ -30,6 +30,11 @@ python post_patch_to_portal.py [--ff-env=<env_name>] [--del-prev-version]
 ```
 
 ### Version updates
+
+#### v26
+* bed region of interest added in HaplotypeCaller step for WES metaworkflows
+* DP >= 3 (depth filter for variants) added during VEP step for both WES and WGS metaworkflows
+* repo changes carried out to allow for compatibility with `cgap-pipeline-utils` `deploy_pipeline.py` https://github.com/dbmi-bgm/cgap-pipeline-utils
 
 #### v25
 * unrelated for novoCaller are now created from UGRP samples run with the alt index
