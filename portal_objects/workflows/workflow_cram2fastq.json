@@ -45,6 +45,7 @@
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_cram2fastq_VERSION",
   "aliases": ["cgap:workflow_cram2fastq_VERSION",
+              "cgap:workflow_cram2fastq_v25",
               "cgap:workflow_cram2fastq_v24",
               "cgap:workflow_cram2fastq_v23",
               "cgap:workflow_cram2fastq_v22",

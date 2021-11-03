@@ -1,6 +1,6 @@
 {
-  "accession": "GAPFKJF3DVCP",
-  "app_name": "workflow_granite-mpileupCounts",
+  "accession": "GAPWFMU49CW2",
+  "app_name": "workflow_gatk-HaplotypeCaller_exome",
   "app_version": "VERSION",
   "arguments": [
       {
@@ -14,44 +14,41 @@
           "workflow_argument_name": "reference"
       },
       {
-          "argument_format": "txt",
+          "argument_format": "bed",
           "argument_type": "Input file",
           "workflow_argument_name": "regions"
       },
       {
-          "argument_format": "rck_gz",
+          "argument_format": "gvcf_gz",
           "argument_type": "Output processed file",
-          "workflow_argument_name": "rck",
-          "secondary_file_formats": ["rck_gz_tbi"]
+          "workflow_argument_name": "gvcf",
+          "secondary_file_formats": ["gvcf_gz_tbi"]
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "threshold"
+      },
+      {
+          "argument_type": "parameter",
+          "workflow_argument_name": "ERC"
       },
       {
           "argument_type": "parameter",
           "workflow_argument_name": "nthreads"
-      },
-      {
-          "argument_type": "parameter",
-          "workflow_argument_name": "MQthr"
-      },
-      {
-          "argument_type": "parameter",
-          "workflow_argument_name": "BQthr"
       }
   ],
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "category": ["processing"],
   "cwl_child_filenames": [],
   "cwl_directory_url_v1": "https://CWLBUCKET.s3.amazonaws.com/PIPELINE/VERSION",
-  "cwl_main_filename": "granite-mpileupCounts.cwl",
+  "cwl_main_filename": "gatk-HaplotypeCaller_exome.cwl",
   "cwl_pointer": "",
-  "description": "Run granite mpileupCounts on bam input file. Produce a rck.gz file",
+  "description": "Run gatk HaplotypeCaller exome on bam input file. Produce a g.vcf file",
   "docker_image_name": "ACCOUNT/snv:VERSION",
   "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "name": "workflow_granite-mpileupCounts_VERSION",
-  "aliases": ["cgap:workflow_granite-mpileupCounts_VERSION",
-              "cgap:workflow_granite-mpileupCounts_v25",
-              "cgap:workflow_granite-mpileupCounts_v24",
-              "cgap:workflow_granite-mpileupCounts_v23"],
+  "name": "workflow_gatk-HaplotypeCaller_exome_VERSION",
+  "aliases": ["cgap:workflow_gatk-HaplotypeCaller_exome_VERSION"],
   "steps": [
       {
           "inputs": [
@@ -103,69 +100,67 @@
                       "global": true,
                       "type": "parameter"
                   },
+                  "name": "threshold",
+                  "source": [
+                      {
+                          "name": "threshold"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
+                  "name": "ERC",
+                  "source": [
+                      {
+                          "name": "ERC"
+                      }
+                  ]
+              },
+              {
+                  "meta": {
+                      "cardinality": "single",
+                      "global": true,
+                      "type": "parameter"
+                  },
                   "name": "nthreads",
                   "source": [
                       {
                           "name": "nthreads"
                       }
                   ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "parameter"
-                  },
-                  "name": "MQthr",
-                  "source": [
-                      {
-                          "name": "MQthr"
-                      }
-                  ]
-              },
-              {
-                  "meta": {
-                      "cardinality": "single",
-                      "global": true,
-                      "type": "parameter"
-                  },
-                  "name": "BQthr",
-                  "source": [
-                      {
-                          "name": "BQthr"
-                      }
-                  ]
               }
           ],
           "meta": {
               "analysis_step_types": [
-                  "Run granite mpileupCounts"
+                  "Run gatk HaplotypeCaller"
               ],
               "software_used": [
-                 "/softwares/aa7c1c7d-8533-4ad7-bfe1-7ea40e86bb52"
+                 "/softwares/4ae88fb4-23f2-4939-8852-4644069d14d9"
               ]
           },
-          "name": "granite",
+          "name": "HaplotypeCaller",
           "outputs": [
               {
                   "meta": {
                       "cardinality": "single",
-                      "file_format": "rck_gz",
+                      "file_format": "gvcf_gz",
                       "global": true,
                       "type": "data file"
                   },
-                  "name": "rck",
+                  "name": "gvcf",
                   "target": [
                       {
-                          "name": "rck"
+                          "name": "gvcf"
                       }
                   ]
               }
           ]
       }
   ],
-  "title": "Run granite mpileupCounts",
-  "uuid": "620671e7-b21a-4c48-aa90-b5beb3283d64",
-  "previous_version": ["7d79eb1a-e784-43e8-b902-5f99ccecde0f"],
-  "version_upgrade_log": "Updated granite version, novoCaller expect proband first now"
+  "title": "Run gatk HaplotypeCaller exome",
+  "uuid": "c64b8f19-ab15-44a5-94e8-f8c778d93db0"
 }

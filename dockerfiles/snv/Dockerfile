@@ -182,7 +182,7 @@ RUN git clone https://github.com/dbmi-bgm/cgap-scripts/ && \
     chmod +x split_bam.py && \
     cd ..
 
-# add cgap-annotations scripts - dbSNP ID, hgvsg, liftover_hg19
+# add cgap-annotations scripts - dbSNP ID, hgvsg, liftover_hg19, depth_filter
 RUN git clone https://github.com/dbmi-bgm/cgap-annotations.git && \
     cd cgap-annotations && \
     git checkout 7a5fb7b && \
@@ -196,11 +196,20 @@ RUN git clone https://github.com/dbmi-bgm/cgap-annotations.git && \
     cd .. && \
     cp cgap-annotations/variants/scripts/dbSNP_ID_fixer.py . && \
     chmod +x dbSNP_ID_fixer.py && \
+    cd cgap-annotations && \
+    git checkout 7776a34 && \
+    cd .. && \
+    cp cgap-annotations/variants/scripts/depth_filter.py . && \
+    chmod +x depth_filter.py && \
     rm -rf cgap-annotations
 
 # HaplotypeCaller parallel script
 COPY HaplotypeCaller-parallel.sh .
 RUN chmod +x HaplotypeCaller-parallel.sh
+
+# HaplotypeCaller script
+COPY HaplotypeCaller.sh .
+RUN chmod +x HaplotypeCaller.sh
 
 # CombineGVCFs parallel script
 COPY CombineGVCFs-parallel.sh .

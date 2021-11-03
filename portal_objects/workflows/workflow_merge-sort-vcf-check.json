@@ -42,6 +42,7 @@
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_merge-sort-vcf-check_VERSION",
   "aliases": ["cgap:workflow_merge-sort-vcf-check_VERSION",
+              "cgap:workflow_merge-sort-vcf-check_v25",
               "cgap:workflow_merge-sort-vcf-check_v24",
               "cgap:workflow_merge-sort-vcf-check_v23",
               "cgap:workflow_merge-sort-vcf-check_v22",

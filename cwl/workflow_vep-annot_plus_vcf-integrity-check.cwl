@@ -12,6 +12,11 @@ inputs:
       - .tbi
     doc: expect the path to the vcf gz file
 
+  - id: min_depth
+    type: int
+    default: 3
+    doc: expect the minimum DP (depth) value for a given variant, at least 1 sample must have DP >= min_depth to keep a variant
+
   - id: reference
     type: File
     secondaryFiles:
@@ -127,11 +132,20 @@ steps:
         source: reference
     out: [output]
 
+  depth_filter:
+      run: depth_filter.cwl
+      in:
+        input:
+          source: bcftools-norm-multiallelics/output
+        min_depth:
+          source: min_depth
+      out: [output]
+
   vep-annot:
     run: vep-annot.cwl
     in:
       input:
-        source: bcftools-norm-multiallelics/output
+        source: depth_filter/output
       reference:
         source: reference
       regions:
@@ -178,5 +192,7 @@ steps:
     out: [output]
 
 doc: |
+  run bcftools-norm-multiallelics |
+  run depth_filter |
   run vep |
   run an integrity check on the output vcf

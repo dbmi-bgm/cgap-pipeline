@@ -43,6 +43,7 @@
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "bamqc_VERSION",
   "aliases": ["cgap:bamqc_VERSION",
+              "cgap:bamqc_v25",
               "cgap:bamqc_v24",
               "cgap:bamqc_v23",
               "cgap:bamqc_v22"],

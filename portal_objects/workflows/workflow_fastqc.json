@@ -36,6 +36,7 @@
     "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
     "name": "fastqc_VERSION",
     "aliases": ["cgap:fastq_VERSION",
+                "cgap:fastq_v25",
                 "cgap:fastq_v2"],
     "steps": [
         {

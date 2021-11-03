@@ -27,6 +27,7 @@
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_granite-rckTar_VERSION",
   "aliases": ["cgap:workflow_granite-rckTar_VERSION",
+              "cgap:workflow_granite-rckTar_v25",
               "cgap:workflow_granite-rckTar_v24",
               "cgap:workflow_granite-rckTar_v23"],
   "steps": [

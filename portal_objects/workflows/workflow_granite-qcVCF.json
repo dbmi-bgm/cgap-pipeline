@@ -61,6 +61,7 @@
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
   "name": "workflow_granite-qcVCF_VERSION",
   "aliases": ["cgap:workflow_granite-qcVCF_VERSION",
+              "cgap:workflow_granite-qcVCF_v25",
               "cgap:workflow_granite-qcVCF_v24",
               "cgap:workflow_granite-qcVCF_v23"],
   "steps": [

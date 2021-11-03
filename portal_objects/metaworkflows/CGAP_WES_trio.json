@@ -2,11 +2,12 @@
   "name": "WES_trio",
   "title": "WES Trio VERSION",
   "version": "VERSION",
-  "uuid": "68b86341-d7a9-44f0-ba30-7cb090c52c42",
+  "accession": "GAPMWFW2OLV5",
+  "uuid": "92b96c6f-20aa-41ba-8330-6339d1125674",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "previous_version": ["5bcc0741-fb07-4193-ad89-e9b80bfcb75c"],
-  "version_upgrade_log": "updated unrelated to new UGRP run with alt index, new parallel ApplyBQSR",
+  "previous_version": ["68b86341-d7a9-44f0-ba30-7cb090c52c42"],
+  "version_upgrade_log": "depth filter for VEP and bed region for HaplotypeCaller. added accession",
   "input": [
     {
       "argument_name": "fastqs_proband_first_R1",
@@ -66,6 +67,11 @@
       "argument_name": "regions",
       "argument_type": "file",
       "files": [{"file": "1c07a3aa-e2a3-498c-b838-15991c4a2f28"}]
+    },
+    {
+      "argument_name": "regions_exome_bed",
+      "argument_type": "file",
+      "files": [{"file": "27cfd5ba-bb5f-4b60-914e-70332db875a4"}]
     },
     {
       "argument_name": "chromosomes",
@@ -669,14 +675,14 @@
       ]
     },
     {
-      "name": "workflow_gatk-HaplotypeCaller",
-      "workflow": "a09b0e1d-6a6c-483c-b907-1e1eb3bc172a",
+      "name": "workflow_gatk-HaplotypeCaller_exome",
+      "workflow": "c64b8f19-ab15-44a5-94e8-f8c778d93db0",
       "config": {
-        "instance_type": "c5n.18xlarge",
+        "instance_type": "t3.xlarge",
         "ebs_size": "5x",
         "EBS_optimized": true,
         "spot_instance": true,
-        "run_name": "run_workflow_gatk-HaplotypeCaller",
+        "run_name": "run_workflow_gatk-HaplotypeCaller_exome",
         "behavior_on_capacity_limit": "wait_and_retry"
       },
       "custom_pf_fields": {
@@ -700,12 +706,13 @@
         },
         {
           "argument_name": "regions",
-          "argument_type": "file"
+          "argument_type": "file",
+          "source_argument_name": "regions_exome_bed"
         },
         {
           "argument_name": "nthreads",
           "argument_type": "parameter",
-          "value": "20",
+          "value": "1",
           "value_type": "integer"
         }
       ]
@@ -733,7 +740,7 @@
           "argument_name": "input_gvcfs",
           "argument_type": "file",
           "gather": 1,
-          "source": "workflow_gatk-HaplotypeCaller",
+          "source": "workflow_gatk-HaplotypeCaller_exome",
           "source_argument_name": "gvcf"
         },
         {
@@ -938,7 +945,7 @@
     },
     {
       "name": "workflow_vep-annot-check",
-      "workflow": "2f997f5f-d334-4c2b-873c-e4392d6b83f5",
+      "workflow": "5b9412d0-7bca-49f3-9b8f-e02497b693a5",
       "config": {
         "instance_type": "c5n.18xlarge",
         "ebs_size": "1.35x",
@@ -1441,7 +1448,7 @@
       "name": "workflow_hg19lo_hgvsg-check",
       "workflow": "66434019-65c5-498f-a986-9e791eeff0ad",
       "config": {
-        "instance_type": "t3.micro",
+        "instance_type": "t3.small",
         "ebs_size": "3x",
         "EBS_optimized": true,
         "spot_instance": true,

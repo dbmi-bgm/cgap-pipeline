@@ -1,7 +1,9 @@
+<img src="https://github.com/dbmi-bgm/cgap-pipeline/blob/master/docs/images/cgap_logo.png" width="200" align="right">
+
 ## CGAP pipeline
 * This repo contains CGAP pipeline components
   * CWL
-  * Public Docker sources - Docker image names: `cgap/cgap:v25`, `cgap/md5:v25`, `cgap/fastqc:v25`
+  * Public Docker sources - Docker image names: `cgap/cgap:v26`, `cgap/md5:v26`, `cgap/fastqc:v26`
   * Private ECR sources created dynamically at deployment with `post_patch_to_portal.py`
   * Example Tibanna input jsons for individual steps
 
@@ -31,10 +33,17 @@ python post_patch_to_portal.py [--ff-env=<env_name>] [--del-prev-version]
 
 ### Version updates
 
+#### v26
+* bed region of interest added in HaplotypeCaller step for WES metaworkflows
+* DP >= 3 (depth filter for variants) added during VEP step for both WES and WGS metaworkflows
+* repo changes carried out to allow for compatibility with `cgap-pipeline-utils` `deploy_pipeline.py` https://github.com/dbmi-bgm/cgap-pipeline-utils
+* t3.micro replaced with t3.small for `hg19lo_hgvsg_plus_vcf-integrity-check` step
+
 #### v25
 * unrelated for novoCaller are now created from UGRP samples run with the alt index
 * ApplyBQSR now runs in parallel
 * Public Docker images now replaced by private ECR images during post/patch script
+* t3.micro replaced with t3.small for `dbSNP_ID_fixer_plus_vcf-integrity-check` step
 
 #### v24
 * changed bwa mem to use additional index files for alternative contigs

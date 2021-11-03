@@ -2,11 +2,12 @@
   "name": "WGS_trio",
   "title": "WGS Trio VERSION",
   "version": "VERSION",
-  "uuid": "d20ab9c2-932b-411e-95fd-792bd1001d77",
+  "accession": "GAPMWF3OLM6C",
+  "uuid": "3f075803-ea63-4cbd-9816-031b505034bb",
   "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
   "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
-  "previous_version": ["6a6f293c-21a9-428b-8ddd-ee29e2c8a1df"],
-  "version_upgrade_log": "updated unrelated to new UGRP run with alt index, new parallel ApplyBQSR",
+  "previous_version": ["d20ab9c2-932b-411e-95fd-792bd1001d77"],
+  "version_upgrade_log": "depth filter for VEP and added accession",
   "input": [
     {
       "argument_name": "fastqs_proband_first_R1",
@@ -902,7 +903,7 @@
     },
     {
       "name": "workflow_vep-annot-check",
-      "workflow": "2f997f5f-d334-4c2b-873c-e4392d6b83f5",
+      "workflow": "5b9412d0-7bca-49f3-9b8f-e02497b693a5",
       "config": {
         "instance_type": "c5n.18xlarge",
         "ebs_size": "1.35x",
@@ -1405,7 +1406,7 @@
       "name": "workflow_hg19lo_hgvsg-check",
       "workflow": "66434019-65c5-498f-a986-9e791eeff0ad",
       "config": {
-        "instance_type": "t3.micro",
+        "instance_type": "t3.small",
         "ebs_size": "3x",
         "EBS_optimized": true,
         "spot_instance": true,
