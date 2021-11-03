@@ -1406,7 +1406,7 @@
       "name": "workflow_hg19lo_hgvsg-check",
       "workflow": "66434019-65c5-498f-a986-9e791eeff0ad",
       "config": {
-        "instance_type": "t3.micro",
+        "instance_type": "t3.small",
         "ebs_size": "3x",
         "EBS_optimized": true,
         "spot_instance": true,

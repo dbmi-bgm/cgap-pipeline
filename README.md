@@ -37,11 +37,13 @@ python post_patch_to_portal.py [--ff-env=<env_name>] [--del-prev-version]
 * bed region of interest added in HaplotypeCaller step for WES metaworkflows
 * DP >= 3 (depth filter for variants) added during VEP step for both WES and WGS metaworkflows
 * repo changes carried out to allow for compatibility with `cgap-pipeline-utils` `deploy_pipeline.py` https://github.com/dbmi-bgm/cgap-pipeline-utils
+* t3.micro replaced with t3.small for `hg19lo_hgvsg_plus_vcf-integrity-check` step
 
 #### v25
 * unrelated for novoCaller are now created from UGRP samples run with the alt index
 * ApplyBQSR now runs in parallel
 * Public Docker images now replaced by private ECR images during post/patch script
+* t3.micro replaced with t3.small for `dbSNP_ID_fixer_plus_vcf-integrity-check` step
 
 #### v24
 * changed bwa mem to use additional index files for alternative contigs
