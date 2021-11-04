@@ -4,6 +4,8 @@ News and updates
 
 Version updates
 +++++++++++++++
+  **Nov 3, 2021** CGAP SNV (WGS/WES) pipeline v26 is released!
+
   **Oct 14, 2021**  CGAP (WGS) pipeline v25 is released!
 
   **Aug 1, 2021**  CGAP (WGS) pipeline v24 is released!
